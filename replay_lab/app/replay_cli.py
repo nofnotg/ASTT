@@ -19,8 +19,21 @@ from replay_lab.replay.walk_forward import build_walk_forward_windows
 
 def _markets(value: str | None) -> list[str]:
     if not value:
-        return ["KRW-BTC"]
+        return []
     return [item.strip() for item in value.split(",") if item.strip()]
+
+
+def _resolve_markets(value: str | None, loader: HistoricalLoader | None = None, provider: ReplayDataProvider | None = None) -> list[str]:
+    explicit = _markets(value)
+    if explicit:
+        return explicit
+    if provider:
+        cached = provider.get_markets()
+        if cached:
+            return cached
+    if loader:
+        return loader.load_markets()
+    return ["KRW-BTC"]
 
 
 def load_markets(_: argparse.Namespace) -> int:
@@ -39,7 +52,7 @@ def load_candles(args: argparse.Namespace) -> int:
 
 def load_0900(args: argparse.Namespace) -> int:
     loader = HistoricalLoader()
-    markets = _markets(args.markets)
+    markets = _resolve_markets(args.markets, loader=loader)
     start = date.today() - timedelta(days=args.days - 1)
     paths = loader.load_batch_0900_windows(markets[: args.top_markets], start, date.today())
     print(f"cached windows: {len(paths)}")
@@ -50,14 +63,15 @@ def run_0900(args: argparse.Namespace) -> int:
     day = date.fromisoformat(args.date)
     clock = ReplayClock(datetime.combine(day, datetime.min.time()).replace(hour=8, minute=50))
     provider = ReplayDataProvider(clock)
-    config = ReplaySessionConfig(session_id=f"manual_{day.isoformat()}", date_kst=day, markets=_markets(args.markets))
+    config = ReplaySessionConfig(session_id=f"manual_{day.isoformat()}", date_kst=day, markets=_resolve_markets(args.markets, provider=provider))
     result = ReplayRunner0900(provider, clock).run(config, top_market_limit=args.top_markets)
     print(json.dumps({key: len(value) for key, value in result.items()}, ensure_ascii=False))
     return 0
 
 
 def batch_0900(args: argparse.Namespace) -> int:
-    exp_dir = run_batch_0900(args.days, _markets(args.markets), args.top_markets)
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    exp_dir = run_batch_0900(args.days, _resolve_markets(args.markets, provider=provider), args.top_markets)
     print(f"experiment: {exp_dir}")
     return 0
 
@@ -103,19 +117,19 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("load-0900")
     p.add_argument("--days", type=int, default=30)
     p.add_argument("--top-markets", type=int, default=50)
-    p.add_argument("--markets", default="KRW-BTC")
+    p.add_argument("--markets")
     p.set_defaults(func=load_0900)
 
     p = sub.add_parser("run-0900")
     p.add_argument("--date", required=True)
-    p.add_argument("--markets", default="KRW-BTC")
+    p.add_argument("--markets")
     p.add_argument("--top-markets", type=int)
     p.set_defaults(func=run_0900)
 
     p = sub.add_parser("batch-0900")
     p.add_argument("--days", type=int, default=30)
     p.add_argument("--top-markets", type=int, default=50)
-    p.add_argument("--markets", default="KRW-BTC")
+    p.add_argument("--markets")
     p.set_defaults(func=batch_0900)
 
     p = sub.add_parser("walk-forward")
