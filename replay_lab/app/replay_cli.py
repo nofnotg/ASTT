@@ -10,6 +10,7 @@ from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
+from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
@@ -108,6 +109,12 @@ def export_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_report_catalog(_: argparse.Namespace) -> int:
+    catalog = ReplayReportCatalog().build()
+    print(json.dumps({key: len(value) for key, value in catalog.items()}, ensure_ascii=False))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -157,6 +164,9 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("export-summary")
     p.add_argument("--experiment-id", required=True)
     p.set_defaults(func=export_summary)
+
+    p = sub.add_parser("build-report-catalog")
+    p.set_defaults(func=build_report_catalog)
 
     args = parser.parse_args(argv)
     return args.func(args)

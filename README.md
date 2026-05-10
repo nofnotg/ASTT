@@ -158,6 +158,12 @@ Run a batch replay:
 python -m replay_lab.app.replay_cli batch-0900 --days 30 --top-markets 50 --markets KRW-BTC,KRW-ETH
 ```
 
+Build daily, weekly, and monthly replay report catalog:
+
+```bash
+python -m replay_lab.app.replay_cli build-report-catalog
+```
+
 Walk-forward window generation:
 
 ```bash
@@ -186,6 +192,12 @@ Dashboard:
 
 ```bash
 streamlit run replay_lab/dashboard/replay_dashboard.py
+```
+
+The main dashboard also has a `Replay Reports` sidebar category:
+
+```bash
+streamlit run dashboard/streamlit_app.py
 ```
 
 Safety rules:
