@@ -33,4 +33,10 @@ def test_report_catalog_builds_daily_weekly_monthly(tmp_path):
     assert len(catalog["weekly"]) == 1
     assert len(catalog["monthly"]) == 1
     assert catalog["monthly"][0]["entries"] == 2
+    assert catalog["insights"]["summary"]["total_entries"] == 2
+    assert catalog["insights"]["potential"]
+    assert catalog["insights"]["limits"]
+    assert catalog["insights"]["developments"]
+    assert catalog["insights"]["improvement_insights"]
     assert (tmp_path / "reports" / "catalog" / "daily_replay_report.md").exists()
+    assert (tmp_path / "reports" / "catalog" / "replay_insight_report.md").exists()

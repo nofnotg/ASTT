@@ -35,7 +35,22 @@ elif section == "Replay Reports":
     else:
         catalog = ReplayReportCatalog().load_or_build()
     st.caption("Research reports are read-only sidecar outputs. They do not change live settings.")
-    daily_tab, weekly_tab, monthly_tab, files_tab = st.tabs(["Daily", "Weekly", "Monthly", "Report Files"])
+    insights_tab, daily_tab, weekly_tab, monthly_tab, files_tab = st.tabs(["Insights", "Daily", "Weekly", "Monthly", "Report Files"])
+    with insights_tab:
+        st.subheader("Replay Lab Insights")
+        insights = catalog.get("insights", {})
+        summary = insights.get("summary", {})
+        if summary:
+            st.dataframe(pd.DataFrame([summary]), use_container_width=True)
+        for title, key in [
+            ("앱의 가능성", "potential"),
+            ("현재 한계", "limits"),
+            ("디벨롭된 내용", "developments"),
+            ("추가 개선 인사이트", "improvement_insights"),
+        ]:
+            st.markdown(f"### {title}")
+            for item in insights.get(key, []):
+                st.markdown(f"- {item}")
     with daily_tab:
         st.subheader("Daily Replay Report")
         st.dataframe(pd.DataFrame(catalog["daily"]), use_container_width=True)
