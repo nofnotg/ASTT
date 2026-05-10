@@ -75,12 +75,17 @@ class UpbitClient:
             return []
         return self._request("GET", "/v1/orderbook", params={"markets": ",".join(markets)})
 
-    def get_candles_minutes(self, market: str, unit: int, count: int = 200) -> list[dict[str, Any]]:
-        return self._request("GET", f"/v1/candles/minutes/{unit}", params={"market": market, "count": count})
+    def get_candles_minutes(self, market: str, unit: int, count: int = 200, to: str | None = None) -> list[dict[str, Any]]:
+        params: dict[str, Any] = {"market": market, "count": count}
+        if to:
+            params["to"] = to
+        return self._request("GET", f"/v1/candles/minutes/{unit}", params=params)
 
-    def get_candles_days(self, market: str, count: int = 200) -> list[dict[str, Any]]:
-        return self._request("GET", "/v1/candles/days", params={"market": market, "count": count})
+    def get_candles_days(self, market: str, count: int = 200, to: str | None = None) -> list[dict[str, Any]]:
+        params: dict[str, Any] = {"market": market, "count": count}
+        if to:
+            params["to"] = to
+        return self._request("GET", "/v1/candles/days", params=params)
 
     def get_recent_trades(self, market: str, count: int = 100) -> list[dict[str, Any]]:
         return self._request("GET", "/v1/trades/ticks", params={"market": market, "count": count})
-

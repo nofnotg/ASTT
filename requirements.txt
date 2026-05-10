@@ -12,4 +12,5 @@ streamlit
 pytest
 pytest-mock
 python-dateutil
-
+pyarrow
+duckdb
