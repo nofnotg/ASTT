@@ -1,0 +1,15 @@
+python-dotenv
+pydantic
+pydantic-settings
+requests
+websocket-client
+PyJWT
+pandas
+numpy
+SQLAlchemy
+PyYAML
+streamlit
+pytest
+pytest-mock
+python-dateutil
+

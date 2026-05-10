@@ -1,0 +1,11 @@
+.env
+.env.local
+.env.production
+*.key
+data_store/*.sqlite
+data_store/*.db
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+

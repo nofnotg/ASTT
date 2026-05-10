@@ -1,0 +1,23 @@
+default_mode: PAPER
+
+modes:
+  PAPER:
+    real_order: false
+    order_test: false
+    paper_fill: true
+
+  ORDER_TEST:
+    real_order: false
+    order_test: true
+    paper_fill: true
+
+  LIVE_DISABLED:
+    real_order: false
+    order_test: true
+    paper_fill: false
+
+  LIVE:
+    real_order: true
+    order_test: false
+    paper_fill: false
+

@@ -1,0 +1,2 @@
+"""ASTT application package."""
+
