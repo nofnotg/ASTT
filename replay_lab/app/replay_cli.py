@@ -8,7 +8,7 @@ from pathlib import Path
 from replay_lab.clock.replay_clock import ReplayClock
 from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
-from replay_lab.export.artifact_exporter import export_approved_patch
+from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900
@@ -23,7 +23,7 @@ def _markets(value: str | None) -> list[str]:
     return [item.strip() for item in value.split(",") if item.strip()]
 
 
-def _resolve_markets(value: str | None, loader: HistoricalLoader | None = None, provider: ReplayDataProvider | None = None) -> list[str]:
+def _resolve_markets(value: str | None, loader: HistoricalLoader | None = None, provider: ReplayDataProvider | None = None, top_limit: int | None = None) -> list[str]:
     explicit = _markets(value)
     if explicit:
         return explicit
@@ -32,6 +32,8 @@ def _resolve_markets(value: str | None, loader: HistoricalLoader | None = None, 
         if cached:
             return cached
     if loader:
+        if top_limit:
+            return loader.load_top_krw_markets(top_limit)
         return loader.load_markets()
     return ["KRW-BTC"]
 
@@ -52,7 +54,7 @@ def load_candles(args: argparse.Namespace) -> int:
 
 def load_0900(args: argparse.Namespace) -> int:
     loader = HistoricalLoader()
-    markets = _resolve_markets(args.markets, loader=loader)
+    markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
     start = date.today() - timedelta(days=args.days - 1)
     paths = loader.load_batch_0900_windows(markets[: args.top_markets], start, date.today())
     print(f"cached windows: {len(paths)}")
@@ -63,7 +65,7 @@ def run_0900(args: argparse.Namespace) -> int:
     day = date.fromisoformat(args.date)
     clock = ReplayClock(datetime.combine(day, datetime.min.time()).replace(hour=8, minute=50))
     provider = ReplayDataProvider(clock)
-    config = ReplaySessionConfig(session_id=f"manual_{day.isoformat()}", date_kst=day, markets=_resolve_markets(args.markets, provider=provider))
+    config = ReplaySessionConfig(session_id=f"manual_{day.isoformat()}", date_kst=day, markets=_resolve_markets(args.markets, provider=provider, top_limit=args.top_markets))
     result = ReplayRunner0900(provider, clock).run(config, top_market_limit=args.top_markets)
     print(json.dumps({key: len(value) for key, value in result.items()}, ensure_ascii=False))
     return 0
@@ -71,7 +73,7 @@ def run_0900(args: argparse.Namespace) -> int:
 
 def batch_0900(args: argparse.Namespace) -> int:
     provider = ReplayDataProvider(ReplayClock(datetime.now()))
-    exp_dir = run_batch_0900(args.days, _resolve_markets(args.markets, provider=provider), args.top_markets)
+    exp_dir = run_batch_0900(args.days, _resolve_markets(args.markets, provider=provider, top_limit=args.top_markets), args.top_markets)
     print(f"experiment: {exp_dir}")
     return 0
 
@@ -97,6 +99,12 @@ def athena_review(args: argparse.Namespace) -> int:
 def export_approved(args: argparse.Namespace) -> int:
     out = export_approved_patch(Path(args.patch_path), source_experiment_id=args.experiment_id or "")
     print(f"exported: {out}")
+    return 0
+
+
+def export_summary(args: argparse.Namespace) -> int:
+    out = export_research_summary(args.experiment_id)
+    print(f"summary exported: {out}")
     return 0
 
 
@@ -145,6 +153,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--patch-path", required=True)
     p.add_argument("--experiment-id")
     p.set_defaults(func=export_approved)
+
+    p = sub.add_parser("export-summary")
+    p.add_argument("--experiment-id", required=True)
+    p.set_defaults(func=export_summary)
 
     args = parser.parse_args(argv)
     return args.func(args)

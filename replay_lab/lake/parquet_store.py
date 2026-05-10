@@ -15,9 +15,11 @@ class ParquetStore:
         return pd.read_parquet(path)
 
     def append_dedup(self, frame: pd.DataFrame, path: Path, subset: list[str]) -> pd.DataFrame:
-        if path.exists():
+        if path.exists() and not frame.empty:
             existing = self.read(path)
             frame = pd.concat([existing, frame], ignore_index=True)
+        elif path.exists():
+            frame = self.read(path)
         if subset and not frame.empty:
             frame = frame.drop_duplicates(subset=subset).sort_values(subset)
         self.write(frame, path)

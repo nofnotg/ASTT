@@ -170,6 +170,12 @@ Review an experiment:
 python -m replay_lab.app.replay_cli athena-review --experiment-id exp_YYYYMMDD_HHMMSS
 ```
 
+Export the latest research summary for main-app preview:
+
+```bash
+python -m replay_lab.app.replay_cli export-summary --experiment-id exp_YYYYMMDD_HHMMSS
+```
+
 Preview approved main-app imports:
 
 ```bash

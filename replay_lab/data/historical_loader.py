@@ -25,14 +25,31 @@ class HistoricalLoader:
         registry: DatasetRegistry | None = None,
         store: ParquetStore | None = None,
         settings: ReplaySettings | None = None,
+        store_dir: Path | None = None,
     ) -> None:
         self.settings = settings or ReplaySettings()
         self.client = client or UpbitClient(get_settings(UPBIT_ACCESS_KEY="", UPBIT_SECRET_KEY=""))
         self.registry = registry or DatasetRegistry()
         self.store = store or ParquetStore()
+        self.store_dir = store_dir or REPLAY_STORE_DIR
 
     def load_markets(self) -> list[str]:
         return self.client.get_krw_markets()
+
+    def load_top_krw_markets(self, limit: int = 50) -> list[str]:
+        markets = self.load_markets()
+        ranked: list[str] = []
+        for offset in range(0, len(markets), 100):
+            tickers = self.client.get_ticker(markets[offset : offset + 100])
+            ranked.extend(
+                item["market"]
+                for item in sorted(tickers, key=lambda row: row.get("acc_trade_price_24h", 0), reverse=True)
+            )
+        unique_ranked = []
+        for market in ranked:
+            if market not in unique_ranked:
+                unique_ranked.append(market)
+        return unique_ranked[:limit]
 
     def load_candles(self, market: str, timeframe: str, start: datetime, end: datetime) -> Path:
         start_s = start.isoformat()
@@ -42,7 +59,7 @@ class HistoricalLoader:
             return Path(cached.storage_path)
 
         frame = self._fetch_candles(market, timeframe, start, end)
-        path = REPLAY_STORE_DIR / "normalized" / f"candles_{timeframe}" / f"{market}.parquet"
+        path = self.store_dir / "normalized" / f"candles_{timeframe}" / f"{market}.parquet"
         frame = self.store.append_dedup(frame, path, ["market", "timeframe", "candle_time_kst"])
         scoped = frame[(pd.to_datetime(frame["candle_time_kst"]) >= pd.Timestamp(start.replace(tzinfo=None))) & (pd.to_datetime(frame["candle_time_kst"]) <= pd.Timestamp(end.replace(tzinfo=None)))]
         quality = evaluate_candles(scoped)
@@ -83,7 +100,7 @@ class HistoricalLoader:
         rows: list[dict] = []
         cursor = end
         while cursor >= start:
-            batch = self._request_candles(market, timeframe, cursor.isoformat())
+            batch = self._request_candles(market, timeframe, self._format_upbit_to(cursor))
             if not batch:
                 break
             normalized = [self._normalize_candle(item, timeframe) for item in batch]
@@ -131,4 +148,9 @@ class HistoricalLoader:
             "volume": float(item.get("candle_acc_trade_volume", item.get("volume", 0))),
             "trade_price": float(item.get("candle_acc_trade_price", item.get("trade_price", 0))),
         }
+
+    def _format_upbit_to(self, value: datetime) -> str:
+        # Upbit candle `to` is interpreted as UTC. Replay Lab works in KST.
+        utc_value = value.replace(microsecond=0) - pd.Timedelta(hours=9)
+        return utc_value.strftime("%Y-%m-%dT%H:%M:%S")
 

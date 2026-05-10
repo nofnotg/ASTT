@@ -11,6 +11,7 @@ from replay_lab.export.main_import_contract import MainImportArtifact
 
 
 EXPORT_DIR = ROOT_DIR / "replay_store" / "exports" / "main_app" / "approved_config_patches"
+SUMMARY_DIR = ROOT_DIR / "replay_store" / "exports" / "main_app" / "research_summary"
 BACKUP_DIR = ROOT_DIR / "config" / "backups"
 
 
@@ -27,6 +28,10 @@ def preview() -> list[dict]:
         artifact = MainImportArtifact(**data)
         artifact.assert_importable()
         artifacts.append({"path": str(path), "target_config_version": artifact.target_config_version, "patch": artifact.patch})
+    summary_path = SUMMARY_DIR / "latest_replay_summary.json"
+    if summary_path.exists():
+        data = json.loads(summary_path.read_text(encoding="utf-8"))
+        artifacts.append({"path": str(summary_path), "artifact_type": "research_summary", "source_experiment_id": data.get("source_experiment_id"), "metrics": data.get("metrics", {})})
     return artifacts
 
 

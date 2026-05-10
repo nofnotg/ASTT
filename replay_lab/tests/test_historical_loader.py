@@ -29,7 +29,7 @@ def test_historical_loader_cache_hit(tmp_path):
     client = FakeClient()
     registry = DatasetRegistry(tmp_path / "manifest.sqlite")
     store = ParquetStore()
-    loader = HistoricalLoader(client=client, registry=registry, store=store)
+    loader = HistoricalLoader(client=client, registry=registry, store=store, store_dir=tmp_path)
     start = datetime(2026, 2, 10, 8, 50)
     end = datetime(2026, 2, 10, 8, 50)
     first = loader.load_candles("KRW-BTC", "1m", start, end)
