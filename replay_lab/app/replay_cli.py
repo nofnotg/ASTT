@@ -196,7 +196,7 @@ def export_summary(args: argparse.Namespace) -> int:
 
 
 def build_report_catalog(args: argparse.Namespace) -> int:
-    catalog = ReplayReportCatalog(capital_krw=args.capital_krw).build()
+    catalog = ReplayReportCatalog(capital_krw=args.capital_krw, start_date=args.start_date, current_schema_only=args.current_schema_only).build()
     print(json.dumps({key: len(value) for key, value in catalog.items()}, ensure_ascii=False))
     return 0
 
@@ -316,6 +316,9 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-report-catalog")
     p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--current-schema-only", action="store_true", default=True)
+    p.add_argument("--include-legacy", action="store_false", dest="current_schema_only")
     p.set_defaults(func=build_report_catalog)
 
     p = sub.add_parser("sidecar-c-time-scan")

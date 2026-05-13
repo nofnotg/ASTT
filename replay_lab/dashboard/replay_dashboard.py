@@ -30,11 +30,11 @@ if section == "Overview":
 
 elif section == "Replay Reports":
     if st.button("Refresh replay report catalog"):
-        catalog = ReplayReportCatalog().build()
+        catalog = ReplayReportCatalog(start_date="2026-01-01", current_schema_only=True).build()
     else:
-        catalog = ReplayReportCatalog().load_or_build()
+        catalog = ReplayReportCatalog(start_date="2026-01-01", current_schema_only=True).load_or_build()
     st.caption("Research reports are read-only sidecar outputs. They do not change live settings.")
-    insights_tab, persona_tab, macro_tab, no_entry_tab, daily_tab, weekly_tab, monthly_tab, windows_tab, files_tab = st.tabs(["Insights", "Personas", "Macro", "No Entry", "Daily", "Weekly", "Monthly", "Time Windows", "Report Files"])
+    insights_tab, status_tab, persona_tab, macro_tab, no_entry_tab, sidecar_tab, daily_tab, weekly_tab, monthly_tab, windows_tab, files_tab = st.tabs(["Insights", "Status", "Personas", "Macro", "No Entry", "Sidecar C", "Daily", "Weekly", "Monthly", "Time Windows", "Report Files"])
     with insights_tab:
         st.subheader("Replay Lab Insights")
         insights = catalog.get("insights", {})
@@ -51,6 +51,9 @@ elif section == "Replay Reports":
             st.markdown(f"### {title}")
             for item in insights.get(key, []):
                 st.markdown(f"- {item}")
+    with status_tab:
+        st.subheader("Development Status")
+        st.dataframe(pd.DataFrame(catalog.get("development_status", [])), use_container_width=True)
     with persona_tab:
         st.subheader("Persona Validity")
         st.dataframe(pd.DataFrame(catalog.get("persona_validity", [])), use_container_width=True)
@@ -60,6 +63,9 @@ elif section == "Replay Reports":
     with no_entry_tab:
         st.subheader("No Entry Reasons")
         st.dataframe(pd.DataFrame(catalog.get("no_entry_summary", [])), use_container_width=True)
+    with sidecar_tab:
+        st.subheader("Sidecar C Time Discovery")
+        st.dataframe(pd.DataFrame(catalog.get("sidecar_c_summary", [])), use_container_width=True)
     with daily_tab:
         st.subheader("Daily Replay Report")
         st.dataframe(pd.DataFrame(catalog["daily"]), use_container_width=True)

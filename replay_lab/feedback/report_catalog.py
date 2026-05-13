@@ -15,6 +15,8 @@ from replay_lab.paths import REPLAY_STORE_DIR
 class ReplayReportCatalog:
     store_dir: Path = REPLAY_STORE_DIR
     capital_krw: float = 500000
+    start_date: str | None = None
+    current_schema_only: bool = False
 
     @property
     def experiments_dir(self) -> Path:
@@ -30,6 +32,11 @@ class ReplayReportCatalog:
         trades = self._load_frame("paper_trades.parquet", experiments)
         sessions = self._load_frame("session_results.parquet", experiments)
         personas = self._load_frame("persona_scores.parquet", experiments)
+        scope = self._scope_frames(decisions, trades, sessions, personas)
+        decisions = scope["decisions"]
+        trades = scope["trades"]
+        sessions = scope["sessions"]
+        personas = scope["personas"]
 
         daily = self._aggregate(decisions, trades, sessions, "D")
         weekly = self._aggregate(decisions, trades, sessions, "W-SUN")
@@ -44,10 +51,12 @@ class ReplayReportCatalog:
             "persona_validity": persona_validity,
             "macro_persona_context": self._macro_persona_context(),
             "no_entry_summary": self._no_entry_summary(decisions),
+            "sidecar_c_summary": self._load_sidecar_c_summary(),
+            "development_status": self._development_status(scope),
             "experiments": self._experiment_rows(experiments),
             "insights": self._build_insights(daily, time_windows),
             "glossary": self._glossary(),
-            "report_options": {"capital_krw": self.capital_krw},
+            "report_options": {"capital_krw": self.capital_krw, "start_date": self.start_date, "current_schema_only": self.current_schema_only},
         }
         self._write_outputs(catalog)
         return catalog
@@ -75,6 +84,52 @@ class ReplayReportCatalog:
                 frame["experiment_id"] = exp_dir.name
                 frames.append(frame)
         return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+
+    def _scope_frames(self, decisions: pd.DataFrame, trades: pd.DataFrame, sessions: pd.DataFrame, personas: pd.DataFrame) -> dict[str, pd.DataFrame | dict]:
+        original_counts = {
+            "decisions": int(len(decisions)),
+            "trades": int(len(trades)),
+            "sessions": int(len(sessions)),
+            "personas": int(len(personas)),
+        }
+        scoped_decisions = decisions.copy()
+        if self.start_date and not scoped_decisions.empty and "date_kst" in scoped_decisions:
+            scoped_decisions = scoped_decisions[pd.to_datetime(scoped_decisions["date_kst"]) >= pd.Timestamp(self.start_date)]
+        if self.current_schema_only and not scoped_decisions.empty:
+            required = ["target_window_end_time_kst", "no_entry_reason"]
+            for column in required:
+                if column not in scoped_decisions:
+                    scoped_decisions[column] = pd.NA
+            scoped_decisions = scoped_decisions[scoped_decisions["target_window_end_time_kst"].notna()]
+        session_ids = set(scoped_decisions.get("session_id", pd.Series(dtype=str)).dropna().astype(str).tolist())
+
+        def filter_related(frame: pd.DataFrame) -> pd.DataFrame:
+            if frame.empty:
+                return frame
+            scoped = frame.copy()
+            if session_ids and "session_id" in scoped:
+                scoped = scoped[scoped["session_id"].astype(str).isin(session_ids)]
+            elif self.start_date and "date_kst" in scoped:
+                scoped = scoped[pd.to_datetime(scoped["date_kst"]) >= pd.Timestamp(self.start_date)]
+            return scoped
+
+        scoped_trades = filter_related(trades)
+        scoped_sessions = filter_related(sessions)
+        scoped_personas = filter_related(personas)
+        filtered_counts = {
+            "decisions": int(len(scoped_decisions)),
+            "trades": int(len(scoped_trades)),
+            "sessions": int(len(scoped_sessions)),
+            "personas": int(len(scoped_personas)),
+        }
+        excluded_counts = {key: original_counts[key] - filtered_counts[key] for key in original_counts}
+        return {
+            "decisions": scoped_decisions,
+            "trades": scoped_trades,
+            "sessions": scoped_sessions,
+            "personas": scoped_personas,
+            "meta": {"original_counts": original_counts, "filtered_counts": filtered_counts, "excluded_counts": excluded_counts},
+        }
 
     def _aggregate(self, decisions: pd.DataFrame, trades: pd.DataFrame, sessions: pd.DataFrame, freq: str) -> list[dict]:
         if decisions.empty and trades.empty and sessions.empty:
@@ -255,6 +310,45 @@ class ReplayReportCatalog:
                 }
             )
         return sorted(rows, key=lambda row: row["count"], reverse=True)
+
+    def _load_sidecar_c_summary(self) -> list[dict]:
+        path = self.reports_dir / "sidecar_c" / "time_window_discovery.json"
+        if not path.exists():
+            return []
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload.get("summary", [])
+
+    def _development_status(self, scope: dict[str, Any]) -> list[dict]:
+        meta = scope.get("meta", {})
+        filtered = meta.get("filtered_counts", {})
+        excluded = meta.get("excluded_counts", {})
+        return [
+            {
+                "item": "보고서 범위",
+                "status": "적용",
+                "detail": f"start_date={self.start_date or 'ALL'}, current_schema_only={self.current_schema_only}",
+            },
+            {
+                "item": "최신 스키마 필터",
+                "status": "적용" if self.current_schema_only else "미적용",
+                "detail": f"제외된 decision {excluded.get('decisions', 0)}건, 포함된 decision {filtered.get('decisions', 0)}건",
+            },
+            {
+                "item": "09:30 목표 관찰 / 10:00 종료",
+                "status": "구현",
+                "detail": "target_window_end_time_kst와 trade_end_time_kst를 분리 저장합니다.",
+            },
+            {
+                "item": "미진입 사유",
+                "status": "구현",
+                "detail": "신규 decision에는 no_entry_reason을 기록합니다. 과거 실험은 필터링하지 않으면 사유가 비어 있습니다.",
+            },
+            {
+                "item": "Sidecar C 통합",
+                "status": "부분 구현",
+                "detail": "타점 탐색 리포트는 별도 HTML과 메인 보고서 요약 테이블로 표시됩니다.",
+            },
+        ]
 
     def _persona_display_name(self, value: Any) -> str:
         name = str(value)
@@ -517,7 +611,7 @@ class ReplayReportCatalog:
         out_dir = self.reports_dir / "catalog"
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "replay_report_catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2), encoding="utf-8")
-        for key in ["daily", "weekly", "monthly", "time_windows", "persona_validity"]:
+        for key in ["daily", "weekly", "monthly", "time_windows", "persona_validity", "no_entry_summary", "sidecar_c_summary", "development_status"]:
             self._write_markdown(out_dir / f"{key}_replay_report.md", key, catalog[key])
         self._write_insight_markdown(out_dir / "replay_insight_report.md", catalog["insights"])
         self._write_html_report(out_dir / "replay_report.html", catalog)
@@ -638,9 +732,11 @@ class ReplayReportCatalog:
   {self._list_section("디벨롭한 내용", insights.get("developments", []))}
   {self._list_section("추가 개선 인사이트", insights.get("improvement_insights", []))}
   {self._list_section("거시경제/국내정세 인사이트", insights.get("macro_context", []))}
+  {self._table_section("개발상황 점검", catalog.get("development_status", []))}
   {self._table_section("페르소나 유효성 검증", catalog.get("persona_validity", []))}
   {self._table_section("거시/국내정세와 페르소나 연결 검토", catalog.get("macro_persona_context", []))}
   {self._table_section("미진입 사유 요약", catalog.get("no_entry_summary", []))}
+  {self._table_section("Sidecar C 타점 탐색 요약", catalog.get("sidecar_c_summary", []))}
   {self._table_section("시간대별 후보 비교", catalog.get("time_windows", []))}
   {self._table_section("일별 리포트", catalog.get("daily", []))}
   {self._table_section("주간 통계", catalog.get("weekly", []))}
@@ -740,6 +836,19 @@ class ReplayReportCatalog:
             "share": "비중",
             "example_market": "예시마켓",
             "example_date": "예시일자",
+            "item": "항목",
+            "status": "상태",
+            "detail": "상세",
+            "samples": "표본",
+            "active_days": "활성일",
+            "suggested_days_per_week": "주당후보일",
+            "success_rate": "성공률",
+            "avg_flow_score": "평균흐름점수",
+            "avg_target_max_up_pct": "30분상승폭",
+            "avg_target_max_down_pct": "30분하락폭",
+            "avg_exit_return_pct": "60분종료수익",
+            "pinpoint_score": "핀포인트점수",
+            "recommendation": "판정",
         }
         return labels.get(key, key)
 
