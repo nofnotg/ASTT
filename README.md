@@ -167,13 +167,25 @@ python -m replay_lab.app.replay_cli batch-0900 --days 30 --top-markets 50 --mark
 Run day-by-day historical study. This loads one date, replays it with `ReplayClock`, writes progress, then moves to the next date:
 
 ```bash
-python -m replay_lab.app.replay_cli study-0900-range --start-date 2025-05-01 --end-date 2026-05-13 --top-markets 50
+python -m replay_lab.app.replay_cli study-0900-range --start-date 2026-01-01 --end-date 2026-05-13 --top-markets 50 --trade-end-time 10:00
+```
+
+For the recent period where Upbit second candles are available, add `--use-seconds` to cache 08:50~10:00 second candles and use them first for PAPER fills:
+
+```bash
+python -m replay_lab.app.replay_cli study-0900-range --start-date 2026-02-13 --end-date 2026-05-13 --top-markets 20 --use-seconds
 ```
 
 Run candidate entry-time comparisons:
 
 ```bash
 python -m replay_lab.app.replay_cli batch-windows --days 30 --top-markets 50 --entry-times 01:00,05:00,09:00,13:00,17:00,21:00
+```
+
+Run Sidecar C time-window discovery:
+
+```bash
+python -m replay_lab.app.replay_cli sidecar-c-time-scan --start-date 2026-01-01 --end-date 2026-05-13 --top-markets 50 --load-missing
 ```
 
 Build daily, weekly, and monthly replay report catalog:

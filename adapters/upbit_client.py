@@ -81,6 +81,12 @@ class UpbitClient:
             params["to"] = to
         return self._request("GET", f"/v1/candles/minutes/{unit}", params=params)
 
+    def get_candles_seconds(self, market: str, count: int = 200, to: str | None = None) -> list[dict[str, Any]]:
+        params: dict[str, Any] = {"market": market, "count": count}
+        if to:
+            params["to"] = to
+        return self._request("GET", "/v1/candles/seconds", params=params)
+
     def get_candles_days(self, market: str, count: int = 200, to: str | None = None) -> list[dict[str, Any]]:
         params: dict[str, Any] = {"market": market, "count": count}
         if to:

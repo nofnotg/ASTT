@@ -16,6 +16,7 @@ from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.replay.walk_forward import build_walk_forward_windows
+from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
 def _markets(value: str | None) -> list[str]:
@@ -83,6 +84,7 @@ def run_0900(args: argparse.Namespace) -> int:
         pre_score_time=args.pre_score_time,
         decision_time=args.decision_time,
         entry_time=args.entry_time,
+        target_window_end_time=args.target_window_end_time,
         trade_end_time=args.trade_end_time,
         strategy_label=args.strategy_label,
     )
@@ -101,6 +103,7 @@ def batch_0900(args: argparse.Namespace) -> int:
         pre_score_time=args.pre_score_time,
         decision_time=args.decision_time,
         entry_time=args.entry_time,
+        target_window_end_time=args.target_window_end_time,
         trade_end_time=args.trade_end_time,
         strategy_label=args.strategy_label,
     )
@@ -117,10 +120,12 @@ def study_0900_range(args: argparse.Namespace) -> int:
         markets,
         args.top_markets,
         load_first=not args.no_load_first,
+        use_seconds=args.use_seconds,
         scan_time=args.scan_time,
         pre_score_time=args.pre_score_time,
         decision_time=args.decision_time,
         entry_time=args.entry_time,
+        target_window_end_time=args.target_window_end_time,
         trade_end_time=args.trade_end_time,
         strategy_label=args.strategy_label,
     )
@@ -132,15 +137,17 @@ def _window_config(entry_time: str) -> dict[str, str]:
     entry = datetime.strptime(entry_time, "%H:%M")
     scan = entry - timedelta(minutes=10)
     pre = entry - timedelta(minutes=1)
-    end = entry + timedelta(minutes=30)
-    if scan.day != entry.day or end.day != entry.day:
-        raise ValueError("entry times must leave room for same-day 10 minute analysis and 30 minute trade window")
+    target_end = entry + timedelta(minutes=30)
+    trade_end = entry + timedelta(minutes=60)
+    if scan.day != entry.day or trade_end.day != entry.day:
+        raise ValueError("entry times must leave room for same-day 10 minute analysis and 60 minute trade window")
     return {
         "scan_time": scan.strftime("%H:%M"),
         "pre_score_time": pre.strftime("%H:%M"),
         "decision_time": pre.strftime("%H:%M"),
         "entry_time": entry.strftime("%H:%M"),
-        "trade_end_time": end.strftime("%H:%M"),
+        "target_window_end_time": target_end.strftime("%H:%M"),
+        "trade_end_time": trade_end.strftime("%H:%M"),
         "strategy_label": f"{scan.strftime('%H%M')}_{entry.strftime('%H%M')}_scalp",
     }
 
@@ -194,6 +201,26 @@ def build_report_catalog(args: argparse.Namespace) -> int:
     return 0
 
 
+def sidecar_c_time_scan(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
+    entry_times = _markets(args.entry_times) if args.entry_times else default_entry_times(args.step_minutes)
+    out_dir = TimeWindowDiscovery().run(
+        TimeWindowDiscoveryConfig(
+            start_date=date.fromisoformat(args.start_date),
+            end_date=date.fromisoformat(args.end_date),
+            markets=markets,
+            entry_times=entry_times,
+            top_markets=args.top_markets,
+            load_missing=args.load_missing,
+            target_move_pct=args.target_move_pct,
+            max_adverse_pct=args.max_adverse_pct,
+        )
+    )
+    print(f"sidecar-c report: {out_dir}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -204,7 +231,7 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("load-candles")
     p.add_argument("--market", required=True)
-    p.add_argument("--timeframe", default="1m", choices=["1m", "5m", "15m", "1h", "1d"])
+    p.add_argument("--timeframe", default="1m", choices=["1s", "1m", "5m", "15m", "1h", "1d"])
     p.add_argument("--days", type=int, default=90)
     p.set_defaults(func=load_candles)
 
@@ -228,7 +255,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--pre-score-time", default="08:59")
     p.add_argument("--decision-time", default="08:59")
     p.add_argument("--entry-time", default="09:00")
-    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--target-window-end-time", default="09:30")
+    p.add_argument("--trade-end-time", default="10:00")
     p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=run_0900)
 
@@ -240,7 +268,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--pre-score-time", default="08:59")
     p.add_argument("--decision-time", default="08:59")
     p.add_argument("--entry-time", default="09:00")
-    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--target-window-end-time", default="09:30")
+    p.add_argument("--trade-end-time", default="10:00")
     p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=batch_0900)
 
@@ -250,11 +279,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--top-markets", type=int, default=50)
     p.add_argument("--markets")
     p.add_argument("--no-load-first", action="store_true")
+    p.add_argument("--use-seconds", action="store_true")
     p.add_argument("--scan-time", default="08:50")
     p.add_argument("--pre-score-time", default="08:59")
     p.add_argument("--decision-time", default="08:59")
     p.add_argument("--entry-time", default="09:00")
-    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--target-window-end-time", default="09:30")
+    p.add_argument("--trade-end-time", default="10:00")
     p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=study_0900_range)
 
@@ -286,6 +317,18 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-report-catalog")
     p.add_argument("--capital-krw", type=float, default=500000)
     p.set_defaults(func=build_report_catalog)
+
+    p = sub.add_parser("sidecar-c-time-scan")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--entry-times")
+    p.add_argument("--step-minutes", type=int, default=30)
+    p.add_argument("--load-missing", action="store_true")
+    p.add_argument("--target-move-pct", type=float, default=1.0)
+    p.add_argument("--max-adverse-pct", type=float, default=-0.8)
+    p.set_defaults(func=sidecar_c_time_scan)
 
     args = parser.parse_args(argv)
     return args.func(args)

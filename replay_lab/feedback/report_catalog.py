@@ -43,6 +43,7 @@ class ReplayReportCatalog:
             "time_windows": time_windows,
             "persona_validity": persona_validity,
             "macro_persona_context": self._macro_persona_context(),
+            "no_entry_summary": self._no_entry_summary(decisions),
             "experiments": self._experiment_rows(experiments),
             "insights": self._build_insights(daily, time_windows),
             "glossary": self._glossary(),
@@ -206,6 +207,7 @@ class ReplayReportCatalog:
             high_win_rate = self._win_rate(high_trades)
             low_win_rate = self._win_rate(low_trades)
             validity = self._validity_label(len(group), len(trade_rows), score_entry_corr, score_pnl_corr, high_win_rate, low_win_rate)
+            validity_pct = self._validity_pct(len(group), len(trade_rows), score_entry_corr, score_pnl_corr, high_win_rate, low_win_rate)
             rows.append(
                 {
                     "persona": persona,
@@ -224,11 +226,35 @@ class ReplayReportCatalog:
                     "low_score_win_rate": low_win_rate,
                     "score_entry_corr": score_entry_corr,
                     "score_pnl_corr": score_pnl_corr,
+                    "validity_pct": validity_pct,
                     "validity": validity,
                     "review_note": self._persona_review_note(persona, validity),
                 }
             )
         return rows
+
+    def _no_entry_summary(self, decisions: pd.DataFrame) -> list[dict]:
+        if decisions.empty or "no_entry_reason" not in decisions:
+            return []
+        frame = decisions[decisions.get("final_decision", pd.Series(dtype=str)).astype(str) != "ENTER"].copy()
+        if frame.empty:
+            return []
+        frame["no_entry_reason"] = frame["no_entry_reason"].fillna("reason unavailable").replace("", "reason unavailable")
+        frame = frame[frame["no_entry_reason"] != "reason unavailable"]
+        if frame.empty:
+            return []
+        rows = []
+        for reason, group in frame.groupby("no_entry_reason", sort=True):
+            rows.append(
+                {
+                    "reason": reason,
+                    "count": int(len(group)),
+                    "share": len(group) / len(frame) if len(frame) else 0.0,
+                    "example_market": str(group.iloc[0].get("market", "")),
+                    "example_date": str(group.iloc[0].get("date_kst", "")),
+                }
+            )
+        return sorted(rows, key=lambda row: row["count"], reverse=True)
 
     def _persona_display_name(self, value: Any) -> str:
         name = str(value)
@@ -285,6 +311,24 @@ class ReplayReportCatalog:
         if score_entry_corr >= 0.20:
             return "진입 선별에는 유효"
         return "중립/추가 검증"
+
+    def _validity_pct(
+        self,
+        samples: int,
+        trade_samples: int,
+        score_entry_corr: float,
+        score_pnl_corr: float,
+        high_win_rate: float,
+        low_win_rate: float,
+    ) -> float:
+        sample_score = min(trade_samples / 100, 1.0) * 25
+        entry_score = max(min(score_entry_corr, 1.0), -1.0) * 20
+        pnl_score = max(min(score_pnl_corr, 1.0), -1.0) * 30
+        lift_score = max(min(high_win_rate - low_win_rate, 1.0), -1.0) * 25
+        raw = 50 + sample_score + entry_score + pnl_score + lift_score
+        if samples < 30 or trade_samples < 20:
+            raw = min(raw, 59)
+        return round(max(0, min(100, raw)), 2)
 
     def _persona_review_note(self, persona: str, validity: str) -> str:
         base = {
@@ -596,6 +640,7 @@ class ReplayReportCatalog:
   {self._list_section("거시경제/국내정세 인사이트", insights.get("macro_context", []))}
   {self._table_section("페르소나 유효성 검증", catalog.get("persona_validity", []))}
   {self._table_section("거시/국내정세와 페르소나 연결 검토", catalog.get("macro_persona_context", []))}
+  {self._table_section("미진입 사유 요약", catalog.get("no_entry_summary", []))}
   {self._table_section("시간대별 후보 비교", catalog.get("time_windows", []))}
   {self._table_section("일별 리포트", catalog.get("daily", []))}
   {self._table_section("주간 통계", catalog.get("weekly", []))}
@@ -684,11 +729,17 @@ class ReplayReportCatalog:
             "low_score_win_rate": "저점수승률",
             "score_entry_corr": "점수-진입상관",
             "score_pnl_corr": "점수-손익상관",
+            "validity_pct": "유효성%",
             "validity": "유효성 판정",
             "review_note": "검토 메모",
             "macro_link": "거시/정세 연결",
             "current_gap": "현재 한계",
             "validation_rule": "검증 기준",
+            "reason": "미진입 사유",
+            "count": "건수",
+            "share": "비중",
+            "example_market": "예시마켓",
+            "example_date": "예시일자",
         }
         return labels.get(key, key)
 

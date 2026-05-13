@@ -109,6 +109,7 @@ class ReplayRunner0900:
             "market": market,
             "decision_time_kst": self.clock.current_time_kst.isoformat(),
             "entry_time_kst": _dt(config, config.entry_time).isoformat() if config.entry_time else self.clock.current_time_kst.isoformat(),
+            "target_window_end_time_kst": _dt(config, config.target_window_end_time).isoformat(),
             "trade_end_time_kst": _dt(config, config.trade_end_time).isoformat(),
             "strategy_label": config.strategy_label,
             "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
@@ -117,12 +118,17 @@ class ReplayRunner0900:
             "vetoed": decision.vetoed,
             "veto_reason": decision.veto_reason,
             "reasons": decision.reasons,
+            "no_entry_reason": self._no_entry_reason(decision, results, quality),
         }
         trade_row = None
         if decision.decision == "ENTER" and not candles.empty:
             entry_at = _dt(config, config.entry_time) if config.entry_time else self.clock.current_time_kst
             self.clock.advance_to(_dt(config, config.trade_end_time))
-            outcome = self.provider.get_candles(market, "1m", 40)
+            outcome = self.provider.get_candles(market, "1s", 4500)
+            fill_timeframe = "1s"
+            if outcome.empty:
+                outcome = self.provider.get_candles(market, "1m", 80)
+                fill_timeframe = "1m"
             outcome = outcome[outcome["time"] >= pd.Timestamp(entry_at)]
             stop_loss = price * 0.985
             take_profit = price * 1.015
@@ -133,9 +139,11 @@ class ReplayRunner0900:
                 "market": market,
                 "decision_time_kst": _dt(config, config.decision_time).isoformat(),
                 "entry_time_kst": entry_at.isoformat(),
+                "target_window_end_time_kst": _dt(config, config.target_window_end_time).isoformat(),
                 "trade_end_time_kst": _dt(config, config.trade_end_time).isoformat(),
                 "strategy_label": config.strategy_label,
                 "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
+                "fill_timeframe": fill_timeframe,
                 **asdict(fill),
             }
         return {
@@ -147,6 +155,7 @@ class ReplayRunner0900:
                 "pre_score_time": config.pre_score_time,
                 "decision_time": config.decision_time,
                 "entry_time": config.entry_time or config.decision_time,
+                "target_window_end_time": config.target_window_end_time,
                 "trade_end_time": config.trade_end_time,
                 "strategy_label": config.strategy_label,
                 "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
@@ -158,4 +167,17 @@ class ReplayRunner0900:
             "trade": trade_row,
             "snapshots": snapshots,
         }
+
+    def _no_entry_reason(self, decision, persona_results: list, quality: dict) -> str:
+        if decision.decision == "ENTER":
+            return ""
+        if decision.vetoed:
+            return f"Iris veto: {decision.veto_reason or 'risk guard'}"
+        if quality.get("quality") == "LOW_QUALITY":
+            return "data quality low"
+        weak = sorted(persona_results, key=lambda item: item.score)
+        if weak:
+            item = weak[0]
+            return f"{item.persona_name} score low ({item.score:.1f})"
+        return f"final score below entry threshold ({decision.final_score:.1f})"
 

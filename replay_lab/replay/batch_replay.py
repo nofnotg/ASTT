@@ -25,7 +25,8 @@ def run_batch_0900(
     pre_score_time: str = "08:59",
     decision_time: str = "08:59",
     entry_time: str = "09:00",
-    trade_end_time: str = "09:30",
+    target_window_end_time: str = "09:30",
+    trade_end_time: str = "10:00",
     strategy_label: str = "0850_0900_scalp",
 ) -> Path:
     end_date = end_date or date.today()
@@ -45,6 +46,7 @@ def run_batch_0900(
                 "pre_score_time": pre_score_time,
                 "decision_time": decision_time,
                 "entry_time": entry_time,
+                "target_window_end_time": target_window_end_time,
                 "trade_end_time": trade_end_time,
                 "strategy_label": strategy_label,
                 "mode": "PAPER_REPLAY",
@@ -68,6 +70,7 @@ def run_batch_0900(
             pre_score_time=pre_score_time,
             decision_time=decision_time,
             entry_time=entry_time,
+            target_window_end_time=target_window_end_time,
             trade_end_time=trade_end_time,
             strategy_label=strategy_label,
         )
@@ -92,11 +95,13 @@ def run_daily_study_0900(
     markets: list[str],
     top_markets: int | None = None,
     load_first: bool = True,
+    use_seconds: bool = False,
     scan_time: str = "08:50",
     pre_score_time: str = "08:59",
     decision_time: str = "08:59",
     entry_time: str = "09:00",
-    trade_end_time: str = "09:30",
+    target_window_end_time: str = "09:30",
+    trade_end_time: str = "10:00",
     strategy_label: str = "0850_0900_scalp",
 ) -> Path:
     experiment_id = datetime.utcnow().strftime("exp_%Y%m%d_%H%M%S_daily")
@@ -109,10 +114,12 @@ def run_daily_study_0900(
         "markets": markets,
         "top_markets": top_markets,
         "load_first": load_first,
+        "use_seconds": use_seconds,
         "scan_time": scan_time,
         "pre_score_time": pre_score_time,
         "decision_time": decision_time,
         "entry_time": entry_time,
+        "target_window_end_time": target_window_end_time,
         "trade_end_time": trade_end_time,
         "strategy_label": strategy_label,
         "mode": "PAPER_REPLAY_DAILY_STUDY",
@@ -131,6 +138,8 @@ def run_daily_study_0900(
     while day <= end_date:
         if load_first:
             loader.load_batch_0900_windows(markets[: top_markets or len(markets)], day, day)
+            if use_seconds:
+                loader.load_batch_0900_seconds_windows(markets[: top_markets or len(markets)], day, day)
         config = ReplaySessionConfig(
             session_id=f"{experiment_id}_{day.isoformat()}",
             date_kst=day,
@@ -139,6 +148,7 @@ def run_daily_study_0900(
             pre_score_time=pre_score_time,
             decision_time=decision_time,
             entry_time=entry_time,
+            target_window_end_time=target_window_end_time,
             trade_end_time=trade_end_time,
             strategy_label=strategy_label,
         )

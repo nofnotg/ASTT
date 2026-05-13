@@ -57,7 +57,7 @@ else:
     else:
         catalog = ReplayReportCatalog().load_or_build()
     st.caption("Replay reports are research outputs only. Approved config artifacts must still be imported separately.")
-    insights_tab, persona_tab, macro_tab, daily_tab, weekly_tab, monthly_tab, windows_tab, files_tab = st.tabs(["Insights", "Personas", "Macro", "Daily", "Weekly", "Monthly", "Time Windows", "Files"])
+    insights_tab, persona_tab, macro_tab, no_entry_tab, daily_tab, weekly_tab, monthly_tab, windows_tab, files_tab = st.tabs(["Insights", "Personas", "Macro", "No Entry", "Daily", "Weekly", "Monthly", "Time Windows", "Files"])
     with insights_tab:
         st.subheader("Replay Lab Insights")
         insights = catalog.get("insights", {})
@@ -80,6 +80,9 @@ else:
     with macro_tab:
         st.subheader("Macro/Domestic Context Review")
         st.dataframe(pd.DataFrame(catalog.get("macro_persona_context", [])), use_container_width=True)
+    with no_entry_tab:
+        st.subheader("No Entry Reasons")
+        st.dataframe(pd.DataFrame(catalog.get("no_entry_summary", [])), use_container_width=True)
     with daily_tab:
         st.subheader("Replay Daily Reports")
         st.dataframe(pd.DataFrame(catalog["daily"]), use_container_width=True)

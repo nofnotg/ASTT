@@ -84,8 +84,13 @@ class HistoricalLoader:
 
     def load_0900_window(self, market: str, day: date) -> Path:
         start = datetime.combine(day, time(0, 0))
-        end = datetime.combine(day, time(9, 30))
+        end = datetime.combine(day, time(10, 0))
         return self.load_candles(market, "1m", start, end)
+
+    def load_0900_seconds_window(self, market: str, day: date) -> Path:
+        start = datetime.combine(day, time(8, 50))
+        end = datetime.combine(day, time(10, 0))
+        return self.load_candles(market, "1s", start, end)
 
     def load_intraday_day(self, market: str, day: date) -> Path:
         start = datetime.combine(day, time(0, 0))
@@ -98,6 +103,15 @@ class HistoricalLoader:
         while day <= end_date:
             for market in markets:
                 paths.append(self.load_0900_window(market, day))
+            day += timedelta(days=1)
+        return paths
+
+    def load_batch_0900_seconds_windows(self, markets: Iterable[str], start_date: date, end_date: date) -> list[Path]:
+        paths = []
+        day = start_date
+        while day <= end_date:
+            for market in markets:
+                paths.append(self.load_0900_seconds_window(market, day))
             day += timedelta(days=1)
         return paths
 
@@ -137,6 +151,8 @@ class HistoricalLoader:
             try:
                 if timeframe == "1d":
                     return self.client.get_candles_days(market, count=200, to=to_value)
+                if timeframe == "1s":
+                    return self.client.get_candles_seconds(market, count=200, to=to_value)
                 unit = TIMEFRAME_UNITS[timeframe]
                 return self.client.get_candles_minutes(market, unit=unit, count=200, to=to_value)
             except UpbitTemporaryRateLimit as exc:
