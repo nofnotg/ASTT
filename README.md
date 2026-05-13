@@ -160,6 +160,7 @@ python -m replay_lab.app.replay_cli batch-0900 --days 30 --top-markets 50 --mark
 
 Build daily, weekly, and monthly replay report catalog:
 The catalog also creates an insight report that summarizes product potential, limits, development progress, and next improvement ideas.
+It also renders a standalone HTML document at `replay_store/reports/catalog/replay_report.html`.
 
 ```bash
 python -m replay_lab.app.replay_cli build-report-catalog

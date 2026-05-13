@@ -40,3 +40,6 @@ def test_report_catalog_builds_daily_weekly_monthly(tmp_path):
     assert catalog["insights"]["improvement_insights"]
     assert (tmp_path / "reports" / "catalog" / "daily_replay_report.md").exists()
     assert (tmp_path / "reports" / "catalog" / "replay_insight_report.md").exists()
+    html = (tmp_path / "reports" / "catalog" / "replay_report.html").read_text(encoding="utf-8")
+    assert "<html lang=\"ko\">" in html
+    assert "앱의 가능성" in html

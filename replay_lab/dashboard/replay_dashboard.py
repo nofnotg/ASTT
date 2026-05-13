@@ -63,11 +63,12 @@ elif section == "Replay Reports":
     with files_tab:
         st.subheader("Generated Report Files")
         report_dir = REPLAY_STORE_DIR / "reports" / "catalog"
-        files = sorted(report_dir.glob("*.md")) if report_dir.exists() else []
+        files = sorted([*report_dir.glob("*.md"), *report_dir.glob("*.html")]) if report_dir.exists() else []
         st.dataframe(pd.DataFrame({"path": [str(path) for path in files]}), use_container_width=True)
         selected = st.selectbox("Open report", [path.name for path in files]) if files else None
         if selected:
-            st.markdown((report_dir / selected).read_text(encoding="utf-8"))
+            content = (report_dir / selected).read_text(encoding="utf-8")
+            st.code(content, language="html" if selected.endswith(".html") else "markdown")
 
 else:
     st.subheader("Approved Exports")
