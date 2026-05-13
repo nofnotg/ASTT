@@ -171,7 +171,7 @@ python -m replay_lab.app.replay_cli batch-windows --days 30 --top-markets 50 --e
 ```
 
 Build daily, weekly, and monthly replay report catalog:
-The catalog also creates weekday/weekend splits, time-window statistics, 500,000 KRW portfolio-style PnL, easy glossary notes, and an insight report that summarizes product potential, limits, development progress, macro/domestic context notes, and next improvement ideas.
+The catalog also creates weekday/weekend splits, time-window statistics, persona validity checks, macro/domestic context review notes, 500,000 KRW portfolio-style PnL, easy glossary notes, and an insight report that summarizes product potential, limits, development progress, and next improvement ideas.
 It renders a standalone HTML document at `replay_store/reports/catalog/replay_report.html`.
 
 ```bash

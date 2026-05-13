@@ -29,16 +29,20 @@ class ReplayReportCatalog:
         decisions = self._load_frame("decisions.parquet", experiments)
         trades = self._load_frame("paper_trades.parquet", experiments)
         sessions = self._load_frame("session_results.parquet", experiments)
+        personas = self._load_frame("persona_scores.parquet", experiments)
 
         daily = self._aggregate(decisions, trades, sessions, "D")
         weekly = self._aggregate(decisions, trades, sessions, "W-SUN")
         monthly = self._aggregate(decisions, trades, sessions, "M")
         time_windows = self._time_window_summary(trades, decisions)
+        persona_validity = self._persona_validity(personas, decisions, trades)
         catalog = {
             "daily": daily,
             "weekly": weekly,
             "monthly": monthly,
             "time_windows": time_windows,
+            "persona_validity": persona_validity,
+            "macro_persona_context": self._macro_persona_context(),
             "experiments": self._experiment_rows(experiments),
             "insights": self._build_insights(daily, time_windows),
             "glossary": self._glossary(),
@@ -170,6 +174,161 @@ class ReplayReportCatalog:
                 }
             )
         return sorted(rows, key=lambda row: (row["entry_time"], row["day_type"]))
+
+    def _persona_validity(self, personas: pd.DataFrame, decisions: pd.DataFrame, trades: pd.DataFrame) -> list[dict]:
+        if personas.empty:
+            return []
+        frame = personas.copy()
+        frame["persona"] = frame["persona"].map(self._persona_display_name)
+        keys = [key for key in ["session_id", "date_kst", "market"] if key in frame.columns]
+        if decisions.empty or not all(key in decisions.columns for key in keys):
+            frame["final_decision"] = ""
+            frame["entered"] = False
+        else:
+            decision_cols = keys + [col for col in ["final_decision", "final_score", "vetoed"] if col in decisions.columns]
+            frame = frame.merge(decisions[decision_cols], on=keys, how="left")
+            frame["entered"] = frame.get("final_decision", pd.Series(dtype=str)).astype(str).eq("ENTER")
+        if trades.empty or not all(key in trades.columns for key in keys):
+            frame["pnl_pct"] = pd.NA
+        else:
+            trade_cols = keys + [col for col in ["pnl_pct", "exit_reason", "ambiguous_fill"] if col in trades.columns]
+            frame = frame.merge(trades[trade_cols], on=keys, how="left")
+        rows = []
+        for persona, group in frame.groupby("persona", sort=True):
+            threshold = self._persona_threshold(persona)
+            trade_rows = group[group["pnl_pct"].notna()] if "pnl_pct" in group else pd.DataFrame()
+            high = group[group["score"].astype(float) >= threshold] if "score" in group else pd.DataFrame()
+            high_trades = high[high["pnl_pct"].notna()] if not high.empty and "pnl_pct" in high else pd.DataFrame()
+            low = group[group["score"].astype(float) < threshold] if "score" in group else pd.DataFrame()
+            low_trades = low[low["pnl_pct"].notna()] if not low.empty and "pnl_pct" in low else pd.DataFrame()
+            score_entry_corr = self._corr(group, "score", "entered")
+            score_pnl_corr = self._corr(trade_rows, "score", "pnl_pct")
+            high_win_rate = self._win_rate(high_trades)
+            low_win_rate = self._win_rate(low_trades)
+            validity = self._validity_label(len(group), len(trade_rows), score_entry_corr, score_pnl_corr, high_win_rate, low_win_rate)
+            rows.append(
+                {
+                    "persona": persona,
+                    "role": self._persona_role(persona),
+                    "samples": int(len(group)),
+                    "trade_samples": int(len(trade_rows)),
+                    "avg_score": float(group["score"].astype(float).mean()) if "score" in group and len(group) else 0.0,
+                    "pass_threshold": threshold,
+                    "pass_count": int(group["decision"].astype(str).eq("PASS").sum()) if "decision" in group else 0,
+                    "watch_count": int(group["decision"].astype(str).eq("WATCH").sum()) if "decision" in group else 0,
+                    "reject_count": int(group["decision"].astype(str).eq("REJECT").sum()) if "decision" in group else 0,
+                    "veto_count": int(group.get("veto", pd.Series(dtype=bool)).fillna(False).astype(bool).sum()),
+                    "high_score_samples": int(len(high)),
+                    "high_score_trade_samples": int(len(high_trades)),
+                    "high_score_win_rate": high_win_rate,
+                    "low_score_win_rate": low_win_rate,
+                    "score_entry_corr": score_entry_corr,
+                    "score_pnl_corr": score_pnl_corr,
+                    "validity": validity,
+                    "review_note": self._persona_review_note(persona, validity),
+                }
+            )
+        return rows
+
+    def _persona_display_name(self, value: Any) -> str:
+        name = str(value)
+        if name in {"留ㅺ린", "Maggie"}:
+            return "매기"
+        return name
+
+    def _persona_threshold(self, persona: str) -> float:
+        return {"Mr.K": 65.0, "매기": 85.0, "Rezo": 80.0, "CostA": 60.0, "Iris": 80.0}.get(persona, 80.0)
+
+    def _persona_role(self, persona: str) -> str:
+        return {
+            "Mr.K": "시장 국면과 큰 방향성 판단",
+            "매기": "가격 구조, 매물대, 돌파 여지 판단",
+            "Rezo": "거래량, VWAP, 수급 proxy 판단",
+            "CostA": "분할매수/노출 규모와 탈출 가능성 판단",
+            "Iris": "위험 차단과 veto 판단",
+        }.get(persona, "보조 판단")
+
+    def _win_rate(self, frame: pd.DataFrame) -> float:
+        if frame.empty or "pnl_pct" not in frame:
+            return 0.0
+        return float((frame["pnl_pct"].astype(float) > 0).mean())
+
+    def _corr(self, frame: pd.DataFrame, left: str, right: str) -> float:
+        if frame.empty or left not in frame or right not in frame or len(frame) < 3:
+            return 0.0
+        data = frame[[left, right]].copy()
+        data[left] = pd.to_numeric(data[left], errors="coerce")
+        if data[right].dtype == bool:
+            data[right] = data[right].astype(int)
+        else:
+            data[right] = pd.to_numeric(data[right], errors="coerce")
+        data = data.dropna()
+        if len(data) < 3 or data[left].nunique() < 2 or data[right].nunique() < 2:
+            return 0.0
+        return float(data[left].corr(data[right]))
+
+    def _validity_label(
+        self,
+        samples: int,
+        trade_samples: int,
+        score_entry_corr: float,
+        score_pnl_corr: float,
+        high_win_rate: float,
+        low_win_rate: float,
+    ) -> str:
+        if samples < 30 or trade_samples < 20:
+            return "검증 부족"
+        if score_pnl_corr >= 0.15 and high_win_rate >= low_win_rate:
+            return "유효성 긍정"
+        if score_pnl_corr <= -0.15:
+            return "역효과 의심"
+        if score_entry_corr >= 0.20:
+            return "진입 선별에는 유효"
+        return "중립/추가 검증"
+
+    def _persona_review_note(self, persona: str, validity: str) -> str:
+        base = {
+            "Mr.K": "거시/시장 국면을 가장 직접적으로 받아야 하는 페르소나입니다.",
+            "매기": "차트 구조가 실제 09:00 돌파 성공과 이어지는지 봐야 합니다.",
+            "Rezo": "거래량 급증이 진짜 수급인지 뉴스성 일시 급등인지 분리해야 합니다.",
+            "CostA": "수익 예측보다 손실 복구 가능성과 노출 제한이 타당한지 봐야 합니다.",
+            "Iris": "막은 거래가 실제로 나쁜 거래였는지 확인해야 합니다.",
+        }.get(persona, "보조 판단의 실제 기여도를 확인해야 합니다.")
+        return f"{base} 현재 판정: {validity}."
+
+    def _macro_persona_context(self) -> list[dict]:
+        return [
+            {
+                "persona": "Mr.K",
+                "macro_link": "미국장 마감, BTC 전체 추세, 달러/금리, 국내 위험선호 변화가 시장 국면 점수에 반영되어야 합니다.",
+                "current_gap": "현재는 캔들 기반 regime만 사용하므로 거시/국내정세는 직접 입력되지 않습니다.",
+                "validation_rule": "거시 리스크가 큰 날 Mr.K 점수가 낮아지고, 진입 억제와 손실 감소가 함께 나타나는지 검증합니다.",
+            },
+            {
+                "persona": "매기",
+                "macro_link": "정세 이벤트 자체보다 그 결과로 만들어진 가격 구조와 돌파 여지를 봅니다.",
+                "current_gap": "뉴스 원인은 모르고 차트 구조만 봅니다.",
+                "validation_rule": "매기 고점수 후보가 저점수 후보보다 09:00 이후 목표가 도달률이 높은지 검증합니다.",
+            },
+            {
+                "persona": "Rezo",
+                "macro_link": "정책/규제/상장/악재 뉴스는 거래량 폭증으로 나타날 수 있어 Rezo에 강하게 영향을 줍니다.",
+                "current_gap": "과거 호가창과 실제 체결 방향을 완전 복원하지 못해 proxy 판단입니다.",
+                "validation_rule": "Rezo 고점수 후보가 진입 후 추세 지속성과 승률을 실제로 높이는지 검증합니다.",
+            },
+            {
+                "persona": "CostA",
+                "macro_link": "급락장, 변동성 확대, 유동성 축소 때 분할매수 노출 한도가 중요해집니다.",
+                "current_gap": "현재는 거시 변동성별 노출 조절이 세분화되어 있지 않습니다.",
+                "validation_rule": "손실 구간에서 CostA 기준이 손실 확대를 줄였는지 검증합니다.",
+            },
+            {
+                "persona": "Iris",
+                "macro_link": "규제 뉴스, BTC 급락, 데이터 품질 저하, 과도한 스프레드 같은 위험을 최종 차단해야 합니다.",
+                "current_gap": "국내정세/거시 뉴스 veto는 아직 자동화되어 있지 않습니다.",
+                "validation_rule": "Iris가 막은 거래의 평균 성과가 실제 진입 거래보다 낮아야 veto가 타당합니다.",
+            },
+        ]
 
     def _date_index(self, *frames: pd.DataFrame) -> list[str]:
         values: set[str] = set()
@@ -314,7 +473,7 @@ class ReplayReportCatalog:
         out_dir = self.reports_dir / "catalog"
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "replay_report_catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2), encoding="utf-8")
-        for key in ["daily", "weekly", "monthly", "time_windows"]:
+        for key in ["daily", "weekly", "monthly", "time_windows", "persona_validity"]:
             self._write_markdown(out_dir / f"{key}_replay_report.md", key, catalog[key])
         self._write_insight_markdown(out_dir / "replay_insight_report.md", catalog["insights"])
         self._write_html_report(out_dir / "replay_report.html", catalog)
@@ -360,6 +519,10 @@ class ReplayReportCatalog:
             ("거시경제/국내정세 인사이트", "macro_context"),
         ]:
             lines.extend([f"## {title}", *[f"- {item}" for item in insights.get(key, [])], ""])
+        lines.extend(["## 페르소나 유효성 검증"])
+        for row in insights.get("persona_validity", []):
+            lines.append(f"- {row}")
+        lines.append("")
         lines.extend(
             [
                 "## 적용 원칙",
@@ -431,6 +594,8 @@ class ReplayReportCatalog:
   {self._list_section("디벨롭한 내용", insights.get("developments", []))}
   {self._list_section("추가 개선 인사이트", insights.get("improvement_insights", []))}
   {self._list_section("거시경제/국내정세 인사이트", insights.get("macro_context", []))}
+  {self._table_section("페르소나 유효성 검증", catalog.get("persona_validity", []))}
+  {self._table_section("거시/국내정세와 페르소나 연결 검토", catalog.get("macro_persona_context", []))}
   {self._table_section("시간대별 후보 비교", catalog.get("time_windows", []))}
   {self._table_section("일별 리포트", catalog.get("daily", []))}
   {self._table_section("주간 통계", catalog.get("weekly", []))}
@@ -475,6 +640,8 @@ class ReplayReportCatalog:
             return ""
         if key.endswith("_krw") or key in {"portfolio_pnl_krw", "weekday_pnl_krw", "weekend_pnl_krw"}:
             return self._krw(value)
+        if key.endswith("_corr"):
+            return f"{float(value):.3f}"
         if key.endswith("_rate") or key.endswith("_return_pct") or key.endswith("_pnl_pct"):
             return f"{float(value):.2f}%" if key.endswith("_pct") else self._pct(value)
         if isinstance(value, float):
@@ -502,6 +669,26 @@ class ReplayReportCatalog:
             "weekend_pnl_krw": "주말손익",
             "entry_time": "진입시간",
             "avg_pnl_pct": "평균손익",
+            "persona": "페르소나",
+            "role": "역할",
+            "samples": "표본",
+            "trade_samples": "거래표본",
+            "avg_score": "평균점수",
+            "pass_threshold": "통과기준",
+            "pass_count": "PASS",
+            "watch_count": "WATCH",
+            "reject_count": "REJECT",
+            "high_score_samples": "고점수표본",
+            "high_score_trade_samples": "고점수거래",
+            "high_score_win_rate": "고점수승률",
+            "low_score_win_rate": "저점수승률",
+            "score_entry_corr": "점수-진입상관",
+            "score_pnl_corr": "점수-손익상관",
+            "validity": "유효성 판정",
+            "review_note": "검토 메모",
+            "macro_link": "거시/정세 연결",
+            "current_gap": "현재 한계",
+            "validation_rule": "검증 기준",
         }
         return labels.get(key, key)
 

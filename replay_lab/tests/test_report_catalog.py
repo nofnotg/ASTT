@@ -24,6 +24,14 @@ def test_report_catalog_builds_daily_weekly_monthly(tmp_path):
             {"date_kst": "2026-05-09", "market": "KRW-ETH"},
         ]
     ).to_parquet(exp_dir / "session_results.parquet", index=False)
+    pd.DataFrame(
+        [
+            {"session_id": "s1", "date_kst": "2026-05-08", "market": "KRW-BTC", "persona": "Mr.K", "score": 72, "decision": "PASS", "veto": False},
+            {"session_id": "s1", "date_kst": "2026-05-08", "market": "KRW-BTC", "persona": "Rezo", "score": 88, "decision": "PASS", "veto": False},
+            {"session_id": "s2", "date_kst": "2026-05-09", "market": "KRW-ETH", "persona": "Mr.K", "score": 55, "decision": "REJECT", "veto": False},
+            {"session_id": "s2", "date_kst": "2026-05-09", "market": "KRW-ETH", "persona": "Iris", "score": 85, "decision": "PASS", "veto": False},
+        ]
+    ).to_parquet(exp_dir / "persona_scores.parquet", index=False)
 
     catalog = ReplayReportCatalog(tmp_path, capital_krw=500000).build()
 
@@ -31,6 +39,8 @@ def test_report_catalog_builds_daily_weekly_monthly(tmp_path):
     assert len(catalog["weekly"]) == 1
     assert len(catalog["monthly"]) == 1
     assert len(catalog["time_windows"]) == 2
+    assert len(catalog["persona_validity"]) == 3
+    assert len(catalog["macro_persona_context"]) == 5
     assert catalog["monthly"][0]["entries"] == 2
     assert catalog["insights"]["summary"]["total_entries"] == 2
     assert catalog["insights"]["summary"]["portfolio_pnl_krw"] == 4000
@@ -44,3 +54,5 @@ def test_report_catalog_builds_daily_weekly_monthly(tmp_path):
     assert "<html lang=\"ko\">" in html
     assert "앱의 가능성" in html
     assert "쉬운 용어 해설" in html
+    assert "페르소나 유효성 검증" in html
+    assert "거시/국내정세와 페르소나 연결 검토" in html
