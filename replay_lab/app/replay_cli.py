@@ -62,11 +62,30 @@ def load_0900(args: argparse.Namespace) -> int:
     return 0
 
 
+def load_intraday(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
+    start = date.today() - timedelta(days=args.days - 1)
+    paths = loader.load_batch_intraday_days(markets[: args.top_markets], start, date.today())
+    print(f"cached intraday days: {len(paths)}")
+    return 0
+
+
 def run_0900(args: argparse.Namespace) -> int:
     day = date.fromisoformat(args.date)
     clock = ReplayClock(datetime.combine(day, datetime.min.time()).replace(hour=8, minute=50))
     provider = ReplayDataProvider(clock)
-    config = ReplaySessionConfig(session_id=f"manual_{day.isoformat()}", date_kst=day, markets=_resolve_markets(args.markets, provider=provider, top_limit=args.top_markets))
+    config = ReplaySessionConfig(
+        session_id=f"manual_{day.isoformat()}",
+        date_kst=day,
+        markets=_resolve_markets(args.markets, provider=provider, top_limit=args.top_markets),
+        scan_time=args.scan_time,
+        pre_score_time=args.pre_score_time,
+        decision_time=args.decision_time,
+        entry_time=args.entry_time,
+        trade_end_time=args.trade_end_time,
+        strategy_label=args.strategy_label,
+    )
     result = ReplayRunner0900(provider, clock).run(config, top_market_limit=args.top_markets)
     print(json.dumps({key: len(value) for key, value in result.items()}, ensure_ascii=False))
     return 0
@@ -74,8 +93,48 @@ def run_0900(args: argparse.Namespace) -> int:
 
 def batch_0900(args: argparse.Namespace) -> int:
     provider = ReplayDataProvider(ReplayClock(datetime.now()))
-    exp_dir = run_batch_0900(args.days, _resolve_markets(args.markets, provider=provider, top_limit=args.top_markets), args.top_markets)
+    exp_dir = run_batch_0900(
+        args.days,
+        _resolve_markets(args.markets, provider=provider, top_limit=args.top_markets),
+        args.top_markets,
+        scan_time=args.scan_time,
+        pre_score_time=args.pre_score_time,
+        decision_time=args.decision_time,
+        entry_time=args.entry_time,
+        trade_end_time=args.trade_end_time,
+        strategy_label=args.strategy_label,
+    )
     print(f"experiment: {exp_dir}")
+    return 0
+
+
+def _window_config(entry_time: str) -> dict[str, str]:
+    entry = datetime.strptime(entry_time, "%H:%M")
+    scan = entry - timedelta(minutes=10)
+    pre = entry - timedelta(minutes=1)
+    end = entry + timedelta(minutes=30)
+    if scan.day != entry.day or end.day != entry.day:
+        raise ValueError("entry times must leave room for same-day 10 minute analysis and 30 minute trade window")
+    return {
+        "scan_time": scan.strftime("%H:%M"),
+        "pre_score_time": pre.strftime("%H:%M"),
+        "decision_time": pre.strftime("%H:%M"),
+        "entry_time": entry.strftime("%H:%M"),
+        "trade_end_time": end.strftime("%H:%M"),
+        "strategy_label": f"{scan.strftime('%H%M')}_{entry.strftime('%H%M')}_scalp",
+    }
+
+
+def batch_windows(args: argparse.Namespace) -> int:
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, provider=provider, top_limit=args.top_markets)
+    entry_times = [item.strip() for item in args.entry_times.split(",") if item.strip()]
+    experiments = []
+    for entry_time in entry_times:
+        config = _window_config(entry_time)
+        exp_dir = run_batch_0900(args.days, markets, args.top_markets, **config)
+        experiments.append(str(exp_dir))
+    print(json.dumps({"experiments": experiments}, ensure_ascii=False, indent=2))
     return 0
 
 
@@ -109,8 +168,8 @@ def export_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def build_report_catalog(_: argparse.Namespace) -> int:
-    catalog = ReplayReportCatalog().build()
+def build_report_catalog(args: argparse.Namespace) -> int:
+    catalog = ReplayReportCatalog(capital_krw=args.capital_krw).build()
     print(json.dumps({key: len(value) for key, value in catalog.items()}, ensure_ascii=False))
     return 0
 
@@ -135,17 +194,42 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--markets")
     p.set_defaults(func=load_0900)
 
+    p = sub.add_parser("load-intraday")
+    p.add_argument("--days", type=int, default=30)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.set_defaults(func=load_intraday)
+
     p = sub.add_parser("run-0900")
     p.add_argument("--date", required=True)
     p.add_argument("--markets")
     p.add_argument("--top-markets", type=int)
+    p.add_argument("--scan-time", default="08:50")
+    p.add_argument("--pre-score-time", default="08:59")
+    p.add_argument("--decision-time", default="08:59")
+    p.add_argument("--entry-time", default="09:00")
+    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=run_0900)
 
     p = sub.add_parser("batch-0900")
     p.add_argument("--days", type=int, default=30)
     p.add_argument("--top-markets", type=int, default=50)
     p.add_argument("--markets")
+    p.add_argument("--scan-time", default="08:50")
+    p.add_argument("--pre-score-time", default="08:59")
+    p.add_argument("--decision-time", default="08:59")
+    p.add_argument("--entry-time", default="09:00")
+    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=batch_0900)
+
+    p = sub.add_parser("batch-windows")
+    p.add_argument("--days", type=int, default=30)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--entry-times", default="01:00,05:00,09:00,13:00,17:00,21:00")
+    p.set_defaults(func=batch_windows)
 
     p = sub.add_parser("walk-forward")
     p.add_argument("--days", type=int, default=90)
@@ -166,6 +250,7 @@ def main(argv: list[str] | None = None) -> int:
     p.set_defaults(func=export_summary)
 
     p = sub.add_parser("build-report-catalog")
+    p.add_argument("--capital-krw", type=float, default=500000)
     p.set_defaults(func=build_report_catalog)
 
     args = parser.parse_args(argv)

@@ -146,6 +146,12 @@ Load 09:00 windows:
 python -m replay_lab.app.replay_cli load-0900 --days 30 --top-markets 50 --markets KRW-BTC,KRW-ETH
 ```
 
+Load full intraday 1m candles for time-window research:
+
+```bash
+python -m replay_lab.app.replay_cli load-intraday --days 30 --top-markets 50
+```
+
 Run a single replay:
 
 ```bash
@@ -158,12 +164,18 @@ Run a batch replay:
 python -m replay_lab.app.replay_cli batch-0900 --days 30 --top-markets 50 --markets KRW-BTC,KRW-ETH
 ```
 
-Build daily, weekly, and monthly replay report catalog:
-The catalog also creates an insight report that summarizes product potential, limits, development progress, and next improvement ideas.
-It also renders a standalone HTML document at `replay_store/reports/catalog/replay_report.html`.
+Run candidate entry-time comparisons:
 
 ```bash
-python -m replay_lab.app.replay_cli build-report-catalog
+python -m replay_lab.app.replay_cli batch-windows --days 30 --top-markets 50 --entry-times 01:00,05:00,09:00,13:00,17:00,21:00
+```
+
+Build daily, weekly, and monthly replay report catalog:
+The catalog also creates weekday/weekend splits, time-window statistics, 500,000 KRW portfolio-style PnL, easy glossary notes, and an insight report that summarizes product potential, limits, development progress, macro/domestic context notes, and next improvement ideas.
+It renders a standalone HTML document at `replay_store/reports/catalog/replay_report.html`.
+
+```bash
+python -m replay_lab.app.replay_cli build-report-catalog --capital-krw 500000
 ```
 
 Walk-forward window generation:

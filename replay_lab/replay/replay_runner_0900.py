@@ -108,6 +108,10 @@ class ReplayRunner0900:
             "date_kst": config.date_kst.isoformat(),
             "market": market,
             "decision_time_kst": self.clock.current_time_kst.isoformat(),
+            "entry_time_kst": _dt(config, config.entry_time).isoformat() if config.entry_time else self.clock.current_time_kst.isoformat(),
+            "trade_end_time_kst": _dt(config, config.trade_end_time).isoformat(),
+            "strategy_label": config.strategy_label,
+            "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
             "final_score": decision.final_score,
             "final_decision": decision.decision,
             "vetoed": decision.vetoed,
@@ -116,9 +120,10 @@ class ReplayRunner0900:
         }
         trade_row = None
         if decision.decision == "ENTER" and not candles.empty:
+            entry_at = _dt(config, config.entry_time) if config.entry_time else self.clock.current_time_kst
             self.clock.advance_to(_dt(config, config.trade_end_time))
             outcome = self.provider.get_candles(market, "1m", 40)
-            outcome = outcome[outcome["time"] >= pd.Timestamp(_dt(config, config.decision_time))]
+            outcome = outcome[outcome["time"] >= pd.Timestamp(entry_at)]
             stop_loss = price * 0.985
             take_profit = price * 1.015
             fill = simulate_long_trade(outcome, price, stop_loss, take_profit)
@@ -126,6 +131,11 @@ class ReplayRunner0900:
                 "session_id": config.session_id,
                 "date_kst": config.date_kst.isoformat(),
                 "market": market,
+                "decision_time_kst": _dt(config, config.decision_time).isoformat(),
+                "entry_time_kst": entry_at.isoformat(),
+                "trade_end_time_kst": _dt(config, config.trade_end_time).isoformat(),
+                "strategy_label": config.strategy_label,
+                "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
                 **asdict(fill),
             }
         return {
@@ -133,6 +143,13 @@ class ReplayRunner0900:
                 "session_id": config.session_id,
                 "date_kst": config.date_kst.isoformat(),
                 "market": market,
+                "scan_time": config.scan_time,
+                "pre_score_time": config.pre_score_time,
+                "decision_time": config.decision_time,
+                "entry_time": config.entry_time or config.decision_time,
+                "trade_end_time": config.trade_end_time,
+                "strategy_label": config.strategy_label,
+                "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
                 "candidate": not pre_candles.empty,
                 "data_quality": quality["quality"],
             },

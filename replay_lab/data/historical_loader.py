@@ -87,12 +87,26 @@ class HistoricalLoader:
         end = datetime.combine(day, time(9, 30))
         return self.load_candles(market, "1m", start, end)
 
+    def load_intraday_day(self, market: str, day: date) -> Path:
+        start = datetime.combine(day, time(0, 0))
+        end = datetime.combine(day, time(23, 59))
+        return self.load_candles(market, "1m", start, end)
+
     def load_batch_0900_windows(self, markets: Iterable[str], start_date: date, end_date: date) -> list[Path]:
         paths = []
         day = start_date
         while day <= end_date:
             for market in markets:
                 paths.append(self.load_0900_window(market, day))
+            day += timedelta(days=1)
+        return paths
+
+    def load_batch_intraday_days(self, markets: Iterable[str], start_date: date, end_date: date) -> list[Path]:
+        paths = []
+        day = start_date
+        while day <= end_date:
+            for market in markets:
+                paths.append(self.load_intraday_day(market, day))
             day += timedelta(days=1)
         return paths
 

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -35,7 +34,7 @@ elif section == "Replay Reports":
     else:
         catalog = ReplayReportCatalog().load_or_build()
     st.caption("Research reports are read-only sidecar outputs. They do not change live settings.")
-    insights_tab, daily_tab, weekly_tab, monthly_tab, files_tab = st.tabs(["Insights", "Daily", "Weekly", "Monthly", "Report Files"])
+    insights_tab, daily_tab, weekly_tab, monthly_tab, windows_tab, files_tab = st.tabs(["Insights", "Daily", "Weekly", "Monthly", "Time Windows", "Report Files"])
     with insights_tab:
         st.subheader("Replay Lab Insights")
         insights = catalog.get("insights", {})
@@ -45,8 +44,9 @@ elif section == "Replay Reports":
         for title, key in [
             ("앱의 가능성", "potential"),
             ("현재 한계", "limits"),
-            ("디벨롭된 내용", "developments"),
+            ("디벨롭한 내용", "developments"),
             ("추가 개선 인사이트", "improvement_insights"),
+            ("거시경제/국내정세 인사이트", "macro_context"),
         ]:
             st.markdown(f"### {title}")
             for item in insights.get(key, []):
@@ -60,6 +60,9 @@ elif section == "Replay Reports":
     with monthly_tab:
         st.subheader("Monthly Replay Statistics")
         st.dataframe(pd.DataFrame(catalog["monthly"]), use_container_width=True)
+    with windows_tab:
+        st.subheader("Replay Time Window Statistics")
+        st.dataframe(pd.DataFrame(catalog.get("time_windows", [])), use_container_width=True)
     with files_tab:
         st.subheader("Generated Report Files")
         report_dir = REPLAY_STORE_DIR / "reports" / "catalog"
