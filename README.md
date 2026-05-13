@@ -164,6 +164,12 @@ Run a batch replay:
 python -m replay_lab.app.replay_cli batch-0900 --days 30 --top-markets 50 --markets KRW-BTC,KRW-ETH
 ```
 
+Run day-by-day historical study. This loads one date, replays it with `ReplayClock`, writes progress, then moves to the next date:
+
+```bash
+python -m replay_lab.app.replay_cli study-0900-range --start-date 2025-05-01 --end-date 2026-05-13 --top-markets 50
+```
+
 Run candidate entry-time comparisons:
 
 ```bash

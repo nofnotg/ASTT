@@ -12,7 +12,7 @@ from replay_lab.export.artifact_exporter import export_approved_patch, export_re
 from replay_lab.feedback.athena_reviewer import review_experiment
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
-from replay_lab.replay.batch_replay import run_batch_0900
+from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.replay.walk_forward import build_walk_forward_windows
@@ -97,6 +97,26 @@ def batch_0900(args: argparse.Namespace) -> int:
         args.days,
         _resolve_markets(args.markets, provider=provider, top_limit=args.top_markets),
         args.top_markets,
+        scan_time=args.scan_time,
+        pre_score_time=args.pre_score_time,
+        decision_time=args.decision_time,
+        entry_time=args.entry_time,
+        trade_end_time=args.trade_end_time,
+        strategy_label=args.strategy_label,
+    )
+    print(f"experiment: {exp_dir}")
+    return 0
+
+
+def study_0900_range(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
+    exp_dir = run_daily_study_0900(
+        date.fromisoformat(args.start_date),
+        date.fromisoformat(args.end_date),
+        markets,
+        args.top_markets,
+        load_first=not args.no_load_first,
         scan_time=args.scan_time,
         pre_score_time=args.pre_score_time,
         decision_time=args.decision_time,
@@ -223,6 +243,20 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--trade-end-time", default="09:30")
     p.add_argument("--strategy-label", default="0850_0900_scalp")
     p.set_defaults(func=batch_0900)
+
+    p = sub.add_parser("study-0900-range")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--no-load-first", action="store_true")
+    p.add_argument("--scan-time", default="08:50")
+    p.add_argument("--pre-score-time", default="08:59")
+    p.add_argument("--decision-time", default="08:59")
+    p.add_argument("--entry-time", default="09:00")
+    p.add_argument("--trade-end-time", default="09:30")
+    p.add_argument("--strategy-label", default="0850_0900_scalp")
+    p.set_defaults(func=study_0900_range)
 
     p = sub.add_parser("batch-windows")
     p.add_argument("--days", type=int, default=30)

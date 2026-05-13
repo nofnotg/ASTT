@@ -7,6 +7,7 @@ from pathlib import Path
 import pandas as pd
 
 from replay_lab.clock.replay_clock import ReplayClock
+from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.feedback.replay_report import write_replay_report
 from replay_lab.paths import REPLAY_STORE_DIR
@@ -82,5 +83,86 @@ def run_batch_0900(
         written[key] = frame
     report_path = write_replay_report(exp_dir, experiment_id, written)
     ExperimentRegistry().upsert_completed(experiment_id, start_date.isoformat(), end_date.isoformat(), f"top{top_markets or len(markets)}", report_path, written)
+    return exp_dir
+
+
+def run_daily_study_0900(
+    start_date: date,
+    end_date: date,
+    markets: list[str],
+    top_markets: int | None = None,
+    load_first: bool = True,
+    scan_time: str = "08:50",
+    pre_score_time: str = "08:59",
+    decision_time: str = "08:59",
+    entry_time: str = "09:00",
+    trade_end_time: str = "09:30",
+    strategy_label: str = "0850_0900_scalp",
+) -> Path:
+    experiment_id = datetime.utcnow().strftime("exp_%Y%m%d_%H%M%S_daily")
+    exp_dir = REPLAY_STORE_DIR / "experiments" / experiment_id
+    exp_dir.mkdir(parents=True, exist_ok=True)
+    config_payload = {
+        "experiment_id": experiment_id,
+        "start_date": start_date.isoformat(),
+        "end_date": end_date.isoformat(),
+        "markets": markets,
+        "top_markets": top_markets,
+        "load_first": load_first,
+        "scan_time": scan_time,
+        "pre_score_time": pre_score_time,
+        "decision_time": decision_time,
+        "entry_time": entry_time,
+        "trade_end_time": trade_end_time,
+        "strategy_label": strategy_label,
+        "mode": "PAPER_REPLAY_DAILY_STUDY",
+        "note": "Loads and replays one date at a time. ReplayClock still blocks future candles.",
+    }
+    (exp_dir / "config.json").write_text(json.dumps(config_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    all_results: dict[str, list[pd.DataFrame]] = {"session_results": [], "persona_scores": [], "decisions": [], "paper_trades": [], "feature_snapshots": []}
+    progress_path = exp_dir / "progress.jsonl"
+    loader = HistoricalLoader()
+    clock = ReplayClock(datetime.combine(start_date, datetime.min.time()))
+    provider = ReplayDataProvider(clock)
+    runner = ReplayRunner0900(provider, clock)
+
+    day = start_date
+    while day <= end_date:
+        if load_first:
+            loader.load_batch_0900_windows(markets[: top_markets or len(markets)], day, day)
+        config = ReplaySessionConfig(
+            session_id=f"{experiment_id}_{day.isoformat()}",
+            date_kst=day,
+            markets=markets,
+            scan_time=scan_time,
+            pre_score_time=pre_score_time,
+            decision_time=decision_time,
+            entry_time=entry_time,
+            trade_end_time=trade_end_time,
+            strategy_label=strategy_label,
+        )
+        result = runner.run(config, top_market_limit=top_markets)
+        daily_summary = {
+            "date": day.isoformat(),
+            "sessions": int(len(result["session_results"])),
+            "decisions": int(len(result["decisions"])),
+            "entries": int(len(result["paper_trades"])),
+            "wins": int((result["paper_trades"].get("pnl_pct", pd.Series(dtype=float)) > 0).sum()) if not result["paper_trades"].empty else 0,
+        }
+        with progress_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(daily_summary, ensure_ascii=False) + "\n")
+        for key, frame in result.items():
+            all_results[key].append(frame)
+        day += timedelta(days=1)
+
+    written = {}
+    for key, frames in all_results.items():
+        frame = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+        path = exp_dir / f"{key}.parquet"
+        frame.to_parquet(path, index=False)
+        written[key] = frame
+    report_path = write_replay_report(exp_dir, experiment_id, written)
+    ExperimentRegistry().upsert_completed(experiment_id, start_date.isoformat(), end_date.isoformat(), f"top{top_markets or len(markets)}_daily", report_path, written)
     return exp_dir
 
