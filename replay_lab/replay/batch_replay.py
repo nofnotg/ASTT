@@ -11,6 +11,7 @@ from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.feedback.replay_report import write_replay_report
 from replay_lab.paths import REPLAY_STORE_DIR
+from replay_lab.replay.fill_replay import simulate_long_trade
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.research.experiment_registry import ExperimentRegistry
@@ -96,6 +97,8 @@ def run_daily_study_0900(
     top_markets: int | None = None,
     load_first: bool = True,
     use_seconds: bool = False,
+    force_daily_entries: bool = False,
+    force_daily_count: int = 1,
     scan_time: str = "08:50",
     pre_score_time: str = "08:59",
     decision_time: str = "08:59",
@@ -115,6 +118,8 @@ def run_daily_study_0900(
         "top_markets": top_markets,
         "load_first": load_first,
         "use_seconds": use_seconds,
+        "force_daily_entries": force_daily_entries,
+        "force_daily_count": force_daily_count,
         "scan_time": scan_time,
         "pre_score_time": pre_score_time,
         "decision_time": decision_time,
@@ -153,6 +158,8 @@ def run_daily_study_0900(
             strategy_label=strategy_label,
         )
         result = runner.run(config, top_market_limit=top_markets)
+        if force_daily_entries:
+            result = _ensure_forced_daily_entries(result, provider, clock, config, force_daily_count)
         daily_summary = {
             "date": day.isoformat(),
             "sessions": int(len(result["session_results"])),
@@ -175,4 +182,80 @@ def run_daily_study_0900(
     report_path = write_replay_report(exp_dir, experiment_id, written)
     ExperimentRegistry().upsert_completed(experiment_id, start_date.isoformat(), end_date.isoformat(), f"top{top_markets or len(markets)}_daily", report_path, written)
     return exp_dir
+
+
+def _hhmm(day: date, value: str) -> datetime:
+    hour, minute = [int(part) for part in value.split(":")]
+    return datetime.combine(day, datetime.min.time()).replace(hour=hour, minute=minute)
+
+
+def _ensure_forced_daily_entries(
+    result: dict[str, pd.DataFrame],
+    provider: ReplayDataProvider,
+    clock: ReplayClock,
+    config: ReplaySessionConfig,
+    force_count: int,
+) -> dict[str, pd.DataFrame]:
+    decisions = result.get("decisions", pd.DataFrame()).copy()
+    trades = result.get("paper_trades", pd.DataFrame()).copy()
+    existing = set(trades.get("market", pd.Series(dtype=str)).astype(str).tolist()) if not trades.empty else set()
+    needed = max(0, force_count - len(existing))
+    if needed <= 0 or decisions.empty:
+        return result
+    candidates = decisions[~decisions["market"].astype(str).isin(existing)].copy()
+    non_veto = candidates[candidates.get("vetoed", pd.Series(dtype=bool)) != True]
+    if not non_veto.empty:
+        candidates = non_veto
+    candidates = candidates.sort_values(["final_score", "market"], ascending=[False, True]).head(needed)
+    forced_rows = []
+    for _, row in candidates.iterrows():
+        forced = _simulate_forced_entry(row, provider, clock, config)
+        if forced:
+            forced_rows.append(forced)
+            decisions.loc[decisions["market"] == row["market"], "forced_entry"] = True
+            decisions.loc[decisions["market"] == row["market"], "force_entry_reason"] = "daily_best_candidate"
+    if forced_rows:
+        forced_frame = pd.DataFrame(forced_rows)
+        trades = pd.concat([trades, forced_frame], ignore_index=True) if not trades.empty else forced_frame
+    result["decisions"] = decisions
+    result["paper_trades"] = trades
+    return result
+
+
+def _simulate_forced_entry(row: pd.Series, provider: ReplayDataProvider, clock: ReplayClock, config: ReplaySessionConfig) -> dict | None:
+    market = str(row["market"])
+    entry_at = _hhmm(config.date_kst, config.entry_time or config.decision_time)
+    trade_end = _hhmm(config.date_kst, config.trade_end_time)
+    clock.set(trade_end)
+    outcome = provider.get_candles(market, "1s", 4500)
+    fill_timeframe = "1s"
+    if outcome.empty:
+        outcome = provider.get_candles(market, "1m", 100)
+        fill_timeframe = "1m"
+    outcome = outcome[outcome["time"] >= pd.Timestamp(entry_at)]
+    if outcome.empty:
+        return None
+    signal_price = float(outcome.iloc[0]["open"])
+    stop_loss = signal_price * 0.985
+    take_profit = signal_price * 1.015
+    fill = simulate_long_trade(outcome, signal_price, stop_loss, take_profit)
+    payload = {
+        "session_id": row["session_id"],
+        "date_kst": config.date_kst.isoformat(),
+        "market": market,
+        "decision_time_kst": _hhmm(config.date_kst, config.decision_time).isoformat(),
+        "entry_time_kst": entry_at.isoformat(),
+        "target_window_end_time_kst": _hhmm(config.date_kst, config.target_window_end_time).isoformat(),
+        "trade_end_time_kst": trade_end.isoformat(),
+        "strategy_label": config.strategy_label,
+        "day_type": "weekend" if config.date_kst.weekday() >= 5 else "weekday",
+        "fill_timeframe": fill_timeframe,
+        "forced_entry": True,
+        "force_entry_reason": "daily_best_candidate",
+        "original_final_decision": row.get("final_decision", ""),
+        "original_no_entry_reason": row.get("no_entry_reason", ""),
+        "final_score": float(row.get("final_score", 0.0)),
+    }
+    payload.update(fill.__dict__)
+    return payload
 

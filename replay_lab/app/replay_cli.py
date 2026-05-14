@@ -10,6 +10,7 @@ from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
+from replay_lab.feedback.investment_report import InvestmentReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
@@ -121,6 +122,8 @@ def study_0900_range(args: argparse.Namespace) -> int:
         args.top_markets,
         load_first=not args.no_load_first,
         use_seconds=args.use_seconds,
+        force_daily_entries=args.force_daily_entries,
+        force_daily_count=args.force_daily_count,
         scan_time=args.scan_time,
         pre_score_time=args.pre_score_time,
         decision_time=args.decision_time,
@@ -198,6 +201,12 @@ def export_summary(args: argparse.Namespace) -> int:
 def build_report_catalog(args: argparse.Namespace) -> int:
     catalog = ReplayReportCatalog(capital_krw=args.capital_krw, start_date=args.start_date, current_schema_only=args.current_schema_only).build()
     print(json.dumps({key: len(value) for key, value in catalog.items()}, ensure_ascii=False))
+    return 0
+
+
+def build_investment_report(args: argparse.Namespace) -> int:
+    out = InvestmentReportBuilder(capital_krw=args.capital_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"investment report: {out}")
     return 0
 
 
@@ -280,6 +289,8 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--markets")
     p.add_argument("--no-load-first", action="store_true")
     p.add_argument("--use-seconds", action="store_true")
+    p.add_argument("--force-daily-entries", action="store_true")
+    p.add_argument("--force-daily-count", type=int, default=1)
     p.add_argument("--scan-time", default="08:50")
     p.add_argument("--pre-score-time", default="08:59")
     p.add_argument("--decision-time", default="08:59")
@@ -320,6 +331,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--current-schema-only", action="store_true", default=True)
     p.add_argument("--include-legacy", action="store_false", dest="current_schema_only")
     p.set_defaults(func=build_report_catalog)
+
+    p = sub.add_parser("build-investment-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.set_defaults(func=build_investment_report)
 
     p = sub.add_parser("sidecar-c-time-scan")
     p.add_argument("--start-date", default="2026-01-01")
