@@ -10,6 +10,7 @@ from replay_lab.data.historical_loader import HistoricalLoader
 from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
+from replay_lab.feedback.fear_divergence_report import FearDivergenceReportBuilder
 from replay_lab.feedback.investment_report import InvestmentReportBuilder
 from replay_lab.feedback.investment_v2_report import InvestmentV2ReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
@@ -19,8 +20,11 @@ from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
+from replay_lab.replay.fear_divergence_v4 import run_fear_divergence_v4
 from replay_lab.replay.small_seed_v3 import run_small_seed_v3
 from replay_lab.replay.walk_forward import build_walk_forward_windows
+from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
+from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
 from replay_lab.research.preopen_confirmed_compare import run_preopen_confirmed_compare
 from replay_lab.research.threshold_sweep_v3 import run_threshold_sweep_v3
 from replay_lab.research.time_window_sweep_v3 import run_time_window_sweep_v3
@@ -326,6 +330,57 @@ def build_small_seed_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def sweep_fear_divergence_v4(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, loader=loader, provider=provider, top_limit=args.top_markets)
+    out_dir = run_fear_divergence_sweep_v4(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+        timeframe=args.timeframe,
+        top_markets=args.top_markets,
+    )
+    print(f"fear divergence sweep v4: {out_dir}")
+    return 0
+
+
+def run_fear_divergence_v4_command(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, loader=loader, provider=provider, top_limit=args.top_markets)
+    exp_dir = run_fear_divergence_v4(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+        timeframe=args.timeframe,
+        top_markets=args.top_markets,
+    )
+    print(f"fear divergence v4 experiment: {exp_dir}")
+    return 0
+
+
+def compare_v3_v4_command(args: argparse.Namespace) -> int:
+    out_dir = compare_v3_v4(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+    )
+    print(f"v3 vs v4 compare: {out_dir}")
+    return 0
+
+
+def build_fear_divergence_report(args: argparse.Namespace) -> int:
+    out = FearDivergenceReportBuilder(capital_krw=args.capital_krw, order_krw=args.order_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"fear divergence report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -507,6 +562,40 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--capital-krw", type=float, default=500000)
     p.add_argument("--order-krw", type=float, default=10000)
     p.set_defaults(func=build_small_seed_report)
+
+    p = sub.add_parser("sweep-fear-divergence-v4")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.add_argument("--timeframe", default="5m", choices=["1m", "5m"])
+    p.set_defaults(func=sweep_fear_divergence_v4)
+
+    p = sub.add_parser("run-fear-divergence-v4")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.add_argument("--timeframe", default="5m", choices=["1m", "5m"])
+    p.set_defaults(func=run_fear_divergence_v4_command)
+
+    p = sub.add_parser("compare-v3-v4")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=compare_v3_v4_command)
+
+    p = sub.add_parser("build-fear-divergence-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=build_fear_divergence_report)
 
     args = parser.parse_args(argv)
     return args.func(args)

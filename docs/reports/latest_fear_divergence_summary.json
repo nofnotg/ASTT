@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-15T15:28:59.554127",
+  "period": {
+    "start_date": "2026-01-01",
+    "end_date": "2026-05-15"
+  },
+  "capital_krw": 500000.0,
+  "order_krw": 10000.0,
+  "best_v4_config": {
+    "status": "NO_VALID_FEAR_DIVERGENCE_CONFIG"
+  },
+  "v4_result": {
+    "entry_count": 0,
+    "win_rate": 0.0,
+    "profit_factor": 0.0,
+    "account_return_pct": 0.0,
+    "max_drawdown_pct": 0.0,
+    "consecutive_loss_max": 0,
+    "skeptic_reject_count": 0
+  },
+  "v3_vs_v4": "V4_INSUFFICIENT_SAMPLE",
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "next_actions": [
+    "V4 표본이 30회 미만이면 실전 판단을 금지하고 조건 완화/기간 확장 검증을 먼저 한다.",
+    "유효 V4 설정이 없으면 divergence/reentry/support 임계값을 분리해 민감도 실험을 추가한다.",
+    "V3와의 우열 판단 전에 V4 이벤트 표본을 늘린다.",
+    "V4.1에서 상단 밴드 익절, 1분봉, 15분봉, 청산 방식을 분리 실험한다."
+  ]
+}

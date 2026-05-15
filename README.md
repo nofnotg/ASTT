@@ -220,6 +220,17 @@ python -m replay_lab.app.replay_cli build-small-seed-report --start-date 2026-01
 
 The V3 report writes large artifacts under `replay_store/reports/small_seed_v3/` and commit-safe latest summaries under `docs/reports/`.
 
+Run the V4 fear-exhaustion divergence validation. V4 is an event-based rebound strategy, not a fixed-time breakout strategy. It uses a price-based fear oscillator, bullish fear divergence, Bollinger lower-band re-entry, support/trend context, and Skeptic Guard:
+
+```bash
+python -m replay_lab.app.replay_cli sweep-fear-divergence-v4 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --timeframe 5m
+python -m replay_lab.app.replay_cli run-fear-divergence-v4 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --timeframe 5m
+python -m replay_lab.app.replay_cli compare-v3-v4 --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli build-fear-divergence-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+```
+
+The V4 report writes large artifacts under `replay_store/reports/fear_divergence_v4/` and commit-safe latest summaries under `docs/reports/`.
+
 Walk-forward window generation:
 
 ```bash
