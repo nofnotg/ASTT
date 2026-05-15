@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-15T14:08:23.488337",
+  "period": {
+    "start_date": "2026-01-01",
+    "end_date": "2026-05-15"
+  },
+  "capital_krw": 500000.0,
+  "order_krw": 10000.0,
+  "best_time_windows": [
+    {
+      "window": "06:00",
+      "sessions": 132,
+      "candidate_count": 132,
+      "entry_count": 132,
+      "win_rate": 0.49242424242424243,
+      "avg_net_signal_pnl_pct": 0.21246152179253136,
+      "total_order_pnl_krw": 2804.4920876614133,
+      "account_return_pct": 0.5608984175322826,
+      "max_drawdown_pct": -0.07268304952551624,
+      "profit_factor": 2.275482562626634,
+      "risk_adjusted_score": 10.061
+    },
+    {
+      "window": "05:30",
+      "sessions": 132,
+      "candidate_count": 132,
+      "entry_count": 132,
+      "win_rate": 0.49242424242424243,
+      "avg_net_signal_pnl_pct": 0.13068131025545796,
+      "total_order_pnl_krw": 1724.993295372045,
+      "account_return_pct": 0.34499865907440896,
+      "max_drawdown_pct": -0.11264711348231743,
+      "profit_factor": 1.5632200180616436,
+      "risk_adjusted_score": 8.3926
+    },
+    {
+      "window": "01:00",
+      "sessions": 134,
+      "candidate_count": 134,
+      "entry_count": 134,
+      "win_rate": 0.4626865671641791,
+      "avg_net_signal_pnl_pct": 0.10180004024468149,
+      "total_order_pnl_krw": 1364.1205392787322,
+      "account_return_pct": 0.27282410785574646,
+      "max_drawdown_pct": -0.11580836563492389,
+      "profit_factor": 1.3349732747096659,
+      "risk_adjusted_score": 7.8617
+    },
+    {
+      "window": "06:30",
+      "sessions": 132,
+      "candidate_count": 132,
+      "entry_count": 132,
+      "win_rate": 0.4318181818181818,
+      "avg_net_signal_pnl_pct": 0.05499755822044438,
+      "total_order_pnl_krw": 725.967768509866,
+      "account_return_pct": 0.1451935537019732,
+      "max_drawdown_pct": -0.17321449139291561,
+      "profit_factor": 1.1894224045734558,
+      "risk_adjusted_score": 7.4028
+    },
+    {
+      "window": "05:00",
+      "sessions": 132,
+      "candidate_count": 132,
+      "entry_count": 132,
+      "win_rate": 0.36363636363636365,
+      "avg_net_signal_pnl_pct": 0.020498737659852457,
+      "total_order_pnl_krw": 270.5833371100523,
+      "account_return_pct": 0.05411666742201046,
+      "max_drawdown_pct": -0.137492931773927,
+      "profit_factor": 1.0820794554461153,
+      "risk_adjusted_score": 7.122
+    }
+  ],
+  "best_threshold_config": {
+    "status": "NO_VALID_THRESHOLD"
+  },
+  "preopen_vs_confirmed": {
+    "better_mode": "confirmed",
+    "preopen": {
+      "mode": "preopen",
+      "entries": 134,
+      "entry_count": 134,
+      "entry_days": 134,
+      "hold_days": 0,
+      "wins": 47,
+      "losses": 66,
+      "win_rate": 0.35074626865671643,
+      "avg_signal_pnl_pct": -0.1984579533664797,
+      "avg_net_signal_pnl_pct": -0.1984579533664797,
+      "avg_order_pnl_krw": -19.845795336647967,
+      "total_order_pnl_krw": -2659.3365751108277,
+      "account_return_pct": -0.5318673150221654,
+      "max_drawdown_pct": -0.5830580074705334,
+      "profit_factor": 0.600634030440504,
+      "avg_win_pct": 0.8509701532009493,
+      "avg_loss_pct": -1.0089236810841349,
+      "loss_day_count": 66,
+      "consecutive_loss_max": 6,
+      "false_breakout_loss_count": 34,
+      "missed_big_move_count": 12,
+      "time_exit_count": 82
+    },
+    "confirmed": {
+      "mode": "confirmed",
+      "entries": 134,
+      "entry_count": 134,
+      "entry_days": 134,
+      "hold_days": 0,
+      "wins": 51,
+      "losses": 69,
+      "win_rate": 0.3805970149253731,
+      "avg_signal_pnl_pct": -0.14107421987203844,
+      "avg_net_signal_pnl_pct": -0.14107421987203844,
+      "avg_order_pnl_krw": -14.107421987203843,
+      "total_order_pnl_krw": -1890.3945462853148,
+      "account_return_pct": -0.37807890925706295,
+      "max_drawdown_pct": -0.4694704792721964,
+      "profit_factor": 0.7011864736976379,
+      "avg_win_pct": 0.869792295936525,
+      "avg_loss_pct": -0.9168601819654478,
+      "loss_day_count": 69,
+      "consecutive_loss_max": 6,
+      "false_breakout_loss_count": 32,
+      "missed_big_move_count": 10,
+      "time_exit_count": 84
+    }
+  },
+  "small_seed_result": {
+    "entry_count": 134,
+    "win_rate": 0.3805970149253731,
+    "total_order_pnl_krw": -1890.3945462853148,
+    "account_return_pct": -0.37807890925706295,
+    "max_drawdown_pct": -0.4694704792721964,
+    "profit_factor": 0.7011864736976379,
+    "consecutive_loss_max": 6
+  },
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "next_actions": [
+    "Threshold Sweep에서 유효 후보가 없으므로 EntryGate 완화 범위를 더 넓혀 재실험한다.",
+    "계좌 성장률이 양수가 아니므로 MICRO LIVE 전환은 금지하고 PAPER 검증을 지속한다.",
+    "Confirmed 모드가 더 적합하면 09:03 확인 후 진입을 기본 후보로 둔다.",
+    "상위 시간창 3개만 대상으로 2주 Live Paper 검증 시나리오를 만든다.",
+    "시간창 랭킹 상단에 표본 30회 미만 구간이 있으면 참고 후보로만 보고, 신뢰 후보는 entry_count 30회 이상으로 제한한다."
+  ]
+}

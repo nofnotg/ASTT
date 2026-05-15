@@ -208,6 +208,18 @@ Build the V2 standalone HTML investment report:
 python -m replay_lab.app.replay_cli build-investment-v2-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000
 ```
 
+Run the V3 small-seed validation suite. V3 reports trade return, order PnL, and account return separately for a 500,000 KRW account and 10,000 KRW default order size:
+
+```bash
+python -m replay_lab.app.replay_cli sweep-v3-thresholds --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli sweep-time-windows-v3 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --step-minutes 30
+python -m replay_lab.app.replay_cli compare-entry-mode-v3 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli run-small-seed-v3 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --max-daily-entries 1
+python -m replay_lab.app.replay_cli build-small-seed-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+```
+
+The V3 report writes large artifacts under `replay_store/reports/small_seed_v3/` and commit-safe latest summaries under `docs/reports/`.
+
 Walk-forward window generation:
 
 ```bash
