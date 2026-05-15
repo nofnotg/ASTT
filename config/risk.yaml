@@ -1,0 +1,10 @@
+initial_capital_krw: 1000000
+min_order_krw: 5000
+max_order_krw: 10000
+max_daily_loss_pct: 1.5
+daily_target_pct: 1.0
+max_open_positions: 5
+min_risk_reward: 1.5
+max_spread_pct: 0.3
+allow_live_trading: false
+

@@ -1,0 +1,24 @@
+scan_start: "08:50"
+monitor_start: "09:00"
+decision_time: "09:03"
+trade_end: "09:30"
+
+max_scan_markets: 50
+candidate_market_prefix: "KRW"
+
+maggie:
+  min_score: 85
+  min_target_space_pct: 1.5
+  volume_body_multiplier: 2.0
+
+rezo:
+  min_score: 80
+  min_rvol: 2.5
+  min_volume_acceleration: 2.0
+  require_vwap_above: true
+
+iris:
+  min_score: 75
+  min_risk_reward: 1.5
+  max_spread_pct: 0.3
+
