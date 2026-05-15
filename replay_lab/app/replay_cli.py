@@ -11,9 +11,11 @@ from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
 from replay_lab.feedback.investment_report import InvestmentReportBuilder
+from replay_lab.feedback.investment_v2_report import InvestmentV2ReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
+from replay_lab.replay.investment_v2 import run_study_v2
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.replay.walk_forward import build_walk_forward_windows
@@ -210,6 +212,28 @@ def build_investment_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def study_v2(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
+    exp_dir = run_study_v2(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        candidate_limit=args.candidate_limit,
+        max_daily_entries=args.max_daily_entries,
+        capital_krw=args.capital_krw,
+        load_first=not args.no_load_first,
+    )
+    print(f"investment v2 experiment: {exp_dir}")
+    return 0
+
+
+def build_investment_v2_report(args: argparse.Namespace) -> int:
+    out = InvestmentV2ReportBuilder(capital_krw=args.capital_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"investment v2 report: {out}")
+    return 0
+
+
 def sidecar_c_time_scan(args: argparse.Namespace) -> int:
     loader = HistoricalLoader()
     markets = _resolve_markets(args.markets, loader=loader, top_limit=args.top_markets)
@@ -337,6 +361,23 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--end-date", default=date.today().isoformat())
     p.add_argument("--capital-krw", type=float, default=500000)
     p.set_defaults(func=build_investment_report)
+
+    p = sub.add_parser("study-v2")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--max-daily-entries", type=int, default=1)
+    p.add_argument("--candidate-limit", type=int, default=10)
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--markets")
+    p.add_argument("--top-markets", type=int)
+    p.add_argument("--no-load-first", action="store_true")
+    p.set_defaults(func=study_v2)
+
+    p = sub.add_parser("build-investment-v2-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.set_defaults(func=build_investment_v2_report)
 
     p = sub.add_parser("sidecar-c-time-scan")
     p.add_argument("--start-date", default="2026-01-01")

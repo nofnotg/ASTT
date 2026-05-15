@@ -196,6 +196,18 @@ It renders a standalone HTML document at `replay_store/reports/catalog/replay_re
 python -m replay_lab.app.replay_cli build-report-catalog --capital-krw 500000
 ```
 
+Run the second investment validation. V2 starts from all resolved KRW markets by default, narrows candidates with multi-timeframe filters, and lets EntryGate decide `ENTER`, `HOLD`, or `REJECT`. It records no-entry reasons instead of forcing a trade:
+
+```bash
+python -m replay_lab.app.replay_cli study-v2 --start-date 2026-01-01 --end-date 2026-05-15 --max-daily-entries 1 --candidate-limit 10 --capital-krw 500000
+```
+
+Build the V2 standalone HTML investment report:
+
+```bash
+python -m replay_lab.app.replay_cli build-investment-v2-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000
+```
+
 Walk-forward window generation:
 
 ```bash

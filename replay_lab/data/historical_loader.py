@@ -54,13 +54,12 @@ class HistoricalLoader:
     def load_candles(self, market: str, timeframe: str, start: datetime, end: datetime) -> Path:
         start_s = start.isoformat()
         end_s = end.isoformat()
+        path = self.store_dir / "normalized" / f"candles_{timeframe}" / f"{market}.parquet"
         cached = self.registry.find_covering(market, "candles", timeframe, start_s, end_s)
         if cached and Path(cached.storage_path).exists():
             return Path(cached.storage_path)
 
-        frame = self._fetch_candles(market, timeframe, start, end)
-        path = self.store_dir / "normalized" / f"candles_{timeframe}" / f"{market}.parquet"
-        frame = self.store.append_dedup(frame, path, ["market", "timeframe", "candle_time_kst"])
+        frame = self._load_cached_or_fetch_missing(market, timeframe, start, end, path)
         scoped = frame[(pd.to_datetime(frame["candle_time_kst"]) >= pd.Timestamp(start.replace(tzinfo=None))) & (pd.to_datetime(frame["candle_time_kst"]) <= pd.Timestamp(end.replace(tzinfo=None)))]
         quality = evaluate_candles(scoped)
         dataset_id = f"upbit_{market}_candles_{timeframe}_{start.date()}_{end.date()}"
@@ -81,6 +80,38 @@ class HistoricalLoader:
             )
         )
         return path
+
+    def _load_cached_or_fetch_missing(self, market: str, timeframe: str, start: datetime, end: datetime, path: Path) -> pd.DataFrame:
+        existing = pd.read_parquet(path) if path.exists() else pd.DataFrame()
+        fetch_windows: list[tuple[datetime, datetime]] = []
+        if existing.empty:
+            fetch_windows.append((start, end))
+        else:
+            times = pd.to_datetime(existing["candle_time_kst"])
+            cached_start = times.min().to_pydatetime()
+            cached_end = times.max().to_pydatetime()
+            step = self._timeframe_delta(timeframe)
+            if cached_start > start:
+                fetch_windows.append((start, cached_start - step))
+            if cached_end < end:
+                fetch_windows.append((cached_end + step, end))
+
+        frame = existing
+        for missing_start, missing_end in fetch_windows:
+            if missing_start > missing_end:
+                continue
+            fetched = self._fetch_candles(market, timeframe, missing_start, missing_end)
+            frame = self.store.append_dedup(fetched, path, ["market", "timeframe", "candle_time_kst"])
+        if frame.empty and path.exists():
+            return pd.read_parquet(path)
+        return frame
+
+    def _timeframe_delta(self, timeframe: str) -> timedelta:
+        if timeframe == "1s":
+            return timedelta(seconds=1)
+        if timeframe == "1d":
+            return timedelta(days=1)
+        return timedelta(minutes=TIMEFRAME_UNITS.get(timeframe, 1))
 
     def load_0900_window(self, market: str, day: date) -> Path:
         start = datetime.combine(day, time(0, 0))
