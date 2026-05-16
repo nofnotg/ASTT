@@ -16,6 +16,7 @@ from replay_lab.feedback.investment_report import InvestmentReportBuilder
 from replay_lab.feedback.investment_v2_report import InvestmentV2ReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.feedback.small_seed_report import SmallSeedReportBuilder
+from replay_lab.feedback.structure_reversal_report_v5 import StructureReversalV5ReportBuilder
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
@@ -24,6 +25,7 @@ from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.replay.fear_divergence_v4 import run_fear_divergence_v4
 from replay_lab.replay.fear_exhaustion_v41 import run_fear_exhaustion_v41
 from replay_lab.replay.small_seed_v3 import run_small_seed_v3
+from replay_lab.replay.structure_reversal_v5 import run_structure_reversal_v5
 from replay_lab.replay.walk_forward import build_walk_forward_windows
 from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
 from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
@@ -33,6 +35,10 @@ from replay_lab.research.fear_exhaustion_sweep_v41 import run_fear_exhaustion_sw
 from replay_lab.research.preopen_confirmed_compare import run_preopen_confirmed_compare
 from replay_lab.research.threshold_sweep_v3 import run_threshold_sweep_v3
 from replay_lab.research.time_window_sweep_v3 import run_time_window_sweep_v3
+from replay_lab.research.mtf_context_compare_v5 import compare_mtf_context_v5
+from replay_lab.research.structure_reversal_compare_all import compare_all_strategies_v5
+from replay_lab.research.structure_reversal_sweep_v5 import run_structure_reversal_sweep_v5
+from replay_lab.research.weekly_sniper_v5 import run_weekly_sniper_v5
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -460,6 +466,48 @@ def build_fear_exhaustion_v41_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def _v5_markets(args: argparse.Namespace) -> list[str]:
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    loader = HistoricalLoader()
+    return _resolve_markets(args.markets if hasattr(args, "markets") else None, provider=provider, loader=loader, top_limit=args.top_markets if hasattr(args, "top_markets") else None)
+
+
+def sweep_structure_reversal_v5(args: argparse.Namespace) -> int:
+    out = run_structure_reversal_sweep_v5(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, capital_krw=args.capital_krw, order_krw=args.order_krw)
+    print(f"structure reversal sweep v5: {out}")
+    return 0
+
+
+def run_structure_reversal_v5_command(args: argparse.Namespace) -> int:
+    exp = run_structure_reversal_v5(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, capital_krw=args.capital_krw, order_krw=args.order_krw, mode=args.mode)
+    print(f"structure reversal v5 experiment: {exp}")
+    return 0
+
+
+def run_weekly_sniper_v5_command(args: argparse.Namespace) -> int:
+    exp = run_weekly_sniper_v5(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, capital_krw=args.capital_krw, order_krw=args.order_krw)
+    print(f"weekly sniper v5 experiment: {exp}")
+    return 0
+
+
+def compare_mtf_context_v5_command(args: argparse.Namespace) -> int:
+    out = compare_mtf_context_v5(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, capital_krw=args.capital_krw, order_krw=args.order_krw)
+    print(f"mtf context compare v5: {out}")
+    return 0
+
+
+def compare_all_strategies_v5_command(args: argparse.Namespace) -> int:
+    out = compare_all_strategies_v5(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), capital_krw=args.capital_krw, order_krw=args.order_krw)
+    print(f"all strategies compare v5: {out}")
+    return 0
+
+
+def build_structure_reversal_v5_report(args: argparse.Namespace) -> int:
+    out = StructureReversalV5ReportBuilder(capital_krw=args.capital_krw, order_krw=args.order_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"structure reversal v5 report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -717,6 +765,57 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--capital-krw", type=float, default=500000)
     p.add_argument("--order-krw", type=float, default=10000)
     p.set_defaults(func=build_fear_exhaustion_v41_report)
+
+    p = sub.add_parser("sweep-structure-reversal-v5")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=sweep_structure_reversal_v5)
+
+    p = sub.add_parser("run-structure-reversal-v5")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.add_argument("--mode", choices=["small_seed_daily", "weekly_sniper"], default="small_seed_daily")
+    p.set_defaults(func=run_structure_reversal_v5_command)
+
+    p = sub.add_parser("run-weekly-sniper-v5")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=run_weekly_sniper_v5_command)
+
+    p = sub.add_parser("compare-mtf-context-v5")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=compare_mtf_context_v5_command)
+
+    p = sub.add_parser("compare-all-strategies-v5")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=compare_all_strategies_v5_command)
+
+    p = sub.add_parser("build-structure-reversal-v5-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=build_structure_reversal_v5_report)
 
     args = parser.parse_args(argv)
     return args.func(args)

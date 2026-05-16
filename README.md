@@ -243,6 +243,19 @@ python -m replay_lab.app.replay_cli build-fear-exhaustion-v41-report --start-dat
 
 The V4.1 report writes large artifacts under `replay_store/reports/fear_exhaustion_v41/` and commit-safe latest summaries under `docs/reports/`.
 
+Run the V5 multi-timeframe structure reversal validation. V5 keeps V3/V4/V4.1 intact and adds weekly/daily/4H context filters before 15M/5M trigger validation:
+
+```bash
+python -m replay_lab.app.replay_cli sweep-structure-reversal-v5 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli run-structure-reversal-v5 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --mode small_seed_daily
+python -m replay_lab.app.replay_cli run-weekly-sniper-v5 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli compare-mtf-context-v5 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli compare-all-strategies-v5 --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli build-structure-reversal-v5-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+```
+
+The V5 report writes large artifacts under `replay_store/reports/structure_reversal_v5/` and commit-safe latest summaries under `docs/reports/`.
+
 Walk-forward window generation:
 
 ```bash
