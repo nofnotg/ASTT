@@ -11,6 +11,7 @@ from replay_lab.data.replay_data_provider import ReplayDataProvider
 from replay_lab.export.artifact_exporter import export_approved_patch, export_research_summary
 from replay_lab.feedback.athena_reviewer import review_experiment
 from replay_lab.feedback.fear_divergence_report import FearDivergenceReportBuilder
+from replay_lab.feedback.fear_exhaustion_v41_report import FearExhaustionV41ReportBuilder
 from replay_lab.feedback.investment_report import InvestmentReportBuilder
 from replay_lab.feedback.investment_v2_report import InvestmentV2ReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
@@ -21,10 +22,14 @@ from replay_lab.replay.investment_v2 import run_study_v2
 from replay_lab.replay.replay_runner_0900 import ReplayRunner0900
 from replay_lab.replay.replay_session import ReplaySessionConfig
 from replay_lab.replay.fear_divergence_v4 import run_fear_divergence_v4
+from replay_lab.replay.fear_exhaustion_v41 import run_fear_exhaustion_v41
 from replay_lab.replay.small_seed_v3 import run_small_seed_v3
 from replay_lab.replay.walk_forward import build_walk_forward_windows
 from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
 from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
+from replay_lab.research.fear_exhaustion_compare_v4 import compare_v4_v41
+from replay_lab.research.fear_exhaustion_funnel_v41 import build_fear_exhaustion_funnel_v41
+from replay_lab.research.fear_exhaustion_sweep_v41 import run_fear_exhaustion_sweep_v41
 from replay_lab.research.preopen_confirmed_compare import run_preopen_confirmed_compare
 from replay_lab.research.threshold_sweep_v3 import run_threshold_sweep_v3
 from replay_lab.research.time_window_sweep_v3 import run_time_window_sweep_v3
@@ -381,6 +386,80 @@ def build_fear_divergence_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def _timeframes(value: str | None) -> list[str]:
+    items = _markets(value) if value else ["1m", "5m"]
+    invalid = [item for item in items if item not in {"1m", "5m"}]
+    if invalid:
+        raise ValueError(f"unsupported timeframes: {invalid}")
+    return items
+
+
+def sweep_fear_exhaustion_v41(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, loader=loader, provider=provider, top_limit=args.top_markets)
+    out_dir = run_fear_exhaustion_sweep_v41(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+        timeframes=_timeframes(args.timeframes),
+        top_markets=args.top_markets,
+    )
+    print(f"fear exhaustion sweep v4.1: {out_dir}")
+    return 0
+
+
+def run_fear_exhaustion_v41_command(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, loader=loader, provider=provider, top_limit=args.top_markets)
+    exp_dir = run_fear_exhaustion_v41(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+        timeframe=args.timeframe,
+        top_markets=args.top_markets,
+    )
+    print(f"fear exhaustion v4.1 experiment: {exp_dir}")
+    return 0
+
+
+def build_fear_exhaustion_funnel_v41_command(args: argparse.Namespace) -> int:
+    loader = HistoricalLoader()
+    provider = ReplayDataProvider(ReplayClock(datetime.now()))
+    markets = _resolve_markets(args.markets, loader=loader, provider=provider, top_limit=args.top_markets)
+    out_dir = build_fear_exhaustion_funnel_v41(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        markets=markets,
+        timeframes=_timeframes(args.timeframes),
+        top_markets=args.top_markets,
+    )
+    print(f"fear exhaustion funnel v4.1: {out_dir}")
+    return 0
+
+
+def compare_v4_v41_command(args: argparse.Namespace) -> int:
+    out_dir = compare_v4_v41(
+        start_date=date.fromisoformat(args.start_date),
+        end_date=date.fromisoformat(args.end_date),
+        capital_krw=args.capital_krw,
+        order_krw=args.order_krw,
+    )
+    print(f"v4 vs v4.1 compare: {out_dir}")
+    return 0
+
+
+def build_fear_exhaustion_v41_report(args: argparse.Namespace) -> int:
+    out = FearExhaustionV41ReportBuilder(capital_krw=args.capital_krw, order_krw=args.order_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"fear exhaustion v4.1 report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -596,6 +675,48 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--capital-krw", type=float, default=500000)
     p.add_argument("--order-krw", type=float, default=10000)
     p.set_defaults(func=build_fear_divergence_report)
+
+    p = sub.add_parser("sweep-fear-exhaustion-v41")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.add_argument("--timeframes", default="1m,5m")
+    p.set_defaults(func=sweep_fear_exhaustion_v41)
+
+    p = sub.add_parser("run-fear-exhaustion-v41")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.add_argument("--timeframe", default="1m", choices=["1m", "5m"])
+    p.set_defaults(func=run_fear_exhaustion_v41_command)
+
+    p = sub.add_parser("build-fear-exhaustion-funnel-v41")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--timeframes", default="1m,5m")
+    p.set_defaults(func=build_fear_exhaustion_funnel_v41_command)
+
+    p = sub.add_parser("compare-v4-v41")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=compare_v4_v41_command)
+
+    p = sub.add_parser("build-fear-exhaustion-v41-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--capital-krw", type=float, default=500000)
+    p.add_argument("--order-krw", type=float, default=10000)
+    p.set_defaults(func=build_fear_exhaustion_v41_report)
 
     args = parser.parse_args(argv)
     return args.func(args)

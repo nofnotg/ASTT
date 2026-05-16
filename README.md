@@ -231,6 +231,18 @@ python -m replay_lab.app.replay_cli build-fear-divergence-report --start-date 20
 
 The V4 report writes large artifacts under `replay_store/reports/fear_divergence_v4/` and commit-safe latest summaries under `docs/reports/`.
 
+Run the V4.1 relaxed fear-exhaustion validation. V4.1 keeps V4 intact, relaxes strict divergence into drop/retest/fear-cooling exhaustion patterns, compares 1m and 5m, and writes a funnel report so candidate bottlenecks are visible:
+
+```bash
+python -m replay_lab.app.replay_cli sweep-fear-exhaustion-v41 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --timeframes 1m,5m
+python -m replay_lab.app.replay_cli build-fear-exhaustion-funnel-v41 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --timeframes 1m,5m
+python -m replay_lab.app.replay_cli run-fear-exhaustion-v41 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --capital-krw 500000 --order-krw 10000 --timeframe 1m
+python -m replay_lab.app.replay_cli compare-v4-v41 --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+python -m replay_lab.app.replay_cli build-fear-exhaustion-v41-report --start-date 2026-01-01 --end-date 2026-05-15 --capital-krw 500000 --order-krw 10000
+```
+
+The V4.1 report writes large artifacts under `replay_store/reports/fear_exhaustion_v41/` and commit-safe latest summaries under `docs/reports/`.
+
 Walk-forward window generation:
 
 ```bash

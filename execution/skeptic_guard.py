@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 
-def evaluate_skeptic_guard(candidate: dict) -> dict:
+def evaluate_skeptic_guard(candidate: dict, mode: str = "BLOCKING", blocking_enabled: bool = True) -> dict:
     reject_reasons: list[str] = []
     warnings: list[str] = []
     required_confirmation: list[str] = []
@@ -42,10 +42,15 @@ def evaluate_skeptic_guard(candidate: dict) -> dict:
         required_confirmation.append("confirmed_reentry_required")
     else:
         decision = "PASS"
+    would_block = decision == "REJECT"
+    blocking_applied = bool(would_block and blocking_enabled and mode == "BLOCKING")
     return {
         "skeptic_decision": decision,
         "skeptic_score": score,
         "reject_reasons": reject_reasons,
         "warnings": warnings,
         "required_confirmation": required_confirmation,
+        "would_block": would_block,
+        "blocking_applied": blocking_applied,
+        "mode": mode,
     }
