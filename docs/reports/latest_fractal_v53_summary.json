@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-17T15:25:05.543352",
+  "period": {
+    "start_date": "2026-01-01",
+    "end_date": "2026-05-15"
+  },
+  "fractal_v53_result": {
+    "entry_count": 35,
+    "win_rate": 0.42857142857142855,
+    "profit_factor": 0.3407878393848651,
+    "initial_equity_krw": 500000.0,
+    "final_equity_krw": 495935.5210652701,
+    "equity_return_pct": -0.8128957869459759,
+    "total_pnl_krw": -4064.4789347298793,
+    "max_drawdown_pct": -0.8128957869459759,
+    "consecutive_loss_max": 3,
+    "full_validation_completed": false
+  },
+  "cache_benchmark": {
+    "schema_version": "1.0",
+    "generated_at": "2026-05-17T15:24:52.407452",
+    "cache_hit_rate": 1.0,
+    "cache_off_time": 0.04393709998112172,
+    "cache_on_time": 0.08651499997358769,
+    "speedup_ratio": 0.5078552851474929,
+    "full_validation_estimated_time": 25.954499992076308
+  },
+  "allocation_diagnostic": {
+    "good_trade_underallocated_count": 15,
+    "bad_trade_overallocated_count": 1,
+    "allocation_alpha_krw": 3959.7692249650177,
+    "summary": "grade_based_helped"
+  },
+  "zone_reaction_validation": {
+    "zone_count": 35,
+    "bounce_success_rate": 0.22857142857142856,
+    "rejection_success_rate": 0.0,
+    "breakdown_fail_rate": 0.17142857142857143,
+    "no_reaction_rate": 0.4857142857142857,
+    "zone_strength_correlation": 0.07328879432974843,
+    "validation_passed": false
+  },
+  "runner_exit_sweep": {
+    "best_runner_model": "AGGRESSIVE_RUNNER",
+    "best_trailing_model": "break_even_after_tp1",
+    "best_runner_contribution_krw": 618.564831418176
+  },
+  "walk_forward": {
+    "window_count": 7,
+    "positive_window_ratio": 0.0,
+    "avg_test_profit_factor": 0.18755190132706126,
+    "median_test_profit_factor": 0.0,
+    "avg_test_return_pct": -0.11637820455645644,
+    "worst_window_mdd_pct": -0.617462567427682,
+    "stable": false
+  },
+  "allocation_compare": [
+    {
+      "model": "fixed_10k",
+      "entry_count": 35,
+      "profit_factor": 0.8413913425801633,
+      "final_equity_krw": 499839.84817361884,
+      "return_pct": -0.0320303652762319,
+      "max_drawdown_pct": -0.04942875644811192,
+      "consecutive_loss_max": 3
+    },
+    {
+      "model": "full_seed",
+      "entry_count": 35,
+      "profit_factor": 0.8316209285748025,
+      "final_equity_krw": 491537.6869361172,
+      "return_pct": -1.692462612776563,
+      "max_drawdown_pct": -2.486498382260226,
+      "consecutive_loss_max": 3
+    },
+    {
+      "model": "grade_based_v53",
+      "entry_count": 35,
+      "profit_factor": 0.3407878393848651,
+      "final_equity_krw": 495935.5210652701,
+      "return_pct": -0.8128957869459759,
+      "max_drawdown_pct": -0.8128957869459759,
+      "consecutive_loss_max": 3
+    }
+  ],
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "insights": [
+    "Full top50 coverage was not proven from the available V5.2 seed, so MICRO_LIVE_READY is blocked.",
+    "Grade-based allocation added defensive alpha versus full-seed counterfactual in this replay sample.",
+    "Zone reaction validation is not strong enough yet; zone strength needs more discriminating labels.",
+    "Runner/trailing produced positive contribution in the diagnostic sweep, but it still needs walk-forward confirmation.",
+    "Walk-forward is not stable; this is the main blocker for any live transition.",
+    "Best allocation model in the current comparison: fixed_10k."
+  ]
+}
