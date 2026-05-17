@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-17T20:14:31.757084",
+  "period": {
+    "start_date": "2026-01-01",
+    "end_date": "2026-05-15"
+  },
+  "strategy_results": [
+    {
+      "strategy_id": "MTF_ONLY",
+      "entry_count": 175,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619035,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.3157263746981509,
+      "consecutive_loss_max": 15,
+      "time_stop_count": 82,
+      "stop_loss_count": 56,
+      "take_profit_count": 34
+    },
+    {
+      "strategy_id": "ZONE_ONLY",
+      "entry_count": 175,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619035,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.3157263746981509,
+      "consecutive_loss_max": 15,
+      "time_stop_count": 82,
+      "stop_loss_count": 56,
+      "take_profit_count": 34
+    },
+    {
+      "strategy_id": "MTF_PLUS_ZONE",
+      "entry_count": 175,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619035,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.3157263746981509,
+      "consecutive_loss_max": 15,
+      "time_stop_count": 82,
+      "stop_loss_count": 56,
+      "take_profit_count": 34
+    }
+  ],
+  "exit_model_results": [
+    {
+      "exit_model": "FIXED_RR_1_0",
+      "entry_count": 105,
+      "win_rate": 0.45714285714285713,
+      "avg_win_pct": 0.5452188893974003,
+      "avg_loss_pct": -0.6272580642673332,
+      "profit_factor": 0.7726309798245002,
+      "expectancy_pct": -0.07334694075581695,
+      "max_drawdown_pct": -0.21641604379276977,
+      "consecutive_loss_max": 9,
+      "time_stop_count": 45,
+      "stop_loss_count": 33,
+      "take_profit_count": 27
+    },
+    {
+      "exit_model": "FIXED_RR_1_2",
+      "entry_count": 105,
+      "win_rate": 0.45714285714285713,
+      "avg_win_pct": 0.6332235297686309,
+      "avg_loss_pct": -0.6272580642673332,
+      "profit_factor": 0.8973425641833584,
+      "expectancy_pct": -0.033116248014682874,
+      "max_drawdown_pct": -0.17993158903639997,
+      "consecutive_loss_max": 9,
+      "time_stop_count": 48,
+      "stop_loss_count": 33,
+      "take_profit_count": 24
+    },
+    {
+      "exit_model": "FIXED_RR_1_5",
+      "entry_count": 105,
+      "win_rate": 0.45714285714285713,
+      "avg_win_pct": 0.7047287163368404,
+      "avg_loss_pct": -0.6272580642673332,
+      "profit_factor": 0.9986727334696628,
+      "expectancy_pct": -0.0004281627263585338,
+      "max_drawdown_pct": -0.1655091777151903,
+      "consecutive_loss_max": 9,
+      "time_stop_count": 54,
+      "stop_loss_count": 33,
+      "take_profit_count": 18
+    },
+    {
+      "exit_model": "ZONE_TARGET_FULL_EXIT",
+      "entry_count": 105,
+      "win_rate": 0.42857142857142855,
+      "avg_win_pct": 0.6893192203151786,
+      "avg_loss_pct": -0.6363497450953682,
+      "profit_factor": 0.8551891293329482,
+      "expectancy_pct": -0.05002448148812334,
+      "max_drawdown_pct": -0.1654829599788439,
+      "consecutive_loss_max": 9,
+      "time_stop_count": 54,
+      "stop_loss_count": 36,
+      "take_profit_count": 15
+    },
+    {
+      "exit_model": "TP1_BREAK_EVEN",
+      "entry_count": 105,
+      "win_rate": 0.37142857142857144,
+      "avg_win_pct": 0.5602694023352611,
+      "avg_loss_pct": -0.6272580642673332,
+      "profit_factor": 0.6450917666085743,
+      "expectancy_pct": -0.1144897978986743,
+      "max_drawdown_pct": -0.3115813118823571,
+      "consecutive_loss_max": 9,
+      "time_stop_count": 45,
+      "stop_loss_count": 33,
+      "take_profit_count": 18
+    }
+  ],
+  "module_ablation_results": [
+    {
+      "module_stack": "BASE_TRIGGER_ONLY",
+      "entry_count": 525,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.05428112617673119,
+      "max_drawdown_pct": -0.9471791240944527,
+      "consecutive_loss_max": 45,
+      "time_stop_count": 246,
+      "stop_loss_count": 168,
+      "take_profit_count": 102
+    },
+    {
+      "module_stack": "BASE+DAILY",
+      "entry_count": 525,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.05428112617673119,
+      "max_drawdown_pct": -0.9471791240944527,
+      "consecutive_loss_max": 45,
+      "time_stop_count": 246,
+      "stop_loss_count": 168,
+      "take_profit_count": 102
+    },
+    {
+      "module_stack": "BASE+H4",
+      "entry_count": 525,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.05428112617673119,
+      "max_drawdown_pct": -0.9471791240944527,
+      "consecutive_loss_max": 45,
+      "time_stop_count": 246,
+      "stop_loss_count": 168,
+      "take_profit_count": 102
+    },
+    {
+      "module_stack": "BASE+DAILY+H4",
+      "entry_count": 525,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973625,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.05428112617673119,
+      "max_drawdown_pct": -0.9471791240944527,
+      "consecutive_loss_max": 45,
+      "time_stop_count": 246,
+      "stop_loss_count": 168,
+      "take_profit_count": 102
+    },
+    {
+      "module_stack": "BASE+ZONE",
+      "entry_count": 350,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973624,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.6314527493963018,
+      "consecutive_loss_max": 30,
+      "time_stop_count": 164,
+      "stop_loss_count": 112,
+      "take_profit_count": 68
+    },
+    {
+      "module_stack": "BASE+DAILY+H4+ZONE",
+      "entry_count": 350,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973624,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.6314527493963018,
+      "consecutive_loss_max": 30,
+      "time_stop_count": 164,
+      "stop_loss_count": 112,
+      "take_profit_count": 68
+    },
+    {
+      "module_stack": "BASE+DAILY+H4+ZONE+BTC",
+      "entry_count": 350,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973624,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.6314527493963018,
+      "consecutive_loss_max": 30,
+      "time_stop_count": 164,
+      "stop_loss_count": 112,
+      "take_profit_count": 68
+    },
+    {
+      "module_stack": "BASE+DAILY+H4+ZONE+TARGET",
+      "entry_count": 350,
+      "win_rate": 0.4342857142857143,
+      "avg_win_pct": 0.6283424829359475,
+      "avg_loss_pct": -0.6291563272973624,
+      "profit_factor": 0.8340845087619037,
+      "expectancy_pct": -0.0542811261767312,
+      "max_drawdown_pct": -0.6314527493963018,
+      "consecutive_loss_max": 30,
+      "time_stop_count": 164,
+      "stop_loss_count": 112,
+      "take_profit_count": 68
+    }
+  ],
+  "best_simple_strategy": {
+    "strategy_id": "MTF_ONLY",
+    "entry_count": 175,
+    "win_rate": 0.4342857142857143,
+    "avg_win_pct": 0.6283424829359475,
+    "avg_loss_pct": -0.6291563272973625,
+    "profit_factor": 0.8340845087619035,
+    "expectancy_pct": -0.0542811261767312,
+    "max_drawdown_pct": -0.3157263746981509,
+    "consecutive_loss_max": 15,
+    "time_stop_count": 82,
+    "stop_loss_count": 56,
+    "take_profit_count": 34
+  },
+  "zone_quality": {
+    "schema_version": "1.0",
+    "generated_at": "2026-05-17T20:14:12.013963",
+    "zone_count": 525,
+    "quality_grade_performance": [
+      {
+        "quality_grade": "C",
+        "entry_count": 15,
+        "win_rate": 0.0,
+        "expectancy_pct": -0.3838771593090211,
+        "profit_factor": 0.0
+      },
+      {
+        "quality_grade": "REJECT",
+        "entry_count": 510,
+        "win_rate": 0.4470588235294118,
+        "expectancy_pct": -0.044587125202252074,
+        "profit_factor": 0.8630167129898608
+      }
+    ],
+    "htf_overlap_effect": 0.0,
+    "clean_retest_effect": 0.0,
+    "zone_width_effect": 0.0,
+    "reaction_history_effect": 0.0
+  },
+  "trade_review_count": 35,
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "insights": [
+    "No isolated strategy has enough PF and sample quality to claim edge.",
+    "V5.4 intentionally does not output MICRO_LIVE_READY."
+  ]
+}

@@ -19,6 +19,7 @@ from replay_lab.feedback.small_seed_report import SmallSeedReportBuilder
 from replay_lab.feedback.structure_reversal_report_v5 import StructureReversalV5ReportBuilder
 from replay_lab.feedback.fractal_v52_report import FractalV52ReportBuilder
 from replay_lab.feedback.fractal_v53_report import FractalV53ReportBuilder
+from replay_lab.feedback.edge_isolation_report_v54 import EdgeIsolationV54ReportBuilder
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
@@ -30,6 +31,7 @@ from replay_lab.replay.small_seed_v3 import run_small_seed_v3
 from replay_lab.replay.structure_reversal_v5 import run_structure_reversal_v5
 from replay_lab.replay.fractal_v52 import run_fractal_v52
 from replay_lab.replay.fractal_v53 import run_fractal_v53
+from replay_lab.replay.edge_isolation_v54 import run_edge_isolation_v54
 from replay_lab.replay.walk_forward import build_walk_forward_windows
 from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
 from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
@@ -52,6 +54,11 @@ from replay_lab.research.cache_benchmark_v53 import benchmark_cache_v53
 from replay_lab.research.fractal_v53_walk_forward import run_fractal_v53_walk_forward
 from replay_lab.research.runner_exit_sweep_v53 import sweep_runner_exit_v53
 from replay_lab.research.zone_reaction_validation_v53 import validate_zone_reaction_v53
+from replay_lab.research.edge_isolation_sweep_v54 import run_edge_isolation_sweep_v54
+from replay_lab.research.exit_model_compare_v54 import compare_exit_models_v54
+from replay_lab.research.module_ablation_v54 import run_module_ablation_v54
+from replay_lab.research.zone_quality_research_v54 import research_zone_quality_v54
+from replay_lab.research.trade_review_dataset_v54 import export_trade_review_v54
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -616,6 +623,42 @@ def build_fractal_v53_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_edge_isolation_v54_command(args: argparse.Namespace) -> int:
+    exp = run_edge_isolation_v54(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"edge isolation v5.4 experiment: {exp}")
+    return 0
+
+
+def compare_exit_models_v54_command(args: argparse.Namespace) -> int:
+    out = compare_exit_models_v54(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"exit model compare v5.4: {out}")
+    return 0
+
+
+def ablate_modules_v54_command(args: argparse.Namespace) -> int:
+    out = run_module_ablation_v54(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"module ablation v5.4: {out}")
+    return 0
+
+
+def research_zone_quality_v54_command(args: argparse.Namespace) -> int:
+    out = research_zone_quality_v54(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets)
+    print(f"zone quality research v5.4: {out}")
+    return 0
+
+
+def export_trade_review_v54_command(args: argparse.Namespace) -> int:
+    out = export_trade_review_v54(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets)
+    print(f"trade review v5.4: {out}")
+    return 0
+
+
+def build_edge_isolation_v54_report(args: argparse.Namespace) -> int:
+    out = EdgeIsolationV54ReportBuilder().build(start_date=args.start_date, end_date=args.end_date)
+    print(f"edge isolation v5.4 report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -1027,6 +1070,44 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--end-date", default=date.today().isoformat())
     p.add_argument("--initial-equity-krw", type=float, default=500000)
     p.set_defaults(func=build_fractal_v53_report)
+
+    p = sub.add_parser("run-edge-isolation-v54")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=run_edge_isolation_v54_command)
+
+    p = sub.add_parser("compare-exit-models-v54")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=compare_exit_models_v54_command)
+
+    p = sub.add_parser("ablate-modules-v54")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=ablate_modules_v54_command)
+
+    p = sub.add_parser("research-zone-quality-v54")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.set_defaults(func=research_zone_quality_v54_command)
+
+    p = sub.add_parser("export-trade-review-v54")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.set_defaults(func=export_trade_review_v54_command)
+
+    p = sub.add_parser("build-edge-isolation-v54-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.set_defaults(func=build_edge_isolation_v54_report)
 
     args = parser.parse_args(argv)
     return args.func(args)
