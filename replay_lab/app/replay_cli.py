@@ -17,6 +17,7 @@ from replay_lab.feedback.investment_v2_report import InvestmentV2ReportBuilder
 from replay_lab.feedback.report_catalog import ReplayReportCatalog
 from replay_lab.feedback.small_seed_report import SmallSeedReportBuilder
 from replay_lab.feedback.structure_reversal_report_v5 import StructureReversalV5ReportBuilder
+from replay_lab.feedback.fractal_v52_report import FractalV52ReportBuilder
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
@@ -26,6 +27,7 @@ from replay_lab.replay.fear_divergence_v4 import run_fear_divergence_v4
 from replay_lab.replay.fear_exhaustion_v41 import run_fear_exhaustion_v41
 from replay_lab.replay.small_seed_v3 import run_small_seed_v3
 from replay_lab.replay.structure_reversal_v5 import run_structure_reversal_v5
+from replay_lab.replay.fractal_v52 import run_fractal_v52
 from replay_lab.replay.walk_forward import build_walk_forward_windows
 from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
 from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
@@ -39,6 +41,10 @@ from replay_lab.research.mtf_context_compare_v5 import compare_mtf_context_v5
 from replay_lab.research.structure_reversal_compare_all import compare_all_strategies_v5
 from replay_lab.research.structure_reversal_sweep_v5 import run_structure_reversal_sweep_v5
 from replay_lab.research.weekly_sniper_v5 import run_weekly_sniper_v5
+from replay_lab.research.fractal_v52_sweep import run_fractal_v52_sweep
+from replay_lab.research.fractal_v52_walk_forward import run_fractal_v52_walk_forward
+from replay_lab.research.full_seed_compounding_compare import compare_full_seed_v52
+from replay_lab.research.zone_engine_validation import validate_zone_engine_v52
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -508,6 +514,42 @@ def build_structure_reversal_v5_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_fractal_v52_command(args: argparse.Namespace) -> int:
+    exp = run_fractal_v52(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, initial_equity_krw=args.initial_equity_krw, max_daily_entries=args.max_daily_entries, allocation_model=args.allocation_model, exit_model=args.exit_model)
+    print(f"fractal v5.2 experiment: {exp}")
+    return 0
+
+
+def sweep_fractal_v52_command(args: argparse.Namespace) -> int:
+    out = run_fractal_v52_sweep(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, initial_equity_krw=args.initial_equity_krw)
+    print(f"fractal v5.2 sweep: {out}")
+    return 0
+
+
+def validate_zone_engine_v52_command(args: argparse.Namespace) -> int:
+    out = validate_zone_engine_v52(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets)
+    print(f"zone engine v5.2 validation: {out}")
+    return 0
+
+
+def walk_forward_fractal_v52_command(args: argparse.Namespace) -> int:
+    out = run_fractal_v52_walk_forward(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, initial_equity_krw=args.initial_equity_krw)
+    print(f"fractal v5.2 walk-forward: {out}")
+    return 0
+
+
+def compare_full_seed_v52_command(args: argparse.Namespace) -> int:
+    out = compare_full_seed_v52(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), _v5_markets(args), top_markets=args.top_markets, initial_equity_krw=args.initial_equity_krw)
+    print(f"full seed v5.2 compare: {out}")
+    return 0
+
+
+def build_fractal_v52_report(args: argparse.Namespace) -> int:
+    out = FractalV52ReportBuilder(initial_equity_krw=args.initial_equity_krw).build(start_date=args.start_date, end_date=args.end_date)
+    print(f"fractal v5.2 report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -816,6 +858,54 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--capital-krw", type=float, default=500000)
     p.add_argument("--order-krw", type=float, default=10000)
     p.set_defaults(func=build_structure_reversal_v5_report)
+
+    p = sub.add_parser("run-fractal-v52")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--initial-equity-krw", type=float, default=500000)
+    p.add_argument("--max-daily-entries", type=int, default=1)
+    p.add_argument("--allocation-model", choices=["fixed_10k", "full_seed", "grade_based"], default="grade_based")
+    p.add_argument("--exit-model", choices=["target_zone_full_exit", "partial_tp_runner", "conservative_partial", "trailing_runner"], default="partial_tp_runner")
+    p.set_defaults(func=run_fractal_v52_command)
+
+    p = sub.add_parser("sweep-fractal-v52")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--initial-equity-krw", type=float, default=500000)
+    p.set_defaults(func=sweep_fractal_v52_command)
+
+    p = sub.add_parser("validate-zone-engine-v52")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.set_defaults(func=validate_zone_engine_v52_command)
+
+    p = sub.add_parser("walk-forward-fractal-v52")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--initial-equity-krw", type=float, default=500000)
+    p.set_defaults(func=walk_forward_fractal_v52_command)
+
+    p = sub.add_parser("compare-full-seed-v52")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=50)
+    p.add_argument("--markets")
+    p.add_argument("--initial-equity-krw", type=float, default=500000)
+    p.set_defaults(func=compare_full_seed_v52_command)
+
+    p = sub.add_parser("build-fractal-v52-report")
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--end-date", default=date.today().isoformat())
+    p.add_argument("--initial-equity-krw", type=float, default=500000)
+    p.set_defaults(func=build_fractal_v52_report)
 
     args = parser.parse_args(argv)
     return args.func(args)

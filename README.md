@@ -256,6 +256,19 @@ python -m replay_lab.app.replay_cli build-structure-reversal-v5-report --start-d
 
 The V5 report writes large artifacts under `replay_store/reports/structure_reversal_v5/` and commit-safe latest summaries under `docs/reports/`.
 
+Run the V5.2 fractal MTF / zone target / full-seed compounding validation. V5.2 adds BTC regime fallback, as-of-time zone detection, target-space based exit planning, grade-based position sizing, and compounding portfolio simulation:
+
+```bash
+python -m replay_lab.app.replay_cli run-fractal-v52 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --initial-equity-krw 500000 --max-daily-entries 1 --allocation-model grade_based --exit-model partial_tp_runner
+python -m replay_lab.app.replay_cli sweep-fractal-v52 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --initial-equity-krw 500000
+python -m replay_lab.app.replay_cli validate-zone-engine-v52 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50
+python -m replay_lab.app.replay_cli walk-forward-fractal-v52 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --initial-equity-krw 500000
+python -m replay_lab.app.replay_cli compare-full-seed-v52 --start-date 2026-01-01 --end-date 2026-05-15 --top-markets 50 --initial-equity-krw 500000
+python -m replay_lab.app.replay_cli build-fractal-v52-report --start-date 2026-01-01 --end-date 2026-05-15 --initial-equity-krw 500000
+```
+
+The V5.2 report writes large artifacts under `replay_store/reports/fractal_v52/` and commit-safe latest summaries under `docs/reports/`.
+
 Walk-forward window generation:
 
 ```bash

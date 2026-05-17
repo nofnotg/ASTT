@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-17T14:06:54.267050",
+  "period": {
+    "start_date": "2026-04-01",
+    "end_date": "2026-05-15"
+  },
+  "fractal_v52_result": {
+    "entry_count": 35,
+    "win_rate": 0.4857142857142857,
+    "profit_factor": 1.1227072669224367,
+    "initial_equity_krw": 500000.0,
+    "final_equity_krw": 500211.08857095067,
+    "equity_return_pct": 0.04221771419013385,
+    "total_pnl_krw": 211.08857095066924,
+    "max_drawdown_pct": -0.29014194191387704,
+    "consecutive_loss_max": 3
+  },
+  "zone_validation": {
+    "schema_version": "1.0",
+    "generated_at": "2026-05-17T13:46:07.320676",
+    "zone_count": 68,
+    "demand_zone_bounce_rate": 0.7317974196784605,
+    "supply_zone_rejection_rate": 0.6652703815258731,
+    "zone_strength_correlation": 0.25,
+    "body_zone_vs_wick_zone": {
+      "body_preferred": true
+    },
+    "zone_target_hit_rate": 0.6098311830653836,
+    "insights": [
+      "Zone validation is proxy-based until tick/orderbook reaction labels are added."
+    ]
+  },
+  "best_allocation_model": "full_seed",
+  "walk_forward": {
+    "avg_test_profit_factor": 0.4961458913050926,
+    "avg_test_return_pct": -0.023545660466444678,
+    "worst_window_mdd_pct": 0.0,
+    "stable": false
+  },
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "insights": [
+    "Zone validation은 현재 OHLCV proxy 기반이며, 추후 실제 반응 라벨을 보강해야 한다.",
+    "현재 비교에서 가장 나은 allocation model은 full_seed이다.",
+    "walk-forward 안정성이 부족하거나 전체 window가 부족하면 MICRO_LIVE_READY 금지다."
+  ]
+}
