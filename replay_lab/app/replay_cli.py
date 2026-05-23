@@ -22,6 +22,7 @@ from replay_lab.feedback.fractal_v53_report import FractalV53ReportBuilder
 from replay_lab.feedback.edge_isolation_report_v54 import EdgeIsolationV54ReportBuilder
 from replay_lab.feedback.micro_execution_html_report import MicroExecutionHTMLReportBuilder
 from replay_lab.feedback.forward_micro_html_report import ForwardMicroHTMLReportBuilder
+from replay_lab.feedback.upbit_real_api_html_report import UpbitRealAPIHTMLReportBuilder
 from live_data.second_candle_collector import collect_second_candles
 from execution.forward_paper_micro_runner import run_forward_paper_micro_session
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
@@ -73,6 +74,12 @@ from replay_lab.research.micro_cost_survival_test import run_micro_cost_survival
 from replay_lab.research.micro_data_quality_audit import audit_micro_data_quality
 from replay_lab.research.micro_entry_exit_effectiveness import validate_micro_entry_exit_effectiveness
 from replay_lab.replay.forward_micro_replay import replay_recorded_micro_session
+from data.candidate_second_window_fetcher import fetch_candidate_second_window
+from live_data.upbit_real_ws_session import run_upbit_real_ws_session
+from live_data.upbit_ws_smoke_test import run_upbit_ws_smoke_test
+from replay_lab.research.candidate_second_window_validation import validate_candidate_second_windows
+from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
+from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -763,6 +770,48 @@ def build_forward_micro_html_report_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_upbit_ws_smoke_test_command(args: argparse.Namespace) -> int:
+    result = run_upbit_ws_smoke_test(_markets(args.markets), duration_seconds=args.duration_seconds)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_upbit_real_ws_session_command(args: argparse.Namespace) -> int:
+    result = run_upbit_real_ws_session(_markets(args.markets), duration_seconds=args.duration_seconds, include_trade=str(args.include_trade).lower() == "true", include_orderbook=str(args.include_orderbook).lower() == "true")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def fetch_candidate_second_window_command(args: argparse.Namespace) -> int:
+    result = fetch_candidate_second_window(args.market, args.candidate_time, pre_seconds=args.pre_seconds, post_seconds=args.post_seconds)
+    print(json.dumps({k: v for k, v in result.items() if k != "seconds"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_candidate_second_windows_command(args: argparse.Namespace) -> int:
+    result = validate_candidate_second_windows(args.start_date, args.end_date, top_markets=args.top_markets, pre_seconds=args.pre_seconds, post_seconds=args.post_seconds, max_candidates=args.max_candidates, fixed_order_krw=args.fixed_order_krw)
+    print(json.dumps({k: v for k, v in result.items() if k != "results"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
+    result = audit_mock_vs_real_data(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def check_upbit_auth_safety_command(args: argparse.Namespace) -> int:
+    result = run_upbit_auth_safety_check(read_check=str(args.read_check).lower() == "true")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_upbit_real_api_report_command(args: argparse.Namespace) -> int:
+    out = UpbitRealAPIHTMLReportBuilder().build()
+    print(f"upbit real api report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -1298,6 +1347,46 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-forward-micro-html-report")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
     p.set_defaults(func=build_forward_micro_html_report_command)
+
+    p = sub.add_parser("run-upbit-ws-smoke-test")
+    p.add_argument("--markets", required=True)
+    p.add_argument("--duration-seconds", type=int, default=300)
+    p.set_defaults(func=run_upbit_ws_smoke_test_command)
+
+    p = sub.add_parser("run-upbit-real-ws-session")
+    p.add_argument("--markets", required=True)
+    p.add_argument("--duration-seconds", type=int, default=900)
+    p.add_argument("--include-trade", default="true")
+    p.add_argument("--include-orderbook", default="true")
+    p.set_defaults(func=run_upbit_real_ws_session_command)
+
+    p = sub.add_parser("fetch-candidate-second-window")
+    p.add_argument("--market", required=True)
+    p.add_argument("--candidate-time", required=True)
+    p.add_argument("--pre-seconds", type=int, default=120)
+    p.add_argument("--post-seconds", type=int, default=180)
+    p.set_defaults(func=fetch_candidate_second_window_command)
+
+    p = sub.add_parser("validate-candidate-second-windows")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--pre-seconds", type=int, default=120)
+    p.add_argument("--post-seconds", type=int, default=180)
+    p.add_argument("--max-candidates", type=int, default=50)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=validate_candidate_second_windows_command)
+
+    p = sub.add_parser("audit-mock-vs-real-data")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.set_defaults(func=audit_mock_vs_real_data_command)
+
+    p = sub.add_parser("check-upbit-auth-safety")
+    p.add_argument("--read-check", default="false")
+    p.set_defaults(func=check_upbit_auth_safety_command)
+
+    p = sub.add_parser("build-upbit-real-api-report")
+    p.set_defaults(func=build_upbit_real_api_report_command)
 
     args = parser.parse_args(argv)
     return args.func(args)

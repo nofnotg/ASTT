@@ -13,6 +13,7 @@ replay_store/normalized/**
 replay_store/features/**
 replay_store/feature_cache/**
 replay_store/candidate_cache/**
+replay_store/candidate_seconds/**
 replay_store/experiments/**
 replay_store/reports/**
 replay_store/exports/**

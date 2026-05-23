@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-23T03:45:58.786229",
+  "data_source": "UPBIT_WS",
+  "upbit_ws_connected": true,
+  "mock_data_used": true,
+  "mixed_data_detected": false,
+  "good_partial_windows": 18,
+  "profit_factor_realistic_1": 0.16631617919765349,
+  "expectancy_realistic_1": -0.159061354854217,
+  "realistic_1_survives": false,
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}
