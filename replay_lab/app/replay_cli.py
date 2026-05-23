@@ -78,6 +78,11 @@ from data.candidate_second_window_fetcher import fetch_candidate_second_window
 from live_data.upbit_real_ws_session import run_upbit_real_ws_session
 from live_data.upbit_ws_smoke_test import run_upbit_ws_smoke_test
 from replay_lab.research.candidate_second_window_validation import validate_candidate_second_windows
+from replay_lab.research.candidate_second_window_validation import validate_candidate_second_windows_v553
+from replay_lab.research.micro_candidate_filter_validation import validate_micro_candidate_filter_v553
+from replay_lab.research.external_strategy_backtest_lab import run_external_strategy_lab
+from replay_lab.research.open_strategy_report_builder import build_open_strategy_report
+from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
@@ -794,6 +799,36 @@ def validate_candidate_second_windows_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def validate_candidate_second_windows_v553_command(args: argparse.Namespace) -> int:
+    result = validate_candidate_second_windows_v553(args.start_date, args.end_date, top_markets=args.top_markets, pre_seconds=args.pre_seconds, post_seconds=args.post_seconds, max_candidates=args.max_candidates, fixed_order_krw=args.fixed_order_krw)
+    print(json.dumps({k: v for k, v in result.items() if k != "results"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_micro_candidate_filter_v553_command(args: argparse.Namespace) -> int:
+    result = validate_micro_candidate_filter_v553(args.start_date, args.end_date, top_markets=args.top_markets, max_candidates=args.max_candidates)
+    print(json.dumps({k: v for k, v in result.items() if k not in {"filter_rows", "results"}}, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_external_strategy_registry_command(args: argparse.Namespace) -> int:
+    result = build_external_strategy_registry()
+    print(json.dumps({k: v for k, v in result.items() if k != "strategies"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_external_strategy_lab_command(args: argparse.Namespace) -> int:
+    result = run_external_strategy_lab(start_date=args.start_date, end_date=args.end_date, top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw, cost_scenario=args.cost_scenario)
+    print(json.dumps({k: v for k, v in result.items() if k not in {"registry"}}, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_open_strategy_report_command(args: argparse.Namespace) -> int:
+    result = build_open_strategy_report()
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1376,6 +1411,37 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--max-candidates", type=int, default=50)
     p.add_argument("--fixed-order-krw", type=float, default=10000)
     p.set_defaults(func=validate_candidate_second_windows_command)
+
+    p = sub.add_parser("validate-candidate-second-windows-v553")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--pre-seconds", type=int, default=120)
+    p.add_argument("--post-seconds", type=int, default=180)
+    p.add_argument("--max-candidates", type=int, default=50)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=validate_candidate_second_windows_v553_command)
+
+    p = sub.add_parser("validate-micro-candidate-filter-v553")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--max-candidates", type=int, default=50)
+    p.set_defaults(func=validate_micro_candidate_filter_v553_command)
+
+    p = sub.add_parser("build-external-strategy-registry")
+    p.set_defaults(func=build_external_strategy_registry_command)
+
+    p = sub.add_parser("run-external-strategy-lab")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.add_argument("--cost-scenario", default="realistic_1")
+    p.set_defaults(func=run_external_strategy_lab_command)
+
+    p = sub.add_parser("build-open-strategy-report")
+    p.set_defaults(func=build_open_strategy_report_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

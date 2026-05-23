@@ -12,4 +12,11 @@ def test_candidate_window_second_replay_uses_pre_for_entry_and_post_for_exit():
 
     assert result["data_source"] == "UPBIT_REST_SECONDS"
     assert result["entry_decision"] in {"ENTER", "WAIT"}
-    assert "net_pnl_pct" in result
+    if result["entry_decision"] == "ENTER":
+        assert result["position_created"] is True
+        assert result["included_in_pnl"] is True
+        assert result["net_pnl_pct"] is not None
+    else:
+        assert result["position_created"] is False
+        assert result["included_in_pnl"] is False
+        assert result["net_pnl_pct"] is None

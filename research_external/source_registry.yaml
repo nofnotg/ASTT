@@ -1,0 +1,26 @@
+sources:
+  - id: freqtrade_docs
+    type: docs
+    url: https://www.freqtrade.io/en/stable/strategy-customization/
+    purpose: strategy architecture and common bot structure
+    license_check_required: false
+  - id: freqtrade_strategies_repo
+    type: github
+    url: https://github.com/freqtrade/freqtrade-strategies
+    purpose: public strategy examples
+    license_check_required: true
+  - id: ta_lib_functions
+    type: docs
+    url: https://ta-lib.github.io/ta-lib-python/funcs.html
+    purpose: indicator taxonomy
+    license_check_required: false
+  - id: vectorbt_docs
+    type: docs
+    url: https://vectorbt.dev/
+    purpose: vectorized backtesting and research patterns
+    license_check_required: false
+  - id: tradingview_public_ideas
+    type: manual
+    url: null
+    purpose: manually summarized public strategy ideas
+    license_check_required: true

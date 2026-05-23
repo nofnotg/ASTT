@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-23T05:33:58.927987",
+  "source_count": 5,
+  "strategy_specs_created": 7,
+  "indicator_groups": [
+    "Market Regime",
+    "Microstructure",
+    "Momentum",
+    "Trend",
+    "Volatility",
+    "Volume / Flow"
+  ],
+  "license_review_required_count": 1,
+  "do_not_use_count": 0,
+  "accepted_strategy_count": 0
+}

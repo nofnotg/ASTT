@@ -10,9 +10,11 @@ def check_upbit_auth_safety(read_check: bool = False) -> dict:
     settings = get_settings()
     access = settings.upbit_access_key or os.getenv("UPBIT_ACCESS_KEY", "")
     secret = settings.upbit_secret_key or os.getenv("UPBIT_SECRET_KEY", "")
+    allowed_ip = settings.upbit_allowed_ip or os.getenv("UPBIT_ALLOWED_IP", "")
     result = {
         "access_key_loaded": bool(access),
         "secret_key_loaded": bool(secret),
+        "allowed_ip_loaded": bool(allowed_ip),
         "access_key_masked": _mask(access),
         "jwt_build_ok": False,
         "private_read_check": "SKIPPED",
