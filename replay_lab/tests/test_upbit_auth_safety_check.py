@@ -1,4 +1,5 @@
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
+from adapters.upbit_private_auth_check import check_upbit_auth_safety
 
 
 def test_upbit_auth_safety_check_masks_and_never_orders(monkeypatch):
@@ -12,5 +13,25 @@ def test_upbit_auth_safety_check_masks_and_never_orders(monkeypatch):
     assert result["secret_key_loaded"] is True
     assert result["allowed_ip_loaded"] is True
     assert result["access_key_masked"] == "abcd****wxyz"
+    assert result["env_source"] == "process_env"
+    assert result["allowed_ip_source"] == "process_env"
+    assert result["missing_variables"] == []
+    assert result["jwt_build_ok"] is True
+    assert result["orders_or_test_called"] is False
+    assert result["withdraw_called"] is False
+
+
+def test_upbit_auth_safety_uses_process_env_for_jwt_when_settings_missing(monkeypatch):
+    monkeypatch.setenv("UPBIT_ACCESS_KEY", "proc1234wxyz")
+    monkeypatch.setenv("UPBIT_SECRET_KEY", "processsecret1234")
+    monkeypatch.setenv("UPBIT_ALLOWED_IP", "112.157.222.152")
+
+    result = check_upbit_auth_safety()
+
+    assert result["access_key_loaded"] is True
+    assert result["secret_key_loaded"] is True
+    assert result["allowed_ip_loaded"] is True
+    assert result["env_source"] == "process_env"
+    assert result["jwt_build_ok"] is True
     assert result["orders_or_test_called"] is False
     assert result["withdraw_called"] is False
