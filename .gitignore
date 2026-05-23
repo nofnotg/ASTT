@@ -16,6 +16,8 @@ replay_store/candidate_cache/**
 replay_store/experiments/**
 replay_store/reports/**
 replay_store/exports/**
+replay_store/sessions/**
+replay_store/replayed/**
 replay_store/manifests/*.sqlite
 replay_store/**/.gitkeep
 !replay_store/raw/.gitkeep

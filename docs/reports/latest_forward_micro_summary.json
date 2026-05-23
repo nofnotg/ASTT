@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-23T03:04:14.315893",
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "session_count": 2,
+  "total_recording_minutes": 65.0,
+  "good_partial_entry_count": 2,
+  "unavailable_count": 0,
+  "realistic_1_pf": 999.0,
+  "realistic_1_expectancy": 0.04500000000000398,
+  "realistic_1_survives": true
+}

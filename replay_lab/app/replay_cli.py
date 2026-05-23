@@ -21,7 +21,9 @@ from replay_lab.feedback.fractal_v52_report import FractalV52ReportBuilder
 from replay_lab.feedback.fractal_v53_report import FractalV53ReportBuilder
 from replay_lab.feedback.edge_isolation_report_v54 import EdgeIsolationV54ReportBuilder
 from replay_lab.feedback.micro_execution_html_report import MicroExecutionHTMLReportBuilder
+from replay_lab.feedback.forward_micro_html_report import ForwardMicroHTMLReportBuilder
 from live_data.second_candle_collector import collect_second_candles
+from execution.forward_paper_micro_runner import run_forward_paper_micro_session
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
@@ -66,6 +68,11 @@ from replay_lab.research.trade_review_dataset_v54 import export_trade_review_v54
 from replay_lab.research.micro_entry_timing_validation import validate_micro_entry_timing
 from replay_lab.research.micro_exit_validation import validate_micro_exit
 from replay_lab.research.latency_slippage_simulation import simulate_latency_slippage
+from replay_lab.research.forward_micro_validation import validate_forward_micro_sessions
+from replay_lab.research.micro_cost_survival_test import run_micro_cost_survival_test
+from replay_lab.research.micro_data_quality_audit import audit_micro_data_quality
+from replay_lab.research.micro_entry_exit_effectiveness import validate_micro_entry_exit_effectiveness
+from replay_lab.replay.forward_micro_replay import replay_recorded_micro_session
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -708,6 +715,54 @@ def build_micro_execution_html_report_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_live_micro_session_command(args: argparse.Namespace) -> int:
+    result = run_forward_paper_micro_session(duration_minutes=args.duration_minutes, markets=_markets(getattr(args, "markets", None)), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw, mode=args.mode)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def record_live_micro_data_command(args: argparse.Namespace) -> int:
+    result = run_forward_paper_micro_session(duration_minutes=args.duration_minutes, markets=_markets(args.markets), top_markets=len(_markets(args.markets)) or 3, fixed_order_krw=10000, mode="record_only")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def replay_forward_micro_session_command(args: argparse.Namespace) -> int:
+    result = replay_recorded_micro_session(args.session_id)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_forward_micro_sessions_command(args: argparse.Namespace) -> int:
+    result = validate_forward_micro_sessions(args.sessions_dir, min_quality=args.min_quality)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def audit_micro_data_quality_command(args: argparse.Namespace) -> int:
+    result = audit_micro_data_quality(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def test_micro_cost_survival_command(args: argparse.Namespace) -> int:
+    result = run_micro_cost_survival_test(args.sessions_dir, min_quality=args.min_quality)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_micro_entry_exit_effectiveness_command(args: argparse.Namespace) -> int:
+    result = validate_micro_entry_exit_effectiveness(args.sessions_dir, min_quality=args.min_quality)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_forward_micro_html_report_command(args: argparse.Namespace) -> int:
+    out = ForwardMicroHTMLReportBuilder().build(args.sessions_dir)
+    print(f"forward micro report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -1203,6 +1258,46 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--start-date", default="2026-04-01")
     p.add_argument("--end-date", default="2026-05-15")
     p.set_defaults(func=build_micro_execution_html_report_command)
+
+    p = sub.add_parser("run-live-micro-session")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.add_argument("--mode", default="record_and_forward_paper")
+    p.set_defaults(func=run_live_micro_session_command)
+
+    p = sub.add_parser("record-live-micro-data")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--markets", required=True)
+    p.add_argument("--output", default="replay_store/raw/live_micro")
+    p.set_defaults(func=record_live_micro_data_command)
+
+    p = sub.add_parser("replay-forward-micro-session")
+    p.add_argument("--session-id", required=True)
+    p.set_defaults(func=replay_forward_micro_session_command)
+
+    p = sub.add_parser("validate-forward-micro-sessions")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
+    p.add_argument("--min-quality", default="PARTIAL")
+    p.set_defaults(func=validate_forward_micro_sessions_command)
+
+    p = sub.add_parser("audit-micro-data-quality")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
+    p.set_defaults(func=audit_micro_data_quality_command)
+
+    p = sub.add_parser("test-micro-cost-survival")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
+    p.add_argument("--min-quality", default="PARTIAL")
+    p.set_defaults(func=test_micro_cost_survival_command)
+
+    p = sub.add_parser("validate-micro-entry-exit-effectiveness")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
+    p.add_argument("--min-quality", default="PARTIAL")
+    p.set_defaults(func=validate_micro_entry_exit_effectiveness_command)
+
+    p = sub.add_parser("build-forward-micro-html-report")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "live_micro"))
+    p.set_defaults(func=build_forward_micro_html_report_command)
 
     args = parser.parse_args(argv)
     return args.func(args)
