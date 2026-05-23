@@ -20,6 +20,8 @@ from replay_lab.feedback.structure_reversal_report_v5 import StructureReversalV5
 from replay_lab.feedback.fractal_v52_report import FractalV52ReportBuilder
 from replay_lab.feedback.fractal_v53_report import FractalV53ReportBuilder
 from replay_lab.feedback.edge_isolation_report_v54 import EdgeIsolationV54ReportBuilder
+from replay_lab.feedback.micro_execution_html_report import MicroExecutionHTMLReportBuilder
+from live_data.second_candle_collector import collect_second_candles
 from replay_lab.paths import REPLAY_STORE_DIR, ensure_replay_store
 from replay_lab.replay.batch_replay import run_batch_0900, run_daily_study_0900
 from replay_lab.replay.investment_v2 import run_study_v2
@@ -32,6 +34,8 @@ from replay_lab.replay.structure_reversal_v5 import run_structure_reversal_v5
 from replay_lab.replay.fractal_v52 import run_fractal_v52
 from replay_lab.replay.fractal_v53 import run_fractal_v53
 from replay_lab.replay.edge_isolation_v54 import run_edge_isolation_v54
+from replay_lab.replay.second_candle_replay import replay_second_candles as replay_second_candles_fn
+from replay_lab.replay.micro_execution_replay import run_micro_execution_replay
 from replay_lab.replay.walk_forward import build_walk_forward_windows
 from replay_lab.research.fear_divergence_compare_v3 import compare_v3_v4
 from replay_lab.research.fear_divergence_sweep_v4 import run_fear_divergence_sweep_v4
@@ -59,6 +63,9 @@ from replay_lab.research.exit_model_compare_v54 import compare_exit_models_v54
 from replay_lab.research.module_ablation_v54 import run_module_ablation_v54
 from replay_lab.research.zone_quality_research_v54 import research_zone_quality_v54
 from replay_lab.research.trade_review_dataset_v54 import export_trade_review_v54
+from replay_lab.research.micro_entry_timing_validation import validate_micro_entry_timing
+from replay_lab.research.micro_exit_validation import validate_micro_exit
+from replay_lab.research.latency_slippage_simulation import simulate_latency_slippage
 from replay_lab.sidecar_c.time_window_discovery import TimeWindowDiscovery, TimeWindowDiscoveryConfig, default_entry_times
 
 
@@ -659,6 +666,48 @@ def build_edge_isolation_v54_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def collect_second_candles_command(args: argparse.Namespace) -> int:
+    result = collect_second_candles(_markets(args.markets), days=args.days, count_per_request=args.count_per_request)
+    print(json.dumps(result, ensure_ascii=False))
+    return 0
+
+
+def replay_second_candles_command(args: argparse.Namespace) -> int:
+    result = replay_second_candles_fn(args.market, args.start_time, args.end_time)
+    print(json.dumps({k: v for k, v in result.items() if k != "seconds"}, ensure_ascii=False))
+    return 0
+
+
+def run_micro_execution_replay_command(args: argparse.Namespace) -> int:
+    exp = run_micro_execution_replay(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw, max_hold_seconds=args.max_hold_seconds)
+    print(f"micro execution experiment: {exp}")
+    return 0
+
+
+def validate_micro_entry_timing_command(args: argparse.Namespace) -> int:
+    out = validate_micro_entry_timing(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"micro entry timing validation: {out}")
+    return 0
+
+
+def validate_micro_exit_command(args: argparse.Namespace) -> int:
+    out = validate_micro_exit(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"micro exit validation: {out}")
+    return 0
+
+
+def simulate_latency_slippage_command(args: argparse.Namespace) -> int:
+    out = simulate_latency_slippage(date.fromisoformat(args.start_date), date.fromisoformat(args.end_date), top_markets=args.top_markets, fixed_order_krw=args.fixed_order_krw)
+    print(f"latency/slippage simulation: {out}")
+    return 0
+
+
+def build_micro_execution_html_report_command(args: argparse.Namespace) -> int:
+    out = MicroExecutionHTMLReportBuilder().build(start_date=args.start_date, end_date=args.end_date)
+    print(f"micro execution report: {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -1108,6 +1157,52 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--start-date", default="2026-01-01")
     p.add_argument("--end-date", default=date.today().isoformat())
     p.set_defaults(func=build_edge_isolation_v54_report)
+
+    p = sub.add_parser("collect-second-candles")
+    p.add_argument("--markets", required=True)
+    p.add_argument("--days", type=int, default=30)
+    p.add_argument("--count-per-request", type=int, default=200)
+    p.set_defaults(func=collect_second_candles_command)
+
+    p = sub.add_parser("replay-second-candles")
+    p.add_argument("--market", required=True)
+    p.add_argument("--start-time", required=True)
+    p.add_argument("--end-time", required=True)
+    p.set_defaults(func=replay_second_candles_command)
+
+    p = sub.add_parser("run-micro-execution-replay")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.add_argument("--max-hold-seconds", type=int, default=120)
+    p.set_defaults(func=run_micro_execution_replay_command)
+
+    p = sub.add_parser("validate-micro-entry-timing")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=validate_micro_entry_timing_command)
+
+    p = sub.add_parser("validate-micro-exit")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=validate_micro_exit_command)
+
+    p = sub.add_parser("simulate-latency-slippage")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=simulate_latency_slippage_command)
+
+    p = sub.add_parser("build-micro-execution-html-report")
+    p.add_argument("--start-date", default="2026-04-01")
+    p.add_argument("--end-date", default="2026-05-15")
+    p.set_defaults(func=build_micro_execution_html_report_command)
 
     args = parser.parse_args(argv)
     return args.func(args)

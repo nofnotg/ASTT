@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-23T02:29:04.871355",
+  "period": {
+    "start_date": "2026-04-01",
+    "end_date": "2026-05-15"
+  },
+  "entry_count": 33,
+  "win_rate": 0.21212121212121213,
+  "profit_factor": 8.058122601227797,
+  "expectancy_pct": 0.027126948734279392,
+  "avg_hold_seconds": 15.424242424242424,
+  "cancel_count": 0,
+  "micro_failure_exit_count": 29,
+  "time_stop_count": 4,
+  "take_profit_count": 0,
+  "stop_loss_count": 0,
+  "total_pnl_krw": 89.518930823122,
+  "data_quality_summary": {
+    "UNAVAILABLE": 33
+  },
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}
