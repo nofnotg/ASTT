@@ -87,6 +87,11 @@ from replay_lab.research.micro_entry_gate_abtest_v554 import run_micro_entry_gat
 from replay_lab.research.forward_ws_accumulation_v554 import run_forward_ws_accumulation_v554
 from replay_lab.research.priority_external_strategy_ws_validation import validate_priority_external_strategies_ws_v554
 from replay_lab.research.enterability_report_builder_v554 import build_enterability_report_v554
+from execution.realistic_paper_runner import run_realistic_paper_session_v555
+from replay_lab.research.realistic_paper_validation_v555 import validate_realistic_paper_v555
+from replay_lab.research.micro_candidate_source_comparison_v555 import compare_micro_candidate_sources_v555
+from replay_lab.research.micro_cost_survival_v555 import test_micro_cost_survival_v555
+from replay_lab.feedback.realistic_paper_html_report_v555 import RealisticPaperHTMLReportV555
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -864,6 +869,37 @@ def build_micro_entry_diagnostics_report_v554_command(args: argparse.Namespace) 
     return 0
 
 
+def run_realistic_paper_session_v555_command(args: argparse.Namespace) -> int:
+    strategies = [item.strip() for item in args.strategies.split(",") if item.strip()]
+    result = run_realistic_paper_session_v555(duration_minutes=args.duration_minutes, top_markets=args.top_markets, initial_cash_krw=args.initial_cash_krw, fixed_order_krw=args.fixed_order_krw, strategies=strategies, scenario=args.scenario)
+    print(json.dumps({k: v for k, v in result.items() if k not in {"sessions"}}, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_realistic_paper_v555_command(args: argparse.Namespace) -> int:
+    result = validate_realistic_paper_v555(args.sessions_dir)
+    print(json.dumps({k: v for k, v in result.items() if k != "sessions"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def compare_micro_candidate_sources_v555_command(args: argparse.Namespace) -> int:
+    result = compare_micro_candidate_sources_v555(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def test_micro_cost_survival_v555_command(args: argparse.Namespace) -> int:
+    result = test_micro_cost_survival_v555(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_realistic_paper_report_v555_command(args: argparse.Namespace) -> int:
+    out = RealisticPaperHTMLReportV555().build(args.sessions_dir)
+    print(f"realistic paper report: {out}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1505,6 +1541,31 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-micro-entry-diagnostics-report-v554")
     p.set_defaults(func=build_micro_entry_diagnostics_report_v554_command)
+
+    p = sub.add_parser("run-realistic-paper-session-v555")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.add_argument("--strategies", default="MICRO_ACCELERATION,VWAP_RECLAIM,EMA_PULLBACK,ORDERBOOK_IMBALANCE")
+    p.add_argument("--scenario", default="realistic_1")
+    p.set_defaults(func=run_realistic_paper_session_v555_command)
+
+    p = sub.add_parser("validate-realistic-paper-v555")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=validate_realistic_paper_v555_command)
+
+    p = sub.add_parser("compare-micro-candidate-sources-v555")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=compare_micro_candidate_sources_v555_command)
+
+    p = sub.add_parser("test-micro-cost-survival-v555")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=test_micro_cost_survival_v555_command)
+
+    p = sub.add_parser("build-realistic-paper-report-v555")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=build_realistic_paper_report_v555_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

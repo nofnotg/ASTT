@@ -1,0 +1,7 @@
+from __future__ import annotations
+
+from replay_lab.research.micro_candidate_source_comparison_v555 import compare_micro_candidate_sources_v555
+
+
+def validate_micro_momentum_candidates_v555(sessions_dir):
+    return compare_micro_candidate_sources_v555(sessions_dir)
