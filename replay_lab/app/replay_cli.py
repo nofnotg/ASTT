@@ -82,6 +82,11 @@ from replay_lab.research.candidate_second_window_validation import validate_cand
 from replay_lab.research.micro_candidate_filter_validation import validate_micro_candidate_filter_v553
 from replay_lab.research.external_strategy_backtest_lab import run_external_strategy_lab
 from replay_lab.research.open_strategy_report_builder import build_open_strategy_report
+from replay_lab.research.micro_entry_gate_decomposition_v554 import diagnose_micro_entry_gates_v554
+from replay_lab.research.micro_entry_gate_abtest_v554 import run_micro_entry_gate_abtest_v554
+from replay_lab.research.forward_ws_accumulation_v554 import run_forward_ws_accumulation_v554
+from replay_lab.research.priority_external_strategy_ws_validation import validate_priority_external_strategies_ws_v554
+from replay_lab.research.enterability_report_builder_v554 import build_enterability_report_v554
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -829,6 +834,36 @@ def build_open_strategy_report_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def diagnose_micro_entry_gates_v554_command(args: argparse.Namespace) -> int:
+    result = diagnose_micro_entry_gates_v554(args.start_date, args.end_date, top_markets=args.top_markets, max_candidates=args.max_candidates)
+    print(json.dumps({k: v for k, v in result.items() if k != "diagnostics"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def abtest_micro_entry_gates_v554_command(args: argparse.Namespace) -> int:
+    result = run_micro_entry_gate_abtest_v554(args.start_date, args.end_date, top_markets=args.top_markets, max_candidates=args.max_candidates)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_forward_ws_accumulation_v554_command(args: argparse.Namespace) -> int:
+    result = run_forward_ws_accumulation_v554(duration_minutes=args.duration_minutes, top_markets=args.top_markets, priority_strategies=args.priority_strategies, fixed_order_krw=args.fixed_order_krw)
+    print(json.dumps({k: v for k, v in result.items() if k not in {"source_session", "candidate_events"}}, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_priority_external_strategies_ws_v554_command(args: argparse.Namespace) -> int:
+    result = validate_priority_external_strategies_ws_v554(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_micro_entry_diagnostics_report_v554_command(args: argparse.Namespace) -> int:
+    result = build_enterability_report_v554()
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1442,6 +1477,34 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-open-strategy-report")
     p.set_defaults(func=build_open_strategy_report_command)
+
+    p = sub.add_parser("diagnose-micro-entry-gates-v554")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--max-candidates", type=int, default=50)
+    p.set_defaults(func=diagnose_micro_entry_gates_v554_command)
+
+    p = sub.add_parser("abtest-micro-entry-gates-v554")
+    p.add_argument("--start-date", required=True)
+    p.add_argument("--end-date", required=True)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--max-candidates", type=int, default=50)
+    p.set_defaults(func=abtest_micro_entry_gates_v554_command)
+
+    p = sub.add_parser("run-forward-ws-accumulation-v554")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.add_argument("--priority-strategies", default="VWAP_PULLBACK,EMA_PULLBACK,ORDERBOOK_IMBALANCE")
+    p.add_argument("--fixed-order-krw", type=float, default=10000)
+    p.set_defaults(func=run_forward_ws_accumulation_v554_command)
+
+    p = sub.add_parser("validate-priority-external-strategies-ws-v554")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "forward_ws_v554"))
+    p.set_defaults(func=validate_priority_external_strategies_ws_v554_command)
+
+    p = sub.add_parser("build-micro-entry-diagnostics-report-v554")
+    p.set_defaults(func=build_micro_entry_diagnostics_report_v554_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

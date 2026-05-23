@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-23T09:28:20.042975",
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "candidate_count": 35,
+  "enter_count": 0,
+  "enter_rate": 0.0,
+  "top_block_reason": "ORDERBOOK_UNAVAILABLE",
+  "good_partial_count": 18,
+  "realistic_1_survives": false
+}
