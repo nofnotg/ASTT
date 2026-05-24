@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T09:42:04.313724",
+  "session_id": "tradable_forward_20260524_094149",
+  "mode": "LIVE_FORWARD_60M",
+  "data_source": "UPBIT_WS_LIVE",
+  "duration_minutes": 60,
+  "trade_event_count": 142,
+  "orderbook_event_count": 854,
+  "ticker_event_count": 306,
+  "live_session_quality": "GOOD",
+  "candidate_count": 0,
+  "candidate_by_source": {},
+  "gate_pass_count": 0,
+  "ENTER": 0,
+  "WAIT": 0,
+  "CANCEL": 0,
+  "paper_trade_count": 0,
+  "pnl_evaluable": false,
+  "total_pnl_krw": null,
+  "total_return_pct": null,
+  "max_drawdown_pct": null,
+  "win_rate": null,
+  "profit_factor": null,
+  "expectancy_pct": null,
+  "avg_hold_seconds": null,
+  "full_seed_grade_rows": [
+    {
+      "source": "TRADABLE_VOLUME_BREAKOUT",
+      "candidate": 0,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "TRADABLE_ORDERFLOW_EXPANSION",
+      "candidate": 0,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "TRADABLE_COMPRESSION_BREAK",
+      "candidate": 0,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "TRADABLE_VWAP_TREND_RECLAIM",
+      "candidate": 0,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "BTC_ALIGNED_MOMENTUM",
+      "candidate": 0,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    }
+  ],
+  "real_order_enabled": false,
+  "research_mode": true,
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "full_seed_validation": {
+    "initial_cash_krw": 500000.0,
+    "default_sizing_mode": "FULL_SEED_LADDER",
+    "rows": [
+      {
+        "source": "TRADABLE_VOLUME_BREAKOUT",
+        "candidate": 0,
+        "grade_c": 1,
+        "grade_b": 0,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidate": 0,
+        "ENTER": 0
+      },
+      {
+        "source": "TRADABLE_ORDERFLOW_EXPANSION",
+        "candidate": 0,
+        "grade_c": 1,
+        "grade_b": 0,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidate": 0,
+        "ENTER": 0
+      },
+      {
+        "source": "TRADABLE_COMPRESSION_BREAK",
+        "candidate": 0,
+        "grade_c": 1,
+        "grade_b": 0,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidate": 0,
+        "ENTER": 0
+      },
+      {
+        "source": "TRADABLE_VWAP_TREND_RECLAIM",
+        "candidate": 0,
+        "grade_c": 1,
+        "grade_b": 0,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidate": 0,
+        "ENTER": 0
+      },
+      {
+        "source": "BTC_ALIGNED_MOMENTUM",
+        "candidate": 0,
+        "grade_c": 1,
+        "grade_b": 0,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidate": 0,
+        "ENTER": 0
+      }
+    ],
+    "allocation_candidate_count": 0,
+    "real_order_enabled": false,
+    "research_mode": true
+  }
+}

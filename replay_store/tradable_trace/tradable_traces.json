@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "trace_count": 0,
+    "trace_windows": [
+      30,
+      60,
+      180,
+      300,
+      600
+    ],
+    "good_partial_trace_count": 0
+  },
+  "traces": []
+}

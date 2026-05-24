@@ -137,6 +137,20 @@ from replay_lab.feedback.winner_quality_filter_html_report_v559 import WinnerQua
 from replay_lab.feedback.false_positive_control_html_report_v559 import FalsePositiveControlHTMLReportV559
 from replay_lab.feedback.redesigned_source_forward_html_report_v559 import RedesignedSourceForwardHTMLReportV559
 from replay_lab.feedback.head_controller_false_positive_review_html_report_v559 import HeadControllerFalsePositiveReviewHTMLReportV559
+from replay_lab.research.tradable_winner_mining_v5510 import mine_tradable_winners_v5510, extract_tradable_traces_v5510
+from replay_lab.research.high_volatility_session_collection_v5510 import collect_high_volatility_session_v5510
+from replay_lab.research.tradable_candidate_source_design_v5510 import design_tradable_candidate_sources_v5510
+from replay_lab.research.tradable_source_forward_validation_v5510 import (
+    run_tradable_source_live_forward_v5510,
+    run_tradable_source_live_smoke_v5510,
+    validate_tradable_source_recorded_v5510,
+)
+from replay_lab.research.full_seed_tradable_source_validation_v5510 import validate_full_seed_tradable_sources_v5510
+from replay_lab.research.head_controller_tradable_winner_review_v5510 import run_head_controller_tradable_winner_review_v5510
+from replay_lab.feedback.tradable_winner_mining_html_report_v5510 import TradableWinnerMiningHTMLReportV5510
+from replay_lab.feedback.high_volatility_session_html_report_v5510 import HighVolatilitySessionHTMLReportV5510
+from replay_lab.feedback.tradable_source_forward_html_report_v5510 import TradableSourceForwardHTMLReportV5510
+from replay_lab.feedback.head_controller_tradable_winner_review_html_report_v5510 import HeadControllerTradableWinnerReviewHTMLReportV5510
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1199,6 +1213,73 @@ def build_head_controller_false_positive_review_report_v559_command(args: argpar
     return 0
 
 
+def mine_tradable_winners_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(mine_tradable_winners_v5510(args.sessions_dir, args.initial_cash_krw, args.winner_types), ensure_ascii=False, default=str))
+    return 0
+
+
+def extract_tradable_traces_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(extract_tradable_traces_v5510(args.winner_dir, args.trace_windows), ensure_ascii=False, default=str))
+    return 0
+
+
+def collect_high_vol_live_session_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(collect_high_volatility_session_v5510(args.session_type, args.duration_minutes, args.top_markets), ensure_ascii=False, default=str))
+    return 0
+
+
+def design_tradable_candidate_sources_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(design_tradable_candidate_sources_v5510(args.tradable_traces), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_tradable_source_recorded_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_tradable_source_recorded_v5510(args.sessions_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_tradable_source_live_smoke_v5510_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(json.dumps(run_tradable_source_live_smoke_v5510(args.duration_minutes, args.top_markets, args.initial_cash_krw, research_mode), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_tradable_source_live_forward_v5510_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(json.dumps(run_tradable_source_live_forward_v5510(args.duration_minutes, args.top_markets, args.initial_cash_krw, research_mode), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_full_seed_tradable_sources_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_full_seed_tradable_sources_v5510(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_tradable_winner_review_v5510_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_tradable_winner_review_v5510(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_tradable_winner_mining_report_v5510_command(args: argparse.Namespace) -> int:
+    print(f"tradable winner mining report: {TradableWinnerMiningHTMLReportV5510().build()}")
+    return 0
+
+
+def build_high_volatility_session_report_v5510_command(args: argparse.Namespace) -> int:
+    print(f"high volatility session report: {HighVolatilitySessionHTMLReportV5510().build()}")
+    return 0
+
+
+def build_tradable_source_forward_report_v5510_command(args: argparse.Namespace) -> int:
+    print(f"tradable source forward report: {TradableSourceForwardHTMLReportV5510().build()}")
+    return 0
+
+
+def build_head_controller_tradable_winner_review_report_v5510_command(args: argparse.Namespace) -> int:
+    print(f"head controller tradable winner review report: {HeadControllerTradableWinnerReviewHTMLReportV5510().build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2086,6 +2167,68 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-head-controller-false-positive-review-report-v559")
     p.set_defaults(func=build_head_controller_false_positive_review_report_v559_command)
+
+    p = sub.add_parser("mine-tradable-winners-v5510")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--winner-types", default="TRADABLE_SCALP_WINNER,TRADABLE_MOMENTUM_WINNER,TRADABLE_SPIKE_WINNER")
+    p.set_defaults(func=mine_tradable_winners_v5510_command)
+
+    p = sub.add_parser("extract-tradable-traces-v5510")
+    p.add_argument("--winner-dir", default=str(REPLAY_STORE_DIR / "tradable_winner"))
+    p.add_argument("--trace-windows", default="30,60,180,300,600")
+    p.set_defaults(func=extract_tradable_traces_v5510_command)
+
+    p = sub.add_parser("collect-high-vol-live-session-v5510")
+    p.add_argument("--session-type", default="RANDOM_CONTROL")
+    p.add_argument("--duration-minutes", type=int, default=30)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.set_defaults(func=collect_high_vol_live_session_v5510_command)
+
+    p = sub.add_parser("design-tradable-candidate-sources-v5510")
+    p.add_argument("--tradable-traces", default=str(REPLAY_STORE_DIR / "tradable_trace"))
+    p.set_defaults(func=design_tradable_candidate_sources_v5510_command)
+
+    p = sub.add_parser("validate-tradable-source-recorded-v5510")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=validate_tradable_source_recorded_v5510_command)
+
+    p = sub.add_parser("run-tradable-source-live-smoke-v5510")
+    p.add_argument("--duration-minutes", type=int, default=15)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_tradable_source_live_smoke_v5510_command)
+
+    p = sub.add_parser("run-tradable-source-live-forward-v5510")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_tradable_source_live_forward_v5510_command)
+
+    p = sub.add_parser("validate-full-seed-tradable-sources-v5510")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=validate_full_seed_tradable_sources_v5510_command)
+
+    p = sub.add_parser("run-head-controller-tradable-winner-review-v5510")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_tradable_winner_review_v5510_command)
+
+    p = sub.add_parser("build-tradable-winner-mining-report-v5510")
+    p.set_defaults(func=build_tradable_winner_mining_report_v5510_command)
+
+    p = sub.add_parser("build-high-volatility-session-report-v5510")
+    p.set_defaults(func=build_high_volatility_session_report_v5510_command)
+
+    p = sub.add_parser("build-tradable-source-forward-report-v5510")
+    p.set_defaults(func=build_tradable_source_forward_report_v5510_command)
+
+    p = sub.add_parser("build-head-controller-tradable-winner-review-report-v5510")
+    p.set_defaults(func=build_head_controller_tradable_winner_review_report_v5510_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

@@ -1,0 +1,32 @@
+{
+  "trace_count": 0,
+  "source_specs": [
+    {
+      "source": "TRADABLE_VOLUME_BREAKOUT",
+      "research_mode": true,
+      "real_order_enabled": false
+    },
+    {
+      "source": "TRADABLE_ORDERFLOW_EXPANSION",
+      "research_mode": true,
+      "real_order_enabled": false
+    },
+    {
+      "source": "TRADABLE_COMPRESSION_BREAK",
+      "research_mode": true,
+      "real_order_enabled": false
+    },
+    {
+      "source": "TRADABLE_VWAP_TREND_RECLAIM",
+      "research_mode": true,
+      "real_order_enabled": false
+    },
+    {
+      "source": "BTC_ALIGNED_MOMENTUM",
+      "research_mode": true,
+      "real_order_enabled": false
+    }
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false
+}

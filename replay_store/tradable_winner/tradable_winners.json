@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "tradable_winner_count": 0,
+    "candidate_evaluated_count": 6468,
+    "winner_type_summary": {
+      "TRADABLE_SCALP_WINNER": {
+        "count": 0,
+        "avg_raw_return_pct": 0.0,
+        "avg_effective_return_pct": 0.0,
+        "avg_duration_sec": 0.0,
+        "tradable_with_500k": 0
+      },
+      "TRADABLE_MOMENTUM_WINNER": {
+        "count": 0,
+        "avg_raw_return_pct": 0.0,
+        "avg_effective_return_pct": 0.0,
+        "avg_duration_sec": 0.0,
+        "tradable_with_500k": 0
+      },
+      "TRADABLE_SPIKE_WINNER": {
+        "count": 0,
+        "avg_raw_return_pct": 0.0,
+        "avg_effective_return_pct": 0.0,
+        "avg_duration_sec": 0.0,
+        "tradable_with_500k": 0
+      }
+    },
+    "reject_reason_counts": {
+      "EFFECTIVE_RETURN_TOO_LOW": 6467,
+      "REWARD_TO_COST_TOO_LOW": 6456,
+      "TICK_NOISE": 6061,
+      "DATA_QUALITY_POOR": 1602,
+      "DEPTH_INSUFFICIENT": 43,
+      "SPREAD_TOO_WIDE": 1383
+    },
+    "data_source": "UPBIT_WS_RECORDED",
+    "real_order_enabled": false,
+    "research_mode": true,
+    "live_readiness": "LIVE_NOT_ALLOWED"
+  },
+  "winners": []
+}

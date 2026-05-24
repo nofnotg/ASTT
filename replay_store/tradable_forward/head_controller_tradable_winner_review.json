@@ -1,0 +1,33 @@
+{
+  "summary": "Tradable winner review completed in guarded research mode.",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "primary_problem": "NO_TRADABLE_WINNER",
+  "root_cause_hypotheses": [
+    "MICRO_WINNER raw moves were not tradable after cost."
+  ],
+  "next_experiments": [
+    "Collect additional high-volatility UPBIT_WS sessions",
+    "Mine tradable scalp/momentum winners only"
+  ],
+  "risk_flags": [
+    "NO_LIVE_ORDER",
+    "RESEARCH_MODE_ONLY"
+  ],
+  "config_proposals": [],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": false,
+  "micro_scalping_assessment": "UNSUITABLE",
+  "recommended_winner_type": "NONE",
+  "recommended_sources_for_forward": [],
+  "sources_to_pause": [
+    "RAW_MICRO_WINNER"
+  ],
+  "filters_to_tighten": [
+    "effective_return_pct",
+    "spread_pct",
+    "depth_3_level_krw"
+  ]
+}

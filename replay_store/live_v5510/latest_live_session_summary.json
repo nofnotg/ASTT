@@ -1,0 +1,35 @@
+{
+  "session_id": "live_v5510_20260524_093011",
+  "session_type": "RANDOM_CONTROL",
+  "plan": {
+    "session_type": "RANDOM_CONTROL",
+    "recommended_window": "any ordinary period",
+    "duration_minutes": 1,
+    "top_markets": 10,
+    "markets_include_btc": true,
+    "real_order_enabled": false
+  },
+  "start_time_kst": "2026-05-24T09:30:11.209054",
+  "end_time_kst": "2026-05-24T09:31:11.360189",
+  "duration_minutes": 1,
+  "markets": [
+    "KRW-BTC",
+    "KRW-ETH",
+    "KRW-XRP",
+    "KRW-SOL",
+    "KRW-SUI",
+    "KRW-DOGE",
+    "KRW-ADA",
+    "KRW-AVAX",
+    "KRW-LINK",
+    "KRW-TRX"
+  ],
+  "trade_event_count": 142,
+  "orderbook_event_count": 854,
+  "ticker_event_count": 306,
+  "quality": "GOOD",
+  "data_source": "UPBIT_WS_LIVE",
+  "real_order_enabled": false,
+  "research_mode": true,
+  "warnings": []
+}
