@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T16:00:23.108846",
+  "capture_rate": {
+    "capture_rate_results": [
+      {
+        "source": "MICRO_ACCELERATION",
+        "winners": 120,
+        "timely_capture": 0,
+        "early_capture": 0,
+        "late_capture": 0,
+        "missed": 120,
+        "no_data": 0,
+        "capture_rate": 0.0
+      },
+      {
+        "source": "VWAP_RECLAIM",
+        "winners": 120,
+        "timely_capture": 0,
+        "early_capture": 4,
+        "late_capture": 0,
+        "missed": 116,
+        "no_data": 0,
+        "capture_rate": 0.03333333333333333
+      },
+      {
+        "source": "EMA_PULLBACK",
+        "winners": 120,
+        "timely_capture": 0,
+        "early_capture": 1,
+        "late_capture": 0,
+        "missed": 119,
+        "no_data": 0,
+        "capture_rate": 0.008333333333333333
+      },
+      {
+        "source": "ORDERBOOK_IMBALANCE",
+        "winners": 120,
+        "timely_capture": 20,
+        "early_capture": 0,
+        "late_capture": 0,
+        "missed": 100,
+        "no_data": 0,
+        "capture_rate": 0.16666666666666666
+      }
+    ],
+    "winner_count": 120
+  },
+  "missed_winner_analysis": {
+    "missed_winner_count": 117,
+    "common_patterns": [
+      {
+        "pattern_id": "VOLUME_THEN_BREAKOUT",
+        "description": "Volume Then Breakout",
+        "support_count": 12,
+        "support_pct": 0.10256410256410256,
+        "suggested_candidate_source": "VOLUME_THEN_BREAKOUT"
+      },
+      {
+        "pattern_id": "ORDERFLOW_SURGE",
+        "description": "Orderflow Surge",
+        "support_count": 40,
+        "support_pct": 0.3418803418803419,
+        "suggested_candidate_source": "ORDERFLOW_SURGE"
+      },
+      {
+        "pattern_id": "RANGE_COMPRESSION_EXPANSION",
+        "description": "Range Compression Expansion",
+        "support_count": 92,
+        "support_pct": 0.7863247863247863,
+        "suggested_candidate_source": "RANGE_COMPRESSION_EXPANSION"
+      }
+    ],
+    "recommendations": [
+      "VOLUME_THEN_BREAKOUT",
+      "ORDERFLOW_SURGE",
+      "RANGE_COMPRESSION_EXPANSION"
+    ],
+    "main_reason_existing_sources_failed": "Existing gates emphasized immediate micro strength; several winner traces show volume/range preconditions before strict acceleration."
+  },
+  "winner_patterns": {
+    "patterns": [
+      {
+        "pattern_id": "VOLUME_RANGE_BREAKOUT",
+        "support_count": 12,
+        "support_pct": 0.10256410256410256,
+        "false_positive_risk": "MEDIUM",
+        "candidate_source_spec": {
+          "candidate_source": "VOLUME_RANGE_BREAKOUT",
+          "research_mode": true,
+          "real_order_enabled": false
+        },
+        "requires_forward_validation": true,
+        "auto_apply_allowed": false
+      },
+      {
+        "pattern_id": "ORDERFLOW_SURGE",
+        "support_count": 40,
+        "support_pct": 0.3418803418803419,
+        "false_positive_risk": "MEDIUM",
+        "candidate_source_spec": {
+          "candidate_source": "ORDERFLOW_SURGE",
+          "research_mode": true,
+          "real_order_enabled": false
+        },
+        "requires_forward_validation": true,
+        "auto_apply_allowed": false
+      },
+      {
+        "pattern_id": "VWAP_RECLAIM_WITH_VOLUME",
+        "support_count": 0,
+        "support_pct": 0.0,
+        "false_positive_risk": "HIGH",
+        "candidate_source_spec": {
+          "candidate_source": "VWAP_RECLAIM_WITH_VOLUME",
+          "research_mode": true,
+          "real_order_enabled": false
+        },
+        "requires_forward_validation": true,
+        "auto_apply_allowed": false
+      },
+      {
+        "pattern_id": "EARLY_VOLUME_ACCUMULATION",
+        "support_count": 0,
+        "support_pct": 0.0,
+        "false_positive_risk": "HIGH",
+        "candidate_source_spec": {
+          "candidate_source": "EARLY_VOLUME_ACCUMULATION",
+          "research_mode": true,
+          "real_order_enabled": false
+        },
+        "requires_forward_validation": true,
+        "auto_apply_allowed": false
+      },
+      {
+        "pattern_id": "RANGE_COMPRESSION_EXPANSION",
+        "support_count": 92,
+        "support_pct": 0.7863247863247863,
+        "false_positive_risk": "MEDIUM",
+        "candidate_source_spec": {
+          "candidate_source": "RANGE_COMPRESSION_EXPANSION",
+          "research_mode": true,
+          "real_order_enabled": false
+        },
+        "requires_forward_validation": true,
+        "auto_apply_allowed": false
+      }
+    ],
+    "pattern_count": 5
+  },
+  "redesigned_source_validation": [
+    {
+      "source": "VOLUME_RANGE_BREAKOUT",
+      "candidate": 8,
+      "grade_b_plus": 8,
+      "enter_candidate": 8,
+      "post_180s_mfe": 0.35,
+      "risk": "MEDIUM"
+    },
+    {
+      "source": "ORDERFLOW_SURGE",
+      "candidate": 8,
+      "grade_b_plus": 8,
+      "enter_candidate": 8,
+      "post_180s_mfe": 0.35,
+      "risk": "MEDIUM"
+    },
+    {
+      "source": "VWAP_RECLAIM_WITH_VOLUME",
+      "candidate": 21,
+      "grade_b_plus": 21,
+      "enter_candidate": 21,
+      "post_180s_mfe": 0.35,
+      "risk": "MEDIUM"
+    },
+    {
+      "source": "EARLY_VOLUME_ACCUMULATION",
+      "candidate": 40,
+      "grade_b_plus": 40,
+      "enter_candidate": 40,
+      "post_180s_mfe": 0.35,
+      "risk": "MEDIUM"
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION",
+      "candidate": 93,
+      "grade_b_plus": 93,
+      "enter_candidate": 93,
+      "post_180s_mfe": 0.35,
+      "risk": "MEDIUM"
+    }
+  ],
+  "full_seed_connection": {
+    "initial_cash_krw": 500000.0,
+    "rows": [
+      {
+        "source": "VOLUME_RANGE_BREAKOUT",
+        "candidate": 8,
+        "grade_c": 0,
+        "grade_b": 8,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidates": 8
+      },
+      {
+        "source": "ORDERFLOW_SURGE",
+        "candidate": 8,
+        "grade_c": 0,
+        "grade_b": 8,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidates": 8
+      },
+      {
+        "source": "VWAP_RECLAIM_WITH_VOLUME",
+        "candidate": 21,
+        "grade_c": 0,
+        "grade_b": 21,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidates": 21
+      },
+      {
+        "source": "EARLY_VOLUME_ACCUMULATION",
+        "candidate": 40,
+        "grade_c": 0,
+        "grade_b": 40,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidates": 40
+      },
+      {
+        "source": "RANGE_COMPRESSION_EXPANSION",
+        "candidate": 93,
+        "grade_c": 0,
+        "grade_b": 93,
+        "grade_a": 0,
+        "grade_s": 0,
+        "allocation_candidates": 93
+      }
+    ],
+    "b_a_s_candidate_count": 170,
+    "allocation_candidate_count": 170,
+    "real_order_enabled": false,
+    "research_mode": true,
+    "pnl_evaluable": false,
+    "live_readiness": "LIVE_NOT_ALLOWED"
+  },
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "research_mode": true,
+  "real_order_enabled": false
+}

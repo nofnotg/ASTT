@@ -1,0 +1,45 @@
+{
+  "capture_rate_results": [
+    {
+      "source": "MICRO_ACCELERATION",
+      "winners": 120,
+      "timely_capture": 0,
+      "early_capture": 0,
+      "late_capture": 0,
+      "missed": 120,
+      "no_data": 0,
+      "capture_rate": 0.0
+    },
+    {
+      "source": "VWAP_RECLAIM",
+      "winners": 120,
+      "timely_capture": 0,
+      "early_capture": 4,
+      "late_capture": 0,
+      "missed": 116,
+      "no_data": 0,
+      "capture_rate": 0.03333333333333333
+    },
+    {
+      "source": "EMA_PULLBACK",
+      "winners": 120,
+      "timely_capture": 0,
+      "early_capture": 1,
+      "late_capture": 0,
+      "missed": 119,
+      "no_data": 0,
+      "capture_rate": 0.008333333333333333
+    },
+    {
+      "source": "ORDERBOOK_IMBALANCE",
+      "winners": 120,
+      "timely_capture": 20,
+      "early_capture": 0,
+      "late_capture": 0,
+      "missed": 100,
+      "no_data": 0,
+      "capture_rate": 0.16666666666666666
+    }
+  ],
+  "winner_count": 120
+}

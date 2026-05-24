@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Head Controller Winner Review V5.5.8</title></head><body><h1>Head Controller Winner Review V5.5.8</h1><p>Head Controller 제안은 검증 후보일 뿐입니다. 자동 적용 금지.</p><pre>{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T16:00:23.356840",
+  "summary": "Winner mining review completed in research mode.",
+  "live_readiness_opinion": "PAPER_MORE_REQUIRED",
+  "primary_problem": "WINNER_CAPTURE_LOW",
+  "root_cause_hypotheses": [
+    "Existing candidates did not create real ENTER signals."
+  ],
+  "next_experiments": [
+    "Forward test redesigned sources during high-volatility UPBIT_WS sessions"
+  ],
+  "risk_flags": [
+    "RESEARCH_MODE_ONLY",
+    "NO_LIVE_ORDER"
+  ],
+  "config_proposals": [
+    {
+      "proposal_id": "v558_redesigned_source_research",
+      "reason": "Evaluate redesigned sources in forward paper only.",
+      "config_changes": {
+        "candidate_sources": [
+          "VOLUME_RANGE_BREAKOUT",
+          "ORDERFLOW_SURGE",
+          "VWAP_RECLAIM_WITH_VOLUME",
+          "EARLY_VOLUME_ACCUMULATION",
+          "RANGE_COMPRESSION_EXPANSION"
+        ]
+      },
+      "risk_level": "MEDIUM",
+      "requires_validation": true,
+      "active": false,
+      "human_approved": false
+    }
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": false,
+  "recommended_candidate_sources": [
+    "VOLUME_RANGE_BREAKOUT",
+    "ORDERFLOW_SURGE",
+    "VWAP_RECLAIM_WITH_VOLUME",
+    "EARLY_VOLUME_ACCUMULATION",
+    "RANGE_COMPRESSION_EXPANSION"
+  ],
+  "sources_to_pause": [
+    "MICRO_ACCELERATION",
+    "VWAP_RECLAIM",
+    "EMA_PULLBACK",
+    "ORDERBOOK_IMBALANCE"
+  ],
+  "artifact_integrity_status": "PASS"
+}</pre></body></html>

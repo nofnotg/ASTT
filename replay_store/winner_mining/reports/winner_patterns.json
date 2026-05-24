@@ -1,0 +1,70 @@
+{
+  "patterns": [
+    {
+      "pattern_id": "VOLUME_RANGE_BREAKOUT",
+      "support_count": 12,
+      "support_pct": 0.10256410256410256,
+      "false_positive_risk": "MEDIUM",
+      "candidate_source_spec": {
+        "candidate_source": "VOLUME_RANGE_BREAKOUT",
+        "research_mode": true,
+        "real_order_enabled": false
+      },
+      "requires_forward_validation": true,
+      "auto_apply_allowed": false
+    },
+    {
+      "pattern_id": "ORDERFLOW_SURGE",
+      "support_count": 40,
+      "support_pct": 0.3418803418803419,
+      "false_positive_risk": "MEDIUM",
+      "candidate_source_spec": {
+        "candidate_source": "ORDERFLOW_SURGE",
+        "research_mode": true,
+        "real_order_enabled": false
+      },
+      "requires_forward_validation": true,
+      "auto_apply_allowed": false
+    },
+    {
+      "pattern_id": "VWAP_RECLAIM_WITH_VOLUME",
+      "support_count": 0,
+      "support_pct": 0.0,
+      "false_positive_risk": "HIGH",
+      "candidate_source_spec": {
+        "candidate_source": "VWAP_RECLAIM_WITH_VOLUME",
+        "research_mode": true,
+        "real_order_enabled": false
+      },
+      "requires_forward_validation": true,
+      "auto_apply_allowed": false
+    },
+    {
+      "pattern_id": "EARLY_VOLUME_ACCUMULATION",
+      "support_count": 0,
+      "support_pct": 0.0,
+      "false_positive_risk": "HIGH",
+      "candidate_source_spec": {
+        "candidate_source": "EARLY_VOLUME_ACCUMULATION",
+        "research_mode": true,
+        "real_order_enabled": false
+      },
+      "requires_forward_validation": true,
+      "auto_apply_allowed": false
+    },
+    {
+      "pattern_id": "RANGE_COMPRESSION_EXPANSION",
+      "support_count": 92,
+      "support_pct": 0.7863247863247863,
+      "false_positive_risk": "MEDIUM",
+      "candidate_source_spec": {
+        "candidate_source": "RANGE_COMPRESSION_EXPANSION",
+        "research_mode": true,
+        "real_order_enabled": false
+      },
+      "requires_forward_validation": true,
+      "auto_apply_allowed": false
+    }
+  ],
+  "pattern_count": 5
+}

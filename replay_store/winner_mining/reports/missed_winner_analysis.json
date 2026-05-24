@@ -1,0 +1,32 @@
+{
+  "missed_winner_count": 117,
+  "common_patterns": [
+    {
+      "pattern_id": "VOLUME_THEN_BREAKOUT",
+      "description": "Volume Then Breakout",
+      "support_count": 12,
+      "support_pct": 0.10256410256410256,
+      "suggested_candidate_source": "VOLUME_THEN_BREAKOUT"
+    },
+    {
+      "pattern_id": "ORDERFLOW_SURGE",
+      "description": "Orderflow Surge",
+      "support_count": 40,
+      "support_pct": 0.3418803418803419,
+      "suggested_candidate_source": "ORDERFLOW_SURGE"
+    },
+    {
+      "pattern_id": "RANGE_COMPRESSION_EXPANSION",
+      "description": "Range Compression Expansion",
+      "support_count": 92,
+      "support_pct": 0.7863247863247863,
+      "suggested_candidate_source": "RANGE_COMPRESSION_EXPANSION"
+    }
+  ],
+  "recommendations": [
+    "VOLUME_THEN_BREAKOUT",
+    "ORDERFLOW_SURGE",
+    "RANGE_COMPRESSION_EXPANSION"
+  ],
+  "main_reason_existing_sources_failed": "Existing gates emphasized immediate micro strength; several winner traces show volume/range preconditions before strict acceleration."
+}

@@ -1,0 +1,56 @@
+{
+  "initial_cash_krw": 500000.0,
+  "rows": [
+    {
+      "source": "VOLUME_RANGE_BREAKOUT",
+      "candidate": 8,
+      "grade_c": 0,
+      "grade_b": 8,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidates": 8
+    },
+    {
+      "source": "ORDERFLOW_SURGE",
+      "candidate": 8,
+      "grade_c": 0,
+      "grade_b": 8,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidates": 8
+    },
+    {
+      "source": "VWAP_RECLAIM_WITH_VOLUME",
+      "candidate": 21,
+      "grade_c": 0,
+      "grade_b": 21,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidates": 21
+    },
+    {
+      "source": "EARLY_VOLUME_ACCUMULATION",
+      "candidate": 40,
+      "grade_c": 0,
+      "grade_b": 40,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidates": 40
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION",
+      "candidate": 93,
+      "grade_c": 0,
+      "grade_b": 93,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidates": 93
+    }
+  ],
+  "b_a_s_candidate_count": 170,
+  "allocation_candidate_count": 170,
+  "real_order_enabled": false,
+  "research_mode": true,
+  "pnl_evaluable": false,
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}

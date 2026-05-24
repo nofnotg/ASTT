@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T16:00:45.196180",
+  "winner_event_count": 120,
+  "winner_type_summary": {
+    "MICRO_WINNER": {
+      "count": 120,
+      "avg_return_pct": 0.6004189985274307,
+      "avg_duration_sec": 58.416666666666664,
+      "quality": "GOOD"
+    },
+    "SCALP_WINNER": {
+      "count": 0,
+      "avg_return_pct": 0.0,
+      "avg_duration_sec": 0.0,
+      "quality": "NO_DATA"
+    },
+    "MOMENTUM_WINNER": {
+      "count": 0,
+      "avg_return_pct": 0.0,
+      "avg_duration_sec": 0.0,
+      "quality": "NO_DATA"
+    },
+    "SPIKE_WINNER": {
+      "count": 0,
+      "avg_return_pct": 0.0,
+      "avg_duration_sec": 0.0,
+      "quality": "NO_DATA"
+    }
+  },
+  "source_session_ids": [
+    "upbit_ws_20260523_033831",
+    "upbit_ws_20260523_045305",
+    "upbit_ws_20260523_050322",
+    "upbit_ws_20260523_081237",
+    "upbit_ws_20260523_082752",
+    "upbit_ws_20260523_151306",
+    "upbit_ws_20260523_152818"
+  ],
+  "data_source": "UPBIT_WS",
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "feature_summary": {
+    "T_MINUS_10S": {
+      "avg_price_change_10s_pct": 0.0459866527998725,
+      "avg_buy_trade_ratio_10s": 0.3379188635516874,
+      "avg_volume_burst_ratio_10s_vs_60s": 1.0581393127044991,
+      "avg_orderbook_imbalance": -0.04785511093595596,
+      "notes": "GOOD/PARTIAL traces only"
+    },
+    "T_MINUS_30S": {
+      "avg_price_change_10s_pct": 0.04114558692605819,
+      "avg_buy_trade_ratio_10s": 0.305215825122544,
+      "avg_volume_burst_ratio_10s_vs_60s": 0.9081544928893792,
+      "avg_orderbook_imbalance": -0.028422610868452946,
+      "notes": "GOOD/PARTIAL traces only"
+    },
+    "T_MINUS_60S": {
+      "avg_price_change_10s_pct": -0.026075613544719503,
+      "avg_buy_trade_ratio_10s": 0.26428988180822904,
+      "avg_volume_burst_ratio_10s_vs_60s": 1.0367683492467559,
+      "avg_orderbook_imbalance": -0.0006560746087754208,
+      "notes": "GOOD/PARTIAL traces only"
+    },
+    "T_MINUS_180S": {
+      "avg_price_change_10s_pct": -0.01926712407755866,
+      "avg_buy_trade_ratio_10s": 0.2911459981495607,
+      "avg_volume_burst_ratio_10s_vs_60s": 0.9863011506371596,
+      "avg_orderbook_imbalance": 0.007642069823861555,
+      "notes": "GOOD/PARTIAL traces only"
+    },
+    "T_MINUS_300S": {
+      "avg_price_change_10s_pct": 0.002993116078415488,
+      "avg_buy_trade_ratio_10s": 0.302585176625496,
+      "avg_volume_burst_ratio_10s_vs_60s": 1.0849736901851386,
+      "avg_orderbook_imbalance": -0.046796982170429345,
+      "notes": "GOOD/PARTIAL traces only"
+    }
+  },
+  "trace_summary": {
+    "trace_count": 120,
+    "good_partial_trace_count": 117,
+    "trace_windows": [
+      10,
+      30,
+      60,
+      180,
+      300
+    ]
+  }
+}

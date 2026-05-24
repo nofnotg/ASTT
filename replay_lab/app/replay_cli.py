@@ -115,6 +115,16 @@ from replay_lab.research.ladder_entry_exit_validation_v557 import validate_ladde
 from replay_lab.research.head_controller_evaluation_v557 import run_head_controller_evaluation_v557
 from replay_lab.feedback.full_seed_allocator_html_report_v557 import FullSeedAllocatorHTMLReportV557
 from replay_lab.feedback.head_controller_evaluation_html_report_v557 import HeadControllerEvaluationHTMLReportV557
+from replay_lab.research.winner_trace_mining_v558 import detect_winner_events_v558, extract_winner_traces_v558
+from replay_lab.research.winner_capture_rate_v558 import analyze_winner_capture_rate_v558
+from replay_lab.research.missed_winner_analysis_v558 import analyze_missed_winners_v558
+from winner_mining.winner_pattern_miner import mine_winner_patterns
+from replay_lab.research.redesigned_candidate_source_validation_v558 import validate_redesigned_candidate_sources_v558
+from replay_lab.research.full_seed_winner_candidate_validation_v558 import validate_full_seed_winner_candidates_v558
+from replay_lab.research.head_controller_winner_pattern_review_v558 import run_head_controller_winner_review_v558
+from replay_lab.feedback.winner_trace_html_report_v558 import WinnerTraceHTMLReportV558
+from replay_lab.feedback.candidate_source_redesign_html_report_v558 import CandidateSourceRedesignHTMLReportV558
+from replay_lab.feedback.head_controller_winner_review_html_report_v558 import HeadControllerWinnerReviewHTMLReportV558
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1053,6 +1063,64 @@ def build_head_controller_evaluation_report_v557_command(args: argparse.Namespac
     return 0
 
 
+def detect_winner_events_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(detect_winner_events_v558(args.sessions_dir, args.winner_types), ensure_ascii=False, default=str))
+    return 0
+
+
+def extract_winner_traces_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(extract_winner_traces_v558(args.winner_events, args.trace_windows), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_winner_capture_rate_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(analyze_winner_capture_rate_v558(args.winner_traces, args.candidate_sources), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_missed_winners_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(analyze_missed_winners_v558(args.winner_traces), ensure_ascii=False, default=str))
+    return 0
+
+
+def mine_winner_patterns_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(mine_winner_patterns(args.winner_traces), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_redesigned_candidate_sources_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_redesigned_candidate_sources_v558(args.winner_traces), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_full_seed_winner_candidates_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_full_seed_winner_candidates_v558(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_winner_review_v558_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_winner_review_v558(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_winner_trace_report_v558_command(args: argparse.Namespace) -> int:
+    out = WinnerTraceHTMLReportV558().build()
+    print(f"winner trace report: {out}")
+    return 0
+
+
+def build_candidate_source_redesign_report_v558_command(args: argparse.Namespace) -> int:
+    out = CandidateSourceRedesignHTMLReportV558().build()
+    print(f"candidate source redesign report: {out}")
+    return 0
+
+
+def build_head_controller_winner_review_report_v558_command(args: argparse.Namespace) -> int:
+    out = HeadControllerWinnerReviewHTMLReportV558().build(args.reports_dir, args.llm_provider)
+    print(f"head controller winner review report: {out}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1831,6 +1899,54 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--reports-dir", default="docs/reports")
     p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
     p.set_defaults(func=build_head_controller_evaluation_report_v557_command)
+
+    p = sub.add_parser("detect-winner-events-v558")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--winner-types", default="MICRO_WINNER,SCALP_WINNER,MOMENTUM_WINNER,SPIKE_WINNER")
+    p.set_defaults(func=detect_winner_events_v558_command)
+
+    p = sub.add_parser("extract-winner-traces-v558")
+    p.add_argument("--winner-events", default=str(REPLAY_STORE_DIR / "winner_mining" / "events"))
+    p.add_argument("--trace-windows", default="10,30,60,180,300")
+    p.set_defaults(func=extract_winner_traces_v558_command)
+
+    p = sub.add_parser("analyze-winner-capture-rate-v558")
+    p.add_argument("--winner-traces", default=str(REPLAY_STORE_DIR / "winner_mining" / "traces"))
+    p.add_argument("--candidate-sources", default="MICRO_ACCELERATION,VWAP_RECLAIM,EMA_PULLBACK,ORDERBOOK_IMBALANCE")
+    p.set_defaults(func=analyze_winner_capture_rate_v558_command)
+
+    p = sub.add_parser("analyze-missed-winners-v558")
+    p.add_argument("--winner-traces", default=str(REPLAY_STORE_DIR / "winner_mining" / "traces"))
+    p.set_defaults(func=analyze_missed_winners_v558_command)
+
+    p = sub.add_parser("mine-winner-patterns-v558")
+    p.add_argument("--winner-traces", default=str(REPLAY_STORE_DIR / "winner_mining" / "traces"))
+    p.set_defaults(func=mine_winner_patterns_v558_command)
+
+    p = sub.add_parser("validate-redesigned-candidate-sources-v558")
+    p.add_argument("--winner-traces", default=str(REPLAY_STORE_DIR / "winner_mining" / "traces"))
+    p.set_defaults(func=validate_redesigned_candidate_sources_v558_command)
+
+    p = sub.add_parser("validate-full-seed-winner-candidates-v558")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=validate_full_seed_winner_candidates_v558_command)
+
+    p = sub.add_parser("run-head-controller-winner-review-v558")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_winner_review_v558_command)
+
+    p = sub.add_parser("build-winner-trace-report-v558")
+    p.set_defaults(func=build_winner_trace_report_v558_command)
+
+    p = sub.add_parser("build-candidate-source-redesign-report-v558")
+    p.set_defaults(func=build_candidate_source_redesign_report_v558_command)
+
+    p = sub.add_parser("build-head-controller-winner-review-report-v558")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=build_head_controller_winner_review_report_v558_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
