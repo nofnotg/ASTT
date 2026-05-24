@@ -1,13 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T11:00:23.002230",
+  "generated_at": "2026-05-24T12:43:19.898857",
   "controller_version": "v556_draft",
   "live_readiness_opinion": "LIVE_NOT_ALLOWED",
   "primary_problem": "ENTER_0",
   "root_cause_hypotheses": [
     "NO_REALISTIC_TRADES",
-    "PNL_NOT_EVALUABLE",
-    "LLM_RESEARCH_ASSIST_ONLY"
+    "PNL_NOT_EVALUABLE"
   ],
   "next_experiments": [
     "Analyze MISSED_WIN WAIT paths",
@@ -16,8 +15,7 @@
   ],
   "risk_flags": [
     "NO_REALISTIC_TRADES",
-    "PNL_NOT_EVALUABLE",
-    "LLM_RESEARCH_ASSIST_ONLY"
+    "PNL_NOT_EVALUABLE"
   ],
   "config_proposals": [
     {
@@ -30,15 +28,13 @@
   ],
   "auto_apply_allowed": false,
   "llm_config": {
-    "openai_key_loaded": true,
-    "gemini_key_loaded": true,
-    "openai_key_masked": "sk-p****PCYA",
-    "gemini_key_masked": "AQ.A****h__g",
-    "key_file_loaded": true,
+    "openai_key_loaded": false,
+    "gemini_key_loaded": false,
+    "key_file_loaded": false,
     "secret_values_returned": false,
-    "requested_provider": "auto",
-    "selected_provider": "openai",
-    "llm_enabled": true,
+    "requested_provider": "off",
+    "selected_provider": "off",
+    "llm_enabled": false,
     "auto_apply_allowed": false,
     "live_order_allowed": false
   }

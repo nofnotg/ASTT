@@ -3,4 +3,4 @@
 - live_readiness_opinion: LIVE_NOT_ALLOWED
 - primary_problem: ENTER_0
 - auto_apply_allowed: False
-- llm_provider: openai
+- llm_provider: off

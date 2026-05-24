@@ -6,6 +6,19 @@ from head_controller.head_controller_schema import build_controller_output
 
 
 def analyze_head_controller_context(context: dict) -> dict:
+    guard = context.get("artifact_guard", {})
+    if guard and not guard.get("allowed", True):
+        return enforce_head_controller_safety({
+            "controller_version": "v5561_guarded",
+            "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+            "primary_problem": "ARTIFACT_INTEGRITY_FAIL",
+            "root_cause_hypotheses": ["STALE_OR_TEST_ARTIFACT"],
+            "next_experiments": ["Regenerate production reports from real sessions"],
+            "risk_flags": ["STALE_OR_TEST_ARTIFACT", "NO_CONFIG_PROPOSAL_ALLOWED"],
+            "config_proposals": [],
+            "auto_apply_allowed": False,
+            "artifact_guard": guard,
+        })
     summary = context.get("session_summary", {})
     discovery = context.get("entry_discovery", {})
     if summary.get("trade_count", 0) == 0:

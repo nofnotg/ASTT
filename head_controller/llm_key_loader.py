@@ -41,9 +41,20 @@ def mask_secret(value: str | None) -> str:
 def _first_env_or_file(names: tuple[str, ...], file_values: dict[str, str]) -> str:
     for name in names:
         value = os.environ.get(name) or file_values.get(name)
-        if value:
+        if value and _looks_like_api_key(name, value.strip().strip('"').strip("'")):
             return value.strip().strip('"').strip("'")
     return ""
+
+
+def _looks_like_api_key(name: str, value: str) -> bool:
+    if len(value) < 20:
+        return False
+    upper = name.upper()
+    if "OPENAI" in upper or "GPT" in upper:
+        return value.startswith("sk-")
+    if "GEMINI" in upper or "GOOGLE" in upper:
+        return value.startswith("AIza") or value.startswith("AQ.") or len(value) >= 30
+    return True
 
 
 def _load_key_file(path: str) -> dict[str, str]:

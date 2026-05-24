@@ -99,6 +99,11 @@ from replay_lab.research.head_controller_draft_v556 import run_head_controller_d
 from replay_lab.feedback.entry_discovery_html_report_v556 import EntryDiscoveryHTMLReportV556
 from replay_lab.feedback.head_controller_html_report_v556 import HeadControllerHTMLReportV556
 from head_controller.llm_config import build_head_controller_llm_config
+from replay_lab.research.artifact_integrity_check_v5561 import check_artifact_integrity_v5561, scan_report_secrets_v5561
+from replay_lab.research.regenerate_v556_reports_v5561 import regenerate_v556_production_reports_v5561
+from replay_lab.research.head_controller_llm_guard_v5561 import run_head_controller_llm_guard_v5561
+from replay_lab.feedback.artifact_integrity_html_report_v5561 import ArtifactIntegrityHTMLReportV5561
+from replay_lab.feedback.head_controller_llm_guard_report_v5561 import HeadControllerLLMGuardReportV5561
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -949,6 +954,39 @@ def check_head_controller_llm_config_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def check_artifact_integrity_v5561_command(args: argparse.Namespace) -> int:
+    print(json.dumps(check_artifact_integrity_v5561(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def scan_report_secrets_v5561_command(args: argparse.Namespace) -> int:
+    print(json.dumps(scan_report_secrets_v5561(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def regenerate_v556_production_reports_v5561_command(args: argparse.Namespace) -> int:
+    print(json.dumps(regenerate_v556_production_reports_v5561(args.sessions_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_llm_smoke_v5561_command(args: argparse.Namespace) -> int:
+    result = run_head_controller_llm_guard_v5561(args.reports_dir, args.llm_provider, args.key_file, smoke=True)
+    print(json.dumps({k: v for k, v in result.items() if k not in {"artifact_integrity"}}, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_llm_guard_v5561_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_llm_guard_v5561(args.reports_dir, args.llm_provider, args.key_file, smoke=False), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_head_controller_llm_guard_report_v5561_command(args: argparse.Namespace) -> int:
+    ArtifactIntegrityHTMLReportV5561().build(args.reports_dir)
+    out = HeadControllerLLMGuardReportV5561().build(args.reports_dir, args.llm_provider, args.key_file)
+    print(f"head controller llm guard report: {out}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1650,6 +1688,36 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
     p.add_argument("--key-file", default=None)
     p.set_defaults(func=check_head_controller_llm_config_command)
+
+    p = sub.add_parser("check-artifact-integrity-v5561")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=check_artifact_integrity_v5561_command)
+
+    p = sub.add_parser("scan-report-secrets-v5561")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=scan_report_secrets_v5561_command)
+
+    p = sub.add_parser("regenerate-v556-production-reports-v5561")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=regenerate_v556_production_reports_v5561_command)
+
+    p = sub.add_parser("run-head-controller-llm-smoke-v5561")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=run_head_controller_llm_smoke_v5561_command)
+
+    p = sub.add_parser("run-head-controller-llm-guard-v5561")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=run_head_controller_llm_guard_v5561_command)
+
+    p = sub.add_parser("build-head-controller-llm-guard-report-v5561")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=build_head_controller_llm_guard_report_v5561_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
