@@ -1,0 +1,33 @@
+{
+  "summary": "False positive review completed in guarded research mode.",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "primary_problem": "FALSE_POSITIVE_HIGH",
+  "root_cause_hypotheses": [
+    "Refined source precision must be proven out of sample."
+  ],
+  "next_experiments": [
+    "Collect high-volatility forward sessions for refined sources"
+  ],
+  "risk_flags": [
+    "RESEARCH_MODE_ONLY",
+    "NO_LIVE_ORDER"
+  ],
+  "config_proposals": [],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": false,
+  "recommended_sources_for_forward": [],
+  "sources_to_pause": [
+    "ORDERFLOW_SURGE",
+    "VOLUME_RANGE_BREAKOUT",
+    "RANGE_COMPRESSION_EXPANSION"
+  ],
+  "filters_to_tighten": [
+    "spread_pct",
+    "tradable_depth",
+    "tick_noise",
+    "volume_burst"
+  ]
+}

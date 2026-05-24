@@ -125,6 +125,18 @@ from replay_lab.research.head_controller_winner_pattern_review_v558 import run_h
 from replay_lab.feedback.winner_trace_html_report_v558 import WinnerTraceHTMLReportV558
 from replay_lab.feedback.candidate_source_redesign_html_report_v558 import CandidateSourceRedesignHTMLReportV558
 from replay_lab.feedback.head_controller_winner_review_html_report_v558 import HeadControllerWinnerReviewHTMLReportV558
+from replay_lab.research.winner_quality_filter_v559 import run_winner_quality_filter_v559
+from replay_lab.research.non_winner_sampling_v559 import run_non_winner_sampling_v559
+from replay_lab.research.false_positive_control_v559 import run_false_positive_control_v559
+from replay_lab.research.source_discriminative_power_v559 import run_source_discriminative_power_v559
+from replay_lab.research.refined_source_validation_v559 import validate_refined_sources_v559, verify_post_mfe_calculation_v559
+from replay_lab.research.redesigned_source_forward_test_v559 import run_redesigned_source_forward_test_research_v559
+from replay_lab.research.full_seed_refined_source_validation_v559 import validate_full_seed_refined_sources_v559
+from replay_lab.research.head_controller_false_positive_review_v559 import run_head_controller_false_positive_review_v559
+from replay_lab.feedback.winner_quality_filter_html_report_v559 import WinnerQualityFilterHTMLReportV559
+from replay_lab.feedback.false_positive_control_html_report_v559 import FalsePositiveControlHTMLReportV559
+from replay_lab.feedback.redesigned_source_forward_html_report_v559 import RedesignedSourceForwardHTMLReportV559
+from replay_lab.feedback.head_controller_false_positive_review_html_report_v559 import HeadControllerFalsePositiveReviewHTMLReportV559
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1121,6 +1133,72 @@ def build_head_controller_winner_review_report_v558_command(args: argparse.Names
     return 0
 
 
+def filter_winner_quality_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_winner_quality_filter_v559(args.winner_traces, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def sample_non_winners_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_non_winner_sampling_v559(args.sessions_dir, args.sample_ratio), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_false_positives_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_false_positive_control_v559(args.quality_winners, args.non_winners, args.sources), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_source_discriminative_power_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_source_discriminative_power_v559(args.quality_winners, args.non_winners), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_refined_sources_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_refined_sources_v559(args.quality_winners, args.non_winners), ensure_ascii=False, default=str))
+    return 0
+
+
+def verify_post_mfe_calculation_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(verify_post_mfe_calculation_v559(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_redesigned_source_forward_test_v559_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(json.dumps(run_redesigned_source_forward_test_research_v559(args.duration_minutes, args.top_markets, args.sources, args.initial_cash_krw, args.scenario, research_mode), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_full_seed_refined_sources_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_full_seed_refined_sources_v559(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_false_positive_review_v559_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_false_positive_review_v559(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_winner_quality_filter_report_v559_command(args: argparse.Namespace) -> int:
+    print(f"winner quality filter report: {WinnerQualityFilterHTMLReportV559().build()}")
+    return 0
+
+
+def build_false_positive_control_report_v559_command(args: argparse.Namespace) -> int:
+    print(f"false positive control report: {FalsePositiveControlHTMLReportV559().build()}")
+    return 0
+
+
+def build_redesigned_source_forward_report_v559_command(args: argparse.Namespace) -> int:
+    print(f"redesigned source forward report: {RedesignedSourceForwardHTMLReportV559().build()}")
+    return 0
+
+
+def build_head_controller_false_positive_review_report_v559_command(args: argparse.Namespace) -> int:
+    print(f"head controller false positive review report: {HeadControllerFalsePositiveReviewHTMLReportV559().build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1947,6 +2025,67 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--reports-dir", default="docs/reports")
     p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
     p.set_defaults(func=build_head_controller_winner_review_report_v558_command)
+
+    p = sub.add_parser("filter-winner-quality-v559")
+    p.add_argument("--winner-traces", default=str(REPLAY_STORE_DIR / "winner_mining" / "traces"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=filter_winner_quality_v559_command)
+
+    p = sub.add_parser("sample-non-winners-v559")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--sample-ratio", type=float, default=2.0)
+    p.set_defaults(func=sample_non_winners_v559_command)
+
+    p = sub.add_parser("analyze-false-positives-v559")
+    p.add_argument("--quality-winners", default=str(REPLAY_STORE_DIR / "winner_quality"))
+    p.add_argument("--non-winners", default=str(REPLAY_STORE_DIR / "non_winner_samples"))
+    p.add_argument("--sources", default="ORDERFLOW_SURGE,VOLUME_RANGE_BREAKOUT,RANGE_COMPRESSION_EXPANSION")
+    p.set_defaults(func=analyze_false_positives_v559_command)
+
+    p = sub.add_parser("analyze-source-discriminative-power-v559")
+    p.add_argument("--quality-winners", default=str(REPLAY_STORE_DIR / "winner_quality"))
+    p.add_argument("--non-winners", default=str(REPLAY_STORE_DIR / "non_winner_samples"))
+    p.set_defaults(func=analyze_source_discriminative_power_v559_command)
+
+    p = sub.add_parser("validate-refined-sources-v559")
+    p.add_argument("--quality-winners", default=str(REPLAY_STORE_DIR / "winner_quality"))
+    p.add_argument("--non-winners", default=str(REPLAY_STORE_DIR / "non_winner_samples"))
+    p.set_defaults(func=validate_refined_sources_v559_command)
+
+    p = sub.add_parser("verify-post-mfe-calculation-v559")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=verify_post_mfe_calculation_v559_command)
+
+    p = sub.add_parser("run-redesigned-source-forward-test-v559")
+    p.add_argument("--duration-minutes", type=int, default=15)
+    p.add_argument("--top-markets", type=int, default=20)
+    p.add_argument("--sources", default="ORDERFLOW_SURGE_REFINED,VOLUME_RANGE_BREAKOUT_REFINED,RANGE_COMPRESSION_EXPANSION_REFINED")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--scenario", default="realistic_1")
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_redesigned_source_forward_test_v559_command)
+
+    p = sub.add_parser("validate-full-seed-refined-sources-v559")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=validate_full_seed_refined_sources_v559_command)
+
+    p = sub.add_parser("run-head-controller-false-positive-review-v559")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_false_positive_review_v559_command)
+
+    p = sub.add_parser("build-winner-quality-filter-report-v559")
+    p.set_defaults(func=build_winner_quality_filter_report_v559_command)
+
+    p = sub.add_parser("build-false-positive-control-report-v559")
+    p.set_defaults(func=build_false_positive_control_report_v559_command)
+
+    p = sub.add_parser("build-redesigned-source-forward-report-v559")
+    p.set_defaults(func=build_redesigned_source_forward_report_v559_command)
+
+    p = sub.add_parser("build-head-controller-false-positive-review-report-v559")
+    p.set_defaults(func=build_head_controller_false_positive_review_report_v559_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

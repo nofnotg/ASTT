@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T07:53:02.770857",
+  "raw_winner_count": 120,
+  "quality_winner_count": 0,
+  "rejected_winner_count": 120,
+  "rejection_reason_counts": {
+    "DATA_QUALITY_POOR": 3,
+    "TICK_NOISE": 114,
+    "SPREAD_TOO_WIDE": 99,
+    "INSUFFICIENT_LIQUIDITY": 99,
+    "EFFECTIVE_RETURN_TOO_LOW": 120
+  },
+  "effective_return_avg": 0.0,
+  "reward_to_cost_avg": 0.0,
+  "tick_noise_count": 114,
+  "insufficient_liquidity_count": 99,
+  "spread_too_wide_count": 99,
+  "tradable_with_500k_count": 21,
+  "winner_type_summary": {
+    "MICRO_WINNER": {
+      "raw": 120,
+      "quality": 0,
+      "rejected": 120,
+      "quality_rate": 0.0
+    }
+  },
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}

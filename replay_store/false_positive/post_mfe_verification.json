@@ -1,0 +1,9 @@
+{
+  "post_mfe_actual_calculation_verified": true,
+  "placeholder_detected": true,
+  "post_60s_mfe_avg_actual": 0.0,
+  "post_180s_mfe_avg_actual": 0.0,
+  "post_300s_mfe_avg_actual": 0.0,
+  "previous_report_value": 0.35,
+  "report_bug_detected": true
+}

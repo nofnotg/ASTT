@@ -1,0 +1,5 @@
+from replay_lab.feedback.false_positive_control_html_report_v559 import FalsePositiveControlHTMLReportV559
+
+
+def test_false_positive_report_class_exists():
+    assert FalsePositiveControlHTMLReportV559

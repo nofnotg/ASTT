@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset='utf-8'><title>False Positive Control V5.5.9</title></head><body><pre>{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T07:53:02.966861",
+  "winner_count": 0,
+  "non_winner_count": 2,
+  "source_results": [
+    {
+      "source": "ORDERFLOW_SURGE",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    },
+    {
+      "source": "VOLUME_RANGE_BREAKOUT",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    }
+  ],
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "source_discriminative_power": {
+    "feature_rows": [
+      {
+        "feature": "buy_trade_ratio_10s",
+        "winner_avg": 0.0,
+        "non_winner_avg": 0.5,
+        "separation_score": 0.5,
+        "direction": "higher_is_better"
+      },
+      {
+        "feature": "orderbook_imbalance",
+        "winner_avg": 0.0,
+        "non_winner_avg": -0.16122839050970306,
+        "separation_score": 0.16122839050970306,
+        "direction": "higher_is_better"
+      },
+      {
+        "feature": "spread_pct",
+        "winner_avg": 0.0,
+        "non_winner_avg": 0.6689038031319912,
+        "separation_score": 0.6689038031319912,
+        "direction": "lower_is_better"
+      },
+      {
+        "feature": "volume_burst_ratio_10s_vs_60s",
+        "winner_avg": 0.0,
+        "non_winner_avg": 2.0572719254797356,
+        "separation_score": 1.0,
+        "direction": "higher_is_better"
+      },
+      {
+        "feature": "previous_high_distance_pct",
+        "winner_avg": 0.0,
+        "non_winner_avg": 0.0,
+        "separation_score": 0.0,
+        "direction": "lower_is_better"
+      }
+    ],
+    "top_features": [
+      "volume_burst_ratio_10s_vs_60s",
+      "spread_pct",
+      "buy_trade_ratio_10s"
+    ]
+  },
+  "refined_source_validation": {
+    "refined_source_results": [
+      {
+        "source": "ORDERFLOW_SURGE_REFINED",
+        "candidate": 0,
+        "precision": 0.0,
+        "fpr": 0.0,
+        "forward_candidate": 0,
+        "risk": "HIGH"
+      },
+      {
+        "source": "VOLUME_RANGE_BREAKOUT_REFINED",
+        "candidate": 0,
+        "precision": 0.0,
+        "fpr": 0.0,
+        "forward_candidate": 0,
+        "risk": "HIGH"
+      },
+      {
+        "source": "RANGE_COMPRESSION_EXPANSION_REFINED",
+        "candidate": 0,
+        "precision": 0.0,
+        "fpr": 0.0,
+        "forward_candidate": 0,
+        "risk": "HIGH"
+      }
+    ],
+    "live_readiness": "LIVE_NOT_ALLOWED"
+  }
+}</pre></body></html>

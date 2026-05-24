@@ -1,0 +1,44 @@
+{
+  "feature_rows": [
+    {
+      "feature": "buy_trade_ratio_10s",
+      "winner_avg": 0.0,
+      "non_winner_avg": 0.5,
+      "separation_score": 0.5,
+      "direction": "higher_is_better"
+    },
+    {
+      "feature": "orderbook_imbalance",
+      "winner_avg": 0.0,
+      "non_winner_avg": -0.16122839050970306,
+      "separation_score": 0.16122839050970306,
+      "direction": "higher_is_better"
+    },
+    {
+      "feature": "spread_pct",
+      "winner_avg": 0.0,
+      "non_winner_avg": 0.6689038031319912,
+      "separation_score": 0.6689038031319912,
+      "direction": "lower_is_better"
+    },
+    {
+      "feature": "volume_burst_ratio_10s_vs_60s",
+      "winner_avg": 0.0,
+      "non_winner_avg": 2.0572719254797356,
+      "separation_score": 1.0,
+      "direction": "higher_is_better"
+    },
+    {
+      "feature": "previous_high_distance_pct",
+      "winner_avg": 0.0,
+      "non_winner_avg": 0.0,
+      "separation_score": 0.0,
+      "direction": "lower_is_better"
+    }
+  ],
+  "top_features": [
+    "volume_burst_ratio_10s_vs_60s",
+    "spread_pct",
+    "buy_trade_ratio_10s"
+  ]
+}

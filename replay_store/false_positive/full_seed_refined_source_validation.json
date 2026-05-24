@@ -1,0 +1,39 @@
+{
+  "initial_cash_krw": 500000.0,
+  "rows": [
+    {
+      "source": "ORDERFLOW_SURGE_REFINED",
+      "candidate": 2,
+      "grade_c": 2,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "VOLUME_RANGE_BREAKOUT_REFINED",
+      "candidate": 3,
+      "grade_c": 3,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION_REFINED",
+      "candidate": 1,
+      "grade_c": 1,
+      "grade_b": 0,
+      "grade_a": 0,
+      "grade_s": 0,
+      "allocation_candidate": 0,
+      "ENTER": 0
+    }
+  ],
+  "quality_blocked": true,
+  "real_order_enabled": false,
+  "research_mode": true,
+  "pnl_evaluable": false
+}

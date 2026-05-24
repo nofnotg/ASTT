@@ -1,0 +1,125 @@
+{
+  "summary": {
+    "non_winner_sample_count": 2,
+    "sample_type_summary": {
+      "COMPRESSION_NO_BREAKOUT": {
+        "count": 1,
+        "avg_future_mfe": 0.05,
+        "avg_future_mae": -0.05
+      },
+      "ORDERFLOW_FAKE_SURGE": {
+        "count": 1,
+        "avg_future_mfe": 0.05,
+        "avg_future_mae": -0.05
+      },
+      "VOLUME_FAKE_BREAKOUT": {
+        "count": 0,
+        "avg_future_mfe": 0.0,
+        "avg_future_mae": 0.0
+      },
+      "SPREAD_TRAP": {
+        "count": 0,
+        "avg_future_mfe": 0.0,
+        "avg_future_mae": 0.0
+      },
+      "RANDOM_CONTROL": {
+        "count": 0,
+        "avg_future_mfe": 0.0,
+        "avg_future_mae": 0.0
+      }
+    },
+    "source_data": "UPBIT_WS"
+  },
+  "rows": [
+    {
+      "non_winner_id": "non_winner_048502e4cd",
+      "market": "KRW-DOGE",
+      "sample_type": "COMPRESSION_NO_BREAKOUT",
+      "sample_time_ms": 0,
+      "future_180s_return_pct": 0.05,
+      "future_300s_return_pct": 0.07,
+      "max_future_mfe_pct": 0.05,
+      "max_future_mae_pct": -0.05,
+      "source_data": "UPBIT_WS",
+      "quality": "GOOD",
+      "features": {
+        "price_change_3s_pct": 0.0,
+        "price_change_5s_pct": 0.0,
+        "price_change_10s_pct": 0.0,
+        "price_change_30s_pct": 0.0,
+        "price_change_60s_pct": 0.0,
+        "range_position_pct": 50.0,
+        "previous_high_distance_pct": 0.0,
+        "breakout_distance_pct": 0.0,
+        "volume_10s": 1300.0,
+        "volume_30s": 6340.90269671,
+        "volume_60s": 6340.90269671,
+        "volume_burst_ratio_10s_vs_60s": 1.2301087673285158,
+        "trade_count_10s": 1,
+        "trade_count_acceleration": 1.0,
+        "buy_trade_ratio_5s": 0.0,
+        "buy_trade_ratio_10s": 0.0,
+        "buy_trade_ratio_30s": 0.0,
+        "aggressive_buy_ratio": 0.0,
+        "spread_pct": 0.6711409395973155,
+        "bid_ask_size_ratio": 0.7918165796002855,
+        "orderbook_imbalance": -0.11618567590559721,
+        "vwap_distance_pct": 0.0,
+        "ema20_distance_pct": 0.0,
+        "ema50_distance_pct": 0.0,
+        "btc_micro_state": "UNKNOWN",
+        "btc_1m_change_pct": 0.0,
+        "market_breadth_up_ratio": 0.0,
+        "krw_market_volume_rank": 0,
+        "market": "KRW-DOGE",
+        "timestamp_ms": 0,
+        "last_price": 0.0
+      }
+    },
+    {
+      "non_winner_id": "non_winner_2c18f1a8c3",
+      "market": "KRW-DOGE",
+      "sample_type": "ORDERFLOW_FAKE_SURGE",
+      "sample_time_ms": 0,
+      "future_180s_return_pct": 0.05,
+      "future_300s_return_pct": 0.07,
+      "max_future_mfe_pct": 0.05,
+      "max_future_mae_pct": -0.05,
+      "source_data": "UPBIT_WS",
+      "quality": "GOOD",
+      "features": {
+        "price_change_3s_pct": 0.0,
+        "price_change_5s_pct": 0.0,
+        "price_change_10s_pct": 0.0,
+        "price_change_30s_pct": 0.0,
+        "price_change_60s_pct": 0.6711409395973155,
+        "range_position_pct": 100.0,
+        "previous_high_distance_pct": 0.0,
+        "breakout_distance_pct": 0.0,
+        "volume_10s": 17261.68249208,
+        "volume_30s": 21898.97453504,
+        "volume_60s": 35906.5438984,
+        "volume_burst_ratio_10s_vs_60s": 2.884435083630956,
+        "trade_count_10s": 2,
+        "trade_count_acceleration": 1.0,
+        "buy_trade_ratio_5s": 1.0,
+        "buy_trade_ratio_10s": 1.0,
+        "buy_trade_ratio_30s": 1.0,
+        "aggressive_buy_ratio": 1.0,
+        "spread_pct": 0.6666666666666667,
+        "bid_ask_size_ratio": 0.6580020789035684,
+        "orderbook_imbalance": -0.2062711051138089,
+        "vwap_distance_pct": 0.11786851708983452,
+        "ema20_distance_pct": 0.0,
+        "ema50_distance_pct": 0.0,
+        "btc_micro_state": "UNKNOWN",
+        "btc_1m_change_pct": 0.0,
+        "market_breadth_up_ratio": 0.0,
+        "krw_market_volume_rank": 0,
+        "market": "KRW-DOGE",
+        "timestamp_ms": 0,
+        "last_price": 0.0
+      }
+    }
+  ]
+}

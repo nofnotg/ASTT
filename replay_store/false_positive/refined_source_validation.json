@@ -1,0 +1,29 @@
+{
+  "refined_source_results": [
+    {
+      "source": "ORDERFLOW_SURGE_REFINED",
+      "candidate": 0,
+      "precision": 0.0,
+      "fpr": 0.0,
+      "forward_candidate": 0,
+      "risk": "HIGH"
+    },
+    {
+      "source": "VOLUME_RANGE_BREAKOUT_REFINED",
+      "candidate": 0,
+      "precision": 0.0,
+      "fpr": 0.0,
+      "forward_candidate": 0,
+      "risk": "HIGH"
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION_REFINED",
+      "candidate": 0,
+      "precision": 0.0,
+      "fpr": 0.0,
+      "forward_candidate": 0,
+      "risk": "HIGH"
+    }
+  ],
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}

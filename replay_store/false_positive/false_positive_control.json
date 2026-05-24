@@ -1,0 +1,52 @@
+{
+  "winner_count": 0,
+  "non_winner_count": 2,
+  "source_results": [
+    {
+      "source": "ORDERFLOW_SURGE",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    },
+    {
+      "source": "VOLUME_RANGE_BREAKOUT",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    },
+    {
+      "source": "RANGE_COMPRESSION_EXPANSION",
+      "true_positive_count": 0,
+      "false_positive_count": 0,
+      "true_negative_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "false_positive_rate": 0.0,
+      "winner_capture_rate": 0.0,
+      "non_winner_trigger_rate": 0.0,
+      "average_mfe_after_signal": 0.0,
+      "average_mae_after_signal": 0.0,
+      "effective_return_after_cost": -0.05
+    }
+  ],
+  "live_readiness": "LIVE_NOT_ALLOWED"
+}

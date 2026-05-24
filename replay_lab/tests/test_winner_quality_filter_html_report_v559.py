@@ -1,0 +1,5 @@
+from replay_lab.feedback.winner_quality_filter_html_report_v559 import WinnerQualityFilterHTMLReportV559
+
+
+def test_winner_quality_report_class_exists():
+    assert WinnerQualityFilterHTMLReportV559

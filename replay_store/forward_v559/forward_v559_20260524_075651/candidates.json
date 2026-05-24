@@ -1,0 +1,159 @@
+[
+  {
+    "candidate_id": "orderflow_surge_refined_010176801e",
+    "market": "KRW-SUI",
+    "candidate_time_ms": 0,
+    "candidate_source": "ORDERFLOW_SURGE_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.1997336884154461,
+        "estimated_cost_pct": 0.19986684420772305,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      }
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  },
+  {
+    "candidate_id": "volume_range_breakout_refined_177cc0d25c",
+    "market": "KRW-TRX",
+    "candidate_time_ms": 0,
+    "candidate_source": "VOLUME_RANGE_BREAKOUT_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.1841620626151013,
+        "estimated_cost_pct": 0.19208103130755066,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      }
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  },
+  {
+    "candidate_id": "volume_range_breakout_refined_6afb3a7917",
+    "market": "KRW-TRX",
+    "candidate_time_ms": 0,
+    "candidate_source": "VOLUME_RANGE_BREAKOUT_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.1841620626151013,
+        "estimated_cost_pct": 0.19208103130755066,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      }
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  },
+  {
+    "candidate_id": "volume_range_breakout_refined_b6a8b94064",
+    "market": "KRW-TRX",
+    "candidate_time_ms": 0,
+    "candidate_source": "VOLUME_RANGE_BREAKOUT_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.1855287569573284,
+        "estimated_cost_pct": 0.1927643784786642,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      }
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  },
+  {
+    "candidate_id": "orderflow_surge_refined_c02e22d91e",
+    "market": "KRW-SUI",
+    "candidate_time_ms": 0,
+    "candidate_source": "ORDERFLOW_SURGE_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.0643915003219575,
+        "estimated_cost_pct": 0.13219575016097876,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      }
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  },
+  {
+    "candidate_id": "range_compression_expansion_refined_1c3fe733aa",
+    "market": "KRW-SUI",
+    "candidate_time_ms": 0,
+    "candidate_source": "RANGE_COMPRESSION_EXPANSION_REFINED",
+    "reference_price": 0.0,
+    "expected_target_pct": 0.35,
+    "expected_stop_pct": 0.25,
+    "evidence": {
+      "quality": {
+        "spread_pct": 0.0643915003219575,
+        "estimated_cost_pct": 0.13219575016097876,
+        "cost_ok": true,
+        "depth_3_level_krw": 1500000.0,
+        "depth_sufficiency_ratio": 3.0,
+        "tradable_with_500k": true,
+        "quality_pass": true,
+        "reject_reasons": []
+      },
+      "range_compression_score": 74.24339987121701
+    },
+    "signal_grade_hint": "B",
+    "risk_flags": [],
+    "data_source": "UPBIT_WS",
+    "research_mode": true,
+    "real_order_enabled": false
+  }
+]
