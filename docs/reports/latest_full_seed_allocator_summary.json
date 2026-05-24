@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T13:21:57.572262",
+  "session_id": "full_seed_v557_20260524_132157",
+  "duration_minutes": 60,
+  "strategies": [
+    "MICRO_ACCELERATION",
+    "VWAP_RECLAIM",
+    "EMA_PULLBACK",
+    "ORDERBOOK_IMBALANCE"
+  ],
+  "scenario": "realistic_1",
+  "initial_cash_krw": 500000.0,
+  "final_equity_krw": 500000.0,
+  "total_pnl_krw": 0.0,
+  "total_return_pct": 0.0,
+  "candidate_count": 49,
+  "enter_count": 0,
+  "trade_count": 0,
+  "win_rate": null,
+  "profit_factor": null,
+  "expectancy_pct": null,
+  "max_drawdown_pct": 0.0,
+  "fee_total_krw": 0.0,
+  "slippage_estimated_krw": 0.0,
+  "default_sizing_mode": "FULL_SEED_LADDER",
+  "sizing_mode": "FULL_SEED_LADDER",
+  "research_mode": true,
+  "real_order_enabled": false,
+  "pnl_evaluable": false,
+  "primary_problem": "ENTER_0",
+  "capital_policy": {
+    "initial_cash_krw": 500000.0,
+    "max_total_exposure_pct": 1.0,
+    "max_single_position_pct": 1.0,
+    "max_open_positions": 1,
+    "daily_stop_loss_pct": -2.0,
+    "session_stop_loss_pct": -1.0,
+    "real_order_enabled": false,
+    "research_mode": true
+  },
+  "signal_strength_counts": {
+    "C": 49,
+    "B": 0,
+    "A": 0,
+    "S": 0
+  },
+  "entry_ladder": {
+    "ladder_plan": [
+      {
+        "step": 1,
+        "pct": 0.3,
+        "krw": 0.0,
+        "status": "READY"
+      },
+      {
+        "step": 2,
+        "pct": 0.3,
+        "krw": 0.0,
+        "status": "WAIT_CONFIRM"
+      },
+      {
+        "step": 3,
+        "pct": 0.4,
+        "krw": 0.0,
+        "status": "WAIT_CONFIRM"
+      }
+    ]
+  },
+  "exit_ladder": {
+    "exit_plan": [
+      {
+        "step": 1,
+        "pct": 0.5,
+        "target_pct": 0.4
+      },
+      {
+        "step": 2,
+        "pct": 0.3,
+        "target_pct": 0.7
+      },
+      {
+        "step": 3,
+        "pct": 0.2,
+        "mode": "TRAILING"
+      }
+    ]
+  },
+  "ladder_validation": {
+    "sessions_dir": "replay_store/sessions/realistic_paper_v555",
+    "entry_ladder": {
+      "ladder_plan": [
+        {
+          "step": 1,
+          "pct": 0.3,
+          "krw": 150000.0,
+          "status": "READY"
+        },
+        {
+          "step": 2,
+          "pct": 0.3,
+          "krw": 150000.0,
+          "status": "WAIT_CONFIRM"
+        },
+        {
+          "step": 3,
+          "pct": 0.4,
+          "krw": 200000.0,
+          "status": "WAIT_CONFIRM"
+        }
+      ]
+    },
+    "exit_ladder": {
+      "exit_plan": [
+        {
+          "step": 1,
+          "pct": 0.5,
+          "target_pct": 0.4
+        },
+        {
+          "step": 2,
+          "pct": 0.3,
+          "target_pct": 0.7
+        },
+        {
+          "step": 3,
+          "pct": 0.2,
+          "mode": "TRAILING"
+        }
+      ]
+    },
+    "ladder_validation_result": {
+      "valid": true,
+      "entry_pct_total": 1.0,
+      "exit_pct_total": 1.0,
+      "warnings": []
+    }
+  },
+  "equity_curve": [
+    {
+      "step": 0,
+      "equity_krw": 500000.0,
+      "return_pct": 0.0,
+      "drawdown_pct": 0.0
+    },
+    {
+      "step": 1,
+      "equity_krw": 500000.0,
+      "return_pct": 0.0,
+      "drawdown_pct": 0.0
+    }
+  ],
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "sizing_mode_comparison": {
+    "initial_cash_krw": 500000.0,
+    "sizing_mode_results": [
+      {
+        "mode": "FIXED_10K",
+        "candidate": 49,
+        "enter": 0,
+        "trade": 0,
+        "win_rate": null,
+        "pf": null,
+        "return_pct": null,
+        "mdd_pct": 0.0,
+        "fee_krw": 0.0,
+        "slippage_krw": 0.0,
+        "pnl_evaluable": false
+      },
+      {
+        "mode": "FIXED_100K",
+        "candidate": 49,
+        "enter": 0,
+        "trade": 0,
+        "win_rate": null,
+        "pf": null,
+        "return_pct": null,
+        "mdd_pct": 0.0,
+        "fee_krw": 0.0,
+        "slippage_krw": 0.0,
+        "pnl_evaluable": false
+      },
+      {
+        "mode": "FULL_SEED_SINGLE",
+        "candidate": 49,
+        "enter": 0,
+        "trade": 0,
+        "win_rate": null,
+        "pf": null,
+        "return_pct": null,
+        "mdd_pct": 0.0,
+        "fee_krw": 0.0,
+        "slippage_krw": 0.0,
+        "pnl_evaluable": false
+      },
+      {
+        "mode": "FULL_SEED_LADDER",
+        "candidate": 49,
+        "enter": 0,
+        "trade": 0,
+        "win_rate": null,
+        "pf": null,
+        "return_pct": null,
+        "mdd_pct": 0.0,
+        "fee_krw": 0.0,
+        "slippage_krw": 0.0,
+        "pnl_evaluable": false
+      }
+    ],
+    "primary_problem": "ENTER_0"
+  }
+}

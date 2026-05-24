@@ -104,6 +104,17 @@ from replay_lab.research.regenerate_v556_reports_v5561 import regenerate_v556_pr
 from replay_lab.research.head_controller_llm_guard_v5561 import run_head_controller_llm_guard_v5561
 from replay_lab.feedback.artifact_integrity_html_report_v5561 import ArtifactIntegrityHTMLReportV5561
 from replay_lab.feedback.head_controller_llm_guard_report_v5561 import HeadControllerLLMGuardReportV5561
+from replay_lab.research.head_controller_openai_live_check_v5562 import (
+    run_head_controller_openai_live_smoke_v5562,
+    run_head_controller_unsafe_prompt_test_v5562,
+)
+from replay_lab.feedback.head_controller_openai_live_report_v5562 import HeadControllerOpenAILiveReportV5562
+from execution.full_seed_paper_runner import run_full_seed_paper_session_v557
+from replay_lab.research.sizing_mode_comparison_v557 import compare_sizing_modes_v557
+from replay_lab.research.ladder_entry_exit_validation_v557 import validate_ladder_entry_exit_v557
+from replay_lab.research.head_controller_evaluation_v557 import run_head_controller_evaluation_v557
+from replay_lab.feedback.full_seed_allocator_html_report_v557 import FullSeedAllocatorHTMLReportV557
+from replay_lab.feedback.head_controller_evaluation_html_report_v557 import HeadControllerEvaluationHTMLReportV557
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -987,6 +998,61 @@ def build_head_controller_llm_guard_report_v5561_command(args: argparse.Namespac
     return 0
 
 
+def run_head_controller_openai_live_smoke_v5562_command(args: argparse.Namespace) -> int:
+    result = run_head_controller_openai_live_smoke_v5562(args.reports_dir, args.llm_provider, args.key_file)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def test_head_controller_unsafe_prompt_v5562_command(args: argparse.Namespace) -> int:
+    result = run_head_controller_unsafe_prompt_test_v5562(args.llm_provider)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_head_controller_openai_live_report_v5562_command(args: argparse.Namespace) -> int:
+    out = HeadControllerOpenAILiveReportV5562().build(args.reports_dir, args.llm_provider, args.key_file)
+    print(f"head controller openai live report: {out}")
+    return 0
+
+
+def run_full_seed_paper_session_v557_command(args: argparse.Namespace) -> int:
+    strategies = [item.strip() for item in str(args.strategies).split(",") if item.strip()]
+    result = run_full_seed_paper_session_v557(args.duration_minutes, args.initial_cash_krw, args.sizing_mode, strategies, args.scenario, str(args.research_mode).lower() == "true")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def compare_sizing_modes_v557_command(args: argparse.Namespace) -> int:
+    result = compare_sizing_modes_v557(args.sessions_dir, args.initial_cash_krw)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_ladder_entry_exit_v557_command(args: argparse.Namespace) -> int:
+    result = validate_ladder_entry_exit_v557(args.sessions_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_evaluation_v557_command(args: argparse.Namespace) -> int:
+    result = run_head_controller_evaluation_v557(args.reports_dir, args.llm_provider)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_full_seed_allocator_report_v557_command(args: argparse.Namespace) -> int:
+    out = FullSeedAllocatorHTMLReportV557().build()
+    print(f"full seed allocator report: {out}")
+    return 0
+
+
+def build_head_controller_evaluation_report_v557_command(args: argparse.Namespace) -> int:
+    out = HeadControllerEvaluationHTMLReportV557().build(args.reports_dir, args.llm_provider)
+    print(f"head controller evaluation report: {out}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1718,6 +1784,53 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
     p.add_argument("--key-file", default=None)
     p.set_defaults(func=build_head_controller_llm_guard_report_v5561_command)
+
+    p = sub.add_parser("run-head-controller-openai-live-smoke-v5562")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["openai"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=run_head_controller_openai_live_smoke_v5562_command)
+
+    p = sub.add_parser("test-head-controller-unsafe-prompt-v5562")
+    p.add_argument("--llm-provider", default="openai", choices=["openai", "gemini", "off"])
+    p.set_defaults(func=test_head_controller_unsafe_prompt_v5562_command)
+
+    p = sub.add_parser("build-head-controller-openai-live-report-v5562")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["openai"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=build_head_controller_openai_live_report_v5562_command)
+
+    p = sub.add_parser("run-full-seed-paper-session-v557")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--sizing-mode", default="FULL_SEED_LADDER")
+    p.add_argument("--strategies", default="MICRO_ACCELERATION,VWAP_RECLAIM,EMA_PULLBACK,ORDERBOOK_IMBALANCE")
+    p.add_argument("--scenario", default="realistic_1")
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_full_seed_paper_session_v557_command)
+
+    p = sub.add_parser("compare-sizing-modes-v557")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=compare_sizing_modes_v557_command)
+
+    p = sub.add_parser("validate-ladder-entry-exit-v557")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=validate_ladder_entry_exit_v557_command)
+
+    p = sub.add_parser("run-head-controller-evaluation-v557")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_evaluation_v557_command)
+
+    p = sub.add_parser("build-full-seed-allocator-report-v557")
+    p.set_defaults(func=build_full_seed_allocator_report_v557_command)
+
+    p = sub.add_parser("build-head-controller-evaluation-report-v557")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=build_head_controller_evaluation_report_v557_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

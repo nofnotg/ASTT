@@ -18,7 +18,7 @@ class GeminiHeadControllerClient(HeadControllerLLMClient):
     def analyze(self, context: dict) -> LLMResult:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent?{urllib.parse.urlencode({'key': self.api_key})}"
         shape = {"summary": "string", "live_readiness_opinion": "LIVE_NOT_ALLOWED", "primary_problem": "string", "root_cause_hypotheses": [], "next_experiments": [], "risk_flags": [], "config_proposals": [], "auto_apply_allowed": False, "live_order_allowed": False}
-        payload = {"contents": [{"parts": [{"text": "Return ONLY valid JSON. No markdown. Never enable live trading or auto apply. Shape: " + json.dumps(shape, ensure_ascii=False) + " Context: " + json.dumps(context, ensure_ascii=False)[:6000]}]}]}
+        payload = {"contents": [{"parts": [{"text": "Return ONLY valid JSON. No markdown. Never enable live trading or auto apply. Do not recommend real orders, automatic position sizing, stop-loss removal, or active config changes. Shape: " + json.dumps(shape, ensure_ascii=False) + " Context: " + json.dumps(context, ensure_ascii=False)[:6000]}]}]}
         req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers={"Content-Type": "application/json"})
         try:
             with urllib.request.urlopen(req, timeout=20) as resp:

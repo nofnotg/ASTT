@@ -26,12 +26,30 @@ class OpenAIHeadControllerClient(HeadControllerLLMClient):
             "auto_apply_allowed": False,
             "live_order_allowed": False,
         }
+        if context.get("task") == "smoke":
+            expected = {
+                "summary": "OpenAI provider call succeeded for research guard verification.",
+                "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+                "primary_problem": "OPENAI_LIVE_GUARD_SMOKE",
+                "root_cause_hypotheses": ["Research-only verification"],
+                "next_experiments": ["Continue guarded paper validation"],
+                "risk_flags": ["LLM_RESEARCH_ASSIST_ONLY"],
+                "config_proposals": [],
+                "auto_apply_allowed": False,
+                "live_order_allowed": False,
+            }
+            prompt = "Return exactly this JSON object and nothing else: " + json.dumps(expected, ensure_ascii=False)
+        else:
+            prompt = (
+                "Return ONLY valid JSON matching this shape. No markdown. Never enable live trading or auto apply. Shape: "
+                + json.dumps(instruction, ensure_ascii=False)
+                + " Do not recommend live trading, real orders, automatic position sizing, stop-loss removal, or active config changes. Keep all recommendations research-only."
+                + " Context: "
+                + json.dumps(context, ensure_ascii=False)[:6000]
+            )
         payload = {
             "model": self.model,
-            "input": "Return ONLY valid JSON matching this shape. No markdown. Never enable live trading or auto apply. Shape: "
-            + json.dumps(instruction, ensure_ascii=False)
-            + " Context: "
-            + json.dumps(context, ensure_ascii=False)[:6000],
+            "input": prompt,
         }
         req = urllib.request.Request("https://api.openai.com/v1/responses", data=json.dumps(payload).encode("utf-8"), headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"})
         try:

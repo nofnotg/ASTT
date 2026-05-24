@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T13:22:34.610264",
+  "evaluation_id": "head_eval_v557_20260524_132234",
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": false,
+  "live_readiness": "LIVE_NOT_ALLOWED",
+  "research_score": 35,
+  "primary_problem": "ENTER_0",
+  "recommended_next_experiments": [
+    "Collect high-volatility UPBIT_WS sessions",
+    "Redesign micro candidate source",
+    "Re-run entry discovery with balanced gate"
+  ],
+  "config_proposals": [],
+  "risk_flags": [
+    "PNL_NOT_EVALUABLE"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "artifact_integrity_status": "PASS"
+}

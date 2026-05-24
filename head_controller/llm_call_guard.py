@@ -27,7 +27,7 @@ def run_guarded_llm_analysis(reports_dir: str, llm_provider: str = "auto", key_f
     keys = load_head_controller_llm_keys(key_file)
     client = OpenAIHeadControllerClient(keys["_openai_key"]) if llm_config["selected_provider"] == "openai" else GeminiHeadControllerClient(keys["_gemini_key"])
     if smoke:
-        llm_result = client.analyze({"task": "smoke", "constraints": context["constraints"]})
+        llm_result = client.analyze({"task": "smoke", "instruction": "Return a safe research-only status. Do not suggest or mention live trading enablement.", "constraints": context["constraints"]})
     else:
         llm_result = client.analyze(sanitize_for_report(context))
     if not llm_result.call_success:
@@ -39,6 +39,12 @@ def run_guarded_llm_analysis(reports_dir: str, llm_provider: str = "auto", key_f
         result["fallback_used"] = False
         result["llm_output_rejected"] = False
         schema_valid = True
+        if "LLM_UNSAFE_PROPOSAL_REJECTED" in result.get("risk_flags", []):
+            rejected = result
+            result = fallback_head_controller_analysis(context, "UNSAFE_LLM_OUTPUT")
+            result["risk_flags"] = list(set(result.get("risk_flags", []) + rejected.get("risk_flags", [])))
+            result["llm_output_rejected"] = True
+            schema_valid = True
     except Exception as exc:
         result = fallback_head_controller_analysis(context, f"SCHEMA_FAIL:{type(exc).__name__}")
         result["llm_output_rejected"] = True
