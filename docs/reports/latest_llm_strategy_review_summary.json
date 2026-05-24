@@ -1,0 +1,49 @@
+{
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": true,
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "primary_problem": "NO_PAPER_ENTER",
+  "strategy_assessment": "SETUP_FILTER_BUILT_BUT_UNPROVEN",
+  "recommended_setups": [
+    "PULLBACK_RECLAIM",
+    "RANGE_BREAKOUT",
+    "COMPRESSION_EXPANSION"
+  ],
+  "setups_to_pause": [],
+  "regime_findings": [
+    {
+      "dominant_regime": "CHOP",
+      "entry_allowed": true
+    }
+  ],
+  "next_grid_inputs": [
+    "setup_score_threshold",
+    "reward_to_risk_threshold",
+    "max_spread_pct",
+    "min_depth_3_level_krw",
+    "confirmation_price_response_pct"
+  ],
+  "next_experiments": [
+    "Replay only RISK_ON and SELECTIVE_ALT clips with setup gating",
+    "Compare B/A/S allocation curves before any V5.6 forward",
+    "Separate avoided loss from missed opportunity in the next scenario batch"
+  ],
+  "risk_flags": [
+    "paper ENTER remains zero",
+    "realistic PnL is not evaluable"
+  ],
+  "config_proposals": [],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false,
+  "active": false,
+  "human_approved": false,
+  "unsafe_proposal_detected": false,
+  "token_usage": {
+    "prompt_tokens": 12833,
+    "completion_tokens": 258,
+    "total_tokens": 13091,
+    "estimated_cost_usd": 0.068035
+  }
+}

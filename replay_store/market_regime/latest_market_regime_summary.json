@@ -1,0 +1,27 @@
+{
+  "schema_version": "v5r3",
+  "regime": "CHOP",
+  "dominant_regime": "CHOP",
+  "regime_score": 45.07164741810657,
+  "long_allowed": true,
+  "btc_return_pct": -0.2854954390362788,
+  "breadth_up_count": 1,
+  "breadth_down_count": 27,
+  "breadth_ratio": 0.03571428571428571,
+  "market_count": 28,
+  "volume_concentration": 0.33837493056391876,
+  "event_counts": {
+    "SPREAD_CONTRACTION": 8,
+    "MARKET_RANK_SURGE": 29,
+    "ORDERFLOW_SHIFT": 13,
+    "DEPTH_RECOVERY": 7,
+    "VOLUME_SPIKE": 11,
+    "BTC_SHOCK": 1
+  },
+  "regime_distribution": {
+    "CHOP": 1
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "data_source": "TIMING_CLIPS_AND_REPORTS"
+}

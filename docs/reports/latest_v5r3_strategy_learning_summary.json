@@ -1,0 +1,22 @@
+{
+  "version": "V5.R3",
+  "risk_profile": "aggressive",
+  "dominant_regime": "CHOP",
+  "setup_candidate_count": 64,
+  "scenario_count": 144,
+  "paper_enter_count": 0,
+  "trade_count": 0,
+  "win_rate": null,
+  "profit_factor": null,
+  "expectancy_pct": null,
+  "total_pnl_krw": 0.0,
+  "total_return_pct": 0.0,
+  "max_drawdown_pct": 0.0,
+  "pnl_evaluable": false,
+  "llm_completion_tokens": 258,
+  "llm_fallback_used": true,
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

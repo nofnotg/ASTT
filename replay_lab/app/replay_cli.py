@@ -178,6 +178,15 @@ from replay_lab.feedback.confirmation_calibration_html_report_v5r2 import Confir
 from replay_lab.feedback.llm_completion_repair_html_report_v5r2 import LLMCompletionRepairHTMLReportV5R2
 from replay_lab.feedback.project_scorecard_html_report_v5r2 import ProjectScorecardHTMLReportV5R2
 from replay_lab.feedback.head_controller_v5r2_review_html_report import HeadControllerV5R2ReviewHTMLReport
+from market_intelligence.regime_engine import build_market_regime_v5r3
+from setup_intelligence.setup_engine import build_setup_candidates_v5r3
+from scenario_lab.scenario_factory import build_scenarios_v5r3
+from execution.aggressive_paper_learning_runner import (
+    run_aggressive_paper_learning_v5r3,
+    run_scenario_replay_v5r3,
+)
+from replay_lab.research.llm_strategy_review_v5r3 import run_llm_strategy_review_v5r3
+from replay_lab.feedback.v5r3_strategy_learning_html_report import V5R3StrategyLearningHTMLReport
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1457,6 +1466,60 @@ def build_head_controller_v5r2_review_report_command(args: argparse.Namespace) -
     return 0
 
 
+def build_market_regime_v5r3_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_market_regime_v5r3(args.sessions_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_setup_candidates_v5r3_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_setup_candidates_v5r3(args.sessions_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_scenarios_v5r3_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_scenarios_v5r3(), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_scenario_replay_v5r3_command(args: argparse.Namespace) -> int:
+    print(
+        json.dumps(
+            run_scenario_replay_v5r3(args.scenario_set, args.initial_cash_krw, args.risk_profile),
+            ensure_ascii=False,
+            default=str,
+        )
+    )
+    return 0
+
+
+def run_aggressive_paper_learning_v5r3_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(
+        json.dumps(
+            run_aggressive_paper_learning_v5r3(
+                args.duration_minutes,
+                args.top_markets,
+                args.initial_cash_krw,
+                args.risk_profile,
+                research_mode,
+            ),
+            ensure_ascii=False,
+            default=str,
+        )
+    )
+    return 0
+
+
+def run_llm_strategy_review_v5r3_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_llm_strategy_review_v5r3(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v5r3_strategy_learning_report_command(args: argparse.Namespace) -> int:
+    print(f"v5r3 strategy learning report: {V5R3StrategyLearningHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2520,6 +2583,41 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-head-controller-v5r2-review-report")
     p.set_defaults(func=build_head_controller_v5r2_review_report_command)
+
+    p = sub.add_parser("build-market-regime-v5r3")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.set_defaults(func=build_market_regime_v5r3_command)
+
+    p = sub.add_parser("build-setup-candidates-v5r3")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=build_setup_candidates_v5r3_command)
+
+    p = sub.add_parser("build-scenarios-v5r3")
+    p.set_defaults(func=build_scenarios_v5r3_command)
+
+    p = sub.add_parser("run-scenario-replay-v5r3")
+    p.add_argument("--scenario-set", default=str(REPLAY_STORE_DIR / "scenarios"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--risk-profile", default="aggressive", choices=["aggressive"])
+    p.set_defaults(func=run_scenario_replay_v5r3_command)
+
+    p = sub.add_parser("run-aggressive-paper-learning-v5r3")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--risk-profile", default="aggressive", choices=["aggressive"])
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_aggressive_paper_learning_v5r3_command)
+
+    p = sub.add_parser("run-llm-strategy-review-v5r3")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_llm_strategy_review_v5r3_command)
+
+    p = sub.add_parser("build-v5r3-strategy-learning-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v5r3_strategy_learning_report_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

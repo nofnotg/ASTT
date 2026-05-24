@@ -1,0 +1,31 @@
+{
+  "schema_version": "v5r3",
+  "scenario_count": 144,
+  "scenario_counts": {
+    "ALT_ROTATION": 15,
+    "PULLBACK_SUCCESS": 11,
+    "BTC_CHOP": 11,
+    "VOLUME_SURGE": 19,
+    "BREAKOUT_FAIL": 8,
+    "FAKE_RANK_SURGE": 39,
+    "NO_FOLLOW_THROUGH": 41
+  },
+  "by_scenario_type": {
+    "ALT_ROTATION": 15,
+    "PULLBACK_SUCCESS": 11,
+    "BTC_CHOP": 11,
+    "VOLUME_SURGE": 19,
+    "BREAKOUT_FAIL": 8,
+    "FAKE_RANK_SURGE": 39,
+    "NO_FOLLOW_THROUGH": 41
+  },
+  "paper_enter_count": 0,
+  "trade_count": 0,
+  "total_pnl_krw": 0.0,
+  "total_return_pct": 0.0,
+  "max_drawdown_pct": 0.0,
+  "missed_entry_count": 64,
+  "false_entry_count": 0,
+  "avoided_loss_count": 0,
+  "real_order_enabled": false
+}
