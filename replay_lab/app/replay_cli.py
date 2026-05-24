@@ -92,6 +92,12 @@ from replay_lab.research.realistic_paper_validation_v555 import validate_realist
 from replay_lab.research.micro_candidate_source_comparison_v555 import compare_micro_candidate_sources_v555
 from replay_lab.research.micro_cost_survival_v555 import test_micro_cost_survival_v555
 from replay_lab.feedback.realistic_paper_html_report_v555 import RealisticPaperHTMLReportV555
+from replay_lab.research.wait_path_analysis_v556 import run_wait_path_analysis_v556
+from replay_lab.research.hold_time_sweep_v556 import run_hold_time_sweep_v556
+from replay_lab.research.entry_discovery_v556 import run_entry_discovery_v556
+from replay_lab.research.head_controller_draft_v556 import run_head_controller_draft_v556
+from replay_lab.feedback.entry_discovery_html_report_v556 import EntryDiscoveryHTMLReportV556
+from replay_lab.feedback.head_controller_html_report_v556 import HeadControllerHTMLReportV556
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -900,6 +906,42 @@ def build_realistic_paper_report_v555_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def analyze_wait_path_v556_command(args: argparse.Namespace) -> int:
+    result = run_wait_path_analysis_v556(args.sessions_dir)
+    print(json.dumps({k: v for k, v in result.items() if k != "rows"}, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_hold_time_sweep_v556_command(args: argparse.Namespace) -> int:
+    result = run_hold_time_sweep_v556(args.sessions_dir, args.hold_seconds)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_entry_discovery_v556_command(args: argparse.Namespace) -> int:
+    result = run_entry_discovery_v556(args.sessions_dir, args.profiles)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_draft_v556_command(args: argparse.Namespace) -> int:
+    result = run_head_controller_draft_v556(args.reports_dir)
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_entry_discovery_report_v556_command(args: argparse.Namespace) -> int:
+    out = EntryDiscoveryHTMLReportV556().build(args.sessions_dir)
+    print(f"entry discovery report: {out}")
+    return 0
+
+
+def build_head_controller_report_v556_command(args: argparse.Namespace) -> int:
+    out = HeadControllerHTMLReportV556().build(args.reports_dir)
+    print(f"head controller report: {out}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -1566,6 +1608,32 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-realistic-paper-report-v555")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
     p.set_defaults(func=build_realistic_paper_report_v555_command)
+
+    p = sub.add_parser("analyze-wait-path-v556")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=analyze_wait_path_v556_command)
+
+    p = sub.add_parser("run-hold-time-sweep-v556")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.add_argument("--hold-seconds", default="60,120,180,300,600")
+    p.set_defaults(func=run_hold_time_sweep_v556_command)
+
+    p = sub.add_parser("run-entry-discovery-v556")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.add_argument("--profiles", default="STRICT,BALANCED,ENTRY_DISCOVERY,DIAGNOSTIC_ONLY")
+    p.set_defaults(func=run_entry_discovery_v556_command)
+
+    p = sub.add_parser("run-head-controller-draft-v556")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_head_controller_draft_v556_command)
+
+    p = sub.add_parser("build-entry-discovery-report-v556")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions" / "realistic_paper_v555"))
+    p.set_defaults(func=build_entry_discovery_report_v556_command)
+
+    p = sub.add_parser("build-head-controller-report-v556")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_report_v556_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

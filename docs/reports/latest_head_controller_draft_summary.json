@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-24T10:51:32.906633",
+  "controller_version": "v556_draft",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "primary_problem": "ENTER_0",
+  "root_cause_hypotheses": [
+    "NO_REALISTIC_TRADES",
+    "PNL_NOT_EVALUABLE"
+  ],
+  "next_experiments": [
+    "Analyze MISSED_WIN WAIT paths",
+    "Run BALANCED vs ENTRY_DISCOVERY profile with research-only guard",
+    "Collect more UPBIT_WS sessions around high volatility"
+  ],
+  "risk_flags": [
+    "NO_REALISTIC_TRADES",
+    "PNL_NOT_EVALUABLE"
+  ],
+  "config_proposals": [
+    {
+      "proposal_id": "v556_balanced_research",
+      "profile": "BALANCED_RESEARCH",
+      "reason": "Evaluate whether missed WAIT paths justify a stricter balanced gate",
+      "active": false,
+      "human_approved": false
+    }
+  ],
+  "auto_apply_allowed": false
+}
