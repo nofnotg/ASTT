@@ -1,46 +1,23 @@
 <!doctype html><html><body><h1>Head Controller LLM Guard V5.5.6.1</h1><p>실제 주문 금지. active config 자동 적용 금지. LLM은 연구 보조자입니다.</p><pre>{
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T12:43:51.446936",
-  "controller_version": "v556_draft",
+  "generated_at": "2026-05-24T13:05:04.738747",
+  "summary": "No live trading is allowed due to issues identified in target size and order readiness.",
   "live_readiness_opinion": "LIVE_NOT_ALLOWED",
-  "primary_problem": "ENTER_0",
+  "primary_problem": "Target size is too small for viable trading.",
   "root_cause_hypotheses": [
-    "NO_REALISTIC_TRADES",
-    "PNL_NOT_EVALUABLE"
+    "Insufficient candidate opportunities detected for live trading."
   ],
   "next_experiments": [
-    "Analyze MISSED_WIN WAIT paths",
-    "Run BALANCED vs ENTRY_DISCOVERY profile with research-only guard",
-    "Collect more UPBIT_WS sessions around high volatility"
+    "Investigate larger target ranges for candidate selections."
   ],
   "risk_flags": [
-    "NO_REALISTIC_TRADES",
-    "PNL_NOT_EVALUABLE"
+    "CURRENT_TARGET_TOO_SMALL"
   ],
-  "config_proposals": [
-    {
-      "proposal_id": "v556_balanced_research",
-      "profile": "BALANCED_RESEARCH",
-      "reason": "Evaluate whether missed WAIT paths justify a stricter balanced gate",
-      "active": false,
-      "human_approved": false
-    }
-  ],
+  "config_proposals": [],
   "auto_apply_allowed": false,
-  "llm_config": {
-    "openai_key_loaded": false,
-    "gemini_key_loaded": false,
-    "key_file_loaded": true,
-    "secret_values_returned": false,
-    "requested_provider": "auto",
-    "selected_provider": "off",
-    "llm_enabled": false,
-    "auto_apply_allowed": false,
-    "live_order_allowed": false
-  },
-  "fallback_used": true,
-  "fallback_reason": "LLM_OFF_OR_KEY_MISSING",
   "live_order_allowed": false,
+  "fallback_used": false,
+  "llm_output_rejected": false,
   "artifact_integrity": {
     "artifact_integrity_status": "PASS",
     "checked_reports": [
@@ -80,6 +57,9 @@
         "docs\\reports\\latest_head_controller_draft_report.html",
         "docs\\reports\\latest_head_controller_draft_report.md",
         "docs\\reports\\latest_head_controller_draft_summary.json",
+        "docs\\reports\\latest_head_controller_llm_guard_report.html",
+        "docs\\reports\\latest_head_controller_llm_guard_report.md",
+        "docs\\reports\\latest_head_controller_llm_guard_summary.json",
         "docs\\reports\\latest_micro_entry_diagnostics_report.html",
         "docs\\reports\\latest_micro_entry_diagnostics_report.md",
         "docs\\reports\\latest_micro_entry_diagnostics_summary.json",
@@ -103,12 +83,23 @@
       "failures": []
     }
   },
-  "provider": "off",
-  "call_success": false,
-  "schema_valid": false,
+  "llm_config": {
+    "openai_key_loaded": true,
+    "gemini_key_loaded": false,
+    "key_file_loaded": true,
+    "secret_values_returned": false,
+    "requested_provider": "auto",
+    "selected_provider": "openai",
+    "llm_enabled": true,
+    "auto_apply_allowed": false,
+    "live_order_allowed": false
+  },
+  "provider": "openai",
+  "call_success": true,
+  "schema_valid": true,
   "unsafe_proposal_detected": false,
   "proposal_store_paths": [],
-  "error": "llm_unavailable",
+  "error": "",
   "secret_scan": {
     "secret_scan_status": "PASS",
     "raw_secret_detected": false,
@@ -137,6 +128,9 @@
       "docs\\reports\\latest_head_controller_draft_report.html",
       "docs\\reports\\latest_head_controller_draft_report.md",
       "docs\\reports\\latest_head_controller_draft_summary.json",
+      "docs\\reports\\latest_head_controller_llm_guard_report.html",
+      "docs\\reports\\latest_head_controller_llm_guard_report.md",
+      "docs\\reports\\latest_head_controller_llm_guard_summary.json",
       "docs\\reports\\latest_micro_entry_diagnostics_report.html",
       "docs\\reports\\latest_micro_entry_diagnostics_report.md",
       "docs\\reports\\latest_micro_entry_diagnostics_summary.json",

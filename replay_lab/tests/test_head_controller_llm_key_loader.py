@@ -28,3 +28,11 @@ def test_head_controller_llm_key_loader_rejects_status_text(tmp_path):
     public = public_llm_key_status(load_head_controller_llm_keys(str(key_file)))
     assert public["openai_key_loaded"] is False
     assert public["gemini_key_loaded"] is False
+
+
+def test_head_controller_llm_key_loader_supports_open_api_key_label(tmp_path):
+    key_file = tmp_path / "keys.txt"
+    fake_openai_key = "s" + "k-" + "openai-example-value-1234567890"
+    key_file.write_text(f"open api key:\n{fake_openai_key}\n", encoding="utf-8")
+    public = public_llm_key_status(load_head_controller_llm_keys(str(key_file)))
+    assert public["openai_key_loaded"] is True

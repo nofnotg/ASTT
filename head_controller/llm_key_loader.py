@@ -93,7 +93,7 @@ def _load_key_file(path: str) -> dict[str, str]:
 def _normalize_label(label: str) -> str:
     upper = label.upper().replace("-", "_").replace(" ", "_")
     compact = upper.replace("_", "")
-    if upper in {"GPT", "GPT_KEY", "OPENAI", "OPENAI_KEY", "OPEN_AI_API_KEY"} or compact in {"OPENAI", "OPENAIKEY", "OPENAIAPIKEY", "GPTAPIKEY"}:
+    if upper in {"GPT", "GPT_KEY", "OPENAI", "OPENAI_KEY", "OPEN_AI_API_KEY", "OPEN_API_KEY"} or compact in {"OPENAI", "OPENAIKEY", "OPENAIAPIKEY", "OPENAPIKEY", "GPTAPIKEY"}:
         return "OPENAI_API_KEY"
     if upper in {"GEMINI", "GEMINI_KEY", "GOOGLE", "GOOGLE_KEY"} or compact in {"GEMINI", "GEMINIKEY", "GEMINIAPIKEY", "GOOGLEAPIKEY"}:
         return "GEMINI_API_KEY"
