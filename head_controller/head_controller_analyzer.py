@@ -20,4 +20,8 @@ def analyze_head_controller_context(context: dict) -> dict:
         proposals = []
     if discovery.get("entry_discovery_enter", 0) > 0:
         experiments.append("Inspect ENTRY_DISCOVERY winners manually before any config promotion")
-    return enforce_head_controller_safety(build_controller_output(primary, experiments, risks, proposals))
+    output = build_controller_output(primary, experiments, risks, proposals)
+    output["llm_config"] = context.get("llm_config", {"llm_enabled": False, "selected_provider": "off"})
+    if output["llm_config"].get("llm_enabled"):
+        output["risk_flags"].append("LLM_RESEARCH_ASSIST_ONLY")
+    return enforce_head_controller_safety(output)

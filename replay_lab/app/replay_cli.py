@@ -98,6 +98,7 @@ from replay_lab.research.entry_discovery_v556 import run_entry_discovery_v556
 from replay_lab.research.head_controller_draft_v556 import run_head_controller_draft_v556
 from replay_lab.feedback.entry_discovery_html_report_v556 import EntryDiscoveryHTMLReportV556
 from replay_lab.feedback.head_controller_html_report_v556 import HeadControllerHTMLReportV556
+from head_controller.llm_config import build_head_controller_llm_config
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -925,7 +926,7 @@ def run_entry_discovery_v556_command(args: argparse.Namespace) -> int:
 
 
 def run_head_controller_draft_v556_command(args: argparse.Namespace) -> int:
-    result = run_head_controller_draft_v556(args.reports_dir)
+    result = run_head_controller_draft_v556(args.reports_dir, args.llm_provider, args.key_file)
     print(json.dumps(result, ensure_ascii=False, default=str))
     return 0
 
@@ -937,8 +938,14 @@ def build_entry_discovery_report_v556_command(args: argparse.Namespace) -> int:
 
 
 def build_head_controller_report_v556_command(args: argparse.Namespace) -> int:
-    out = HeadControllerHTMLReportV556().build(args.reports_dir)
+    out = HeadControllerHTMLReportV556().build(args.reports_dir, args.llm_provider, args.key_file)
     print(f"head controller report: {out}")
+    return 0
+
+
+def check_head_controller_llm_config_command(args: argparse.Namespace) -> int:
+    result = build_head_controller_llm_config(args.llm_provider, args.key_file)
+    print(json.dumps(result, ensure_ascii=False, default=str))
     return 0
 
 
@@ -1625,6 +1632,8 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("run-head-controller-draft-v556")
     p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="off", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
     p.set_defaults(func=run_head_controller_draft_v556_command)
 
     p = sub.add_parser("build-entry-discovery-report-v556")
@@ -1633,7 +1642,14 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-head-controller-report-v556")
     p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="off", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
     p.set_defaults(func=build_head_controller_report_v556_command)
+
+    p = sub.add_parser("check-head-controller-llm-config")
+    p.add_argument("--llm-provider", default="auto", choices=["off", "auto", "openai", "gemini"])
+    p.add_argument("--key-file", default=None)
+    p.set_defaults(func=check_head_controller_llm_config_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
