@@ -1,0 +1,13 @@
+{
+  "initial_cash_krw": 500000.0,
+  "research_mode": true,
+  "real_order_enabled": false,
+  "paper_enter_count": 0,
+  "trade_count": 0,
+  "pnl_evaluable": false,
+  "total_pnl_krw": 0,
+  "total_return_pct": 0.0,
+  "max_drawdown_pct": 0.0,
+  "realistic_1_status": "N/A",
+  "executions": []
+}

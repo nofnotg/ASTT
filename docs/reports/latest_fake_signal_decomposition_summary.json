@@ -1,0 +1,2330 @@
+{
+  "fake_signal_count": 125,
+  "decomposed_count": 125,
+  "unknown_count": 0,
+  "unknown_rate": 0.0,
+  "subtype_counts": {
+    "RANK_SURGE_FAKE": 57,
+    "ORDERFLOW_ONLY_FAKE": 28,
+    "VOLUME_ONLY_FAKE": 25,
+    "NO_FOLLOW_THROUGH": 14,
+    "BTC_NOISE_FAKE": 1
+  },
+  "subtype_table": [
+    {
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "count": 25,
+      "pct": 20.0,
+      "main_event_type": "VOLUME_SPIKE",
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "count": 28,
+      "pct": 22.400000000000002,
+      "main_event_type": "ORDERFLOW_SHIFT",
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "count": 57,
+      "pct": 45.6,
+      "main_event_type": "MARKET_RANK_SURGE",
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "fake_subtype": "SPREAD_ONLY_FAKE",
+      "count": 0,
+      "pct": 0.0,
+      "main_event_type": "",
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "fake_subtype": "DEPTH_ONLY_FAKE",
+      "count": 0,
+      "pct": 0.0,
+      "main_event_type": "",
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "fake_subtype": "BTC_NOISE_FAKE",
+      "count": 1,
+      "pct": 0.8,
+      "main_event_type": "BTC_SHOCK",
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "fake_subtype": "LATE_REACTION_FAKE",
+      "count": 0,
+      "pct": 0.0,
+      "main_event_type": "",
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "count": 14,
+      "pct": 11.200000000000001,
+      "main_event_type": "RANGE_TOUCH",
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "fake_subtype": "UNKNOWN",
+      "count": 0,
+      "pct": 0.0,
+      "main_event_type": "",
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    }
+  ],
+  "rows": [
+    {
+      "clip_id": "KRWAAVE_MARKET_RANK_SURGE_1779631088702_clip",
+      "event_id": "KRWAAVE_MARKET_RANK_SURGE_1779631088702",
+      "market": "KRW-AAVE",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 69,
+        "orderbook_count": 1196,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWADA_MARKET_RANK_SURGE_1779614974811_clip",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779614974811",
+      "market": "KRW-ADA",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 1,
+        "orderbook_count": 13,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWADA_MARKET_RANK_SURGE_1779627454162_clip",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779627454162",
+      "market": "KRW-ADA",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 25,
+        "orderbook_count": 221,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWADA_MARKET_RANK_SURGE_1779631092765_clip",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779631092765",
+      "market": "KRW-ADA",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 254,
+        "orderbook_count": 510,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWADA_ORDERFLOW_SHIFT_1779627454162_clip",
+      "event_id": "KRWADA_ORDERFLOW_SHIFT_1779627454162",
+      "market": "KRW-ADA",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 25,
+        "orderbook_count": 221,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWALGO_MARKET_RANK_SURGE_1779631083033_clip",
+      "event_id": "KRWALGO_MARKET_RANK_SURGE_1779631083033",
+      "market": "KRW-ALGO",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 75,
+        "orderbook_count": 279,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAPT_MARKET_RANK_SURGE_1779627444674_clip",
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779627444674",
+      "market": "KRW-APT",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 4,
+        "orderbook_count": 244,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAPT_MARKET_RANK_SURGE_1779631060904_clip",
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779631060904",
+      "market": "KRW-APT",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 63,
+        "orderbook_count": 1223,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAPT_ORDERFLOW_SHIFT_1779627444674_clip",
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779627444674",
+      "market": "KRW-APT",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 4,
+        "orderbook_count": 244,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWAPT_ORDERFLOW_SHIFT_1779631060904_clip",
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779631060904",
+      "market": "KRW-APT",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 63,
+        "orderbook_count": 1223,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWAPT_VOLUME_SPIKE_1779627444674_clip",
+      "event_id": "KRWAPT_VOLUME_SPIKE_1779627444674",
+      "market": "KRW-APT",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 4,
+        "orderbook_count": 244,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWARB_MARKET_RANK_SURGE_1779627462132_clip",
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779627462132",
+      "market": "KRW-ARB",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 12,
+        "orderbook_count": 54,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWARB_MARKET_RANK_SURGE_1779630953106_clip",
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779630953106",
+      "market": "KRW-ARB",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 24,
+        "orderbook_count": 495,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWARB_ORDERFLOW_SHIFT_1779627462132_clip",
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779627462132",
+      "market": "KRW-ARB",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 12,
+        "orderbook_count": 54,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWARB_ORDERFLOW_SHIFT_1779630953106_clip",
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779630953106",
+      "market": "KRW-ARB",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 24,
+        "orderbook_count": 495,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWARB_RANGE_TOUCH_1779627462132_clip",
+      "event_id": "KRWARB_RANGE_TOUCH_1779627462132",
+      "market": "KRW-ARB",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 12,
+        "orderbook_count": 54,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWATOM_MARKET_RANK_SURGE_1779631054294_clip",
+      "event_id": "KRWATOM_MARKET_RANK_SURGE_1779631054294",
+      "market": "KRW-ATOM",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 45,
+        "orderbook_count": 1230,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAVAX_MARKET_RANK_SURGE_1779615017589_clip",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779615017589",
+      "market": "KRW-AVAX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 2,
+        "orderbook_count": 40,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAVAX_MARKET_RANK_SURGE_1779627425231_clip",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779627425231",
+      "market": "KRW-AVAX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 11,
+        "orderbook_count": 233,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAVAX_MARKET_RANK_SURGE_1779631068843_clip",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779631068843",
+      "market": "KRW-AVAX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 110,
+        "orderbook_count": 940,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAVAX_VOLUME_SPIKE_1779631068843_clip",
+      "event_id": "KRWAVAX_VOLUME_SPIKE_1779631068843",
+      "market": "KRW-AVAX",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 110,
+        "orderbook_count": 940,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWAXS_MARKET_RANK_SURGE_1779631005908_clip",
+      "event_id": "KRWAXS_MARKET_RANK_SURGE_1779631005908",
+      "market": "KRW-AXS",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 90,
+        "orderbook_count": 699,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWAXS_VOLUME_SPIKE_1779631005908_clip",
+      "event_id": "KRWAXS_VOLUME_SPIKE_1779631005908",
+      "market": "KRW-AXS",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 90,
+        "orderbook_count": 699,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBCH_MARKET_RANK_SURGE_1779627423568_clip",
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779627423568",
+      "market": "KRW-BCH",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 224,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBCH_MARKET_RANK_SURGE_1779631066966_clip",
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779631066966",
+      "market": "KRW-BCH",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 157,
+        "orderbook_count": 656,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBCH_ORDERFLOW_SHIFT_1779627423568_clip",
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779627423568",
+      "market": "KRW-BCH",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 224,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBCH_ORDERFLOW_SHIFT_1779631066966_clip",
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779631066966",
+      "market": "KRW-BCH",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 157,
+        "orderbook_count": 656,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBCH_RANGE_TOUCH_1779627423568_clip",
+      "event_id": "KRWBCH_RANGE_TOUCH_1779627423568",
+      "market": "KRW-BCH",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 224,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWBCH_VOLUME_SPIKE_1779631066966_clip",
+      "event_id": "KRWBCH_VOLUME_SPIKE_1779631066966",
+      "market": "KRW-BCH",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 157,
+        "orderbook_count": 656,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBTC_BTC_SHOCK_1779631092853_clip",
+      "event_id": "KRWBTC_BTC_SHOCK_1779631092853",
+      "market": "KRW-BTC",
+      "event_type": "BTC_SHOCK",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "BTC_NOISE_FAKE",
+      "evidence": {
+        "trade_count": 3057,
+        "orderbook_count": 3020,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "BTC_NOISE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBTC_MARKET_RANK_SURGE_1779615060400_clip",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779615060400",
+      "market": "KRW-BTC",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 67,
+        "orderbook_count": 117,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBTC_MARKET_RANK_SURGE_1779627460199_clip",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779627460199",
+      "market": "KRW-BTC",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 586,
+        "orderbook_count": 3659,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBTC_MARKET_RANK_SURGE_1779631092853_clip",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779631092853",
+      "market": "KRW-BTC",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 3057,
+        "orderbook_count": 3020,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWBTC_ORDERFLOW_SHIFT_1779615060400_clip",
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779615060400",
+      "market": "KRW-BTC",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 67,
+        "orderbook_count": 117,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBTC_ORDERFLOW_SHIFT_1779631092853_clip",
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779631092853",
+      "market": "KRW-BTC",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 3057,
+        "orderbook_count": 3020,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBTC_RANGE_TOUCH_1779615060400_clip",
+      "event_id": "KRWBTC_RANGE_TOUCH_1779615060400",
+      "market": "KRW-BTC",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 67,
+        "orderbook_count": 117,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWBTC_RANGE_TOUCH_1779627460199_clip",
+      "event_id": "KRWBTC_RANGE_TOUCH_1779627460199",
+      "market": "KRW-BTC",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 586,
+        "orderbook_count": 3659,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWBTC_VOLUME_SPIKE_1779615060400_clip",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779615060400",
+      "market": "KRW-BTC",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 67,
+        "orderbook_count": 117,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBTC_VOLUME_SPIKE_1779627460199_clip",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779627460199",
+      "market": "KRW-BTC",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 586,
+        "orderbook_count": 3659,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWBTC_VOLUME_SPIKE_1779631092853_clip",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779631092853",
+      "market": "KRW-BTC",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 3057,
+        "orderbook_count": 3020,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWCELO_MARKET_RANK_SURGE_1779631077855_clip",
+      "event_id": "KRWCELO_MARKET_RANK_SURGE_1779631077855",
+      "market": "KRW-CELO",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 13,
+        "orderbook_count": 145,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOGE_MARKET_RANK_SURGE_1779615052749_clip",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779615052749",
+      "market": "KRW-DOGE",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 5,
+        "orderbook_count": 35,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOGE_MARKET_RANK_SURGE_1779627447800_clip",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779627447800",
+      "market": "KRW-DOGE",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 60,
+        "orderbook_count": 450,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOGE_MARKET_RANK_SURGE_1779631090523_clip",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779631090523",
+      "market": "KRW-DOGE",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 66,
+        "orderbook_count": 969,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOGE_ORDERFLOW_SHIFT_1779627447800_clip",
+      "event_id": "KRWDOGE_ORDERFLOW_SHIFT_1779627447800",
+      "market": "KRW-DOGE",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 60,
+        "orderbook_count": 450,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWDOGE_RANGE_TOUCH_1779615052749_clip",
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779615052749",
+      "market": "KRW-DOGE",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 5,
+        "orderbook_count": 35,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWDOGE_RANGE_TOUCH_1779627447800_clip",
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779627447800",
+      "market": "KRW-DOGE",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 60,
+        "orderbook_count": 450,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWDOT_MARKET_RANK_SURGE_1779627405966_clip",
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779627405966",
+      "market": "KRW-DOT",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 206,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOT_MARKET_RANK_SURGE_1779631079827_clip",
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779631079827",
+      "market": "KRW-DOT",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 71,
+        "orderbook_count": 718,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWDOT_ORDERFLOW_SHIFT_1779631079827_clip",
+      "event_id": "KRWDOT_ORDERFLOW_SHIFT_1779631079827",
+      "market": "KRW-DOT",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 71,
+        "orderbook_count": 718,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWDOT_VOLUME_SPIKE_1779627405966_clip",
+      "event_id": "KRWDOT_VOLUME_SPIKE_1779627405966",
+      "market": "KRW-DOT",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 206,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETC_MARKET_RANK_SURGE_1779627460984_clip",
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779627460984",
+      "market": "KRW-ETC",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 33,
+        "orderbook_count": 153,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWETC_MARKET_RANK_SURGE_1779631047634_clip",
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779631047634",
+      "market": "KRW-ETC",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 93,
+        "orderbook_count": 741,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWETC_ORDERFLOW_SHIFT_1779627460984_clip",
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779627460984",
+      "market": "KRW-ETC",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 33,
+        "orderbook_count": 153,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETC_ORDERFLOW_SHIFT_1779631047634_clip",
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779631047634",
+      "market": "KRW-ETC",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 93,
+        "orderbook_count": 741,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETH_MARKET_RANK_SURGE_1779615065908_clip",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779615065908",
+      "market": "KRW-ETH",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 19,
+        "orderbook_count": 165,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWETH_MARKET_RANK_SURGE_1779627460114_clip",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779627460114",
+      "market": "KRW-ETH",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 254,
+        "orderbook_count": 3414,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWETH_MARKET_RANK_SURGE_1779631089069_clip",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779631089069",
+      "market": "KRW-ETH",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 2003,
+        "orderbook_count": 3298,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWETH_ORDERFLOW_SHIFT_1779615065908_clip",
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779615065908",
+      "market": "KRW-ETH",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 19,
+        "orderbook_count": 165,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETH_ORDERFLOW_SHIFT_1779631089069_clip",
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779631089069",
+      "market": "KRW-ETH",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 2003,
+        "orderbook_count": 3298,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETH_RANGE_TOUCH_1779615065908_clip",
+      "event_id": "KRWETH_RANGE_TOUCH_1779615065908",
+      "market": "KRW-ETH",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 19,
+        "orderbook_count": 165,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWETH_VOLUME_SPIKE_1779615065908_clip",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779615065908",
+      "market": "KRW-ETH",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 19,
+        "orderbook_count": 165,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETH_VOLUME_SPIKE_1779627460114_clip",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779627460114",
+      "market": "KRW-ETH",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 254,
+        "orderbook_count": 3414,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWETH_VOLUME_SPIKE_1779631089069_clip",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779631089069",
+      "market": "KRW-ETH",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 2003,
+        "orderbook_count": 3298,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWHBAR_MARKET_RANK_SURGE_1779627251476_clip",
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779627251476",
+      "market": "KRW-HBAR",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 1,
+        "orderbook_count": 263,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWHBAR_MARKET_RANK_SURGE_1779631046433_clip",
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779631046433",
+      "market": "KRW-HBAR",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 25,
+        "orderbook_count": 354,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWHBAR_ORDERFLOW_SHIFT_1779631046433_clip",
+      "event_id": "KRWHBAR_ORDERFLOW_SHIFT_1779631046433",
+      "market": "KRW-HBAR",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 25,
+        "orderbook_count": 354,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWIMX_MARKET_RANK_SURGE_1779631000034_clip",
+      "event_id": "KRWIMX_MARKET_RANK_SURGE_1779631000034",
+      "market": "KRW-IMX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 284,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWIOTA_MARKET_RANK_SURGE_1779631005722_clip",
+      "event_id": "KRWIOTA_MARKET_RANK_SURGE_1779631005722",
+      "market": "KRW-IOTA",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 8,
+        "orderbook_count": 228,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWIOTA_VOLUME_SPIKE_1779631005722_clip",
+      "event_id": "KRWIOTA_VOLUME_SPIKE_1779631005722",
+      "market": "KRW-IOTA",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 8,
+        "orderbook_count": 228,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWLINK_MARKET_RANK_SURGE_1779615045876_clip",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779615045876",
+      "market": "KRW-LINK",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 5,
+        "orderbook_count": 65,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWLINK_MARKET_RANK_SURGE_1779627420396_clip",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779627420396",
+      "market": "KRW-LINK",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 40,
+        "orderbook_count": 314,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWLINK_MARKET_RANK_SURGE_1779631085588_clip",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779631085588",
+      "market": "KRW-LINK",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 209,
+        "orderbook_count": 1216,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWLINK_ORDERFLOW_SHIFT_1779631085588_clip",
+      "event_id": "KRWLINK_ORDERFLOW_SHIFT_1779631085588",
+      "market": "KRW-LINK",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 209,
+        "orderbook_count": 1216,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWLINK_RANGE_TOUCH_1779615045876_clip",
+      "event_id": "KRWLINK_RANGE_TOUCH_1779615045876",
+      "market": "KRW-LINK",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 5,
+        "orderbook_count": 65,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWLINK_VOLUME_SPIKE_1779615045876_clip",
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779615045876",
+      "market": "KRW-LINK",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 5,
+        "orderbook_count": 65,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWLINK_VOLUME_SPIKE_1779631085588_clip",
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779631085588",
+      "market": "KRW-LINK",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 209,
+        "orderbook_count": 1216,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWMANA_MARKET_RANK_SURGE_1779631087423_clip",
+      "event_id": "KRWMANA_MARKET_RANK_SURGE_1779631087423",
+      "market": "KRW-MANA",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 32,
+        "orderbook_count": 239,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWMANA_ORDERFLOW_SHIFT_1779631087423_clip",
+      "event_id": "KRWMANA_ORDERFLOW_SHIFT_1779631087423",
+      "market": "KRW-MANA",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 32,
+        "orderbook_count": 239,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWNEAR_MARKET_RANK_SURGE_1779627463031_clip",
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779627463031",
+      "market": "KRW-NEAR",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 214,
+        "orderbook_count": 2354,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWNEAR_MARKET_RANK_SURGE_1779631092791_clip",
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779631092791",
+      "market": "KRW-NEAR",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 429,
+        "orderbook_count": 3884,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWNEAR_ORDERFLOW_SHIFT_1779627463031_clip",
+      "event_id": "KRWNEAR_ORDERFLOW_SHIFT_1779627463031",
+      "market": "KRW-NEAR",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 214,
+        "orderbook_count": 2354,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWNEAR_VOLUME_SPIKE_1779631092791_clip",
+      "event_id": "KRWNEAR_VOLUME_SPIKE_1779631092791",
+      "market": "KRW-NEAR",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 429,
+        "orderbook_count": 3884,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSAND_MARKET_RANK_SURGE_1779631064158_clip",
+      "event_id": "KRWSAND_MARKET_RANK_SURGE_1779631064158",
+      "market": "KRW-SAND",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 15,
+        "orderbook_count": 373,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSEI_MARKET_RANK_SURGE_1779627429968_clip",
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779627429968",
+      "market": "KRW-SEI",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 187,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSEI_MARKET_RANK_SURGE_1779631076389_clip",
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779631076389",
+      "market": "KRW-SEI",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 98,
+        "orderbook_count": 660,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSOL_MARKET_RANK_SURGE_1779615060374_clip",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779615060374",
+      "market": "KRW-SOL",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 101,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSOL_MARKET_RANK_SURGE_1779627460180_clip",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779627460180",
+      "market": "KRW-SOL",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 167,
+        "orderbook_count": 626,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSOL_MARKET_RANK_SURGE_1779631092645_clip",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779631092645",
+      "market": "KRW-SOL",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 489,
+        "orderbook_count": 2004,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSOL_ORDERFLOW_SHIFT_1779615060374_clip",
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779615060374",
+      "market": "KRW-SOL",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 101,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSOL_ORDERFLOW_SHIFT_1779627460180_clip",
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779627460180",
+      "market": "KRW-SOL",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 167,
+        "orderbook_count": 626,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSOL_RANGE_TOUCH_1779615060374_clip",
+      "event_id": "KRWSOL_RANGE_TOUCH_1779615060374",
+      "market": "KRW-SOL",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 101,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWSOL_VOLUME_SPIKE_1779627460180_clip",
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779627460180",
+      "market": "KRW-SOL",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 167,
+        "orderbook_count": 626,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSOL_VOLUME_SPIKE_1779631092645_clip",
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779631092645",
+      "market": "KRW-SOL",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 489,
+        "orderbook_count": 2004,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSTX_MARKET_RANK_SURGE_1779627403546_clip",
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779627403546",
+      "market": "KRW-STX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 49,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSTX_MARKET_RANK_SURGE_1779631062804_clip",
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779631062804",
+      "market": "KRW-STX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 55,
+        "orderbook_count": 306,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSTX_ORDERFLOW_SHIFT_1779627403546_clip",
+      "event_id": "KRWSTX_ORDERFLOW_SHIFT_1779627403546",
+      "market": "KRW-STX",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 49,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSTX_RANGE_TOUCH_1779627403546_clip",
+      "event_id": "KRWSTX_RANGE_TOUCH_1779627403546",
+      "market": "KRW-STX",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 49,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWSTX_VOLUME_SPIKE_1779627403546_clip",
+      "event_id": "KRWSTX_VOLUME_SPIKE_1779627403546",
+      "market": "KRW-STX",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 9,
+        "orderbook_count": 49,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSUI_MARKET_RANK_SURGE_1779615066631_clip",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779615066631",
+      "market": "KRW-SUI",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 129,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSUI_MARKET_RANK_SURGE_1779627422238_clip",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779627422238",
+      "market": "KRW-SUI",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 45,
+        "orderbook_count": 903,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSUI_MARKET_RANK_SURGE_1779631086196_clip",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779631086196",
+      "market": "KRW-SUI",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 496,
+        "orderbook_count": 2465,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWSUI_ORDERFLOW_SHIFT_1779627422238_clip",
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779627422238",
+      "market": "KRW-SUI",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 45,
+        "orderbook_count": 903,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSUI_ORDERFLOW_SHIFT_1779631086196_clip",
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779631086196",
+      "market": "KRW-SUI",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 496,
+        "orderbook_count": 2465,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSUI_RANGE_TOUCH_1779615066631_clip",
+      "event_id": "KRWSUI_RANGE_TOUCH_1779615066631",
+      "market": "KRW-SUI",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 129,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWSUI_VOLUME_SPIKE_1779615066631_clip",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779615066631",
+      "market": "KRW-SUI",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 10,
+        "orderbook_count": 129,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSUI_VOLUME_SPIKE_1779627422238_clip",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779627422238",
+      "market": "KRW-SUI",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 45,
+        "orderbook_count": 903,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWSUI_VOLUME_SPIKE_1779631086196_clip",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779631086196",
+      "market": "KRW-SUI",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 496,
+        "orderbook_count": 2465,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWTRX_MARKET_RANK_SURGE_1779615064376_clip",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779615064376",
+      "market": "KRW-TRX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 11,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWTRX_MARKET_RANK_SURGE_1779627459143_clip",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779627459143",
+      "market": "KRW-TRX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 23,
+        "orderbook_count": 140,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWTRX_MARKET_RANK_SURGE_1779630974468_clip",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779630974468",
+      "market": "KRW-TRX",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 40,
+        "orderbook_count": 254,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWTRX_ORDERFLOW_SHIFT_1779615064376_clip",
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779615064376",
+      "market": "KRW-TRX",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 11,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWTRX_ORDERFLOW_SHIFT_1779630974468_clip",
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779630974468",
+      "market": "KRW-TRX",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 40,
+        "orderbook_count": 254,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWTRX_RANGE_TOUCH_1779615064376_clip",
+      "event_id": "KRWTRX_RANGE_TOUCH_1779615064376",
+      "market": "KRW-TRX",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 11,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWTRX_VOLUME_SPIKE_1779615064376_clip",
+      "event_id": "KRWTRX_VOLUME_SPIKE_1779615064376",
+      "market": "KRW-TRX",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 6,
+        "orderbook_count": 11,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWXRP_MARKET_RANK_SURGE_1779615067161_clip",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779615067161",
+      "market": "KRW-XRP",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 18,
+        "orderbook_count": 178,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWXRP_MARKET_RANK_SURGE_1779627445885_clip",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779627445885",
+      "market": "KRW-XRP",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 260,
+        "orderbook_count": 1261,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWXRP_MARKET_RANK_SURGE_1779631091126_clip",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779631091126",
+      "market": "KRW-XRP",
+      "event_type": "MARKET_RANK_SURGE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "RANK_SURGE_FAKE",
+      "evidence": {
+        "trade_count": 1976,
+        "orderbook_count": 2579,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "RANK_SURGE_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "PAUSE_EVENT_TYPE"
+    },
+    {
+      "clip_id": "KRWXRP_ORDERFLOW_SHIFT_1779615067161_clip",
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779615067161",
+      "market": "KRW-XRP",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 18,
+        "orderbook_count": 178,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWXRP_ORDERFLOW_SHIFT_1779631091126_clip",
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779631091126",
+      "market": "KRW-XRP",
+      "event_type": "ORDERFLOW_SHIFT",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "ORDERFLOW_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 1976,
+        "orderbook_count": 2579,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "ORDERFLOW_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWXRP_RANGE_TOUCH_1779615067161_clip",
+      "event_id": "KRWXRP_RANGE_TOUCH_1779615067161",
+      "market": "KRW-XRP",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 18,
+        "orderbook_count": 178,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWXRP_RANGE_TOUCH_1779627445885_clip",
+      "event_id": "KRWXRP_RANGE_TOUCH_1779627445885",
+      "market": "KRW-XRP",
+      "event_type": "RANGE_TOUCH",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "NO_FOLLOW_THROUGH",
+      "evidence": {
+        "trade_count": 260,
+        "orderbook_count": 1261,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "NO_FOLLOW_THROUGH",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "KEEP_FOR_OBSERVATION"
+    },
+    {
+      "clip_id": "KRWXRP_VOLUME_SPIKE_1779615067161_clip",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779615067161",
+      "market": "KRW-XRP",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 18,
+        "orderbook_count": 178,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWXRP_VOLUME_SPIKE_1779627445885_clip",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779627445885",
+      "market": "KRW-XRP",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 260,
+        "orderbook_count": 1261,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    },
+    {
+      "clip_id": "KRWXRP_VOLUME_SPIKE_1779631091126_clip",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779631091126",
+      "market": "KRW-XRP",
+      "event_type": "VOLUME_SPIKE",
+      "original_label": "FAKE_SIGNAL",
+      "fake_subtype": "VOLUME_ONLY_FAKE",
+      "evidence": {
+        "trade_count": 1976,
+        "orderbook_count": 2579,
+        "max_mfe_pct": 0.0
+      },
+      "dominant_reason": "VOLUME_ONLY_FAKE",
+      "secondary_reasons": [
+        "NO_TRADABLE_ENTRY_WINDOW"
+      ],
+      "suggested_action": "TIGHTEN_FILTER"
+    }
+  ]
+}

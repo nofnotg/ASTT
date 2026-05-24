@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -26,7 +26,15 @@ class OpenAIHeadControllerClient(HeadControllerLLMClient):
             "auto_apply_allowed": False,
             "live_order_allowed": False,
         }
-        if context.get("task") == "smoke":
+        if context.get("task") == "minimum_completion_v5r2":
+            expected = context.get("return_exact_json") or {
+                "summary": "Minimum completion test succeeded.",
+                "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+                "auto_apply_allowed": False,
+                "live_order_allowed": False,
+            }
+            prompt = "Return exactly this JSON object and nothing else: " + json.dumps(expected, ensure_ascii=False)
+        elif context.get("task") == "smoke":
             expected = {
                 "summary": "OpenAI provider call succeeded for research guard verification.",
                 "live_readiness_opinion": "LIVE_NOT_ALLOWED",

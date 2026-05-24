@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T13:22:34.610264",
-  "evaluation_id": "head_eval_v557_20260524_132234",
+  "generated_at": "2026-05-25T00:01:31.865756",
+  "evaluation_id": "head_eval_v557_20260525_000131",
   "llm_provider": "openai",
   "llm_used": true,
   "fallback_used": false,

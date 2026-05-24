@@ -1,0 +1,445 @@
+{
+  "armed": {
+    "armed_calibration": [
+      {
+        "config": {
+          "min_required_conditions": 2,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52
+        },
+        "watch_to_armed_rate": 0.6148648648648649,
+        "armed_to_triggered_rate": 0.34065934065934067,
+        "fake_rate": 0.8445945945945946,
+        "recommendation": "REJECT"
+      },
+      {
+        "config": {
+          "min_required_conditions": 3,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52
+        },
+        "watch_to_armed_rate": 0.41216216216216217,
+        "armed_to_triggered_rate": 0.3442622950819672,
+        "fake_rate": 0.8445945945945946,
+        "recommendation": "KEEP"
+      },
+      {
+        "config": {
+          "min_required_conditions": 4,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52
+        },
+        "watch_to_armed_rate": 0.17567567567567569,
+        "armed_to_triggered_rate": 0.34615384615384615,
+        "fake_rate": 0.8445945945945946,
+        "recommendation": "REJECT"
+      }
+    ],
+    "recommended_config": {
+      "config": {
+        "min_required_conditions": 3,
+        "max_spread_pct": 0.15,
+        "min_depth_3_level_krw": 1000000,
+        "min_buy_ratio": 0.52
+      },
+      "watch_to_armed_rate": 0.41216216216216217,
+      "armed_to_triggered_rate": 0.3442622950819672,
+      "fake_rate": 0.8445945945945946,
+      "recommendation": "KEEP"
+    }
+  },
+  "confirmation": {
+    "confirmation_calibration": [
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 10,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 10,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 10,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 15,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 15,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 15,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 30,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 30,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 30,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 60,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 60,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 60,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      }
+    ],
+    "top_configs": [
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "config": {
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "triggered": 55,
+        "confirmed": 0,
+        "confirm_rate": 0.0,
+        "fake_after_confirm": 0,
+        "paper_enter": 0,
+        "recommendation": "NEED_MORE_DATA"
+      }
+    ],
+    "confirmed_zero_reason": "Trigger events did not produce post-trigger effective movement above cost."
+  },
+  "grid": {
+    "grid_results": [
+      {
+        "grid_id": "grid_1",
+        "config": {
+          "min_required_conditions": 2,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 91,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 0,
+        "recommendation": "REJECT"
+      },
+      {
+        "grid_id": "grid_2",
+        "config": {
+          "min_required_conditions": 3,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 61,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 10,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "grid_id": "grid_3",
+        "config": {
+          "min_required_conditions": 4,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 26,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 0,
+        "recommendation": "REJECT"
+      }
+    ],
+    "top_3": [
+      {
+        "grid_id": "grid_2",
+        "config": {
+          "min_required_conditions": 3,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.05,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 61,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 10,
+        "recommendation": "NEED_MORE_DATA"
+      },
+      {
+        "grid_id": "grid_1",
+        "config": {
+          "min_required_conditions": 2,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.03,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 91,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 0,
+        "recommendation": "REJECT"
+      },
+      {
+        "grid_id": "grid_3",
+        "config": {
+          "min_required_conditions": 4,
+          "max_spread_pct": 0.15,
+          "min_depth_3_level_krw": 1000000,
+          "min_buy_ratio": 0.52,
+          "confirmation_window_seconds": 5,
+          "min_price_follow_pct": 0.1,
+          "min_effective_return_pct": 0.0,
+          "min_buy_ratio_hold": 0.52
+        },
+        "event_count": 69,
+        "armed_count": 26,
+        "triggered_count": 55,
+        "confirmed_count": 0,
+        "paper_enter_count": 0,
+        "fake_after_confirm_count": 0,
+        "estimated_quality_score": 0,
+        "recommendation": "REJECT"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "range_touch_detector_status": "DATA_MISSING",
+  "breakout_pressure_detector_status": "DATA_MISSING",
+  "relaxed_range_touch_count": 0,
+  "relaxed_breakout_pressure_count": 0,
+  "data_sufficient_clip_count": 0,
+  "recommended_fix": [
+    "Add relaxed range proximity to calibration grid",
+    "Compute range context from rolling trade prices"
+  ]
+}

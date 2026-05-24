@@ -1,0 +1,3152 @@
+{
+  "follow_through_fail_count": 147,
+  "classified_count": 147,
+  "unknown_count": 0,
+  "unknown_rate": 0.0,
+  "failure_counts": {
+    "PRICE_NO_MOVE": 125,
+    "TIMEOUT": 22
+  },
+  "failure_table": [
+    {
+      "failure_type": "PRICE_NO_MOVE",
+      "count": 125,
+      "pct": 85.03401360544217,
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "failure_type": "MOVE_TOO_SMALL",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "raise_reward_to_cost": true
+      }
+    },
+    {
+      "failure_type": "MOVE_REVERSED",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "add_confirmation_delay": true
+      }
+    },
+    {
+      "failure_type": "BUY_RATIO_DROPPED",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "min_buy_ratio_hold": 0.55
+      }
+    },
+    {
+      "failure_type": "SPREAD_WIDENED",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "max_spread_widening_pct": 0.03
+      }
+    },
+    {
+      "failure_type": "DEPTH_EVAPORATED",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "min_depth_ratio_hold": 1.0
+      }
+    },
+    {
+      "failure_type": "BTC_REVERSED",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "btc_abort_rule": true
+      }
+    },
+    {
+      "failure_type": "TIMEOUT",
+      "count": 22,
+      "pct": 14.965986394557824,
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "failure_type": "UNKNOWN",
+      "count": 0,
+      "pct": 0.0,
+      "suggested_calibration": {
+        "review_required": true
+      }
+    }
+  ],
+  "rows": [
+    {
+      "event_id": "KRWAAVE_MARKET_RANK_SURGE_1779631088702",
+      "market": "KRW-AAVE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631088702,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.17391304347826086,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1196,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAAVE_SPREAD_CONTRACTION_1779631092204",
+      "market": "KRW-AAVE",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092204,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.17391304347826086,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 1191,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779614974811",
+      "market": "KRW-ADA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779614974811,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 13,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779627454162",
+      "market": "KRW-ADA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627454162,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.19999999999999996,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 221,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779631092765",
+      "market": "KRW-ADA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092765,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.06692913385826772,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 7,
+        "post_orderbook_count": 510,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWADA_ORDERFLOW_SHIFT_1779627454162",
+      "market": "KRW-ADA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627454162,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.19999999999999996,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 221,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWALGO_MARKET_RANK_SURGE_1779631083033",
+      "market": "KRW-ALGO",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631083033,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.05333333333333334,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 279,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAPT_DEPTH_RECOVERY_1779627457404",
+      "market": "KRW-APT",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779627457404,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.75,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 243,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779627444674",
+      "market": "KRW-APT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627444674,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.25,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 244,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779631060904",
+      "market": "KRW-APT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631060904,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6984126984126984,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1223,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779627444674",
+      "market": "KRW-APT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627444674,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.25,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 244,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779631060904",
+      "market": "KRW-APT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631060904,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6984126984126984,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1223,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAPT_VOLUME_SPIKE_1779627444674",
+      "market": "KRW-APT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627444674,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.25,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 244,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWARB_DEPTH_RECOVERY_1779631092604",
+      "market": "KRW-ARB",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092604,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.375,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 411,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779627462132",
+      "market": "KRW-ARB",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627462132,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 54,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779630953106",
+      "market": "KRW-ARB",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779630953106,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.75,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 495,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779627462132",
+      "market": "KRW-ARB",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627462132,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 54,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779630953106",
+      "market": "KRW-ARB",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779630953106,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.75,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 495,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWARB_RANGE_TOUCH_1779627462132",
+      "market": "KRW-ARB",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627462132,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 54,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWATOM_MARKET_RANK_SURGE_1779631054294",
+      "market": "KRW-ATOM",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631054294,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.8,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1230,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779615017589",
+      "market": "KRW-AVAX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615017589,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 40,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779627425231",
+      "market": "KRW-AVAX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627425231,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.45454545454545453,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 233,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779631068843",
+      "market": "KRW-AVAX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631068843,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.12727272727272726,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 10,
+        "post_orderbook_count": 940,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAVAX_SPREAD_CONTRACTION_1779631092261",
+      "market": "KRW-AVAX",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092261,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.12727272727272726,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 910,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWAVAX_VOLUME_SPIKE_1779631068843",
+      "market": "KRW-AVAX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631068843,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.12727272727272726,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 10,
+        "post_orderbook_count": 940,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAXS_DEPTH_RECOVERY_1779631090604",
+      "market": "KRW-AXS",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631090604,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.07777777777777778,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 618,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWAXS_MARKET_RANK_SURGE_1779631005908",
+      "market": "KRW-AXS",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631005908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.9222222222222223,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 699,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWAXS_VOLUME_SPIKE_1779631005908",
+      "market": "KRW-AXS",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631005908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.9222222222222223,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 699,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779627423568",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627423568,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.09999999999999998,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 224,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779631066966",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631066966,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.89171974522293,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 656,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779627423568",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627423568,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.09999999999999998,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 224,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779631066966",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631066966,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.89171974522293,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 656,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_RANGE_TOUCH_1779627423568",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627423568,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.09999999999999998,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 224,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBCH_SPREAD_CONTRACTION_1779631092961",
+      "market": "KRW-BCH",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092961,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.10256410256410256,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 642,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWBCH_VOLUME_SPIKE_1779631066966",
+      "market": "KRW-BCH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631066966,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.89171974522293,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 656,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_BTC_SHOCK_1779631092853",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092853,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_DEPTH_RECOVERY_1779631093015",
+      "market": "KRW-BTC",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631093015,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779615060400",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060400,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.05970149253731338,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 117,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779627460199",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460199,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.8054607508532423,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3659,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779631092853",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092853,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779615060400",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060400,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.05970149253731338,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 117,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779631092853",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092853,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_RANGE_TOUCH_1779615060400",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060400,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.05970149253731338,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 117,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_RANGE_TOUCH_1779627460199",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460199,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.8054607508532423,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3659,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_SPREAD_CONTRACTION_1779631093015",
+      "market": "KRW-BTC",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631093015,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779615060400",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060400,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.05970149253731338,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 117,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779627460199",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460199,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.8054607508532423,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3659,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779631092853",
+      "market": "KRW-BTC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092853,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6218514883873079,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3020,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWCELO_MARKET_RANK_SURGE_1779631077855",
+      "market": "KRW-CELO",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631077855,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.15384615384615385,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 145,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779615052749",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615052749,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 35,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779627447800",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627447800,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.21666666666666667,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 450,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779631090523",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631090523,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.42424242424242425,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 969,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_ORDERFLOW_SHIFT_1779627447800",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627447800,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.21666666666666667,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 450,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779615052749",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615052749,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 35,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779627447800",
+      "market": "KRW-DOGE",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627447800,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.21666666666666667,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 450,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779627405966",
+      "market": "KRW-DOT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627405966,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.3333333333333333,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 206,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779631079827",
+      "market": "KRW-DOT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631079827,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.8732394366197183,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 718,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOT_ORDERFLOW_SHIFT_1779631079827",
+      "market": "KRW-DOT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631079827,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.8732394366197183,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 718,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWDOT_VOLUME_SPIKE_1779627405966",
+      "market": "KRW-DOT",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627405966,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.3333333333333333,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 206,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETC_DEPTH_RECOVERY_1779631093061",
+      "market": "KRW-ETC",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631093061,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.13043478260869565,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 699,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779627460984",
+      "market": "KRW-ETC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460984,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.36363636363636365,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 153,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779631047634",
+      "market": "KRW-ETC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631047634,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.8709677419354839,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 741,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779627460984",
+      "market": "KRW-ETC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460984,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.36363636363636365,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 153,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779631047634",
+      "market": "KRW-ETC",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631047634,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.8709677419354839,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 741,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETC_SPREAD_CONTRACTION_1779627461061",
+      "market": "KRW-ETC",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779627461061,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6363636363636364,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 153,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWETH_DEPTH_RECOVERY_1779615070886",
+      "market": "KRW-ETH",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779615070886,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.8421052631578947,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 165,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779615065908",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615065908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.1578947368421053,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 165,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779627460114",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460114,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4881889763779528,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3414,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779631089069",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631089069,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.672990514228657,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3298,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779615065908",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615065908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.1578947368421053,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 165,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779631089069",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631089069,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.672990514228657,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3298,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_RANGE_TOUCH_1779615065908",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615065908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.1578947368421053,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 165,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_SPREAD_CONTRACTION_1779627465386",
+      "market": "KRW-ETH",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779627465386,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4881889763779528,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 3368,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWETH_SPREAD_CONTRACTION_1779631092996",
+      "market": "KRW-ETH",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092996,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.327663831915958,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 3276,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWETH_VOLUME_SPIKE_1779615065908",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615065908,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.1578947368421053,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 165,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_VOLUME_SPIKE_1779627460114",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460114,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4881889763779528,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3414,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWETH_VOLUME_SPIKE_1779631089069",
+      "market": "KRW-ETH",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631089069,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.672990514228657,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3298,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779627251476",
+      "market": "KRW-HBAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627251476,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 263,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779631046433",
+      "market": "KRW-HBAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631046433,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 354,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWHBAR_ORDERFLOW_SHIFT_1779631046433",
+      "market": "KRW-HBAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631046433,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 354,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWIMX_MARKET_RANK_SURGE_1779631000034",
+      "market": "KRW-IMX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631000034,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.3333333333333333,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 2,
+        "post_orderbook_count": 284,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWIMX_SPREAD_CONTRACTION_1779631092388",
+      "market": "KRW-IMX",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092388,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.25,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 267,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWIOTA_DEPTH_RECOVERY_1779631091804",
+      "market": "KRW-IOTA",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631091804,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 197,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWIOTA_MARKET_RANK_SURGE_1779631005722",
+      "market": "KRW-IOTA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631005722,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 228,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWIOTA_VOLUME_SPIKE_1779631005722",
+      "market": "KRW-IOTA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631005722,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.0,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 228,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_DEPTH_RECOVERY_1779631092884",
+      "market": "KRW-LINK",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092884,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.24880382775119617,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 1210,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779615045876",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615045876,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 65,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779627420396",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627420396,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.275,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 314,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779631085588",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631085588,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7511961722488039,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1216,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_ORDERFLOW_SHIFT_1779631085588",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631085588,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7511961722488039,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1216,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_RANGE_TOUCH_1779615045876",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615045876,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 65,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_SPREAD_CONTRACTION_1779627453084",
+      "market": "KRW-LINK",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779627453084,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.275,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 311,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWLINK_SPREAD_CONTRACTION_1779631092884",
+      "market": "KRW-LINK",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092884,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.24880382775119617,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 1210,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779615045876",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615045876,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 65,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779631085588",
+      "market": "KRW-LINK",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631085588,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7511961722488039,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1216,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWMANA_MARKET_RANK_SURGE_1779631087423",
+      "market": "KRW-MANA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631087423,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.90625,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 239,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWMANA_ORDERFLOW_SHIFT_1779631087423",
+      "market": "KRW-MANA",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631087423,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.90625,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 239,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779627463031",
+      "market": "KRW-NEAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627463031,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.7149532710280374,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2354,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779631092791",
+      "market": "KRW-NEAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092791,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.38927738927738925,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3884,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWNEAR_ORDERFLOW_SHIFT_1779627463031",
+      "market": "KRW-NEAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627463031,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.7149532710280374,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2354,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWNEAR_VOLUME_SPIKE_1779631092791",
+      "market": "KRW-NEAR",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092791,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.38927738927738925,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 3884,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSAND_MARKET_RANK_SURGE_1779631064158",
+      "market": "KRW-SAND",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631064158,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.3333333333333333,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 373,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779627429968",
+      "market": "KRW-SEI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627429968,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.3333333333333333,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 187,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779631076389",
+      "market": "KRW-SEI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631076389,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.24489795918367346,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 660,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSEI_SPREAD_CONTRACTION_1779627457685",
+      "market": "KRW-SEI",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779627457685,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.2,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 172,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779615060374",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060374,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4444444444444444,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 101,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779627460180",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460180,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.25748502994011974,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 626,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779631092645",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092645,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6462167689161554,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2004,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779615060374",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060374,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4444444444444444,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 101,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779627460180",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460180,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.25748502994011974,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 626,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_RANGE_TOUCH_1779615060374",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615060374,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.4444444444444444,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 101,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779627460180",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627460180,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.25748502994011974,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 626,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779631092645",
+      "market": "KRW-SOL",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631092645,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6462167689161554,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2004,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSTX_DEPTH_RECOVERY_1779631091384",
+      "market": "KRW-STX",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631091384,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.21153846153846154,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 299,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779627403546",
+      "market": "KRW-STX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627403546,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.11111111111111116,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 49,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779631062804",
+      "market": "KRW-STX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631062804,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.23636363636363636,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 5,
+        "post_orderbook_count": 306,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSTX_ORDERFLOW_SHIFT_1779627403546",
+      "market": "KRW-STX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627403546,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.11111111111111116,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 49,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSTX_RANGE_TOUCH_1779627403546",
+      "market": "KRW-STX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627403546,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.11111111111111116,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 49,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSTX_VOLUME_SPIKE_1779627403546",
+      "market": "KRW-STX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627403546,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.11111111111111116,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 49,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779615066631",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615066631,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 129,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779627422238",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627422238,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6888888888888889,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 903,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779631086196",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631086196,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7721774193548387,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 3,
+        "post_orderbook_count": 2465,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779627422238",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627422238,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6888888888888889,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 903,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779631086196",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631086196,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7721774193548387,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 3,
+        "post_orderbook_count": 2465,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_RANGE_TOUCH_1779615066631",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615066631,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 129,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_SPREAD_CONTRACTION_1779615070867",
+      "market": "KRW-SUI",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779615070867,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 129,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWSUI_SPREAD_CONTRACTION_1779631092988",
+      "market": "KRW-SUI",
+      "failure_type": "TIMEOUT",
+      "triggered_at_ms": 1779631092988,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.22626262626262628,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 0,
+        "post_orderbook_count": 2445,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "confirmation_window_seconds": 60
+      }
+    },
+    {
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779615066631",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615066631,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.5,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 129,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779627422238",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627422238,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.6888888888888889,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 903,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779631086196",
+      "market": "KRW-SUI",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631086196,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.7721774193548387,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 3,
+        "post_orderbook_count": 2465,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779615064376",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615064376,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.33333333333333337,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 11,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779627459143",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627459143,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.5217391304347826,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 140,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779630974468",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779630974468,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.375,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 254,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779615064376",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615064376,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.33333333333333337,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 11,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779630974468",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779630974468,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.375,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 254,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_RANGE_TOUCH_1779615064376",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615064376,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.33333333333333337,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 11,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWTRX_VOLUME_SPIKE_1779615064376",
+      "market": "KRW-TRX",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615064376,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": 0.33333333333333337,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 11,
+        "buy_ratio": 1.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779615067161",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615067161,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6111111111111112,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 178,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779627445885",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627445885,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4653846153846154,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1261,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779631091126",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631091126,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.2408906882591093,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2579,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779615067161",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615067161,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6111111111111112,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 178,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779631091126",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631091126,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.2408906882591093,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2579,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_RANGE_TOUCH_1779615067161",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615067161,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6111111111111112,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 178,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_RANGE_TOUCH_1779627445885",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627445885,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4653846153846154,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1261,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779615067161",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779615067161,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.6111111111111112,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 178,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779627445885",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779627445885,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.4653846153846154,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 1261,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    },
+    {
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779631091126",
+      "market": "KRW-XRP",
+      "failure_type": "PRICE_NO_MOVE",
+      "triggered_at_ms": 1779631091126,
+      "confirmation_window_seconds": 30,
+      "post_trigger_price_change_pct": 0.0,
+      "post_trigger_effective_return_pct": -0.15,
+      "buy_ratio_change": -0.2408906882591093,
+      "spread_change_pct": 0.0,
+      "depth_change_krw": 0.0,
+      "evidence": {
+        "post_trade_count": 1,
+        "post_orderbook_count": 2579,
+        "buy_ratio": 0.0
+      },
+      "suggested_calibration": {
+        "tighten_trigger": true,
+        "min_price_follow_pct": 0.05
+      }
+    }
+  ]
+}

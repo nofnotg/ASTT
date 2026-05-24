@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import json
@@ -151,6 +151,33 @@ from replay_lab.feedback.tradable_winner_mining_html_report_v5510 import Tradabl
 from replay_lab.feedback.high_volatility_session_html_report_v5510 import HighVolatilitySessionHTMLReportV5510
 from replay_lab.feedback.tradable_source_forward_html_report_v5510 import TradableSourceForwardHTMLReportV5510
 from replay_lab.feedback.head_controller_tradable_winner_review_html_report_v5510 import HeadControllerTradableWinnerReviewHTMLReportV5510
+from replay_lab.research.timing_event_collection_v5r1 import run_timing_lab_live_v5r1
+from replay_lab.research.event_clip_replay_v5r1 import replay_timing_lab_v5r1
+from replay_lab.research.timing_label_validation_v5r1 import label_event_clips
+from replay_lab.research.entry_state_machine_validation_v5r1 import validate_entry_state_machine_v5r1
+from replay_lab.research.llm_usage_audit_v5r1 import audit_llm_usage_v5r1
+from replay_lab.research.head_controller_timing_review_v5r1 import run_head_controller_timing_review_v5r1
+from timing_lab.entry_window_analyzer import analyze_entry_windows
+from execution.timing_based_paper_runner import run_timing_based_paper_v5r1
+from replay_lab.feedback.timing_lab_html_report_v5r1 import TimingLabHTMLReportV5R1
+from replay_lab.feedback.entry_timing_html_report_v5r1 import EntryTimingHTMLReportV5R1
+from replay_lab.feedback.llm_usage_html_report_v5r1 import LLMUsageHTMLReportV5R1
+from replay_lab.feedback.head_controller_timing_review_html_report_v5r1 import HeadControllerTimingReviewHTMLReportV5R1
+from timing_lab.fake_signal_decomposer import decompose_fake_signals
+from timing_lab.follow_through_failure_analyzer import analyze_follow_through_failures
+from timing_lab.event_type_quality_scorer import score_event_types
+from timing_lab.detector_gap_analyzer import analyze_detector_gaps
+from timing_lab.calibration.armed_threshold_tuner import tune_armed_thresholds
+from timing_lab.calibration.confirmation_threshold_tuner import tune_confirmation_thresholds
+from timing_lab.calibration.calibration_grid_runner import run_calibration_grid
+from llm_ops.llm_live_call_repair import repair_llm_completion_v5r2, run_llm_minimum_completion_test
+from timing_lab.timing_project_scorecard import build_project_scorecard
+from replay_lab.research.head_controller_v5r2_review import run_head_controller_v5r2_review
+from replay_lab.feedback.fake_signal_decomposition_html_report_v5r2 import FakeSignalDecompositionHTMLReportV5R2
+from replay_lab.feedback.confirmation_calibration_html_report_v5r2 import ConfirmationCalibrationHTMLReportV5R2
+from replay_lab.feedback.llm_completion_repair_html_report_v5r2 import LLMCompletionRepairHTMLReportV5R2
+from replay_lab.feedback.project_scorecard_html_report_v5r2 import ProjectScorecardHTMLReportV5R2
+from replay_lab.feedback.head_controller_v5r2_review_html_report import HeadControllerV5R2ReviewHTMLReport
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1280,6 +1307,156 @@ def build_head_controller_tradable_winner_review_report_v5510_command(args: argp
     return 0
 
 
+def run_timing_lab_live_v5r1_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(json.dumps(run_timing_lab_live_v5r1(args.duration_minutes, args.top_markets, args.buffer_minutes, args.post_event_minutes, research_mode), ensure_ascii=False, default=str))
+    return 0
+
+
+def replay_timing_lab_v5r1_command(args: argparse.Namespace) -> int:
+    print(json.dumps(replay_timing_lab_v5r1(args.sessions_dir, args.buffer_minutes, args.post_event_minutes), ensure_ascii=False, default=str))
+    return 0
+
+
+def label_event_clips_v5r1_command(args: argparse.Namespace) -> int:
+    print(json.dumps(label_event_clips(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_entry_windows_v5r1_command(args: argparse.Namespace) -> int:
+    result = analyze_entry_windows(args.clips_dir)
+    out = REPLAY_STORE_DIR / "timing_state_replay" / "latest_entry_window_summary.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(result, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_entry_state_machine_v5r1_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_entry_state_machine_v5r1(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_timing_based_paper_v5r1_command(args: argparse.Namespace) -> int:
+    research_mode = str(args.research_mode).lower() == "true"
+    print(json.dumps(run_timing_based_paper_v5r1(args.clips_dir, args.initial_cash_krw, research_mode), ensure_ascii=False, default=str))
+    return 0
+
+
+def audit_llm_usage_v5r1_command(args: argparse.Namespace) -> int:
+    print(json.dumps(audit_llm_usage_v5r1(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_timing_review_v5r1_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_timing_review_v5r1(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_timing_lab_report_v5r1_command(args: argparse.Namespace) -> int:
+    print(f"timing lab report: {TimingLabHTMLReportV5R1().build()}")
+    return 0
+
+
+def build_entry_timing_report_v5r1_command(args: argparse.Namespace) -> int:
+    print(f"entry timing report: {EntryTimingHTMLReportV5R1().build()}")
+    return 0
+
+
+def build_llm_usage_report_v5r1_command(args: argparse.Namespace) -> int:
+    print(f"llm usage report: {LLMUsageHTMLReportV5R1().build()}")
+    return 0
+
+
+def build_head_controller_timing_review_report_v5r1_command(args: argparse.Namespace) -> int:
+    print(f"head controller timing review report: {HeadControllerTimingReviewHTMLReportV5R1().build()}")
+    return 0
+
+
+def decompose_fake_signals_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(decompose_fake_signals(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_follow_through_failures_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(analyze_follow_through_failures(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def score_event_types_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(score_event_types(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_detector_gaps_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(analyze_detector_gaps(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def calibrate_armed_state_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(tune_armed_thresholds(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def calibrate_confirmation_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(tune_confirmation_thresholds(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_calibration_grid_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_calibration_grid(args.clips_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_llm_minimum_completion_test_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_llm_minimum_completion_test(args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def repair_llm_completion_v5r2_command(args: argparse.Namespace) -> int:
+    print(json.dumps(repair_llm_completion_v5r2(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_project_scorecard_v5r2_command(args: argparse.Namespace) -> int:
+    result = build_project_scorecard()
+    out = Path(args.reports_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "latest_project_scorecard_summary.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v5r2_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v5r2_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_fake_signal_decomposition_report_v5r2_command(args: argparse.Namespace) -> int:
+    print(f"fake signal decomposition report: {FakeSignalDecompositionHTMLReportV5R2().build()}")
+    return 0
+
+
+def build_confirmation_calibration_report_v5r2_command(args: argparse.Namespace) -> int:
+    print(f"confirmation calibration report: {ConfirmationCalibrationHTMLReportV5R2().build()}")
+    return 0
+
+
+def build_llm_completion_repair_report_v5r2_command(args: argparse.Namespace) -> int:
+    print(f"llm completion repair report: {LLMCompletionRepairHTMLReportV5R2().build()}")
+    return 0
+
+
+def build_project_scorecard_report_v5r2_command(args: argparse.Namespace) -> int:
+    print(f"project scorecard report: {ProjectScorecardHTMLReportV5R2().build()}")
+    return 0
+
+
+def build_head_controller_v5r2_review_report_command(args: argparse.Namespace) -> int:
+    print(f"head controller v5r2 review report: {HeadControllerV5R2ReviewHTMLReport().build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2230,6 +2407,120 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-tradable-winner-review-report-v5510")
     p.set_defaults(func=build_head_controller_tradable_winner_review_report_v5510_command)
 
+    p = sub.add_parser("run-timing-lab-live-v5r1")
+    p.add_argument("--duration-minutes", type=int, default=60)
+    p.add_argument("--top-markets", type=int, default=30)
+    p.add_argument("--buffer-minutes", type=int, default=30)
+    p.add_argument("--post-event-minutes", type=int, default=30)
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_timing_lab_live_v5r1_command)
+
+    p = sub.add_parser("replay-timing-lab-v5r1")
+    p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
+    p.add_argument("--buffer-minutes", type=int, default=30)
+    p.add_argument("--post-event-minutes", type=int, default=30)
+    p.set_defaults(func=replay_timing_lab_v5r1_command)
+
+    p = sub.add_parser("label-event-clips-v5r1")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=label_event_clips_v5r1_command)
+
+    p = sub.add_parser("analyze-entry-windows-v5r1")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=analyze_entry_windows_v5r1_command)
+
+    p = sub.add_parser("validate-entry-state-machine-v5r1")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=validate_entry_state_machine_v5r1_command)
+
+    p = sub.add_parser("run-timing-based-paper-v5r1")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--research-mode", default="true")
+    p.set_defaults(func=run_timing_based_paper_v5r1_command)
+
+    p = sub.add_parser("audit-llm-usage-v5r1")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=audit_llm_usage_v5r1_command)
+
+    p = sub.add_parser("run-head-controller-timing-review-v5r1")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_timing_review_v5r1_command)
+
+    p = sub.add_parser("build-timing-lab-report-v5r1")
+    p.set_defaults(func=build_timing_lab_report_v5r1_command)
+
+    p = sub.add_parser("build-entry-timing-report-v5r1")
+    p.set_defaults(func=build_entry_timing_report_v5r1_command)
+
+    p = sub.add_parser("build-llm-usage-report-v5r1")
+    p.set_defaults(func=build_llm_usage_report_v5r1_command)
+
+    p = sub.add_parser("build-head-controller-timing-review-report-v5r1")
+    p.set_defaults(func=build_head_controller_timing_review_report_v5r1_command)
+
+    p = sub.add_parser("decompose-fake-signals-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=decompose_fake_signals_v5r2_command)
+
+    p = sub.add_parser("analyze-follow-through-failures-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=analyze_follow_through_failures_v5r2_command)
+
+    p = sub.add_parser("score-event-types-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=score_event_types_v5r2_command)
+
+    p = sub.add_parser("analyze-detector-gaps-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=analyze_detector_gaps_v5r2_command)
+
+    p = sub.add_parser("calibrate-armed-state-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=calibrate_armed_state_v5r2_command)
+
+    p = sub.add_parser("calibrate-confirmation-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=calibrate_confirmation_v5r2_command)
+
+    p = sub.add_parser("run-calibration-grid-v5r2")
+    p.add_argument("--clips-dir", default=str(REPLAY_STORE_DIR / "timing_clips"))
+    p.set_defaults(func=run_calibration_grid_v5r2_command)
+
+    p = sub.add_parser("run-llm-minimum-completion-test-v5r2")
+    p.add_argument("--llm-provider", default="openai", choices=["openai", "off"])
+    p.set_defaults(func=run_llm_minimum_completion_test_v5r2_command)
+
+    p = sub.add_parser("repair-llm-completion-v5r2")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["openai", "off"])
+    p.set_defaults(func=repair_llm_completion_v5r2_command)
+
+    p = sub.add_parser("build-project-scorecard-v5r2")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_project_scorecard_v5r2_command)
+
+    p = sub.add_parser("run-head-controller-v5r2-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_v5r2_review_command)
+
+    p = sub.add_parser("build-fake-signal-decomposition-report-v5r2")
+    p.set_defaults(func=build_fake_signal_decomposition_report_v5r2_command)
+
+    p = sub.add_parser("build-confirmation-calibration-report-v5r2")
+    p.set_defaults(func=build_confirmation_calibration_report_v5r2_command)
+
+    p = sub.add_parser("build-llm-completion-repair-report-v5r2")
+    p.set_defaults(func=build_llm_completion_repair_report_v5r2_command)
+
+    p = sub.add_parser("build-project-scorecard-report-v5r2")
+    p.set_defaults(func=build_project_scorecard_report_v5r2_command)
+
+    p = sub.add_parser("build-head-controller-v5r2-review-report")
+    p.set_defaults(func=build_head_controller_v5r2_review_report_command)
+
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
     p.set_defaults(func=audit_mock_vs_real_data_command)
@@ -2247,4 +2538,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

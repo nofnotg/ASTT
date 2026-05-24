@@ -1,0 +1,52 @@
+{
+  "armed_calibration": [
+    {
+      "config": {
+        "min_required_conditions": 2,
+        "max_spread_pct": 0.15,
+        "min_depth_3_level_krw": 1000000,
+        "min_buy_ratio": 0.52
+      },
+      "watch_to_armed_rate": 0.6148648648648649,
+      "armed_to_triggered_rate": 0.34065934065934067,
+      "fake_rate": 0.8445945945945946,
+      "recommendation": "REJECT"
+    },
+    {
+      "config": {
+        "min_required_conditions": 3,
+        "max_spread_pct": 0.15,
+        "min_depth_3_level_krw": 1000000,
+        "min_buy_ratio": 0.52
+      },
+      "watch_to_armed_rate": 0.41216216216216217,
+      "armed_to_triggered_rate": 0.3442622950819672,
+      "fake_rate": 0.8445945945945946,
+      "recommendation": "KEEP"
+    },
+    {
+      "config": {
+        "min_required_conditions": 4,
+        "max_spread_pct": 0.15,
+        "min_depth_3_level_krw": 1000000,
+        "min_buy_ratio": 0.52
+      },
+      "watch_to_armed_rate": 0.17567567567567569,
+      "armed_to_triggered_rate": 0.34615384615384615,
+      "fake_rate": 0.8445945945945946,
+      "recommendation": "REJECT"
+    }
+  ],
+  "recommended_config": {
+    "config": {
+      "min_required_conditions": 3,
+      "max_spread_pct": 0.15,
+      "min_depth_3_level_krw": 1000000,
+      "min_buy_ratio": 0.52
+    },
+    "watch_to_armed_rate": 0.41216216216216217,
+    "armed_to_triggered_rate": 0.3442622950819672,
+    "fake_rate": 0.8445945945945946,
+    "recommendation": "KEEP"
+  }
+}

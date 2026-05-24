@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-05-24T13:21:57.572262",
-  "session_id": "full_seed_v557_20260524_132157",
-  "duration_minutes": 60,
+  "generated_at": "2026-05-24T23:58:34.031638",
+  "session_id": "full_seed_v557_20260524_235834",
+  "duration_minutes": 0,
   "strategies": [
     "MICRO_ACCELERATION",
     "VWAP_RECLAIM",

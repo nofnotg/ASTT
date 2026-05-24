@@ -1,0 +1,3275 @@
+{
+  "state_count": 148,
+  "states": [
+    {
+      "market": "KRW-AAVE",
+      "event_id": "KRWAAVE_MARKET_RANK_SURGE_1779631088702",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631088702,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.17391304347826086,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AAVE",
+      "event_id": "KRWAAVE_SPREAD_CONTRACTION_1779631092204",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092204,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.17391304347826086,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ADA",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779614974811",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779614974811,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": false,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ADA",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779627454162",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627454162,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ADA",
+      "event_id": "KRWADA_MARKET_RANK_SURGE_1779631092765",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092765,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.06692913385826772,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ADA",
+      "event_id": "KRWADA_ORDERFLOW_SHIFT_1779627454162",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627454162,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ALGO",
+      "event_id": "KRWALGO_MARKET_RANK_SURGE_1779631083033",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631083033,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.05333333333333334,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_DEPTH_RECOVERY_1779627457404",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627457404,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.75,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779627444674",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627444674,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.75,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_MARKET_RANK_SURGE_1779631060904",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631060904,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.30158730158730157,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779627444674",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627444674,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.75,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_ORDERFLOW_SHIFT_1779631060904",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631060904,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.30158730158730157,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-APT",
+      "event_id": "KRWAPT_VOLUME_SPIKE_1779627444674",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627444674,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.75,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_DEPTH_RECOVERY_1779631092604",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092604,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.375,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779627462132",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627462132,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_MARKET_RANK_SURGE_1779630953106",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779630953106,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779627462132",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627462132,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_ORDERFLOW_SHIFT_1779630953106",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779630953106,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ARB",
+      "event_id": "KRWARB_RANGE_TOUCH_1779627462132",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627462132,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ATOM",
+      "event_id": "KRWATOM_MARKET_RANK_SURGE_1779631054294",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631054294,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.2,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AVAX",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779615017589",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615017589,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": false,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AVAX",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779627425231",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627425231,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.45454545454545453,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AVAX",
+      "event_id": "KRWAVAX_MARKET_RANK_SURGE_1779631068843",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631068843,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.12727272727272726,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AVAX",
+      "event_id": "KRWAVAX_SPREAD_CONTRACTION_1779631092261",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092261,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.12727272727272726,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AVAX",
+      "event_id": "KRWAVAX_VOLUME_SPIKE_1779631068843",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631068843,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.12727272727272726,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AXS",
+      "event_id": "KRWAXS_DEPTH_RECOVERY_1779631090604",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631090604,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.07777777777777778,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AXS",
+      "event_id": "KRWAXS_MARKET_RANK_SURGE_1779631005908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631005908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.07777777777777778,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-AXS",
+      "event_id": "KRWAXS_VOLUME_SPIKE_1779631005908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631005908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.07777777777777778,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779627423568",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627423568,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_MARKET_RANK_SURGE_1779631066966",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631066966,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.10828025477707007,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779627423568",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627423568,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_ORDERFLOW_SHIFT_1779631066966",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631066966,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.10828025477707007,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_RANGE_TOUCH_1779627423568",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627423568,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_SPREAD_CONTRACTION_1779631092961",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092961,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.10256410256410256,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BCH",
+      "event_id": "KRWBCH_VOLUME_SPIKE_1779631066966",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631066966,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.10828025477707007,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_BTC_SHOCK_1779631092853",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092853,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_DEPTH_RECOVERY_1779631093015",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631093015,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779615060400",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060400,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9402985074626866,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779627460199",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460199,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8054607508532423,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_MARKET_RANK_SURGE_1779631092853",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092853,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779615060400",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060400,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9402985074626866,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_ORDERFLOW_SHIFT_1779631092853",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092853,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_RANGE_TOUCH_1779615060400",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060400,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9402985074626866,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_RANGE_TOUCH_1779627460199",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460199,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8054607508532423,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_SPREAD_CONTRACTION_1779631093015",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631093015,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779615060400",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060400,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.9402985074626866,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779627460199",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460199,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8054607508532423,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-BTC",
+      "event_id": "KRWBTC_VOLUME_SPIKE_1779631092853",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092853,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6218514883873079,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-CELO",
+      "event_id": "KRWCELO_MARKET_RANK_SURGE_1779631077855",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631077855,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.15384615384615385,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779615052749",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615052749,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779627447800",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627447800,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.7833333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_MARKET_RANK_SURGE_1779631090523",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631090523,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.42424242424242425,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_ORDERFLOW_SHIFT_1779627447800",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627447800,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.7833333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779615052749",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615052749,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOGE",
+      "event_id": "KRWDOGE_RANGE_TOUCH_1779627447800",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627447800,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.7833333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOT",
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779627405966",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627405966,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3333333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOT",
+      "event_id": "KRWDOT_MARKET_RANK_SURGE_1779631079827",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631079827,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.1267605633802817,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOT",
+      "event_id": "KRWDOT_ORDERFLOW_SHIFT_1779631079827",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631079827,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.1267605633802817,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-DOT",
+      "event_id": "KRWDOT_VOLUME_SPIKE_1779627405966",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627405966,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3333333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_DEPTH_RECOVERY_1779631093061",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631093061,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.13043478260869565,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779627460984",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460984,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6363636363636364,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_MARKET_RANK_SURGE_1779631047634",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631047634,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.12903225806451613,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779627460984",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460984,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6363636363636364,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_ORDERFLOW_SHIFT_1779631047634",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631047634,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.12903225806451613,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETC",
+      "event_id": "KRWETC_SPREAD_CONTRACTION_1779627461061",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627461061,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6363636363636364,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_DEPTH_RECOVERY_1779615070886",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615070886,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8421052631578947,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779615065908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615065908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8421052631578947,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779627460114",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460114,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4881889763779528,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_MARKET_RANK_SURGE_1779631089069",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631089069,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.327009485771343,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779615065908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615065908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8421052631578947,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_ORDERFLOW_SHIFT_1779631089069",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631089069,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.327009485771343,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_RANGE_TOUCH_1779615065908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615065908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8421052631578947,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_SPREAD_CONTRACTION_1779627465386",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627465386,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4881889763779528,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_SPREAD_CONTRACTION_1779631092996",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092996,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.327663831915958,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779615065908",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615065908,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8421052631578947,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779627460114",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460114,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4881889763779528,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-ETH",
+      "event_id": "KRWETH_VOLUME_SPIKE_1779631089069",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631089069,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.327009485771343,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-FLOW",
+      "event_id": "KRWFLOW_MARKET_RANK_SURGE_1773640799567",
+      "state": "ABORT",
+      "state_entered_at_ms": 1773640799567,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": false,
+        "depth_sufficient": false,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": false,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "SPREAD_TOO_WIDE"
+      ]
+    },
+    {
+      "market": "KRW-HBAR",
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779627251476",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627251476,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": false,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-HBAR",
+      "event_id": "KRWHBAR_MARKET_RANK_SURGE_1779631046433",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631046433,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-HBAR",
+      "event_id": "KRWHBAR_ORDERFLOW_SHIFT_1779631046433",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631046433,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-IMX",
+      "event_id": "KRWIMX_MARKET_RANK_SURGE_1779631000034",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631000034,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3333333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-IMX",
+      "event_id": "KRWIMX_SPREAD_CONTRACTION_1779631092388",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092388,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-IOTA",
+      "event_id": "KRWIOTA_DEPTH_RECOVERY_1779631091804",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631091804,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-IOTA",
+      "event_id": "KRWIOTA_MARKET_RANK_SURGE_1779631005722",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631005722,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-IOTA",
+      "event_id": "KRWIOTA_VOLUME_SPIKE_1779631005722",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631005722,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.0,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_DEPTH_RECOVERY_1779631092884",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092884,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24880382775119617,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779615045876",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615045876,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779627420396",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627420396,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.275,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_MARKET_RANK_SURGE_1779631085588",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631085588,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24880382775119617,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_ORDERFLOW_SHIFT_1779631085588",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631085588,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24880382775119617,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_RANGE_TOUCH_1779615045876",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615045876,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_SPREAD_CONTRACTION_1779627453084",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627453084,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.275,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_SPREAD_CONTRACTION_1779631092884",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092884,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24880382775119617,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779615045876",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615045876,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-LINK",
+      "event_id": "KRWLINK_VOLUME_SPIKE_1779631085588",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631085588,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24880382775119617,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-MANA",
+      "event_id": "KRWMANA_MARKET_RANK_SURGE_1779631087423",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631087423,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.09375,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-MANA",
+      "event_id": "KRWMANA_ORDERFLOW_SHIFT_1779631087423",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631087423,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.09375,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-NEAR",
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779627463031",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627463031,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.7149532710280374,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-NEAR",
+      "event_id": "KRWNEAR_MARKET_RANK_SURGE_1779631092791",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092791,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.38927738927738925,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-NEAR",
+      "event_id": "KRWNEAR_ORDERFLOW_SHIFT_1779627463031",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627463031,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.7149532710280374,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-NEAR",
+      "event_id": "KRWNEAR_VOLUME_SPIKE_1779631092791",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092791,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.38927738927738925,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SAND",
+      "event_id": "KRWSAND_MARKET_RANK_SURGE_1779631064158",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631064158,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3333333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SEI",
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779627429968",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627429968,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3333333333333333,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SEI",
+      "event_id": "KRWSEI_MARKET_RANK_SURGE_1779631076389",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631076389,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.24489795918367346,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SEI",
+      "event_id": "KRWSEI_SPREAD_CONTRACTION_1779627457685",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627457685,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.2,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779615060374",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060374,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5555555555555556,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779627460180",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460180,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25748502994011974,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_MARKET_RANK_SURGE_1779631092645",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092645,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3537832310838446,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779615060374",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060374,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5555555555555556,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_ORDERFLOW_SHIFT_1779627460180",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460180,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25748502994011974,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_RANGE_TOUCH_1779615060374",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615060374,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5555555555555556,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779627460180",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627460180,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.25748502994011974,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SOL",
+      "event_id": "KRWSOL_VOLUME_SPIKE_1779631092645",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092645,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3537832310838446,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_DEPTH_RECOVERY_1779631091384",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631091384,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.21153846153846154,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779627403546",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627403546,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8888888888888888,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_MARKET_RANK_SURGE_1779631062804",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631062804,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.23636363636363636,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_ORDERFLOW_SHIFT_1779627403546",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627403546,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8888888888888888,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_RANGE_TOUCH_1779627403546",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627403546,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8888888888888888,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-STX",
+      "event_id": "KRWSTX_VOLUME_SPIKE_1779627403546",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627403546,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.8888888888888888,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779615066631",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615066631,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779627422238",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627422238,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3111111111111111,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_MARKET_RANK_SURGE_1779631086196",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631086196,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.22782258064516128,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779627422238",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627422238,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3111111111111111,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_ORDERFLOW_SHIFT_1779631086196",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631086196,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.22782258064516128,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_RANGE_TOUCH_1779615066631",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615066631,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_SPREAD_CONTRACTION_1779615070867",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615070867,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_SPREAD_CONTRACTION_1779631092988",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631092988,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.22626262626262628,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779615066631",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615066631,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779627422238",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627422238,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.3111111111111111,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-SUI",
+      "event_id": "KRWSUI_VOLUME_SPIKE_1779631086196",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631086196,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.22782258064516128,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779615064376",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615064376,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6666666666666666,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779627459143",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627459143,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.5217391304347826,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_MARKET_RANK_SURGE_1779630974468",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779630974468,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.625,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779615064376",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615064376,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6666666666666666,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_ORDERFLOW_SHIFT_1779630974468",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779630974468,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.625,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_RANGE_TOUCH_1779615064376",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615064376,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6666666666666666,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-TRX",
+      "event_id": "KRWTRX_VOLUME_SPIKE_1779615064376",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615064376,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6666666666666666,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779615067161",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615067161,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6111111111111112,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779627445885",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627445885,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4653846153846154,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_MARKET_RANK_SURGE_1779631091126",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631091126,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.2408906882591093,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779615067161",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615067161,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6111111111111112,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_ORDERFLOW_SHIFT_1779631091126",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631091126,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.2408906882591093,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_RANGE_TOUCH_1779615067161",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615067161,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6111111111111112,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_RANGE_TOUCH_1779627445885",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627445885,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4653846153846154,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779615067161",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779615067161,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.6111111111111112,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779627445885",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779627445885,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.4653846153846154,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    },
+    {
+      "market": "KRW-XRP",
+      "event_id": "KRWXRP_VOLUME_SPIKE_1779631091126",
+      "state": "ABORT",
+      "state_entered_at_ms": 1779631091126,
+      "state_age_seconds": 0,
+      "evidence": {
+        "spread_stable": true,
+        "depth_sufficient": true,
+        "btc_negative_shock": false,
+        "buy_trade_ratio": 0.2408906882591093,
+        "volume_burst": true,
+        "follow_through": false,
+        "entry_window_exists": false,
+        "allocator_grade": "C",
+        "abort_reason": "FOLLOW_THROUGH_FAIL"
+      },
+      "next_required_conditions": [],
+      "abort_reasons": [
+        "FOLLOW_THROUGH_FAIL"
+      ]
+    }
+  ],
+  "transition_counts": {
+    "IDLE -> WATCH": 148,
+    "WATCH -> ARMED": 147,
+    "ARMED -> ABORT": 92,
+    "ARMED -> TRIGGERED": 55,
+    "TRIGGERED -> ABORT": 55,
+    "WATCH -> ABORT": 1
+  },
+  "final_state_counts": {
+    "ABORT": 148
+  },
+  "abort_reason_counts": {
+    "FOLLOW_THROUGH_FAIL": 147,
+    "SPREAD_TOO_WIDE": 1
+  }
+}

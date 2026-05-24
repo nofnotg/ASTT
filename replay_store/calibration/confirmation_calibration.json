@@ -1,0 +1,259 @@
+{
+  "confirmation_calibration": [
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 10,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 10,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 10,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 15,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 15,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 15,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 30,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 30,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 30,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 60,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 60,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 60,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    }
+  ],
+  "top_configs": [
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.03,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.05,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    },
+    {
+      "config": {
+        "confirmation_window_seconds": 5,
+        "min_price_follow_pct": 0.1,
+        "min_effective_return_pct": 0.0,
+        "min_buy_ratio_hold": 0.52
+      },
+      "triggered": 55,
+      "confirmed": 0,
+      "confirm_rate": 0.0,
+      "fake_after_confirm": 0,
+      "paper_enter": 0,
+      "recommendation": "NEED_MORE_DATA"
+    }
+  ],
+  "confirmed_zero_reason": "Trigger events did not produce post-trigger effective movement above cost."
+}

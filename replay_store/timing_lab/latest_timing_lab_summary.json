@@ -1,0 +1,84 @@
+﻿{
+    "schema_version":  "v5r1",
+    "mode":  "LIVE_TIMING_LAB",
+    "event_count":  69,
+    "clip_count":  69,
+    "events_by_type":  {
+                           "SPREAD_CONTRACTION":  8,
+                           "MARKET_RANK_SURGE":  29,
+                           "ORDERFLOW_SHIFT":  13,
+                           "DEPTH_RECOVERY":  7,
+                           "VOLUME_SPIKE":  11,
+                           "BTC_SHOCK":  1
+                       },
+    "clip_quality_counts":  {
+                                "PARTIAL":  16,
+                                "GOOD":  53
+                            },
+    "markets_covered":  29,
+    "duration_minutes":  60,
+    "real_order_enabled":  false,
+    "source_roots":  [
+                         "C:\\ASTT\\replay_store\\live_v5510\\live_v5510_20260524_093011",
+                         "C:\\ASTT\\replay_store\\live_v5510\\live_v5510_20260524_124245",
+                         "C:\\ASTT\\replay_store\\live_v5510\\live_v5510_20260524_125813"
+                     ],
+    "live_session":  {
+                         "session_id":  "live_v5510_20260524_125813",
+                         "session_type":  "TIMING_LAB",
+                         "plan":  {
+                                      "session_type":  "TIMING_LAB",
+                                      "recommended_window":  "manual",
+                                      "duration_minutes":  60,
+                                      "top_markets":  30,
+                                      "markets_include_btc":  true,
+                                      "real_order_enabled":  false
+                                  },
+                         "start_time_kst":  "2026-05-24T12:58:13.142495",
+                         "end_time_kst":  "2026-05-24T13:58:13.162730",
+                         "duration_minutes":  60,
+                         "markets":  [
+                                         "KRW-BTC",
+                                         "KRW-ETH",
+                                         "KRW-XRP",
+                                         "KRW-SOL",
+                                         "KRW-SUI",
+                                         "KRW-DOGE",
+                                         "KRW-ADA",
+                                         "KRW-AVAX",
+                                         "KRW-LINK",
+                                         "KRW-TRX",
+                                         "KRW-DOT",
+                                         "KRW-NEAR",
+                                         "KRW-BCH",
+                                         "KRW-ETC",
+                                         "KRW-MATIC",
+                                         "KRW-SEI",
+                                         "KRW-APT",
+                                         "KRW-ARB",
+                                         "KRW-STX",
+                                         "KRW-HBAR",
+                                         "KRW-ATOM",
+                                         "KRW-ALGO",
+                                         "KRW-SAND",
+                                         "KRW-AXS",
+                                         "KRW-MANA",
+                                         "KRW-CELO",
+                                         "KRW-FLOW",
+                                         "KRW-IOTA",
+                                         "KRW-IMX",
+                                         "KRW-AAVE"
+                                     ],
+                         "trade_event_count":  28544,
+                         "orderbook_event_count":  131007,
+                         "ticker_event_count":  32908,
+                         "quality":  "GOOD",
+                         "data_source":  "UPBIT_WS_LIVE",
+                         "real_order_enabled":  false,
+                         "research_mode":  true,
+                         "warnings":  [
+
+                                      ]
+                     },
+    "research_mode":  true
+}

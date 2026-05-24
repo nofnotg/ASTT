@@ -1,0 +1,15 @@
+{
+  "llm_call_count": 1,
+  "provider": "openai",
+  "model": "openai",
+  "prompt_tokens": 45,
+  "completion_tokens": 0,
+  "total_tokens": 45,
+  "estimated_cost_usd": 0.00022500000000000002,
+  "schema_valid": false,
+  "fallback_used": true,
+  "fallback_reason": "OPENAI_KEY_NOT_LOADED",
+  "unsafe_proposal_detected": false,
+  "raw_secret_detected": false,
+  "key_path_detected": false
+}

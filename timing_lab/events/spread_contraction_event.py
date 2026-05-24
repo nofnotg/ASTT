@@ -1,0 +1,1 @@
+﻿from timing_lab.event_detector import EventDetector
