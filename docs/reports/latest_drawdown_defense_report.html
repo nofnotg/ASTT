@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT 하락구간 방어 시스템 리포트</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{margin:0;font-family:Arial,'Malgun Gothic',sans-serif;background:#f8fafc;color:#172033}
+    header{background:#111827;color:#fff;padding:28px}main{max-width:1180px;margin:auto;padding:20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:16px}.kpi{font-size:24px;font-weight:800}
+    .warn{background:#fffbeb;border-left:4px solid #f59e0b;padding:14px;margin:14px 0}.good{color:#047857}.bad{color:#b91c1c}
+    table{width:100%;border-collapse:collapse;background:white;margin:14px 0}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eef2ff}
+    canvas{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px;max-height:330px}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ASTT 하락구간 방어 시스템 리포트</h1>
+    <p>계좌 평가금이 줄어든 시기에서 어떤 대응 시스템이 필요했는지, 방어 엔진 적용 결과를 비교합니다.</p>
+  </header>
+  <main>
+    <section class="warn"><strong>안전 고지:</strong> 이 분석은 기존 PAPER 거래일지를 재검증한 결과입니다. 실제 주문은 계속 금지이며 live_order_enabled는 false입니다.</section>
+    <section class="grid">
+      <div class="card"><div>기존 최종 평가금</div><div class="kpi">886,330 KRW</div></div>
+      <div class="card"><div>방어 적용 최종 평가금</div><div class="kpi good">1,382,279 KRW</div></div>
+      <div class="card"><div>기존 최대 낙폭(MDD)</div><div class="kpi bad">-44.27%</div></div>
+      <div class="card"><div>방어 적용 최대 낙폭(MDD)</div><div class="kpi good">-15.37%</div></div>
+      <div class="card"><div>하락구간 손실 감소</div><div class="kpi good">405,970 KRW</div></div>
+      <div class="card"><div>최종 평가금 개선</div><div class="kpi good">495,950 KRW</div></div>
+      <div class="card"><div>최고점</div><div class="kpi">1,434,692 KRW</div><div>2025-05-13 19:00:00</div></div>
+      <div class="card"><div>저점</div><div class="kpi">799,538 KRW</div><div>2026-04-12 10:00:00</div></div>
+    </section>
+    <h2>시나리오 비교</h2>
+    <table><thead><tr><th>방어 시나리오</th><th>거래 수</th><th>최종 평가금</th><th>총수익률</th><th>최대 낙폭</th><th>하락구간 손익</th><th>기존 대비 덜 잃은 금액</th><th>감속 거래</th></tr></thead><tbody><tr><td>BASELINE</td><td>1358</td><td>886,330 KRW</td><td>+77.27%</td><td>-44.27%</td><td>-631,959 KRW</td><td>0 KRW</td><td>0</td></tr><tr><td>DRAWDOWN_THROTTLE</td><td>1358</td><td>980,830 KRW</td><td>+96.17%</td><td>-29.50%</td><td>-390,615 KRW</td><td>241,344 KRW</td><td>481</td></tr><tr><td>ROLLING_EDGE_THROTTLE</td><td>1358</td><td>1,382,279 KRW</td><td>+176.46%</td><td>-15.37%</td><td>-225,989 KRW</td><td>405,970 KRW</td><td>306</td></tr><tr><td>HYBRID_DEFENSE</td><td>1358</td><td>1,302,658 KRW</td><td>+160.53%</td><td>-17.68%</td><td>-270,527 KRW</td><td>361,432 KRW</td><td>378</td></tr><tr><td>HARD_NO_TRADE_REFERENCE</td><td>223</td><td>638,111 KRW</td><td>+27.62%</td><td>-13.81%</td><td>0 KRW</td><td>631,959 KRW</td><td>0</td></tr></tbody></table>
+    <h2>하락 원인 진단</h2>
+    <p>하락 구간 거래 수: <strong>500</strong>, 손익: <strong>-631,959 KRW</strong></p><h3>전략별 손상</h3><table><thead><tr><th>name</th><th>trade_count</th><th>pnl_krw</th><th>win_rate_pct</th></tr></thead><tbody><tr><td>ICT_FVG_OB_SWEEP</td><td>414</td><td>-393,148.16</td><td>36.96</td></tr><tr><td>COMBINED_VOLUME_ICT</td><td>86</td><td>-238,810.40</td><td>30.23</td></tr></tbody></table><h3>셋업별 손상</h3><table><thead><tr><th>name</th><th>trade_count</th><th>pnl_krw</th><th>win_rate_pct</th></tr></thead><tbody><tr><td>FVG_OB_OVERLAP</td><td>413</td><td>-381,768.94</td><td>37.05</td></tr><tr><td>DADDY_CONTEXT+FVG_OB_OVERLAP</td><td>86</td><td>-238,810.40</td><td>30.23</td></tr><tr><td>FVG_LIQUIDITY_SWEEP</td><td>1</td><td>-11,379.22</td><td>0.00</td></tr></tbody></table><h3>손실 상위 종목</h3><table><thead><tr><th>name</th><th>trade_count</th><th>pnl_krw</th><th>win_rate_pct</th></tr></thead><tbody><tr><td>KRW-APT</td><td>17</td><td>-94,714.91</td><td>29.41</td></tr><tr><td>KRW-JUP</td><td>28</td><td>-89,122.47</td><td>35.71</td></tr><tr><td>KRW-JTO</td><td>18</td><td>-81,288.35</td><td>33.33</td></tr><tr><td>KRW-UNI</td><td>19</td><td>-75,366.04</td><td>15.79</td></tr><tr><td>KRW-KAITO</td><td>23</td><td>-64,918.58</td><td>26.09</td></tr><tr><td>KRW-BIO</td><td>6</td><td>-60,013.77</td><td>0.00</td></tr><tr><td>KRW-WLD</td><td>10</td><td>-49,668.13</td><td>20.00</td></tr><tr><td>KRW-ETC</td><td>19</td><td>-46,349.37</td><td>26.32</td></tr><tr><td>KRW-MOVE</td><td>17</td><td>-43,340.05</td><td>23.53</td></tr><tr><td>KRW-BCH</td><td>11</td><td>-40,569.75</td><td>36.36</td></tr><tr><td>KRW-IP</td><td>9</td><td>-37,368.72</td><td>33.33</td></tr><tr><td>KRW-DOGE</td><td>8</td><td>-33,185.93</td><td>12.50</td></tr><tr><td>KRW-TRUMP</td><td>18</td><td>-27,053.22</td><td>38.89</td></tr><tr><td>KRW-WAVES</td><td>11</td><td>-25,152.28</td><td>27.27</td></tr><tr><td>KRW-PLUME</td><td>3</td><td>-23,071.91</td><td>0.00</td></tr></tbody></table><h3>연속 손실</h3><table><thead><tr><th>length</th><th>start</th><th>end</th><th>pnl_krw</th></tr></thead><tbody><tr><td>19</td><td>2025-05-25 20:00:00</td><td>2025-06-06 05:00:00</td><td>-221,467.53</td></tr><tr><td>19</td><td>2026-01-17 00:00:00</td><td>2026-01-30 10:00:00</td><td>-200,489.71</td></tr><tr><td>16</td><td>2026-03-22 20:00:00</td><td>2026-03-29 09:00:00</td><td>-124,837.62</td></tr><tr><td>15</td><td>2025-11-14 04:00:00</td><td>2025-11-25 20:00:00</td><td>-147,982.62</td></tr><tr><td>14</td><td>2025-09-15 15:00:00</td><td>2025-09-20 07:00:00</td><td>-129,965.68</td></tr><tr><td>14</td><td>2026-02-04 23:00:00</td><td>2026-02-13 14:00:00</td><td>-74,985.19</td></tr><tr><td>12</td><td>2026-02-22 22:00:00</td><td>2026-03-02 07:00:00</td><td>-98,285.88</td></tr><tr><td>10</td><td>2025-06-18 02:00:00</td><td>2025-06-22 04:00:00</td><td>-124,145.94</td></tr><tr><td>10</td><td>2026-02-18 13:00:00</td><td>2026-02-22 11:00:00</td><td>-76,290.84</td></tr><tr><td>10</td><td>2026-04-11 10:00:00</td><td>2026-04-12 10:00:00</td><td>-60,387.82</td></tr></tbody></table>
+    <h2>월별 시장 환경</h2>
+    <table><thead><tr><th>월</th><th>마켓 수</th><th>평균 월간 수익률</th><th>상승 종목 비율</th></tr></thead><tbody><tr><td>2025-05</td><td>33</td><td>-3.97%</td><td>+30.30%</td></tr><tr><td>2025-06</td><td>34</td><td>-8.74%</td><td>+20.59%</td></tr><tr><td>2025-07</td><td>34</td><td>+18.88%</td><td>+82.35%</td></tr><tr><td>2025-08</td><td>36</td><td>+1.21%</td><td>+50.00%</td></tr><tr><td>2025-09</td><td>39</td><td>-5.36%</td><td>+33.33%</td></tr><tr><td>2025-10</td><td>40</td><td>-22.60%</td><td>+7.50%</td></tr><tr><td>2025-11</td><td>41</td><td>-18.77%</td><td>+12.20%</td></tr><tr><td>2025-12</td><td>41</td><td>-14.60%</td><td>+7.32%</td></tr><tr><td>2026-01</td><td>41</td><td>-16.31%</td><td>+9.76%</td></tr><tr><td>2026-02</td><td>41</td><td>-10.26%</td><td>+14.63%</td></tr><tr><td>2026-03</td><td>41</td><td>-0.62%</td><td>+43.90%</td></tr><tr><td>2026-04</td><td>45</td><td>+4.70%</td><td>+62.22%</td></tr><tr><td>2026-05</td><td>50</td><td>+3.46%</td><td>+52.00%</td></tr></tbody></table>
+    <h2>방어 적용 곡선</h2>
+    <canvas id="defenseChart"></canvas>
+    <h2>결론</h2>
+    <p>기본 채택 후보는 <strong>최근 20거래 성과 기반 자동 감속(Rolling Edge Throttle)</strong>입니다. 시장 약세를 이유로 무조건 쉬는 방식은 회복 기회를 많이 버렸고, 손실이 누적될 때 포지션 크기를 줄이는 방식이 더 균형적이었습니다.</p>
+  </main>
+  <script>
+    const scenarioData = {"labels": ["BASELINE", "DRAWDOWN_THROTTLE", "ROLLING_EDGE_THROTTLE", "HYBRID_DEFENSE", "HARD_NO_TRADE_REFERENCE"], "finalEquity": [886329.78, 980830.36, 1382279.44, 1302657.61, 638110.86], "mdd": [-44.27, -29.5, -15.37, -17.68, -13.81]};
+    new Chart(document.getElementById('defenseChart'), {
+      type: 'bar',
+      data: {
+        labels: scenarioData.labels,
+        datasets: [
+          {label: '최종 평가금 KRW', data: scenarioData.finalEquity, backgroundColor: '#16a34a'},
+          {label: '최대 낙폭 %', data: scenarioData.mdd, backgroundColor: '#ef4444'}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

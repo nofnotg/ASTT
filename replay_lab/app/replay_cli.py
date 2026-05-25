@@ -234,6 +234,8 @@ from replay_lab.feedback.head_controller_v62_review_html import HeadControllerV6
 from market_data.upbit_historical_archive_collector import collect_upbit_historical_archive
 from portfolio.walk_forward_investment_simulator import run_true_walk_forward_paper
 from replay_lab.research.investor_dashboard_builder import build_investor_dashboard
+from replay_lab.research.drawdown_defense_revalidation import run_drawdown_defense_revalidation
+from replay_lab.feedback.drawdown_defense_html_report import DrawdownDefenseHTMLReport
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1819,6 +1821,21 @@ def build_investor_dashboard_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_drawdown_defense_revalidation_command(args: argparse.Namespace) -> int:
+    result = run_drawdown_defense_revalidation(
+        summary_path=args.summary_path,
+        archive_dir=args.archive_dir,
+        initial_cash_krw=args.initial_cash_krw,
+    )
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_drawdown_defense_report_html_command(args: argparse.Namespace) -> int:
+    print(f"drawdown defense report: {DrawdownDefenseHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3132,6 +3149,16 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-investor-dashboard")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_investor_dashboard_command)
+
+    p = sub.add_parser("run-drawdown-defense-revalidation")
+    p.add_argument("--summary-path", default="docs/reports/latest_true_walk_forward_summary.json")
+    p.add_argument("--archive-dir", default=str(REPLAY_STORE_DIR / "historical_archive"))
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=run_drawdown_defense_revalidation_command)
+
+    p = sub.add_parser("build-drawdown-defense-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_drawdown_defense_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
