@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset='utf-8'><title>V6.1 Failure Success</title><style>body{font-family:Arial,sans-serif;margin:32px;color:#1f2937}pre{background:#f6f8fa;padding:16px;overflow:auto}h1{font-size:24px}</style></head><body><h1>V6.1 Failure Success</h1><pre>{
+  &quot;schema_version&quot;: &quot;v6.1&quot;,
+  &quot;analysis_rows&quot;: [
+    {
+      &quot;strategy&quot;: &quot;DADDY_VOLUME_NECKLINE&quot;,
+      &quot;success&quot;: {
+        &quot;strategy&quot;: &quot;DADDY_VOLUME_NECKLINE&quot;,
+        &quot;winning_trade_count&quot;: 0,
+        &quot;surviving_setups&quot;: [],
+        &quot;common_conditions&quot;: [
+          &quot;positive_pnl&quot;,
+          &quot;stop_target_defined&quot;,
+          &quot;risk_based_position_size&quot;
+        ],
+        &quot;favorable_regimes&quot;: [],
+        &quot;favorable_mtf_structure&quot;: [
+          &quot;MTF setup score available&quot;
+        ],
+        &quot;favorable_stop_target_conditions&quot;: [
+          &quot;rr&gt;=1.2&quot;,
+          &quot;bounded stop distance&quot;
+        ],
+        &quot;top_markets&quot;: []
+      },
+      &quot;failure&quot;: {
+        &quot;strategy&quot;: &quot;DADDY_VOLUME_NECKLINE&quot;,
+        &quot;losing_trade_count&quot;: 8,
+        &quot;failed_setups&quot;: [
+          &quot;SR_FLIP_RETEST_VOLUME&quot;,
+          &quot;FIB_PULLBACK_VOLUME&quot;,
+          &quot;NECKLINE_VOLUME_SETUP&quot;,
+          &quot;PULLBACK_WICK_VOLUME&quot;
+        ],
+        &quot;avoid_conditions&quot;: [
+          &quot;failed_follow_through&quot;,
+          &quot;fees_after_breakeven&quot;,
+          &quot;stop_hit_or_time_exit&quot;,
+          &quot;volume_location_signal_not_sufficient_alone&quot;
+        ],
+        &quot;unfavorable_regimes&quot;: [
+          &quot;CHOP&quot;,
+          &quot;BULL_WITH_WEAK_FOLLOW_THROUGH&quot;
+        ],
+        &quot;loss_repetition_pattern&quot;: &quot;small losses repeat before occasional large winner&quot;,
+        &quot;disable_candidates&quot;: []
+      }
+    },
+    {
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;success&quot;: {
+        &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+        &quot;winning_trade_count&quot;: 5,
+        &quot;surviving_setups&quot;: [
+          &quot;FVG_LIQUIDITY_SWEEP&quot;,
+          &quot;FVG_OB_OVERLAP&quot;
+        ],
+        &quot;common_conditions&quot;: [
+          &quot;positive_pnl&quot;,
+          &quot;stop_target_defined&quot;,
+          &quot;risk_based_position_size&quot;
+        ],
+        &quot;favorable_regimes&quot;: [
+          &quot;ALT_ROTATION&quot;,
+          &quot;HIGH_VOLATILITY&quot;
+        ],
+        &quot;favorable_mtf_structure&quot;: [
+          &quot;MTF setup score available&quot;
+        ],
+        &quot;favorable_stop_target_conditions&quot;: [
+          &quot;rr&gt;=1.2&quot;,
+          &quot;bounded stop distance&quot;
+        ],
+        &quot;top_markets&quot;: [
+          &quot;KRW-PROS&quot;,
+          &quot;KRW-PENGU&quot;,
+          &quot;KRW-UP2&quot;,
+          &quot;KRW-B3&quot;,
+          &quot;KRW-VVV&quot;
+        ]
+      },
+      &quot;failure&quot;: {
+        &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+        &quot;losing_trade_count&quot;: 17,
+        &quot;failed_setups&quot;: [
+          &quot;FVG_OB_OVERLAP&quot;,
+          &quot;FVG_LIQUIDITY_SWEEP&quot;
+        ],
+        &quot;avoid_conditions&quot;: [
+          &quot;failed_follow_through&quot;,
+          &quot;fees_after_breakeven&quot;,
+          &quot;stop_hit_or_time_exit&quot;
+        ],
+        &quot;unfavorable_regimes&quot;: [
+          &quot;CHOP&quot;,
+          &quot;BULL_WITH_WEAK_FOLLOW_THROUGH&quot;
+        ],
+        &quot;loss_repetition_pattern&quot;: &quot;small losses repeat before occasional large winner&quot;,
+        &quot;disable_candidates&quot;: [
+          &quot;FVG_OB_OVERLAP&quot;,
+          &quot;FVG_LIQUIDITY_SWEEP&quot;
+        ]
+      }
+    },
+    {
+      &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;success&quot;: {
+        &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+        &quot;winning_trade_count&quot;: 5,
+        &quot;surviving_setups&quot;: [
+          &quot;FVG_LIQUIDITY_SWEEP&quot;,
+          &quot;FVG_OB_OVERLAP&quot;
+        ],
+        &quot;common_conditions&quot;: [
+          &quot;positive_pnl&quot;,
+          &quot;stop_target_defined&quot;,
+          &quot;risk_based_position_size&quot;
+        ],
+        &quot;favorable_regimes&quot;: [
+          &quot;ALT_ROTATION&quot;,
+          &quot;HIGH_VOLATILITY&quot;
+        ],
+        &quot;favorable_mtf_structure&quot;: [
+          &quot;MTF setup score available&quot;
+        ],
+        &quot;favorable_stop_target_conditions&quot;: [
+          &quot;rr&gt;=1.2&quot;,
+          &quot;bounded stop distance&quot;
+        ],
+        &quot;top_markets&quot;: [
+          &quot;KRW-PROS&quot;,
+          &quot;KRW-PENGU&quot;,
+          &quot;KRW-UP2&quot;,
+          &quot;KRW-B3&quot;,
+          &quot;KRW-VVV&quot;
+        ]
+      },
+      &quot;failure&quot;: {
+        &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+        &quot;losing_trade_count&quot;: 17,
+        &quot;failed_setups&quot;: [
+          &quot;FVG_OB_OVERLAP&quot;,
+          &quot;SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP&quot;,
+          &quot;FVG_LIQUIDITY_SWEEP&quot;,
+          &quot;PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+          &quot;FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP&quot;
+        ],
+        &quot;avoid_conditions&quot;: [
+          &quot;failed_follow_through&quot;,
+          &quot;fees_after_breakeven&quot;,
+          &quot;stop_hit_or_time_exit&quot;
+        ],
+        &quot;unfavorable_regimes&quot;: [
+          &quot;CHOP&quot;,
+          &quot;BULL_WITH_WEAK_FOLLOW_THROUGH&quot;
+        ],
+        &quot;loss_repetition_pattern&quot;: &quot;small losses repeat before occasional large winner&quot;,
+        &quot;disable_candidates&quot;: [
+          &quot;FVG_OB_OVERLAP&quot;
+        ]
+      }
+    }
+  ],
+  &quot;real_order_enabled&quot;: false,
+  &quot;live_order_allowed&quot;: false
+}</pre></body></html>

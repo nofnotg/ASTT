@@ -1,0 +1,30 @@
+{
+  "schema_version": "v6.1",
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": true,
+  "live_readiness_opinion": "PAPER_MORE_REQUIRED",
+  "best_strategy": "FVG_LIQUIDITY_SWEEP",
+  "worst_strategy": "SR_FLIP_RETEST_VOLUME",
+  "forward_candidates": [
+    "ICT_FVG_OB_SWEEP",
+    "COMBINED_VOLUME_ICT"
+  ],
+  "disabled_strategies": [
+    "DADDY_VOLUME_NECKLINE"
+  ],
+  "primary_problem": "LONG_HORIZON_COVERAGE_LIMITED",
+  "next_experiments": [
+    "Run V6.2 forward paper on kept strategies",
+    "Collect wider OHLCV coverage",
+    "Add real spread/depth replay before live"
+  ],
+  "risk_flags": [
+    "real orders disabled",
+    "OHLCV-only execution approximation",
+    "fallback review used"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

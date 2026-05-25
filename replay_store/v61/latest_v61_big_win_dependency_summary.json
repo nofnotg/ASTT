@@ -1,0 +1,43 @@
+{
+  "schema_version": "v6.1",
+  "dependency_rows": [
+    {
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "top_1_win_contribution_pct": 0.0,
+      "top_3_win_contribution_pct": 0.0,
+      "top_5_win_contribution_pct": 0.0,
+      "return_without_top_1": -5.181227326604225,
+      "return_without_top_3": -5.181227326604225,
+      "return_without_top_5": -5.181227326604225,
+      "profit_factor_without_top_1": 0.0,
+      "profit_factor_without_top_3": 0.0,
+      "dependency_decision": "FAT_TAIL_FRAGILE"
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "top_1_win_contribution_pct": 27.683142124773674,
+      "top_3_win_contribution_pct": 83.04942637432075,
+      "top_5_win_contribution_pct": 138.41571062386774,
+      "return_without_top_1": 4.612724108361655,
+      "return_without_top_3": 1.0811907750283354,
+      "return_without_top_5": -2.4503425583049783,
+      "profit_factor_without_top_1": 2.8824813260201876,
+      "profit_factor_without_top_3": 1.4412406630100927,
+      "dependency_decision": "FAT_TAIL_ACCEPTABLE"
+    },
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "top_1_win_contribution_pct": 27.666983181373944,
+      "top_3_win_contribution_pct": 83.00094954412155,
+      "top_5_win_contribution_pct": 138.33491590686907,
+      "return_without_top_1": 4.61644947555235,
+      "return_without_top_3": 1.0849161422190299,
+      "return_without_top_5": -2.446617191114284,
+      "profit_factor_without_top_1": 2.886870366283105,
+      "profit_factor_without_top_3": 1.4434351831415513,
+      "dependency_decision": "FAT_TAIL_ACCEPTABLE"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "v6.1",
+  "analysis_rows": [
+    {
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "success": {
+        "strategy": "DADDY_VOLUME_NECKLINE",
+        "winning_trade_count": 0,
+        "surviving_setups": [],
+        "common_conditions": [
+          "positive_pnl",
+          "stop_target_defined",
+          "risk_based_position_size"
+        ],
+        "favorable_regimes": [],
+        "favorable_mtf_structure": [
+          "MTF setup score available"
+        ],
+        "favorable_stop_target_conditions": [
+          "rr>=1.2",
+          "bounded stop distance"
+        ],
+        "top_markets": []
+      },
+      "failure": {
+        "strategy": "DADDY_VOLUME_NECKLINE",
+        "losing_trade_count": 8,
+        "failed_setups": [
+          "SR_FLIP_RETEST_VOLUME",
+          "FIB_PULLBACK_VOLUME",
+          "NECKLINE_VOLUME_SETUP",
+          "PULLBACK_WICK_VOLUME"
+        ],
+        "avoid_conditions": [
+          "failed_follow_through",
+          "fees_after_breakeven",
+          "stop_hit_or_time_exit",
+          "volume_location_signal_not_sufficient_alone"
+        ],
+        "unfavorable_regimes": [
+          "CHOP",
+          "BULL_WITH_WEAK_FOLLOW_THROUGH"
+        ],
+        "loss_repetition_pattern": "small losses repeat before occasional large winner",
+        "disable_candidates": []
+      }
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "success": {
+        "strategy": "ICT_FVG_OB_SWEEP",
+        "winning_trade_count": 5,
+        "surviving_setups": [
+          "FVG_LIQUIDITY_SWEEP",
+          "FVG_OB_OVERLAP"
+        ],
+        "common_conditions": [
+          "positive_pnl",
+          "stop_target_defined",
+          "risk_based_position_size"
+        ],
+        "favorable_regimes": [
+          "ALT_ROTATION",
+          "HIGH_VOLATILITY"
+        ],
+        "favorable_mtf_structure": [
+          "MTF setup score available"
+        ],
+        "favorable_stop_target_conditions": [
+          "rr>=1.2",
+          "bounded stop distance"
+        ],
+        "top_markets": [
+          "KRW-PROS",
+          "KRW-PENGU",
+          "KRW-UP2",
+          "KRW-B3",
+          "KRW-VVV"
+        ]
+      },
+      "failure": {
+        "strategy": "ICT_FVG_OB_SWEEP",
+        "losing_trade_count": 17,
+        "failed_setups": [
+          "FVG_OB_OVERLAP",
+          "FVG_LIQUIDITY_SWEEP"
+        ],
+        "avoid_conditions": [
+          "failed_follow_through",
+          "fees_after_breakeven",
+          "stop_hit_or_time_exit"
+        ],
+        "unfavorable_regimes": [
+          "CHOP",
+          "BULL_WITH_WEAK_FOLLOW_THROUGH"
+        ],
+        "loss_repetition_pattern": "small losses repeat before occasional large winner",
+        "disable_candidates": [
+          "FVG_OB_OVERLAP",
+          "FVG_LIQUIDITY_SWEEP"
+        ]
+      }
+    },
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "success": {
+        "strategy": "COMBINED_VOLUME_ICT",
+        "winning_trade_count": 5,
+        "surviving_setups": [
+          "FVG_LIQUIDITY_SWEEP",
+          "FVG_OB_OVERLAP"
+        ],
+        "common_conditions": [
+          "positive_pnl",
+          "stop_target_defined",
+          "risk_based_position_size"
+        ],
+        "favorable_regimes": [
+          "ALT_ROTATION",
+          "HIGH_VOLATILITY"
+        ],
+        "favorable_mtf_structure": [
+          "MTF setup score available"
+        ],
+        "favorable_stop_target_conditions": [
+          "rr>=1.2",
+          "bounded stop distance"
+        ],
+        "top_markets": [
+          "KRW-PROS",
+          "KRW-PENGU",
+          "KRW-UP2",
+          "KRW-B3",
+          "KRW-VVV"
+        ]
+      },
+      "failure": {
+        "strategy": "COMBINED_VOLUME_ICT",
+        "losing_trade_count": 17,
+        "failed_setups": [
+          "FVG_OB_OVERLAP",
+          "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+          "FVG_LIQUIDITY_SWEEP",
+          "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+          "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP"
+        ],
+        "avoid_conditions": [
+          "failed_follow_through",
+          "fees_after_breakeven",
+          "stop_hit_or_time_exit"
+        ],
+        "unfavorable_regimes": [
+          "CHOP",
+          "BULL_WITH_WEAK_FOLLOW_THROUGH"
+        ],
+        "loss_repetition_pattern": "small losses repeat before occasional large winner",
+        "disable_candidates": [
+          "FVG_OB_OVERLAP"
+        ]
+      }
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

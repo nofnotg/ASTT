@@ -1,0 +1,85 @@
+{
+  "schema_version": "v6.1",
+  "regime_rows": [
+    {
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "regime": "BULL",
+      "trade_count": 4,
+      "win_rate": 0.0,
+      "average_win_pct": 0.0,
+      "average_loss_pct": -4.008324189485195,
+      "profit_factor": 0.0,
+      "expectancy_pct": -4.008324189485195,
+      "total_pnl_krw": -10480.817307692341,
+      "total_return_pct": -2.0961634615384686,
+      "decision": "AVOID"
+    },
+    {
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "regime": "CHOP",
+      "trade_count": 4,
+      "win_rate": 0.0,
+      "average_win_pct": 0.0,
+      "average_loss_pct": -4.719824455154363,
+      "profit_factor": 0.0,
+      "expectancy_pct": -4.719824455154363,
+      "total_pnl_krw": -15425.319325328783,
+      "total_return_pct": -3.0850638650657567,
+      "decision": "AVOID"
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "regime": "ALT_ROTATION",
+      "trade_count": 9,
+      "win_rate": 0.3333333333333333,
+      "average_win_pct": 5.297299999999985,
+      "average_loss_pct": -1.1428993421052738,
+      "profit_factor": 4.597075243544809,
+      "expectancy_pct": 1.0038337719298118,
+      "total_pnl_krw": 20724.901897555945,
+      "total_return_pct": 4.144980379511189,
+      "decision": "KEEP_WITH_REGIME_FILTER"
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "regime": "HIGH_VOLATILITY",
+      "trade_count": 13,
+      "win_rate": 0.15384615384615385,
+      "average_win_pct": 5.297299999999993,
+      "average_loss_pct": -0.42577078928823686,
+      "profit_factor": 2.7207017922771297,
+      "expectancy_pct": 0.45470163983302914,
+      "total_pnl_krw": 11167.551977585674,
+      "total_return_pct": 2.2335103955171345,
+      "decision": "KEEP_WITH_REGIME_FILTER"
+    },
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "regime": "ALT_ROTATION",
+      "trade_count": 9,
+      "win_rate": 0.3333333333333333,
+      "average_win_pct": 5.297299999999985,
+      "average_loss_pct": -1.2616995614035191,
+      "profit_factor": 4.603601096739835,
+      "expectancy_pct": 0.924633625730982,
+      "total_pnl_krw": 20733.06927404995,
+      "total_return_pct": 4.14661385480999,
+      "decision": "KEEP_WITH_REGIME_FILTER"
+    },
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "regime": "HIGH_VOLATILITY",
+      "trade_count": 13,
+      "win_rate": 0.15384615384615385,
+      "average_win_pct": 5.297299999999993,
+      "average_loss_pct": -0.45218463706836315,
+      "profit_factor": 2.725093549105106,
+      "expectancy_pct": 0.432351460942153,
+      "total_pnl_krw": 11178.011437045141,
+      "total_return_pct": 2.235602287409028,
+      "decision": "KEEP_WITH_REGIME_FILTER"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "v6.1",
+  "requested_months": 36,
+  "paper_entry_policy": "ACTIVE_RESEARCH",
+  "strategies": [
+    {
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "trade_count": 8,
+      "win_rate": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": -4.364074322319779,
+      "total_return_pct": -5.181227326604225,
+      "max_drawdown_pct": -5.181227326604235,
+      "decision": "STRATEGY_DISABLE"
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "trade_count": 22,
+      "win_rate": 0.22727272727272727,
+      "profit_factor": 3.603101657525239,
+      "expectancy_pct": 0.6793466029635311,
+      "total_return_pct": 6.378490775028324,
+      "max_drawdown_pct": -2.222264804525266,
+      "decision": "STRATEGY_KEEP_WITH_FILTER"
+    },
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "trade_count": 22,
+      "win_rate": 0.22727272727272727,
+      "profit_factor": 3.608587957853885,
+      "expectancy_pct": 0.6337396192648556,
+      "total_return_pct": 6.3822161422190185,
+      "max_drawdown_pct": -2.2799505244476137,
+      "decision": "STRATEGY_KEEP_FOR_FORWARD"
+    },
+    {
+      "strategy": "SR_FLIP_RETEST_VOLUME",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": -7.916648378970377,
+      "total_return_pct": -2.0294967948717937,
+      "max_drawdown_pct": -5.181227326604235,
+      "decision": "DISABLE"
+    },
+    {
+      "strategy": "FIB_PULLBACK_VOLUME",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": -3.5850986842105406,
+      "total_return_pct": -1.047172955974849,
+      "max_drawdown_pct": -5.181227326604235,
+      "decision": "DISABLE"
+    },
+    {
+      "strategy": "PULLBACK_WICK_VOLUME",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": -5.854550226098185,
+      "total_return_pct": -2.0378909090909074,
+      "max_drawdown_pct": -5.181227326604235,
+      "decision": "DISABLE"
+    },
+    {
+      "strategy": "FVG_OB_OVERLAP",
+      "trade_count": 13,
+      "win_rate": 0.15384615384615385,
+      "profit_factor": 2.7207017922771297,
+      "expectancy_pct": 0.45470163983302914,
+      "total_return_pct": 2.2335103955171345,
+      "max_drawdown_pct": -2.222264804525266,
+      "decision": "KEEP"
+    },
+    {
+      "strategy": "FVG_LIQUIDITY_SWEEP",
+      "trade_count": 9,
+      "win_rate": 0.3333333333333333,
+      "profit_factor": 4.597075243544809,
+      "expectancy_pct": 1.0038337719298118,
+      "total_return_pct": 4.144980379511189,
+      "max_drawdown_pct": -2.222264804525266,
+      "decision": "KEEP"
+    },
+    {
+      "strategy": "FVG_OB_OVERLAP",
+      "trade_count": 9,
+      "win_rate": 0.2222222222222222,
+      "profit_factor": 15.135142857141037,
+      "expectancy_pct": 1.0993999999999893,
+      "total_return_pct": 3.2981999999999596,
+      "max_drawdown_pct": -2.2799505244476137,
+      "decision": "KEEP"
+    },
+    {
+      "strategy": "FVG_LIQUIDITY_SWEEP",
+      "trade_count": 5,
+      "win_rate": 0.6,
+      "profit_factor": 125.82032097002943,
+      "expectancy_pct": 3.1383799999999873,
+      "total_return_pct": 5.255197897897876,
+      "max_drawdown_pct": -2.2799505244476137,
+      "decision": "KEEP"
+    }
+  ],
+  "paper_trade_count": 52,
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

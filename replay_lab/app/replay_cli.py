@@ -200,6 +200,24 @@ from replay_lab.feedback.v6_ict_strategy_report_html import V6ICTStrategyReportH
 from replay_lab.feedback.v6_combined_strategy_report_html import V6CombinedStrategyReportHTML
 from replay_lab.feedback.v6_weekly_performance_report_html import V6WeeklyPerformanceReportHTML
 from replay_lab.feedback.head_controller_v6_review_html import HeadControllerV6ReviewHTML
+from market_data.ohlcv_coverage_reporter import build_ohlcv_coverage
+from replay_lab.research.v61_long_horizon_collection import run_v61_long_horizon_collection
+from replay_lab.research.v61_strategy_robustness_backtest import run_v61_strategy_robustness_backtest
+from replay_lab.research.v61_regime_backtest import run_v61_regime_backtest
+from replay_lab.research.v61_big_win_dependency import run_v61_big_win_dependency
+from replay_lab.research.v61_failure_success_analysis import run_v61_failure_success_analysis
+from replay_lab.research.v61_risk_parameter_sweep import run_v61_risk_sweep
+from replay_lab.research.v61_train_test_split_validation import run_v61_train_test_validation
+from replay_lab.research.v61_final_strategy_decision import build_v61_final_decision
+from replay_lab.research.head_controller_v61_review import run_head_controller_v61_review
+from replay_lab.feedback.v61_coverage_report_html import V61CoverageReportHTML
+from replay_lab.feedback.v61_strategy_robustness_report_html import V61StrategyRobustnessReportHTML
+from replay_lab.feedback.v61_regime_report_html import V61RegimeReportHTML
+from replay_lab.feedback.v61_big_win_dependency_report_html import V61BigWinDependencyReportHTML
+from replay_lab.feedback.v61_failure_success_report_html import V61FailureSuccessReportHTML
+from replay_lab.feedback.v61_risk_sweep_report_html import V61RiskSweepReportHTML
+from replay_lab.feedback.v61_final_decision_report_html import V61FinalDecisionReportHTML
+from replay_lab.feedback.head_controller_v61_review_html import HeadControllerV61ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1598,6 +1616,100 @@ def build_head_controller_v6_review_report_command(args: argparse.Namespace) -> 
     return 0
 
 
+def collect_v61_long_ohlcv_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_long_horizon_collection(args.markets, args.months, args.timeframes), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v61_coverage_report_command(args: argparse.Namespace) -> int:
+    summary = build_ohlcv_coverage(args.data_dir, 36)
+    path = Path("docs/reports/latest_v61_coverage_summary.json")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(summary, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
+    print(json.dumps(summary, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v61_strategy_robustness_backtest_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_strategy_robustness_backtest(args.months, args.initial_cash_krw, args.paper_entry_policy), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v61_regime_backtest_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_regime_backtest(args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_v61_big_win_dependency_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_big_win_dependency(), ensure_ascii=False, default=str))
+    return 0
+
+
+def analyze_v61_failure_success_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_failure_success_analysis(), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v61_risk_parameter_sweep_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_risk_sweep(), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v61_train_test_validation_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v61_train_test_validation(args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v61_final_strategy_decision_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v61_final_decision(), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v61_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v61_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v61_coverage_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 coverage report: {V61CoverageReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_strategy_robustness_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 robustness report: {V61StrategyRobustnessReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_regime_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 regime report: {V61RegimeReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_big_win_dependency_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 big win report: {V61BigWinDependencyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_failure_success_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 failure success report: {V61FailureSuccessReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_risk_sweep_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 risk sweep report: {V61RiskSweepReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v61_final_decision_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v61 final decision report: {V61FinalDecisionReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_head_controller_v61_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v61 report: {HeadControllerV61ReviewHTML().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2759,6 +2871,86 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v6-review-report")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v6_review_report_command)
+
+    p = sub.add_parser("collect-v61-long-ohlcv")
+    p.add_argument("--markets", default="TOP_KRW_100")
+    p.add_argument("--months", type=int, default=36)
+    p.add_argument("--timeframes", default="1w,1d,4h,1h,15m,5m,1m")
+    p.set_defaults(func=collect_v61_long_ohlcv_command)
+
+    p = sub.add_parser("build-v61-coverage-report")
+    p.add_argument("--data-dir", default="replay_store/v6_ohlcv")
+    p.set_defaults(func=build_v61_coverage_report_command)
+
+    p = sub.add_parser("run-v61-strategy-robustness-backtest")
+    p.add_argument("--months", type=int, default=36)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--paper-entry-policy", default="ACTIVE_RESEARCH", choices=["ACTIVE_RESEARCH"])
+    p.set_defaults(func=run_v61_strategy_robustness_backtest_command)
+
+    p = sub.add_parser("run-v61-regime-backtest")
+    p.add_argument("--months", type=int, default=36)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=run_v61_regime_backtest_command)
+
+    p = sub.add_parser("analyze-v61-big-win-dependency")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=analyze_v61_big_win_dependency_command)
+
+    p = sub.add_parser("analyze-v61-failure-success")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=analyze_v61_failure_success_command)
+
+    p = sub.add_parser("run-v61-risk-parameter-sweep")
+    p.add_argument("--months", type=int, default=36)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=run_v61_risk_parameter_sweep_command)
+
+    p = sub.add_parser("run-v61-train-test-validation")
+    p.add_argument("--months", type=int, default=36)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=run_v61_train_test_validation_command)
+
+    p = sub.add_parser("build-v61-final-strategy-decision")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_final_strategy_decision_command)
+
+    p = sub.add_parser("run-head-controller-v61-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_v61_review_command)
+
+    p = sub.add_parser("build-v61-coverage-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_coverage_report_html_command)
+
+    p = sub.add_parser("build-v61-strategy-robustness-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_strategy_robustness_report_html_command)
+
+    p = sub.add_parser("build-v61-regime-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_regime_report_html_command)
+
+    p = sub.add_parser("build-v61-big-win-dependency-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_big_win_dependency_report_html_command)
+
+    p = sub.add_parser("build-v61-failure-success-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_failure_success_report_html_command)
+
+    p = sub.add_parser("build-v61-risk-sweep-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_risk_sweep_report_html_command)
+
+    p = sub.add_parser("build-v61-final-decision-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v61_final_decision_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v61-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v61_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

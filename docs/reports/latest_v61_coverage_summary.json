@@ -1,0 +1,94 @@
+{
+  "schema_version": "v6.1",
+  "requested_months": 36,
+  "actual_months_available": 12.97741273100616,
+  "market_count": 22,
+  "candle_count_by_timeframe": {
+    "15m": {
+      "markets": 22,
+      "candles": 83445,
+      "status": "OK"
+    },
+    "1d": {
+      "markets": 22,
+      "candles": 2100,
+      "status": "OK"
+    },
+    "1h": {
+      "markets": 22,
+      "candles": 22527,
+      "status": "OK"
+    },
+    "1m": {
+      "markets": 22,
+      "candles": 857173,
+      "status": "OK"
+    },
+    "1w": {
+      "markets": 22,
+      "candles": 318,
+      "status": "OK"
+    },
+    "4h": {
+      "markets": 22,
+      "candles": 7947,
+      "status": "OK"
+    },
+    "5m": {
+      "markets": 22,
+      "candles": 230950,
+      "status": "OK"
+    }
+  },
+  "earliest_candle_time": "2025-05-01 00:00:00",
+  "latest_candle_time": "2026-05-31 00:00:00",
+  "missing_market_count": 0,
+  "insufficient_history_market_count": 22,
+  "insufficient_history_markets": [
+    "KRW-AKT",
+    "KRW-B3",
+    "KRW-BIO",
+    "KRW-BTC",
+    "KRW-DOGE",
+    "KRW-ETH",
+    "KRW-FF",
+    "KRW-IP",
+    "KRW-JTO",
+    "KRW-LAYER",
+    "KRW-NEAR",
+    "KRW-PENGU",
+    "KRW-PIEVERSE",
+    "KRW-PROS",
+    "KRW-SEI",
+    "KRW-SHIB",
+    "KRW-TRUMP",
+    "KRW-TRX",
+    "KRW-UP2",
+    "KRW-USDT"
+  ],
+  "newly_listed_market_count": 22,
+  "newly_listed_markets": [
+    "KRW-AKT",
+    "KRW-B3",
+    "KRW-BIO",
+    "KRW-BTC",
+    "KRW-DOGE",
+    "KRW-ETH",
+    "KRW-FF",
+    "KRW-IP",
+    "KRW-JTO",
+    "KRW-LAYER",
+    "KRW-NEAR",
+    "KRW-PENGU",
+    "KRW-PIEVERSE",
+    "KRW-PROS",
+    "KRW-SEI",
+    "KRW-SHIB",
+    "KRW-TRUMP",
+    "KRW-TRX",
+    "KRW-UP2",
+    "KRW-USDT"
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}
