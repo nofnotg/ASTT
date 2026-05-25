@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V6.6 막은 손실 / 놓친 수익</title>
+  <style>
+    body{margin:0;background:#f7f9fc;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.62}
+    header{background:#0f172a;color:white;padding:30px 22px}main{max-width:1240px;margin:auto;padding:24px}
+    section,.card{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}
+    table{width:100%;border-collapse:collapse;background:white;font-size:14px}th,td{border-bottom:1px solid #e2e8f0;padding:9px;text-align:left;vertical-align:top}th{background:#eef2ff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .kpi{font-size:25px;font-weight:800;margin-top:4px}.good{color:#059669}.bad{color:#dc2626}.warn{color:#d97706}
+    .notice{border-left:5px solid #d97706;background:#fffbeb;padding:13px 15px;border-radius:8px;margin-top:16px}
+    .chart{width:100%;height:auto;border:1px solid #e2e8f0;background:#fff;border-radius:8px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>V6.6 막은 손실 / 놓친 수익</h1>
+  <p>BTC Dominance는 매수 신호가 아니라, 알트 시장이 위험해지는지 확인하는 별도 overlay입니다. 기존 Rolling/Balanced 기준선은 수정하지 않았습니다.</p>
+</header>
+<main>
+  <div class="notice"><strong>안전 고정:</strong> 모든 결과는 PAPER 모의투자입니다. 실제 주문, 주문 테스트, 취소, 출금은 사용하지 않았고 real_order_enabled=false, live_order_allowed=false입니다.</div>
+  <section><h2>Saved Loss / Missed Profit / Net Effect</h2><table><tr><th>Scenario</th><th>막은 손실</th><th>놓친 수익</th><th>순효과</th><th>판정</th></tr><tr><td>ROLLING_EDGE_BTCD_OVERLAY</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>BALANCED_GROWTH_BTCD_OVERLAY</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>POLICY_BLEND_BTCD_ROUTER</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>BEAR_DEFENSE_BTCD</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>BEAR_BOUNCE_BTCD</td><td>3,902,961 KRW</td><td>4,922,432 KRW</td><td>-1,019,471 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>RELATIVE_STRENGTH_BTCD</td><td>35,441 KRW</td><td>20,981 KRW</td><td>14,460 KRW</td><td>KEEP_CANDIDATE</td></tr><tr><td>SHORT_HEDGE_BTCD_RESEARCH</td><td>3,902,961 KRW</td><td>4,922,432 KRW</td><td>-1,019,471 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>HYBRID_BEAR_ROUTER_BTCD</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr></table></section>
+</main>
+</body>
+</html>

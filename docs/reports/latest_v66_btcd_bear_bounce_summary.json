@@ -1,0 +1,21 @@
+{
+  "schema_version": "v66_btcd_bear_bounce_v1",
+  "scenario": {
+    "scenario": "BEAR_BOUNCE_BTCD",
+    "final_equity_krw": 500000.0,
+    "total_return_pct": 0.0,
+    "mdd_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_pct": 0.0,
+    "trade_count": 0,
+    "skipped_trade_count": 1358,
+    "win_rate_pct": 0.0,
+    "return_mdd_ratio": 0.0,
+    "lookahead_fail_count": 0,
+    "decision": "BTCD_FILTER_REJECTED"
+  },
+  "decision": "BTCD_FILTER_REJECTED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

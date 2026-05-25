@@ -7,6 +7,56 @@ from typing import Any
 
 
 REPORT_LABELS: dict[str, tuple[str, str, str]] = {
+    "latest_v66_btcd_inclusion_audit_report.html": (
+        "V6.6 BTC Dominance 포함 여부 감사",
+        "기존 Rolling/Balanced/Policy Blend에 BTC Dominance가 이미 들어가 있었는지 확인합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_data_quality_report.html": (
+        "V6.6 BTC Dominance 데이터 품질",
+        "Global BTC Dominance와 Upbit BTC Flow Dominance Proxy를 구분하고 사용 가능 기간을 확인합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_rolling_balanced_report.html": (
+        "V6.6 Rolling/Balanced + BTCD",
+        "기존 Rolling Edge와 Balanced Growth에 BTC Dominance overlay를 별도로 얹은 결과입니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_bear_scenario_report.html": (
+        "V6.6 Bear Regime + BTCD",
+        "BTC Dominance와 Upbit BTC 자금 쏠림 proxy로 하락장 대응이 개선되는지 봅니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_2024_11_focus_report.html": (
+        "V6.6 2024년 11월 이후 집중 분석",
+        "2024년 11월 이후 약세/하락 대응 구간만 분리해 비교합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_saved_loss_missed_profit_report.html": (
+        "V6.6 막은 손실 / 놓친 수익",
+        "BTC Dominance overlay가 막은 손실보다 놓친 수익이 컸는지 확인합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_scenario_comparison_report.html": (
+        "V6.6 BTC Dominance 시나리오 종합 비교",
+        "Full Period, Bear Focus, Saved Loss/Missed Profit, 연도별 결과를 한 번에 비교합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_short_research_report.html": (
+        "V6.6 Short/Hedge PAPER 연구",
+        "하락장 hedge 가능성을 PAPER 연구로만 분리해 봅니다. 실전 후보가 아닙니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_v66_btcd_hybrid_router_report.html": (
+        "V6.6 Hybrid Bear Router",
+        "정상장/엣지 약화/하락방어/반등전용/현금 상태를 라우팅한 통합 후보를 검증합니다.",
+        "V6.6 BTC Dominance",
+    ),
+    "latest_head_controller_v66_review_report.html": (
+        "V6.6 Head Controller Review",
+        "V6.6 결과 해석과 다음 forward 후보를 정리합니다. 자동 적용은 금지됩니다.",
+        "V6.6 BTC Dominance",
+    ),
     "latest_v64_investor_report.html": (
         "V6.4 투자자 요약",
         "방어 전략이 정답지를 본 결과인지와 다음 forward 후보를 한눈에 보는 요약입니다.",

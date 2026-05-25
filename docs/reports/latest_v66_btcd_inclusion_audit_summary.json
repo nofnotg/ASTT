@@ -1,0 +1,14 @@
+{
+  "schema_version": "v66_btcd_inclusion_audit_v1",
+  "btcd_in_existing_rolling_edge": false,
+  "btcd_in_existing_balanced_growth": false,
+  "btcd_in_policy_blend": false,
+  "btcd_in_true_walk_forward": false,
+  "btcd_in_v64_defense": false,
+  "btcd_in_v65_ma": false,
+  "evidence": [],
+  "conclusion": "BTC dominance was not used in the existing validated Rolling/Balanced/Policy Blend/True Walk-Forward scenarios.",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

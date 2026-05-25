@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Head Controller V6.6 Review</title>
+<style>body{font-family:Arial,'Malgun Gothic',sans-serif;background:#f7f9fc;color:#172033;line-height:1.6;margin:0}header{background:#111827;color:white;padding:28px}main{max-width:980px;margin:auto;padding:24px}section{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}</style></head>
+<body><header><h1>Head Controller V6.6 Review</h1><p>LLM/Head Controller는 결과 해석 보조이며 active config를 자동 적용하지 않습니다.</p></header>
+<main><section><h2>요약</h2><p>live_readiness_opinion: <strong>LIVE_NOT_ALLOWED</strong></p><p>best_scenario: <strong>RELATIVE_STRENGTH_BTCD</strong></p><p>forward_candidates: [&#x27;RELATIVE_STRENGTH_BTCD&#x27;]</p><p>research_only_candidates: [&#x27;SHORT_HEDGE_BTCD_RESEARCH&#x27;]</p></section>
+<section><h2>다음 실험</h2><ul><li>Do not modify existing Rolling/Balanced baselines.</li><li>Carry only validated BTCD overlays into forward paper.</li><li>Keep Short/Hedge as paper research only.</li><li>Add real spread/depth overlay before any live discussion.</li></ul></section><section><h2>위험 플래그</h2><ul><li>LIVE_NOT_ALLOWED</li><li>PAPER_ONLY</li><li>NO_AUTO_APPLY</li><li>GLOBAL_BTCD_MAY_BE_UNAVAILABLE</li></ul></section>
+<section><h2>안전 확인</h2><p>auto_apply_allowed=False, live_order_allowed=False, real_order_enabled=False</p></section></main></body></html>

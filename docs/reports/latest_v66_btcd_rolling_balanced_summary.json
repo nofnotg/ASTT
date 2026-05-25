@@ -1,0 +1,155 @@
+{
+  "schema_version": "v66_btcd_rolling_balanced_v1",
+  "scenarios": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 203.89422927890374,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2612045445309292,
+      "expectancy_pct": 0.15014302597857437,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.722596792291073,
+      "lookahead_fail_count": 0,
+      "decision": "BASELINE"
+    },
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "final_equity_krw": 1530763.6137905756,
+      "total_return_pct": 206.15272275811512,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.2560986888868144,
+      "expectancy_pct": 0.1518061286878609,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.59617928953356,
+      "lookahead_fail_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "final_equity_krw": 1518390.712153043,
+      "total_return_pct": 203.67814243060857,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2622049522431251,
+      "expectancy_pct": 0.1499839045880773,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.71123299766785,
+      "lookahead_fail_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "final_equity_krw": 1494429.196337076,
+      "total_return_pct": 198.88583926741518,
+      "mdd_pct": -19.496747036585727,
+      "profit_factor": 1.2531273651034365,
+      "expectancy_pct": 0.14645496264168995,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.200975521414165,
+      "lookahead_fail_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    }
+  ],
+  "saved_loss_missed_profit": [
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    }
+  ],
+  "yearly_comparison": [
+    {
+      "year": "2022",
+      "control_return_pct": 6.420437850166327,
+      "best_btcd_scenario": "RELATIVE_STRENGTH_BTCD",
+      "best_btcd_return_pct": 6.420437850166327,
+      "delta_pct_point": 0.0,
+      "notes": "Control was better or less damaged"
+    },
+    {
+      "year": "2023",
+      "control_return_pct": 36.73091972577374,
+      "best_btcd_scenario": "RELATIVE_STRENGTH_BTCD",
+      "best_btcd_return_pct": 36.73091972577374,
+      "delta_pct_point": 0.0,
+      "notes": "Control was better or less damaged"
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 89.25960684102334,
+      "best_btcd_scenario": "RELATIVE_STRENGTH_BTCD",
+      "best_btcd_return_pct": 89.25960684102334,
+      "delta_pct_point": 0.0,
+      "notes": "Control was better or less damaged"
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 7.039779844977412,
+      "best_btcd_scenario": "RELATIVE_STRENGTH_BTCD",
+      "best_btcd_return_pct": 7.039779844977412,
+      "delta_pct_point": 0.0,
+      "notes": "Control was better or less damaged"
+    },
+    {
+      "year": "2026",
+      "control_return_pct": 3.092610266792617,
+      "best_btcd_scenario": "RELATIVE_STRENGTH_BTCD",
+      "best_btcd_return_pct": 3.697607120065527,
+      "delta_pct_point": 0.60499685327291,
+      "notes": "BTCD overlay improved this year"
+    }
+  ],
+  "data_quality": {
+    "global_btc_dominance": {
+      "available": false,
+      "source": "unavailable",
+      "period": "unavailable",
+      "coverage": "0%",
+      "notes": "data/external/btc_dominance.csv was not found. Fake dominance was not generated."
+    },
+    "upbit_btc_flow_dominance_proxy": {
+      "available": true,
+      "source": "replay_store\\v6_ohlcv",
+      "period": "calculated from Upbit KRW OHLCV proxy",
+      "coverage": "149 daily rows from 2025-05-01 00:00:00 to 2026-05-26 00:00:00; 22 KRW markets. This is an Upbit proxy, not global BTC dominance.",
+      "notes": "149 daily rows from 2025-05-01 00:00:00 to 2026-05-26 00:00:00; 22 KRW markets. This is an Upbit proxy, not global BTC dominance."
+    }
+  },
+  "audit": {
+    "checked_trades": 12222,
+    "pass": 12222,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": []
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

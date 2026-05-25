@@ -265,6 +265,32 @@ from replay_lab.feedback.v65_ma_scenario_report_html import (
     V65YearlyRepairReportHTML,
 )
 from replay_lab.feedback.head_controller_v65_review_html import HeadControllerV65ReviewHTML
+from replay_lab.research.v66_btcd_data_preparation import (
+    audit_v66_btcd_inclusion,
+    build_v66_btcd_data_quality_report,
+    prepare_v66_btcd_data,
+)
+from replay_lab.research.v66_btcd_rolling_balanced_lab import run_v66_btcd_rolling_balanced_lab
+from replay_lab.research.v66_btcd_bear_regime_lab import (
+    run_v66_btcd_bear_bounce_lab,
+    run_v66_btcd_bear_regime_lab,
+)
+from replay_lab.research.v66_btcd_short_research_lab import run_v66_btcd_short_research_lab
+from replay_lab.research.v66_btcd_hybrid_router_lab import run_v66_btcd_hybrid_router_lab
+from replay_lab.research.v66_btcd_scenario_comparison import build_v66_btcd_scenario_comparison
+from replay_lab.research.head_controller_v66_review import run_head_controller_v66_review
+from replay_lab.feedback.v66_btcd_reports_html import (
+    V66BTCD202411FocusHTML,
+    V66BTCDBearScenarioHTML,
+    V66BTCDDataQualityHTML,
+    V66BTCDHybridRouterHTML,
+    V66BTCDInclusionAuditHTML,
+    V66BTCDRollingBalancedHTML,
+    V66BTCDScenarioComparisonHTML,
+    V66BTCDSavedLossMissedProfitHTML,
+    V66BTCDShortResearchHTML,
+)
+from replay_lab.feedback.head_controller_v66_review_html import HeadControllerV66ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1997,6 +2023,108 @@ def build_head_controller_v65_review_report_html_command(args: argparse.Namespac
     return 0
 
 
+def audit_v66_btcd_inclusion_command(args: argparse.Namespace) -> int:
+    print(json.dumps(audit_v66_btcd_inclusion(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def prepare_v66_btcd_data_command(args: argparse.Namespace) -> int:
+    print(json.dumps(prepare_v66_btcd_data(archive_dir=str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v66_btcd_data_quality_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v66_btcd_data_quality_report(args.reports_dir, str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v66_btcd_rolling_balanced_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v66_btcd_rolling_balanced_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"scenarios": len(summary.get("scenarios", []))}, ensure_ascii=False))
+    return 0
+
+
+def run_v66_btcd_bear_regime_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v66_btcd_bear_regime_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"scenarios": len(summary.get("scenarios", []))}, ensure_ascii=False))
+    return 0
+
+
+def run_v66_btcd_bear_bounce_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v66_btcd_bear_bounce_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v66_btcd_short_research_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v66_btcd_short_research_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v66_btcd_hybrid_router_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v66_btcd_hybrid_router_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v66_btcd_scenario_comparison_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v66_btcd_scenario_comparison(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v66_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v66_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v66_btcd_inclusion_audit_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd inclusion audit report: {V66BTCDInclusionAuditHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_data_quality_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd data quality report: {V66BTCDDataQualityHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_rolling_balanced_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd rolling balanced report: {V66BTCDRollingBalancedHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_bear_scenario_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd bear scenario report: {V66BTCDBearScenarioHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_2024_11_focus_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd 2024-11 focus report: {V66BTCD202411FocusHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_saved_loss_missed_profit_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd saved loss missed profit report: {V66BTCDSavedLossMissedProfitHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_scenario_comparison_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd scenario comparison report: {V66BTCDScenarioComparisonHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_short_research_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd short research report: {V66BTCDShortResearchHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v66_btcd_hybrid_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v66 btcd hybrid router report: {V66BTCDHybridRouterHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_head_controller_v66_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v66 report: {HeadControllerV66ReviewHTML(args.reports_dir).build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3426,6 +3554,92 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v65-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v65_review_report_html_command)
+
+    p = sub.add_parser("audit-v66-btcd-inclusion")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=audit_v66_btcd_inclusion_command)
+
+    p = sub.add_parser("prepare-v66-btcd-data")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=prepare_v66_btcd_data_command)
+
+    p = sub.add_parser("build-v66-btcd-data-quality-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_data_quality_report_command)
+
+    p = sub.add_parser("run-v66-btcd-rolling-balanced-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v66_btcd_rolling_balanced_lab_command)
+
+    p = sub.add_parser("run-v66-btcd-bear-regime-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v66_btcd_bear_regime_lab_command)
+
+    p = sub.add_parser("run-v66-btcd-bear-bounce-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v66_btcd_bear_bounce_lab_command)
+
+    p = sub.add_parser("run-v66-btcd-short-research-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v66_btcd_short_research_lab_command)
+
+    p = sub.add_parser("run-v66-btcd-hybrid-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v66_btcd_hybrid_router_lab_command)
+
+    p = sub.add_parser("build-v66-btcd-scenario-comparison")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_scenario_comparison_command)
+
+    p = sub.add_parser("run-head-controller-v66-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_head_controller_v66_review_command)
+
+    p = sub.add_parser("build-v66-btcd-inclusion-audit-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_inclusion_audit_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-data-quality-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_data_quality_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-rolling-balanced-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_rolling_balanced_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-bear-scenario-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_bear_scenario_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-2024-11-focus-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_2024_11_focus_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-saved-loss-missed-profit-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_saved_loss_missed_profit_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-scenario-comparison-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_scenario_comparison_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-short-research-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_short_research_report_html_command)
+
+    p = sub.add_parser("build-v66-btcd-hybrid-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v66_btcd_hybrid_router_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v66-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v66_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

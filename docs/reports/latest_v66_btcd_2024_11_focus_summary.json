@@ -1,0 +1,190 @@
+{
+  "schema_version": "v66_btcd_2024_11_focus_v1",
+  "bear_focus_period": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 61.93216074566668,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1874538737367304,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "start_equity_krw": 933826.4398546164,
+      "final_equity_krw": 1530763.6137905756,
+      "total_return_pct": 63.923781600025585,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.1864851446490816,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1518390.712153043,
+      "total_return_pct": 61.817017360627126,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1882598775290727,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "start_equity_krw": 919848.5424405785,
+      "final_equity_krw": 1494429.196337076,
+      "total_return_pct": 62.46470232718937,
+      "mdd_pct": -19.496747036585727,
+      "profit_factor": 1.1840839766652047,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1528388.1314221425,
+      "total_return_pct": 62.882456285194465,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1921792457985336,
+      "trade_count": 831,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "SHORT_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    }
+  ],
+  "focus_2024_11": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 61.93216074566668,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1874538737367304,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "start_equity_krw": 933826.4398546164,
+      "final_equity_krw": 1530763.6137905756,
+      "total_return_pct": 63.923781600025585,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.1864851446490816,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1518390.712153043,
+      "total_return_pct": 61.817017360627126,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1882598775290727,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "start_equity_krw": 919848.5424405785,
+      "final_equity_krw": 1494429.196337076,
+      "total_return_pct": 62.46470232718937,
+      "mdd_pct": -19.496747036585727,
+      "profit_factor": 1.1840839766652047,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1528388.1314221425,
+      "total_return_pct": 62.882456285194465,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1921792457985336,
+      "trade_count": 831,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "SHORT_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

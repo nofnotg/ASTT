@@ -1,0 +1,37 @@
+{
+  "schema_version": "head_controller_v66_review_v1",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "llm_provider": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "best_scenario": "RELATIVE_STRENGTH_BTCD",
+  "rejected_scenarios": [
+    "ROLLING_EDGE_BTCD_OVERLAY",
+    "BALANCED_GROWTH_BTCD_OVERLAY",
+    "POLICY_BLEND_BTCD_ROUTER",
+    "BEAR_BOUNCE_BTCD"
+  ],
+  "forward_candidates": [
+    "RELATIVE_STRENGTH_BTCD"
+  ],
+  "research_only_candidates": [
+    "SHORT_HEDGE_BTCD_RESEARCH"
+  ],
+  "primary_improvement": "BTC Dominance overlay is considered only if saved loss exceeds missed profit and return/MDD improves.",
+  "primary_risk": "Global BTC Dominance may be unavailable; Upbit BTC Flow Dominance Proxy is not the same as global dominance.",
+  "next_experiments": [
+    "Do not modify existing Rolling/Balanced baselines.",
+    "Carry only validated BTCD overlays into forward paper.",
+    "Keep Short/Hedge as paper research only.",
+    "Add real spread/depth overlay before any live discussion."
+  ],
+  "risk_flags": [
+    "LIVE_NOT_ALLOWED",
+    "PAPER_ONLY",
+    "NO_AUTO_APPLY",
+    "GLOBAL_BTCD_MAY_BE_UNAVAILABLE"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

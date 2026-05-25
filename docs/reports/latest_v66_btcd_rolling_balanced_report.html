@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V6.6 Rolling/Balanced + BTC Dominance</title>
+  <style>
+    body{margin:0;background:#f7f9fc;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.62}
+    header{background:#0f172a;color:white;padding:30px 22px}main{max-width:1240px;margin:auto;padding:24px}
+    section,.card{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}
+    table{width:100%;border-collapse:collapse;background:white;font-size:14px}th,td{border-bottom:1px solid #e2e8f0;padding:9px;text-align:left;vertical-align:top}th{background:#eef2ff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .kpi{font-size:25px;font-weight:800;margin-top:4px}.good{color:#059669}.bad{color:#dc2626}.warn{color:#d97706}
+    .notice{border-left:5px solid #d97706;background:#fffbeb;padding:13px 15px;border-radius:8px;margin-top:16px}
+    .chart{width:100%;height:auto;border:1px solid #e2e8f0;background:#fff;border-radius:8px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>V6.6 Rolling/Balanced + BTC Dominance</h1>
+  <p>BTC Dominance는 매수 신호가 아니라, 알트 시장이 위험해지는지 확인하는 별도 overlay입니다. 기존 Rolling/Balanced 기준선은 수정하지 않았습니다.</p>
+</header>
+<main>
+  <div class="notice"><strong>안전 고정:</strong> 모든 결과는 PAPER 모의투자입니다. 실제 주문, 주문 테스트, 취소, 출금은 사용하지 않았고 real_order_enabled=false, live_order_allowed=false입니다.</div>
+  
+  <section><h2>시나리오 비교</h2><table><tr><th>Scenario</th><th>최종 평가금</th><th>수익률</th><th>최대 낙폭(MDD)</th><th>손익비 계수(PF)</th><th>거래 수</th><th>Return/MDD</th><th>판정</th></tr><tr><td>CONTROL_EXISTING</td><td>1,519,471 KRW</td><td>+203.89%</td><td>-19.02%</td><td>1.261</td><td>1358</td><td>10.723</td><td>BASELINE</td></tr><tr><td>ROLLING_EDGE_BTCD_OVERLAY</td><td>1,530,764 KRW</td><td>+206.15%</td><td>-19.46%</td><td>1.256</td><td>1358</td><td>10.596</td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>BALANCED_GROWTH_BTCD_OVERLAY</td><td>1,518,391 KRW</td><td>+203.68%</td><td>-19.02%</td><td>1.262</td><td>1358</td><td>10.711</td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>POLICY_BLEND_BTCD_ROUTER</td><td>1,494,429 KRW</td><td>+198.89%</td><td>-19.50%</td><td>1.253</td><td>1358</td><td>10.201</td><td>BTCD_FILTER_REJECTED</td></tr></table></section>
+  <section><h2>막은 손실 / 놓친 수익</h2><table><tr><th>Scenario</th><th>막은 손실</th><th>놓친 수익</th><th>순효과</th><th>판정</th></tr><tr><td>ROLLING_EDGE_BTCD_OVERLAY</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>BALANCED_GROWTH_BTCD_OVERLAY</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr><tr><td>POLICY_BLEND_BTCD_ROUTER</td><td>0 KRW</td><td>0 KRW</td><td>0 KRW</td><td>REJECT_OR_REDUCE</td></tr></table></section>
+  <section><h2>연도별 결과</h2><table><tr><th>Year</th><th>Control</th><th>Best BTCD Scenario</th><th>BTCD Return</th><th>Delta</th><th>Notes</th></tr><tr><td>2022</td><td>+6.42%</td><td>RELATIVE_STRENGTH_BTCD</td><td>+6.42%</td><td>+0.00%p</td><td>Control was better or less damaged</td></tr><tr><td>2023</td><td>+36.73%</td><td>RELATIVE_STRENGTH_BTCD</td><td>+36.73%</td><td>+0.00%p</td><td>Control was better or less damaged</td></tr><tr><td>2024</td><td>+89.26%</td><td>RELATIVE_STRENGTH_BTCD</td><td>+89.26%</td><td>+0.00%p</td><td>Control was better or less damaged</td></tr><tr><td>2025</td><td>+7.04%</td><td>RELATIVE_STRENGTH_BTCD</td><td>+7.04%</td><td>+0.00%p</td><td>Control was better or less damaged</td></tr><tr><td>2026</td><td>+3.09%</td><td>RELATIVE_STRENGTH_BTCD</td><td>+3.70%</td><td>+0.60%p</td><td>BTCD overlay improved this year</td></tr></table></section>
+  <section><h2>Lookahead / Hindsight 감사</h2><table><tr><th>checked_trades</th><th>pass</th><th>fail</th><th>excluded</th><th>major violations</th></tr><tr><td>12222</td><td>12222</td><td>0</td><td>0</td><td></td></tr></table></section>
+
+</main>
+</body>
+</html>

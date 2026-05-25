@@ -1,0 +1,269 @@
+{
+  "schema_version": "v66_btcd_bear_regime_v1",
+  "scenarios": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 203.89422927890374,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2612045445309292,
+      "expectancy_pct": 0.15014302597857437,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.722596792291073,
+      "lookahead_fail_count": 0,
+      "decision": "BASELINE"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 205.1797013830144,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.264524176165299,
+      "expectancy_pct": 0.15108961810236726,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.790198504751812,
+      "lookahead_fail_count": 0,
+      "decision": "BEAR_ROUTER_CANDIDATE"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": 0.0,
+      "trade_count": 0,
+      "skipped_trade_count": 1358,
+      "win_rate_pct": 0.0,
+      "return_mdd_ratio": 0.0,
+      "lookahead_fail_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "final_equity_krw": 1528388.1314221425,
+      "total_return_pct": 205.67762628442853,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2655184159030912,
+      "expectancy_pct": 0.15257984145729134,
+      "trade_count": 1348,
+      "skipped_trade_count": 10,
+      "win_rate_pct": 43.24925816023739,
+      "return_mdd_ratio": 10.816383885130588,
+      "lookahead_fail_count": 0,
+      "decision": "BEAR_ROUTER_CANDIDATE"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 205.1797013830144,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.264524176165299,
+      "expectancy_pct": 0.15108961810236726,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.790198504751812,
+      "lookahead_fail_count": 0,
+      "decision": "BEAR_ROUTER_CANDIDATE"
+    }
+  ],
+  "bear_focus_period": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 61.93216074566668,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1874538737367304,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "start_equity_krw": 933826.4398546164,
+      "final_equity_krw": 1530763.6137905756,
+      "total_return_pct": 63.923781600025585,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.1864851446490816,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1518390.712153043,
+      "total_return_pct": 61.817017360627126,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1882598775290727,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "start_equity_krw": 919848.5424405785,
+      "final_equity_krw": 1494429.196337076,
+      "total_return_pct": 62.46470232718937,
+      "mdd_pct": -19.496747036585727,
+      "profit_factor": 1.1840839766652047,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1528388.1314221425,
+      "total_return_pct": 62.882456285194465,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1921792457985336,
+      "trade_count": 831,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "SHORT_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    }
+  ],
+  "focus_2024_11": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 61.93216074566668,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1874538737367304,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "start_equity_krw": 933826.4398546164,
+      "final_equity_krw": 1530763.6137905756,
+      "total_return_pct": 63.923781600025585,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.1864851446490816,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1518390.712153043,
+      "total_return_pct": 61.817017360627126,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1882598775290727,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "start_equity_krw": 919848.5424405785,
+      "final_equity_krw": 1494429.196337076,
+      "total_return_pct": 62.46470232718937,
+      "mdd_pct": -19.496747036585727,
+      "profit_factor": 1.1840839766652047,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1528388.1314221425,
+      "total_return_pct": 62.882456285194465,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.1921792457985336,
+      "trade_count": 831,
+      "decision": "BTCD_FILTER_REJECTED"
+    },
+    {
+      "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+      "start_equity_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "decision": "SHORT_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "start_equity_krw": 938338.0913325952,
+      "final_equity_krw": 1525898.506915072,
+      "total_return_pct": 62.61713352679137,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.191048178847251,
+      "trade_count": 841,
+      "decision": "BTCD_FILTER_REJECTED"
+    }
+  ],
+  "audit": {
+    "checked_trades": 12222,
+    "pass": 12222,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": []
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

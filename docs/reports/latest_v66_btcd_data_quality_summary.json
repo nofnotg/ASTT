@@ -1,0 +1,24 @@
+{
+  "schema_version": "v66_btcd_data_quality_v1",
+  "data_quality": {
+    "global_btc_dominance": {
+      "available": false,
+      "source": "unavailable",
+      "period": "unavailable",
+      "coverage": "0%",
+      "notes": "data/external/btc_dominance.csv was not found. Fake dominance was not generated."
+    },
+    "upbit_btc_flow_dominance_proxy": {
+      "available": true,
+      "source": "replay_store\\v6_ohlcv",
+      "period": "calculated from Upbit KRW OHLCV proxy",
+      "coverage": "149 daily rows from 2025-05-01 00:00:00 to 2026-05-26 00:00:00; 22 KRW markets. This is an Upbit proxy, not global BTC dominance.",
+      "notes": "149 daily rows from 2025-05-01 00:00:00 to 2026-05-26 00:00:00; 22 KRW markets. This is an Upbit proxy, not global BTC dominance."
+    }
+  },
+  "global_btcd_note": "Global BTC Dominance is used only when actual CSV/API data exists. Fake dominance is forbidden.",
+  "proxy_note": "Upbit BTC Flow Dominance Proxy is BTC/KRW quote volume divided by total KRW quote volume. It is not global BTC dominance.",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "v66_btcd_hybrid_router_v1",
+  "scenario": {
+    "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+    "final_equity_krw": 1525898.506915072,
+    "total_return_pct": 205.1797013830144,
+    "mdd_pct": -19.015377825779282,
+    "profit_factor": 1.264524176165299,
+    "expectancy_pct": 0.15108961810236726,
+    "trade_count": 1358,
+    "skipped_trade_count": 0,
+    "win_rate_pct": 43.078055964653906,
+    "return_mdd_ratio": 10.790198504751812,
+    "lookahead_fail_count": 0,
+    "decision": "BEAR_ROUTER_CANDIDATE"
+  },
+  "saved_loss_missed_profit": {
+    "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+    "saved_loss_krw": 0.0,
+    "missed_profit_krw": 0.0,
+    "net_effect_krw": 0.0,
+    "skipped_trade_count": 0,
+    "decision": "REJECT_OR_REDUCE"
+  },
+  "recommendation": {
+    "best_scenario": "RELATIVE_STRENGTH_BTCD",
+    "final_judgement": "BEAR_ROUTER_CANDIDATE",
+    "forward_candidates": [
+      "RELATIVE_STRENGTH_BTCD"
+    ],
+    "research_only_candidates": [
+      "SHORT_HEDGE_BTCD_RESEARCH"
+    ],
+    "reason": "BTC Dominance overlay is accepted only if it improves return/MDD without excessive missed profit."
+  },
+  "audit": {
+    "checked_trades": 12222,
+    "pass": 12222,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": []
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

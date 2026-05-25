@@ -1,0 +1,72 @@
+{
+  "schema_version": "v66_btcd_saved_loss_missed_profit_v1",
+  "saved_loss_missed_profit": [
+    {
+      "scenario": "ROLLING_EDGE_BTCD_OVERLAY",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "BALANCED_GROWTH_BTCD_OVERLAY",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "POLICY_BLEND_BTCD_ROUTER",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_BTCD",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_BTCD",
+      "saved_loss_krw": 3902960.984944883,
+      "missed_profit_krw": 4922432.131339398,
+      "net_effect_krw": -1019471.1463945154,
+      "skipped_trade_count": 1358,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "saved_loss_krw": 35440.73856980051,
+      "missed_profit_krw": 20981.1507309134,
+      "net_effect_krw": 14459.58783888711,
+      "skipped_trade_count": 10,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+      "saved_loss_krw": 3902960.984944883,
+      "missed_profit_krw": 4922432.131339398,
+      "net_effect_krw": -1019471.1463945154,
+      "skipped_trade_count": 1358,
+      "decision": "REJECT_OR_REDUCE"
+    },
+    {
+      "scenario": "HYBRID_BEAR_ROUTER_BTCD",
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0,
+      "skipped_trade_count": 0,
+      "decision": "REJECT_OR_REDUCE"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

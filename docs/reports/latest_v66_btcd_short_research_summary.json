@@ -1,0 +1,32 @@
+{
+  "schema_version": "v66_btcd_short_research_v1",
+  "short_research": {
+    "short_research_return_pct": 0.0,
+    "short_research_mdd_pct": 0.0,
+    "hedge_effect_against_long_drawdown": "research proxy only; not connected to real exchange constraints",
+    "major_risks": [
+      "PAPER_ONLY",
+      "1x proxy",
+      "funding/slippage/regulatory constraints not modeled"
+    ],
+    "decision": "SHORT_RESEARCH_ONLY"
+  },
+  "scenario": {
+    "scenario": "SHORT_HEDGE_BTCD_RESEARCH",
+    "final_equity_krw": 500000.0,
+    "total_return_pct": 0.0,
+    "mdd_pct": 0.0,
+    "profit_factor": 0.0,
+    "expectancy_pct": 0.0,
+    "trade_count": 0,
+    "skipped_trade_count": 1358,
+    "win_rate_pct": 0.0,
+    "return_mdd_ratio": 0.0,
+    "lookahead_fail_count": 0,
+    "decision": "SHORT_RESEARCH_ONLY"
+  },
+  "decision": "SHORT_RESEARCH_ONLY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
