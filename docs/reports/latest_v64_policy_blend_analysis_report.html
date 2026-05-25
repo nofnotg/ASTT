@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT V6.4 정책 조합 분석</title>
+  <style>
+    body{margin:0;background:#f7f9fc;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.6}
+    header{background:#0f172a;color:white;padding:30px 22px}main{max-width:1180px;margin:auto;padding:24px}
+    section,.card{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .kpi{font-size:24px;font-weight:800;margin-top:4px}.good{color:#059669}.bad{color:#dc2626}.warn{color:#d97706}
+    table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e2e8f0;padding:9px;text-align:left;vertical-align:top}th{background:#eef2ff}
+    .notice{border-left:5px solid #d97706;background:#fffbeb;padding:13px 15px;border-radius:8px;margin-top:16px}
+  </style>
+</head>
+<body>
+<header>
+  <h1>ASTT V6.4 정책 조합 분석</h1>
+  <p>Rolling Edge Throttle, Balanced Growth, Hybrid, Defensive, Aggressive를 서로 보완 가능한 운용 부품으로 비교합니다.</p>
+</header>
+<main>
+  <div class="notice"><strong>안전 고지:</strong> 이 분석은 PAPER 모의투자 결과입니다. 실제 주문은 금지이며 real_order_enabled=false, live_order_allowed=false입니다.</div>
+  <section>
+    <h2>한눈에 보는 결론</h2>
+    <p>Rolling Edge는 가장 단순하고 낙폭이 가장 낮은 기본 방어축입니다. Balanced Growth는 최종 평가금을 약간 더 높였지만, Plan A의 큰 승리를 일부 줄이고 Plan B/Combined의 손실을 줄이는 성격이 강합니다. 따라서 하나만 고정하기보다 <b>Rolling을 기본값</b>으로 두고, <b>Plan B/Combined 또는 애매한 PF 구간에서 Balanced 감속을 부분 적용</b>하는 방식이 더 실전적입니다.</p>
+    <div class="grid">
+      <div class="card"><div>Balanced - Rolling 최종 평가금 차이</div><div class="kpi good">8,836원</div></div>
+      <div class="card"><div>수익률 차이</div><div class="kpi good">+1.77%p</div></div>
+      <div class="card"><div>최대 낙폭 차이</div><div class="kpi warn">-0.12%p</div></div>
+      <div class="card"><div>PF 차이</div><div class="kpi good">0.017</div></div>
+    </div>
+  </section>
+  <section><h2>시나리오 전체 비교</h2><table><tr><th>Scenario</th><th>최종 평가금</th><th>수익률</th><th>MDD</th><th>PF</th><th>거래수</th><th>Return/MDD</th></tr><tr><td>BASELINE</td><td>886,330원</td><td>+77.27%</td><td>-44.27%</td><td>1.076</td><td>1358</td><td>1.75</td></tr><tr><td>DRAWDOWN_THROTTLE</td><td>980,830원</td><td>+96.17%</td><td>-29.50%</td><td>1.150</td><td>1358</td><td>3.26</td></tr><tr><td>ROLLING_EDGE_THROTTLE</td><td>1,382,279원</td><td>+176.46%</td><td>-15.37%</td><td>1.278</td><td>1358</td><td>11.48</td></tr><tr><td>HYBRID_DEFENSE</td><td>1,302,658원</td><td>+160.53%</td><td>-17.68%</td><td>1.273</td><td>1358</td><td>9.08</td></tr><tr><td>DEFENSIVE_CORE</td><td>1,225,290원</td><td>+145.06%</td><td>-19.13%</td><td>1.250</td><td>1358</td><td>7.58</td></tr><tr><td>BALANCED_GROWTH</td><td>1,391,116원</td><td>+178.22%</td><td>-15.50%</td><td>1.296</td><td>1358</td><td>11.50</td></tr><tr><td>AGGRESSIVE_GROWTH</td><td>1,213,950원</td><td>+142.79%</td><td>-16.84%</td><td>1.235</td><td>1358</td><td>8.48</td></tr><tr><td>HIGH_OCTANE_RESEARCH</td><td>966,027원</td><td>+93.21%</td><td>-25.67%</td><td>1.141</td><td>947</td><td>3.63</td></tr></table></section>
+  <section><h2>Rolling vs Balanced: 손익 차이</h2>
+    <p>Balanced가 더 좋았던 달은 주로 약한 성과 구간에서 70% 감속이 손실을 줄인 경우입니다. Rolling이 더 좋았던 달은 Plan A fat-tail 승리를 더 크게 살린 경우가 많았습니다.</p>
+    <h3>Balanced가 유리했던 달</h3><table><tr><th>월</th><th>Balanced 손익</th><th>Rolling 손익</th><th>Balanced-Rolling</th></tr><tr><td>2025-12</td><td>15,902원</td><td>12원</td><td>15,890원</td></tr><tr><td>2025-05</td><td>-25,753원</td><td>-34,590원</td><td>8,837원</td></tr><tr><td>2025-06</td><td>-37,582원</td><td>-45,401원</td><td>7,819원</td></tr><tr><td>2026-01</td><td>79,504원</td><td>71,949원</td><td>7,555원</td></tr><tr><td>2022-10</td><td>-36,356원</td><td>-42,100원</td><td>5,744원</td></tr><tr><td>2025-04</td><td>259,312원</td><td>254,848원</td><td>4,464원</td></tr><tr><td>2025-01</td><td>-19,626원</td><td>-23,587원</td><td>3,961원</td></tr><tr><td>2023-04</td><td>-8,225원</td><td>-12,168원</td><td>3,943원</td></tr><tr><td>2025-11</td><td>-94,518원</td><td>-98,391원</td><td>3,874원</td></tr><tr><td>2025-09</td><td>-45,305원</td><td>-48,783원</td><td>3,477원</td></tr></table>
+    <h3>Rolling이 유리했던 달</h3><table><tr><th>월</th><th>Balanced 손익</th><th>Rolling 손익</th><th>Balanced-Rolling</th></tr><tr><td>2025-07</td><td>14,184원</td><td>33,168원</td><td>-18,984원</td></tr><tr><td>2025-10</td><td>85,560원</td><td>98,978원</td><td>-13,418원</td></tr><tr><td>2026-05</td><td>3,039원</td><td>10,911원</td><td>-7,872원</td></tr><tr><td>2024-10</td><td>97,130원</td><td>104,747원</td><td>-7,617원</td></tr><tr><td>2025-03</td><td>18,397원</td><td>24,320원</td><td>-5,923원</td></tr><tr><td>2026-04</td><td>24,357원</td><td>29,408원</td><td>-5,051원</td></tr><tr><td>2023-12</td><td>47,121원</td><td>51,104원</td><td>-3,983원</td></tr><tr><td>2023-05</td><td>5,909원</td><td>8,564원</td><td>-2,655원</td></tr><tr><td>2026-02</td><td>-73,190원</td><td>-71,348원</td><td>-1,842원</td></tr><tr><td>2023-10</td><td>79,033원</td><td>80,652원</td><td>-1,620원</td></tr></table>
+  </section>
+  <section><h2>플랜/전략별 보완 포인트</h2>
+    <h3>Plan별 차이</h3><table><tr><th>Plan</th><th>Balanced 손익</th><th>Rolling 손익</th><th>Balanced-Rolling</th></tr><tr><td>PLAN_B_COMBINED_CONTEXT</td><td>434,889원</td><td>417,523원</td><td>17,366원</td></tr><tr><td>PLAN_A_ICT_FAT_TAIL</td><td>456,227원</td><td>464,756원</td><td>-8,529원</td></tr></table>
+    <h3>Strategy별 차이</h3><table><tr><th>Strategy</th><th>Balanced 손익</th><th>Rolling 손익</th><th>Balanced-Rolling</th></tr><tr><td>COMBINED_VOLUME_ICT</td><td>434,889원</td><td>417,523원</td><td>17,366원</td></tr><tr><td>ICT_FVG_OB_SWEEP</td><td>456,227원</td><td>464,756원</td><td>-8,529원</td></tr></table>
+    <h3>Setup별 차이</h3><table><tr><th>Setup</th><th>Balanced 손익</th><th>Rolling 손익</th><th>Balanced-Rolling</th></tr><tr><td>DADDY_CONTEXT+FVG_OB_OVERLAP</td><td>434,889원</td><td>417,523원</td><td>17,366원</td></tr><tr><td>FVG_OB_OVERLAP</td><td>437,812원</td><td>446,341원</td><td>-8,529원</td></tr><tr><td>FVG_LIQUIDITY_SWEEP</td><td>18,415원</td><td>18,415원</td><td>0원</td></tr></table>
+  </section>
+  <section><h2>정책별 장단점과 채택안</h2><table><tr><th>역할</th><th>추천</th><th>이유</th></tr><tr><td>기본 방어축</td><td>ROLLING_EDGE_THROTTLE</td><td>최대낙폭이 가장 낮고 규칙이 단순합니다. 최근 20거래 성과가 무너질 때만 35%로 줄여 큰 승리 구간을 덜 잘라먹습니다.</td></tr><tr><td>스팟 보완</td><td>BALANCED_GROWTH overlay</td><td>PF 0.8~1.2의 애매한 구간에서 70% 감속이 Plan B/Combined 손실을 줄였습니다. 단, Plan A fat-tail 승리도 일부 잘라먹기 때문에 전체 기본값으로만 보지 말고 조건부 보완으로 둡니다.</td></tr><tr><td>깊은 낙폭 대응</td><td>HYBRID/DEFENSIVE rules as emergency brake</td><td>수익률은 Balanced/Rolling보다 낮지만 낙폭이 커질 때 심리적·운영상 방어 장치로 쓸 수 있습니다. forward에서 DD가 확대될 때만 단계적으로 켭니다.</td></tr><tr><td>공격형 운용</td><td>AGGRESSIVE_GROWTH research only</td><td>수익률 확대 후보지만 이번 검증에서는 Balanced보다 수익과 return/MDD가 낮았습니다. 실전 후보가 아니라 별도 연구 후보입니다.</td></tr><tr><td>제외</td><td>HIGH_OCTANE_RESEARCH 제외</td><td>거래를 많이 건너뛰고 MDD 대비 효율이 낮으며 DD cap 위반이 많습니다. 고위험 연구 기록으로만 유지합니다.</td></tr></table></section>
+  <section><h2>정책 발동 현황</h2><table><tr><th>정책</th><th>진입/스킵</th><th>상태</th><th>배수</th><th>주요 사유</th></tr><tr><td>BASELINE</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 1358}</td><td>{'1.00': 1358}</td><td>[{'key': 'NO_DEFENSE', 'count': 1358}]</td></tr><tr><td>DRAWDOWN_THROTTLE</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 488, 'CAUTION': 870}</td><td>{'1.00': 488, '0.50': 870}</td><td>[{'key': 'DRAWDOWN_THROTTLE_10', 'count': 870}, {'key': 'NO_DEFENSE', 'count': 488}]</td></tr><tr><td>ROLLING_EDGE_THROTTLE</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 687, 'DEFENSIVE': 671}</td><td>{'1.00': 687, '0.35': 671}</td><td>[{'key': 'NO_DEFENSE', 'count': 687}, {'key': 'ROLLING_EDGE_THROTTLE', 'count': 671}]</td></tr><tr><td>HYBRID_DEFENSE</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 564, 'DEFENSIVE': 794}</td><td>{'1.00': 564, '0.35': 657, '0.50': 137}</td><td>[{'key': 'ROLLING_EDGE_THROTTLE', 'count': 657}, {'key': 'NO_DEFENSE', 'count': 564}, {'key': 'DRAWDOWN_THROTTLE_10', 'count': 395}]</td></tr><tr><td>DEFENSIVE_CORE</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 540, 'DEFENSIVE': 625, 'CAUTION': 193}</td><td>{'1.00': 540, '0.35': 625, '0.50': 193}</td><td>[{'key': 'ROLLING_PF_WEAK', 'count': 625}, {'key': 'NO_DEFENSE', 'count': 540}, {'key': 'DRAWDOWN_THROTTLE_10', 'count': 516}]</td></tr><tr><td>BALANCED_GROWTH</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 547, 'CAUTION': 150, 'DEFENSIVE': 661}</td><td>{'1.00': 547, '0.70': 150, '0.35': 661}</td><td>[{'key': 'ROLLING_EDGE_THROTTLE', 'count': 661}, {'key': 'NO_DEFENSE', 'count': 547}, {'key': 'ROLLING_EDGE_CAUTION', 'count': 150}]</td></tr><tr><td>AGGRESSIVE_GROWTH</td><td>{'ENTER': 1358}</td><td>{'NORMAL': 222, 'HOT_HAND': 22, 'STRONG_EDGE': 45, 'DEFENSIVE': 643, 'CAUTION': 426}</td><td>{'1.00': 393, '1.25': 92, '1.50': 45, '0.35': 643, '0.50': 185}</td><td>[{'key': 'ROLLING_EDGE_THROTTLE', 'count': 605}, {'key': 'STRONG_EDGE_RISK_SCALE', 'count': 390}, {'key': 'NO_DEFENSE', 'count': 222}, {'key': 'PROFIT_LOCK_MONTHLY_10', 'count': 185}, {'key': 'PROFIT_LOCK_ORIGINAL_CAPITAL', 'count': 171}, {'key': 'HOT_HAND_RISK_SCALE', 'count': 103}, {'key': 'PROFIT_LOCK_RETURN_50', 'count': 70}, {'key': 'BALANCED_DOWNGRADE_DD_15', 'count': 38}]</td></tr><tr><td>HIGH_OCTANE_RESEARCH</td><td>{'ENTER': 947, 'SKIP': 411}</td><td>{'HOT_HAND': 210, 'CAUTION': 737, 'LOCKDOWN': 411}</td><td>{'1.50': 256, '0.50': 178, '1.25': 242, '1.00': 271, '0.00': 411}</td><td>[{'key': 'HIGH_OCTANE_BASE_RISK', 'count': 646}, {'key': 'RESEARCH_DD_CAP_25', 'count': 411}, {'key': 'HIGH_OCTANE_STRONG_EDGE', 'count': 301}, {'key': 'PROFIT_LOCK_ORIGINAL_CAPITAL', 'count': 271}, {'key': 'PROFIT_LOCK_RETURN_50', 'count': 242}, {'key': 'PROFIT_LOCK_MONTHLY_10', 'count': 178}]</td></tr></table></section>
+</main>
+</body>
+</html>

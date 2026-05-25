@@ -241,6 +241,7 @@ from replay_lab.research.v64_return_amplification_lab import run_v64_return_ampl
 from replay_lab.research.v64_scenario_comparison import build_v64_scenario_comparison
 from replay_lab.research.v64_hindsight_audit import run_v64_hindsight_audit
 from replay_lab.research.v64_investor_summary import build_v64_investor_summary
+from replay_lab.research.v64_policy_blend_analysis import build_v64_policy_blend_analysis
 from replay_lab.research.head_controller_v64_review import run_head_controller_v64_review
 from replay_lab.feedback.v64_causal_defense_html_report import V64CausalDefenseHTMLReport
 from replay_lab.feedback.v64_return_amplification_html_report import V64ReturnAmplificationHTMLReport
@@ -1875,6 +1876,11 @@ def build_v64_investor_summary_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_v64_policy_blend_analysis_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v64_policy_blend_analysis(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
 def run_head_controller_v64_review_command(args: argparse.Namespace) -> int:
     print(json.dumps(run_head_controller_v64_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
     return 0
@@ -3255,6 +3261,10 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v64-investor-summary")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v64_investor_summary_command)
+
+    p = sub.add_parser("build-v64-policy-blend-analysis")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_policy_blend_analysis_command)
 
     p = sub.add_parser("run-head-controller-v64-review")
     p.add_argument("--reports-dir", default="docs/reports")

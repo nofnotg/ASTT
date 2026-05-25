@@ -1,0 +1,827 @@
+{
+  "schema_version": "v64_policy_blend_analysis_v1",
+  "initial_cash_krw": 500000.0,
+  "scenario_count": 8,
+  "scenarios": [
+    {
+      "scenario": "BASELINE",
+      "final_equity_krw": 886329.7837360264,
+      "return_pct": 77.26595674720527,
+      "mdd_pct": -44.271096072792645,
+      "profit_factor": 1.0761128980874997,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.7452912532402833,
+      "average_multiplier": 1.0,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "DRAWDOWN_THROTTLE",
+      "final_equity_krw": 980830.356293466,
+      "return_pct": 96.1660712586932,
+      "mdd_pct": -29.497482953036457,
+      "profit_factor": 1.1503252846766263,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 3.2601449897200094,
+      "average_multiplier": 0.6796759941089838,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "ROLLING_EDGE_THROTTLE",
+      "final_equity_krw": 1382279.4373280315,
+      "return_pct": 176.4558874656063,
+      "mdd_pct": -15.373512872684229,
+      "profit_factor": 1.278128498610151,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 11.477915875631421,
+      "average_multiplier": 0.6788291605301995,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "HYBRID_DEFENSE",
+      "final_equity_krw": 1302657.610789811,
+      "return_pct": 160.53152215796217,
+      "mdd_pct": -17.67511578428364,
+      "profit_factor": 1.272951506319605,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 9.08234628373431,
+      "average_multiplier": 0.6350883652430122,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "DEFENSIVE_CORE",
+      "final_equity_krw": 1225289.994786275,
+      "return_pct": 145.057998957255,
+      "mdd_pct": -19.132817105470195,
+      "profit_factor": 1.2499686106080374,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 7.58163307356249,
+      "average_multiplier": 0.6297864506627467,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "BALANCED_GROWTH",
+      "final_equity_krw": 1391115.917309752,
+      "return_pct": 178.2231834619504,
+      "mdd_pct": -15.49623397142597,
+      "profit_factor": 1.2955018018947189,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 11.5010643095982,
+      "average_multiplier": 0.6504786450662843,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "AGGRESSIVE_GROWTH",
+      "final_equity_krw": 1213949.635653259,
+      "return_pct": 142.78992713065182,
+      "mdd_pct": -16.84331362856231,
+      "profit_factor": 1.2349781566048126,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 8.477543687633625,
+      "average_multiplier": 0.6576215022091393,
+      "lookahead_fail_count": 0
+    },
+    {
+      "scenario": "HIGH_OCTANE_RESEARCH",
+      "final_equity_krw": 966026.5243063758,
+      "return_pct": 93.20530486127517,
+      "mdd_pct": -25.667964871006177,
+      "profit_factor": 1.1406715785842723,
+      "trade_count": 947,
+      "skipped_trade_count": 411,
+      "return_mdd_ratio": 3.63119185060742,
+      "average_multiplier": 1.1050686378035903,
+      "lookahead_fail_count": 0
+    }
+  ],
+  "rolling_vs_balanced": {
+    "balanced_final_equity_delta_krw": 8836.479981720448,
+    "balanced_return_delta_pct_point": 1.767295996344103,
+    "balanced_mdd_delta_pct_point": -0.12272109874174042,
+    "balanced_profit_factor_delta": 0.017373303284567765,
+    "balanced_return_mdd_ratio_delta": 0.02314843396677979,
+    "interpretation": "Balanced Growth는 수익을 소폭 더 만들지만 최대낙폭은 아주 조금 깊어집니다. Rolling Edge는 더 단순하고 보수적인 기본 방어축입니다."
+  },
+  "policy_activity": {
+    "BASELINE": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 1358
+      },
+      "multipliers": {
+        "1.00": 1358
+      },
+      "top_reasons": [
+        {
+          "key": "NO_DEFENSE",
+          "count": 1358
+        }
+      ]
+    },
+    "DRAWDOWN_THROTTLE": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 488,
+        "CAUTION": 870
+      },
+      "multipliers": {
+        "1.00": 488,
+        "0.50": 870
+      },
+      "top_reasons": [
+        {
+          "key": "DRAWDOWN_THROTTLE_10",
+          "count": 870
+        },
+        {
+          "key": "NO_DEFENSE",
+          "count": 488
+        }
+      ]
+    },
+    "ROLLING_EDGE_THROTTLE": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 687,
+        "DEFENSIVE": 671
+      },
+      "multipliers": {
+        "1.00": 687,
+        "0.35": 671
+      },
+      "top_reasons": [
+        {
+          "key": "NO_DEFENSE",
+          "count": 687
+        },
+        {
+          "key": "ROLLING_EDGE_THROTTLE",
+          "count": 671
+        }
+      ]
+    },
+    "HYBRID_DEFENSE": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 564,
+        "DEFENSIVE": 794
+      },
+      "multipliers": {
+        "1.00": 564,
+        "0.35": 657,
+        "0.50": 137
+      },
+      "top_reasons": [
+        {
+          "key": "ROLLING_EDGE_THROTTLE",
+          "count": 657
+        },
+        {
+          "key": "NO_DEFENSE",
+          "count": 564
+        },
+        {
+          "key": "DRAWDOWN_THROTTLE_10",
+          "count": 395
+        }
+      ]
+    },
+    "DEFENSIVE_CORE": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 540,
+        "DEFENSIVE": 625,
+        "CAUTION": 193
+      },
+      "multipliers": {
+        "1.00": 540,
+        "0.35": 625,
+        "0.50": 193
+      },
+      "top_reasons": [
+        {
+          "key": "ROLLING_PF_WEAK",
+          "count": 625
+        },
+        {
+          "key": "NO_DEFENSE",
+          "count": 540
+        },
+        {
+          "key": "DRAWDOWN_THROTTLE_10",
+          "count": 516
+        }
+      ]
+    },
+    "BALANCED_GROWTH": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 547,
+        "CAUTION": 150,
+        "DEFENSIVE": 661
+      },
+      "multipliers": {
+        "1.00": 547,
+        "0.70": 150,
+        "0.35": 661
+      },
+      "top_reasons": [
+        {
+          "key": "ROLLING_EDGE_THROTTLE",
+          "count": 661
+        },
+        {
+          "key": "NO_DEFENSE",
+          "count": 547
+        },
+        {
+          "key": "ROLLING_EDGE_CAUTION",
+          "count": 150
+        }
+      ]
+    },
+    "AGGRESSIVE_GROWTH": {
+      "actions": {
+        "ENTER": 1358
+      },
+      "states": {
+        "NORMAL": 222,
+        "HOT_HAND": 22,
+        "STRONG_EDGE": 45,
+        "DEFENSIVE": 643,
+        "CAUTION": 426
+      },
+      "multipliers": {
+        "1.00": 393,
+        "1.25": 92,
+        "1.50": 45,
+        "0.35": 643,
+        "0.50": 185
+      },
+      "top_reasons": [
+        {
+          "key": "ROLLING_EDGE_THROTTLE",
+          "count": 605
+        },
+        {
+          "key": "STRONG_EDGE_RISK_SCALE",
+          "count": 390
+        },
+        {
+          "key": "NO_DEFENSE",
+          "count": 222
+        },
+        {
+          "key": "PROFIT_LOCK_MONTHLY_10",
+          "count": 185
+        },
+        {
+          "key": "PROFIT_LOCK_ORIGINAL_CAPITAL",
+          "count": 171
+        },
+        {
+          "key": "HOT_HAND_RISK_SCALE",
+          "count": 103
+        },
+        {
+          "key": "PROFIT_LOCK_RETURN_50",
+          "count": 70
+        },
+        {
+          "key": "BALANCED_DOWNGRADE_DD_15",
+          "count": 38
+        }
+      ]
+    },
+    "HIGH_OCTANE_RESEARCH": {
+      "actions": {
+        "ENTER": 947,
+        "SKIP": 411
+      },
+      "states": {
+        "HOT_HAND": 210,
+        "CAUTION": 737,
+        "LOCKDOWN": 411
+      },
+      "multipliers": {
+        "1.50": 256,
+        "0.50": 178,
+        "1.25": 242,
+        "1.00": 271,
+        "0.00": 411
+      },
+      "top_reasons": [
+        {
+          "key": "HIGH_OCTANE_BASE_RISK",
+          "count": 646
+        },
+        {
+          "key": "RESEARCH_DD_CAP_25",
+          "count": 411
+        },
+        {
+          "key": "HIGH_OCTANE_STRONG_EDGE",
+          "count": 301
+        },
+        {
+          "key": "PROFIT_LOCK_ORIGINAL_CAPITAL",
+          "count": 271
+        },
+        {
+          "key": "PROFIT_LOCK_RETURN_50",
+          "count": 242
+        },
+        {
+          "key": "PROFIT_LOCK_MONTHLY_10",
+          "count": 178
+        }
+      ]
+    }
+  },
+  "top_months_balanced_better": [
+    {
+      "key": "2025-12",
+      "balanced_value_krw": 15902.182878237343,
+      "rolling_value_krw": 12.216197189403829,
+      "delta_krw": 15889.96668104794
+    },
+    {
+      "key": "2025-05",
+      "balanced_value_krw": -25753.009783043486,
+      "rolling_value_krw": -34589.86092255256,
+      "delta_krw": 8836.851139509072
+    },
+    {
+      "key": "2025-06",
+      "balanced_value_krw": -37581.84187653654,
+      "rolling_value_krw": -45400.812631115696,
+      "delta_krw": 7818.970754579153
+    },
+    {
+      "key": "2026-01",
+      "balanced_value_krw": 79503.7013855647,
+      "rolling_value_krw": 71948.62502353544,
+      "delta_krw": 7555.076362029256
+    },
+    {
+      "key": "2022-10",
+      "balanced_value_krw": -36356.24570618338,
+      "rolling_value_krw": -42100.144347015725,
+      "delta_krw": 5743.898640832347
+    },
+    {
+      "key": "2025-04",
+      "balanced_value_krw": 259312.34350391058,
+      "rolling_value_krw": 254848.40524409816,
+      "delta_krw": 4463.938259812421
+    },
+    {
+      "key": "2025-01",
+      "balanced_value_krw": -19625.96267085652,
+      "rolling_value_krw": -23586.673802581332,
+      "delta_krw": 3960.7111317248127
+    },
+    {
+      "key": "2023-04",
+      "balanced_value_krw": -8224.593899480124,
+      "rolling_value_krw": -12167.784026410265,
+      "delta_krw": 3943.1901269301416
+    },
+    {
+      "key": "2025-11",
+      "balanced_value_krw": -94517.75766264628,
+      "rolling_value_krw": -98391.34059151834,
+      "delta_krw": 3873.582928872056
+    },
+    {
+      "key": "2025-09",
+      "balanced_value_krw": -45305.14520313983,
+      "rolling_value_krw": -48782.63968339838,
+      "delta_krw": 3477.4944802585524
+    }
+  ],
+  "top_months_rolling_better": [
+    {
+      "key": "2025-07",
+      "balanced_value_krw": 14184.459668467762,
+      "rolling_value_krw": 33168.211338967725,
+      "delta_krw": -18983.751670499965
+    },
+    {
+      "key": "2025-10",
+      "balanced_value_krw": 85560.23961214874,
+      "rolling_value_krw": 98977.84327231966,
+      "delta_krw": -13417.60366017092
+    },
+    {
+      "key": "2026-05",
+      "balanced_value_krw": 3039.083753606257,
+      "rolling_value_krw": 10911.39558303397,
+      "delta_krw": -7872.311829427712
+    },
+    {
+      "key": "2024-10",
+      "balanced_value_krw": 97129.64233737988,
+      "rolling_value_krw": 104747.01363342708,
+      "delta_krw": -7617.371296047204
+    },
+    {
+      "key": "2025-03",
+      "balanced_value_krw": 18396.631721916,
+      "rolling_value_krw": 24319.523958081765,
+      "delta_krw": -5922.892236165764
+    },
+    {
+      "key": "2026-04",
+      "balanced_value_krw": 24356.769752681983,
+      "rolling_value_krw": 29408.174719107323,
+      "delta_krw": -5051.40496642534
+    },
+    {
+      "key": "2023-12",
+      "balanced_value_krw": 47121.06685497885,
+      "rolling_value_krw": 51104.229101993464,
+      "delta_krw": -3983.1622470146103
+    },
+    {
+      "key": "2023-05",
+      "balanced_value_krw": 5908.573296631077,
+      "rolling_value_krw": 8563.581221055796,
+      "delta_krw": -2655.007924424719
+    },
+    {
+      "key": "2026-02",
+      "balanced_value_krw": -73190.38526893753,
+      "rolling_value_krw": -71348.12590520289,
+      "delta_krw": -1842.2593637346436
+    },
+    {
+      "key": "2023-10",
+      "balanced_value_krw": 79032.59050405955,
+      "rolling_value_krw": 80652.2663753648,
+      "delta_krw": -1619.6758713052404
+    }
+  ],
+  "plan_deltas_balanced_minus_rolling": [
+    {
+      "key": "PLAN_B_COMBINED_CONTEXT",
+      "balanced_value_krw": 434888.9246812773,
+      "rolling_value_krw": 417523.1790238447,
+      "delta_krw": 17365.74565743259
+    },
+    {
+      "key": "PLAN_A_ICT_FAT_TAIL",
+      "balanced_value_krw": 456226.9926284748,
+      "rolling_value_krw": 464756.25830418634,
+      "delta_krw": -8529.265675711562
+    }
+  ],
+  "strategy_deltas_balanced_minus_rolling": [
+    {
+      "key": "COMBINED_VOLUME_ICT",
+      "balanced_value_krw": 434888.9246812773,
+      "rolling_value_krw": 417523.1790238447,
+      "delta_krw": 17365.74565743259
+    },
+    {
+      "key": "ICT_FVG_OB_SWEEP",
+      "balanced_value_krw": 456226.9926284748,
+      "rolling_value_krw": 464756.25830418634,
+      "delta_krw": -8529.265675711562
+    }
+  ],
+  "setup_deltas_balanced_minus_rolling": [
+    {
+      "key": "DADDY_CONTEXT+FVG_OB_OVERLAP",
+      "balanced_value_krw": 434888.9246812773,
+      "rolling_value_krw": 417523.1790238447,
+      "delta_krw": 17365.74565743259
+    },
+    {
+      "key": "FVG_OB_OVERLAP",
+      "balanced_value_krw": 437811.5008990989,
+      "rolling_value_krw": 446340.76657481043,
+      "delta_krw": -8529.265675711562
+    },
+    {
+      "key": "FVG_LIQUIDITY_SWEEP",
+      "balanced_value_krw": 18415.491729376005,
+      "rolling_value_krw": 18415.491729376005,
+      "delta_krw": 0.0
+    }
+  ],
+  "largest_trade_level_differences": {
+    "balanced_helped_most": [
+      {
+        "entry_time": "2025-05-08 20:00:00",
+        "market": "KRW-PEPE",
+        "plan": "PLAN_B_COMBINED_CONTEXT",
+        "setup_type": "DADDY_CONTEXT+FVG_OB_OVERLAP",
+        "base_pnl_krw": 26648.792129389225,
+        "rolling_multiplier": 0.35,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 9327.077245286227,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-08-13 18:00:00",
+        "market": "KRW-LAYER",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -12509.658531391131,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.35,
+        "delta_krw": 8131.278045404236,
+        "balanced_reasons": [
+          "ROLLING_EDGE_THROTTLE"
+        ]
+      },
+      {
+        "entry_time": "2025-12-24 06:00:00",
+        "market": "KRW-MOVE",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 20912.216528974008,
+        "rolling_multiplier": 0.35,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 7319.275785140902,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-05-22 22:00:00",
+        "market": "KRW-TRUMP",
+        "plan": "PLAN_B_COMBINED_CONTEXT",
+        "setup_type": "DADDY_CONTEXT+FVG_OB_OVERLAP",
+        "base_pnl_krw": -14139.810443458024,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 4241.943133037408,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-05-22 22:00:00",
+        "market": "KRW-TRUMP",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -13997.586874847626,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 4199.276062454288,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-05-01 20:00:00",
+        "market": "KRW-PEPE",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -13277.74355317536,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 3983.323065952609,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-06-15 04:00:00",
+        "market": "KRW-LSK",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -13080.061551400935,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 3924.0184654202803,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-06-18 15:00:00",
+        "market": "KRW-AKT",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -12983.17429719625,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 3894.952289158875,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-08-01 22:00:00",
+        "market": "KRW-LPT",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": -12759.056086644618,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 3827.716825993386,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2026-01-13 23:00:00",
+        "market": "KRW-ALT",
+        "plan": "PLAN_B_COMBINED_CONTEXT",
+        "setup_type": "DADDY_CONTEXT+FVG_OB_OVERLAP",
+        "base_pnl_krw": -12656.10479401748,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": 3796.831438205245,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      }
+    ],
+    "balanced_hurt_most": [
+      {
+        "entry_time": "2025-05-08 20:00:00",
+        "market": "KRW-PEPE",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 27180.08534771667,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -8154.025604315004,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-07-18 22:00:00",
+        "market": "KRW-PENGU",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 23877.897233429736,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -7163.36917002892,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-08-07 01:00:00",
+        "market": "KRW-KAITO",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 23707.48454895481,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -7112.245364686445,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-08-16 06:00:00",
+        "market": "KRW-VIRTUAL",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 23618.959764656305,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -7085.687929396892,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-09-07 00:00:00",
+        "market": "KRW-HBAR",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 23204.23590053402,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -6961.270770160207,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-10-21 21:00:00",
+        "market": "KRW-WLD",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 22306.553789817946,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -6691.966136945384,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-01-14 21:00:00",
+        "market": "KRW-UNI",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 21548.97457940392,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -6464.692373821177,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-10-12 16:00:00",
+        "market": "KRW-TOKAMAK",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 21483.768284355105,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -6445.130485306532,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-10-05 07:00:00",
+        "market": "KRW-AAVE",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 21334.600613705254,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -6400.380184111576,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      },
+      {
+        "entry_time": "2025-03-15 11:00:00",
+        "market": "KRW-BCH",
+        "plan": "PLAN_A_ICT_FAT_TAIL",
+        "setup_type": "FVG_OB_OVERLAP",
+        "base_pnl_krw": 19781.24843125389,
+        "rolling_multiplier": 1.0,
+        "balanced_multiplier": 0.7,
+        "delta_krw": -5934.374529376168,
+        "balanced_reasons": [
+          "ROLLING_EDGE_CAUTION"
+        ]
+      }
+    ]
+  },
+  "recommended_policy_stack": [
+    {
+      "policy": "기본 방어축",
+      "recommendation": "ROLLING_EDGE_THROTTLE",
+      "reason": "최대낙폭이 가장 낮고 규칙이 단순합니다. 최근 20거래 성과가 무너질 때만 35%로 줄여 큰 승리 구간을 덜 잘라먹습니다."
+    },
+    {
+      "policy": "스팟 보완",
+      "recommendation": "BALANCED_GROWTH overlay",
+      "reason": "PF 0.8~1.2의 애매한 구간에서 70% 감속이 Plan B/Combined 손실을 줄였습니다. 단, Plan A fat-tail 승리도 일부 잘라먹기 때문에 전체 기본값으로만 보지 말고 조건부 보완으로 둡니다."
+    },
+    {
+      "policy": "깊은 낙폭 대응",
+      "recommendation": "HYBRID/DEFENSIVE rules as emergency brake",
+      "reason": "수익률은 Balanced/Rolling보다 낮지만 낙폭이 커질 때 심리적·운영상 방어 장치로 쓸 수 있습니다. forward에서 DD가 확대될 때만 단계적으로 켭니다."
+    },
+    {
+      "policy": "공격형 운용",
+      "recommendation": "AGGRESSIVE_GROWTH research only",
+      "reason": "수익률 확대 후보지만 이번 검증에서는 Balanced보다 수익과 return/MDD가 낮았습니다. 실전 후보가 아니라 별도 연구 후보입니다."
+    },
+    {
+      "policy": "제외",
+      "recommendation": "HIGH_OCTANE_RESEARCH 제외",
+      "reason": "거래를 많이 건너뛰고 MDD 대비 효율이 낮으며 DD cap 위반이 많습니다. 고위험 연구 기록으로만 유지합니다."
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

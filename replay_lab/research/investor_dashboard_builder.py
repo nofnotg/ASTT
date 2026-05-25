@@ -32,6 +32,11 @@ REPORT_LABELS: dict[str, tuple[str, str, str]] = {
         "방어 규칙을 처음 날짜부터 순차 적용했을 때도 효과가 유지되는지 확인합니다.",
         "V6.4 핵심",
     ),
+    "latest_v64_policy_blend_analysis_report.html": (
+        "V6.4 정책 조합 분석",
+        "Rolling Edge, Balanced, Hybrid, Aggressive를 하나의 운용 부품으로 비교해 보완 가능한 지점을 찾습니다.",
+        "V6.4 핵심",
+    ),
     "latest_head_controller_v64_review_report.html": (
         "V6.4 Head Controller 검토",
         "LLM 기반 복기와 다음 실험 제안을 보되, 자동 적용은 금지합니다.",
@@ -75,6 +80,7 @@ V64_PACK = [
     "latest_v64_scenario_comparison_report.html",
     "latest_v64_return_amplification_report.html",
     "latest_v64_causal_defense_report.html",
+    "latest_v64_policy_blend_analysis_report.html",
 ]
 
 
