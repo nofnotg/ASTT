@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT V6.4 Investor Summary</title>
+  <style>
+    body{margin:0;font-family:Arial,'Malgun Gothic',sans-serif;background:#f8fafc;color:#172033}
+    header{background:#0f172a;color:#fff;padding:28px}main{max-width:1180px;margin:auto;padding:20px}
+    .notice{background:#fffbeb;border-left:5px solid #f59e0b;padding:14px;margin:14px 0}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;margin:14px 0}
+    th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eef2ff}
+    .good{color:#047857;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+  </style>
+</head>
+<body>
+  <header><h1>ASTT V6.4 Investor Summary</h1><p>비전문가 투자자가 볼 수 있게 V6.4 결론을 요약합니다.</p></header>
+  <main>
+    <section class="notice"><strong>안전 고지:</strong> 이 리포트는 PAPER 모의투자 재검증입니다. 실제 주문, 주문 테스트, 취소, 출금은 사용하지 않았고 live_order_enabled=false입니다.</section>
+    <h2>한눈에 보는 결론</h2>
+    <p>핵심은 방어 판단이 거래 이후 결과를 훔쳐보지 않았는지, 즉 정답지를 보고 만든 사후 최적화가 아닌지와, 방어를 켠 상태에서 수익률 확대가 가능한지를 나눠서 보는 것입니다.</p>
+    <table><tbody><tr><td>schema_version</td><td>v64_investor_summary_v1</td></tr><tr><td>one_line_conclusion</td><td>정답지 사용 감사가 PASS라면 Balanced Growth를 V6.5 forward paper 후보로 두고, Aggressive Growth는 별도 연구 후보로 검증합니다.</td></tr><tr><td>defense_validated</td><td>True</td></tr><tr><td>hindsight_risk</td><td>LOW</td></tr><tr><td>recommended_defense_policy</td><td>BALANCED_GROWTH</td></tr><tr><td>recommended_growth_policy</td><td>BALANCED_GROWTH</td></tr><tr><td>forward_candidate_plan</td><td>BALANCED_GROWTH</td></tr><tr><td>final_judgement</td><td>DEFENSE_VALIDATED</td></tr><tr><td>real_order_enabled</td><td>False</td></tr><tr><td>live_order_allowed</td><td>False</td></tr><tr><td>auto_apply_allowed</td><td>False</td></tr></tbody></table>
+    <h2>실전 금지 사유</h2>
+    <p>아직 OHLCV 기반 재검증이며 실제 호가 깊이, 스프레드, 체결 지연 overlay가 forward paper에서 충분히 검증되지 않았습니다. 따라서 LIVE_READY는 금지이며 기본 판정은 LIVE_NOT_ALLOWED입니다.</p>
+  </main>
+</body>
+</html>

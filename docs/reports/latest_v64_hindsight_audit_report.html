@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT V6.4 Hindsight Audit</title>
+  <style>
+    body{margin:0;font-family:Arial,'Malgun Gothic',sans-serif;background:#f8fafc;color:#172033}
+    header{background:#0f172a;color:#fff;padding:28px}main{max-width:1180px;margin:auto;padding:20px}
+    .notice{background:#fffbeb;border-left:5px solid #f59e0b;padding:14px;margin:14px 0}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;margin:14px 0}
+    th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eef2ff}
+    .good{color:#047857;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+  </style>
+</head>
+<body>
+  <header><h1>ASTT V6.4 Hindsight Audit</h1><p>방어 판단이 정답지를 보지 않았는지 검사합니다.</p></header>
+  <main>
+    <section class="notice"><strong>안전 고지:</strong> 이 리포트는 PAPER 모의투자 재검증입니다. 실제 주문, 주문 테스트, 취소, 출금은 사용하지 않았고 live_order_enabled=false입니다.</section>
+    <h2>한눈에 보는 결론</h2>
+    <p>핵심은 방어 판단이 거래 이후 결과를 훔쳐보지 않았는지, 즉 정답지를 보고 만든 사후 최적화가 아닌지와, 방어를 켠 상태에서 수익률 확대가 가능한지를 나눠서 보는 것입니다.</p>
+    <table><tbody><tr><td>schema_version</td><td>v64_hindsight_audit_v1</td></tr><tr><td>overall_status</td><td>PASS</td></tr><tr><td>real_order_enabled</td><td>False</td></tr><tr><td>live_order_allowed</td><td>False</td></tr><tr><td>auto_apply_allowed</td><td>False</td></tr></tbody></table><h2>정답지 사용 여부 감사</h2><table><thead><tr><th>검사</th><th>상태</th><th>메모</th></tr></thead><tbody><tr><td>feature_cutoff_check</td><td class="good">PASS</td><td>200</td></tr><tr><td>rolling_window_check</td><td class="good">PASS</td><td>200</td></tr><tr><td>defense_decision_check</td><td class="good">PASS</td><td>200</td></tr><tr><td>universe_check</td><td class="good">PASS</td><td>기존 true walk-forward 거래일지의 universe를 그대로 사용했으며 V6.4에서 미래 성과 기반 종목 제외를 하지 않았습니다.</td></tr><tr><td>equity_chain_check</td><td class="good">PASS</td><td>1824</td></tr><tr><td>no_hindsight_check</td><td class="good">PASS</td><td>4</td></tr></tbody></table>
+    <h2>실전 금지 사유</h2>
+    <p>아직 OHLCV 기반 재검증이며 실제 호가 깊이, 스프레드, 체결 지연 overlay가 forward paper에서 충분히 검증되지 않았습니다. 따라서 LIVE_READY는 금지이며 기본 판정은 LIVE_NOT_ALLOWED입니다.</p>
+  </main>
+</body>
+</html>

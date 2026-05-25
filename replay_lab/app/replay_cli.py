@@ -236,6 +236,18 @@ from portfolio.walk_forward_investment_simulator import run_true_walk_forward_pa
 from replay_lab.research.investor_dashboard_builder import build_investor_dashboard
 from replay_lab.research.drawdown_defense_revalidation import run_drawdown_defense_revalidation
 from replay_lab.feedback.drawdown_defense_html_report import DrawdownDefenseHTMLReport
+from replay_lab.research.v64_causal_defense_rerun import run_v64_causal_defense_rerun
+from replay_lab.research.v64_return_amplification_lab import run_v64_return_amplification_lab
+from replay_lab.research.v64_scenario_comparison import build_v64_scenario_comparison
+from replay_lab.research.v64_hindsight_audit import run_v64_hindsight_audit
+from replay_lab.research.v64_investor_summary import build_v64_investor_summary
+from replay_lab.research.head_controller_v64_review import run_head_controller_v64_review
+from replay_lab.feedback.v64_causal_defense_html_report import V64CausalDefenseHTMLReport
+from replay_lab.feedback.v64_return_amplification_html_report import V64ReturnAmplificationHTMLReport
+from replay_lab.feedback.v64_scenario_comparison_html_report import V64ScenarioComparisonHTMLReport
+from replay_lab.feedback.v64_hindsight_audit_html_report import V64HindsightAuditHTMLReport
+from replay_lab.feedback.v64_investor_summary_html_report import V64InvestorSummaryHTMLReport
+from replay_lab.feedback.head_controller_v64_review_html import HeadControllerV64ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1836,6 +1848,68 @@ def build_drawdown_defense_report_html_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_v64_causal_defense_rerun_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v64_causal_defense_rerun(args.initial_cash_krw, use_history), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v64_return_amplification_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v64_return_amplification_lab(args.initial_cash_krw, use_history), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v64_scenario_comparison_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v64_scenario_comparison(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v64_hindsight_audit_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v64_hindsight_audit(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v64_investor_summary_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v64_investor_summary(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v64_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v64_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v64_causal_defense_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v64 causal defense report: {V64CausalDefenseHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
+def build_v64_return_amplification_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v64 return amplification report: {V64ReturnAmplificationHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
+def build_v64_scenario_comparison_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v64 scenario comparison report: {V64ScenarioComparisonHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
+def build_v64_hindsight_audit_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v64 hindsight audit report: {V64HindsightAuditHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
+def build_v64_investor_summary_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v64 investor report: {V64InvestorSummaryHTMLReport().build(args.reports_dir)}")
+    return 0
+
+
+def build_head_controller_v64_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v64 report: {HeadControllerV64ReviewHTML().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3159,6 +3233,57 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-drawdown-defense-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_drawdown_defense_report_html_command)
+
+    p = sub.add_parser("run-v64-causal-defense-rerun")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v64_causal_defense_rerun_command)
+
+    p = sub.add_parser("run-v64-return-amplification-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v64_return_amplification_lab_command)
+
+    p = sub.add_parser("build-v64-scenario-comparison")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_scenario_comparison_command)
+
+    p = sub.add_parser("run-v64-hindsight-audit")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v64_hindsight_audit_command)
+
+    p = sub.add_parser("build-v64-investor-summary")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_investor_summary_command)
+
+    p = sub.add_parser("run-head-controller-v64-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_head_controller_v64_review_command)
+
+    p = sub.add_parser("build-v64-causal-defense-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_causal_defense_report_html_command)
+
+    p = sub.add_parser("build-v64-return-amplification-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_return_amplification_report_html_command)
+
+    p = sub.add_parser("build-v64-scenario-comparison-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_scenario_comparison_report_html_command)
+
+    p = sub.add_parser("build-v64-hindsight-audit-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_hindsight_audit_report_html_command)
+
+    p = sub.add_parser("build-v64-investor-summary-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v64_investor_summary_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v64-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v64_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

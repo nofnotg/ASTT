@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT V6.4 Scenario Comparison</title>
+  <style>
+    body{margin:0;font-family:Arial,'Malgun Gothic',sans-serif;background:#f8fafc;color:#172033}
+    header{background:#0f172a;color:#fff;padding:28px}main{max-width:1180px;margin:auto;padding:20px}
+    .notice{background:#fffbeb;border-left:5px solid #f59e0b;padding:14px;margin:14px 0}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #e5e7eb;margin:14px 0}
+    th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}th{background:#eef2ff}
+    .good{color:#047857;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+  </style>
+</head>
+<body>
+  <header><h1>ASTT V6.4 Scenario Comparison</h1><p>Baseline, 방어형, 균형형, 공격형, 고위험 연구형을 같은 조건으로 비교합니다.</p></header>
+  <main>
+    <section class="notice"><strong>안전 고지:</strong> 이 리포트는 PAPER 모의투자 재검증입니다. 실제 주문, 주문 테스트, 취소, 출금은 사용하지 않았고 live_order_enabled=false입니다.</section>
+    <h2>한눈에 보는 결론</h2>
+    <p>핵심은 방어 판단이 거래 이후 결과를 훔쳐보지 않았는지, 즉 정답지를 보고 만든 사후 최적화가 아닌지와, 방어를 켠 상태에서 수익률 확대가 가능한지를 나눠서 보는 것입니다.</p>
+    <h2>시나리오 비교</h2><table><thead><tr><th>시나리오</th><th>최종 평가금</th><th>수익률</th><th>최대 낙폭(MDD)</th><th>PF</th><th>거래 수</th><th>Return/MDD</th><th>판정</th></tr></thead><tbody><tr><td>BASELINE</td><td>886,330원</td><td>+77.27%</td><td>-44.27%</td><td>1.08</td><td>1358</td><td>0.00</td><td>TOO_RISKY</td></tr><tr><td>DRAWDOWN_THROTTLE</td><td>980,830원</td><td>+96.17%</td><td>-29.50%</td><td>1.15</td><td>1358</td><td>0.00</td><td>PAPER_MORE_REQUIRED</td></tr><tr><td>ROLLING_EDGE_THROTTLE</td><td>1,382,279원</td><td>+176.46%</td><td>-15.37%</td><td>1.28</td><td>1358</td><td>0.00</td><td>KEEP_FOR_FORWARD</td></tr><tr><td>HYBRID_DEFENSE</td><td>1,302,658원</td><td>+160.53%</td><td>-17.68%</td><td>1.27</td><td>1358</td><td>0.00</td><td>KEEP_FOR_FORWARD</td></tr><tr><td>DEFENSIVE_CORE</td><td>1,225,290원</td><td>+145.06%</td><td>-19.13%</td><td>1.25</td><td>1358</td><td>0.00</td><td>KEEP_FOR_FORWARD</td></tr><tr><td>BALANCED_GROWTH</td><td>1,391,116원</td><td>+178.22%</td><td>-15.50%</td><td>1.30</td><td>1358</td><td>0.00</td><td>KEEP_FOR_FORWARD</td></tr><tr><td>AGGRESSIVE_GROWTH</td><td>1,213,950원</td><td>+142.79%</td><td>-16.84%</td><td>1.23</td><td>1358</td><td>0.00</td><td>KEEP_FOR_FORWARD</td></tr><tr><td>HIGH_OCTANE_RESEARCH</td><td>966,027원</td><td>+93.21%</td><td>-25.67%</td><td>1.14</td><td>947</td><td>0.00</td><td>TOO_RISKY</td></tr></tbody></table>
+    <h2>실전 금지 사유</h2>
+    <p>아직 OHLCV 기반 재검증이며 실제 호가 깊이, 스프레드, 체결 지연 overlay가 forward paper에서 충분히 검증되지 않았습니다. 따라서 LIVE_READY는 금지이며 기본 판정은 LIVE_NOT_ALLOWED입니다.</p>
+  </main>
+</body>
+</html>
