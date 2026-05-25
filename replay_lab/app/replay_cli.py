@@ -231,6 +231,9 @@ from replay_lab.feedback.v62_full_investment_report_html import V62FullInvestmen
 from replay_lab.feedback.v62_strategy_router_report_html import V62StrategyRouterReportHTML
 from replay_lab.feedback.v62_risk_report_html import V62RiskReportHTML
 from replay_lab.feedback.head_controller_v62_review_html import HeadControllerV62ReviewHTML
+from market_data.upbit_historical_archive_collector import collect_upbit_historical_archive
+from portfolio.walk_forward_investment_simulator import run_true_walk_forward_paper
+from replay_lab.research.investor_dashboard_builder import build_investor_dashboard
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1790,6 +1793,32 @@ def build_head_controller_v62_review_report_html_command(args: argparse.Namespac
     return 0
 
 
+def collect_upbit_historical_archive_command(args: argparse.Namespace) -> int:
+    result = collect_upbit_historical_archive(
+        markets=args.markets,
+        timeframes=args.timeframes,
+        max_lookback_days=args.max_lookback_days,
+        archive_dir=args.archive_dir,
+    )
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_true_walk_forward_paper_command(args: argparse.Namespace) -> int:
+    result = run_true_walk_forward_paper(
+        initial_cash_krw=args.initial_cash_krw,
+        archive_dir=args.archive_dir,
+        risk_profile=args.risk_profile,
+    )
+    print(json.dumps(result, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_investor_dashboard_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_investor_dashboard(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3086,6 +3115,23 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v62-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v62_review_report_html_command)
+
+    p = sub.add_parser("collect-upbit-historical-archive")
+    p.add_argument("--markets", default="TOP_KRW_50")
+    p.add_argument("--timeframes", default="1d,4h,1h,15m,5m,1m")
+    p.add_argument("--max-lookback-days", type=int, default=1460)
+    p.add_argument("--archive-dir", default=str(REPLAY_STORE_DIR / "historical_archive"))
+    p.set_defaults(func=collect_upbit_historical_archive_command)
+
+    p = sub.add_parser("run-true-walk-forward-paper")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--archive-dir", default=str(REPLAY_STORE_DIR / "historical_archive"))
+    p.add_argument("--risk-profile", default="aggressive")
+    p.set_defaults(func=run_true_walk_forward_paper_command)
+
+    p = sub.add_parser("build-investor-dashboard")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_investor_dashboard_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

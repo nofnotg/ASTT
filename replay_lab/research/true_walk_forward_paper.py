@@ -1,0 +1,3 @@
+from __future__ import annotations
+
+from portfolio.walk_forward_investment_simulator import run_true_walk_forward_paper
