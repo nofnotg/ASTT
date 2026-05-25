@@ -1,0 +1,41 @@
+{
+  "schema_version": "v6",
+  "months": 12,
+  "paper_entry_policy": "ACTIVE_RESEARCH",
+  "initial_cash_krw": 500000.0,
+  "weekly_rows": [
+    {
+      "week": "2026-05-10",
+      "trades": 2,
+      "return_pct": -0.017537537537538447,
+      "equity": 499912.3123123123,
+      "mdd_pct": -0.017537537537538447
+    },
+    {
+      "week": "2026-05-11",
+      "trades": 2,
+      "return_pct": -0.06666666666667442,
+      "equity": 499578.97897897894,
+      "mdd_pct": -0.08420420420421287
+    },
+    {
+      "week": "2026-05-13",
+      "trades": 13,
+      "return_pct": 9.011793343501072,
+      "equity": 544637.9456964843,
+      "mdd_pct": 0.0
+    },
+    {
+      "week": "2026-05-14",
+      "trades": 35,
+      "return_pct": -1.3481095486537422,
+      "equity": 537897.3979532156,
+      "mdd_pct": -1.2376199265089456
+    }
+  ],
+  "weekly_trade_count": 52,
+  "weekly_return_avg": 1.8948698976607794,
+  "final_equity_krw": 537897.3979532156,
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

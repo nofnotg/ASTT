@@ -1,0 +1,401 @@
+{
+  "schema_version": "v6",
+  "strategy": "DADDY_VOLUME_NECKLINE",
+  "setup_count": 8,
+  "setups": [
+    {
+      "market": "KRW-PIEVERSE",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "SR_FLIP_RETEST_VOLUME",
+      "setup_quality_score": 59.7125,
+      "entry_price": 1423.0,
+      "stop_price": 1267.0,
+      "target_price": 1703.8,
+      "evidence": {
+        "volume": {
+          "volume_signal": "BREAKOUT_WITH_VOLUME",
+          "volume_ratio": 2.1248996630791557,
+          "score": 80.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 1152.5,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 1372.15,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 3.5734364019676677,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "RETEST_HOLD",
+          "level": 1399.0,
+          "score": 78.0
+        },
+        "fib": {
+          "fib_state": "OUTSIDE_FIB_ZONE",
+          "fib_50": 1198.5,
+          "fib_618": 1144.81,
+          "score": 25.0
+        },
+        "mtf": {
+          "market": "KRW-PIEVERSE",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "BREAKOUT",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 72.25,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999996
+    },
+    {
+      "market": "KRW-DOGE",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "SR_FLIP_RETEST_VOLUME",
+      "setup_quality_score": 57.2125,
+      "entry_price": 171.0,
+      "stop_price": 163.0,
+      "target_price": 185.4,
+      "evidence": {
+        "volume": {
+          "volume_signal": "PULLBACK_WICK_VOLUME",
+          "volume_ratio": 3.613910779608464,
+          "score": 70.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 159.5,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 167.3,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 2.163742690058473,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "RETEST_HOLD",
+          "level": 171.0,
+          "score": 78.0
+        },
+        "fib": {
+          "fib_state": "OUTSIDE_FIB_ZONE",
+          "fib_50": 161.5,
+          "fib_618": 159.022,
+          "score": 25.0
+        },
+        "mtf": {
+          "market": "KRW-DOGE",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "BREAKOUT",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 72.25,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000007
+    },
+    {
+      "market": "KRW-JTO",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "FIB_PULLBACK_VOLUME",
+      "setup_quality_score": 53.4375,
+      "entry_price": 760.0,
+      "stop_price": 707.0,
+      "target_price": 855.4,
+      "evidence": {
+        "volume": {
+          "volume_signal": "BREAKOUT_WITH_VOLUME",
+          "volume_ratio": 3.7709515696611975,
+          "score": 80.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 627.95,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 816.6999999999999,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 7.460526315789465,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 779.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "FIB_REACTION_ZONE",
+          "fib_50": 758.0,
+          "fib_618": 694.5160000000001,
+          "score": 72.0
+        },
+        "mtf": {
+          "market": "KRW-JTO",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 64.75,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999996
+    },
+    {
+      "market": "KRW-USDT",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "NECKLINE_VOLUME_SETUP",
+      "setup_quality_score": 51.300000000000004,
+      "entry_price": 1486.0,
+      "stop_price": 1441.42,
+      "target_price": 1566.244,
+      "evidence": {
+        "volume": {
+          "volume_signal": "NEUTRAL",
+          "volume_ratio": 1.1020625011245557,
+          "score": 35.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 1481.25,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 1484.0,
+          "neckline_state": "BREAKOUT_RETEST_AREA",
+          "distance_pct": 0.13458950201884254,
+          "score": 75.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 1489.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "FIB_REACTION_ZONE",
+          "fib_50": 1480.0,
+          "fib_618": 1475.516,
+          "score": 72.0
+        },
+        "mtf": {
+          "market": "KRW-USDT",
+          "weekly_trend": "DOWN",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_WATCH",
+          "mtf_score": 47.0,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.800000000000001
+    },
+    {
+      "market": "KRW-VIRTUAL",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "FIB_PULLBACK_VOLUME",
+      "setup_quality_score": 48.612500000000004,
+      "entry_price": 1159.0,
+      "stop_price": 1124.23,
+      "target_price": 1221.586,
+      "evidence": {
+        "volume": {
+          "volume_signal": "BOTTOM_VOLUME",
+          "volume_ratio": 2.4535251840321073,
+          "score": 65.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 1157.1,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 1365.65,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 17.830025884383097,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 1355.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "FIB_REACTION_ZONE",
+          "fib_50": 1221.0,
+          "fib_618": 1169.08,
+          "score": 72.0
+        },
+        "mtf": {
+          "market": "KRW-VIRTUAL",
+          "weekly_trend": "UP",
+          "daily_trend": "CHOP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 43.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000014
+    },
+    {
+      "market": "KRW-TRX",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "NECKLINE_VOLUME_SETUP",
+      "setup_quality_score": 47.4875,
+      "entry_price": 520.0,
+      "stop_price": 504.4,
+      "target_price": 548.08,
+      "evidence": {
+        "volume": {
+          "volume_signal": "NEUTRAL",
+          "volume_ratio": 1.3337464577557931,
+          "score": 35.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 501.15,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 519.3,
+          "neckline_state": "BREAKOUT_RETEST_AREA",
+          "distance_pct": 0.13461538461539338,
+          "score": 75.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 522.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "OUTSIDE_FIB_ZONE",
+          "fib_50": 500.5,
+          "fib_618": 495.426,
+          "score": 25.0
+        },
+        "mtf": {
+          "market": "KRW-TRX",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 64.75,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    },
+    {
+      "market": "KRW-AKT",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "PULLBACK_WICK_VOLUME",
+      "setup_quality_score": 46.2375,
+      "entry_price": 1296.0,
+      "stop_price": 1197.0,
+      "target_price": 1474.2,
+      "evidence": {
+        "volume": {
+          "volume_signal": "PULLBACK_WICK_VOLUME",
+          "volume_ratio": 4.2302349919492706,
+          "score": 70.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 942.6,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 1269.4,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 2.052469135802462,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 1356.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "OUTSIDE_FIB_ZONE",
+          "fib_50": 1036.0,
+          "fib_618": 960.48,
+          "score": 25.0
+        },
+        "mtf": {
+          "market": "KRW-AKT",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 64.75,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000005
+    },
+    {
+      "market": "KRW-FF",
+      "strategy": "DADDY_VOLUME_NECKLINE",
+      "setup_type": "PULLBACK_WICK_VOLUME",
+      "setup_quality_score": 46.2375,
+      "entry_price": 129.0,
+      "stop_price": 124.0,
+      "target_price": 138.0,
+      "evidence": {
+        "volume": {
+          "volume_signal": "PULLBACK_WICK_VOLUME",
+          "volume_ratio": 1.9194822349708704,
+          "score": 70.0
+        },
+        "ma20": {
+          "ma20_state": "ABOVE_MA20",
+          "ma20": 100.795,
+          "score": 65.0
+        },
+        "neckline": {
+          "neckline": 118.15,
+          "neckline_state": "FAR_FROM_NECKLINE",
+          "distance_pct": 8.41085271317829,
+          "score": 25.0
+        },
+        "sr_flip": {
+          "sr_flip_state": "NO_FLIP",
+          "level": 133.0,
+          "score": 25.0
+        },
+        "fib": {
+          "fib_state": "OUTSIDE_FIB_ZONE",
+          "fib_50": 112.0,
+          "fib_618": 107.044,
+          "score": 25.0
+        },
+        "mtf": {
+          "market": "KRW-FF",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 64.75,
+          "risk_regime": "RISK_ON"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

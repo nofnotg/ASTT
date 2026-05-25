@@ -187,6 +187,19 @@ from execution.aggressive_paper_learning_runner import (
 )
 from replay_lab.research.llm_strategy_review_v5r3 import run_llm_strategy_review_v5r3
 from replay_lab.feedback.v5r3_strategy_learning_html_report import V5R3StrategyLearningHTMLReport
+from replay_lab.research.v6_ohlcv_collection import run_v6_ohlcv_collection
+from replay_lab.research.v6_mtf_context_generation import run_v6_mtf_context_generation
+from replay_lab.research.v6_daddy_strategy_backtest import run_v6_daddy_backtest
+from replay_lab.research.v6_ict_strategy_backtest import run_v6_ict_backtest
+from replay_lab.research.v6_combined_strategy_backtest import run_v6_combined_backtest
+from replay_lab.research.v6_weekly_paper_simulation import run_v6_weekly_paper_simulation
+from replay_lab.research.head_controller_v6_review import run_head_controller_v6_review
+from replay_lab.feedback.v6_mtf_report_html import V6MTFReportHTML
+from replay_lab.feedback.v6_daddy_strategy_report_html import V6DaddyStrategyReportHTML
+from replay_lab.feedback.v6_ict_strategy_report_html import V6ICTStrategyReportHTML
+from replay_lab.feedback.v6_combined_strategy_report_html import V6CombinedStrategyReportHTML
+from replay_lab.feedback.v6_weekly_performance_report_html import V6WeeklyPerformanceReportHTML
+from replay_lab.feedback.head_controller_v6_review_html import HeadControllerV6ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1520,6 +1533,71 @@ def build_v5r3_strategy_learning_report_command(args: argparse.Namespace) -> int
     return 0
 
 
+def collect_v6_ohlcv_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_ohlcv_collection(args.markets, args.months, args.timeframes), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v6_mtf_context_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_mtf_context_generation(args.markets), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v6_daddy_backtest_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_daddy_backtest(args.months, args.initial_cash_krw, args.paper_entry_policy), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v6_ict_backtest_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_ict_backtest(args.months, args.initial_cash_krw, args.paper_entry_policy), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v6_combined_backtest_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_combined_backtest(args.months, args.initial_cash_krw, args.paper_entry_policy), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v6_weekly_paper_simulation_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v6_weekly_paper_simulation(args.months, args.initial_cash_krw, args.paper_entry_policy), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v6_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v6_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v6_mtf_report_command(args: argparse.Namespace) -> int:
+    print(f"v6 mtf report: {V6MTFReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v6_daddy_strategy_report_command(args: argparse.Namespace) -> int:
+    print(f"v6 daddy report: {V6DaddyStrategyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v6_ict_strategy_report_command(args: argparse.Namespace) -> int:
+    print(f"v6 ict report: {V6ICTStrategyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v6_combined_strategy_report_command(args: argparse.Namespace) -> int:
+    print(f"v6 combined report: {V6CombinedStrategyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v6_weekly_performance_report_command(args: argparse.Namespace) -> int:
+    print(f"v6 weekly report: {V6WeeklyPerformanceReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_head_controller_v6_review_report_command(args: argparse.Namespace) -> int:
+    print(f"head controller v6 report: {HeadControllerV6ReviewHTML().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2618,6 +2696,69 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v5r3-strategy-learning-report")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v5r3_strategy_learning_report_command)
+
+    p = sub.add_parser("collect-v6-ohlcv")
+    p.add_argument("--markets", default="TOP_KRW_50")
+    p.add_argument("--months", type=int, default=12)
+    p.add_argument("--timeframes", default="1w,1d,4h,1h,15m,5m,1m")
+    p.set_defaults(func=collect_v6_ohlcv_command)
+
+    p = sub.add_parser("build-v6-mtf-context")
+    p.add_argument("--markets", default="TOP_KRW_50")
+    p.set_defaults(func=build_v6_mtf_context_command)
+
+    p = sub.add_parser("run-v6-daddy-backtest")
+    p.add_argument("--months", type=int, default=12)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--paper-entry-policy", default="ACTIVE_RESEARCH", choices=["ACTIVE_RESEARCH"])
+    p.set_defaults(func=run_v6_daddy_backtest_command)
+
+    p = sub.add_parser("run-v6-ict-backtest")
+    p.add_argument("--months", type=int, default=12)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--paper-entry-policy", default="ACTIVE_RESEARCH", choices=["ACTIVE_RESEARCH"])
+    p.set_defaults(func=run_v6_ict_backtest_command)
+
+    p = sub.add_parser("run-v6-combined-backtest")
+    p.add_argument("--months", type=int, default=12)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--paper-entry-policy", default="ACTIVE_RESEARCH", choices=["ACTIVE_RESEARCH"])
+    p.set_defaults(func=run_v6_combined_backtest_command)
+
+    p = sub.add_parser("run-v6-weekly-paper-simulation")
+    p.add_argument("--months", type=int, default=12)
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--paper-entry-policy", default="ACTIVE_RESEARCH", choices=["ACTIVE_RESEARCH"])
+    p.set_defaults(func=run_v6_weekly_paper_simulation_command)
+
+    p = sub.add_parser("run-head-controller-v6-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_v6_review_command)
+
+    p = sub.add_parser("build-v6-mtf-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v6_mtf_report_command)
+
+    p = sub.add_parser("build-v6-daddy-strategy-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v6_daddy_strategy_report_command)
+
+    p = sub.add_parser("build-v6-ict-strategy-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v6_ict_strategy_report_command)
+
+    p = sub.add_parser("build-v6-combined-strategy-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v6_combined_strategy_report_command)
+
+    p = sub.add_parser("build-v6-weekly-performance-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v6_weekly_performance_report_command)
+
+    p = sub.add_parser("build-head-controller-v6-review-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v6_review_report_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

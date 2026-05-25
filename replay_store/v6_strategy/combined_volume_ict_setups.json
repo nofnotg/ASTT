@@ -1,0 +1,2695 @@
+{
+  "schema_version": "v6",
+  "strategy": "COMBINED_VOLUME_ICT",
+  "setup_count": 22,
+  "setups": [
+    {
+      "market": "KRW-PIEVERSE",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+      "setup_quality_score": 89.08125,
+      "entry_price": 1423.0,
+      "stop_price": 1260.665,
+      "target_price": 1715.203,
+      "risk_reward_ratio": 1.7999999999999994,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "BREAKOUT_WITH_VOLUME",
+            "volume_ratio": 2.1248996630791557,
+            "score": 80.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 1152.5,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 1372.15,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 3.5734364019676677,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "RETEST_HOLD",
+            "level": 1399.0,
+            "score": 78.0
+          },
+          "fib": {
+            "fib_state": "OUTSIDE_FIB_ZONE",
+            "fib_50": 1198.5,
+            "fib_618": 1144.81,
+            "score": 25.0
+          },
+          "mtf": {
+            "market": "KRW-PIEVERSE",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "BREAKOUT",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 72.25,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1372.0,
+              "zone_high": 1378.0,
+              "gap_size_pct": 0.4363636363636364,
+              "created_at": "2026-05-13 07:00:00",
+              "quality_score": 48.72727272727273
+            },
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1327.0,
+              "zone_high": 1368.0,
+              "gap_size_pct": 3.0426716141001857,
+              "created_at": "2026-05-14 01:00:00",
+              "quality_score": 100.0
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1327.0,
+              "zone_high": 1345.0,
+              "gap_size_pct": 1.347305389221557,
+              "created_at": "2026-05-14 03:00:00",
+              "quality_score": 66.94610778443113
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1267.0,
+              "zone_high": 1372.0,
+              "volume_score": 93.09962812377763,
+              "quality_score": 82.23985124951105
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1336.0,
+              "zone_high": 1362.0,
+              "volume_score": 14.15377396279175,
+              "quality_score": 50.661509585116704
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1346.0,
+              "zone_high": 1373.0,
+              "volume_score": 33.91659846847054,
+              "quality_score": 58.566639387388214
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+              "swept_level": 1302.0,
+              "reclaim_price": 1319.0,
+              "reclaim_time": "2026-05-13 09:30:00",
+              "quality_score": 72.0
+            },
+            {
+              "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+              "swept_level": 1272.0,
+              "reclaim_price": 1289.0,
+              "reclaim_time": "2026-05-14 01:00:00",
+              "quality_score": 72.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1372.0,
+              "reclaim_price": 1360.0,
+              "reclaim_time": "2026-05-14 07:30:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_OB_OVERLAP",
+            "market": "KRW-PIEVERSE",
+            "timeframe": "1h",
+            "zone_low": 1267.0,
+            "zone_high": 1313.0,
+            "quality_score": 100.0,
+            "risk_level": "LOW"
+          },
+          "mtf": {
+            "market": "KRW-PIEVERSE",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "BREAKOUT",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 72.25,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-SHIB",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 87.89871660555268,
+      "entry_price": 0.0094,
+      "stop_price": 0.009118,
+      "target_price": 0.009907600000000003,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 0.00946,
+            "zone_high": 0.00969,
+            "gap_size_pct": 2.4020887728459637,
+            "created_at": "2026-05-13 00:00:00",
+            "quality_score": 88.04177545691928
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 0.00937,
+            "zone_high": 0.0095,
+            "gap_size_pct": 1.3778484366719652,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 67.5569687334393
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 0.00939,
+            "zone_high": 0.0095,
+            "gap_size_pct": 1.1646373742720908,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 63.292747485441815
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 0.00936,
+            "zone_high": 0.00937,
+            "volume_score": 2.040951655426637,
+            "quality_score": 45.81638066217066
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 0.00933,
+            "zone_high": 0.00938,
+            "volume_score": 35.571577394597966,
+            "quality_score": 59.22863095783919
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 0.00932,
+            "zone_high": 0.00937,
+            "volume_score": 46.88137107301119,
+            "quality_score": 63.75254842920448
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 0.00938,
+            "reclaim_price": 0.00937,
+            "reclaim_time": "2026-05-14 03:30:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 0.00938,
+            "reclaim_price": 0.00934,
+            "reclaim_time": "2026-05-14 06:15:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 0.00933,
+            "reclaim_price": 0.00934,
+            "reclaim_time": "2026-05-14 06:30:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-SHIB",
+          "timeframe": "1h",
+          "zone_low": 0.00961,
+          "zone_high": 0.00967,
+          "quality_score": 99.06089575694084,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-SHIB",
+          "weekly_trend": "UP",
+          "daily_trend": "CHOP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 43.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000012
+    },
+    {
+      "market": "KRW-LAYER",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 87.37000000000002,
+      "entry_price": 146.0,
+      "stop_price": 129.35,
+      "target_price": 175.97,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 139.0,
+            "zone_high": 140.0,
+            "gap_size_pct": 0.7168458781362007,
+            "created_at": "2026-05-10 01:00:00",
+            "quality_score": 54.33691756272401
+          },
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 142.0,
+            "zone_high": 144.0,
+            "gap_size_pct": 1.3986013986013985,
+            "created_at": "2026-05-10 02:00:00",
+            "quality_score": 67.97202797202797
+          },
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 146.0,
+            "zone_high": 148.0,
+            "gap_size_pct": 1.3605442176870748,
+            "created_at": "2026-05-10 03:00:00",
+            "quality_score": 67.21088435374149
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 136.0,
+            "zone_high": 137.0,
+            "volume_score": 0.4435842790007724,
+            "quality_score": 45.17743371160031
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 145.0,
+            "zone_high": 151.0,
+            "volume_score": 48.164787043188575,
+            "quality_score": 64.26591481727543
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 145.0,
+            "zone_high": 150.0,
+            "volume_score": 30.691292911848834,
+            "quality_score": 57.27651716473953
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 154.0,
+            "reclaim_price": 150.0,
+            "reclaim_time": "2026-05-10 04:00:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 144.0,
+            "reclaim_price": 147.0,
+            "reclaim_time": "2026-05-10 09:15:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 149.0,
+            "reclaim_price": 147.0,
+            "reclaim_time": "2026-05-10 09:15:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-LAYER",
+          "timeframe": "1h",
+          "zone_low": 130.0,
+          "zone_high": 136.0,
+          "quality_score": 97.4,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-LAYER",
+          "weekly_trend": "UNKNOWN",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_SETUP",
+          "mtf_score": 47.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999994
+    },
+    {
+      "market": "KRW-TRUMP",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 84.7,
+      "entry_price": 3528.0,
+      "stop_price": 3422.16,
+      "target_price": 3718.512,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3485.0,
+            "zone_high": 3645.0,
+            "gap_size_pct": 4.488078541374474,
+            "created_at": "2026-05-13 07:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3533.0,
+            "zone_high": 3614.0,
+            "gap_size_pct": 2.2666853225129424,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 85.33370645025884
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3537.0,
+            "zone_high": 3613.0,
+            "gap_size_pct": 2.125874125874126,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 82.51748251748252
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3466.0,
+            "zone_high": 3537.0,
+            "volume_score": 75.24578333844374,
+            "quality_score": 75.0983133353775
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3476.0,
+            "zone_high": 3548.0,
+            "volume_score": 31.717065540872447,
+            "quality_score": 57.686826216348976
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3498.0,
+            "zone_high": 3525.0,
+            "volume_score": 8.988312226628375,
+            "quality_score": 48.59532489065135
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 3817.0,
+            "reclaim_price": 3690.0,
+            "reclaim_time": "2026-05-13 07:15:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 3477.0,
+            "reclaim_price": 3487.0,
+            "reclaim_time": "2026-05-14 00:45:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 3524.0,
+            "reclaim_price": 3516.0,
+            "reclaim_time": "2026-05-14 05:45:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-TRUMP",
+          "timeframe": "1h",
+          "zone_low": 3614.0,
+          "zone_high": 3645.0,
+          "quality_score": 100.0,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-TRUMP",
+          "weekly_trend": "DOWN",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 23.5,
+          "risk_regime": "RISK_OFF"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999992
+    },
+    {
+      "market": "KRW-FF",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+      "setup_quality_score": 81.59375,
+      "entry_price": 129.0,
+      "stop_price": 124.0,
+      "target_price": 138.0,
+      "risk_reward_ratio": 1.8,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "PULLBACK_WICK_VOLUME",
+            "volume_ratio": 1.9194822349708704,
+            "score": 70.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 100.795,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 118.15,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 8.41085271317829,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 133.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "OUTSIDE_FIB_ZONE",
+            "fib_50": 112.0,
+            "fib_618": 107.044,
+            "score": 25.0
+          },
+          "mtf": {
+            "market": "KRW-FF",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 104.0,
+              "zone_high": 113.0,
+              "gap_size_pct": 8.294930875576037,
+              "created_at": "2026-05-13 00:00:00",
+              "quality_score": 100.0
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 117.0,
+              "zone_high": 129.0,
+              "gap_size_pct": 9.75609756097561,
+              "created_at": "2026-05-13 10:00:00",
+              "quality_score": 100.0
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 118.0,
+              "zone_high": 125.0,
+              "gap_size_pct": 5.761316872427984,
+              "created_at": "2026-05-14 00:00:00",
+              "quality_score": 100.0
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 115.0,
+              "zone_high": 118.0,
+              "volume_score": 34.64663827336455,
+              "quality_score": 58.85865530934582
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 125.0,
+              "zone_high": 130.0,
+              "volume_score": 100.0,
+              "quality_score": 85.0
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 128.0,
+              "zone_high": 131.0,
+              "volume_score": 48.962700752650726,
+              "quality_score": 64.58508030106029
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 118.0,
+              "reclaim_price": 117.0,
+              "reclaim_time": "2026-05-13 07:00:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 130.0,
+              "reclaim_price": 128.0,
+              "reclaim_time": "2026-05-14 01:30:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+              "swept_level": 126.0,
+              "reclaim_price": 127.0,
+              "reclaim_time": "2026-05-14 07:30:00",
+              "quality_score": 72.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_OB_OVERLAP",
+            "market": "KRW-FF",
+            "timeframe": "1h",
+            "zone_low": 125.0,
+            "zone_high": 129.0,
+            "quality_score": 100.0,
+            "risk_level": "LOW"
+          },
+          "mtf": {
+            "market": "KRW-FF",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-SEI",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 81.48879247779914,
+      "entry_price": 99.4,
+      "stop_price": 96.418,
+      "target_price": 104.7676,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 99.6,
+            "zone_high": 103.0,
+            "gap_size_pct": 3.35636722606121,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 99.6,
+            "zone_high": 102.0,
+            "gap_size_pct": 2.3809523809523867,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 87.61904761904773
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 99.4,
+            "zone_high": 99.6,
+            "gap_size_pct": 0.20100502512561672,
+            "created_at": "2026-05-14 07:00:00",
+            "quality_score": 44.020100502512335
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 99.4,
+            "zone_high": 99.6,
+            "volume_score": 8.252184246424628,
+            "quality_score": 48.30087369856985
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 98.1,
+            "zone_high": 99.6,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 99.6,
+            "zone_high": 101.0,
+            "volume_score": 38.97471812222279,
+            "quality_score": 60.58988724888911
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 103.0,
+            "reclaim_price": 104.0,
+            "reclaim_time": "2026-05-13 09:15:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 98.7,
+            "reclaim_price": 98.8,
+            "reclaim_time": "2026-05-14 00:45:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 98.9,
+            "reclaim_price": 99.1,
+            "reclaim_time": "2026-05-14 07:45:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-SEI",
+          "timeframe": "1h",
+          "zone_low": 103.0,
+          "zone_high": 103.0,
+          "quality_score": 91.04849059724891,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-SEI",
+          "weekly_trend": "UP",
+          "daily_trend": "CHOP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 43.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999992
+    },
+    {
+      "market": "KRW-DOGE",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+      "setup_quality_score": 81.39708850931677,
+      "entry_price": 171.0,
+      "stop_price": 160.195,
+      "target_price": 190.449,
+      "risk_reward_ratio": 1.8,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "PULLBACK_WICK_VOLUME",
+            "volume_ratio": 3.613910779608464,
+            "score": 70.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 159.5,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 167.3,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 2.163742690058473,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "RETEST_HOLD",
+            "level": 171.0,
+            "score": 78.0
+          },
+          "fib": {
+            "fib_state": "OUTSIDE_FIB_ZONE",
+            "fib_50": 161.5,
+            "fib_618": 159.022,
+            "score": 25.0
+          },
+          "mtf": {
+            "market": "KRW-DOGE",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "BREAKOUT",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 72.25,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 162.0,
+              "zone_high": 163.0,
+              "gap_size_pct": 0.6153846153846154,
+              "created_at": "2026-05-12 10:00:00",
+              "quality_score": 52.30769230769231
+            },
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 162.0,
+              "zone_high": 163.0,
+              "gap_size_pct": 0.6153846153846154,
+              "created_at": "2026-05-13 00:00:00",
+              "quality_score": 52.30769230769231
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 164.0,
+              "zone_high": 165.0,
+              "gap_size_pct": 0.60790273556231,
+              "created_at": "2026-05-13 10:00:00",
+              "quality_score": 52.1580547112462
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BEARISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 162.0,
+              "zone_high": 165.0,
+              "volume_score": 49.136585904838185,
+              "quality_score": 64.65463436193528
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 163.0,
+              "zone_high": 167.0,
+              "volume_score": 72.31146086725582,
+              "quality_score": 73.92458434690232
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 167.0,
+              "zone_high": 170.0,
+              "volume_score": 100.0,
+              "quality_score": 85.0
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+              "swept_level": 160.0,
+              "reclaim_price": 161.0,
+              "reclaim_time": "2026-05-13 02:00:00",
+              "quality_score": 72.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 166.0,
+              "reclaim_price": 164.0,
+              "reclaim_time": "2026-05-14 00:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 169.0,
+              "reclaim_price": 168.0,
+              "reclaim_time": "2026-05-14 08:15:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_OB_OVERLAP",
+            "market": "KRW-DOGE",
+            "timeframe": "1h",
+            "zone_low": 161.0,
+            "zone_high": 162.0,
+            "quality_score": 83.91459627329192,
+            "risk_level": "LOW"
+          },
+          "mtf": {
+            "market": "KRW-DOGE",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "BREAKOUT",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 72.25,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-JTO",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 76.44993320610686,
+      "entry_price": 760.0,
+      "stop_price": 707.0,
+      "target_price": 855.4,
+      "risk_reward_ratio": 1.7999999999999996,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "BREAKOUT_WITH_VOLUME",
+            "volume_ratio": 3.7709515696611975,
+            "score": 80.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 627.95,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 816.6999999999999,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 7.460526315789465,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 779.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "FIB_REACTION_ZONE",
+            "fib_50": 758.0,
+            "fib_618": 694.5160000000001,
+            "score": 72.0
+          },
+          "mtf": {
+            "market": "KRW-JTO",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 716.0,
+              "zone_high": 757.0,
+              "gap_size_pct": 5.566870332654447,
+              "created_at": "2026-05-13 00:00:00",
+              "quality_score": 100.0
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 716.0,
+              "zone_high": 725.0,
+              "gap_size_pct": 1.2491325468424705,
+              "created_at": "2026-05-13 10:00:00",
+              "quality_score": 64.98265093684941
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 738.0,
+              "zone_high": 740.0,
+              "gap_size_pct": 0.2706359945872801,
+              "created_at": "2026-05-14 08:00:00",
+              "quality_score": 45.4127198917456
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 754.0,
+              "zone_high": 769.0,
+              "volume_score": 57.702201768185276,
+              "quality_score": 68.0808807072741
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 718.0,
+              "zone_high": 730.0,
+              "volume_score": 46.16482472311865,
+              "quality_score": 63.46592988924746
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 727.0,
+              "zone_high": 738.0,
+              "volume_score": 27.552644535066506,
+              "quality_score": 56.021057814026605
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 749.0,
+              "reclaim_price": 744.0,
+              "reclaim_time": "2026-05-14 05:45:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 752.0,
+              "reclaim_price": 751.0,
+              "reclaim_time": "2026-05-14 09:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 756.0,
+              "reclaim_price": 755.0,
+              "reclaim_time": "2026-05-14 09:45:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_LIQUIDITY_SWEEP",
+            "market": "KRW-JTO",
+            "timeframe": "1h",
+            "zone_low": 716.0,
+            "zone_high": 725.0,
+            "quality_score": 78.14045801526717,
+            "risk_level": "LOW"
+          },
+          "mtf": {
+            "market": "KRW-JTO",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-AKT",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+      "setup_quality_score": 76.24323028810525,
+      "entry_price": 1296.0,
+      "stop_price": 1194.0,
+      "target_price": 1479.6,
+      "risk_reward_ratio": 1.7999999999999992,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "PULLBACK_WICK_VOLUME",
+            "volume_ratio": 4.2302349919492706,
+            "score": 70.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 942.6,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 1269.4,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 2.052469135802462,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 1356.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "OUTSIDE_FIB_ZONE",
+            "fib_50": 1036.0,
+            "fib_618": 960.48,
+            "score": 25.0
+          },
+          "mtf": {
+            "market": "KRW-AKT",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1249.0,
+              "zone_high": 1312.0,
+              "gap_size_pct": 4.919953143303397,
+              "created_at": "2026-05-14 00:00:00",
+              "quality_score": 100.0
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1249.0,
+              "zone_high": 1252.0,
+              "gap_size_pct": 0.23990403838464613,
+              "created_at": "2026-05-14 04:00:00",
+              "quality_score": 44.79808076769292
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1265.0,
+              "zone_high": 1266.0,
+              "gap_size_pct": 0.07902015013828526,
+              "created_at": "2026-05-14 05:00:00",
+              "quality_score": 41.580403002765706
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1197.0,
+              "zone_high": 1249.0,
+              "volume_score": 47.11212400843055,
+              "quality_score": 63.844849603372225
+            },
+            {
+              "zone_type": "BEARISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1266.0,
+              "zone_high": 1300.0,
+              "volume_score": 6.868276706762525,
+              "quality_score": 47.74731068270501
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1252.0,
+              "zone_high": 1274.0,
+              "volume_score": 7.527934884870334,
+              "quality_score": 48.01117395394813
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1285.0,
+              "reclaim_price": 1283.0,
+              "reclaim_time": "2026-05-14 05:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1299.0,
+              "reclaim_price": 1293.0,
+              "reclaim_time": "2026-05-14 09:00:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1301.0,
+              "reclaim_price": 1268.0,
+              "reclaim_time": "2026-05-14 09:15:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_OB_OVERLAP",
+            "market": "KRW-AKT",
+            "timeframe": "1h",
+            "zone_low": 1200.0,
+            "zone_high": 1209.0,
+            "quality_score": 86.62370072026312,
+            "risk_level": "LOW"
+          },
+          "mtf": {
+            "market": "KRW-AKT",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-USDT",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 70.79201828648831,
+      "entry_price": 1486.0,
+      "stop_price": 1441.42,
+      "target_price": 1566.244,
+      "risk_reward_ratio": 1.800000000000001,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "NEUTRAL",
+            "volume_ratio": 1.1020625011245557,
+            "score": 35.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 1481.25,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 1484.0,
+            "neckline_state": "BREAKOUT_RETEST_AREA",
+            "distance_pct": 0.13458950201884254,
+            "score": 75.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 1489.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "FIB_REACTION_ZONE",
+            "fib_50": 1480.0,
+            "fib_618": 1475.516,
+            "score": 72.0
+          },
+          "mtf": {
+            "market": "KRW-USDT",
+            "weekly_trend": "DOWN",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_WATCH",
+            "mtf_score": 47.0,
+            "risk_regime": "SELECTIVE"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1472.0,
+              "zone_high": 1481.0,
+              "gap_size_pct": 0.6095496105655266,
+              "created_at": "2026-05-12 10:00:00",
+              "quality_score": 52.19099221131053
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1476.0,
+              "zone_high": 1481.0,
+              "gap_size_pct": 0.3381805884342239,
+              "created_at": "2026-05-13 00:00:00",
+              "quality_score": 46.76361176868448
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1484.0,
+              "zone_high": 1486.0,
+              "gap_size_pct": 0.13468013468013468,
+              "created_at": "2026-05-14 01:00:00",
+              "quality_score": 42.69360269360269
+            }
+          ],
+          "order_blocks": [],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1482.0,
+              "reclaim_price": 1481.0,
+              "reclaim_time": "2026-05-13 00:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1483.0,
+              "reclaim_price": 1482.0,
+              "reclaim_time": "2026-05-13 00:45:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1483.0,
+              "reclaim_price": 1482.0,
+              "reclaim_time": "2026-05-13 09:30:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_LIQUIDITY_SWEEP",
+            "market": "KRW-USDT",
+            "timeframe": "1h",
+            "zone_low": 1472.0,
+            "zone_high": 1481.0,
+            "quality_score": 71.10504571622079,
+            "risk_level": "MEDIUM"
+          },
+          "mtf": {
+            "market": "KRW-USDT",
+            "weekly_trend": "DOWN",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_WATCH",
+            "mtf_score": 47.0,
+            "risk_regime": "SELECTIVE"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-NEAR",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 70.73494623655915,
+      "entry_price": 2362.0,
+      "stop_price": 2291.14,
+      "target_price": 2489.5480000000002,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 2351.0,
+            "zone_high": 2362.0,
+            "gap_size_pct": 0.46679397411415235,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 49.33587948228305
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 2354.0,
+            "zone_high": 2375.0,
+            "gap_size_pct": 0.888137026855572,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 57.76274053711144
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 2346.0,
+            "zone_high": 2355.0,
+            "gap_size_pct": 0.3828972559029994,
+            "created_at": "2026-05-14 07:00:00",
+            "quality_score": 47.657945118059985
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 2349.0,
+            "zone_high": 2393.0,
+            "volume_score": 57.025733926348956,
+            "quality_score": 67.81029357053959
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 2350.0,
+            "zone_high": 2398.0,
+            "volume_score": 9.98278369362023,
+            "quality_score": 48.99311347744809
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 2333.0,
+            "zone_high": 2349.0,
+            "volume_score": 38.25762911733513,
+            "quality_score": 60.30305164693405
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 2310.0,
+            "reclaim_price": 2314.0,
+            "reclaim_time": "2026-05-14 01:00:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 2348.0,
+            "reclaim_price": 2342.0,
+            "reclaim_time": "2026-05-14 09:00:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 2349.0,
+            "reclaim_price": 2344.0,
+            "reclaim_time": "2026-05-14 09:15:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-NEAR",
+          "timeframe": "1h",
+          "zone_low": 2320.0,
+          "zone_high": 2330.0,
+          "quality_score": 74.98118279569893,
+          "risk_level": "MEDIUM"
+        },
+        "mtf": {
+          "market": "KRW-NEAR",
+          "weekly_trend": "UP",
+          "daily_trend": "UP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 53.75,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    },
+    {
+      "market": "KRW-TRX",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 70.59002596439169,
+      "entry_price": 520.0,
+      "stop_price": 501.48,
+      "target_price": 553.336,
+      "risk_reward_ratio": 1.8000000000000025,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "NEUTRAL",
+            "volume_ratio": 1.3337464577557931,
+            "score": 35.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 501.15,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 519.3,
+            "neckline_state": "BREAKOUT_RETEST_AREA",
+            "distance_pct": 0.13461538461539338,
+            "score": 75.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 522.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "OUTSIDE_FIB_ZONE",
+            "fib_50": 500.5,
+            "fib_618": 495.426,
+            "score": 25.0
+          },
+          "mtf": {
+            "market": "KRW-TRX",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 516.0,
+              "zone_high": 517.0,
+              "gap_size_pct": 0.1936108422071636,
+              "created_at": "2026-05-11 01:00:00",
+              "quality_score": 43.872216844143274
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 518.0,
+              "zone_high": 520.0,
+              "gap_size_pct": 0.3853564547206166,
+              "created_at": "2026-05-13 10:00:00",
+              "quality_score": 47.70712909441233
+            },
+            {
+              "zone_type": "BULLISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 518.0,
+              "zone_high": 520.0,
+              "gap_size_pct": 0.3853564547206166,
+              "created_at": "2026-05-14 00:00:00",
+              "quality_score": 47.70712909441233
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 489.0,
+              "zone_high": 496.0,
+              "volume_score": 100.0,
+              "quality_score": 85.0
+            },
+            {
+              "zone_type": "BEARISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 490.0,
+              "zone_high": 492.0,
+              "volume_score": 12.73245121875915,
+              "quality_score": 50.09298048750366
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 499.0,
+              "zone_high": 502.0,
+              "volume_score": 70.86014014821653,
+              "quality_score": 73.34405605928661
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 516.0,
+              "reclaim_price": 515.0,
+              "reclaim_time": "2026-05-11 06:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 517.0,
+              "reclaim_price": 516.0,
+              "reclaim_time": "2026-05-12 04:30:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 521.0,
+              "reclaim_price": 520.0,
+              "reclaim_time": "2026-05-14 00:45:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_LIQUIDITY_SWEEP",
+            "market": "KRW-TRX",
+            "timeframe": "1h",
+            "zone_low": 504.0,
+            "zone_high": 507.0,
+            "quality_score": 70.92818991097923,
+            "risk_level": "MEDIUM"
+          },
+          "mtf": {
+            "market": "KRW-TRX",
+            "weekly_trend": "UP",
+            "daily_trend": "UP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "LONG_SETUP",
+            "mtf_score": 64.75,
+            "risk_regime": "RISK_ON"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-PROS",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 70.02811928602526,
+      "entry_price": 1034.0,
+      "stop_price": 1002.98,
+      "target_price": 1089.836,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1058.0,
+            "zone_high": 1110.0,
+            "gap_size_pct": 4.797047970479705,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1052.0,
+            "zone_high": 1158.0,
+            "gap_size_pct": 9.592760180995477,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1039.0,
+            "zone_high": 1050.0,
+            "gap_size_pct": 1.0531354715174726,
+            "created_at": "2026-05-14 01:00:00",
+            "quality_score": 61.06270943034945
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1121.0,
+            "zone_high": 1139.0,
+            "volume_score": 9.21531992771238,
+            "quality_score": 48.68612797108495
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1007.0,
+            "zone_high": 1052.0,
+            "volume_score": 89.94394745464548,
+            "quality_score": 80.97757898185819
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1028.0,
+            "zone_high": 1053.0,
+            "volume_score": 16.505576494590983,
+            "quality_score": 51.602230597836396
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 1049.0,
+            "reclaim_price": 1048.0,
+            "reclaim_time": "2026-05-14 03:15:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 1038.0,
+            "reclaim_price": 1030.0,
+            "reclaim_time": "2026-05-14 08:00:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 1028.0,
+            "reclaim_price": 1034.0,
+            "reclaim_time": "2026-05-14 10:00:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-PROS",
+          "timeframe": "1h",
+          "zone_low": 1139.0,
+          "zone_high": 1158.0,
+          "quality_score": 82.59764910753157,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-PROS",
+          "weekly_trend": "UNKNOWN",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 19.75,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000014
+    },
+    {
+      "market": "KRW-PENGU",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 68.81491817343884,
+      "entry_price": 13.4,
+      "stop_price": 12.998,
+      "target_price": 14.123600000000001,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 14.2,
+            "zone_high": 14.3,
+            "gap_size_pct": 0.7017543859649222,
+            "created_at": "2026-05-13 01:00:00",
+            "quality_score": 54.035087719298446
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 13.5,
+            "zone_high": 14.1,
+            "gap_size_pct": 4.347826086956519,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 13.6,
+            "zone_high": 14.0,
+            "gap_size_pct": 2.898550724637684,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 97.97101449275368
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 13.1,
+            "zone_high": 13.6,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 13.3,
+            "zone_high": 13.5,
+            "volume_score": 50.18854802754391,
+            "quality_score": 65.07541921101756
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 13.3,
+            "zone_high": 13.5,
+            "volume_score": 40.52641267297001,
+            "quality_score": 61.21056506918801
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 15.7,
+            "reclaim_price": 15.8,
+            "reclaim_time": "2026-05-10 09:15:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 15.4,
+            "reclaim_price": 15.5,
+            "reclaim_time": "2026-05-11 00:15:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 16.1,
+            "reclaim_price": 16.0,
+            "reclaim_time": "2026-05-11 03:45:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-PENGU",
+          "timeframe": "1h",
+          "zone_low": 15.4,
+          "zone_high": 15.4,
+          "quality_score": 76.70614771679854,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-PENGU",
+          "weekly_trend": "UP",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 37.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999983
+    },
+    {
+      "market": "KRW-VIRTUAL",
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 66.75533771203972,
+      "entry_price": 1159.0,
+      "stop_price": 1124.23,
+      "target_price": 1221.586,
+      "risk_reward_ratio": 1.8000000000000014,
+      "evidence": {
+        "daddy": {
+          "volume": {
+            "volume_signal": "BOTTOM_VOLUME",
+            "volume_ratio": 2.4535251840321073,
+            "score": 65.0
+          },
+          "ma20": {
+            "ma20_state": "ABOVE_MA20",
+            "ma20": 1157.1,
+            "score": 65.0
+          },
+          "neckline": {
+            "neckline": 1365.65,
+            "neckline_state": "FAR_FROM_NECKLINE",
+            "distance_pct": 17.830025884383097,
+            "score": 25.0
+          },
+          "sr_flip": {
+            "sr_flip_state": "NO_FLIP",
+            "level": 1355.0,
+            "score": 25.0
+          },
+          "fib": {
+            "fib_state": "FIB_REACTION_ZONE",
+            "fib_50": 1221.0,
+            "fib_618": 1169.08,
+            "score": 72.0
+          },
+          "mtf": {
+            "market": "KRW-VIRTUAL",
+            "weekly_trend": "UP",
+            "daily_trend": "CHOP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "NO_LONG",
+            "mtf_score": 43.25,
+            "risk_regime": "SELECTIVE"
+          }
+        },
+        "ict": {
+          "fvg": [
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1174.0,
+              "zone_high": 1203.0,
+              "gap_size_pct": 2.440050483803113,
+              "created_at": "2026-05-13 10:00:00",
+              "quality_score": 88.80100967606225
+            },
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1179.0,
+              "zone_high": 1202.0,
+              "gap_size_pct": 1.9319613607727846,
+              "created_at": "2026-05-14 00:00:00",
+              "quality_score": 78.63922721545569
+            },
+            {
+              "zone_type": "BEARISH_FVG",
+              "timeframe": "1h",
+              "zone_low": 1157.0,
+              "zone_high": 1174.0,
+              "gap_size_pct": 1.4586014586014586,
+              "created_at": "2026-05-14 01:00:00",
+              "quality_score": 69.17202917202917
+            }
+          ],
+          "order_blocks": [
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1136.0,
+              "zone_high": 1179.0,
+              "volume_score": 100.0,
+              "quality_score": 85.0
+            },
+            {
+              "zone_type": "BEARISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1156.0,
+              "zone_high": 1163.0,
+              "volume_score": 16.107080072188502,
+              "quality_score": 51.4428320288754
+            },
+            {
+              "zone_type": "BULLISH_ORDER_BLOCK",
+              "timeframe": "1h",
+              "zone_low": 1149.0,
+              "zone_high": 1161.0,
+              "volume_score": 50.370349691765604,
+              "quality_score": 65.14813987670624
+            }
+          ],
+          "sweeps": [
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1162.0,
+              "reclaim_price": 1160.0,
+              "reclaim_time": "2026-05-14 03:30:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1161.0,
+              "reclaim_price": 1158.0,
+              "reclaim_time": "2026-05-14 08:15:00",
+              "quality_score": 45.0
+            },
+            {
+              "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+              "swept_level": 1166.0,
+              "reclaim_price": 1165.0,
+              "reclaim_time": "2026-05-14 09:45:00",
+              "quality_score": 45.0
+            }
+          ],
+          "confluence": {
+            "confluence_type": "FVG_LIQUIDITY_SWEEP",
+            "market": "KRW-VIRTUAL",
+            "timeframe": "1h",
+            "zone_low": 1208.0,
+            "zone_high": 1209.0,
+            "quality_score": 65.31021928009929,
+            "risk_level": "MEDIUM"
+          },
+          "mtf": {
+            "market": "KRW-VIRTUAL",
+            "weekly_trend": "UP",
+            "daily_trend": "CHOP",
+            "h4_structure": "RANGE",
+            "h1_setup_bias": "NO_LONG",
+            "mtf_score": 43.25,
+            "risk_regime": "SELECTIVE"
+          }
+        }
+      },
+      "real_order_enabled": false
+    },
+    {
+      "market": "KRW-ETH",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 66.67000725584096,
+      "entry_price": 3369000.0,
+      "stop_price": 3267930.0,
+      "target_price": 3550926.0,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3366000.0,
+            "zone_high": 3375000.0,
+            "gap_size_pct": 0.26702269692923897,
+            "created_at": "2026-05-13 03:00:00",
+            "quality_score": 45.34045393858478
+          },
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3378000.0,
+            "zone_high": 3379000.0,
+            "gap_size_pct": 0.029598934438360217,
+            "created_at": "2026-05-13 04:00:00",
+            "quality_score": 40.591978688767206
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 3359000.0,
+            "zone_high": 3365000.0,
+            "gap_size_pct": 0.1784651992861392,
+            "created_at": "2026-05-14 01:00:00",
+            "quality_score": 43.56930398572278
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3442000.0,
+            "zone_high": 3461000.0,
+            "volume_score": 45.06082787493696,
+            "quality_score": 63.024331149974785
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3464000.0,
+            "zone_high": 3480000.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 3365000.0,
+            "zone_high": 3370000.0,
+            "volume_score": 0.3960328774407485,
+            "quality_score": 45.1584131509763
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 3350000.0,
+            "reclaim_price": 3351000.0,
+            "reclaim_time": "2026-05-14 04:30:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 3370000.0,
+            "reclaim_price": 3369000.0,
+            "reclaim_time": "2026-05-14 06:00:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 3353000.0,
+            "reclaim_price": 3355000.0,
+            "reclaim_time": "2026-05-14 07:45:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-ETH",
+          "timeframe": "1h",
+          "zone_low": 3427000.0,
+          "zone_high": 3464000.0,
+          "quality_score": 76.21250906980119,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-ETH",
+          "weekly_trend": "CHOP",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 28.5,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    },
+    {
+      "market": "KRW-IP",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 66.45105067985168,
+      "entry_price": 801.0,
+      "stop_price": 776.97,
+      "target_price": 844.2539999999999,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 805.0,
+            "zone_high": 824.0,
+            "gap_size_pct": 2.332719459791283,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 86.65438919582566
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 807.0,
+            "zone_high": 820.0,
+            "gap_size_pct": 1.5980331899200986,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 71.96066379840197
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 801.0,
+            "zone_high": 804.0,
+            "gap_size_pct": 0.3738317757009346,
+            "created_at": "2026-05-14 07:00:00",
+            "quality_score": 47.476635514018696
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 824.0,
+            "zone_high": 833.0,
+            "volume_score": 68.96078249700098,
+            "quality_score": 72.58431299880039
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 792.0,
+            "zone_high": 807.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 808.0,
+            "zone_high": 813.0,
+            "volume_score": 24.946618229376433,
+            "quality_score": 54.978647291750576
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 807.0,
+            "reclaim_price": 808.0,
+            "reclaim_time": "2026-05-14 04:45:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 796.0,
+            "reclaim_price": 798.0,
+            "reclaim_time": "2026-05-14 06:45:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 795.0,
+            "reclaim_price": 797.0,
+            "reclaim_time": "2026-05-14 07:15:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-IP",
+          "timeframe": "1h",
+          "zone_low": 807.0,
+          "zone_high": 807.0,
+          "quality_score": 75.68881334981458,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-IP",
+          "weekly_trend": "DOWN",
+          "daily_trend": "CHOP",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 29.5,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.799999999999998
+    },
+    {
+      "market": "KRW-UP2",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 65.35077989601386,
+      "entry_price": 293.0,
+      "stop_price": 284.21,
+      "target_price": 308.82200000000006,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 293.0,
+            "zone_high": 295.0,
+            "gap_size_pct": 0.6802721088435374,
+            "created_at": "2026-05-14 05:15:00",
+            "quality_score": 53.605442176870746
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 297.0,
+            "zone_high": 298.0,
+            "gap_size_pct": 0.33613445378151263,
+            "created_at": "2026-05-14 06:00:00",
+            "quality_score": 46.72268907563026
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 297.0,
+            "zone_high": 298.0,
+            "gap_size_pct": 0.33613445378151263,
+            "created_at": "2026-05-14 07:15:00",
+            "quality_score": 46.72268907563026
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 287.0,
+            "zone_high": 294.0,
+            "volume_score": 41.547430365431914,
+            "quality_score": 61.618972146172766
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 275.0,
+            "zone_high": 298.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 285.0,
+            "zone_high": 303.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 265.0,
+            "reclaim_price": 271.0,
+            "reclaim_time": "2026-05-14 03:00:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 302.0,
+            "reclaim_price": 300.0,
+            "reclaim_time": "2026-05-14 05:45:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-UP2",
+          "timeframe": "1h",
+          "zone_low": 287.0,
+          "zone_high": 290.0,
+          "quality_score": 81.68847487001733,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-UP2",
+          "weekly_trend": "UNKNOWN",
+          "daily_trend": "UNKNOWN",
+          "h4_structure": "UNKNOWN",
+          "h1_setup_bias": "UNKNOWN",
+          "mtf_score": 0.0,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8000000000000025
+    },
+    {
+      "market": "KRW-BIO",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "setup_quality_score": 64.7300891236885,
+      "entry_price": 67.0,
+      "stop_price": 64.99,
+      "target_price": 70.61800000000001,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 66.4,
+            "zone_high": 69.0,
+            "gap_size_pct": 3.8404726735598147,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 66.6,
+            "zone_high": 69.0,
+            "gap_size_pct": 3.5398230088495657,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 66.6,
+            "zone_high": 67.0,
+            "gap_size_pct": 0.5988023952095893,
+            "created_at": "2026-05-14 02:00:00",
+            "quality_score": 51.97604790419179
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 67.4,
+            "zone_high": 68.3,
+            "volume_score": 63.411186830614376,
+            "quality_score": 70.36447473224575
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 66.1,
+            "zone_high": 67.1,
+            "volume_score": 38.883843360134776,
+            "quality_score": 60.55353734405391
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 66.4,
+            "zone_high": 67.1,
+            "volume_score": 26.553297642231904,
+            "quality_score": 55.62131905689276
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 65.2,
+            "reclaim_price": 65.7,
+            "reclaim_time": "2026-05-14 01:00:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 68.2,
+            "reclaim_price": 67.6,
+            "reclaim_time": "2026-05-14 03:30:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 66.4,
+            "reclaim_price": 66.7,
+            "reclaim_time": "2026-05-14 09:30:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_OB_OVERLAP",
+          "market": "KRW-BIO",
+          "timeframe": "1h",
+          "zone_low": 66.6,
+          "zone_high": 66.6,
+          "quality_score": 71.60011140461062,
+          "risk_level": "MEDIUM"
+        },
+        "mtf": {
+          "market": "KRW-BIO",
+          "weekly_trend": "UP",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 37.25,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    },
+    {
+      "market": "KRW-B3",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 63.23351351351353,
+      "entry_price": 1.69,
+      "stop_price": 1.6393,
+      "target_price": 1.7812599999999998,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1.81,
+            "zone_high": 1.87,
+            "gap_size_pct": 3.260869565217394,
+            "created_at": "2026-05-13 10:00:00",
+            "quality_score": 100.0
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1.81,
+            "zone_high": 1.85,
+            "gap_size_pct": 2.1857923497267775,
+            "created_at": "2026-05-14 00:00:00",
+            "quality_score": 83.71584699453555
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 1.78,
+            "zone_high": 1.8,
+            "gap_size_pct": 1.1173184357541908,
+            "created_at": "2026-05-14 01:00:00",
+            "quality_score": 62.34636871508381
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1.86,
+            "zone_high": 1.93,
+            "volume_score": 99.12058214585649,
+            "quality_score": 84.6482328583426
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1.87,
+            "zone_high": 1.9,
+            "volume_score": 61.20997159346672,
+            "quality_score": 69.48398863738669
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 1.77,
+            "zone_high": 1.79,
+            "volume_score": 23.267129687957436,
+            "quality_score": 54.30685187518297
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 2.03,
+            "reclaim_price": 2.04,
+            "reclaim_time": "2026-05-11 02:15:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 2.0,
+            "reclaim_price": 2.01,
+            "reclaim_time": "2026-05-11 02:45:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 1.9,
+            "reclaim_price": 1.91,
+            "reclaim_time": "2026-05-11 03:45:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-B3",
+          "timeframe": "1h",
+          "zone_low": 1.84,
+          "zone_high": 1.86,
+          "quality_score": 76.29189189189191,
+          "risk_level": "LOW"
+        },
+        "mtf": {
+          "market": "KRW-B3",
+          "weekly_trend": "UNKNOWN",
+          "daily_trend": "DOWN",
+          "h4_structure": "BREAKDOWN",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 11.0,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999992
+    },
+    {
+      "market": "KRW-VVV",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 61.595254928619994,
+      "entry_price": 19980.0,
+      "stop_price": 19380.6,
+      "target_price": 21058.920000000002,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 21960.0,
+            "zone_high": 22170.0,
+            "gap_size_pct": 0.9517335146159076,
+            "created_at": "2026-05-14 03:00:00",
+            "quality_score": 59.034670292318154
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 21700.0,
+            "zone_high": 22030.0,
+            "gap_size_pct": 1.5092613766293161,
+            "created_at": "2026-05-14 07:00:00",
+            "quality_score": 70.18522753258632
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 21430.0,
+            "zone_high": 21450.0,
+            "gap_size_pct": 0.09328358208955223,
+            "created_at": "2026-05-14 09:00:00",
+            "quality_score": 41.865671641791046
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 22100.0,
+            "zone_high": 22600.0,
+            "volume_score": 15.757688121189078,
+            "quality_score": 51.30307524847563
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 22030.0,
+            "zone_high": 22340.0,
+            "volume_score": 15.376554307096521,
+            "quality_score": 51.15062172283861
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 21450.0,
+            "zone_high": 21700.0,
+            "volume_score": 14.72470735130793,
+            "quality_score": 50.88988294052317
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 22740.0,
+            "reclaim_price": 22620.0,
+            "reclaim_time": "2026-05-14 03:15:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 22040.0,
+            "reclaim_price": 22130.0,
+            "reclaim_time": "2026-05-14 05:30:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 19820.0,
+            "reclaim_price": 19980.0,
+            "reclaim_time": "2026-05-14 10:00:00",
+            "quality_score": 72.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-VVV",
+          "timeframe": "1h",
+          "zone_low": 21960.0,
+          "zone_high": 22170.0,
+          "quality_score": 74.86906866077499,
+          "risk_level": "MEDIUM"
+        },
+        "mtf": {
+          "market": "KRW-VVV",
+          "weekly_trend": "UNKNOWN",
+          "daily_trend": "DOWN",
+          "h4_structure": "UNKNOWN",
+          "h1_setup_bias": "NO_LONG",
+          "mtf_score": 8.5,
+          "risk_regime": "SELECTIVE"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.7999999999999987
+    },
+    {
+      "market": "KRW-BTC",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "setup_quality_score": 60.273476869362824,
+      "entry_price": 119160000.0,
+      "stop_price": 115585200.0,
+      "target_price": 125594640.0,
+      "evidence": {
+        "fvg": [
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 119000000.0,
+            "zone_high": 119030000.0,
+            "gap_size_pct": 0.025206906692433726,
+            "created_at": "2026-05-10 03:00:00",
+            "quality_score": 40.50413813384868
+          },
+          {
+            "zone_type": "BEARISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 118997000.0,
+            "zone_high": 119079000.0,
+            "gap_size_pct": 0.06888556595372906,
+            "created_at": "2026-05-10 15:00:00",
+            "quality_score": 41.37771131907458
+          },
+          {
+            "zone_type": "BULLISH_FVG",
+            "timeframe": "1h",
+            "zone_low": 118988000.0,
+            "zone_high": 119000000.0,
+            "gap_size_pct": 0.010084542077751819,
+            "created_at": "2026-05-10 18:00:00",
+            "quality_score": 40.201690841555035
+          }
+        ],
+        "order_blocks": [
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 128550000.0,
+            "zone_high": 130550000.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BULLISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 128900000.0,
+            "zone_high": 130186000.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          },
+          {
+            "zone_type": "BEARISH_ORDER_BLOCK",
+            "timeframe": "1h",
+            "zone_low": 130500000.0,
+            "zone_high": 131400000.0,
+            "volume_score": 100.0,
+            "quality_score": 85.0
+          }
+        ],
+        "sweeps": [
+          {
+            "sweep_type": "BULLISH_LIQUIDITY_SWEEP",
+            "swept_level": 118943000.0,
+            "reclaim_price": 118983000.0,
+            "reclaim_time": "2026-05-10 19:30:00",
+            "quality_score": 72.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 119102000.0,
+            "reclaim_price": 119100000.0,
+            "reclaim_time": "2026-05-10 20:15:00",
+            "quality_score": 45.0
+          },
+          {
+            "sweep_type": "BEARISH_LIQUIDITY_SWEEP",
+            "swept_level": 119300000.0,
+            "reclaim_price": 119279000.0,
+            "reclaim_time": "2026-05-10 22:45:00",
+            "quality_score": 45.0
+          }
+        ],
+        "confluence": {
+          "confluence_type": "FVG_LIQUIDITY_SWEEP",
+          "market": "KRW-BTC",
+          "timeframe": "1h",
+          "zone_low": 132125000.0,
+          "zone_high": 132524000.0,
+          "quality_score": 67.71684608670353,
+          "risk_level": "MEDIUM"
+        },
+        "mtf": {
+          "market": "KRW-BTC",
+          "weekly_trend": "DOWN",
+          "daily_trend": "DOWN",
+          "h4_structure": "RANGE",
+          "h1_setup_bias": "LONG_WATCH",
+          "mtf_score": 30.5,
+          "risk_regime": "RISK_OFF"
+        }
+      },
+      "real_order_enabled": false,
+      "risk_reward_ratio": 1.8
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

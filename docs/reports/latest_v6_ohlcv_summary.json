@@ -1,0 +1,1003 @@
+{
+  "schema_version": "v6",
+  "markets_requested": "TOP_KRW_50",
+  "markets": [
+    "KRW-BTC",
+    "KRW-ETH",
+    "KRW-AKT",
+    "KRW-B3",
+    "KRW-BIO",
+    "KRW-DOGE",
+    "KRW-FF",
+    "KRW-IP",
+    "KRW-JTO",
+    "KRW-LAYER",
+    "KRW-NEAR",
+    "KRW-PENGU",
+    "KRW-PIEVERSE",
+    "KRW-PROS",
+    "KRW-SEI",
+    "KRW-SHIB",
+    "KRW-TRUMP",
+    "KRW-TRX",
+    "KRW-UP2",
+    "KRW-USDT",
+    "KRW-VIRTUAL",
+    "KRW-VVV"
+  ],
+  "months": 12,
+  "timeframes": [
+    "1w",
+    "1d",
+    "4h",
+    "1h",
+    "15m",
+    "5m",
+    "1m"
+  ],
+  "by_timeframe": {
+    "1w": {
+      "markets": 22,
+      "candles": 314,
+      "status": "OK"
+    },
+    "1d": {
+      "markets": 22,
+      "candles": 2082,
+      "status": "OK"
+    },
+    "4h": {
+      "markets": 22,
+      "candles": 7854,
+      "status": "OK"
+    },
+    "1h": {
+      "markets": 22,
+      "candles": 22167,
+      "status": "OK"
+    },
+    "15m": {
+      "markets": 22,
+      "candles": 82017,
+      "status": "OK"
+    },
+    "5m": {
+      "markets": 22,
+      "candles": 226671,
+      "status": "OK"
+    },
+    "1m": {
+      "markets": 22,
+      "candles": 835892,
+      "status": "OK"
+    }
+  },
+  "rows": [
+    {
+      "timeframe": "1w",
+      "market": "KRW-BTC",
+      "candles": 3,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-BTC",
+      "candles": 8,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-BTC",
+      "candles": 31,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-BTC",
+      "candles": 102,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-BTC",
+      "candles": 393,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-BTC",
+      "candles": 1169,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-BTC",
+      "candles": 5801,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-ETH",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-ETH",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-ETH",
+      "candles": 536,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-ETH",
+      "candles": 1465,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-ETH",
+      "candles": 5453,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-ETH",
+      "candles": 16089,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-ETH",
+      "candles": 79479,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-AKT",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-AKT",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-AKT",
+      "candles": 487,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-AKT",
+      "candles": 1416,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-AKT",
+      "candles": 5222,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-AKT",
+      "candles": 13279,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-AKT",
+      "candles": 39642,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-B3",
+      "candles": 2,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-B3",
+      "candles": 8,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-B3",
+      "candles": 28,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-B3",
+      "candles": 77,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-B3",
+      "candles": 287,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-B3",
+      "candles": 843,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-B3",
+      "candles": 3771,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-BIO",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-BIO",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-BIO",
+      "candles": 479,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-BIO",
+      "candles": 1404,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-BIO",
+      "candles": 5038,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-BIO",
+      "candles": 12224,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-BIO",
+      "candles": 35496,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-DOGE",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-DOGE",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-DOGE",
+      "candles": 535,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-DOGE",
+      "candles": 1464,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-DOGE",
+      "candles": 5452,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-DOGE",
+      "candles": 16070,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-DOGE",
+      "candles": 73513,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-FF",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-FF",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-FF",
+      "candles": 448,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-FF",
+      "candles": 1366,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-FF",
+      "candles": 4717,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-FF",
+      "candles": 10637,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-FF",
+      "candles": 24877,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-IP",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-IP",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-IP",
+      "candles": 529,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-IP",
+      "candles": 1458,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-IP",
+      "candles": 5444,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-IP",
+      "candles": 15934,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-IP",
+      "candles": 67682,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-JTO",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-JTO",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-JTO",
+      "candles": 474,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-JTO",
+      "candles": 1397,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-JTO",
+      "candles": 5036,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-JTO",
+      "candles": 12083,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-JTO",
+      "candles": 31366,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-LAYER",
+      "candles": 1,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-LAYER",
+      "candles": 8,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-LAYER",
+      "candles": 26,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-LAYER",
+      "candles": 75,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-LAYER",
+      "candles": 241,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-LAYER",
+      "candles": 519,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-LAYER",
+      "candles": 1428,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-NEAR",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-NEAR",
+      "candles": 134,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-NEAR",
+      "candles": 517,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-NEAR",
+      "candles": 1446,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-NEAR",
+      "candles": 5423,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-NEAR",
+      "candles": 15288,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-NEAR",
+      "candles": 50701,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-PENGU",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-PENGU",
+      "candles": 134,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-PENGU",
+      "candles": 508,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-PENGU",
+      "candles": 1437,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-PENGU",
+      "candles": 5401,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-PENGU",
+      "candles": 15032,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-PENGU",
+      "candles": 47546,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-PIEVERSE",
+      "candles": 4,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-PIEVERSE",
+      "candles": 25,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-PIEVERSE",
+      "candles": 92,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-PIEVERSE",
+      "candles": 260,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-PIEVERSE",
+      "candles": 978,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-PIEVERSE",
+      "candles": 2843,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-PIEVERSE",
+      "candles": 11455,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-PROS",
+      "candles": 2,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-PROS",
+      "candles": 7,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-PROS",
+      "candles": 24,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-PROS",
+      "candles": 66,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-PROS",
+      "candles": 246,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-PROS",
+      "candles": 724,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-PROS",
+      "candles": 3324,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-SEI",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-SEI",
+      "candles": 134,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-SEI",
+      "candles": 495,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-SEI",
+      "candles": 1424,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-SEI",
+      "candles": 5372,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-SEI",
+      "candles": 14715,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-SEI",
+      "candles": 44412,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-SHIB",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-SHIB",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-SHIB",
+      "candles": 531,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-SHIB",
+      "candles": 1460,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-SHIB",
+      "candles": 5448,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-SHIB",
+      "candles": 15994,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-SHIB",
+      "candles": 66007,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-TRUMP",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-TRUMP",
+      "candles": 134,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-TRUMP",
+      "candles": 504,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-TRUMP",
+      "candles": 1433,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-TRUMP",
+      "candles": 5399,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-TRUMP",
+      "candles": 15123,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-TRUMP",
+      "candles": 50093,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-TRX",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-TRX",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-TRX",
+      "candles": 531,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-TRX",
+      "candles": 1459,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-TRX",
+      "candles": 5446,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-TRX",
+      "candles": 15906,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-TRX",
+      "candles": 59224,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-UP2",
+      "candles": 1,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-UP2",
+      "candles": 2,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-UP2",
+      "candles": 4,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-UP2",
+      "candles": 11,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-UP2",
+      "candles": 41,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-UP2",
+      "candles": 121,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-UP2",
+      "candles": 598,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-USDT",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-USDT",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-USDT",
+      "candles": 536,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-USDT",
+      "candles": 1465,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-USDT",
+      "candles": 5453,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-USDT",
+      "candles": 16089,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-USDT",
+      "candles": 79107,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-VIRTUAL",
+      "candles": 20,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-VIRTUAL",
+      "candles": 135,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-VIRTUAL",
+      "candles": 531,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-VIRTUAL",
+      "candles": 1460,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-VIRTUAL",
+      "candles": 5445,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-VIRTUAL",
+      "candles": 15747,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-VIRTUAL",
+      "candles": 59205,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1w",
+      "market": "KRW-VVV",
+      "candles": 1,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1d",
+      "market": "KRW-VVV",
+      "candles": 3,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "4h",
+      "market": "KRW-VVV",
+      "candles": 8,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1h",
+      "market": "KRW-VVV",
+      "candles": 22,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "15m",
+      "market": "KRW-VVV",
+      "candles": 82,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "5m",
+      "market": "KRW-VVV",
+      "candles": 242,
+      "status": "LOCAL_CACHE"
+    },
+    {
+      "timeframe": "1m",
+      "market": "KRW-VVV",
+      "candles": 1165,
+      "status": "LOCAL_CACHE"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}
