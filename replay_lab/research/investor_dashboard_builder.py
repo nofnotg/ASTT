@@ -37,6 +37,11 @@ REPORT_LABELS: dict[str, tuple[str, str, str]] = {
         "Rolling Edge, Balanced, Hybrid, Aggressive를 하나의 운용 부품으로 비교해 보완 가능한 지점을 찾습니다.",
         "V6.4 핵심",
     ),
+    "latest_v64_policy_compounding_report.html": (
+        "V6.4 Rolling vs Balanced 복리 재산정",
+        "Rolling Edge와 Balanced Growth를 독립 계좌로 다시 돌려 주별/월별/연별 수익률을 비교합니다.",
+        "V6.4 핵심",
+    ),
     "latest_head_controller_v64_review_report.html": (
         "V6.4 Head Controller 검토",
         "LLM 기반 복기와 다음 실험 제안을 보되, 자동 적용은 금지합니다.",
@@ -81,6 +86,7 @@ V64_PACK = [
     "latest_v64_return_amplification_report.html",
     "latest_v64_causal_defense_report.html",
     "latest_v64_policy_blend_analysis_report.html",
+    "latest_v64_policy_compounding_report.html",
 ]
 
 
