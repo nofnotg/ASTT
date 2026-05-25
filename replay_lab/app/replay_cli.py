@@ -250,6 +250,21 @@ from replay_lab.feedback.v64_scenario_comparison_html_report import V64ScenarioC
 from replay_lab.feedback.v64_hindsight_audit_html_report import V64HindsightAuditHTMLReport
 from replay_lab.feedback.v64_investor_summary_html_report import V64InvestorSummaryHTMLReport
 from replay_lab.feedback.head_controller_v64_review_html import HeadControllerV64ReviewHTML
+from replay_lab.research.v65_ma_regime_filter_lab import build_v65_ma_features
+from replay_lab.research.v65_ma_scenario_comparison import (
+    analyze_v65_yearly_weakness_repair,
+    build_v65_ma_risk_report,
+    run_v65_ma_policy_router_lab,
+    run_v65_ma_scenario_lab,
+)
+from replay_lab.research.head_controller_v65_review import run_head_controller_v65_review
+from replay_lab.feedback.v65_ma_scenario_report_html import (
+    V65MAPolicyRouterReportHTML,
+    V65MARiskReportHTML,
+    V65MAScenarioReportHTML,
+    V65YearlyRepairReportHTML,
+)
+from replay_lab.feedback.head_controller_v65_review_html import HeadControllerV65ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1922,6 +1937,66 @@ def build_head_controller_v64_review_report_html_command(args: argparse.Namespac
     return 0
 
 
+def build_v65_ma_features_command(args: argparse.Namespace) -> int:
+    summary = build_v65_ma_features(archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"feature_count": summary.get("feature_count"), "lookahead_fail_count": summary.get("lookahead_fail_count")}, ensure_ascii=False))
+    return 0
+
+
+def run_v65_ma_scenario_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v65_ma_scenario_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"scenarios": len(summary.get("scenarios", [])), "best": summary.get("recommendation", {}).get("best_scenario")}, ensure_ascii=False))
+    return 0
+
+
+def run_v65_ma_policy_router_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v65_ma_policy_router_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"best_scenario": summary.get("best_scenario")}, ensure_ascii=False))
+    return 0
+
+
+def analyze_v65_yearly_weakness_repair_command(args: argparse.Namespace) -> int:
+    summary = analyze_v65_yearly_weakness_repair(args.reports_dir)
+    print(json.dumps({"years": len(summary.get("yearly_comparison", []))}, ensure_ascii=False))
+    return 0
+
+
+def build_v65_ma_risk_report_command(args: argparse.Namespace) -> int:
+    summary = build_v65_ma_risk_report(args.reports_dir)
+    print(json.dumps({"final_judgement": summary.get("final_judgement")}, ensure_ascii=False))
+    return 0
+
+
+def run_head_controller_v65_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v65_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v65_ma_scenario_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v65 ma scenario report: {V65MAScenarioReportHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v65_ma_policy_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v65 ma policy router report: {V65MAPolicyRouterReportHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v65_yearly_repair_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v65 yearly repair report: {V65YearlyRepairReportHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v65_ma_risk_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v65 ma risk report: {V65MARiskReportHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_head_controller_v65_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v65 report: {HeadControllerV65ReviewHTML(args.reports_dir).build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3304,6 +3379,53 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v64-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v64_review_report_html_command)
+
+    p = sub.add_parser("build-v65-ma-features")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=build_v65_ma_features_command)
+
+    p = sub.add_parser("run-v65-ma-scenario-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v65_ma_scenario_lab_command)
+
+    p = sub.add_parser("run-v65-ma-policy-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v65_ma_policy_router_lab_command)
+
+    p = sub.add_parser("analyze-v65-yearly-weakness-repair")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=analyze_v65_yearly_weakness_repair_command)
+
+    p = sub.add_parser("build-v65-ma-risk-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v65_ma_risk_report_command)
+
+    p = sub.add_parser("run-head-controller-v65-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_head_controller_v65_review_command)
+
+    p = sub.add_parser("build-v65-ma-scenario-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v65_ma_scenario_report_html_command)
+
+    p = sub.add_parser("build-v65-ma-policy-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v65_ma_policy_router_report_html_command)
+
+    p = sub.add_parser("build-v65-yearly-repair-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v65_yearly_repair_report_html_command)
+
+    p = sub.add_parser("build-v65-ma-risk-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v65_ma_risk_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v65-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v65_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

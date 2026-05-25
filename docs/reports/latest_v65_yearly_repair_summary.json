@@ -1,0 +1,276 @@
+{
+  "schema_version": "v65_yearly_repair_v1",
+  "yearly_comparison": [
+    {
+      "year": "2022",
+      "control_return_pct": 6.420437850166327,
+      "control_trades": 66,
+      "CONTROL_CURRENT_ROUTER_return_pct": 6.420437850166327,
+      "CONTROL_CURRENT_ROUTER_trade_count": 66,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 8.759507003236354,
+      "MA_FILTER_ONLY_trade_count": 20,
+      "MA_FILTER_ONLY_delta_pct_point": 2.339069153070027,
+      "MA_QUALITY_SCORE_return_pct": 6.892261350647089,
+      "MA_QUALITY_SCORE_trade_count": 20,
+      "MA_QUALITY_SCORE_delta_pct_point": 0.4718235004807614,
+      "MA_POLICY_ROUTER_return_pct": 8.973525432497386,
+      "MA_POLICY_ROUTER_trade_count": 17,
+      "MA_POLICY_ROUTER_delta_pct_point": 2.5530875823310586,
+      "MA_DEFENSIVE_REPAIR_return_pct": 6.707058320055759,
+      "MA_DEFENSIVE_REPAIR_trade_count": 20,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": 0.28662046988943146,
+      "MA_SQUEEZE_RESEARCH_return_pct": 7.373761139001944,
+      "MA_SQUEEZE_RESEARCH_trade_count": 20,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": 0.9533232888356169
+    },
+    {
+      "year": "2023",
+      "control_return_pct": 36.73091972577374,
+      "control_trades": 176,
+      "CONTROL_CURRENT_ROUTER_return_pct": 36.73091972577374,
+      "CONTROL_CURRENT_ROUTER_trade_count": 176,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 10.220396207172854,
+      "MA_FILTER_ONLY_trade_count": 66,
+      "MA_FILTER_ONLY_delta_pct_point": -26.510523518600884,
+      "MA_QUALITY_SCORE_return_pct": 7.410024724625752,
+      "MA_QUALITY_SCORE_trade_count": 74,
+      "MA_QUALITY_SCORE_delta_pct_point": -29.320895001147985,
+      "MA_POLICY_ROUTER_return_pct": 6.545679963285633,
+      "MA_POLICY_ROUTER_trade_count": 34,
+      "MA_POLICY_ROUTER_delta_pct_point": -30.185239762488106,
+      "MA_DEFENSIVE_REPAIR_return_pct": 7.376485483255779,
+      "MA_DEFENSIVE_REPAIR_trade_count": 50,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -29.35443424251796,
+      "MA_SQUEEZE_RESEARCH_return_pct": 17.18348152965421,
+      "MA_SQUEEZE_RESEARCH_trade_count": 66,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -19.54743819611953
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 89.25960684102334,
+      "control_trades": 360,
+      "CONTROL_CURRENT_ROUTER_return_pct": 89.25960684102334,
+      "CONTROL_CURRENT_ROUTER_trade_count": 360,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 16.27368208401341,
+      "MA_FILTER_ONLY_trade_count": 122,
+      "MA_FILTER_ONLY_delta_pct_point": -72.98592475700994,
+      "MA_QUALITY_SCORE_return_pct": 59.93808387022108,
+      "MA_QUALITY_SCORE_trade_count": 149,
+      "MA_QUALITY_SCORE_delta_pct_point": -29.321522970802263,
+      "MA_POLICY_ROUTER_return_pct": 3.743986849357772,
+      "MA_POLICY_ROUTER_trade_count": 56,
+      "MA_POLICY_ROUTER_delta_pct_point": -85.51561999166557,
+      "MA_DEFENSIVE_REPAIR_return_pct": 28.70049028963455,
+      "MA_DEFENSIVE_REPAIR_trade_count": 103,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -60.55911655138879,
+      "MA_SQUEEZE_RESEARCH_return_pct": 25.7836273124719,
+      "MA_SQUEEZE_RESEARCH_trade_count": 122,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -63.47597952855144
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 7.039779844977412,
+      "control_trades": 501,
+      "CONTROL_CURRENT_ROUTER_return_pct": 7.039779844977412,
+      "CONTROL_CURRENT_ROUTER_trade_count": 501,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": -1.5486457211808968,
+      "MA_FILTER_ONLY_trade_count": 103,
+      "MA_FILTER_ONLY_delta_pct_point": -8.588425566158309,
+      "MA_QUALITY_SCORE_return_pct": 1.5136646719348779,
+      "MA_QUALITY_SCORE_trade_count": 144,
+      "MA_QUALITY_SCORE_delta_pct_point": -5.526115173042534,
+      "MA_POLICY_ROUTER_return_pct": -2.855751285216679,
+      "MA_POLICY_ROUTER_trade_count": 68,
+      "MA_POLICY_ROUTER_delta_pct_point": -9.89553113019409,
+      "MA_DEFENSIVE_REPAIR_return_pct": -6.308182131939599,
+      "MA_DEFENSIVE_REPAIR_trade_count": 73,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -13.347961976917011,
+      "MA_SQUEEZE_RESEARCH_return_pct": 4.584775527956819,
+      "MA_SQUEEZE_RESEARCH_trade_count": 103,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -2.4550043170205926
+    },
+    {
+      "year": "2026",
+      "control_return_pct": 3.092610266792617,
+      "control_trades": 255,
+      "CONTROL_CURRENT_ROUTER_return_pct": 3.092610266792617,
+      "CONTROL_CURRENT_ROUTER_trade_count": 255,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": -1.5794528969105048,
+      "MA_FILTER_ONLY_trade_count": 16,
+      "MA_FILTER_ONLY_delta_pct_point": -4.672063163703122,
+      "MA_QUALITY_SCORE_return_pct": -1.536576560043268,
+      "MA_QUALITY_SCORE_trade_count": 41,
+      "MA_QUALITY_SCORE_delta_pct_point": -4.629186826835885,
+      "MA_POLICY_ROUTER_return_pct": -1.3997965538431245,
+      "MA_POLICY_ROUTER_trade_count": 11,
+      "MA_POLICY_ROUTER_delta_pct_point": -4.4924068206357415,
+      "MA_DEFENSIVE_REPAIR_return_pct": -3.308872871677304,
+      "MA_DEFENSIVE_REPAIR_trade_count": 19,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -6.401483138469921,
+      "MA_SQUEEZE_RESEARCH_return_pct": -1.7379909161323703,
+      "MA_SQUEEZE_RESEARCH_trade_count": 16,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -4.830601182924987
+    }
+  ],
+  "weak_year_repair": {
+    "CONTROL_CURRENT_ROUTER": {
+      "2025_return_pct": 7.039779844977412,
+      "2026_return_pct": 3.092610266792617,
+      "2025_trades": 501,
+      "2026_trades": 255,
+      "defensive_state_pnl": -364386.2270552049,
+      "caution_state_pnl": 52159.80814908029
+    },
+    "MA_FILTER_ONLY": {
+      "2025_return_pct": -1.5486457211808968,
+      "2026_return_pct": -1.5794528969105048,
+      "2025_trades": 103,
+      "2026_trades": 16,
+      "defensive_state_pnl": -31979.11079662127,
+      "caution_state_pnl": 10144.840156265858
+    },
+    "MA_QUALITY_SCORE": {
+      "2025_return_pct": 1.5136646719348779,
+      "2026_return_pct": -1.536576560043268,
+      "2025_trades": 144,
+      "2026_trades": 41,
+      "defensive_state_pnl": -70184.88191301131,
+      "caution_state_pnl": 20506.556944388994
+    },
+    "MA_POLICY_ROUTER": {
+      "2025_return_pct": -2.855751285216679,
+      "2026_return_pct": -1.3997965538431245,
+      "2025_trades": 68,
+      "2026_trades": 11,
+      "defensive_state_pnl": -1565.461378395339,
+      "caution_state_pnl": 15571.244859337798
+    },
+    "MA_DEFENSIVE_REPAIR": {
+      "2025_return_pct": -6.308182131939599,
+      "2026_return_pct": -3.308872871677304,
+      "2025_trades": 73,
+      "2026_trades": 19,
+      "defensive_state_pnl": -54616.35853629478,
+      "caution_state_pnl": 39701.8037254678
+    },
+    "MA_SQUEEZE_RESEARCH": {
+      "2025_return_pct": 4.584775527956819,
+      "2026_return_pct": -1.7379909161323703,
+      "2025_trades": 103,
+      "2026_trades": 16,
+      "defensive_state_pnl": -53670.00669432657,
+      "caution_state_pnl": 49263.584861413074
+    }
+  },
+  "plan_impact": [
+    {
+      "scenario": "CONTROL_CURRENT_ROUTER",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 486169.97466140595,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": 0.0,
+      "trade_count": 320
+    },
+    {
+      "scenario": "CONTROL_CURRENT_ROUTER",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 533301.1717331136,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": 0.0,
+      "trade_count": 1038
+    },
+    {
+      "scenario": "MA_FILTER_ONLY",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 88915.8306839774,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": -397254.14397742855,
+      "trade_count": 144
+    },
+    {
+      "scenario": "MA_FILTER_ONLY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 86370.71596313835,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": -446930.4557699752,
+      "trade_count": 183
+    },
+    {
+      "scenario": "MA_QUALITY_SCORE",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 228038.0951644675,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": -258131.87949693846,
+      "trade_count": 187
+    },
+    {
+      "scenario": "MA_QUALITY_SCORE",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 189686.58691498,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": -343614.5848181336,
+      "trade_count": 241
+    },
+    {
+      "scenario": "MA_POLICY_ROUTER",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 37144.91041917598,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": -449025.06424223,
+      "trade_count": 82
+    },
+    {
+      "scenario": "MA_POLICY_ROUTER",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 39734.036209343576,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": -493567.13552377,
+      "trade_count": 104
+    },
+    {
+      "scenario": "MA_DEFENSIVE_REPAIR",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 76263.70516253076,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": -409906.2694988752,
+      "trade_count": 121
+    },
+    {
+      "scenario": "MA_DEFENSIVE_REPAIR",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 91681.4846026741,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": -441619.6871304395,
+      "trade_count": 144
+    },
+    {
+      "scenario": "MA_SQUEEZE_RESEARCH",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "pnl_krw": 142839.8839332835,
+      "control_pnl_krw": 486169.97466140595,
+      "delta_krw": -343330.09072812245,
+      "trade_count": 144
+    },
+    {
+      "scenario": "MA_SQUEEZE_RESEARCH",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "pnl_krw": 170388.98995314483,
+      "control_pnl_krw": 533301.1717331136,
+      "delta_krw": -362912.1817799688,
+      "trade_count": 183
+    }
+  ],
+  "recommendation": {
+    "best_scenario": "CONTROL_CURRENT_ROUTER",
+    "final_judgement": "MA_FILTER_REJECTED",
+    "reason": "MA 필터는 단독 매수가 아니라 쉬어야 할 구간과 감속 구간을 판별하는 보조 입력으로만 평가했습니다."
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

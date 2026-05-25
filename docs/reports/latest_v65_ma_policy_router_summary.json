@@ -1,0 +1,208 @@
+{
+  "schema_version": "v65_ma_policy_router_v1",
+  "best_scenario": "CONTROL_CURRENT_ROUTER",
+  "router": {
+    "decisions": {
+      "ENTER": 127,
+      "NO_TRADE": 1172,
+      "REDUCE": 59
+    },
+    "top_reasons": [
+      [
+        "MA_BEAR_OR_LOST_75",
+        1031
+      ],
+      [
+        "MA_OVEREXTENDED_OBSERVE",
+        96
+      ],
+      [
+        "DEFENSIVE_A_PLUS_ONLY",
+        81
+      ],
+      [
+        "MA_CHOP_REDUCE",
+        59
+      ],
+      [
+        "DEFENSIVE_MA_CHOP",
+        45
+      ],
+      [
+        "PLAN_B_BALANCED_IN_MA_BULL",
+        19
+      ],
+      [
+        "PLAN_A_ROLLING_IN_MA_BULL",
+        18
+      ]
+    ]
+  },
+  "scenario_rows": [
+    {
+      "scenario": "CONTROL_CURRENT_ROUTER",
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 203.89422927890374,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2612045445309292,
+      "expectancy_pct": 0.15014302597857437,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.722596792291073,
+      "average_position_krw": 145669.72426644125,
+      "lookahead_fail_count": 0,
+      "decision": "POLICY_ROUTER_CANDIDATE"
+    },
+    {
+      "scenario": "MA_POLICY_ROUTER",
+      "final_equity_krw": 576878.9466285199,
+      "total_return_pct": 15.37578932570398,
+      "mdd_pct": -5.3457742417410445,
+      "profit_factor": 1.6086238670757371,
+      "expectancy_pct": 0.08266553400916088,
+      "trade_count": 186,
+      "skipped_trade_count": 1172,
+      "win_rate_pct": 53.2258064516129,
+      "return_mdd_ratio": 2.8762511528538286,
+      "average_position_krw": 29927.727463038664,
+      "lookahead_fail_count": 0,
+      "decision": "MA_FILTER_REJECTED"
+    },
+    {
+      "scenario": "MA_DEFENSIVE_REPAIR",
+      "final_equity_krw": 667945.1897652048,
+      "total_return_pct": 33.58903795304096,
+      "mdd_pct": -13.81486657751387,
+      "profit_factor": 1.5160275899774445,
+      "expectancy_pct": 0.1267510866152489,
+      "trade_count": 265,
+      "skipped_trade_count": 1093,
+      "win_rate_pct": 46.79245283018868,
+      "return_mdd_ratio": 2.4313689723006835,
+      "average_position_krw": 46350.467502369356,
+      "lookahead_fail_count": 0,
+      "decision": "MA_FILTER_REJECTED"
+    }
+  ],
+  "yearly_comparison": [
+    {
+      "year": "2022",
+      "control_return_pct": 6.420437850166327,
+      "control_trades": 66,
+      "CONTROL_CURRENT_ROUTER_return_pct": 6.420437850166327,
+      "CONTROL_CURRENT_ROUTER_trade_count": 66,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 8.759507003236354,
+      "MA_FILTER_ONLY_trade_count": 20,
+      "MA_FILTER_ONLY_delta_pct_point": 2.339069153070027,
+      "MA_QUALITY_SCORE_return_pct": 6.892261350647089,
+      "MA_QUALITY_SCORE_trade_count": 20,
+      "MA_QUALITY_SCORE_delta_pct_point": 0.4718235004807614,
+      "MA_POLICY_ROUTER_return_pct": 8.973525432497386,
+      "MA_POLICY_ROUTER_trade_count": 17,
+      "MA_POLICY_ROUTER_delta_pct_point": 2.5530875823310586,
+      "MA_DEFENSIVE_REPAIR_return_pct": 6.707058320055759,
+      "MA_DEFENSIVE_REPAIR_trade_count": 20,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": 0.28662046988943146,
+      "MA_SQUEEZE_RESEARCH_return_pct": 7.373761139001944,
+      "MA_SQUEEZE_RESEARCH_trade_count": 20,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": 0.9533232888356169
+    },
+    {
+      "year": "2023",
+      "control_return_pct": 36.73091972577374,
+      "control_trades": 176,
+      "CONTROL_CURRENT_ROUTER_return_pct": 36.73091972577374,
+      "CONTROL_CURRENT_ROUTER_trade_count": 176,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 10.220396207172854,
+      "MA_FILTER_ONLY_trade_count": 66,
+      "MA_FILTER_ONLY_delta_pct_point": -26.510523518600884,
+      "MA_QUALITY_SCORE_return_pct": 7.410024724625752,
+      "MA_QUALITY_SCORE_trade_count": 74,
+      "MA_QUALITY_SCORE_delta_pct_point": -29.320895001147985,
+      "MA_POLICY_ROUTER_return_pct": 6.545679963285633,
+      "MA_POLICY_ROUTER_trade_count": 34,
+      "MA_POLICY_ROUTER_delta_pct_point": -30.185239762488106,
+      "MA_DEFENSIVE_REPAIR_return_pct": 7.376485483255779,
+      "MA_DEFENSIVE_REPAIR_trade_count": 50,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -29.35443424251796,
+      "MA_SQUEEZE_RESEARCH_return_pct": 17.18348152965421,
+      "MA_SQUEEZE_RESEARCH_trade_count": 66,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -19.54743819611953
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 89.25960684102334,
+      "control_trades": 360,
+      "CONTROL_CURRENT_ROUTER_return_pct": 89.25960684102334,
+      "CONTROL_CURRENT_ROUTER_trade_count": 360,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": 16.27368208401341,
+      "MA_FILTER_ONLY_trade_count": 122,
+      "MA_FILTER_ONLY_delta_pct_point": -72.98592475700994,
+      "MA_QUALITY_SCORE_return_pct": 59.93808387022108,
+      "MA_QUALITY_SCORE_trade_count": 149,
+      "MA_QUALITY_SCORE_delta_pct_point": -29.321522970802263,
+      "MA_POLICY_ROUTER_return_pct": 3.743986849357772,
+      "MA_POLICY_ROUTER_trade_count": 56,
+      "MA_POLICY_ROUTER_delta_pct_point": -85.51561999166557,
+      "MA_DEFENSIVE_REPAIR_return_pct": 28.70049028963455,
+      "MA_DEFENSIVE_REPAIR_trade_count": 103,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -60.55911655138879,
+      "MA_SQUEEZE_RESEARCH_return_pct": 25.7836273124719,
+      "MA_SQUEEZE_RESEARCH_trade_count": 122,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -63.47597952855144
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 7.039779844977412,
+      "control_trades": 501,
+      "CONTROL_CURRENT_ROUTER_return_pct": 7.039779844977412,
+      "CONTROL_CURRENT_ROUTER_trade_count": 501,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": -1.5486457211808968,
+      "MA_FILTER_ONLY_trade_count": 103,
+      "MA_FILTER_ONLY_delta_pct_point": -8.588425566158309,
+      "MA_QUALITY_SCORE_return_pct": 1.5136646719348779,
+      "MA_QUALITY_SCORE_trade_count": 144,
+      "MA_QUALITY_SCORE_delta_pct_point": -5.526115173042534,
+      "MA_POLICY_ROUTER_return_pct": -2.855751285216679,
+      "MA_POLICY_ROUTER_trade_count": 68,
+      "MA_POLICY_ROUTER_delta_pct_point": -9.89553113019409,
+      "MA_DEFENSIVE_REPAIR_return_pct": -6.308182131939599,
+      "MA_DEFENSIVE_REPAIR_trade_count": 73,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -13.347961976917011,
+      "MA_SQUEEZE_RESEARCH_return_pct": 4.584775527956819,
+      "MA_SQUEEZE_RESEARCH_trade_count": 103,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -2.4550043170205926
+    },
+    {
+      "year": "2026",
+      "control_return_pct": 3.092610266792617,
+      "control_trades": 255,
+      "CONTROL_CURRENT_ROUTER_return_pct": 3.092610266792617,
+      "CONTROL_CURRENT_ROUTER_trade_count": 255,
+      "CONTROL_CURRENT_ROUTER_delta_pct_point": 0.0,
+      "MA_FILTER_ONLY_return_pct": -1.5794528969105048,
+      "MA_FILTER_ONLY_trade_count": 16,
+      "MA_FILTER_ONLY_delta_pct_point": -4.672063163703122,
+      "MA_QUALITY_SCORE_return_pct": -1.536576560043268,
+      "MA_QUALITY_SCORE_trade_count": 41,
+      "MA_QUALITY_SCORE_delta_pct_point": -4.629186826835885,
+      "MA_POLICY_ROUTER_return_pct": -1.3997965538431245,
+      "MA_POLICY_ROUTER_trade_count": 11,
+      "MA_POLICY_ROUTER_delta_pct_point": -4.4924068206357415,
+      "MA_DEFENSIVE_REPAIR_return_pct": -3.308872871677304,
+      "MA_DEFENSIVE_REPAIR_trade_count": 19,
+      "MA_DEFENSIVE_REPAIR_delta_pct_point": -6.401483138469921,
+      "MA_SQUEEZE_RESEARCH_return_pct": -1.7379909161323703,
+      "MA_SQUEEZE_RESEARCH_trade_count": 16,
+      "MA_SQUEEZE_RESEARCH_delta_pct_point": -4.830601182924987
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

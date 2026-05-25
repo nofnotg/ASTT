@@ -1,0 +1,18 @@
+{
+  "schema_version": "head_controller_v65_review_v1",
+  "llm_provider": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "best_scenario": "CONTROL_CURRENT_ROUTER",
+  "rejected_scenario": "MA_SQUEEZE_RESEARCH",
+  "recommended_policy": "CONTROL_CURRENT_ROUTER",
+  "next_forward_candidate": "NONE",
+  "risk_flags": [
+    "LIVE_NOT_ALLOWED",
+    "MA is used only as filter/router, not standalone buy trigger",
+    "OHLCV-only validation still needs spread/depth forward overlay"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

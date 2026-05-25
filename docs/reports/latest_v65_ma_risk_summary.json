@@ -1,0 +1,83 @@
+{
+  "schema_version": "v65_ma_risk_v1",
+  "scenario_risk": {
+    "CONTROL_CURRENT_ROUTER": {
+      "max_losing_streak": 19,
+      "largest_loss_krw": -18015.582662097935,
+      "largest_win_krw": 34169.56693958315
+    },
+    "MA_FILTER_ONLY": {
+      "max_losing_streak": 21,
+      "largest_loss_krw": -7394.938557056536,
+      "largest_win_krw": 13625.854983182506
+    },
+    "MA_QUALITY_SCORE": {
+      "max_losing_streak": 21,
+      "largest_loss_krw": -10631.579896177725,
+      "largest_win_krw": 19973.772570022247
+    },
+    "MA_POLICY_ROUTER": {
+      "max_losing_streak": 16,
+      "largest_loss_krw": -6112.564317465493,
+      "largest_win_krw": 11738.776959595712
+    },
+    "MA_DEFENSIVE_REPAIR": {
+      "max_losing_streak": 18,
+      "largest_loss_krw": -7786.7522828340125,
+      "largest_win_krw": 14423.821964466004
+    },
+    "MA_SQUEEZE_RESEARCH": {
+      "max_losing_streak": 21,
+      "largest_loss_krw": -9306.197823068887,
+      "largest_win_krw": 21823.574877660703
+    }
+  },
+  "ma_condition_effect": [
+    {
+      "ma_condition": "MA_CHOP",
+      "control_trade_count": 398,
+      "control_pnl_krw": 281873.913993193,
+      "effect": "398건, 기준 손익 281,874원",
+      "decision": "REJECT_AS_HARD_FILTER"
+    },
+    {
+      "ma_condition": "MA_SQUEEZE_BREAKOUT",
+      "control_trade_count": 170,
+      "control_pnl_krw": 205962.55211526656,
+      "effect": "170건, 기준 손익 205,963원",
+      "decision": "KEEP_RESEARCH"
+    },
+    {
+      "ma_condition": "TESTA_BULL_ALIGNMENT",
+      "control_trade_count": 620,
+      "control_pnl_krw": 708929.2000163828,
+      "effect": "620건, 기준 손익 708,929원",
+      "decision": "KEEP_AS_QUALITY_BOOST"
+    },
+    {
+      "ma_condition": "TESTA_LOST_75",
+      "control_trade_count": 903,
+      "control_pnl_krw": 458055.3967575842,
+      "effect": "903건, 기준 손익 458,055원",
+      "decision": "REJECT_AS_HARD_FILTER"
+    },
+    {
+      "ma_condition": "MA_OVEREXTENDED",
+      "control_trade_count": 222,
+      "control_pnl_krw": 109229.72097179003,
+      "effect": "222건, 기준 손익 109,230원",
+      "decision": "REJECT_AS_HARD_FILTER"
+    }
+  ],
+  "audit": {
+    "checked_trades": 8148,
+    "pass": 8148,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": []
+  },
+  "final_judgement": "MA_FILTER_REJECTED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
