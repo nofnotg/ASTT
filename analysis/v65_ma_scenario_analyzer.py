@@ -164,9 +164,11 @@ def analyze_v65_ma_scenarios(
         "ma_feature_counts": _feature_counts_from_data(scenario_data["CONTROL_CURRENT_ROUTER"]),
         "yearly_comparison": _yearly_comparison(control, scenario_data, initial_cash_krw),
         "weak_year_repair": _weak_year_repair(scenario_data, initial_cash_krw),
+        "preservation_scores": _preservation_scores(scenario_data),
         "plan_impact": _group_impact(scenario_data, "plan"),
         "setup_impact": _group_impact(scenario_data, "setup_type"),
         "ma_condition_effect": _ma_condition_effect(scenario_data),
+        "ma_condition_attribution": _ma_condition_attribution(scenario_data),
         "policy_router": _router_summary(scenario_data["MA_POLICY_ROUTER"]),
         "risk_summary": _risk_summary(scenario_data),
         "audit": _audit(scenario_data),
@@ -455,6 +457,23 @@ def _weak_year_repair(scenario_data: dict[str, Any], initial_cash: float) -> dic
     return output
 
 
+def _preservation_scores(scenario_data: dict[str, Any]) -> dict[str, Any]:
+    control_years = {row["period"]: row for row in _period_rows(scenario_data["CONTROL_CURRENT_ROUTER"]["journal"], "year")}
+    control_strong = control_years.get("2023", {}).get("return_pct", 0.0) + control_years.get("2024", {}).get("return_pct", 0.0)
+    scores: dict[str, Any] = {}
+    for scenario, data in scenario_data.items():
+        years = {row["period"]: row for row in _period_rows(data["journal"], "year")}
+        strong = years.get("2023", {}).get("return_pct", 0.0) + years.get("2024", {}).get("return_pct", 0.0)
+        score = strong / control_strong * 100.0 if control_strong else 0.0
+        scores[scenario] = {
+            "strong_year_return_sum_pct": strong,
+            "control_strong_year_return_sum_pct": control_strong,
+            "preservation_score_pct": score,
+            "decision": "PRESERVED" if score >= 80.0 else "OVER_CUT_STRONG_YEARS",
+        }
+    return scores
+
+
 def _state_pnl(journal: list[dict[str, Any]], state: str) -> float:
     return sum(float(row["pnl_krw"]) for row in journal if row.get("defense_state_before_trade") == state)
 
@@ -493,7 +512,7 @@ def _feature_counts_from_data(data: dict[str, Any]) -> dict[str, int]:
 
 
 def _ma_condition_effect(scenario_data: dict[str, Any]) -> list[dict[str, Any]]:
-    conditions = ["MA_CHOP", "MA_SQUEEZE_BREAKOUT", "TESTA_BULL_ALIGNMENT", "TESTA_LOST_75", "MA_OVEREXTENDED"]
+    conditions = ["MA_CHOP", "MA_BEAR", "MA_OVEREXTENDED", "MA_SQUEEZE_BREAKOUT", "MA_RECLAIM_20", "TESTA_BULL_ALIGNMENT", "TESTA_RECLAIM_5", "TESTA_LOST_75", "TESTA_CHOP"]
     control = scenario_data["CONTROL_CURRENT_ROUTER"]["journal"]
     rows = []
     for condition in conditions:
@@ -507,6 +526,52 @@ def _ma_condition_effect(scenario_data: dict[str, Any]) -> list[dict[str, Any]]:
             "decision": _condition_decision(condition, control_pnl),
         })
     return rows
+
+
+def _ma_condition_attribution(scenario_data: dict[str, Any]) -> list[dict[str, Any]]:
+    condition_map = {
+        "MA_CHOP no-trade": {"MA_CHOP", "TESTA_CHOP"},
+        "MA_BEAR long-block": {"MA_BEAR"},
+        "MA_OVEREXTENDED observation": {"MA_OVEREXTENDED"},
+        "20/200 squeeze breakout": {"MA_SQUEEZE_BREAKOUT"},
+        "MA_RECLAIM_20": {"MA_RECLAIM_20"},
+        "TESTA_BULL_ALIGNMENT": {"TESTA_BULL_ALIGNMENT"},
+        "TESTA_RECLAIM_5": {"TESTA_RECLAIM_5"},
+        "TESTA_LOST_75": {"TESTA_LOST_75"},
+        "5/25/75 chop": {"TESTA_CHOP"},
+        "75MA breakdown filter": {"TESTA_LOST_75"},
+    }
+    control = scenario_data["CONTROL_CURRENT_ROUTER"]["journal"]
+    filter_rows = scenario_data["MA_FILTER_ONLY"]["journal"]
+    rows = []
+    for name, states in condition_map.items():
+        triggered = [row for row in control if states.intersection(set(row.get("ma_states", [])))]
+        blocked = [row for row in filter_rows if row.get("defense_action") != "ENTER" and states.intersection(set(row.get("ma_states", [])))]
+        saved_loss = -sum(float(row["pnl_krw"]) for row in triggered if float(row["pnl_krw"]) < 0)
+        missed_profit = sum(float(row["pnl_krw"]) for row in triggered if float(row["pnl_krw"]) > 0)
+        net_effect = saved_loss - missed_profit
+        rows.append(
+            {
+                "ma_condition": name,
+                "trigger_count": len(triggered),
+                "blocked_trades": len(blocked),
+                "saved_loss_krw": saved_loss,
+                "missed_profit_krw": missed_profit,
+                "net_effect_krw": net_effect,
+                "decision": _attribution_decision(name, net_effect, missed_profit),
+            }
+        )
+    return rows
+
+
+def _attribution_decision(name: str, net_effect: float, missed_profit: float) -> str:
+    if name in {"20/200 squeeze breakout", "TESTA_BULL_ALIGNMENT", "TESTA_RECLAIM_5", "MA_RECLAIM_20"} and missed_profit > 0:
+        return "KEEP_AS_QUALITY_SCORE"
+    if net_effect < 0:
+        return "DISABLE"
+    if net_effect > 0:
+        return "KEEP_FOR_RETEST"
+    return "REJECT"
 
 
 def _condition_effect_text(condition: str, pnl: float, count: int) -> str:

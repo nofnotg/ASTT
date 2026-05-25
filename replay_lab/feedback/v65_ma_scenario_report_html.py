@@ -86,14 +86,16 @@ def _html(title: str, summary: dict[str, Any], mode: str) -> str:
       <div class="card"><div>추천 시나리오</div><div class="kpi">{html.escape(str(rec.get('best_scenario', '분석 필요')))}</div></div>
       <div class="card"><div>최종 판단</div><div class="kpi">{html.escape(str(rec.get('final_judgement', 'LIVE_NOT_ALLOWED')))}</div></div>
       <div class="card"><div>Lookahead 실패</div><div class="kpi">{int(summary.get('audit', {}).get('fail', 0))}</div></div>
+      <div class="card"><div>폐기할 필터</div><div class="kpi bad">MA Hard Filter</div></div>
     </div>
-    <p>MA는 매수 버튼이 아닙니다. 이번 검증의 질문은 “MA가 쉬어야 할 장, 줄여야 할 장, 기존 성공 셋업을 더 믿어도 되는 장을 구분했는가”입니다.</p>
+    <p>결론은 단호합니다. MA_CHOP, MA_BEAR, TESTA_LOST_75 같은 hard no-trade 필터는 폐기합니다. MDD는 줄였지만 2023/2024의 큰 수익을 과도하게 잘라먹었고, 2025/2026 약한 해도 개선하지 못했습니다.</p>
+    <p>MA는 매수 버튼이 아닙니다. 이번 검증의 질문은 “MA가 쉬어야 할 장, 줄여야 할 장, 기존 성공 셋업을 더 믿어도 되는 장을 구분했는가”였고, 현 규칙은 그 기준을 통과하지 못했습니다.</p>
   </section>
   <section><h2>시나리오별 성과 비교</h2>{_scenario_table(scenarios)}</section>
   <section><h2>연도별 수익률 비교</h2>{_yearly_table(summary.get('yearly_comparison', []))}{_yearly_chart(summary.get('yearly_comparison', []))}</section>
   <section><h2>2025/2026 약한 해 보완 여부</h2>{_weak_table(summary.get('weak_year_repair', {}))}</section>
   <section><h2>Plan별 영향</h2>{_impact_table(summary.get('plan_impact', []), 'plan')}</section>
-  <section><h2>MA 조건별 효과</h2>{_condition_table(summary.get('ma_condition_effect', []))}</section>
+  <section><h2>MA 조건별 효과</h2>{_attribution_table(summary.get('ma_condition_attribution', []))}{_condition_table(summary.get('ma_condition_effect', []))}</section>
   <section><h2>Equity Curve 비교</h2>{_line_chart(summary.get('equity_curve', {}), 'equity')}</section>
   <section><h2>Drawdown Curve 비교</h2>{_line_chart(summary.get('drawdown_curve', {}), 'drawdown_pct')}</section>
   <section><h2>Lookahead / Hindsight Audit</h2>{_audit_table(summary.get('audit', {}))}</section>
@@ -145,6 +147,14 @@ def _condition_table(rows: list[dict[str, Any]]) -> str:
         for row in rows
     )
     return "<table><tr><th>MA 조건</th><th>효과</th><th>유지/폐기</th></tr>" + body + "</table>"
+
+
+def _attribution_table(rows: list[dict[str, Any]]) -> str:
+    body = "".join(
+        f"<tr><td>{_esc(row.get('ma_condition'))}</td><td>{int(row.get('trigger_count', 0))}</td><td>{int(row.get('blocked_trades', 0))}</td><td>{_money(row.get('saved_loss_krw'))}</td><td>{_money(row.get('missed_profit_krw'))}</td><td>{_money(row.get('net_effect_krw'))}</td><td>{_esc(row.get('decision'))}</td></tr>"
+        for row in rows
+    )
+    return "<table><tr><th>MA Condition</th><th>Trigger Count</th><th>Blocked Trades</th><th>Saved Loss</th><th>Missed Profit</th><th>Net Effect</th><th>Decision</th></tr>" + body + "</table>"
 
 
 def _audit_table(audit: dict[str, Any]) -> str:

@@ -1,15 +1,40 @@
 {
   "schema_version": "head_controller_v65_review_v1",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
   "llm_provider": "openai",
   "llm_used": false,
   "fallback_used": true,
   "best_scenario": "CONTROL_CURRENT_ROUTER",
-  "rejected_scenario": "MA_SQUEEZE_RESEARCH",
-  "recommended_policy": "CONTROL_CURRENT_ROUTER",
+  "forward_candidate": "NONE",
+  "rejected_scenario": "MA_FILTER_ONLY, MA_POLICY_ROUTER, MA_DEFENSIVE_REPAIR",
+  "recommended_policy": "KEEP_CURRENT_BALANCED_GROWTH_BASELINE",
   "next_forward_candidate": "NONE",
+  "validated_filters": [],
+  "rejected_filters": [
+    "MA_CHOP no-trade",
+    "MA_BEAR long-block",
+    "MA_OVEREXTENDED observation",
+    "TESTA_LOST_75",
+    "5/25/75 chop",
+    "75MA breakdown filter"
+  ],
+  "research_only_filters": [
+    "20/200 squeeze breakout",
+    "MA_RECLAIM_20",
+    "TESTA_BULL_ALIGNMENT",
+    "TESTA_RECLAIM_5"
+  ],
+  "primary_improvement": "None. MA hard filters reduced drawdown but destroyed too much return and did not repair 2025/2026.",
+  "primary_risk": "MA conditions that looked defensive also contained many profitable ICT/Combined trades, especially in 2023/2024.",
+  "next_experiments": [
+    "Disable MA hard no-trade filters.",
+    "Keep squeeze/alignment only as non-binding diagnostics.",
+    "Focus V6.6 on market/coin cooldown, monthly loss limits, and defensive A+ setup gating."
+  ],
   "risk_flags": [
     "LIVE_NOT_ALLOWED",
     "MA is used only as filter/router, not standalone buy trigger",
+    "V6.5 MA hard filter rejected",
     "OHLCV-only validation still needs spread/depth forward overlay"
   ],
   "auto_apply_allowed": false,

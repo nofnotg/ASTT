@@ -41,11 +41,32 @@
       "decision": "REJECT_AS_HARD_FILTER"
     },
     {
+      "ma_condition": "MA_BEAR",
+      "control_trade_count": 904,
+      "control_pnl_krw": 662534.717808969,
+      "effect": "904건, 기준 손익 662,535원",
+      "decision": "OBSERVE"
+    },
+    {
+      "ma_condition": "MA_OVEREXTENDED",
+      "control_trade_count": 222,
+      "control_pnl_krw": 109229.72097179003,
+      "effect": "222건, 기준 손익 109,230원",
+      "decision": "REJECT_AS_HARD_FILTER"
+    },
+    {
       "ma_condition": "MA_SQUEEZE_BREAKOUT",
       "control_trade_count": 170,
       "control_pnl_krw": 205962.55211526656,
       "effect": "170건, 기준 손익 205,963원",
       "decision": "KEEP_RESEARCH"
+    },
+    {
+      "ma_condition": "MA_RECLAIM_20",
+      "control_trade_count": 1073,
+      "control_pnl_krw": 1082572.7632194245,
+      "effect": "1073건, 기준 손익 1,082,573원",
+      "decision": "OBSERVE"
     },
     {
       "ma_condition": "TESTA_BULL_ALIGNMENT",
@@ -55,6 +76,13 @@
       "decision": "KEEP_AS_QUALITY_BOOST"
     },
     {
+      "ma_condition": "TESTA_RECLAIM_5",
+      "control_trade_count": 862,
+      "control_pnl_krw": 940527.7188239184,
+      "effect": "862건, 기준 손익 940,528원",
+      "decision": "OBSERVE"
+    },
+    {
       "ma_condition": "TESTA_LOST_75",
       "control_trade_count": 903,
       "control_pnl_krw": 458055.3967575842,
@@ -62,11 +90,103 @@
       "decision": "REJECT_AS_HARD_FILTER"
     },
     {
-      "ma_condition": "MA_OVEREXTENDED",
-      "control_trade_count": 222,
-      "control_pnl_krw": 109229.72097179003,
-      "effect": "222건, 기준 손익 109,230원",
-      "decision": "REJECT_AS_HARD_FILTER"
+      "ma_condition": "TESTA_CHOP",
+      "control_trade_count": 201,
+      "control_pnl_krw": 74671.29612804195,
+      "effect": "201건, 기준 손익 74,671원",
+      "decision": "OBSERVE"
+    }
+  ],
+  "ma_condition_attribution": [
+    {
+      "ma_condition": "MA_CHOP no-trade",
+      "trigger_count": 498,
+      "blocked_trades": 394,
+      "saved_loss_krw": 1526655.5689054714,
+      "missed_profit_krw": 1748194.2720731704,
+      "net_effect_krw": -221538.70316769904,
+      "decision": "DISABLE"
+    },
+    {
+      "ma_condition": "MA_BEAR long-block",
+      "trigger_count": 904,
+      "blocked_trades": 904,
+      "saved_loss_krw": 2671976.9499246813,
+      "missed_profit_krw": 3334511.6677336493,
+      "net_effect_krw": -662534.7178089679,
+      "decision": "DISABLE"
+    },
+    {
+      "ma_condition": "MA_OVEREXTENDED observation",
+      "trigger_count": 222,
+      "blocked_trades": 65,
+      "saved_loss_krw": 565708.6074150071,
+      "missed_profit_krw": 674938.3283867969,
+      "net_effect_krw": -109229.7209717898,
+      "decision": "DISABLE"
+    },
+    {
+      "ma_condition": "20/200 squeeze breakout",
+      "trigger_count": 170,
+      "blocked_trades": 117,
+      "saved_loss_krw": 422185.5197564612,
+      "missed_profit_krw": 628148.0718717274,
+      "net_effect_krw": -205962.55211526615,
+      "decision": "KEEP_AS_QUALITY_SCORE"
+    },
+    {
+      "ma_condition": "MA_RECLAIM_20",
+      "trigger_count": 1073,
+      "blocked_trades": 750,
+      "saved_loss_krw": 2850971.6284553315,
+      "missed_profit_krw": 3933544.3916747505,
+      "net_effect_krw": -1082572.763219419,
+      "decision": "KEEP_AS_QUALITY_SCORE"
+    },
+    {
+      "ma_condition": "TESTA_BULL_ALIGNMENT",
+      "trigger_count": 620,
+      "blocked_trades": 368,
+      "saved_loss_krw": 1545763.6621592168,
+      "missed_profit_krw": 2254692.862175601,
+      "net_effect_krw": -708929.2000163842,
+      "decision": "KEEP_AS_QUALITY_SCORE"
+    },
+    {
+      "ma_condition": "TESTA_RECLAIM_5",
+      "trigger_count": 862,
+      "blocked_trades": 575,
+      "saved_loss_krw": 2271091.1584021123,
+      "missed_profit_krw": 3211618.877226027,
+      "net_effect_krw": -940527.7188239149,
+      "decision": "KEEP_AS_QUALITY_SCORE"
+    },
+    {
+      "ma_condition": "TESTA_LOST_75",
+      "trigger_count": 903,
+      "blocked_trades": 903,
+      "saved_loss_krw": 2792267.996422646,
+      "missed_profit_krw": 3250323.393180231,
+      "net_effect_krw": -458055.396757585,
+      "decision": "DISABLE"
+    },
+    {
+      "ma_condition": "5/25/75 chop",
+      "trigger_count": 201,
+      "blocked_trades": 166,
+      "saved_loss_krw": 662423.2624270334,
+      "missed_profit_krw": 737094.5585550753,
+      "net_effect_krw": -74671.29612804193,
+      "decision": "DISABLE"
+    },
+    {
+      "ma_condition": "75MA breakdown filter",
+      "trigger_count": 903,
+      "blocked_trades": 903,
+      "saved_loss_krw": 2792267.996422646,
+      "missed_profit_krw": 3250323.393180231,
+      "net_effect_krw": -458055.396757585,
+      "decision": "DISABLE"
     }
   ],
   "audit": {
@@ -77,6 +197,7 @@
     "major_violations": []
   },
   "final_judgement": "MA_FILTER_REJECTED",
+  "hard_filter_decision": "DISABLE_MA_HARD_FILTERS",
   "real_order_enabled": false,
   "live_order_allowed": false,
   "auto_apply_allowed": false
