@@ -218,6 +218,19 @@ from replay_lab.feedback.v61_failure_success_report_html import V61FailureSucces
 from replay_lab.feedback.v61_risk_sweep_report_html import V61RiskSweepReportHTML
 from replay_lab.feedback.v61_final_decision_report_html import V61FinalDecisionReportHTML
 from replay_lab.feedback.head_controller_v61_review_html import HeadControllerV61ReviewHTML
+from replay_lab.research.v62_capital_growth_backtest import run_v62_capital_growth_backtest
+from replay_lab.research.v62_strategy_router_validation import validate_v62_strategy_router
+from replay_lab.research.v62_real_exit_sweep import run_v62_real_exit_sweep
+from replay_lab.research.v62_investment_report_generation import build_v62_investment_reports
+from replay_lab.research.v62_risk_strengthen_review import run_v62_risk_strengthen_review
+from replay_lab.research.head_controller_v62_review import run_head_controller_v62_review
+from replay_lab.feedback.v62_trade_journal_html import V62TradeJournalHTML
+from replay_lab.feedback.v62_weekly_report_html import V62WeeklyReportHTML
+from replay_lab.feedback.v62_monthly_report_html import V62MonthlyReportHTML
+from replay_lab.feedback.v62_full_investment_report_html import V62FullInvestmentReportHTML
+from replay_lab.feedback.v62_strategy_router_report_html import V62StrategyRouterReportHTML
+from replay_lab.feedback.v62_risk_report_html import V62RiskReportHTML
+from replay_lab.feedback.head_controller_v62_review_html import HeadControllerV62ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -1710,6 +1723,73 @@ def build_head_controller_v61_review_report_html_command(args: argparse.Namespac
     return 0
 
 
+def run_v62_capital_growth_backtest_command(args: argparse.Namespace) -> int:
+    compounding = str(args.compounding).lower() == "true"
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v62_capital_growth_backtest(args.initial_cash_krw, compounding, use_history), ensure_ascii=False, default=str))
+    return 0
+
+
+def validate_v62_strategy_router_command(args: argparse.Namespace) -> int:
+    print(json.dumps(validate_v62_strategy_router(args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v62_real_exit_sweep_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v62_real_exit_sweep(args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v62_investment_reports_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v62_investment_reports(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v62_risk_strengthen_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v62_risk_strengthen_review(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v62_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v62_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v62_trade_journal_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 trade journal report: {V62TradeJournalHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v62_weekly_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 weekly report: {V62WeeklyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v62_monthly_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 monthly report: {V62MonthlyReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v62_full_investment_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 full investment report: {V62FullInvestmentReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v62_strategy_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 strategy router report: {V62StrategyRouterReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_v62_risk_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v62 risk report: {V62RiskReportHTML().build(args.reports_dir)}")
+    return 0
+
+
+def build_head_controller_v62_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v62 report: {HeadControllerV62ReviewHTML().build(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -2951,6 +3031,61 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v61-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v61_review_report_html_command)
+
+    p = sub.add_parser("run-v62-capital-growth-backtest")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--compounding", default="true")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v62_capital_growth_backtest_command)
+
+    p = sub.add_parser("validate-v62-strategy-router")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=validate_v62_strategy_router_command)
+
+    p = sub.add_parser("run-v62-real-exit-sweep")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.set_defaults(func=run_v62_real_exit_sweep_command)
+
+    p = sub.add_parser("build-v62-investment-reports")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_investment_reports_command)
+
+    p = sub.add_parser("run-v62-risk-strengthen-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v62_risk_strengthen_review_command)
+
+    p = sub.add_parser("run-head-controller-v62-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai", choices=["off", "auto", "openai", "gemini"])
+    p.set_defaults(func=run_head_controller_v62_review_command)
+
+    p = sub.add_parser("build-v62-trade-journal-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_trade_journal_report_html_command)
+
+    p = sub.add_parser("build-v62-weekly-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_weekly_report_html_command)
+
+    p = sub.add_parser("build-v62-monthly-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_monthly_report_html_command)
+
+    p = sub.add_parser("build-v62-full-investment-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_full_investment_report_html_command)
+
+    p = sub.add_parser("build-v62-strategy-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_strategy_router_report_html_command)
+
+    p = sub.add_parser("build-v62-risk-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v62_risk_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v62-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v62_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

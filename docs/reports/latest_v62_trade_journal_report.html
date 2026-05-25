@@ -1,0 +1,375 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V6.2 Trade Journal</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033}header{background:#0f172a;color:white;padding:28px}
+main{max-width:1180px;margin:auto;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:16px}.kpi{font-size:24px;font-weight:700}
+.good{color:#047857}.bad{color:#b91c1c}.warn{background:#fffbeb;border-left:4px solid #f59e0b;padding:14px;margin:14px 0}
+table{width:100%;border-collapse:collapse;background:white}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}
+th{background:#eef2ff}details{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin:12px 0}
+canvas{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px;max-height:320px}
+</style></head><body><header><h1>V6.2 Trade Journal</h1><p>실제 주문 없이 PAPER 기준으로 50만 원 계좌 흐름을 복기한 투자자용 리포트입니다.</p></header>
+<main><section class="grid"><div class="card"><div>Final Equity</div><div class="kpi">511,927 KRW</div></div><div class="card"><div>Return</div><div class="kpi">0.00%</div></div><div class="card"><div>MDD</div><div class="kpi">0.00%</div></div><div class="card"><div>Trades</div><div class="kpi">9</div></div></section>
+<div class="warn"><strong>안전 고지:</strong> LIVE 주문은 금지 상태입니다. OHLCV-only 결과라 실제 spread/depth forward 검증 전에는 실전 전환할 수 없습니다.</div>
+<h2>Equity Curve</h2><canvas id="eq"></canvas><h2>Drawdown</h2><canvas id="dd"></canvas>
+<h2>주요 표</h2><table><thead><tr><th>trade_id</th><th>source_trade_id</th><th>date</th><th>market</th><th>plan</th><th>strategy</th><th>setup_type</th><th>regime</th><th>entry_time</th><th>exit_time</th></tr></thead><tbody><tr><td>v62_0001</td><td>v6_4d74c85b8e15</td><td>2026-05-09</td><td>KRW-LAYER</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_LIQUIDITY_SWEEP</td><td>ALT_ROTATION</td><td>2026-05-09 10:00:00</td><td>2026-05-10 10:00:00</td></tr><tr><td>v62_0002</td><td>v6_1237646b3a9c</td><td>2026-05-09</td><td>KRW-LAYER</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_LIQUIDITY_SWEEP</td><td>ALT_ROTATION</td><td>2026-05-09 10:00:00</td><td>2026-05-10 10:00:00</td></tr><tr><td>v62_0003</td><td>v6_2f683d108497</td><td>2026-05-13</td><td>KRW-AKT</td><td>PLAN_B_COMBINED_CONTEXT</td><td>COMBINED_VOLUME_ICT</td><td>PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-13 10:00:00</td><td>2026-05-14 10:00:00</td></tr><tr><td>v62_0004</td><td>v6_27a10df51e4f</td><td>2026-05-13</td><td>KRW-DOGE</td><td>PLAN_B_COMBINED_CONTEXT</td><td>COMBINED_VOLUME_ICT</td><td>SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-13 10:00:00</td><td>2026-05-14 10:00:00</td></tr><tr><td>v62_0005</td><td>v6_06c314ba3080</td><td>2026-05-13</td><td>KRW-FF</td><td>PLAN_B_COMBINED_CONTEXT</td><td>COMBINED_VOLUME_ICT</td><td>PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-13 10:00:00</td><td>2026-05-13 10:00:00</td></tr><tr><td>v62_0006</td><td>v6_93d7a2936690</td><td>2026-05-14</td><td>KRW-UP2</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-14 00:00:00</td><td>2026-05-14 00:00:00</td></tr><tr><td>v62_0007</td><td>v6_bcd8398968c2</td><td>2026-05-14</td><td>KRW-UP2</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-14 00:00:00</td><td>2026-05-14 00:00:00</td></tr><tr><td>v62_0008</td><td>v6_8b4e8ebb3f1d</td><td>2026-05-24</td><td>KRW-BTC</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-24 15:00:00</td><td>2026-05-25 02:00:00</td></tr><tr><td>v62_0009</td><td>v6_a7a8797137a3</td><td>2026-05-24</td><td>KRW-BTC</td><td>PLAN_A_ICT_FAT_TAIL</td><td>ICT_FVG_OB_SWEEP</td><td>FVG_OB_OVERLAP</td><td>HIGH_VOLATILITY</td><td>2026-05-24 15:00:00</td><td>2026-05-25 02:00:00</td></tr></tbody></table>
+<details><summary>원본 구조화 JSON 보기</summary><pre>{
+  &quot;schema_version&quot;: &quot;v6.2&quot;,
+  &quot;trade_count&quot;: 9,
+  &quot;initial_cash_krw&quot;: 500000.0,
+  &quot;final_equity_krw&quot;: 511926.89752333367,
+  &quot;journal&quot;: [
+    {
+      &quot;trade_id&quot;: &quot;v62_0001&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_4d74c85b8e15&quot;,
+      &quot;date&quot;: &quot;2026-05-09&quot;,
+      &quot;market&quot;: &quot;KRW-LAYER&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_LIQUIDITY_SWEEP&quot;,
+      &quot;regime&quot;: &quot;ALT_ROTATION&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-09 10:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-10 10:00:00&quot;,
+      &quot;entry_price&quot;: 146.0,
+      &quot;exit_price&quot;: 146.0,
+      &quot;stop_price&quot;: 129.35,
+      &quot;target_price&quot;: 175.97,
+      &quot;risk_per_trade_pct&quot;: 1.0,
+      &quot;risk_amount_krw&quot;: 5000.0,
+      &quot;position_krw&quot;: 43843.843843843824,
+      &quot;pnl_krw&quot;: -43.843843843846116,
+      &quot;return_pct&quot;: -0.008768768768769223,
+      &quot;equity_before&quot;: 500000.0,
+      &quot;equity_after&quot;: 499956.15615615615,
+      &quot;drawdown_pct&quot;: -0.008768768768769223,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_LIQUIDITY_SWEEP&quot;,
+        &quot;regime=ALT_ROTATION&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0002&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_1237646b3a9c&quot;,
+      &quot;date&quot;: &quot;2026-05-09&quot;,
+      &quot;market&quot;: &quot;KRW-LAYER&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_LIQUIDITY_SWEEP&quot;,
+      &quot;regime&quot;: &quot;ALT_ROTATION&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-09 10:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-10 10:00:00&quot;,
+      &quot;entry_price&quot;: 146.0,
+      &quot;exit_price&quot;: 146.0,
+      &quot;stop_price&quot;: 129.35,
+      &quot;target_price&quot;: 175.97,
+      &quot;risk_per_trade_pct&quot;: 1.0,
+      &quot;risk_amount_krw&quot;: 4999.561561561562,
+      &quot;position_krw&quot;: 43839.999278557814,
+      &quot;pnl_krw&quot;: -43.83999927856011,
+      &quot;return_pct&quot;: -0.008768768768769223,
+      &quot;equity_before&quot;: 499956.15615615615,
+      &quot;equity_after&quot;: 499912.3161568776,
+      &quot;drawdown_pct&quot;: -0.017536768624477554,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_LIQUIDITY_SWEEP&quot;,
+        &quot;regime=ALT_ROTATION&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0003&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_2f683d108497&quot;,
+      &quot;date&quot;: &quot;2026-05-13&quot;,
+      &quot;market&quot;: &quot;KRW-AKT&quot;,
+      &quot;plan&quot;: &quot;PLAN_B_COMBINED_CONTEXT&quot;,
+      &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;setup_type&quot;: &quot;PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-13 10:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-14 10:00:00&quot;,
+      &quot;entry_price&quot;: 1296.0,
+      &quot;exit_price&quot;: 1296.0,
+      &quot;stop_price&quot;: 1194.0,
+      &quot;target_price&quot;: 1479.6,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 3999.2985292550215,
+      &quot;position_krw&quot;: 63518.27075875621,
+      &quot;pnl_krw&quot;: -63.51827075874209,
+      &quot;return_pct&quot;: -0.01270588235293835,
+      &quot;equity_before&quot;: 499912.3161568776,
+      &quot;equity_after&quot;: 499848.7978861189,
+      &quot;drawdown_pct&quot;: -0.030240422776225025,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=COMBINED_VOLUME_ICT&quot;,
+        &quot;setup=PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0004&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_27a10df51e4f&quot;,
+      &quot;date&quot;: &quot;2026-05-13&quot;,
+      &quot;market&quot;: &quot;KRW-DOGE&quot;,
+      &quot;plan&quot;: &quot;PLAN_B_COMBINED_CONTEXT&quot;,
+      &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;setup_type&quot;: &quot;SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-13 10:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-14 10:00:00&quot;,
+      &quot;entry_price&quot;: 171.0,
+      &quot;exit_price&quot;: 171.0,
+      &quot;stop_price&quot;: 160.195,
+      &quot;target_price&quot;: 190.449,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 3998.7903830889513,
+      &quot;position_krw&quot;: 79106.10313607243,
+      &quot;pnl_krw&quot;: -79.106103136084,
+      &quot;return_pct&quot;: -0.015826006478484488,
+      &quot;equity_before&quot;: 499848.7978861189,
+      &quot;equity_after&quot;: 499769.6917829828,
+      &quot;drawdown_pct&quot;: -0.04606164340344258,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=COMBINED_VOLUME_ICT&quot;,
+        &quot;setup=SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0005&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_06c314ba3080&quot;,
+      &quot;date&quot;: &quot;2026-05-13&quot;,
+      &quot;market&quot;: &quot;KRW-FF&quot;,
+      &quot;plan&quot;: &quot;PLAN_B_COMBINED_CONTEXT&quot;,
+      &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;setup_type&quot;: &quot;PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-13 10:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-13 10:00:00&quot;,
+      &quot;entry_price&quot;: 129.0,
+      &quot;exit_price&quot;: 124.0,
+      &quot;stop_price&quot;: 124.0,
+      &quot;target_price&quot;: 138.0,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 3998.1575342638625,
+      &quot;position_krw&quot;: 128940.58048000956,
+      &quot;pnl_krw&quot;: -5124.138649850923,
+      &quot;return_pct&quot;: -1.0253,
+      &quot;equity_before&quot;: 499769.6917829828,
+      &quot;equity_after&quot;: 494645.5531331319,
+      &quot;drawdown_pct&quot;: -1.0708893733736244,
+      &quot;result&quot;: &quot;LOSS&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=COMBINED_VOLUME_ICT&quot;,
+        &quot;setup=PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;stop_or_invalidated_setup&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0006&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_93d7a2936690&quot;,
+      &quot;date&quot;: &quot;2026-05-14&quot;,
+      &quot;market&quot;: &quot;KRW-UP2&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;entry_price&quot;: 293.0,
+      &quot;exit_price&quot;: 308.82200000000006,
+      &quot;stop_price&quot;: 284.21,
+      &quot;target_price&quot;: 308.82200000000006,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 3957.164425065055,
+      &quot;position_krw&quot;: 164881.8510443769,
+      &quot;pnl_krw&quot;: 8734.286295373779,
+      &quot;return_pct&quot;: 1.7657666666666627,
+      &quot;equity_before&quot;: 494645.5531331319,
+      &quot;equity_after&quot;: 503379.8394285056,
+      &quot;drawdown_pct&quot;: 0.0,
+      &quot;result&quot;: &quot;WIN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;target_or_strong_follow_through&quot;,
+      &quot;lesson&quot;: &quot;규칙을 지킨 fat-tail 수익 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;,
+        &quot;LOW_WIN_RATE_SETUP&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0007&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_bcd8398968c2&quot;,
+      &quot;date&quot;: &quot;2026-05-14&quot;,
+      &quot;market&quot;: &quot;KRW-UP2&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;entry_price&quot;: 293.0,
+      &quot;exit_price&quot;: 308.82200000000006,
+      &quot;stop_price&quot;: 284.21,
+      &quot;target_price&quot;: 308.82200000000006,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 4027.038715428045,
+      &quot;position_krw&quot;: 167793.2798095015,
+      &quot;pnl_krw&quot;: 8888.513411348724,
+      &quot;return_pct&quot;: 1.7657666666666627,
+      &quot;equity_before&quot;: 503379.8394285056,
+      &quot;equity_after&quot;: 512268.3528398544,
+      &quot;drawdown_pct&quot;: 0.0,
+      &quot;result&quot;: &quot;WIN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;target_or_strong_follow_through&quot;,
+      &quot;lesson&quot;: &quot;규칙을 지킨 fat-tail 수익 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;,
+        &quot;LOW_WIN_RATE_SETUP&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0008&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_8b4e8ebb3f1d&quot;,
+      &quot;date&quot;: &quot;2026-05-24&quot;,
+      &quot;market&quot;: &quot;KRW-BTC&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-24 15:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-25 02:00:00&quot;,
+      &quot;entry_price&quot;: 114198000.0,
+      &quot;exit_price&quot;: 114198000.0,
+      &quot;stop_price&quot;: 110772060.0,
+      &quot;target_price&quot;: 120364692.0,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 4098.146822718835,
+      &quot;position_krw&quot;: 170756.11761328482,
+      &quot;pnl_krw&quot;: -170.75611761330467,
+      &quot;return_pct&quot;: -0.03333333333333721,
+      &quot;equity_before&quot;: 512268.3528398544,
+      &quot;equity_after&quot;: 512097.5967222411,
+      &quot;drawdown_pct&quot;: -0.03333333333333389,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;,
+        &quot;LOW_WIN_RATE_SETUP&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    },
+    {
+      &quot;trade_id&quot;: &quot;v62_0009&quot;,
+      &quot;source_trade_id&quot;: &quot;v6_a7a8797137a3&quot;,
+      &quot;date&quot;: &quot;2026-05-24&quot;,
+      &quot;market&quot;: &quot;KRW-BTC&quot;,
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;setup_type&quot;: &quot;FVG_OB_OVERLAP&quot;,
+      &quot;regime&quot;: &quot;HIGH_VOLATILITY&quot;,
+      &quot;entry_time&quot;: &quot;2026-05-24 15:00:00&quot;,
+      &quot;exit_time&quot;: &quot;2026-05-25 02:00:00&quot;,
+      &quot;entry_price&quot;: 114198000.0,
+      &quot;exit_price&quot;: 114198000.0,
+      &quot;stop_price&quot;: 110772060.0,
+      &quot;target_price&quot;: 120364692.0,
+      &quot;risk_per_trade_pct&quot;: 0.8,
+      &quot;risk_amount_krw&quot;: 4096.7807737779285,
+      &quot;position_krw&quot;: 170699.19890741372,
+      &quot;pnl_krw&quot;: -170.69919890743355,
+      &quot;return_pct&quot;: -0.03333333333333721,
+      &quot;equity_before&quot;: 512097.5967222411,
+      &quot;equity_after&quot;: 511926.89752333367,
+      &quot;drawdown_pct&quot;: -0.06665555555555654,
+      &quot;result&quot;: &quot;BREAKEVEN&quot;,
+      &quot;entry_reason&quot;: [
+        &quot;strategy=ICT_FVG_OB_SWEEP&quot;,
+        &quot;setup=FVG_OB_OVERLAP&quot;,
+        &quot;regime=HIGH_VOLATILITY&quot;
+      ],
+      &quot;exit_reason&quot;: &quot;time_or_breakeven_exit&quot;,
+      &quot;lesson&quot;: &quot;손실이지만 stop/exit 규칙을 지킨 학습 거래입니다.&quot;,
+      &quot;risk_flags&quot;: [
+        &quot;OHLCV_ONLY_EXECUTION&quot;,
+        &quot;HIGH_VOLATILITY&quot;,
+        &quot;LOW_WIN_RATE_SETUP&quot;
+      ],
+      &quot;real_order_enabled&quot;: false,
+      &quot;live_order_allowed&quot;: false
+    }
+  ],
+  &quot;real_order_enabled&quot;: false,
+  &quot;live_order_allowed&quot;: false
+}</pre></details>
+</main><script>
+const labels=[];const equity=[];const dd=[];
+new Chart(document.getElementById('eq'),{type:'line',data:{labels,datasets:[{label:'Equity KRW',data:equity,borderColor:'#16a34a',backgroundColor:'rgba(22,163,74,.12)',tension:.25}]}});
+new Chart(document.getElementById('dd'),{type:'bar',data:{labels,datasets:[{label:'Drawdown %',data:dd,backgroundColor:'#ef4444'}]}});
+</script></body></html>

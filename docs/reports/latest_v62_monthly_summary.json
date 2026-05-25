@@ -1,0 +1,19 @@
+{
+  "schema_version": "v6.2",
+  "monthly_rows": [
+    {
+      "month": "2026-05",
+      "start_equity": 500000.0,
+      "end_equity": 511926.89752333367,
+      "return_pct": 2.3853795046667337,
+      "trades": 9,
+      "win_rate": 0.2222222222222222,
+      "profit_factor": 3.09394352980926,
+      "mdd_pct": -1.0708893733736244,
+      "top_strategy": "ICT_FVG_OB_SWEEP",
+      "risk_note": "큰 승리 의존과 OHLCV-only 체결 착시를 계속 감시해야 합니다."
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

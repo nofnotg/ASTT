@@ -1,0 +1,30 @@
+{
+  "schema_version": "v6.2",
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": true,
+  "live_readiness_opinion": "PAPER_MORE_REQUIRED",
+  "best_plan": "PLAN_A_ICT_FAT_TAIL",
+  "forward_candidates": [
+    "PLAN_A_ICT_FAT_TAIL",
+    "PLAN_B_COMBINED_CONTEXT"
+  ],
+  "disabled_strategies": [
+    "DADDY_VOLUME_NECKLINE"
+  ],
+  "primary_problem": "FORWARD_SPREAD_DEPTH_NOT_VALIDATED",
+  "capital_result": {
+    "trade_count": 1
+  },
+  "next_experiments": [
+    "Run V6.3 forward paper with real spread/depth overlay",
+    "Track FVG_LIQUIDITY_SWEEP recurrence",
+    "Keep DaddyBTC as context only"
+  ],
+  "risk_flags": [
+    "OHLCV"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

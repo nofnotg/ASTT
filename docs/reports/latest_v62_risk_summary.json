@@ -1,0 +1,87 @@
+{
+  "schema_version": "v6.2",
+  "risk": {
+    "strategy": "V62_PORTFOLIO",
+    "top_1_win_contribution_pct": 74.5249415781377,
+    "top_3_win_contribution_pct": 147.7567797681292,
+    "top_5_win_contribution_pct": 147.7567797681292,
+    "return_without_top_1": 0.6076768223969772,
+    "return_without_top_3": -1.1391804366777785,
+    "return_without_top_5": -1.1391804366777785,
+    "profit_factor_without_top_1": 1.533433337539715,
+    "profit_factor_without_top_3": 0.0,
+    "dependency_decision": "FAT_TAIL_ACCEPTABLE",
+    "max_losing_streak": 5,
+    "recovery_time_after_drawdown": "not_enough_calendar_depth",
+    "risk_rows": [
+      {
+        "risk": "Big Win Dependency",
+        "level": "MEDIUM",
+        "evidence": "Top3 contribution 147.76%",
+        "action": "Monitor"
+      },
+      {
+        "risk": "OHLCV-only Execution",
+        "level": "HIGH",
+        "evidence": "No real spread/depth execution overlay",
+        "action": "Forward overlay required"
+      },
+      {
+        "risk": "Trade Concentration",
+        "level": "MEDIUM",
+        "evidence": "Available trades are concentrated in limited dates",
+        "action": "Extend forward paper"
+      }
+    ],
+    "major_risk_flags": [
+      "Big Win Dependency",
+      "OHLCV-only Execution",
+      "Trade Concentration"
+    ],
+    "real_order_enabled": false,
+    "live_order_allowed": false
+  },
+  "setup_context_improvement": [
+    {
+      "setup": "FVG_LIQUIDITY_SWEEP",
+      "base_return_krw": -87.68384312240622,
+      "with_daddy_context_krw": 0,
+      "improvement_krw": 87.68384312240622,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "FVG_OB_OVERLAP",
+      "base_return_krw": 17281.34439020176,
+      "with_daddy_context_krw": 0,
+      "improvement_krw": -17281.34439020176,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+      "base_return_krw": -5187.656920609665,
+      "with_daddy_context_krw": -5187.656920609665,
+      "improvement_krw": 0.0,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+      "base_return_krw": -79.106103136084,
+      "with_daddy_context_krw": -79.106103136084,
+      "improvement_krw": 0.0,
+      "decision": "KEEP"
+    }
+  ],
+  "strengthen_targets": [
+    "FVG_LIQUIDITY_SWEEP",
+    "FVG_OB_OVERLAP",
+    "COMBINED_VOLUME_ICT"
+  ],
+  "disable_targets": [
+    "DADDY_VOLUME_NECKLINE",
+    "SR_FLIP_RETEST_VOLUME",
+    "FIB_PULLBACK_VOLUME",
+    "PULLBACK_WICK_VOLUME"
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

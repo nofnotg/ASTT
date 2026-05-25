@@ -1,0 +1,43 @@
+{
+  "schema_version": "v6.2",
+  "llm_provider": "openai",
+  "llm_used": true,
+  "fallback_used": true,
+  "live_readiness_opinion": "PAPER_MORE_REQUIRED",
+  "best_plan": "PLAN_A_ICT_FAT_TAIL",
+  "forward_candidates": [
+    "PLAN_A_ICT_FAT_TAIL",
+    "PLAN_B_COMBINED_CONTEXT"
+  ],
+  "disabled_strategies": [
+    "DADDY_VOLUME_NECKLINE"
+  ],
+  "primary_problem": "FORWARD_SPREAD_DEPTH_NOT_VALIDATED",
+  "capital_result": {
+    "trade_count": 9,
+    "win_rate": 0.2222222222222222,
+    "average_win_pct": 1.7657666666666627,
+    "average_loss_pct": -0.16257658471937655,
+    "profit_factor": 3.09394352980926,
+    "expectancy_pct": 0.26594413781085435,
+    "total_pnl_krw": 11926.89752333361,
+    "total_return_pct": 2.385379504666722,
+    "final_equity_krw": 511926.89752333367,
+    "max_drawdown_pct": -1.0708893733736244,
+    "best_trade": "v62_0007",
+    "worst_trade": "v62_0005"
+  },
+  "next_experiments": [
+    "Run V6.3 forward paper with real spread/depth overlay",
+    "Track FVG_LIQUIDITY_SWEEP recurrence",
+    "Keep DaddyBTC as context only"
+  ],
+  "risk_flags": [
+    "Big Win Dependency",
+    "OHLCV-only Execution",
+    "Trade Concentration"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Head Controller V6.2 Review</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033}header{background:#0f172a;color:white;padding:28px}
+main{max-width:1180px;margin:auto;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:16px}.kpi{font-size:24px;font-weight:700}
+.good{color:#047857}.bad{color:#b91c1c}.warn{background:#fffbeb;border-left:4px solid #f59e0b;padding:14px;margin:14px 0}
+table{width:100%;border-collapse:collapse;background:white}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}
+th{background:#eef2ff}details{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin:12px 0}
+canvas{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px;max-height:320px}
+</style></head><body><header><h1>Head Controller V6.2 Review</h1><p>실제 주문 없이 PAPER 기준으로 50만 원 계좌 흐름을 복기한 투자자용 리포트입니다.</p></header>
+<main><section class="grid"><div class="card"><div>Final Equity</div><div class="kpi">0 KRW</div></div><div class="card"><div>Return</div><div class="kpi">0.00%</div></div><div class="card"><div>MDD</div><div class="kpi">0.00%</div></div><div class="card"><div>Trades</div><div class="kpi">0</div></div></section>
+<div class="warn"><strong>안전 고지:</strong> LIVE 주문은 금지 상태입니다. OHLCV-only 결과라 실제 spread/depth forward 검증 전에는 실전 전환할 수 없습니다.</div>
+<h2>Equity Curve</h2><canvas id="eq"></canvas><h2>Drawdown</h2><canvas id="dd"></canvas>
+<h2>주요 표</h2><table><thead><tr><th>item</th></tr></thead><tbody><tr><td>Run V6.3 forward paper with real spread/depth overlay</td></tr><tr><td>Track FVG_LIQUIDITY_SWEEP recurrence</td></tr><tr><td>Keep DaddyBTC as context only</td></tr></tbody></table>
+<details><summary>원본 구조화 JSON 보기</summary><pre>{
+  &quot;schema_version&quot;: &quot;v6.2&quot;,
+  &quot;llm_provider&quot;: &quot;openai&quot;,
+  &quot;llm_used&quot;: true,
+  &quot;fallback_used&quot;: true,
+  &quot;live_readiness_opinion&quot;: &quot;PAPER_MORE_REQUIRED&quot;,
+  &quot;best_plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+  &quot;forward_candidates&quot;: [
+    &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+    &quot;PLAN_B_COMBINED_CONTEXT&quot;
+  ],
+  &quot;disabled_strategies&quot;: [
+    &quot;DADDY_VOLUME_NECKLINE&quot;
+  ],
+  &quot;primary_problem&quot;: &quot;FORWARD_SPREAD_DEPTH_NOT_VALIDATED&quot;,
+  &quot;capital_result&quot;: {
+    &quot;trade_count&quot;: 9,
+    &quot;win_rate&quot;: 0.2222222222222222,
+    &quot;average_win_pct&quot;: 1.7657666666666627,
+    &quot;average_loss_pct&quot;: -0.16257658471937655,
+    &quot;profit_factor&quot;: 3.09394352980926,
+    &quot;expectancy_pct&quot;: 0.26594413781085435,
+    &quot;total_pnl_krw&quot;: 11926.89752333361,
+    &quot;total_return_pct&quot;: 2.385379504666722,
+    &quot;final_equity_krw&quot;: 511926.89752333367,
+    &quot;max_drawdown_pct&quot;: -1.0708893733736244,
+    &quot;best_trade&quot;: &quot;v62_0007&quot;,
+    &quot;worst_trade&quot;: &quot;v62_0005&quot;
+  },
+  &quot;next_experiments&quot;: [
+    &quot;Run V6.3 forward paper with real spread/depth overlay&quot;,
+    &quot;Track FVG_LIQUIDITY_SWEEP recurrence&quot;,
+    &quot;Keep DaddyBTC as context only&quot;
+  ],
+  &quot;risk_flags&quot;: [
+    &quot;Big Win Dependency&quot;,
+    &quot;OHLCV-only Execution&quot;,
+    &quot;Trade Concentration&quot;
+  ],
+  &quot;auto_apply_allowed&quot;: false,
+  &quot;live_order_allowed&quot;: false,
+  &quot;real_order_enabled&quot;: false
+}</pre></details>
+</main><script>
+const labels=[];const equity=[];const dd=[];
+new Chart(document.getElementById('eq'),{type:'line',data:{labels,datasets:[{label:'Equity KRW',data:equity,borderColor:'#16a34a',backgroundColor:'rgba(22,163,74,.12)',tension:.25}]}});
+new Chart(document.getElementById('dd'),{type:'bar',data:{labels,datasets:[{label:'Drawdown %',data:dd,backgroundColor:'#ef4444'}]}});
+</script></body></html>

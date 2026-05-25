@@ -1,0 +1,844 @@
+{
+  "schema_version": "v6.2",
+  "initial_cash_krw": 500000.0,
+  "router_rows": [
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=COMBINED_VOLUME_ICT",
+        "setup=FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "COMBINED_VOLUME_ICT",
+      "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "ALT_ROTATION",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 1.0,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_LIQUIDITY_SWEEP",
+        "regime=ALT_ROTATION"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_LIQUIDITY_SWEEP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    },
+    {
+      "regime": "HIGH_VOLATILITY",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "enabled_plans": [
+        "PLAN_A_ICT_FAT_TAIL",
+        "PLAN_B_COMBINED_CONTEXT"
+      ],
+      "disabled_plans": [
+        "PLAN_C_NO_TRADE"
+      ],
+      "risk_multiplier": 0.8,
+      "reason": [
+        "strategy=ICT_FVG_OB_SWEEP",
+        "setup=FVG_OB_OVERLAP",
+        "regime=HIGH_VOLATILITY"
+      ],
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

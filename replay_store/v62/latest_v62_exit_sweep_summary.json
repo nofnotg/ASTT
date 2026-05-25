@@ -1,0 +1,97 @@
+{
+  "schema_version": "v6.2",
+  "exit_rows": [
+    {
+      "exit_rule": "RR_1_2",
+      "trades": 9,
+      "return_pct": 2.2554086663022694,
+      "profit_factor": 4.045926154365955,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "RR_1_5",
+      "trades": 9,
+      "return_pct": 2.3800285731011632,
+      "profit_factor": 3.457936886257408,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "RR_2_0",
+      "trades": 9,
+      "return_pct": 2.385379504666722,
+      "profit_factor": 3.09394352980926,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "RR_2_5",
+      "trades": 9,
+      "return_pct": 2.530642647572949,
+      "profit_factor": 2.983445546601786,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "RR_3_0",
+      "trades": 9,
+      "return_pct": 2.5940227872855064,
+      "profit_factor": 2.8216764991860446,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "PARTIAL_50_30_20",
+      "trades": 9,
+      "return_pct": 2.4750635082103822,
+      "profit_factor": 4.950309647694815,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "TRAILING_STOP",
+      "trades": 9,
+      "return_pct": 2.5291922161823863,
+      "profit_factor": 3.960247718155853,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "TIME_STOP_1D",
+      "trades": 9,
+      "return_pct": 2.073829737669486,
+      "profit_factor": 4.64091529471389,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "TIME_STOP_3D",
+      "trades": 9,
+      "return_pct": 2.3312507966947176,
+      "profit_factor": 3.5580350592806487,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    },
+    {
+      "exit_rule": "SETUP_INVALIDATION",
+      "trades": 9,
+      "return_pct": 2.6594727507050497,
+      "profit_factor": 6.18788705961852,
+      "mdd_pct": -1.0708893733736244,
+      "win_rate": 0.2222222222222222,
+      "decision": "KEEP"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

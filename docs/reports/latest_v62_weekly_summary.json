@@ -1,0 +1,52 @@
+{
+  "schema_version": "v6.2",
+  "weekly_rows": [
+    {
+      "week": "2026-05-04",
+      "start_equity": 500000.0,
+      "end_equity": 499912.3161568776,
+      "return_pct": -0.017536768624477554,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "mdd_pct": -0.017536768624477554,
+      "best_trade": "v62_0002",
+      "worst_trade": "v62_0001",
+      "main_strategy": "ICT_FVG_OB_SWEEP",
+      "interpretation": "손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다."
+    },
+    {
+      "week": "2026-05-11",
+      "start_equity": 499912.3161568776,
+      "end_equity": 512268.3528398544,
+      "return_pct": 2.471640782520611,
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "mdd_pct": -1.0708893733736244,
+      "best_trade": "v62_0007",
+      "worst_trade": "v62_0005",
+      "main_strategy": "COMBINED_VOLUME_ICT",
+      "interpretation": "수익 구간입니다. 큰 승리와 제한된 손실이 계좌를 끌어올렸습니다."
+    },
+    {
+      "week": "2026-05-18",
+      "start_equity": 512268.3528398544,
+      "end_equity": 511926.89752333367,
+      "return_pct": -0.06665555555555654,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "mdd_pct": -0.06665555555555654,
+      "best_trade": "v62_0009",
+      "worst_trade": "v62_0008",
+      "main_strategy": "ICT_FVG_OB_SWEEP",
+      "interpretation": "손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다."
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false
+}

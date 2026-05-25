@@ -1,0 +1,357 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V6.2 Weekly Investor Report</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033}header{background:#0f172a;color:white;padding:28px}
+main{max-width:1180px;margin:auto;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.card{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:16px}.kpi{font-size:24px;font-weight:700}
+.good{color:#047857}.bad{color:#b91c1c}.warn{background:#fffbeb;border-left:4px solid #f59e0b;padding:14px;margin:14px 0}
+table{width:100%;border-collapse:collapse;background:white}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;font-size:14px}
+th{background:#eef2ff}details{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin:12px 0}
+canvas{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px;max-height:320px}
+</style></head><body><header><h1>V6.2 Weekly Investor Report</h1><p>실제 주문 없이 PAPER 기준으로 50만 원 계좌 흐름을 복기한 투자자용 리포트입니다.</p></header>
+<main><section class="grid"><div class="card"><div>Final Equity</div><div class="kpi">511,927 KRW</div></div><div class="card"><div>Return</div><div class="kpi">2.39%</div></div><div class="card"><div>MDD</div><div class="kpi">-1.07%</div></div><div class="card"><div>Trades</div><div class="kpi">9</div></div></section>
+<div class="warn"><strong>안전 고지:</strong> LIVE 주문은 금지 상태입니다. OHLCV-only 결과라 실제 spread/depth forward 검증 전에는 실전 전환할 수 없습니다.</div>
+<h2>Equity Curve</h2><canvas id="eq"></canvas><h2>Drawdown</h2><canvas id="dd"></canvas>
+<h2>주요 표</h2><table><thead><tr><th>week</th><th>start_equity</th><th>end_equity</th><th>return_pct</th><th>trades</th><th>wins</th><th>losses</th><th>win_rate</th><th>mdd_pct</th><th>best_trade</th></tr></thead><tbody><tr><td>2026-05-04</td><td>500000.0</td><td>499912.3161568776</td><td>-0.017536768624477554</td><td>2</td><td>0</td><td>2</td><td>0.0</td><td>-0.017536768624477554</td><td>v62_0002</td></tr><tr><td>2026-05-11</td><td>499912.3161568776</td><td>512268.3528398544</td><td>2.471640782520611</td><td>5</td><td>2</td><td>3</td><td>0.4</td><td>-1.0708893733736244</td><td>v62_0007</td></tr><tr><td>2026-05-18</td><td>512268.3528398544</td><td>511926.89752333367</td><td>-0.06665555555555654</td><td>2</td><td>0</td><td>2</td><td>0.0</td><td>-0.06665555555555654</td><td>v62_0009</td></tr></tbody></table>
+<details><summary>원본 구조화 JSON 보기</summary><pre>{
+  &quot;schema_version&quot;: &quot;v6.2&quot;,
+  &quot;weekly_rows&quot;: [
+    {
+      &quot;week&quot;: &quot;2026-05-04&quot;,
+      &quot;start_equity&quot;: 500000.0,
+      &quot;end_equity&quot;: 499912.3161568776,
+      &quot;return_pct&quot;: -0.017536768624477554,
+      &quot;trades&quot;: 2,
+      &quot;wins&quot;: 0,
+      &quot;losses&quot;: 2,
+      &quot;win_rate&quot;: 0.0,
+      &quot;mdd_pct&quot;: -0.017536768624477554,
+      &quot;best_trade&quot;: &quot;v62_0002&quot;,
+      &quot;worst_trade&quot;: &quot;v62_0001&quot;,
+      &quot;main_strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;interpretation&quot;: &quot;손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다.&quot;
+    },
+    {
+      &quot;week&quot;: &quot;2026-05-11&quot;,
+      &quot;start_equity&quot;: 499912.3161568776,
+      &quot;end_equity&quot;: 512268.3528398544,
+      &quot;return_pct&quot;: 2.471640782520611,
+      &quot;trades&quot;: 5,
+      &quot;wins&quot;: 2,
+      &quot;losses&quot;: 3,
+      &quot;win_rate&quot;: 0.4,
+      &quot;mdd_pct&quot;: -1.0708893733736244,
+      &quot;best_trade&quot;: &quot;v62_0007&quot;,
+      &quot;worst_trade&quot;: &quot;v62_0005&quot;,
+      &quot;main_strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;interpretation&quot;: &quot;수익 구간입니다. 큰 승리와 제한된 손실이 계좌를 끌어올렸습니다.&quot;
+    },
+    {
+      &quot;week&quot;: &quot;2026-05-18&quot;,
+      &quot;start_equity&quot;: 512268.3528398544,
+      &quot;end_equity&quot;: 511926.89752333367,
+      &quot;return_pct&quot;: -0.06665555555555654,
+      &quot;trades&quot;: 2,
+      &quot;wins&quot;: 0,
+      &quot;losses&quot;: 2,
+      &quot;win_rate&quot;: 0.0,
+      &quot;mdd_pct&quot;: -0.06665555555555654,
+      &quot;best_trade&quot;: &quot;v62_0009&quot;,
+      &quot;worst_trade&quot;: &quot;v62_0008&quot;,
+      &quot;main_strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;interpretation&quot;: &quot;손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다.&quot;
+    }
+  ],
+  &quot;real_order_enabled&quot;: false,
+  &quot;live_order_allowed&quot;: false,
+  &quot;capital&quot;: {
+    &quot;trade_count&quot;: 9,
+    &quot;win_rate&quot;: 0.2222222222222222,
+    &quot;average_win_pct&quot;: 1.7657666666666627,
+    &quot;average_loss_pct&quot;: -0.16257658471937655,
+    &quot;profit_factor&quot;: 3.09394352980926,
+    &quot;expectancy_pct&quot;: 0.26594413781085435,
+    &quot;total_pnl_krw&quot;: 11926.89752333361,
+    &quot;total_return_pct&quot;: 2.385379504666722,
+    &quot;final_equity_krw&quot;: 511926.89752333367,
+    &quot;max_drawdown_pct&quot;: -1.0708893733736244,
+    &quot;best_trade&quot;: &quot;v62_0007&quot;,
+    &quot;worst_trade&quot;: &quot;v62_0005&quot;
+  },
+  &quot;monthly_rows&quot;: [
+    {
+      &quot;month&quot;: &quot;2026-05&quot;,
+      &quot;start_equity&quot;: 500000.0,
+      &quot;end_equity&quot;: 511926.89752333367,
+      &quot;return_pct&quot;: 2.3853795046667337,
+      &quot;trades&quot;: 9,
+      &quot;win_rate&quot;: 0.2222222222222222,
+      &quot;profit_factor&quot;: 3.09394352980926,
+      &quot;mdd_pct&quot;: -1.0708893733736244,
+      &quot;top_strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;risk_note&quot;: &quot;큰 승리 의존과 OHLCV-only 체결 착시를 계속 감시해야 합니다.&quot;
+    }
+  ],
+  &quot;equity_curve&quot;: [
+    {
+      &quot;time&quot;: &quot;2026-05-10 10:00:00&quot;,
+      &quot;equity&quot;: 499956.15615615615,
+      &quot;drawdown_pct&quot;: -0.008768768768769223
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-10 10:00:00&quot;,
+      &quot;equity&quot;: 499912.3161568776,
+      &quot;drawdown_pct&quot;: -0.017536768624477554
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-14 10:00:00&quot;,
+      &quot;equity&quot;: 499848.7978861189,
+      &quot;drawdown_pct&quot;: -0.030240422776225025
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-14 10:00:00&quot;,
+      &quot;equity&quot;: 499769.6917829828,
+      &quot;drawdown_pct&quot;: -0.04606164340344258
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-13 10:00:00&quot;,
+      &quot;equity&quot;: 494645.5531331319,
+      &quot;drawdown_pct&quot;: -1.0708893733736244
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;equity&quot;: 503379.8394285056,
+      &quot;drawdown_pct&quot;: 0.0
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-14 00:00:00&quot;,
+      &quot;equity&quot;: 512268.3528398544,
+      &quot;drawdown_pct&quot;: 0.0
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-25 02:00:00&quot;,
+      &quot;equity&quot;: 512097.5967222411,
+      &quot;drawdown_pct&quot;: -0.03333333333333389
+    },
+    {
+      &quot;time&quot;: &quot;2026-05-25 02:00:00&quot;,
+      &quot;equity&quot;: 511926.89752333367,
+      &quot;drawdown_pct&quot;: -0.06665555555555654
+    }
+  ],
+  &quot;strategy_contribution&quot;: [
+    {
+      &quot;strategy&quot;: &quot;COMBINED_VOLUME_ICT&quot;,
+      &quot;trades&quot;: 3,
+      &quot;pnl_krw&quot;: -5266.763023745749,
+      &quot;contribution_pct&quot;: -44.15870106573759,
+      &quot;decision&quot;: &quot;PAUSE&quot;
+    },
+    {
+      &quot;strategy&quot;: &quot;ICT_FVG_OB_SWEEP&quot;,
+      &quot;trades&quot;: 6,
+      &quot;pnl_krw&quot;: 17193.66054707936,
+      &quot;contribution_pct&quot;: 144.15870106573757,
+      &quot;decision&quot;: &quot;KEEP_FOR_FORWARD&quot;
+    }
+  ],
+  &quot;plan_performance&quot;: [
+    {
+      &quot;plan&quot;: &quot;PLAN_A_ICT_FAT_TAIL&quot;,
+      &quot;trades&quot;: 6,
+      &quot;pnl_krw&quot;: 17193.66054707936,
+      &quot;return_pct&quot;: 2.3853795046667337,
+      &quot;profit_factor&quot;: 41.06546631954292,
+      &quot;mdd_pct&quot;: -0.06665555555555654,
+      &quot;decision&quot;: &quot;KEEP_FOR_FORWARD&quot;
+    },
+    {
+      &quot;plan&quot;: &quot;PLAN_B_COMBINED_CONTEXT&quot;,
+      &quot;trades&quot;: 3,
+      &quot;pnl_krw&quot;: -5266.763023745749,
+      &quot;return_pct&quot;: -1.0535373611585457,
+      &quot;profit_factor&quot;: 0.0,
+      &quot;mdd_pct&quot;: -1.0708893733736244,
+      &quot;decision&quot;: &quot;PAUSE_OR_DISABLE&quot;
+    }
+  ],
+  &quot;risk&quot;: {
+    &quot;strategy&quot;: &quot;V62_PORTFOLIO&quot;,
+    &quot;top_1_win_contribution_pct&quot;: 74.5249415781377,
+    &quot;top_3_win_contribution_pct&quot;: 147.7567797681292,
+    &quot;top_5_win_contribution_pct&quot;: 147.7567797681292,
+    &quot;return_without_top_1&quot;: 0.6076768223969772,
+    &quot;return_without_top_3&quot;: -1.1391804366777785,
+    &quot;return_without_top_5&quot;: -1.1391804366777785,
+    &quot;profit_factor_without_top_1&quot;: 1.533433337539715,
+    &quot;profit_factor_without_top_3&quot;: 0.0,
+    &quot;dependency_decision&quot;: &quot;FAT_TAIL_ACCEPTABLE&quot;,
+    &quot;max_losing_streak&quot;: 5,
+    &quot;recovery_time_after_drawdown&quot;: &quot;not_enough_calendar_depth&quot;,
+    &quot;risk_rows&quot;: [
+      {
+        &quot;risk&quot;: &quot;Big Win Dependency&quot;,
+        &quot;level&quot;: &quot;MEDIUM&quot;,
+        &quot;evidence&quot;: &quot;Top3 contribution 147.76%&quot;,
+        &quot;action&quot;: &quot;Monitor&quot;
+      },
+      {
+        &quot;risk&quot;: &quot;OHLCV-only Execution&quot;,
+        &quot;level&quot;: &quot;HIGH&quot;,
+        &quot;evidence&quot;: &quot;No real spread/depth execution overlay&quot;,
+        &quot;action&quot;: &quot;Forward overlay required&quot;
+      },
+      {
+        &quot;risk&quot;: &quot;Trade Concentration&quot;,
+        &quot;level&quot;: &quot;MEDIUM&quot;,
+        &quot;evidence&quot;: &quot;Available trades are concentrated in limited dates&quot;,
+        &quot;action&quot;: &quot;Extend forward paper&quot;
+      }
+    ],
+    &quot;major_risk_flags&quot;: [
+      &quot;Big Win Dependency&quot;,
+      &quot;OHLCV-only Execution&quot;,
+      &quot;Trade Concentration&quot;
+    ],
+    &quot;real_order_enabled&quot;: false,
+    &quot;live_order_allowed&quot;: false
+  },
+  &quot;setup_context_improvement&quot;: [
+    {
+      &quot;setup&quot;: &quot;FVG_LIQUIDITY_SWEEP&quot;,
+      &quot;base_return_krw&quot;: -87.68384312240622,
+      &quot;with_daddy_context_krw&quot;: 0,
+      &quot;improvement_krw&quot;: 87.68384312240622,
+      &quot;decision&quot;: &quot;KEEP&quot;
+    },
+    {
+      &quot;setup&quot;: &quot;FVG_OB_OVERLAP&quot;,
+      &quot;base_return_krw&quot;: 17281.34439020176,
+      &quot;with_daddy_context_krw&quot;: 0,
+      &quot;improvement_krw&quot;: -17281.34439020176,
+      &quot;decision&quot;: &quot;KEEP&quot;
+    },
+    {
+      &quot;setup&quot;: &quot;PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP&quot;,
+      &quot;base_return_krw&quot;: -5187.656920609665,
+      &quot;with_daddy_context_krw&quot;: -5187.656920609665,
+      &quot;improvement_krw&quot;: 0.0,
+      &quot;decision&quot;: &quot;KEEP&quot;
+    },
+    {
+      &quot;setup&quot;: &quot;SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP&quot;,
+      &quot;base_return_krw&quot;: -79.106103136084,
+      &quot;with_daddy_context_krw&quot;: -79.106103136084,
+      &quot;improvement_krw&quot;: 0.0,
+      &quot;decision&quot;: &quot;KEEP&quot;
+    }
+  ],
+  &quot;plain_language_summary&quot;: {
+    &quot;can_it_make_money&quot;: &quot;PAPER 기준으로 가능성은 보였지만, 실제 체결 검증 전에는 실전 불가입니다.&quot;,
+    &quot;where_strong&quot;: &quot;ALT_ROTATION/HIGH_VOLATILITY에서 ICT/Combined setup이 강했습니다.&quot;,
+    &quot;where_weak&quot;: &quot;CHOP, Daddy 단독 신호, follow-through 부족 구간은 약했습니다.&quot;,
+    &quot;big_win_dependency&quot;: &quot;큰 승리 의존은 존재하므로 forward paper에서 반복성을 봐야 합니다.&quot;
+  },
+  &quot;auto_apply_allowed&quot;: false,
+  &quot;coverage&quot;: {
+    &quot;schema_version&quot;: &quot;v6.1&quot;,
+    &quot;requested_months&quot;: 36,
+    &quot;actual_months_available&quot;: 12.97741273100616,
+    &quot;market_count&quot;: 22,
+    &quot;candle_count_by_timeframe&quot;: {
+      &quot;15m&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 83445,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;1d&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 2100,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;1h&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 22527,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;1m&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 857173,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;1w&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 318,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;4h&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 7947,
+        &quot;status&quot;: &quot;OK&quot;
+      },
+      &quot;5m&quot;: {
+        &quot;markets&quot;: 22,
+        &quot;candles&quot;: 230950,
+        &quot;status&quot;: &quot;OK&quot;
+      }
+    },
+    &quot;earliest_candle_time&quot;: &quot;2025-05-01 00:00:00&quot;,
+    &quot;latest_candle_time&quot;: &quot;2026-05-31 00:00:00&quot;,
+    &quot;missing_market_count&quot;: 0,
+    &quot;insufficient_history_market_count&quot;: 22,
+    &quot;insufficient_history_markets&quot;: [
+      &quot;KRW-AKT&quot;,
+      &quot;KRW-B3&quot;,
+      &quot;KRW-BIO&quot;,
+      &quot;KRW-BTC&quot;,
+      &quot;KRW-DOGE&quot;,
+      &quot;KRW-ETH&quot;,
+      &quot;KRW-FF&quot;,
+      &quot;KRW-IP&quot;,
+      &quot;KRW-JTO&quot;,
+      &quot;KRW-LAYER&quot;,
+      &quot;KRW-NEAR&quot;,
+      &quot;KRW-PENGU&quot;,
+      &quot;KRW-PIEVERSE&quot;,
+      &quot;KRW-PROS&quot;,
+      &quot;KRW-SEI&quot;,
+      &quot;KRW-SHIB&quot;,
+      &quot;KRW-TRUMP&quot;,
+      &quot;KRW-TRX&quot;,
+      &quot;KRW-UP2&quot;,
+      &quot;KRW-USDT&quot;
+    ],
+    &quot;newly_listed_market_count&quot;: 22,
+    &quot;newly_listed_markets&quot;: [
+      &quot;KRW-AKT&quot;,
+      &quot;KRW-B3&quot;,
+      &quot;KRW-BIO&quot;,
+      &quot;KRW-BTC&quot;,
+      &quot;KRW-DOGE&quot;,
+      &quot;KRW-ETH&quot;,
+      &quot;KRW-FF&quot;,
+      &quot;KRW-IP&quot;,
+      &quot;KRW-JTO&quot;,
+      &quot;KRW-LAYER&quot;,
+      &quot;KRW-NEAR&quot;,
+      &quot;KRW-PENGU&quot;,
+      &quot;KRW-PIEVERSE&quot;,
+      &quot;KRW-PROS&quot;,
+      &quot;KRW-SEI&quot;,
+      &quot;KRW-SHIB&quot;,
+      &quot;KRW-TRUMP&quot;,
+      &quot;KRW-TRX&quot;,
+      &quot;KRW-UP2&quot;,
+      &quot;KRW-USDT&quot;
+    ],
+    &quot;real_order_enabled&quot;: false,
+    &quot;live_order_allowed&quot;: false
+  },
+  &quot;use_available_history&quot;: true
+}</pre></details>
+</main><script>
+const labels=["2026-05-10 10:00:00", "2026-05-10 10:00:00", "2026-05-14 10:00:00", "2026-05-14 10:00:00", "2026-05-13 10:00:00", "2026-05-14 00:00:00", "2026-05-14 00:00:00", "2026-05-25 02:00:00", "2026-05-25 02:00:00"];const equity=[499956.16, 499912.32, 499848.8, 499769.69, 494645.55, 503379.84, 512268.35, 512097.6, 511926.9];const dd=[-0.01, -0.02, -0.03, -0.05, -1.07, 0.0, 0.0, -0.03, -0.07];
+new Chart(document.getElementById('eq'),{type:'line',data:{labels,datasets:[{label:'Equity KRW',data:equity,borderColor:'#16a34a',backgroundColor:'rgba(22,163,74,.12)',tension:.25}]}});
+new Chart(document.getElementById('dd'),{type:'bar',data:{labels,datasets:[{label:'Drawdown %',data:dd,backgroundColor:'#ef4444'}]}});
+</script></body></html>

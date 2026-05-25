@@ -1,0 +1,336 @@
+{
+  "schema_version": "v6.2",
+  "capital": {
+    "trade_count": 9,
+    "win_rate": 0.2222222222222222,
+    "average_win_pct": 1.7657666666666627,
+    "average_loss_pct": -0.16257658471937655,
+    "profit_factor": 3.09394352980926,
+    "expectancy_pct": 0.26594413781085435,
+    "total_pnl_krw": 11926.89752333361,
+    "total_return_pct": 2.385379504666722,
+    "final_equity_krw": 511926.89752333367,
+    "max_drawdown_pct": -1.0708893733736244,
+    "best_trade": "v62_0007",
+    "worst_trade": "v62_0005"
+  },
+  "weekly_rows": [
+    {
+      "week": "2026-05-04",
+      "start_equity": 500000.0,
+      "end_equity": 499912.3161568776,
+      "return_pct": -0.017536768624477554,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "mdd_pct": -0.017536768624477554,
+      "best_trade": "v62_0002",
+      "worst_trade": "v62_0001",
+      "main_strategy": "ICT_FVG_OB_SWEEP",
+      "interpretation": "손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다."
+    },
+    {
+      "week": "2026-05-11",
+      "start_equity": 499912.3161568776,
+      "end_equity": 512268.3528398544,
+      "return_pct": 2.471640782520611,
+      "trades": 5,
+      "wins": 2,
+      "losses": 3,
+      "win_rate": 0.4,
+      "mdd_pct": -1.0708893733736244,
+      "best_trade": "v62_0007",
+      "worst_trade": "v62_0005",
+      "main_strategy": "COMBINED_VOLUME_ICT",
+      "interpretation": "수익 구간입니다. 큰 승리와 제한된 손실이 계좌를 끌어올렸습니다."
+    },
+    {
+      "week": "2026-05-18",
+      "start_equity": 512268.3528398544,
+      "end_equity": 511926.89752333367,
+      "return_pct": -0.06665555555555654,
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate": 0.0,
+      "mdd_pct": -0.06665555555555654,
+      "best_trade": "v62_0009",
+      "worst_trade": "v62_0008",
+      "main_strategy": "ICT_FVG_OB_SWEEP",
+      "interpretation": "손실 구간입니다. 불리한 setup 또는 작은 손실 반복을 줄여야 합니다."
+    }
+  ],
+  "monthly_rows": [
+    {
+      "month": "2026-05",
+      "start_equity": 500000.0,
+      "end_equity": 511926.89752333367,
+      "return_pct": 2.3853795046667337,
+      "trades": 9,
+      "win_rate": 0.2222222222222222,
+      "profit_factor": 3.09394352980926,
+      "mdd_pct": -1.0708893733736244,
+      "top_strategy": "ICT_FVG_OB_SWEEP",
+      "risk_note": "큰 승리 의존과 OHLCV-only 체결 착시를 계속 감시해야 합니다."
+    }
+  ],
+  "equity_curve": [
+    {
+      "time": "2026-05-10 10:00:00",
+      "equity": 499956.15615615615,
+      "drawdown_pct": -0.008768768768769223
+    },
+    {
+      "time": "2026-05-10 10:00:00",
+      "equity": 499912.3161568776,
+      "drawdown_pct": -0.017536768624477554
+    },
+    {
+      "time": "2026-05-14 10:00:00",
+      "equity": 499848.7978861189,
+      "drawdown_pct": -0.030240422776225025
+    },
+    {
+      "time": "2026-05-14 10:00:00",
+      "equity": 499769.6917829828,
+      "drawdown_pct": -0.04606164340344258
+    },
+    {
+      "time": "2026-05-13 10:00:00",
+      "equity": 494645.5531331319,
+      "drawdown_pct": -1.0708893733736244
+    },
+    {
+      "time": "2026-05-14 00:00:00",
+      "equity": 503379.8394285056,
+      "drawdown_pct": 0.0
+    },
+    {
+      "time": "2026-05-14 00:00:00",
+      "equity": 512268.3528398544,
+      "drawdown_pct": 0.0
+    },
+    {
+      "time": "2026-05-25 02:00:00",
+      "equity": 512097.5967222411,
+      "drawdown_pct": -0.03333333333333389
+    },
+    {
+      "time": "2026-05-25 02:00:00",
+      "equity": 511926.89752333367,
+      "drawdown_pct": -0.06665555555555654
+    }
+  ],
+  "strategy_contribution": [
+    {
+      "strategy": "COMBINED_VOLUME_ICT",
+      "trades": 3,
+      "pnl_krw": -5266.763023745749,
+      "contribution_pct": -44.15870106573759,
+      "decision": "PAUSE"
+    },
+    {
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "trades": 6,
+      "pnl_krw": 17193.66054707936,
+      "contribution_pct": 144.15870106573757,
+      "decision": "KEEP_FOR_FORWARD"
+    }
+  ],
+  "plan_performance": [
+    {
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "trades": 6,
+      "pnl_krw": 17193.66054707936,
+      "return_pct": 2.3853795046667337,
+      "profit_factor": 41.06546631954292,
+      "mdd_pct": -0.06665555555555654,
+      "decision": "KEEP_FOR_FORWARD"
+    },
+    {
+      "plan": "PLAN_B_COMBINED_CONTEXT",
+      "trades": 3,
+      "pnl_krw": -5266.763023745749,
+      "return_pct": -1.0535373611585457,
+      "profit_factor": 0.0,
+      "mdd_pct": -1.0708893733736244,
+      "decision": "PAUSE_OR_DISABLE"
+    }
+  ],
+  "risk": {
+    "strategy": "V62_PORTFOLIO",
+    "top_1_win_contribution_pct": 74.5249415781377,
+    "top_3_win_contribution_pct": 147.7567797681292,
+    "top_5_win_contribution_pct": 147.7567797681292,
+    "return_without_top_1": 0.6076768223969772,
+    "return_without_top_3": -1.1391804366777785,
+    "return_without_top_5": -1.1391804366777785,
+    "profit_factor_without_top_1": 1.533433337539715,
+    "profit_factor_without_top_3": 0.0,
+    "dependency_decision": "FAT_TAIL_ACCEPTABLE",
+    "max_losing_streak": 5,
+    "recovery_time_after_drawdown": "not_enough_calendar_depth",
+    "risk_rows": [
+      {
+        "risk": "Big Win Dependency",
+        "level": "MEDIUM",
+        "evidence": "Top3 contribution 147.76%",
+        "action": "Monitor"
+      },
+      {
+        "risk": "OHLCV-only Execution",
+        "level": "HIGH",
+        "evidence": "No real spread/depth execution overlay",
+        "action": "Forward overlay required"
+      },
+      {
+        "risk": "Trade Concentration",
+        "level": "MEDIUM",
+        "evidence": "Available trades are concentrated in limited dates",
+        "action": "Extend forward paper"
+      }
+    ],
+    "major_risk_flags": [
+      "Big Win Dependency",
+      "OHLCV-only Execution",
+      "Trade Concentration"
+    ],
+    "real_order_enabled": false,
+    "live_order_allowed": false
+  },
+  "setup_context_improvement": [
+    {
+      "setup": "FVG_LIQUIDITY_SWEEP",
+      "base_return_krw": -87.68384312240622,
+      "with_daddy_context_krw": 0,
+      "improvement_krw": 87.68384312240622,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "FVG_OB_OVERLAP",
+      "base_return_krw": 17281.34439020176,
+      "with_daddy_context_krw": 0,
+      "improvement_krw": -17281.34439020176,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
+      "base_return_krw": -5187.656920609665,
+      "with_daddy_context_krw": -5187.656920609665,
+      "improvement_krw": 0.0,
+      "decision": "KEEP"
+    },
+    {
+      "setup": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
+      "base_return_krw": -79.106103136084,
+      "with_daddy_context_krw": -79.106103136084,
+      "improvement_krw": 0.0,
+      "decision": "KEEP"
+    }
+  ],
+  "plain_language_summary": {
+    "can_it_make_money": "PAPER 기준으로 가능성은 보였지만, 실제 체결 검증 전에는 실전 불가입니다.",
+    "where_strong": "ALT_ROTATION/HIGH_VOLATILITY에서 ICT/Combined setup이 강했습니다.",
+    "where_weak": "CHOP, Daddy 단독 신호, follow-through 부족 구간은 약했습니다.",
+    "big_win_dependency": "큰 승리 의존은 존재하므로 forward paper에서 반복성을 봐야 합니다."
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "coverage": {
+    "schema_version": "v6.1",
+    "requested_months": 36,
+    "actual_months_available": 12.97741273100616,
+    "market_count": 22,
+    "candle_count_by_timeframe": {
+      "15m": {
+        "markets": 22,
+        "candles": 83445,
+        "status": "OK"
+      },
+      "1d": {
+        "markets": 22,
+        "candles": 2100,
+        "status": "OK"
+      },
+      "1h": {
+        "markets": 22,
+        "candles": 22527,
+        "status": "OK"
+      },
+      "1m": {
+        "markets": 22,
+        "candles": 857173,
+        "status": "OK"
+      },
+      "1w": {
+        "markets": 22,
+        "candles": 318,
+        "status": "OK"
+      },
+      "4h": {
+        "markets": 22,
+        "candles": 7947,
+        "status": "OK"
+      },
+      "5m": {
+        "markets": 22,
+        "candles": 230950,
+        "status": "OK"
+      }
+    },
+    "earliest_candle_time": "2025-05-01 00:00:00",
+    "latest_candle_time": "2026-05-31 00:00:00",
+    "missing_market_count": 0,
+    "insufficient_history_market_count": 22,
+    "insufficient_history_markets": [
+      "KRW-AKT",
+      "KRW-B3",
+      "KRW-BIO",
+      "KRW-BTC",
+      "KRW-DOGE",
+      "KRW-ETH",
+      "KRW-FF",
+      "KRW-IP",
+      "KRW-JTO",
+      "KRW-LAYER",
+      "KRW-NEAR",
+      "KRW-PENGU",
+      "KRW-PIEVERSE",
+      "KRW-PROS",
+      "KRW-SEI",
+      "KRW-SHIB",
+      "KRW-TRUMP",
+      "KRW-TRX",
+      "KRW-UP2",
+      "KRW-USDT"
+    ],
+    "newly_listed_market_count": 22,
+    "newly_listed_markets": [
+      "KRW-AKT",
+      "KRW-B3",
+      "KRW-BIO",
+      "KRW-BTC",
+      "KRW-DOGE",
+      "KRW-ETH",
+      "KRW-FF",
+      "KRW-IP",
+      "KRW-JTO",
+      "KRW-LAYER",
+      "KRW-NEAR",
+      "KRW-PENGU",
+      "KRW-PIEVERSE",
+      "KRW-PROS",
+      "KRW-SEI",
+      "KRW-SHIB",
+      "KRW-TRUMP",
+      "KRW-TRX",
+      "KRW-UP2",
+      "KRW-USDT"
+    ],
+    "real_order_enabled": false,
+    "live_order_allowed": false
+  },
+  "use_available_history": true
+}

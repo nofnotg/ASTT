@@ -1,0 +1,6 @@
+from __future__ import annotations
+
+PLAN_A = "PLAN_A_ICT_FAT_TAIL"
+PLAN_B = "PLAN_B_COMBINED_CONTEXT"
+PLAN_C = "PLAN_C_NO_TRADE"
+PLAN_D = "PLAN_D_OBSERVATION"
