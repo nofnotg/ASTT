@@ -1,0 +1,87 @@
+{
+  "schema_version": "v672_btcdom_index_data_quality_v1",
+  "files": {
+    "1h": {
+      "exists": true,
+      "rows": 26280,
+      "original_rows": 26280,
+      "duplicate_count": 0,
+      "missing_count": 0,
+      "start": "2023-05-28T12:00:00+00:00",
+      "end": "2026-05-27T11:00:00+00:00",
+      "close_min": 15.65,
+      "close_max": 57.752,
+      "source_type": "BTCDOM_INDEX_PROXY",
+      "is_percentage": false,
+      "quality": "GOOD",
+      "timeframe": "1h",
+      "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+    },
+    "4h": {
+      "exists": true,
+      "rows": 6570,
+      "original_rows": 6570,
+      "duplicate_count": 0,
+      "missing_count": 0,
+      "start": "2023-05-28T12:00:00+00:00",
+      "end": "2026-05-27T08:00:00+00:00",
+      "close_min": 15.65,
+      "close_max": 57.368,
+      "source_type": "BTCDOM_INDEX_PROXY",
+      "is_percentage": false,
+      "quality": "GOOD",
+      "timeframe": "4h",
+      "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+    },
+    "1d": {
+      "exists": true,
+      "rows": 1095,
+      "original_rows": 1095,
+      "duplicate_count": 0,
+      "missing_count": 0,
+      "start": "2023-05-29T00:00:00+00:00",
+      "end": "2026-05-27T00:00:00+00:00",
+      "close_min": 15.686,
+      "close_max": 57.095,
+      "source_type": "BTCDOM_INDEX_PROXY",
+      "is_percentage": false,
+      "quality": "GOOD",
+      "timeframe": "1d",
+      "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+    }
+  },
+  "source_type": "BTCDOM_INDEX_PROXY",
+  "is_percentage": false,
+  "close_min": 15.65,
+  "close_max": 57.752,
+  "common_coverage_start": "2023-05-29T00:00:00+00:00",
+  "common_coverage_end": "2026-05-27T00:00:00+00:00",
+  "data_quality": "GOOD",
+  "fake_data_generated": false,
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "input_files": {
+    "1h": {
+      "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_percent.csv",
+      "target_path": "data\\external\\btcdom_1h_percent.csv",
+      "exists": true,
+      "copied": true,
+      "size_bytes": 6364218
+    },
+    "4h": {
+      "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_percent.csv",
+      "target_path": "data\\external\\btcdom_4h_percent.csv",
+      "exists": true,
+      "copied": true,
+      "size_bytes": 1595468
+    },
+    "1d": {
+      "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_percent.csv",
+      "target_path": "data\\external\\btcdom_1d_percent.csv",
+      "exists": true,
+      "copied": true,
+      "size_bytes": 266932
+    }
+  }
+}

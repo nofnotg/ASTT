@@ -7,6 +7,41 @@ from typing import Any
 
 
 REPORT_LABELS: dict[str, tuple[str, str, str]] = {
+    "latest_v672_btcdom_index_data_quality_report.html": (
+        "V6.7.2 BTCDOM Index 데이터 품질",
+        "C:\\ASTT\\btc_dom의 1h/4h/1d CSV를 읽고 percentage가 아닌 BTCDOM Index Proxy로 판정한 결과입니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_v672_btcdom_index_scenario_report.html": (
+        "V6.7.2 BTCDOM Index 시나리오 검증",
+        "기존 Control은 유지하고 BTCDOM Index Proxy를 별도 overlay로 얹었을 때의 PAPER 결과입니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_v672_btcdom_index_saved_loss_report.html": (
+        "V6.7.2 막은 손실 / 놓친 수익",
+        "BTCDOM Index 감속/관찰 규칙이 줄인 손실과 놓친 수익을 비교합니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_v672_btcdom_index_yearly_report.html": (
+        "V6.7.2 연도별 비교",
+        "BTCDOM Index coverage 구간에서 연도별 Control 대비 변화를 봅니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_v672_btcdom_index_rejected_scenarios_report.html": (
+        "V6.7.2 폐기/유지 시나리오",
+        "기준 이하 시나리오와 forward 후보를 분리합니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_v672_btcdom_index_compact_router_report.html": (
+        "V6.7.2 BTCDOM Index Compact Router",
+        "BTCDOM Index 조건을 합친 compact router 후보를 따로 검증합니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
+    "latest_head_controller_v672_review_report.html": (
+        "V6.7.2 Head Controller Review",
+        "BTCDOM Index Proxy 결과를 요약하고 forward 후보와 위험 플래그를 정리합니다.",
+        "V6.7.2 BTCDOM Index",
+    ),
     "latest_v67_global_btcd_data_quality_report.html": (
         "V6.7 Global BTC Dominance 데이터 품질",
         "CoinPaprika current, CoinMarketCap historical, CSV history 사용 가능 여부를 구분합니다.",

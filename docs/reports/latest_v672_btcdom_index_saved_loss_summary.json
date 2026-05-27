@@ -1,0 +1,36 @@
+{
+  "schema_version": "v672_btcdom_index_saved_loss_v1",
+  "saved_loss_missed_profit": [
+    {
+      "scenario": "BTCDOM_INDEX_RELATIVE_STRENGTH_FILTER",
+      "saved_loss_krw": 10302.761152316205,
+      "missed_profit_krw": 4968.762858045633,
+      "net_effect_krw": 5333.998294270572,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "saved_loss_krw": 112384.94152252913,
+      "missed_profit_krw": 72408.49651649507,
+      "net_effect_krw": 39976.44500603406,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_BEAR_DEFENSE_FILTER",
+      "saved_loss_krw": 17158.449122116424,
+      "missed_profit_krw": 8281.271430076049,
+      "net_effect_krw": 8877.177692040375,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_COMPACT_ROUTER",
+      "saved_loss_krw": 25359.6231242816,
+      "missed_profit_krw": 21298.2124260048,
+      "net_effect_krw": 4061.410698276799,
+      "decision": "KEEP_CANDIDATE"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

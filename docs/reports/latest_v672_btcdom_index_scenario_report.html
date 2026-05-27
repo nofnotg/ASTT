@@ -1,0 +1,12 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V6.7.2 BTCDOM Index 시나리오 검증</title><style>
+body{margin:0;background:#f7f9fc;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.62}
+header{background:#0f172a;color:white;padding:30px 22px}main{max-width:1200px;margin:auto;padding:24px}
+section{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e2e8f0;padding:9px;text-align:left}th{background:#eef2ff}
+.notice{border-left:5px solid #d97706;background:#fffbeb;padding:13px 15px;border-radius:8px;margin-top:16px}
+.good{color:#059669}.bad{color:#dc2626}.warn{color:#d97706}
+</style></head><body><header><h1>V6.7.2 BTCDOM Index 시나리오 검증</h1><p>BTCDOM Index는 BTC Dominance %가 아닐 수 있으므로, 이번 검증은 절대값이 아니라 방향성/기울기 기반 프록시 필터 검증입니다.</p></header><main>
+<div class="notice"><strong>안전 고정:</strong> 모든 결과는 PAPER 검증입니다. 실제 주문, 주문 테스트, 출금, 자동 설정 적용은 금지입니다.</div><section><h2>한눈에 보는 결론</h2><p>BTCDOM Index data available.</p><p>검증 구간은 BTCDOM CSV 공통 coverage 기준입니다: 2023-05-29T00:00:00+00:00 ~ 2026-05-27T00:00:00+00:00</p></section>
+<section><h2>시나리오 비교</h2><table><tr><th>Scenario</th><th>Final Equity</th><th>Return</th><th>MDD</th><th>PF</th><th>Trades</th><th>Return/MDD</th><th>Decision</th></tr><tr><td>CONTROL_EXISTING</td><td>828,847 KRW</td><td>+65.77%</td><td>-44.27%</td><td>1.073</td><td>1241</td><td>1.486</td><td>BASELINE</td></tr><tr><td>BTCDOM_INDEX_RELATIVE_STRENGTH_FILTER</td><td>834,180 KRW</td><td>+66.84%</td><td>-44.27%</td><td>1.074</td><td>1241</td><td>1.510</td><td>BTCDOM_RELATIVE_STRENGTH_CANDIDATE</td></tr><tr><td>BTCDOM_INDEX_ALT_PERMISSION_FILTER</td><td>867,050 KRW</td><td>+73.41%</td><td>-41.36%</td><td>1.083</td><td>1241</td><td>1.775</td><td>BTCDOM_INDEX_FILTER_VALIDATED</td></tr><tr><td>BTCDOM_INDEX_BEAR_DEFENSE_FILTER</td><td>837,722 KRW</td><td>+67.54%</td><td>-44.27%</td><td>1.075</td><td>1241</td><td>1.526</td><td>BTCDOM_INDEX_FILTER_VALIDATED</td></tr><tr><td>BTCDOM_INDEX_COMPACT_ROUTER</td><td>832,958 KRW</td><td>+66.59%</td><td>-44.03%</td><td>1.074</td><td>1241</td><td>1.513</td><td>BTCDOM_INDEX_FILTER_VALIDATED</td></tr></table></section>
+<section><h2>Lookahead / Hindsight 감사</h2><table><tr><th>checked</th><th>pass</th><th>fail</th><th>excluded</th><th>major</th></tr><tr><td>6205</td><td>6205</td><td>0</td><td>0</td><td></td></tr></table></section></main></body></html>

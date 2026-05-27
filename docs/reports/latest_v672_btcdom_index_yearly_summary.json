@@ -1,0 +1,40 @@
+{
+  "schema_version": "v672_btcdom_index_yearly_v1",
+  "yearly_comparison": [
+    {
+      "year": "2023",
+      "control_return_pct": 31.221597323830075,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 31.221597323830075,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 56.54398663629119,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 56.54398663629119,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 0.028665442202857605,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 0.028665442202857605,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2026",
+      "control_return_pct": -19.3251328263755,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": -15.606717877806275,
+      "delta_pct_point": 3.718414948569226,
+      "notes": "BTCDOM coverage period only"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

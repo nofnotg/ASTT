@@ -1,0 +1,255 @@
+{
+  "schema_version": "v672_btcdom_index_scenario_lab_v1",
+  "initial_cash_krw": 500000.0,
+  "btcdom_index_quality": {
+    "schema_version": "v672_btcdom_index_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 26280,
+        "original_rows": 26280,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2023-05-28T12:00:00+00:00",
+        "end": "2026-05-27T11:00:00+00:00",
+        "close_min": 15.65,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 6570,
+        "original_rows": 6570,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2023-05-28T12:00:00+00:00",
+        "end": "2026-05-27T08:00:00+00:00",
+        "close_min": 15.65,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1095,
+        "original_rows": 1095,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2023-05-29T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 15.686,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 15.65,
+    "close_max": 57.752,
+    "common_coverage_start": "2023-05-29T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "input_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 6364218
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 1595468
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 266932
+      }
+    }
+  },
+  "coverage_period_validation_possible": true,
+  "reason": "BTCDOM Index data available.",
+  "scenarios": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "final_equity_krw": 828847.1482629448,
+      "total_return_pct": 65.76942965258897,
+      "mdd_pct": -44.271096072792645,
+      "profit_factor": 1.072824789364484,
+      "trade_count": 1241,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.4856065353441383,
+      "lookahead_fail_count": 0,
+      "decision": "BASELINE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_RELATIVE_STRENGTH_FILTER",
+      "final_equity_krw": 834179.9456771043,
+      "total_return_pct": 66.83598913542086,
+      "mdd_pct": -44.271096072792645,
+      "profit_factor": 1.0741730298338403,
+      "trade_count": 1241,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.509698088918466,
+      "lookahead_fail_count": 0,
+      "decision": "BTCDOM_RELATIVE_STRENGTH_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "final_equity_krw": 867049.8467507772,
+      "total_return_pct": 73.40996935015545,
+      "mdd_pct": -41.36046730189238,
+      "profit_factor": 1.0830226331361714,
+      "trade_count": 1241,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.774882493815458,
+      "lookahead_fail_count": 0,
+      "decision": "BTCDOM_INDEX_FILTER_VALIDATED"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_BEAR_DEFENSE_FILTER",
+      "final_equity_krw": 837722.3273742688,
+      "total_return_pct": 67.54446547485375,
+      "mdd_pct": -44.271096072792645,
+      "profit_factor": 1.07507218965241,
+      "trade_count": 1241,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.5257012241981522,
+      "lookahead_fail_count": 0,
+      "decision": "BTCDOM_INDEX_FILTER_VALIDATED"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_COMPACT_ROUTER",
+      "final_equity_krw": 832958.0364021222,
+      "total_return_pct": 66.59160728042444,
+      "mdd_pct": -44.02639758899617,
+      "profit_factor": 1.0741446416030649,
+      "trade_count": 1241,
+      "skipped_trade_count": 0,
+      "return_mdd_ratio": 1.512538179982006,
+      "lookahead_fail_count": 0,
+      "decision": "BTCDOM_INDEX_FILTER_VALIDATED"
+    }
+  ],
+  "saved_loss_missed_profit": [
+    {
+      "scenario": "BTCDOM_INDEX_RELATIVE_STRENGTH_FILTER",
+      "saved_loss_krw": 10302.761152316205,
+      "missed_profit_krw": 4968.762858045633,
+      "net_effect_krw": 5333.998294270572,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "saved_loss_krw": 112384.94152252913,
+      "missed_profit_krw": 72408.49651649507,
+      "net_effect_krw": 39976.44500603406,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_BEAR_DEFENSE_FILTER",
+      "saved_loss_krw": 17158.449122116424,
+      "missed_profit_krw": 8281.271430076049,
+      "net_effect_krw": 8877.177692040375,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BTCDOM_INDEX_COMPACT_ROUTER",
+      "saved_loss_krw": 25359.6231242816,
+      "missed_profit_krw": 21298.2124260048,
+      "net_effect_krw": 4061.410698276799,
+      "decision": "KEEP_CANDIDATE"
+    }
+  ],
+  "yearly_comparison": [
+    {
+      "year": "2023",
+      "control_return_pct": 31.221597323830075,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 31.221597323830075,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 56.54398663629119,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 56.54398663629119,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 0.028665442202857605,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": 0.028665442202857605,
+      "delta_pct_point": 0.0,
+      "notes": "BTCDOM coverage period only"
+    },
+    {
+      "year": "2026",
+      "control_return_pct": -19.3251328263755,
+      "best_btcdom_scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "best_btcdom_return_pct": -15.606717877806275,
+      "delta_pct_point": 3.718414948569226,
+      "notes": "BTCDOM coverage period only"
+    }
+  ],
+  "regime_effect": [
+    {
+      "regime": "ALT_FRIENDLY",
+      "effect_krw": 224877.34089755442,
+      "trade_count": 284,
+      "decision": "KEEP"
+    },
+    {
+      "regime": "BTC_LED_MARKET",
+      "effect_krw": -94930.64944554075,
+      "trade_count": 81,
+      "decision": "REJECT"
+    },
+    {
+      "regime": "NORMAL",
+      "effect_krw": 216588.48063898573,
+      "trade_count": 870,
+      "decision": "KEEP"
+    },
+    {
+      "regime": "RISK_OFF_ALT_WEAK",
+      "effect_krw": -17688.02382805455,
+      "trade_count": 6,
+      "decision": "REJECT"
+    }
+  ],
+  "audit": {
+    "checked_trades": 6205,
+    "pass": 6205,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": []
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "v672_btcdom_index_rejected_scenarios_v1",
+  "rejected_scenarios": [],
+  "kept_candidates": [
+    {
+      "scenario": "BTCDOM_INDEX_RELATIVE_STRENGTH_FILTER",
+      "keep_reason": "BTCDOM_RELATIVE_STRENGTH_CANDIDATE",
+      "forward_candidate": true
+    },
+    {
+      "scenario": "BTCDOM_INDEX_ALT_PERMISSION_FILTER",
+      "keep_reason": "BTCDOM_INDEX_FILTER_VALIDATED",
+      "forward_candidate": true
+    },
+    {
+      "scenario": "BTCDOM_INDEX_BEAR_DEFENSE_FILTER",
+      "keep_reason": "BTCDOM_INDEX_FILTER_VALIDATED",
+      "forward_candidate": true
+    },
+    {
+      "scenario": "BTCDOM_INDEX_COMPACT_ROUTER",
+      "keep_reason": "BTCDOM_INDEX_FILTER_VALIDATED",
+      "forward_candidate": true
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
