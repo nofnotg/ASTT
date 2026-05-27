@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 import pandas as pd
@@ -69,6 +70,16 @@ def fetch_cmc_btc_dominance_history(
     try:
         with urlopen(request, timeout=timeout_seconds) as response:
             payload = json.loads(response.read().decode("utf-8"))
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        message = _cmc_error_message(body)
+        return pd.DataFrame(), {
+            "available": False,
+            "source": "coinmarketcap",
+            "reason": f"HTTP_{exc.code}",
+            "error_message": message,
+            "notes": "CoinMarketCap historical request failed. API key was not printed.",
+        }
     except Exception as exc:
         return pd.DataFrame(), {
             "available": False,
@@ -107,6 +118,15 @@ def fetch_cmc_btc_dominance_history(
         "coverage": f"{len(frame)} rows",
         "notes": "CoinMarketCap historical global metrics loaded. Plan limits may restrict actual period.",
     }
+
+
+def _cmc_error_message(body: str) -> str:
+    try:
+        payload = json.loads(body)
+        status = payload.get("status") or {}
+        return str(status.get("error_message") or status.get("error_code") or "CMC_ERROR")
+    except Exception:
+        return body[:300]
 
 
 def save_cmc_btc_dominance_history(

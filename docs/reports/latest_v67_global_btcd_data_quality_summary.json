@@ -4,7 +4,7 @@
     "coinpaprika_current": {
       "available": true,
       "period": "current only",
-      "coverage": "2026-05-27T08:31:42.998333+00:00",
+      "coverage": "2026-05-27T08:50:15.445199+00:00",
       "notes": "coinpaprika current collector cache value. Current values are not used as fake history.",
       "dominance": 57.2
     },
@@ -33,7 +33,9 @@
       "available": false,
       "period": "unavailable",
       "coverage": "0%",
-      "notes": "No configured paid historical API source."
+      "notes": "CoinMarketCap historical endpoint status: HTTP_403. CoinMarketCap historical request failed. API key was not printed. CMC response: Your API Key subscription plan doesn't support this endpoint.",
+      "source": "coinmarketcap",
+      "error_message": "Your API Key subscription plan doesn't support this endpoint."
     }
   },
   "full_period_validation_possible": false,
