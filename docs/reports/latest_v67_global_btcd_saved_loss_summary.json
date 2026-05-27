@@ -1,0 +1,7 @@
+{
+  "schema_version": "v67_global_btcd_saved_loss_v1",
+  "saved_loss_missed_profit": [],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

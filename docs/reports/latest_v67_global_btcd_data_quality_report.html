@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V6.7 Global BTC Dominance 데이터 품질</title><style>
+body{margin:0;background:#f7f9fc;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.62}
+header{background:#0f172a;color:white;padding:30px 22px}main{max-width:1200px;margin:auto;padding:24px}
+section{background:white;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin-top:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e2e8f0;padding:9px;text-align:left}th{background:#eef2ff}
+.notice{border-left:5px solid #d97706;background:#fffbeb;padding:13px 15px;border-radius:8px;margin-top:16px}
+.good{color:#059669}.bad{color:#dc2626}.warn{color:#d97706}
+</style></head><body><header><h1>V6.7 Global BTC Dominance 데이터 품질</h1><p>Global BTC Dominance는 매수 신호가 아니라 알트코인 매매 허용/축소/관찰을 판단하는 시장 체질 필터입니다.</p></header><main>
+<div class="notice"><strong>안전 고정:</strong> 모든 결과는 PAPER 검증입니다. 실제 주문, 주문 테스트, 출금, 자동 설정 적용은 금지입니다.</div><section><h2>한눈에 보는 결론</h2><p>2022년부터 Global BTC Dominance 백테스트 가능 여부: <strong>False</strong></p><p>Global BTCD historical CSV/API is unavailable or insufficient. Fake history was not generated.</p></section><section><h2>데이터 소스</h2><table><tr><th>Source</th><th>Available</th><th>Period</th><th>Coverage</th><th>Notes</th></tr><tr><td>coinpaprika_current</td><td>True</td><td>current only</td><td>2026-05-27T08:31:42.998333+00:00</td><td>coinpaprika current collector cache value. Current values are not used as fake history.</td></tr><tr><td>coingecko_current</td><td>False</td><td>current only</td><td>not fetched by default</td><td>Available as fallback client; not used for official backtest source.</td></tr><tr><td>coinmarketcap_current</td><td>False</td><td>current only</td><td>requires CMC_API_KEY</td><td>API key required; key is never printed.</td></tr><tr><td>global_btcd_historical_csv</td><td>False</td><td>unavailable</td><td>0%</td><td>data\external\btc_dominance_history.csv was not found. Fake history was not generated.</td></tr><tr><td>historical_api</td><td>False</td><td>unavailable</td><td>0%</td><td>No configured paid historical API source.</td></tr></table></section></main></body></html>

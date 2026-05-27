@@ -7,6 +7,41 @@ from typing import Any
 
 
 REPORT_LABELS: dict[str, tuple[str, str, str]] = {
+    "latest_v67_global_btcd_data_quality_report.html": (
+        "V6.7 Global BTC Dominance 데이터 품질",
+        "CoinPaprika current, CoinMarketCap historical, CSV history 사용 가능 여부를 구분합니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_v67_global_btcd_scenario_report.html": (
+        "V6.7 Global BTCD 시나리오 검증",
+        "Global BTC Dominance를 기존 성공 구조 위에 별도 overlay로 얹은 결과입니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_v67_global_btcd_saved_loss_report.html": (
+        "V6.7 막은 손실 / 놓친 수익",
+        "Global BTCD 필터가 줄인 손실과 잘라먹은 수익을 비교합니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_v67_global_btcd_yearly_report.html": (
+        "V6.7 연도별 Global BTCD 비교",
+        "2022년부터 현재까지 연도별로 Control 대비 개선 여부를 봅니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_v67_global_btcd_rejected_scenarios_report.html": (
+        "V6.7 폐기/유지 시나리오",
+        "기준 이하 Global BTCD 시나리오는 깔끔하게 폐기하고 후보만 남깁니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_v67_global_btcd_compact_router_report.html": (
+        "V6.7 Global BTCD Compact Router",
+        "유효 조건만 합친 compact router 후보를 따로 검증합니다.",
+        "V6.7 Global BTC Dominance",
+    ),
+    "latest_head_controller_v67_review_report.html": (
+        "V6.7 Head Controller Review",
+        "Global BTCD 결과를 요약하고 forward 후보와 위험 플래그를 정리합니다.",
+        "V6.7 Global BTC Dominance",
+    ),
     "latest_v66_btcd_inclusion_audit_report.html": (
         "V6.6 BTC Dominance 포함 여부 감사",
         "기존 Rolling/Balanced/Policy Blend에 BTC Dominance가 이미 들어가 있었는지 확인합니다.",

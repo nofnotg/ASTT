@@ -1,0 +1,25 @@
+{
+  "schema_version": "head_controller_v67_review_v1",
+  "live_readiness_opinion": "LIVE_NOT_ALLOWED",
+  "llm_provider": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "best_scenario": "",
+  "rejected_scenarios": [
+    "GLOBAL_BTCD_ALT_PERMISSION_FILTER",
+    "GLOBAL_BTCD_RELATIVE_STRENGTH_FILTER",
+    "GLOBAL_BTCD_BEAR_DEFENSE_FILTER",
+    "GLOBAL_BTCD_COMPACT_ROUTER"
+  ],
+  "forward_candidates": [],
+  "primary_problem": "GLOBAL_BTCD_DATA_REQUIRED",
+  "risk_flags": [
+    "LIVE_NOT_ALLOWED",
+    "PAPER_ONLY",
+    "NO_AUTO_APPLY",
+    "GLOBAL_BTCD_HISTORY_MISSING"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false
+}

@@ -291,6 +291,27 @@ from replay_lab.feedback.v66_btcd_reports_html import (
     V66BTCDShortResearchHTML,
 )
 from replay_lab.feedback.head_controller_v66_review_html import HeadControllerV66ReviewHTML
+from replay_lab.research.v67_global_btcd_data_preparation import (
+    build_v67_global_btcd_data_quality_report,
+    prepare_v67_global_btcd_data,
+)
+from replay_lab.research.v67_global_btcd_scenario_lab import run_v67_global_btcd_scenario_lab
+from replay_lab.research.v67_global_btcd_compact_router_lab import run_v67_global_btcd_compact_router_lab
+from replay_lab.research.v67_global_btcd_scenario_comparison import (
+    build_v67_global_btcd_rejected_scenarios_report,
+    build_v67_global_btcd_saved_loss_report,
+    build_v67_global_btcd_yearly_report,
+)
+from replay_lab.research.head_controller_v67_review import run_head_controller_v67_review
+from replay_lab.feedback.v67_global_btcd_reports_html import (
+    V67GlobalBTCDCompactRouterHTML,
+    V67GlobalBTCDDataQualityHTML,
+    V67GlobalBTCDRejectedHTML,
+    V67GlobalBTCDSavedLossHTML,
+    V67GlobalBTCDScenarioHTML,
+    V67GlobalBTCDYearlyHTML,
+)
+from replay_lab.feedback.head_controller_v67_review_html import HeadControllerV67ReviewHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -2125,6 +2146,82 @@ def build_head_controller_v66_review_report_html_command(args: argparse.Namespac
     return 0
 
 
+def prepare_v67_global_btcd_data_command(args: argparse.Namespace) -> int:
+    print(json.dumps(prepare_v67_global_btcd_data(use_available_history=str(args.use_available_history).lower() == "true"), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v67_global_btcd_data_quality_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v67_global_btcd_data_quality_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v67_global_btcd_scenario_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v67_global_btcd_scenario_lab(args.initial_cash_krw, archive_dir=str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"scenarios": len(summary.get("scenarios", [])), "full_period_validation_possible": summary.get("full_period_validation_possible")}, ensure_ascii=False))
+    return 0
+
+
+def run_v67_global_btcd_compact_router_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v67_global_btcd_compact_router_lab(), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v67_global_btcd_rejected_scenarios_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v67_global_btcd_rejected_scenarios_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v67_global_btcd_saved_loss_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v67_global_btcd_saved_loss_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v67_global_btcd_yearly_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v67_global_btcd_yearly_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v67_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v67_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v67_global_btcd_data_quality_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd data quality report: {V67GlobalBTCDDataQualityHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v67_global_btcd_scenario_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd scenario report: {V67GlobalBTCDScenarioHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v67_global_btcd_saved_loss_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd saved loss report: {V67GlobalBTCDSavedLossHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v67_global_btcd_yearly_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd yearly report: {V67GlobalBTCDYearlyHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v67_global_btcd_rejected_scenarios_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd rejected scenarios report: {V67GlobalBTCDRejectedHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v67_global_btcd_compact_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v67 global btcd compact router report: {V67GlobalBTCDCompactRouterHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_head_controller_v67_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v67 report: {HeadControllerV67ReviewHTML(args.reports_dir).build()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3640,6 +3737,69 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v66-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v66_review_report_html_command)
+
+    p = sub.add_parser("prepare-v67-global-btcd-data")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=prepare_v67_global_btcd_data_command)
+
+    p = sub.add_parser("build-v67-global-btcd-data-quality-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_data_quality_report_command)
+
+    p = sub.add_parser("run-v67-global-btcd-scenario-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v67_global_btcd_scenario_lab_command)
+
+    p = sub.add_parser("run-v67-global-btcd-compact-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v67_global_btcd_compact_router_lab_command)
+
+    p = sub.add_parser("build-v67-global-btcd-rejected-scenarios-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_rejected_scenarios_report_command)
+
+    p = sub.add_parser("build-v67-global-btcd-saved-loss-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_saved_loss_report_command)
+
+    p = sub.add_parser("build-v67-global-btcd-yearly-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_yearly_report_command)
+
+    p = sub.add_parser("run-head-controller-v67-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_head_controller_v67_review_command)
+
+    p = sub.add_parser("build-v67-global-btcd-data-quality-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_data_quality_report_html_command)
+
+    p = sub.add_parser("build-v67-global-btcd-scenario-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_scenario_report_html_command)
+
+    p = sub.add_parser("build-v67-global-btcd-saved-loss-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_saved_loss_report_html_command)
+
+    p = sub.add_parser("build-v67-global-btcd-yearly-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_yearly_report_html_command)
+
+    p = sub.add_parser("build-v67-global-btcd-rejected-scenarios-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_rejected_scenarios_report_html_command)
+
+    p = sub.add_parser("build-v67-global-btcd-compact-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v67_global_btcd_compact_router_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v67-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v67_review_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

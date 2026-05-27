@@ -1,0 +1,25 @@
+{
+  "schema_version": "v67_global_btcd_rejected_scenarios_v1",
+  "rejected_scenarios": [
+    {
+      "scenario": "GLOBAL_BTCD_ALT_PERMISSION_FILTER",
+      "reject_reason": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_RELATIVE_STRENGTH_FILTER",
+      "reject_reason": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_BEAR_DEFENSE_FILTER",
+      "reject_reason": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_COMPACT_ROUTER",
+      "reject_reason": "GLOBAL_BTCD_DATA_REQUIRED"
+    }
+  ],
+  "kept_candidates": [],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

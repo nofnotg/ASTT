@@ -1,0 +1,27 @@
+{
+  "schema_version": "v67_global_btcd_compact_router_v1",
+  "scenario": {
+    "scenario": "GLOBAL_BTCD_COMPACT_ROUTER",
+    "final_equity_krw": null,
+    "total_return_pct": null,
+    "mdd_pct": null,
+    "profit_factor": null,
+    "trade_count": 0,
+    "return_mdd_ratio": null,
+    "decision": "GLOBAL_BTCD_DATA_REQUIRED"
+  },
+  "saved_loss_missed_profit": {},
+  "audit": {
+    "checked_trades": 0,
+    "pass": 0,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": [
+      "GLOBAL_BTCD_DATA_REQUIRED"
+    ]
+  },
+  "decision": "GLOBAL_BTCD_DATA_REQUIRED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "v67_global_btcd_data_quality_v1",
+  "data_sources": {
+    "coinpaprika_current": {
+      "available": true,
+      "period": "current only",
+      "coverage": "2026-05-27T08:31:42.998333+00:00",
+      "notes": "coinpaprika current collector cache value. Current values are not used as fake history.",
+      "dominance": 57.2
+    },
+    "coingecko_current": {
+      "available": false,
+      "period": "current only",
+      "coverage": "not fetched by default",
+      "notes": "Available as fallback client; not used for official backtest source."
+    },
+    "coinmarketcap_current": {
+      "available": false,
+      "period": "current only",
+      "coverage": "requires CMC_API_KEY",
+      "notes": "API key required; key is never printed."
+    },
+    "global_btcd_historical_csv": {
+      "available": false,
+      "source": "unavailable",
+      "period": "unavailable",
+      "coverage": "0%",
+      "data_quality": "GLOBAL_BTCD_DATA_REQUIRED",
+      "notes": "data\\external\\btc_dominance_history.csv was not found. Fake history was not generated.",
+      "actual_months_available": 0.0
+    },
+    "historical_api": {
+      "available": false,
+      "period": "unavailable",
+      "coverage": "0%",
+      "notes": "No configured paid historical API source."
+    }
+  },
+  "full_period_validation_possible": false,
+  "reason": "Global BTCD historical CSV/API is unavailable or insufficient. Fake history was not generated.",
+  "missing_data": [
+    "data/external/btc_dominance_history.csv"
+  ],
+  "fallback_used": false,
+  "fake_data_generated": false,
+  "historical_rows": 0,
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

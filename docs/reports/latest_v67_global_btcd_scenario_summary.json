@@ -1,0 +1,86 @@
+{
+  "schema_version": "v67_global_btcd_scenario_lab_v1",
+  "initial_cash_krw": 500000.0,
+  "global_btcd_history_quality": {
+    "available": false,
+    "source": "unavailable",
+    "period": "unavailable",
+    "coverage": "0%",
+    "data_quality": "GLOBAL_BTCD_DATA_REQUIRED",
+    "notes": "data\\external\\btc_dominance_history.csv was not found. Fake history was not generated.",
+    "actual_months_available": 0.0
+  },
+  "full_period_validation_possible": false,
+  "reason": "data\\external\\btc_dominance_history.csv was not found. Fake history was not generated.",
+  "scenarios": [
+    {
+      "scenario": "CONTROL_EXISTING",
+      "final_equity_krw": 1519471.1463945187,
+      "total_return_pct": 203.89422927890374,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2612045445309292,
+      "expectancy_pct": 0.15014302597857437,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.722596792291073,
+      "lookahead_fail_count": 0,
+      "decision": "BASELINE"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_ALT_PERMISSION_FILTER",
+      "final_equity_krw": null,
+      "total_return_pct": null,
+      "mdd_pct": null,
+      "profit_factor": null,
+      "trade_count": 0,
+      "return_mdd_ratio": null,
+      "decision": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_RELATIVE_STRENGTH_FILTER",
+      "final_equity_krw": null,
+      "total_return_pct": null,
+      "mdd_pct": null,
+      "profit_factor": null,
+      "trade_count": 0,
+      "return_mdd_ratio": null,
+      "decision": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_BEAR_DEFENSE_FILTER",
+      "final_equity_krw": null,
+      "total_return_pct": null,
+      "mdd_pct": null,
+      "profit_factor": null,
+      "trade_count": 0,
+      "return_mdd_ratio": null,
+      "decision": "GLOBAL_BTCD_DATA_REQUIRED"
+    },
+    {
+      "scenario": "GLOBAL_BTCD_COMPACT_ROUTER",
+      "final_equity_krw": null,
+      "total_return_pct": null,
+      "mdd_pct": null,
+      "profit_factor": null,
+      "trade_count": 0,
+      "return_mdd_ratio": null,
+      "decision": "GLOBAL_BTCD_DATA_REQUIRED"
+    }
+  ],
+  "saved_loss_missed_profit": [],
+  "yearly_comparison": [],
+  "regime_effect": [],
+  "audit": {
+    "checked_trades": 0,
+    "pass": 0,
+    "fail": 0,
+    "excluded_trades": 0,
+    "major_violations": [
+      "GLOBAL_BTCD_DATA_REQUIRED"
+    ]
+  },
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
