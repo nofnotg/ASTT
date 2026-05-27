@@ -16,6 +16,7 @@ def prepare_v67_global_btcd_data(
     use_available_history: bool = True,
 ) -> dict[str, Any]:
     current = collect_current_global_btcd("coinpaprika", save=True)
+    cmc_current = collect_current_global_btcd("coinmarketcap", save=True)
     cmc_result = {"saved": False, "quality": {"reason": "SKIPPED_EXISTING_HISTORY"}}
     if use_available_history and not Path(history_path).exists():
         cmc_result = save_cmc_btc_dominance_history(
@@ -28,6 +29,7 @@ def prepare_v67_global_btcd_data(
     summary = {
         "schema_version": "v67_global_btcd_data_preparation_v1",
         "coinpaprika_current": _safe_current(current),
+        "coinmarketcap_current": _safe_current(cmc_current),
         "coinmarketcap_historical": _safe_quality(cmc_result),
         "data_quality": quality,
         "fake_data_generated": False,

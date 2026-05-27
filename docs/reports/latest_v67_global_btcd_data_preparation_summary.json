@@ -3,8 +3,8 @@
   "coinpaprika_current": {
     "source": "coinpaprika",
     "available": true,
-    "dominance": 57.2,
-    "fetched_at": "2026-05-27T08:50:15.445199+00:00",
+    "dominance": 57.23,
+    "fetched_at": "2026-05-27T09:46:47.440406+00:00",
     "validation": {
       "valid": false,
       "dominance_range_valid": true,
@@ -13,6 +13,19 @@
       "reason": [
         "SOURCE_STALE"
       ]
+    }
+  },
+  "coinmarketcap_current": {
+    "source": "coinmarketcap",
+    "available": true,
+    "dominance": 59.857084115225,
+    "fetched_at": "2026-05-27T09:46:47.767481+00:00",
+    "validation": {
+      "valid": true,
+      "dominance_range_valid": true,
+      "stale": false,
+      "data_quality": "GOOD",
+      "reason": []
     }
   },
   "coinmarketcap_historical": {
@@ -32,9 +45,9 @@
       "coinpaprika_current": {
         "available": true,
         "period": "current only",
-        "coverage": "2026-05-27T08:50:15.445199+00:00",
+        "coverage": "2026-05-27T09:46:47.440406+00:00",
         "notes": "coinpaprika current collector cache value. Current values are not used as fake history.",
-        "dominance": 57.2
+        "dominance": 57.23
       },
       "coingecko_current": {
         "available": false,
@@ -43,10 +56,11 @@
         "notes": "Available as fallback client; not used for official backtest source."
       },
       "coinmarketcap_current": {
-        "available": false,
+        "available": true,
         "period": "current only",
-        "coverage": "requires CMC_API_KEY",
-        "notes": "API key required; key is never printed."
+        "coverage": "2026-05-27T09:46:47.767481+00:00",
+        "notes": "coinmarketcap current collector cache value. Current values are not used as fake history.",
+        "dominance": 59.857084115225
       },
       "global_btcd_historical_csv": {
         "available": false,

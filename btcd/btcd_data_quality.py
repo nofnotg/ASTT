@@ -12,13 +12,14 @@ def build_v67_global_btcd_quality(
 ) -> dict[str, Any]:
     history, quality = load_global_btcd_history(history_path)
     current = latest_btcd_record("coinpaprika")
+    cmc_current = latest_btcd_record("coinmarketcap")
     possible = bool(quality.get("available") and quality.get("data_quality") == "GOOD")
     return {
         "schema_version": "v67_global_btcd_data_quality_v1",
         "data_sources": {
             "coinpaprika_current": _current_quality(current, "coinpaprika"),
             "coingecko_current": {"available": False, "period": "current only", "coverage": "not fetched by default", "notes": "Available as fallback client; not used for official backtest source."},
-            "coinmarketcap_current": {"available": False, "period": "current only", "coverage": "requires CMC_API_KEY", "notes": "API key required; key is never printed."},
+            "coinmarketcap_current": _current_quality(cmc_current, "coinmarketcap"),
             "global_btcd_historical_csv": quality,
             "historical_api": {"available": False, "period": "unavailable", "coverage": "0%", "notes": "No configured paid historical API source."},
         },

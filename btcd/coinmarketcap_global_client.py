@@ -29,8 +29,25 @@ def fetch_coinmarketcap_global(timeout_seconds: int = 10) -> dict[str, Any]:
         }
     request = Request(CMC_GLOBAL_URL, headers={"X-CMC_PRO_API_KEY": api_key, "User-Agent": "ASTT-Research/1.0"})
     fetched_at = datetime.now(timezone.utc).isoformat()
-    with urlopen(request, timeout=timeout_seconds) as response:
-        payload = json.loads(response.read().decode("utf-8"))
+    try:
+        with urlopen(request, timeout=timeout_seconds) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        return {
+            "source": "coinmarketcap",
+            "available": False,
+            "reason": f"HTTP_{exc.code}",
+            "error_message": _cmc_error_message(body),
+            "validation": {"valid": False, "data_quality": "UNAVAILABLE", "reason": [f"HTTP_{exc.code}"]},
+        }
+    except Exception as exc:
+        return {
+            "source": "coinmarketcap",
+            "available": False,
+            "reason": type(exc).__name__,
+            "validation": {"valid": False, "data_quality": "UNAVAILABLE", "reason": [type(exc).__name__]},
+        }
     data = payload.get("data") or {}
     record = {
         "source": "coinmarketcap",
@@ -90,14 +107,15 @@ def fetch_cmc_btc_dominance_history(
     quotes = ((payload.get("data") or {}).get("quotes") or [])
     rows: list[dict[str, Any]] = []
     for quote in quotes:
+        usd_quote = (quote.get("quote") or {}).get("USD") or {}
         rows.append(
             {
                 "timestamp": quote.get("timestamp"),
                 "btc_dominance_pct": _float(quote.get("btc_dominance")),
-                "market_cap_usd": _float(quote.get("total_market_cap")),
-                "volume_24h_usd": _float(quote.get("total_volume_24h")),
+                "market_cap_usd": _float(usd_quote.get("total_market_cap") or quote.get("total_market_cap")),
+                "volume_24h_usd": _float(usd_quote.get("total_volume_24h") or quote.get("total_volume_24h")),
                 "source": "coinmarketcap",
-                "source_updated_at": quote.get("timestamp"),
+                "source_updated_at": usd_quote.get("timestamp") or quote.get("timestamp"),
             }
         )
     frame = pd.DataFrame(rows)
