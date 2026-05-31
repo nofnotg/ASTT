@@ -1,0 +1,3 @@
+from __future__ import annotations
+
+from bear_validation.risk_sizing_models import apply_sizing_model

@@ -1,0 +1,3 @@
+from __future__ import annotations
+
+from bear_validation.bear_bounce_v3_score import score_bear_bounce_v3

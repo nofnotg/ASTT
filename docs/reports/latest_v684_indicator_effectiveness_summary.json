@@ -1,0 +1,169 @@
+{
+  "schema_version": "v684_indicator_effectiveness_v1",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "initial_cash_krw": 500000.0,
+  "indicators": [
+    {
+      "indicator": "200MA_REGIME_PROXY",
+      "risk_on_trade_count": 1339,
+      "risk_off_trade_count": 19,
+      "risk_on_pnl": 1080237.3097097003,
+      "risk_off_pnl": -12132.699030329624,
+      "false_alarm": 4,
+      "saved_loss": 49783.959228345,
+      "missed_profit": 41897.704858630736,
+      "net_effect": 7886.254369714261,
+      "decision": "INDICATOR_CANDIDATE"
+    },
+    {
+      "indicator": "BTCDOM_DOMINANCE_REGIME",
+      "risk_on_trade_count": 1161,
+      "risk_off_trade_count": 197,
+      "risk_on_pnl": 681993.2748636436,
+      "risk_off_pnl": 386111.3358157291,
+      "false_alarm": 87,
+      "saved_loss": 278880.3378082851,
+      "missed_profit": 529852.706088509,
+      "net_effect": -250972.36828022386,
+      "decision": "RESEARCH_ONLY"
+    },
+    {
+      "indicator": "HMM_RISK_OFF_PROXY",
+      "risk_on_trade_count": 1352,
+      "risk_off_trade_count": 6,
+      "risk_on_pnl": 1079597.2608825255,
+      "risk_off_pnl": -11492.650203154928,
+      "false_alarm": 1,
+      "saved_loss": 14499.635693356664,
+      "missed_profit": 7029.41306130596,
+      "net_effect": 7470.222632050704,
+      "decision": "RESEARCH_ONLY"
+    },
+    {
+      "indicator": "MARKET_BREADTH_PROXY",
+      "risk_on_trade_count": 1352,
+      "risk_off_trade_count": 6,
+      "risk_on_pnl": 1079597.2608825255,
+      "risk_off_pnl": -11492.650203154928,
+      "false_alarm": 1,
+      "saved_loss": 14499.635693356664,
+      "missed_profit": 7029.41306130596,
+      "net_effect": 7470.222632050704,
+      "decision": "RESEARCH_ONLY"
+    },
+    {
+      "indicator": "STRATEGY_HEALTH",
+      "risk_on_trade_count": 515,
+      "risk_off_trade_count": 843,
+      "risk_on_pnl": 1225146.8629444211,
+      "risk_off_pnl": -157042.2522650493,
+      "false_alarm": 313,
+      "saved_loss": 1392671.634166739,
+      "missed_profit": 1290594.1701944564,
+      "net_effect": 102077.4639722826,
+      "decision": "INDICATOR_CANDIDATE"
+    }
+  ],
+  "candidate_indicators": [
+    "200MA_REGIME_PROXY",
+    "STRATEGY_HEALTH"
+  ],
+  "dominance_data_quality": {
+    "schema_version": "v673_dominance_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 38581,
+        "original_rows": 38581,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.188,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "selected_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 9646,
+        "original_rows": 9646,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.189,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "selected_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1608,
+        "original_rows": 1608,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 10.205,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "selected_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 10.188,
+    "close_max": 57.752,
+    "common_coverage_start": "2022-01-01T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "copied_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 9866554,
+        "selected_filename": "btcdom_1h_2022_percent.csv"
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 2472696,
+        "selected_filename": "btcdom_4h_2022_percent.csv"
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 413452,
+        "selected_filename": "btcdom_1d_2022_percent.csv"
+      }
+    },
+    "use_available_history": true
+  },
+  "decision": "INDICATOR_VALIDATION_READY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -389,6 +389,27 @@ from replay_lab.research.v683_paper_runtime_lab import (
     start_v683_live_forward_paper_lab,
     switch_v683_active_paper_route_lab,
 )
+from replay_lab.research.v684_bear_indicator_validation import (
+    build_v684_bear_windows_lab,
+    build_v684_bear_windows_report_html,
+    build_v684_dashboard_html,
+    build_v684_indicator_effectiveness_report_html,
+    build_v684_loss_guard_indicator_report_html,
+    run_v684_indicator_effectiveness,
+    run_v684_loss_guard_indicator,
+)
+from replay_lab.research.v684_bear_bounce_v3_research import (
+    build_v684_bear_bounce_v3_report_html,
+    run_v684_bear_bounce_v3,
+)
+from replay_lab.research.v684_risk_sizing_research import (
+    build_v684_risk_sizing_report_html,
+    run_v684_risk_sizing,
+)
+from replay_lab.research.v684_bear_router_research import (
+    build_v684_bear_router_report_html,
+    run_v684_bear_router,
+)
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -2603,6 +2624,77 @@ def switch_v683_active_paper_route_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_v684_bear_windows_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_v684_bear_windows_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v684_indicator_effectiveness_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v684_indicator_effectiveness(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v684_loss_guard_indicator_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v684_loss_guard_indicator(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v684_bear_bounce_v3_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v684_bear_bounce_v3(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v684_risk_sizing_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v684_risk_sizing(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v684_bear_router_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v684_bear_router(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v684_bear_windows_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 bear windows report: {build_v684_bear_windows_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_indicator_effectiveness_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 indicator effectiveness report: {build_v684_indicator_effectiveness_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_loss_guard_indicator_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 loss guard indicator report: {build_v684_loss_guard_indicator_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_bear_bounce_v3_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 bear bounce v3 report: {build_v684_bear_bounce_v3_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_risk_sizing_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 risk sizing report: {build_v684_risk_sizing_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_bear_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 bear router report: {build_v684_bear_router_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v684_dashboard_html_command(args: argparse.Namespace) -> int:
+    print(f"v684 dashboard: {build_v684_dashboard_html(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -4463,6 +4555,70 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--confirm-switch", default="false")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=switch_v683_active_paper_route_command)
+
+    p = sub.add_parser("build-v684-bear-windows")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_bear_windows_command)
+
+    p = sub.add_parser("run-v684-indicator-effectiveness-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v684_indicator_effectiveness_lab_command)
+
+    p = sub.add_parser("run-v684-loss-guard-indicator-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v684_loss_guard_indicator_lab_command)
+
+    p = sub.add_parser("run-v684-bear-bounce-v3-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v684_bear_bounce_v3_lab_command)
+
+    p = sub.add_parser("run-v684-risk-sizing-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v684_risk_sizing_lab_command)
+
+    p = sub.add_parser("run-v684-bear-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v684_bear_router_lab_command)
+
+    p = sub.add_parser("build-v684-bear-windows-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_bear_windows_report_html_command)
+
+    p = sub.add_parser("build-v684-indicator-effectiveness-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_indicator_effectiveness_report_html_command)
+
+    p = sub.add_parser("build-v684-loss-guard-indicator-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_loss_guard_indicator_report_html_command)
+
+    p = sub.add_parser("build-v684-bear-bounce-v3-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_bear_bounce_v3_report_html_command)
+
+    p = sub.add_parser("build-v684-risk-sizing-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_risk_sizing_report_html_command)
+
+    p = sub.add_parser("build-v684-bear-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_bear_router_report_html_command)
+
+    p = sub.add_parser("build-v684-paper-dashboard-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v684_dashboard_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

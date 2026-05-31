@@ -1,0 +1,193 @@
+{
+  "schema_version": "v684_bear_router_v1",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "active_route_change_applied": false,
+  "manual_approval_required": true,
+  "scenarios": [
+    {
+      "scenario": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "final_equity_krw": 1568104.6106793715,
+      "return_pct": 213.62092213587428,
+      "mdd_pct": -18.23180481299654,
+      "profit_factor": 1.2781297760530579,
+      "return_mdd_ratio": 11.716937753940556,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "high_watermark_krw": 1828418.3258464742,
+      "hwm_giveback_krw": 260313.71516710264,
+      "hwm_giveback_pct": 14.237098342721394,
+      "return_2025_pct": 9.166228377002339,
+      "return_2026_pct": 3.125179028119085,
+      "decision": "BASELINE"
+    },
+    {
+      "scenario": "BEAR_ROUTER_V684_SHADOW",
+      "final_equity_krw": 1590918.4930667004,
+      "return_pct": 218.18369861334008,
+      "mdd_pct": -16.81599776369015,
+      "profit_factor": 1.2906723513182807,
+      "return_mdd_ratio": 12.97476972103624,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "high_watermark_krw": 1828418.3258464742,
+      "hwm_giveback_krw": 237499.83277977374,
+      "hwm_giveback_pct": 12.989359678935736,
+      "return_2025_pct": 9.166228377002339,
+      "return_2026_pct": 4.625516243823391,
+      "decision": "BEAR_ROUTER_CANDIDATE"
+    }
+  ],
+  "route_usage_count": {
+    "LG_V2_BALANCED_PLUS_DOM_GATE": 1352,
+    "BEAR_DEFENSE_SHADOW": 6
+  },
+  "routing_rules": [
+    {
+      "market_state": "BULL_ATTACK",
+      "route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "cap": 1.0
+    },
+    {
+      "market_state": "ALT_FRIENDLY",
+      "route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "cap": 1.0
+    },
+    {
+      "market_state": "NORMAL",
+      "route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "cap": 1.0
+    },
+    {
+      "market_state": "BTC_LED_MARKET",
+      "route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "cap": 0.7
+    },
+    {
+      "market_state": "EDGE_DECAY",
+      "route": "LG_M3_PF0.8_DD8",
+      "cap": 0.35
+    },
+    {
+      "market_state": "RISK_OFF_ALT_WEAK",
+      "route": "BEAR_DEFENSE_SHADOW",
+      "cap": 0.35
+    },
+    {
+      "market_state": "BEAR_DEFENSE",
+      "route": "CASH_DEFENSE_OR_A_PLUS_ONLY",
+      "cap": 0.2
+    },
+    {
+      "market_state": "BEAR_BOUNCE_ONLY",
+      "route": "BEAR_BOUNCE_V3_SHADOW_ONLY",
+      "cap": 0.25
+    },
+    {
+      "market_state": "LOCKDOWN",
+      "route": "OBSERVE_ONLY",
+      "cap": 0.0
+    }
+  ],
+  "dominance_data_quality": {
+    "schema_version": "v673_dominance_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 38581,
+        "original_rows": 38581,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.188,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "selected_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 9646,
+        "original_rows": 9646,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.189,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "selected_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1608,
+        "original_rows": 1608,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 10.205,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "selected_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 10.188,
+    "close_max": 57.752,
+    "common_coverage_start": "2022-01-01T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "copied_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 9866554,
+        "selected_filename": "btcdom_1h_2022_percent.csv"
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 2472696,
+        "selected_filename": "btcdom_4h_2022_percent.csv"
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 413452,
+        "selected_filename": "btcdom_1d_2022_percent.csv"
+      }
+    },
+    "use_available_history": true
+  },
+  "decision": "BEAR_ROUTER_CANDIDATE",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
