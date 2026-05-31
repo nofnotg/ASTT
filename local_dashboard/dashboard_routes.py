@@ -13,6 +13,8 @@ def route_map(service: DashboardDataService) -> dict[str, Callable[[], dict]]:
         "/api/positions": service.positions,
         "/api/trades": service.trades,
         "/api/decisions": service.decisions,
+        "/api/investment-records": service.investment_records,
+        "/api/investment-logs": service.investment_logs,
         "/api/active-shadow": service.active_shadow,
         "/api/bear-windows": service.bear_windows,
         "/api/atr-research": service.atr_research,

@@ -3,32 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASTT V6.8.6 Local Control Dashboard</title>
+  <title>ASTT 2026 Paper 투자 대시보드</title>
   <link rel="stylesheet" href="/static/dashboard.css">
 </head>
 <body>
   <aside class="side">
     <div class="brand">ASTT</div>
-    <button data-view="overview" class="active">Overview</button>
-    <button data-view="routes">Routes</button>
-    <button data-view="journal">Journal</button>
-    <button data-view="atr">ATR Research</button>
-    <button data-view="bear">Bear Windows</button>
-    <button data-view="control">Control Tower</button>
+    <button data-view="overview" class="active">투자현황</button>
+    <button data-view="records">월/주/일 기록</button>
+    <button data-view="trades">매매 로그</button>
+    <button data-view="decisions">시나리오 로그</button>
+    <button data-view="routes">시나리오 비교</button>
+    <button data-view="risk">하락장/ATR</button>
+    <button data-view="control">관제</button>
   </aside>
   <main>
     <header>
       <div>
-        <h1>Local Control Dashboard</h1>
-        <p>Paper-only monitoring. Live orders are disabled.</p>
+        <h1>2026 Paper / Forward 투자 대시보드</h1>
+        <p>2026-01-01 이후 paper 투자 기록과 forward 관찰 기록을 한국어로 모니터링합니다. 실거래는 비활성입니다.</p>
       </div>
-      <div class="status" id="status">Checking...</div>
+      <div class="status" id="status">확인 중</div>
     </header>
     <section class="grid" id="cards"></section>
     <section class="panel">
       <div class="panel-head">
         <h2 id="view-title">Overview</h2>
-        <button id="refresh">Refresh</button>
+        <button id="refresh">새로고침</button>
       </div>
       <div id="content"></div>
     </section>
