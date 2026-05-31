@@ -410,6 +410,25 @@ from replay_lab.research.v684_bear_router_research import (
     build_v684_bear_router_report_html,
     run_v684_bear_router,
 )
+from replay_lab.research.v685_atr_precision_research import (
+    build_v685_atr_precision_report_html,
+    build_v685_atr_price_path_report_html,
+    build_v685_atr_sensitivity_report_html,
+    run_v685_atr_precision,
+    run_v685_atr_price_path,
+    run_v685_atr_sensitivity,
+)
+from replay_lab.research.v685_bear_window_research import (
+    build_v685_bear_window_classification,
+    build_v685_bear_window_classification_report_html,
+    build_v685_bear_window_performance_report_html,
+    run_v685_bear_window_performance,
+)
+from replay_lab.research.v685_bear_router_window_aware_research import (
+    build_v685_bear_router_window_aware_report_html,
+    run_v685_bear_router_window_aware,
+)
+from replay_lab.feedback.v685_reports_html import V685ReportsHTML
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -2695,6 +2714,77 @@ def build_v684_dashboard_html_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_v685_atr_precision_audit_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v685_atr_precision(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v685_atr_price_path_audit_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v685_atr_price_path(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v685_atr_sensitivity_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v685_atr_sensitivity(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v685_bear_window_classification_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_v685_bear_window_classification(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v685_bear_window_performance_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v685_bear_window_performance(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v685_bear_router_window_aware_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v685_bear_router_window_aware(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v685_atr_precision_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 atr precision report: {build_v685_atr_precision_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_atr_price_path_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 atr price path report: {build_v685_atr_price_path_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_atr_sensitivity_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 atr sensitivity report: {build_v685_atr_sensitivity_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_bear_window_classification_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 bear window classification report: {build_v685_bear_window_classification_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_bear_window_performance_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 bear window performance report: {build_v685_bear_window_performance_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_bear_router_window_aware_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 bear router window aware report: {build_v685_bear_router_window_aware_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v685_dashboard_html_command(args: argparse.Namespace) -> int:
+    print(f"v685 dashboard: {V685ReportsHTML(args.reports_dir).build_dashboard()}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -4619,6 +4709,70 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v684-paper-dashboard-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v684_dashboard_html_command)
+
+    p = sub.add_parser("run-v685-atr-precision-audit")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v685_atr_precision_audit_command)
+
+    p = sub.add_parser("run-v685-atr-price-path-audit")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v685_atr_price_path_audit_command)
+
+    p = sub.add_parser("run-v685-atr-sensitivity-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v685_atr_sensitivity_lab_command)
+
+    p = sub.add_parser("build-v685-bear-window-classification")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_bear_window_classification_command)
+
+    p = sub.add_parser("run-v685-bear-window-performance-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v685_bear_window_performance_lab_command)
+
+    p = sub.add_parser("run-v685-bear-router-window-aware-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v685_bear_router_window_aware_lab_command)
+
+    p = sub.add_parser("build-v685-atr-precision-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_atr_precision_report_html_command)
+
+    p = sub.add_parser("build-v685-atr-price-path-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_atr_price_path_report_html_command)
+
+    p = sub.add_parser("build-v685-atr-sensitivity-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_atr_sensitivity_report_html_command)
+
+    p = sub.add_parser("build-v685-bear-window-classification-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_bear_window_classification_report_html_command)
+
+    p = sub.add_parser("build-v685-bear-window-performance-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_bear_window_performance_report_html_command)
+
+    p = sub.add_parser("build-v685-bear-router-window-aware-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_bear_router_window_aware_report_html_command)
+
+    p = sub.add_parser("build-v685-paper-dashboard-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v685_dashboard_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))
