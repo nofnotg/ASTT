@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTT V6.8.6 Local Control Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+  <aside class="side">
+    <div class="brand">ASTT</div>
+    <button data-view="overview" class="active">Overview</button>
+    <button data-view="routes">Routes</button>
+    <button data-view="journal">Journal</button>
+    <button data-view="atr">ATR Research</button>
+    <button data-view="bear">Bear Windows</button>
+    <button data-view="control">Control Tower</button>
+  </aside>
+  <main>
+    <header>
+      <div>
+        <h1>Local Control Dashboard</h1>
+        <p>Paper-only monitoring. Live orders are disabled.</p>
+      </div>
+      <div class="status" id="status">Checking...</div>
+    </header>
+    <section class="grid" id="cards"></section>
+    <section class="panel">
+      <div class="panel-head">
+        <h2 id="view-title">Overview</h2>
+        <button id="refresh">Refresh</button>
+      </div>
+      <div id="content"></div>
+    </section>
+  </main>
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>

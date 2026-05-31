@@ -429,6 +429,26 @@ from replay_lab.research.v685_bear_router_window_aware_research import (
     run_v685_bear_router_window_aware,
 )
 from replay_lab.feedback.v685_reports_html import V685ReportsHTML
+from replay_lab.research.v686_atr_ltf_research import (
+    build_v686_atr_ltf_coverage_report_html,
+    build_v686_atr_ltf_replay_report_html,
+    build_v686_atr_model_comparison_report_html,
+    build_v686_atr_precision_v2_report_html,
+    build_v686_bear_window_atr_replay_report_html,
+    run_v686_atr_ltf_coverage_lab,
+    run_v686_atr_ltf_replay_lab,
+    run_v686_atr_precision_v2_lab,
+    run_v686_bear_window_atr_replay_lab,
+)
+from replay_lab.research.v686_runtime_dashboard_research import (
+    build_v686_active_shadow_dashboard_data_lab,
+    build_v686_local_dashboard_report_html,
+    check_v686_local_dashboard_health_lab,
+    register_v686_shadow_routes_lab,
+    run_v686_control_tower_dashboard_review_lab,
+    run_v686_paper_backfill_with_v685_router_lab,
+)
+from local_dashboard.dashboard_app import start_dashboard as start_v686_dashboard
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -2785,6 +2805,90 @@ def build_v685_dashboard_html_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_v686_atr_ltf_coverage_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v686_atr_ltf_coverage_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v686_atr_ltf_replay_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v686_atr_ltf_replay_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v686_atr_precision_v2_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v686_atr_precision_v2_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v686_bear_window_atr_replay_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v686_bear_window_atr_replay_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def register_v686_shadow_routes_command(args: argparse.Namespace) -> int:
+    print(json.dumps(register_v686_shadow_routes_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v686_paper_backfill_with_v685_router_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v686_paper_backfill_with_v685_router_lab(args.initial_cash_krw, args.start_date, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v686_active_shadow_dashboard_data_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v686_active_shadow_dashboard_data_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def start_v686_local_dashboard_command(args: argparse.Namespace) -> int:
+    start_v686_dashboard(args.host, args.port, args.reports_dir)
+    return 0
+
+
+def check_v686_local_dashboard_health_command(args: argparse.Namespace) -> int:
+    print(json.dumps(check_v686_local_dashboard_health_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v686_local_dashboard_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 local dashboard report: {build_v686_local_dashboard_report_html(args.reports_dir, args.host, args.port)}")
+    return 0
+
+
+def run_v686_control_tower_dashboard_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v686_control_tower_dashboard_review_lab(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v686_atr_ltf_coverage_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 atr ltf coverage report: {build_v686_atr_ltf_coverage_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v686_atr_ltf_replay_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 atr ltf replay report: {build_v686_atr_ltf_replay_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v686_atr_precision_v2_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 atr precision v2 report: {build_v686_atr_precision_v2_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v686_atr_model_comparison_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 atr model comparison report: {build_v686_atr_model_comparison_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v686_bear_window_atr_replay_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v686 bear window atr replay report: {build_v686_bear_window_atr_replay_report_html(args.reports_dir)}")
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -4773,6 +4877,85 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v685-paper-dashboard-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v685_dashboard_html_command)
+
+    p = sub.add_parser("run-v686-atr-ltf-coverage")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v686_atr_ltf_coverage_command)
+
+    p = sub.add_parser("run-v686-atr-ltf-replay")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v686_atr_ltf_replay_command)
+
+    p = sub.add_parser("run-v686-atr-precision-v2")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v686_atr_precision_v2_command)
+
+    p = sub.add_parser("run-v686-bear-window-atr-replay")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v686_bear_window_atr_replay_command)
+
+    p = sub.add_parser("register-v686-shadow-routes")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=register_v686_shadow_routes_command)
+
+    p = sub.add_parser("run-v686-paper-backfill-with-v685-router")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v686_paper_backfill_with_v685_router_command)
+
+    p = sub.add_parser("build-v686-active-shadow-dashboard-data")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_active_shadow_dashboard_data_command)
+
+    p = sub.add_parser("start-v686-local-dashboard")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=8787)
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=start_v686_local_dashboard_command)
+
+    p = sub.add_parser("check-v686-local-dashboard-health")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=check_v686_local_dashboard_health_command)
+
+    p = sub.add_parser("build-v686-local-dashboard-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=8787)
+    p.set_defaults(func=build_v686_local_dashboard_report_html_command)
+
+    p = sub.add_parser("run-v686-control-tower-dashboard-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v686_control_tower_dashboard_review_command)
+
+    p = sub.add_parser("build-v686-atr-ltf-coverage-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_atr_ltf_coverage_report_html_command)
+
+    p = sub.add_parser("build-v686-atr-ltf-replay-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_atr_ltf_replay_report_html_command)
+
+    p = sub.add_parser("build-v686-atr-precision-v2-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_atr_precision_v2_report_html_command)
+
+    p = sub.add_parser("build-v686-atr-model-comparison-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_atr_model_comparison_report_html_command)
+
+    p = sub.add_parser("build-v686-bear-window-atr-replay-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v686_bear_window_atr_replay_report_html_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

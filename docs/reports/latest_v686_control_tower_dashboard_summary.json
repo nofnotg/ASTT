@@ -1,0 +1,23 @@
+{
+  "schema_version": "v686_control_tower_dashboard_v1",
+  "llm_provider_requested": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "review_generated": true,
+  "active_change_applied": false,
+  "recommendations": [
+    "Keep LG_V2_BALANCED_PLUS_DOM_GATE active.",
+    "Observe BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW as forward shadow.",
+    "Keep ATR research-only until lower-timeframe coverage is sufficient."
+  ],
+  "risk_flags": [
+    "ATR decision: ATR_DATA_INSUFFICIENT",
+    "Live orders disabled",
+    "Route switch requires manual approval"
+  ],
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "decision": "CONTROL_TOWER_REVIEW_READY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

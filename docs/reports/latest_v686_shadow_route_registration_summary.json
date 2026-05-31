@@ -1,0 +1,22 @@
+{
+  "schema_version": "v686_shadow_route_registration_v1",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "shadow_routes": [
+    "BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW",
+    "BEAR_ROUTER_V684_SHADOW",
+    "LG_COMBINED_GUARD",
+    "LG_M3_PF0.8_DD8",
+    "BASE_BALANCED",
+    "BASE_ROLLING"
+  ],
+  "research_shadow_routes": [
+    "ATR_TRAILING_STOP_PRECISION_REPLAY"
+  ],
+  "v685_router_registered": true,
+  "active_changed": false,
+  "manual_approval_required": true,
+  "decision": "V685_ROUTER_SHADOW_REGISTERED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

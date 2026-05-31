@@ -1,0 +1,15 @@
+{
+  "schema_version": "v686_local_dashboard_v1",
+  "dashboard_ready": true,
+  "host": "127.0.0.1",
+  "port": 8787,
+  "browser_url": "http://127.0.0.1:8787",
+  "paper_runtime_connected": true,
+  "llm_review_enabled": true,
+  "live_order_endpoints_enabled": false,
+  "active_route_change_applied": false,
+  "decision": "LOCAL_DASHBOARD_READY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

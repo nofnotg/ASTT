@@ -1,0 +1,55 @@
+{
+  "schema_version": "v686_atr_model_comparison_v1",
+  "rows": [
+    {
+      "scenario": "ATR_LTF_conservative",
+      "final_equity_krw": 1449134.501807997,
+      "return_pct": 189.82690036159943,
+      "mdd_pct": -5.51920920893787,
+      "profit_factor": 1.8258996800757927,
+      "return_mdd_ratio": 34.39385846330877,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "conservative",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    },
+    {
+      "scenario": "ATR_LTF_neutral",
+      "final_equity_krw": 2081890.83634666,
+      "return_pct": 316.378167269332,
+      "mdd_pct": -6.410428687682613,
+      "profit_factor": 1.8258996800757923,
+      "return_mdd_ratio": 49.35366770045196,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "neutral",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    },
+    {
+      "scenario": "ATR_LTF_optimistic",
+      "final_equity_krw": 2398269.003615993,
+      "return_pct": 379.65380072319863,
+      "mdd_pct": -6.680097435932586,
+      "profit_factor": 1.8258996800757927,
+      "return_mdd_ratio": 56.83357231902358,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "optimistic",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    }
+  ],
+  "comparison_note": "Model comparison is blocked from promotion when LTF coverage is insufficient.",
+  "decision": "ATR_DATA_INSUFFICIENT",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,1114 @@
+{
+  "schema_version": "v686_atr_ltf_replay_v1",
+  "total_replayed_rows": 900,
+  "sample_rows": [
+    {
+      "trade_id": "twf_00001",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00001",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00001",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00002",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00002",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00002",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00003",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00003",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00003",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00004",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00004",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00004",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00005",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00005",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00005",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00006",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00006",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00006",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00007",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00007",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00007",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00008",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00008",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00008",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00009",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00009",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00009",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00010",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00010",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00010",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00011",
+      "market": "KRW-HBAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00011",
+      "market": "KRW-HBAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00011",
+      "market": "KRW-HBAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00012",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00012",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00012",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00013",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00013",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00013",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00014",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00014",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00014",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00015",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00015",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00015",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00016",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00016",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00016",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00017",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00017",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00017",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00018",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00018",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00018",
+      "market": "KRW-LSK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00019",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00019",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00019",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00020",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00020",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00020",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00021",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00021",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00021",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00022",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00022",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00022",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00023",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00023",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00023",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00024",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00024",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00024",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00025",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00025",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00025",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00026",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00026",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00026",
+      "market": "KRW-ATOM",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00027",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00027",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00027",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00028",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00028",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00028",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00029",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00029",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00029",
+      "market": "KRW-TRX",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00030",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00030",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00030",
+      "market": "KRW-ETC",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00031",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00031",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00031",
+      "market": "KRW-ALGO",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00032",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00032",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00032",
+      "market": "KRW-BCH",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00033",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00033",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00033",
+      "market": "KRW-DOGE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00034",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00034",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00034",
+      "market": "KRW-TOKAMAK",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00035",
+      "market": "KRW-APT",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00035",
+      "market": "KRW-APT",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00035",
+      "market": "KRW-APT",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00036",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00036",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00036",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00037",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00037",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00037",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00038",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00038",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00038",
+      "market": "KRW-NEAR",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00039",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00039",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00039",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    },
+    {
+      "trade_id": "twf_00040",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "conservative"
+    },
+    {
+      "trade_id": "twf_00040",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "neutral"
+    },
+    {
+      "trade_id": "twf_00040",
+      "market": "KRW-AAVE",
+      "ltf_available": false,
+      "bar_count": 0,
+      "decision": "ATR_DATA_INSUFFICIENT",
+      "fill_model": "optimistic"
+    }
+  ],
+  "model_rows": [
+    {
+      "scenario": "ATR_LTF_conservative",
+      "final_equity_krw": 1449134.501807997,
+      "return_pct": 189.82690036159943,
+      "mdd_pct": -5.51920920893787,
+      "profit_factor": 1.8258996800757927,
+      "return_mdd_ratio": 34.39385846330877,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "conservative",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    },
+    {
+      "scenario": "ATR_LTF_neutral",
+      "final_equity_krw": 2081890.83634666,
+      "return_pct": 316.378167269332,
+      "mdd_pct": -6.410428687682613,
+      "profit_factor": 1.8258996800757923,
+      "return_mdd_ratio": 49.35366770045196,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "neutral",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    },
+    {
+      "scenario": "ATR_LTF_optimistic",
+      "final_equity_krw": 2398269.003615993,
+      "return_pct": 379.65380072319863,
+      "mdd_pct": -6.680097435932586,
+      "profit_factor": 1.8258996800757927,
+      "return_mdd_ratio": 56.83357231902358,
+      "trade_count": 1351,
+      "skipped_trade_count": 7,
+      "win_rate_pct": 43.22723908216136,
+      "lookahead_fail_count": 0,
+      "fill_model": "optimistic",
+      "ltf_coverage_pct": 0.0,
+      "decision": "ATR_DATA_INSUFFICIENT"
+    }
+  ],
+  "coverage_decision": "ATR_DATA_INSUFFICIENT",
+  "final_atr_decision": "ATR_DATA_INSUFFICIENT",
+  "fake_data_generated": false,
+  "dominance_data_quality": {
+    "schema_version": "v673_dominance_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 38581,
+        "original_rows": 38581,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.188,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "selected_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 9646,
+        "original_rows": 9646,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.189,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "selected_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1608,
+        "original_rows": 1608,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 10.205,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "selected_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 10.188,
+    "close_max": 57.752,
+    "common_coverage_start": "2022-01-01T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "copied_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 9866554,
+        "selected_filename": "btcdom_1h_2022_percent.csv"
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 2472696,
+        "selected_filename": "btcdom_4h_2022_percent.csv"
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 413452,
+        "selected_filename": "btcdom_1d_2022_percent.csv"
+      }
+    },
+    "use_available_history": true
+  },
+  "decision": "ATR_DATA_INSUFFICIENT",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}
