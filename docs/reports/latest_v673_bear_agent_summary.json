@@ -1,0 +1,81 @@
+{
+  "schema_version": "v673_bear_agent_v1",
+  "agents": [
+    {
+      "scenario": "RELATIVE_STRENGTH_BEAR_AGENT",
+      "final_equity_krw": 920350.0617273436,
+      "total_return_pct": 84.07001234546871,
+      "mdd_pct": -41.36046730189228,
+      "profit_factor": 1.0842763895076644,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "reduced_trade_count": 87,
+      "full_size_trade_count": 1271,
+      "average_position_size": 177152.4998693061,
+      "return_mdd_ratio": 2.032617565266784,
+      "lookahead_fail_count": 0,
+      "agent_usage_count": {
+        "RELATIVE_STRENGTH_BEAR_AGENT": 1358
+      },
+      "decision": "BEAR_AGENT_CANDIDATE"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_V2_RESEARCH_AGENT",
+      "final_equity_krw": 500000.0,
+      "total_return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "trade_count": 0,
+      "skipped_trade_count": 1358,
+      "reduced_trade_count": 0,
+      "full_size_trade_count": 0,
+      "average_position_size": 0.0,
+      "return_mdd_ratio": 0.0,
+      "lookahead_fail_count": 0,
+      "agent_usage_count": {
+        "BEAR_BOUNCE_V2_RESEARCH_AGENT": 1358
+      },
+      "decision": "RESEARCH_ONLY"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_AGENT",
+      "final_equity_krw": 895820.4788525433,
+      "total_return_pct": 79.16409577050865,
+      "mdd_pct": -44.271096072792645,
+      "profit_factor": 1.078262338368465,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "reduced_trade_count": 6,
+      "full_size_trade_count": 1352,
+      "average_position_size": 179346.1242883496,
+      "return_mdd_ratio": 1.788166609662053,
+      "lookahead_fail_count": 0,
+      "agent_usage_count": {
+        "BEAR_DEFENSE_AGENT": 1358
+      },
+      "decision": "BEAR_AGENT_CANDIDATE"
+    },
+    {
+      "scenario": "CASH_DEFENSE_AGENT",
+      "final_equity_krw": 621042.4516774606,
+      "total_return_pct": 24.208490335492105,
+      "mdd_pct": -18.01607996399328,
+      "profit_factor": 1.1029491979760122,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "reduced_trade_count": 1358,
+      "full_size_trade_count": 0,
+      "average_position_size": 43087.032555608756,
+      "return_mdd_ratio": 1.3437157463707365,
+      "lookahead_fail_count": 0,
+      "agent_usage_count": {
+        "CASH_DEFENSE_AGENT": 1358
+      },
+      "decision": "DOMINANCE_FILTER_REJECTED"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "use_available_history": true
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "v681_reconciliation_audit_v1",
+  "title": "V6.8.1 Compounding vs Dominance Ledger Reconciliation Audit",
+  "conclusion": "DIFFERENT_LEDGER_NOT_DIRECTLY_COMPARABLE",
+  "baseline_to_use": "STRONGEST_COMPOUNDING_BASELINE",
+  "strongest_baseline": {
+    "rolling": {
+      "scenario": "ROLLING_EDGE_THROTTLE",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 1514809.1590719263,
+      "return_pct": 202.96183181438528,
+      "mdd_pct": -19.45538265492957,
+      "profit_factor": 1.2500223892637137,
+      "expectancy_pct": 0.14945642990750013,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.432168588725197,
+      "average_position_krw": 151286.31467657446,
+      "average_multiplier": 0.6793078055964733,
+      "lookahead_fail_count": 0
+    },
+    "balanced": {
+      "scenario": "BALANCED_GROWTH",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 1519471.1463945187,
+      "return_pct": 203.89422927890374,
+      "mdd_pct": -19.015377825779282,
+      "profit_factor": 1.2612045445309292,
+      "expectancy_pct": 0.15014302597857437,
+      "trade_count": 1358,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 43.078055964653906,
+      "return_mdd_ratio": 10.722596792291073,
+      "average_position_krw": 145669.72426644125,
+      "average_multiplier": 0.6509572901325582,
+      "lookahead_fail_count": 0
+    }
+  },
+  "comparison_items": [
+    {
+      "item": "initial_cash",
+      "v64_compounding": 500000.0,
+      "v673_dominance": 500000.0,
+      "comparable": true
+    },
+    {
+      "item": "period",
+      "v64_compounding": "2022-06~2026-05",
+      "v673_dominance": "2022-06~2026-05",
+      "comparable": true
+    },
+    {
+      "item": "trade_count",
+      "v64_compounding": 1358,
+      "v673_dominance": 1358,
+      "comparable": false
+    },
+    {
+      "item": "compounding ledger",
+      "v64_compounding": "current equity based V6.4 independent policy ledger",
+      "v673_dominance": "V6.7.3 dominance agent ledger",
+      "comparable": false
+    },
+    {
+      "item": "position sizing",
+      "v64_compounding": "size_position(current equity) + V6.4 defense engines",
+      "v673_dominance": "size_position(current equity) + dominance multiplier only",
+      "comparable": false
+    },
+    {
+      "item": "fee/slippage",
+      "v64_compounding": "unit pnl minus 0.1% fee",
+      "v673_dominance": "unit pnl minus 0.1% fee",
+      "comparable": true
+    },
+    {
+      "item": "skipped trade",
+      "v64_compounding": "route defense skip affects ledger",
+      "v673_dominance": "agent skip/reduce affects separate ledger",
+      "comparable": false
+    },
+    {
+      "item": "source_mode",
+      "v64_compounding": "V64 policy compounding baseline",
+      "v673_dominance": "V673 dominance matrix/router",
+      "comparable": false
+    },
+    {
+      "item": "lookahead audit",
+      "v64_compounding": "fail=0",
+      "v673_dominance": "fail=0",
+      "comparable": true
+    }
+  ],
+  "source_files": [
+    "latest_v64_policy_compounding_summary.json",
+    "latest_v673_agent_matrix_summary.json",
+    "latest_v673_scenario_router_summary.json",
+    "latest_integrated_investment_summary.json"
+  ],
+  "reason": "V6.4 is the official compounding reinvestment ledger. V6.7.3 validates dominance agents, but it is not the same policy compounding ledger, so 150만원대와 90만원대 결과를 직접 비교하면 안 됩니다.",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

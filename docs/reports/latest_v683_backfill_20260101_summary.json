@@ -1,0 +1,6024 @@
+{
+  "schema_version": "v683_backfill_20260101_v1",
+  "run_id": "v683_backfill_20260531100959",
+  "source_mode": "historical_backfill",
+  "mode": "PAPER_ONLY",
+  "initial_cash_krw": 500000.0,
+  "start_date": "2026-01-01",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "shadow_routes": [
+    "LG_M3_PF0.8_DD8",
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+    "BASE_BALANCED",
+    "BASE_ROLLING"
+  ],
+  "routes": [
+    {
+      "scenario": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 515625.8951405952,
+      "return_pct": 3.1251790281190406,
+      "mdd_pct": -18.23180481299657,
+      "profit_factor": 1.0493990738478098,
+      "return_mdd_ratio": 0.17141358522504868,
+      "trade_count": 254,
+      "skipped_trade_count": 1,
+      "win_rate_pct": 34.645669291338585,
+      "average_multiplier": 0.5444881889763769,
+      "lookahead_fail_count": 0,
+      "route_status": "ACTIVE",
+      "source_mode": "historical_backfill",
+      "decision": "PAPER_ROUTE_ACTIVE",
+      "high_watermark_krw": 601222.5393225543,
+      "profit_giveback_krw": 85596.64418195904,
+      "profit_giveback_ratio_pct": 84.56283032892313,
+      "saved_loss_krw": 0.0,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 0.0
+    },
+    {
+      "scenario": "LG_M3_PF0.8_DD8",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 517196.1299475203,
+      "return_pct": 3.439225989504058,
+      "mdd_pct": -17.982796244202603,
+      "profit_factor": 1.0545570362369532,
+      "return_mdd_ratio": 0.19125090129477584,
+      "trade_count": 254,
+      "skipped_trade_count": 1,
+      "win_rate_pct": 34.645669291338585,
+      "average_multiplier": 0.5433070866141722,
+      "lookahead_fail_count": 0,
+      "route_status": "SHADOW",
+      "source_mode": "historical_backfill",
+      "decision": "PAPER_ROUTE_SHADOW",
+      "high_watermark_krw": 601222.5393225543,
+      "profit_giveback_krw": 84026.40937503392,
+      "profit_giveback_ratio_pct": 83.01156040679498,
+      "saved_loss_krw": 3605.9991936499855,
+      "missed_profit_krw": 0.0,
+      "net_effect_krw": 3605.9991936499855
+    },
+    {
+      "scenario": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 514682.94996583194,
+      "return_pct": 2.936589993166394,
+      "mdd_pct": -18.318070809540554,
+      "profit_factor": 1.0457162562591538,
+      "return_mdd_ratio": 0.16031109518568612,
+      "trade_count": 254,
+      "skipped_trade_count": 1,
+      "win_rate_pct": 34.645669291338585,
+      "average_multiplier": 0.5527559055118099,
+      "lookahead_fail_count": 0,
+      "route_status": "SHADOW",
+      "source_mode": "historical_backfill",
+      "decision": "PAPER_ROUTE_SHADOW",
+      "high_watermark_krw": 601222.5393225543,
+      "profit_giveback_krw": 86539.58935672231,
+      "profit_giveback_ratio_pct": 85.49438685879687,
+      "saved_loss_krw": 2227.0810409611045,
+      "missed_profit_krw": 157.5626232206325,
+      "net_effect_krw": 2069.518417740472
+    },
+    {
+      "scenario": "BASE_BALANCED",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 515463.05133396277,
+      "return_pct": 3.0926102667925504,
+      "mdd_pct": -19.015377825779304,
+      "profit_factor": 1.0447560654583787,
+      "return_mdd_ratio": 0.162637329382952,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "average_multiplier": 0.6074509803921558,
+      "lookahead_fail_count": 0,
+      "route_status": "SHADOW",
+      "source_mode": "historical_backfill",
+      "decision": "PAPER_ROUTE_SHADOW",
+      "high_watermark_krw": 601222.5393225543,
+      "profit_giveback_krw": 85759.48798859149,
+      "profit_giveback_ratio_pct": 84.72370735070335,
+      "saved_loss_krw": 1759.799706428363,
+      "missed_profit_krw": 564.8093570143129,
+      "net_effect_krw": 1194.99034941405
+    },
+    {
+      "scenario": "BASE_ROLLING",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 520195.4120245834,
+      "return_pct": 4.039082404916683,
+      "mdd_pct": -19.45538265492953,
+      "profit_factor": 1.0575629303575003,
+      "return_mdd_ratio": 0.20760745119003227,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "average_multiplier": 0.6201960784313716,
+      "lookahead_fail_count": 0,
+      "route_status": "SHADOW",
+      "source_mode": "historical_backfill",
+      "decision": "PAPER_ROUTE_SHADOW",
+      "high_watermark_krw": 601222.5393225543,
+      "profit_giveback_krw": 81027.12729797087,
+      "profit_giveback_ratio_pct": 80.04850287322968,
+      "saved_loss_krw": 4420.745602972976,
+      "missed_profit_krw": 998.8106686898267,
+      "net_effect_krw": 3421.934934283149
+    }
+  ],
+  "daily_equity": {
+    "LG_V2_BALANCED_PLUS_DOM_GATE": [
+      {
+        "period": "2026-01-01",
+        "trade_count": 1,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 509811.2101910828,
+        "pnl_krw": 9811.210191082791,
+        "return_pct": 1.962242038216555,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-02",
+        "trade_count": 6,
+        "start_equity_krw": 509811.2101910828,
+        "end_equity_krw": 546207.6036452745,
+        "pnl_krw": 36396.39345419174,
+        "return_pct": 7.139190493781022,
+        "mdd_pct": -0.14437194410731935
+      },
+      {
+        "period": "2026-01-03",
+        "trade_count": 6,
+        "start_equity_krw": 546207.6036452745,
+        "end_equity_krw": 569868.8812696731,
+        "pnl_krw": 23661.277624398586,
+        "return_pct": 4.331920219800711,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-04",
+        "trade_count": 7,
+        "start_equity_krw": 569868.8812696731,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 19762.026794050704,
+        "return_pct": 3.4678199571137602,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-01-05",
+        "trade_count": 1,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 601222.5393225543,
+        "pnl_krw": 11591.631258830428,
+        "return_pct": 1.9659130992464302,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-06",
+        "trade_count": 1,
+        "start_equity_krw": 601222.5393225543,
+        "end_equity_krw": 595164.0753527188,
+        "pnl_krw": -6058.463969835429,
+        "return_pct": -1.0076907590094608,
+        "mdd_pct": -1.0076907590094655
+      },
+      {
+        "period": "2026-01-07",
+        "trade_count": 3,
+        "start_equity_krw": 595164.0753527188,
+        "end_equity_krw": 577158.94368533,
+        "pnl_krw": -18005.131667388836,
+        "return_pct": -3.0252383188145604,
+        "mdd_pct": -4.002444030847322
+      },
+      {
+        "period": "2026-01-09",
+        "trade_count": 1,
+        "start_equity_krw": 577158.94368533,
+        "end_equity_krw": 588536.9276232807,
+        "pnl_krw": 11377.983937950688,
+        "return_pct": 1.9713779128672781,
+        "mdd_pct": -2.1099694155790423
+      },
+      {
+        "period": "2026-01-10",
+        "trade_count": 5,
+        "start_equity_krw": 588536.9276232807,
+        "end_equity_krw": 572644.9695017837,
+        "pnl_krw": -15891.958121496951,
+        "return_pct": -2.7002482555638863,
+        "mdd_pct": -4.753243258805828
+      },
+      {
+        "period": "2026-01-11",
+        "trade_count": 1,
+        "start_equity_krw": 572644.9695017837,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -5885.546223399229,
+        "return_pct": -1.027782751417483,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-01-13",
+        "trade_count": 2,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 558724.2826110314,
+        "pnl_krw": -8035.140667353058,
+        "return_pct": -1.4177339338928507,
+        "mdd_pct": -7.068639968057255
+      },
+      {
+        "period": "2026-01-14",
+        "trade_count": 2,
+        "start_equity_krw": 558724.2826110314,
+        "end_equity_krw": 566534.0072931085,
+        "pnl_krw": 7809.724682077067,
+        "return_pct": 1.3977779246644895,
+        "mdd_pct": -6.421406822058752
+      },
+      {
+        "period": "2026-01-16",
+        "trade_count": 1,
+        "start_equity_krw": 566534.0072931085,
+        "end_equity_krw": 564456.4189822153,
+        "pnl_krw": -2077.5883108931594,
+        "return_pct": -0.36671908202295933,
+        "mdd_pct": -6.1152265485199955
+      },
+      {
+        "period": "2026-01-17",
+        "trade_count": 3,
+        "start_equity_krw": 564456.4189822153,
+        "end_equity_krw": 558400.0422555377,
+        "pnl_krw": -6056.376726677641,
+        "return_pct": -1.0729573662388359,
+        "mdd_pct": -7.122570141044296
+      },
+      {
+        "period": "2026-01-18",
+        "trade_count": 3,
+        "start_equity_krw": 558400.0422555377,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -6019.318783891504,
+        "return_pct": -1.0779581533657767,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-01-21",
+        "trade_count": 1,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 551634.2492076246,
+        "pnl_krw": -746.4742640216136,
+        "return_pct": -0.1351376382814573,
+        "mdd_pct": -8.247909363279158
+      },
+      {
+        "period": "2026-01-23",
+        "trade_count": 1,
+        "start_equity_krw": 551634.2492076246,
+        "end_equity_krw": 549616.3840026438,
+        "pnl_krw": -2017.8652049808297,
+        "return_pct": -0.3657976653696382,
+        "mdd_pct": -8.58353636875612
+      },
+      {
+        "period": "2026-01-24",
+        "trade_count": 3,
+        "start_equity_krw": 549616.3840026438,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -2416.2819860639283,
+        "return_pct": -0.4396306326363675,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-01-27",
+        "trade_count": 2,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 543249.6391799921,
+        "pnl_krw": -3950.462836587685,
+        "return_pct": -0.7219411732616976,
+        "mdd_pct": -9.64250279237449
+      },
+      {
+        "period": "2026-01-28",
+        "trade_count": 1,
+        "start_equity_krw": 543249.6391799921,
+        "end_equity_krw": 541306.2285264933,
+        "pnl_krw": -1943.4106534988387,
+        "return_pct": -0.3577380477292724,
+        "mdd_pct": -9.965745938862085
+      },
+      {
+        "period": "2026-01-29",
+        "trade_count": 3,
+        "start_equity_krw": 541306.2285264933,
+        "end_equity_krw": 535543.4508177543,
+        "pnl_krw": -5762.777708739042,
+        "return_pct": -1.0646058377022705,
+        "mdd_pct": -10.924255863528652
+      },
+      {
+        "period": "2026-01-30",
+        "trade_count": 2,
+        "start_equity_krw": 535543.4508177543,
+        "end_equity_krw": 537220.083630748,
+        "pnl_krw": 1676.6328129937174,
+        "return_pct": 0.3130712942962077,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-01-31",
+        "trade_count": 1,
+        "start_equity_krw": 537220.083630748,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": -1921.5881455455674,
+        "return_pct": -0.35769104769105553,
+        "mdd_pct": -10.964998736014413
+      },
+      {
+        "period": "2026-02-01",
+        "trade_count": 4,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -370.41424286481924,
+        "return_pct": -0.06919769922556496,
+        "mdd_pct": -11.026608908394545
+      },
+      {
+        "period": "2026-02-03",
+        "trade_count": 1,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 533033.2208141973,
+        "pnl_krw": -1894.8604281402659,
+        "return_pct": -0.35422713717694343,
+        "mdd_pct": -11.34177680450758
+      },
+      {
+        "period": "2026-02-04",
+        "trade_count": 1,
+        "start_equity_krw": 533033.2208141973,
+        "end_equity_krw": 531143.8718923469,
+        "pnl_krw": -1889.34892185044,
+        "return_pct": -0.3544523770890873,
+        "mdd_pct": -11.65602798410895
+      },
+      {
+        "period": "2026-02-06",
+        "trade_count": 1,
+        "start_equity_krw": 531143.8718923469,
+        "end_equity_krw": 529253.5628096345,
+        "pnl_krw": -1890.309082712396,
+        "return_pct": -0.3558939832963959,
+        "mdd_pct": -11.970438865118561
+      },
+      {
+        "period": "2026-02-07",
+        "trade_count": 5,
+        "start_equity_krw": 529253.5628096345,
+        "end_equity_krw": 526372.0582456378,
+        "pnl_krw": -2881.5045639966847,
+        "return_pct": -0.5444468902013111,
+        "mdd_pct": -12.449713073175284
+      },
+      {
+        "period": "2026-02-08",
+        "trade_count": 4,
+        "start_equity_krw": 526372.0582456378,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -1803.8515145040583,
+        "return_pct": -0.3426951499888031,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-02-12",
+        "trade_count": 1,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 522686.2174109845,
+        "pnl_krw": -1881.9893201492378,
+        "return_pct": -0.3587692307692292,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-02-13",
+        "trade_count": 2,
+        "start_equity_krw": 522686.2174109845,
+        "end_equity_krw": 527019.3187861308,
+        "pnl_krw": 4333.101375146245,
+        "return_pct": 0.8290062432886325,
+        "mdd_pct": -12.946617119128453
+      },
+      {
+        "period": "2026-02-14",
+        "trade_count": 4,
+        "start_equity_krw": 527019.3187861308,
+        "end_equity_krw": 530259.8043257149,
+        "pnl_krw": 3240.485539584188,
+        "return_pct": 0.614870351820862,
+        "mdd_pct": -12.211256084181258
+      },
+      {
+        "period": "2026-02-15",
+        "trade_count": 8,
+        "start_equity_krw": 530259.8043257149,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": -5077.020879615098,
+        "return_pct": -0.957459124413762,
+        "mdd_pct": -12.64752249011398
+      },
+      {
+        "period": "2026-02-17",
+        "trade_count": 3,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 517698.9046580077,
+        "pnl_krw": -7483.878788092115,
+        "return_pct": -1.4250045934455446,
+        "mdd_pct": -13.892299307118344
+      },
+      {
+        "period": "2026-02-18",
+        "trade_count": 1,
+        "start_equity_krw": 517698.9046580077,
+        "end_equity_krw": 515837.8996245448,
+        "pnl_krw": -1861.0050334629486,
+        "return_pct": -0.3594763320375005,
+        "mdd_pct": -14.201836111170948
+      },
+      {
+        "period": "2026-02-19",
+        "trade_count": 1,
+        "start_equity_krw": 515837.8996245448,
+        "end_equity_krw": 513969.989593683,
+        "pnl_krw": -1867.9100308617926,
+        "return_pct": -0.3621118247072119,
+        "mdd_pct": -14.512521407994072
+      },
+      {
+        "period": "2026-02-20",
+        "trade_count": 3,
+        "start_equity_krw": 513969.989593683,
+        "end_equity_krw": 513805.7432708749,
+        "pnl_krw": -164.24632280808873,
+        "return_pct": -0.03195640331801197,
+        "mdd_pct": -14.820522375719774
+      },
+      {
+        "period": "2026-02-21",
+        "trade_count": 4,
+        "start_equity_krw": 513805.7432708749,
+        "end_equity_krw": 506527.6371341821,
+        "pnl_krw": -7278.106136692804,
+        "return_pct": -1.4165092998689621,
+        "mdd_pct": -15.750391243660378
+      },
+      {
+        "period": "2026-02-22",
+        "trade_count": 2,
+        "start_equity_krw": 506527.6371341821,
+        "end_equity_krw": 503649.908641678,
+        "pnl_krw": -2877.728492504102,
+        "return_pct": -0.5681286235013072,
+        "mdd_pct": -16.229037386193003
+      },
+      {
+        "period": "2026-02-24",
+        "trade_count": 1,
+        "start_equity_krw": 503649.908641678,
+        "end_equity_krw": 501831.23201596976,
+        "pnl_krw": -1818.6766257082345,
+        "return_pct": -0.3610993657505279,
+        "mdd_pct": -16.531533800874577
+      },
+      {
+        "period": "2026-02-25",
+        "trade_count": 2,
+        "start_equity_krw": 501831.23201596976,
+        "end_equity_krw": 500015.13252590876,
+        "pnl_krw": -1816.0994900609949,
+        "return_pct": -0.3618944725232276,
+        "mdd_pct": -16.833601566349127
+      },
+      {
+        "period": "2026-02-27",
+        "trade_count": 1,
+        "start_equity_krw": 500015.13252590876,
+        "end_equity_krw": 498841.0463602941,
+        "pnl_krw": -1174.086165614659,
+        "return_pct": -0.2348101265822855,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-03-01",
+        "trade_count": 6,
+        "start_equity_krw": 498841.0463602941,
+        "end_equity_krw": 508724.7807721029,
+        "pnl_krw": 9883.734411808779,
+        "return_pct": 1.9813394434807785,
+        "mdd_pct": -16.55247636333785
+      },
+      {
+        "period": "2026-03-06",
+        "trade_count": 2,
+        "start_equity_krw": 508724.7807721029,
+        "end_equity_krw": 506550.9952477013,
+        "pnl_krw": -2173.785524401581,
+        "return_pct": -0.42730089167316576,
+        "mdd_pct": -15.746506140892022
+      },
+      {
+        "period": "2026-03-07",
+        "trade_count": 1,
+        "start_equity_krw": 506550.9952477013,
+        "end_equity_krw": 504733.0213656253,
+        "pnl_krw": -1817.9738820759812,
+        "return_pct": -0.3588925693822742,
+        "mdd_pct": -16.048885669797315
+      },
+      {
+        "period": "2026-03-10",
+        "trade_count": 1,
+        "start_equity_krw": 504733.0213656253,
+        "end_equity_krw": 505081.6444834801,
+        "pnl_krw": 348.6231178547605,
+        "return_pct": 0.06907079646016889,
+        "mdd_pct": -15.990899966492247
+      },
+      {
+        "period": "2026-03-11",
+        "trade_count": 1,
+        "start_equity_krw": 505081.6444834801,
+        "end_equity_krw": 504350.31715821964,
+        "pnl_krw": -731.3273252604413,
+        "return_pct": -0.1447938829787221,
+        "mdd_pct": -16.11254000448625
+      },
+      {
+        "period": "2026-03-12",
+        "trade_count": 2,
+        "start_equity_krw": 504350.31715821964,
+        "end_equity_krw": 504721.89361821074,
+        "pnl_krw": 371.57645999110537,
+        "return_pct": 0.07367427903779422,
+        "mdd_pct": -16.08164395337183
+      },
+      {
+        "period": "2026-03-13",
+        "trade_count": 5,
+        "start_equity_krw": 504721.89361821074,
+        "end_equity_krw": 521680.6530243472,
+        "pnl_krw": 16958.759406136465,
+        "return_pct": 3.36002056193041,
+        "mdd_pct": -15.815002080653736
+      },
+      {
+        "period": "2026-03-14",
+        "trade_count": 1,
+        "start_equity_krw": 521680.6530243472,
+        "end_equity_krw": 532039.0352081242,
+        "pnl_krw": 10358.382183776994,
+        "return_pct": 1.985579132315185,
+        "mdd_pct": -11.507137472321757
+      },
+      {
+        "period": "2026-03-15",
+        "trade_count": 3,
+        "start_equity_krw": 532039.0352081242,
+        "end_equity_krw": 555507.8555374853,
+        "pnl_krw": 23468.82032936113,
+        "return_pct": 4.411108730054081,
+        "mdd_pct": -9.760129582333327
+      },
+      {
+        "period": "2026-03-17",
+        "trade_count": 1,
+        "start_equity_krw": 555507.8555374853,
+        "end_equity_krw": 549842.5177562858,
+        "pnl_krw": -5665.337781199487,
+        "return_pct": -1.0198483648296786,
+        "mdd_pct": -8.545924047385583
+      },
+      {
+        "period": "2026-03-18",
+        "trade_count": 2,
+        "start_equity_krw": 549842.5177562858,
+        "end_equity_krw": 538803.1096057694,
+        "pnl_krw": -11039.40815051645,
+        "return_pct": -2.007739997183988,
+        "mdd_pct": -10.382084109341251
+      },
+      {
+        "period": "2026-03-19",
+        "trade_count": 3,
+        "start_equity_krw": 538803.1096057694,
+        "end_equity_krw": 543275.1338376253,
+        "pnl_krw": 4472.024231855874,
+        "return_pct": 0.8299922832902595,
+        "mdd_pct": -10.230794385698227
+      },
+      {
+        "period": "2026-03-20",
+        "trade_count": 4,
+        "start_equity_krw": 543275.1338376253,
+        "end_equity_krw": 521089.2949717971,
+        "pnl_krw": -22185.838865828176,
+        "return_pct": -4.083720657176093,
+        "mdd_pct": -13.328383270702012
+      },
+      {
+        "period": "2026-03-21",
+        "trade_count": 5,
+        "start_equity_krw": 521089.2949717971,
+        "end_equity_krw": 523029.85043885774,
+        "pnl_krw": 1940.5554670606507,
+        "return_pct": 0.3724036332708902,
+        "mdd_pct": -13.511213671154668
+      },
+      {
+        "period": "2026-03-22",
+        "trade_count": 2,
+        "start_equity_krw": 523029.85043885774,
+        "end_equity_krw": 520630.31411453855,
+        "pnl_krw": -2399.536324319197,
+        "return_pct": -0.45877617162879414,
+        "mdd_pct": -13.404724529926213
+      },
+      {
+        "period": "2026-03-24",
+        "trade_count": 1,
+        "start_equity_krw": 520630.31411453855,
+        "end_equity_krw": 518785.3962200091,
+        "pnl_krw": -1844.9178945294698,
+        "return_pct": -0.35436236510107966,
+        "mdd_pct": -13.711585596147764
+      },
+      {
+        "period": "2026-03-25",
+        "trade_count": 4,
+        "start_equity_krw": 518785.3962200091,
+        "end_equity_krw": 513045.8195434394,
+        "pnl_krw": -5739.576676569704,
+        "return_pct": -1.1063489293240747,
+        "mdd_pct": -14.666236545035499
+      },
+      {
+        "period": "2026-03-27",
+        "trade_count": 2,
+        "start_equity_krw": 513045.8195434394,
+        "end_equity_krw": 509273.7247655927,
+        "pnl_krw": -3772.0947778466507,
+        "return_pct": -0.7352354573717079,
+        "mdd_pct": -15.293640631066102
+      },
+      {
+        "period": "2026-03-28",
+        "trade_count": 2,
+        "start_equity_krw": 509273.7247655927,
+        "end_equity_krw": 505523.2882002112,
+        "pnl_krw": -3750.436565381533,
+        "return_pct": -0.7364284436837565,
+        "mdd_pct": -15.917442355067909
+      },
+      {
+        "period": "2026-03-29",
+        "trade_count": 3,
+        "start_equity_krw": 505523.2882002112,
+        "end_equity_krw": 501289.63343711116,
+        "pnl_krw": -4233.6547631000285,
+        "return_pct": -0.8374796694674336,
+        "mdd_pct": -16.62161668091245
+      },
+      {
+        "period": "2026-03-31",
+        "trade_count": 2,
+        "start_equity_krw": 501289.63343711116,
+        "end_equity_krw": 503869.0869828345,
+        "pnl_krw": 2579.4535457233433,
+        "return_pct": 0.514563512522126,
+        "mdd_pct": -16.19258194302158
+      },
+      {
+        "period": "2026-04-01",
+        "trade_count": 2,
+        "start_equity_krw": 503869.0869828345,
+        "end_equity_krw": 505570.1871932604,
+        "pnl_krw": 1701.1002104259096,
+        "return_pct": 0.3376075759305097,
+        "mdd_pct": -15.909641750469476
+      },
+      {
+        "period": "2026-04-02",
+        "trade_count": 1,
+        "start_equity_krw": 505570.1871932604,
+        "end_equity_krw": 504719.09488396783,
+        "pnl_krw": -851.0923092925805,
+        "return_pct": -0.16834305717620124,
+        "mdd_pct": -16.05120203033715
+      },
+      {
+        "period": "2026-04-03",
+        "trade_count": 2,
+        "start_equity_krw": 504719.09488396783,
+        "end_equity_krw": 501062.0277451766,
+        "pnl_krw": -3657.067138791259,
+        "return_pct": -0.7245747537314773,
+        "mdd_pct": -16.659473826486373
+      },
+      {
+        "period": "2026-04-04",
+        "trade_count": 1,
+        "start_equity_krw": 501062.0277451766,
+        "end_equity_krw": 501657.50676224625,
+        "pnl_krw": 595.4790170696797,
+        "return_pct": 0.1188433734939709,
+        "mdd_pct": -16.560429133694143
+      },
+      {
+        "period": "2026-04-05",
+        "trade_count": 4,
+        "start_equity_krw": 501657.50676224625,
+        "end_equity_krw": 504113.3100506688,
+        "pnl_krw": 2455.803288422525,
+        "return_pct": 0.48953783314686916,
+        "mdd_pct": -16.265827308495652
+      },
+      {
+        "period": "2026-04-08",
+        "trade_count": 6,
+        "start_equity_krw": 504113.3100506688,
+        "end_equity_krw": 501191.9961545031,
+        "pnl_krw": -2921.313896165695,
+        "return_pct": -0.5794954899865812,
+        "mdd_pct": -16.637856471709064
+      },
+      {
+        "period": "2026-04-09",
+        "trade_count": 2,
+        "start_equity_krw": 501191.9961545031,
+        "end_equity_krw": 497649.9720882562,
+        "pnl_krw": -3542.0240662468714,
+        "return_pct": -0.7067199982090266,
+        "mdd_pct": -17.226993410959203
+      },
+      {
+        "period": "2026-04-10",
+        "trade_count": 1,
+        "start_equity_krw": 497649.9720882562,
+        "end_equity_krw": 496619.71373420814,
+        "pnl_krw": -1030.25835404807,
+        "return_pct": -0.20702469844916527,
+        "mdd_pct": -17.398353978247474
+      },
+      {
+        "period": "2026-04-11",
+        "trade_count": 2,
+        "start_equity_krw": 496619.71373420814,
+        "end_equity_krw": 495204.4694505569,
+        "pnl_krw": -1415.2442836512346,
+        "return_pct": -0.28497545395643753,
+        "mdd_pct": -17.693942702519184
+      },
+      {
+        "period": "2026-04-12",
+        "trade_count": 2,
+        "start_equity_krw": 495204.4694505569,
+        "end_equity_krw": 491608.8194615246,
+        "pnl_krw": -3595.649989032303,
+        "return_pct": -0.7260940098181567,
+        "mdd_pct": -18.23180481299657
+      },
+      {
+        "period": "2026-04-14",
+        "trade_count": 2,
+        "start_equity_krw": 491608.8194615246,
+        "end_equity_krw": 492258.978648479,
+        "pnl_krw": 650.1591869543772,
+        "return_pct": 0.13225132691201402,
+        "mdd_pct": -18.177752916615926
+      },
+      {
+        "period": "2026-04-15",
+        "trade_count": 2,
+        "start_equity_krw": 492258.978648479,
+        "end_equity_krw": 499015.34853643115,
+        "pnl_krw": 6756.369887952169,
+        "return_pct": 1.3725234441638978,
+        "mdd_pct": -17.571288697141057
+      },
+      {
+        "period": "2026-04-16",
+        "trade_count": 2,
+        "start_equity_krw": 499015.34853643115,
+        "end_equity_krw": 497991.7118259877,
+        "pnl_krw": -1023.6367104434757,
+        "return_pct": -0.20513130777354283,
+        "mdd_pct": -17.187098422841242
+      },
+      {
+        "period": "2026-04-18",
+        "trade_count": 2,
+        "start_equity_krw": 497991.7118259877,
+        "end_equity_krw": 495100.35636326397,
+        "pnl_krw": -2891.3554627237027,
+        "return_pct": -0.5806031293416392,
+        "mdd_pct": -17.6510652908766
+      },
+      {
+        "period": "2026-04-19",
+        "trade_count": 1,
+        "start_equity_krw": 495100.35636326397,
+        "end_equity_krw": 497904.87724774,
+        "pnl_krw": 2804.52088447602,
+        "return_pct": 0.5664550324860462,
+        "mdd_pct": -17.184595606018128
+      },
+      {
+        "period": "2026-04-21",
+        "trade_count": 2,
+        "start_equity_krw": 497904.87724774,
+        "end_equity_krw": 508366.85788616334,
+        "pnl_krw": 10461.980638423353,
+        "return_pct": 2.101200674364523,
+        "mdd_pct": -16.607239723704886
+      },
+      {
+        "period": "2026-04-22",
+        "trade_count": 1,
+        "start_equity_krw": 508366.85788616334,
+        "end_equity_krw": 510020.4943983215,
+        "pnl_krw": 1653.6365121581475,
+        "return_pct": 0.3252840909091059,
+        "mdd_pct": -15.169432108616126
+      },
+      {
+        "period": "2026-04-23",
+        "trade_count": 1,
+        "start_equity_krw": 510020.4943983215,
+        "end_equity_krw": 516985.2054225422,
+        "pnl_krw": 6964.711024220684,
+        "return_pct": 1.3655747368421123,
+        "mdd_pct": -14.011007304371697
+      },
+      {
+        "period": "2026-04-24",
+        "trade_count": 4,
+        "start_equity_krw": 516985.2054225422,
+        "end_equity_krw": 517491.1781453318,
+        "pnl_krw": 505.9727227896219,
+        "return_pct": 0.09786986503339534,
+        "mdd_pct": -13.97286042289715
+      },
+      {
+        "period": "2026-04-25",
+        "trade_count": 2,
+        "start_equity_krw": 517491.1781453318,
+        "end_equity_krw": 512696.7207210901,
+        "pnl_krw": -4794.4574242417,
+        "return_pct": -0.9264809965311538,
+        "mdd_pct": -14.724301371204962
+      },
+      {
+        "period": "2026-04-26",
+        "trade_count": 2,
+        "start_equity_krw": 512696.7207210901,
+        "end_equity_krw": 523389.4531055239,
+        "pnl_krw": 10692.732384433795,
+        "return_pct": 2.0855862642138234,
+        "mdd_pct": -14.13419100625754
+      },
+      {
+        "period": "2026-04-27",
+        "trade_count": 1,
+        "start_equity_krw": 523389.4531055239,
+        "end_equity_krw": 519628.731591513,
+        "pnl_krw": -3760.7215140109183,
+        "return_pct": -0.718532154535545,
+        "mdd_pct": -13.571315510389809
+      },
+      {
+        "period": "2026-04-29",
+        "trade_count": 2,
+        "start_equity_krw": 519628.731591513,
+        "end_equity_krw": 513937.5639716757,
+        "pnl_krw": -5691.167619837273,
+        "return_pct": -1.0952372865153936,
+        "mdd_pct": -14.51791468916477
+      },
+      {
+        "period": "2026-04-30",
+        "trade_count": 2,
+        "start_equity_krw": 513937.5639716757,
+        "end_equity_krw": 513762.3535473388,
+        "pnl_krw": -175.2104243368958,
+        "return_pct": -0.034091772351274585,
+        "mdd_pct": -14.547057047090062
+      },
+      {
+        "period": "2026-05-03",
+        "trade_count": 5,
+        "start_equity_krw": 513762.3535473388,
+        "end_equity_krw": 514131.0695501144,
+        "pnl_krw": 368.716002775589,
+        "return_pct": 0.07176781253623865,
+        "mdd_pct": -15.01363392045834
+      },
+      {
+        "period": "2026-05-04",
+        "trade_count": 2,
+        "start_equity_krw": 514131.0695501144,
+        "end_equity_krw": 513457.4604926142,
+        "pnl_krw": -673.6090575002017,
+        "return_pct": -0.1310189361031333,
+        "mdd_pct": -14.597769226821075
+      },
+      {
+        "period": "2026-05-06",
+        "trade_count": 2,
+        "start_equity_krw": 513457.4604926142,
+        "end_equity_krw": 518915.05618157244,
+        "pnl_krw": 5457.595688958245,
+        "return_pct": 1.0629109729406228,
+        "mdd_pct": -14.295897351927398
+      },
+      {
+        "period": "2026-05-07",
+        "trade_count": 1,
+        "start_equity_krw": 518915.05618157244,
+        "end_equity_krw": 526131.6271563236,
+        "pnl_krw": 7216.570974751201,
+        "return_pct": 1.3907037170696412,
+        "mdd_pct": -12.489703438404286
+      },
+      {
+        "period": "2026-05-08",
+        "trade_count": 2,
+        "start_equity_krw": 526131.6271563236,
+        "end_equity_krw": 537914.9740036649,
+        "pnl_krw": 11783.34684734128,
+        "return_pct": 2.239619562699313,
+        "mdd_pct": -10.763829761537917
+      },
+      {
+        "period": "2026-05-09",
+        "trade_count": 4,
+        "start_equity_krw": 537914.9740036649,
+        "end_equity_krw": 533536.049592228,
+        "pnl_krw": -4378.924411436892,
+        "return_pct": -0.8140551245199301,
+        "mdd_pct": -11.258142418711387
+      },
+      {
+        "period": "2026-05-10",
+        "trade_count": 10,
+        "start_equity_krw": 533536.049592228,
+        "end_equity_krw": 533368.5727245716,
+        "pnl_krw": -167.4768676564563,
+        "return_pct": -0.0313899815737817,
+        "mdd_pct": -12.417605197093112
+      },
+      {
+        "period": "2026-05-13",
+        "trade_count": 2,
+        "start_equity_krw": 533368.5727245716,
+        "end_equity_krw": 526059.3428043646,
+        "pnl_krw": -7309.229920206941,
+        "return_pct": -1.370390063079585,
+        "mdd_pct": -12.50172633296184
+      },
+      {
+        "period": "2026-05-14",
+        "trade_count": 1,
+        "start_equity_krw": 526059.3428043646,
+        "end_equity_krw": 520538.70490926004,
+        "pnl_krw": -5520.637895104592,
+        "return_pct": -1.0494325346784406,
+        "mdd_pct": -13.419961684105719
+      },
+      {
+        "period": "2026-05-17",
+        "trade_count": 4,
+        "start_equity_krw": 520538.70490926004,
+        "end_equity_krw": 519410.93291905493,
+        "pnl_krw": -1127.771990205103,
+        "return_pct": -0.21665478082013578,
+        "mdd_pct": -14.052362034770205
+      },
+      {
+        "period": "2026-05-20",
+        "trade_count": 4,
+        "start_equity_krw": 519410.93291905493,
+        "end_equity_krw": 517708.6525021069,
+        "pnl_krw": -1702.2804169480223,
+        "return_pct": -0.3277328814357716,
+        "mdd_pct": -13.890677970015751
+      },
+      {
+        "period": "2026-05-22",
+        "trade_count": 2,
+        "start_equity_krw": 517708.6525021069,
+        "end_equity_krw": 515631.90694835,
+        "pnl_krw": -2076.7455537568894,
+        "return_pct": -0.4011417510060733,
+        "mdd_pct": -14.236098412186287
+      },
+      {
+        "period": "2026-05-23",
+        "trade_count": 3,
+        "start_equity_krw": 515631.90694835,
+        "end_equity_krw": 515588.92225164524,
+        "pnl_krw": -42.98469670477789,
+        "return_pct": -0.008336314360213315,
+        "mdd_pct": -14.830229285036658
+      },
+      {
+        "period": "2026-05-24",
+        "trade_count": 4,
+        "start_equity_krw": 515588.92225164524,
+        "end_equity_krw": 515625.8951405952,
+        "pnl_krw": 36.972888949967455,
+        "return_pct": 0.007171001422712209,
+        "mdd_pct": -14.237098342721424
+      }
+    ],
+    "LG_M3_PF0.8_DD8": [
+      {
+        "period": "2026-01-01",
+        "trade_count": 1,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 509811.2101910828,
+        "pnl_krw": 9811.210191082791,
+        "return_pct": 1.962242038216555,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-02",
+        "trade_count": 6,
+        "start_equity_krw": 509811.2101910828,
+        "end_equity_krw": 546207.6036452745,
+        "pnl_krw": 36396.39345419174,
+        "return_pct": 7.139190493781022,
+        "mdd_pct": -0.14437194410731935
+      },
+      {
+        "period": "2026-01-03",
+        "trade_count": 6,
+        "start_equity_krw": 546207.6036452745,
+        "end_equity_krw": 569868.8812696731,
+        "pnl_krw": 23661.277624398586,
+        "return_pct": 4.331920219800711,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-04",
+        "trade_count": 7,
+        "start_equity_krw": 569868.8812696731,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 19762.026794050704,
+        "return_pct": 3.4678199571137602,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-01-05",
+        "trade_count": 1,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 601222.5393225543,
+        "pnl_krw": 11591.631258830428,
+        "return_pct": 1.9659130992464302,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-06",
+        "trade_count": 1,
+        "start_equity_krw": 601222.5393225543,
+        "end_equity_krw": 595164.0753527188,
+        "pnl_krw": -6058.463969835429,
+        "return_pct": -1.0076907590094608,
+        "mdd_pct": -1.0076907590094655
+      },
+      {
+        "period": "2026-01-07",
+        "trade_count": 3,
+        "start_equity_krw": 595164.0753527188,
+        "end_equity_krw": 577158.94368533,
+        "pnl_krw": -18005.131667388836,
+        "return_pct": -3.0252383188145604,
+        "mdd_pct": -4.002444030847322
+      },
+      {
+        "period": "2026-01-09",
+        "trade_count": 1,
+        "start_equity_krw": 577158.94368533,
+        "end_equity_krw": 588536.9276232807,
+        "pnl_krw": 11377.983937950688,
+        "return_pct": 1.9713779128672781,
+        "mdd_pct": -2.1099694155790423
+      },
+      {
+        "period": "2026-01-10",
+        "trade_count": 5,
+        "start_equity_krw": 588536.9276232807,
+        "end_equity_krw": 572644.9695017837,
+        "pnl_krw": -15891.958121496951,
+        "return_pct": -2.7002482555638863,
+        "mdd_pct": -4.753243258805828
+      },
+      {
+        "period": "2026-01-11",
+        "trade_count": 1,
+        "start_equity_krw": 572644.9695017837,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -5885.546223399229,
+        "return_pct": -1.027782751417483,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-01-13",
+        "trade_count": 2,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 558724.2826110314,
+        "pnl_krw": -8035.140667353058,
+        "return_pct": -1.4177339338928507,
+        "mdd_pct": -7.068639968057255
+      },
+      {
+        "period": "2026-01-14",
+        "trade_count": 2,
+        "start_equity_krw": 558724.2826110314,
+        "end_equity_krw": 566534.0072931085,
+        "pnl_krw": 7809.724682077067,
+        "return_pct": 1.3977779246644895,
+        "mdd_pct": -6.421406822058752
+      },
+      {
+        "period": "2026-01-16",
+        "trade_count": 1,
+        "start_equity_krw": 566534.0072931085,
+        "end_equity_krw": 564456.4189822153,
+        "pnl_krw": -2077.5883108931594,
+        "return_pct": -0.36671908202295933,
+        "mdd_pct": -6.1152265485199955
+      },
+      {
+        "period": "2026-01-17",
+        "trade_count": 3,
+        "start_equity_krw": 564456.4189822153,
+        "end_equity_krw": 558400.0422555377,
+        "pnl_krw": -6056.376726677641,
+        "return_pct": -1.0729573662388359,
+        "mdd_pct": -7.122570141044296
+      },
+      {
+        "period": "2026-01-18",
+        "trade_count": 3,
+        "start_equity_krw": 558400.0422555377,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -6019.318783891504,
+        "return_pct": -1.0779581533657767,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-01-21",
+        "trade_count": 1,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 551634.2492076246,
+        "pnl_krw": -746.4742640216136,
+        "return_pct": -0.1351376382814573,
+        "mdd_pct": -8.247909363279158
+      },
+      {
+        "period": "2026-01-23",
+        "trade_count": 1,
+        "start_equity_krw": 551634.2492076246,
+        "end_equity_krw": 549616.3840026438,
+        "pnl_krw": -2017.8652049808297,
+        "return_pct": -0.3657976653696382,
+        "mdd_pct": -8.58353636875612
+      },
+      {
+        "period": "2026-01-24",
+        "trade_count": 3,
+        "start_equity_krw": 549616.3840026438,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -2416.2819860639283,
+        "return_pct": -0.4396306326363675,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-01-27",
+        "trade_count": 2,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 543249.6391799921,
+        "pnl_krw": -3950.462836587685,
+        "return_pct": -0.7219411732616976,
+        "mdd_pct": -9.64250279237449
+      },
+      {
+        "period": "2026-01-28",
+        "trade_count": 1,
+        "start_equity_krw": 543249.6391799921,
+        "end_equity_krw": 541306.2285264933,
+        "pnl_krw": -1943.4106534988387,
+        "return_pct": -0.3577380477292724,
+        "mdd_pct": -9.965745938862085
+      },
+      {
+        "period": "2026-01-29",
+        "trade_count": 3,
+        "start_equity_krw": 541306.2285264933,
+        "end_equity_krw": 535543.4508177543,
+        "pnl_krw": -5762.777708739042,
+        "return_pct": -1.0646058377022705,
+        "mdd_pct": -10.924255863528652
+      },
+      {
+        "period": "2026-01-30",
+        "trade_count": 2,
+        "start_equity_krw": 535543.4508177543,
+        "end_equity_krw": 537220.083630748,
+        "pnl_krw": 1676.6328129937174,
+        "return_pct": 0.3130712942962077,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-01-31",
+        "trade_count": 1,
+        "start_equity_krw": 537220.083630748,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": -1921.5881455455674,
+        "return_pct": -0.35769104769105553,
+        "mdd_pct": -10.964998736014413
+      },
+      {
+        "period": "2026-02-01",
+        "trade_count": 4,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -370.41424286481924,
+        "return_pct": -0.06919769922556496,
+        "mdd_pct": -11.026608908394545
+      },
+      {
+        "period": "2026-02-03",
+        "trade_count": 1,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 533033.2208141973,
+        "pnl_krw": -1894.8604281402659,
+        "return_pct": -0.35422713717694343,
+        "mdd_pct": -11.34177680450758
+      },
+      {
+        "period": "2026-02-04",
+        "trade_count": 1,
+        "start_equity_krw": 533033.2208141973,
+        "end_equity_krw": 531143.8718923469,
+        "pnl_krw": -1889.34892185044,
+        "return_pct": -0.3544523770890873,
+        "mdd_pct": -11.65602798410895
+      },
+      {
+        "period": "2026-02-06",
+        "trade_count": 1,
+        "start_equity_krw": 531143.8718923469,
+        "end_equity_krw": 529253.5628096345,
+        "pnl_krw": -1890.309082712396,
+        "return_pct": -0.3558939832963959,
+        "mdd_pct": -11.970438865118561
+      },
+      {
+        "period": "2026-02-07",
+        "trade_count": 5,
+        "start_equity_krw": 529253.5628096345,
+        "end_equity_krw": 526372.0582456378,
+        "pnl_krw": -2881.5045639966847,
+        "return_pct": -0.5444468902013111,
+        "mdd_pct": -12.449713073175284
+      },
+      {
+        "period": "2026-02-08",
+        "trade_count": 4,
+        "start_equity_krw": 526372.0582456378,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -1803.8515145040583,
+        "return_pct": -0.3426951499888031,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-02-12",
+        "trade_count": 1,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 522686.2174109845,
+        "pnl_krw": -1881.9893201492378,
+        "return_pct": -0.3587692307692292,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-02-13",
+        "trade_count": 2,
+        "start_equity_krw": 522686.2174109845,
+        "end_equity_krw": 527019.3187861308,
+        "pnl_krw": 4333.101375146245,
+        "return_pct": 0.8290062432886325,
+        "mdd_pct": -12.946617119128453
+      },
+      {
+        "period": "2026-02-14",
+        "trade_count": 4,
+        "start_equity_krw": 527019.3187861308,
+        "end_equity_krw": 530259.8043257149,
+        "pnl_krw": 3240.485539584188,
+        "return_pct": 0.614870351820862,
+        "mdd_pct": -12.211256084181258
+      },
+      {
+        "period": "2026-02-15",
+        "trade_count": 8,
+        "start_equity_krw": 530259.8043257149,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": -5077.020879615098,
+        "return_pct": -0.957459124413762,
+        "mdd_pct": -12.64752249011398
+      },
+      {
+        "period": "2026-02-17",
+        "trade_count": 3,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 517698.9046580077,
+        "pnl_krw": -7483.878788092115,
+        "return_pct": -1.4250045934455446,
+        "mdd_pct": -13.892299307118344
+      },
+      {
+        "period": "2026-02-18",
+        "trade_count": 1,
+        "start_equity_krw": 517698.9046580077,
+        "end_equity_krw": 515837.8996245448,
+        "pnl_krw": -1861.0050334629486,
+        "return_pct": -0.3594763320375005,
+        "mdd_pct": -14.201836111170948
+      },
+      {
+        "period": "2026-02-19",
+        "trade_count": 1,
+        "start_equity_krw": 515837.8996245448,
+        "end_equity_krw": 513969.989593683,
+        "pnl_krw": -1867.9100308617926,
+        "return_pct": -0.3621118247072119,
+        "mdd_pct": -14.512521407994072
+      },
+      {
+        "period": "2026-02-20",
+        "trade_count": 3,
+        "start_equity_krw": 513969.989593683,
+        "end_equity_krw": 513805.7432708749,
+        "pnl_krw": -164.24632280808873,
+        "return_pct": -0.03195640331801197,
+        "mdd_pct": -14.820522375719774
+      },
+      {
+        "period": "2026-02-21",
+        "trade_count": 4,
+        "start_equity_krw": 513805.7432708749,
+        "end_equity_krw": 506527.6371341821,
+        "pnl_krw": -7278.106136692804,
+        "return_pct": -1.4165092998689621,
+        "mdd_pct": -15.750391243660378
+      },
+      {
+        "period": "2026-02-22",
+        "trade_count": 2,
+        "start_equity_krw": 506527.6371341821,
+        "end_equity_krw": 503649.908641678,
+        "pnl_krw": -2877.728492504102,
+        "return_pct": -0.5681286235013072,
+        "mdd_pct": -16.229037386193003
+      },
+      {
+        "period": "2026-02-24",
+        "trade_count": 1,
+        "start_equity_krw": 503649.908641678,
+        "end_equity_krw": 501831.23201596976,
+        "pnl_krw": -1818.6766257082345,
+        "return_pct": -0.3610993657505279,
+        "mdd_pct": -16.531533800874577
+      },
+      {
+        "period": "2026-02-25",
+        "trade_count": 2,
+        "start_equity_krw": 501831.23201596976,
+        "end_equity_krw": 500015.13252590876,
+        "pnl_krw": -1816.0994900609949,
+        "return_pct": -0.3618944725232276,
+        "mdd_pct": -16.833601566349127
+      },
+      {
+        "period": "2026-02-27",
+        "trade_count": 1,
+        "start_equity_krw": 500015.13252590876,
+        "end_equity_krw": 498841.0463602941,
+        "pnl_krw": -1174.086165614659,
+        "return_pct": -0.2348101265822855,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-03-01",
+        "trade_count": 6,
+        "start_equity_krw": 498841.0463602941,
+        "end_equity_krw": 508724.7807721029,
+        "pnl_krw": 9883.734411808779,
+        "return_pct": 1.9813394434807785,
+        "mdd_pct": -16.55247636333785
+      },
+      {
+        "period": "2026-03-06",
+        "trade_count": 2,
+        "start_equity_krw": 508724.7807721029,
+        "end_equity_krw": 506550.9952477013,
+        "pnl_krw": -2173.785524401581,
+        "return_pct": -0.42730089167316576,
+        "mdd_pct": -15.746506140892022
+      },
+      {
+        "period": "2026-03-07",
+        "trade_count": 1,
+        "start_equity_krw": 506550.9952477013,
+        "end_equity_krw": 504733.0213656253,
+        "pnl_krw": -1817.9738820759812,
+        "return_pct": -0.3588925693822742,
+        "mdd_pct": -16.048885669797315
+      },
+      {
+        "period": "2026-03-10",
+        "trade_count": 1,
+        "start_equity_krw": 504733.0213656253,
+        "end_equity_krw": 505081.6444834801,
+        "pnl_krw": 348.6231178547605,
+        "return_pct": 0.06907079646016889,
+        "mdd_pct": -15.990899966492247
+      },
+      {
+        "period": "2026-03-11",
+        "trade_count": 1,
+        "start_equity_krw": 505081.6444834801,
+        "end_equity_krw": 504350.31715821964,
+        "pnl_krw": -731.3273252604413,
+        "return_pct": -0.1447938829787221,
+        "mdd_pct": -16.11254000448625
+      },
+      {
+        "period": "2026-03-12",
+        "trade_count": 2,
+        "start_equity_krw": 504350.31715821964,
+        "end_equity_krw": 504721.89361821074,
+        "pnl_krw": 371.57645999110537,
+        "return_pct": 0.07367427903779422,
+        "mdd_pct": -16.08164395337183
+      },
+      {
+        "period": "2026-03-13",
+        "trade_count": 5,
+        "start_equity_krw": 504721.89361821074,
+        "end_equity_krw": 521680.6530243472,
+        "pnl_krw": 16958.759406136465,
+        "return_pct": 3.36002056193041,
+        "mdd_pct": -15.815002080653736
+      },
+      {
+        "period": "2026-03-14",
+        "trade_count": 1,
+        "start_equity_krw": 521680.6530243472,
+        "end_equity_krw": 532039.0352081242,
+        "pnl_krw": 10358.382183776994,
+        "return_pct": 1.985579132315185,
+        "mdd_pct": -11.507137472321757
+      },
+      {
+        "period": "2026-03-15",
+        "trade_count": 3,
+        "start_equity_krw": 532039.0352081242,
+        "end_equity_krw": 555507.8555374853,
+        "pnl_krw": 23468.82032936113,
+        "return_pct": 4.411108730054081,
+        "mdd_pct": -9.760129582333327
+      },
+      {
+        "period": "2026-03-17",
+        "trade_count": 1,
+        "start_equity_krw": 555507.8555374853,
+        "end_equity_krw": 549842.5177562858,
+        "pnl_krw": -5665.337781199487,
+        "return_pct": -1.0198483648296786,
+        "mdd_pct": -8.545924047385583
+      },
+      {
+        "period": "2026-03-18",
+        "trade_count": 2,
+        "start_equity_krw": 549842.5177562858,
+        "end_equity_krw": 542372.7257099551,
+        "pnl_krw": -7469.792046330753,
+        "return_pct": -1.3585329990143946,
+        "mdd_pct": -9.788357848145543
+      },
+      {
+        "period": "2026-03-19",
+        "trade_count": 3,
+        "start_equity_krw": 542372.7257099551,
+        "end_equity_krw": 546874.3774800189,
+        "pnl_krw": 4501.651770063792,
+        "return_pct": 0.8299922832902817,
+        "mdd_pct": -9.636065817306644
+      },
+      {
+        "period": "2026-03-20",
+        "trade_count": 4,
+        "start_equity_krw": 546874.3774800189,
+        "end_equity_krw": 524541.5555580643,
+        "pnl_krw": -22332.82192195463,
+        "return_pct": -4.083720657176082,
+        "mdd_pct": -12.75417649027141
+      },
+      {
+        "period": "2026-03-21",
+        "trade_count": 5,
+        "start_equity_krw": 524541.5555580643,
+        "end_equity_krw": 526494.967368978,
+        "pnl_krw": 1953.4118109137053,
+        "return_pct": 0.372403633270868,
+        "mdd_pct": -12.93821815756747
+      },
+      {
+        "period": "2026-03-22",
+        "trade_count": 2,
+        "start_equity_krw": 526494.967368978,
+        "end_equity_krw": 524079.53391386435,
+        "pnl_krw": -2415.4334551136126,
+        "return_pct": -0.45877617162878304,
+        "mdd_pct": -12.83102351678517
+      },
+      {
+        "period": "2026-03-24",
+        "trade_count": 1,
+        "start_equity_krw": 524079.53391386435,
+        "end_equity_krw": 520365.2526510886,
+        "pnl_krw": -3714.2812627757667,
+        "return_pct": -0.7087247302021593,
+        "mdd_pct": -13.448811610185817
+      },
+      {
+        "period": "2026-03-25",
+        "trade_count": 4,
+        "start_equity_krw": 520365.2526510886,
+        "end_equity_krw": 514608.1972498088,
+        "pnl_krw": -5757.055401279766,
+        "return_pct": -1.1063489293240636,
+        "mdd_pct": -14.406369756253778
+      },
+      {
+        "period": "2026-03-27",
+        "trade_count": 2,
+        "start_equity_krw": 514608.1972498088,
+        "end_equity_krw": 510824.61531708686,
+        "pnl_krw": -3783.5819327219506,
+        "return_pct": -0.7352354573717079,
+        "mdd_pct": -15.035684475057437
+      },
+      {
+        "period": "2026-03-28",
+        "trade_count": 2,
+        "start_equity_krw": 510824.61531708686,
+        "end_equity_krw": 507062.7575525537,
+        "pnl_krw": -3761.857764533139,
+        "return_pct": -0.7364284436837565,
+        "mdd_pct": -15.661385861564325
+      },
+      {
+        "period": "2026-03-29",
+        "trade_count": 3,
+        "start_equity_krw": 507062.7575525537,
+        "end_equity_krw": 502816.2100466101,
+        "pnl_krw": -4246.5475059436285,
+        "return_pct": -0.8374796694674447,
+        "mdd_pct": -16.367704608484317
+      },
+      {
+        "period": "2026-03-31",
+        "trade_count": 2,
+        "start_equity_krw": 502816.2100466101,
+        "end_equity_krw": 505403.51879855664,
+        "pnl_krw": 2587.308751946548,
+        "return_pct": 0.5145635125221482,
+        "mdd_pct": -15.93736333171484
+      },
+      {
+        "period": "2026-04-01",
+        "trade_count": 2,
+        "start_equity_krw": 505403.51879855664,
+        "end_equity_krw": 507109.79936703993,
+        "pnl_krw": 1706.2805684832856,
+        "return_pct": 0.3376075759305097,
+        "mdd_pct": -15.653561501795776
+      },
+      {
+        "period": "2026-04-02",
+        "trade_count": 1,
+        "start_equity_krw": 507109.79936703993,
+        "end_equity_krw": 506256.1152275454,
+        "pnl_krw": -853.6841394945513,
+        "return_pct": -0.16834305717620124,
+        "mdd_pct": -15.795552874982894
+      },
+      {
+        "period": "2026-04-03",
+        "trade_count": 2,
+        "start_equity_krw": 506256.1152275454,
+        "end_equity_krw": 502587.9112273848,
+        "pnl_krw": -3668.2040001605637,
+        "return_pct": -0.7245747537314884,
+        "mdd_pct": -16.40567704036994
+      },
+      {
+        "period": "2026-04-04",
+        "trade_count": 1,
+        "start_equity_krw": 502587.9112273848,
+        "end_equity_krw": 503185.2036558603,
+        "pnl_krw": 597.2924284755136,
+        "return_pct": 0.1188433734939709,
+        "mdd_pct": -16.30633072691527
+      },
+      {
+        "period": "2026-04-05",
+        "trade_count": 4,
+        "start_equity_krw": 503185.2036558603,
+        "end_equity_krw": 505648.4855985529,
+        "pnl_krw": 2463.2819426925853,
+        "return_pct": 0.48953783314686916,
+        "mdd_pct": -16.010831751196474
+      },
+      {
+        "period": "2026-04-08",
+        "trade_count": 6,
+        "start_equity_krw": 505648.4855985529,
+        "end_equity_krw": 502718.2754293239,
+        "pnl_krw": -2930.210169229016,
+        "return_pct": -0.5794954899865701,
+        "mdd_pct": -16.383993854292793
+      },
+      {
+        "period": "2026-04-09",
+        "trade_count": 2,
+        "start_equity_krw": 502718.2754293239,
+        "end_equity_krw": 499165.4648422133,
+        "pnl_krw": -3552.81058711058,
+        "return_pct": -0.7067199982090266,
+        "mdd_pct": -16.974924891428195
+      },
+      {
+        "period": "2026-04-10",
+        "trade_count": 1,
+        "start_equity_krw": 499165.4648422133,
+        "end_equity_krw": 498132.06904386135,
+        "pnl_krw": -1033.395798351965,
+        "return_pct": -0.20702469844916527,
+        "mdd_pct": -17.14680730280891
+      },
+      {
+        "period": "2026-04-11",
+        "trade_count": 2,
+        "start_equity_krw": 498132.06904386135,
+        "end_equity_krw": 496712.51491880097,
+        "pnl_krw": -1419.5541250603856,
+        "return_pct": -0.28497545395644863,
+        "mdd_pct": -17.443296183003273
+      },
+      {
+        "period": "2026-04-12",
+        "trade_count": 2,
+        "start_equity_krw": 496712.51491880097,
+        "end_equity_krw": 493105.91510195844,
+        "pnl_krw": -3606.5998168425285,
+        "return_pct": -0.7260940098181567,
+        "mdd_pct": -17.982796244202603
+      },
+      {
+        "period": "2026-04-14",
+        "trade_count": 2,
+        "start_equity_krw": 493105.91510195844,
+        "end_equity_krw": 493758.0542177625,
+        "pnl_krw": 652.1391158040497,
+        "return_pct": 0.13225132691203623,
+        "mdd_pct": -17.92857974365859
+      },
+      {
+        "period": "2026-04-15",
+        "trade_count": 2,
+        "start_equity_krw": 493758.0542177625,
+        "end_equity_krw": 500534.9992693488,
+        "pnl_krw": 6776.945051586314,
+        "return_pct": 1.3725234441638978,
+        "mdd_pct": -17.32026865955657
+      },
+      {
+        "period": "2026-04-16",
+        "trade_count": 2,
+        "start_equity_krw": 500534.9992693488,
+        "end_equity_krw": 499508.2452794833,
+        "pnl_krw": -1026.7539898654795,
+        "return_pct": -0.20513130777353172,
+        "mdd_pct": -16.934908411159512
+      },
+      {
+        "period": "2026-04-18",
+        "trade_count": 2,
+        "start_equity_krw": 499508.2452794833,
+        "end_equity_krw": 496608.08477607113,
+        "pnl_krw": -2900.1605034121894,
+        "return_pct": -0.5806031293416392,
+        "mdd_pct": -17.40028819683983
+      },
+      {
+        "period": "2026-04-19",
+        "trade_count": 1,
+        "start_equity_krw": 496608.08477607113,
+        "end_equity_krw": 499421.1462640177,
+        "pnl_krw": 2813.061487946543,
+        "return_pct": 0.566455032486024,
+        "mdd_pct": -16.932397972511872
+      },
+      {
+        "period": "2026-04-21",
+        "trade_count": 2,
+        "start_equity_krw": 499421.1462640177,
+        "end_equity_krw": 509914.98675723624,
+        "pnl_krw": 10493.840493218566,
+        "return_pct": 2.101200674364523,
+        "mdd_pct": -16.353283869149344
+      },
+      {
+        "period": "2026-04-22",
+        "trade_count": 1,
+        "start_equity_krw": 509914.98675723624,
+        "end_equity_krw": 511573.65908631874,
+        "pnl_krw": 1658.672329082503,
+        "return_pct": 0.3252840909090837,
+        "mdd_pct": -14.911097700570258
+      },
+      {
+        "period": "2026-04-23",
+        "trade_count": 1,
+        "start_equity_krw": 511573.65908631874,
+        "end_equity_krw": 518559.57973514026,
+        "pnl_krw": 6985.920648821513,
+        "return_pct": 1.3655747368421123,
+        "mdd_pct": -13.749145146912985
+      },
+      {
+        "period": "2026-04-24",
+        "trade_count": 4,
+        "start_equity_krw": 518559.57973514026,
+        "end_equity_krw": 519067.09329594474,
+        "pnl_krw": 507.5135608044802,
+        "return_pct": 0.09786986503339534,
+        "mdd_pct": -13.710882096794407
+      },
+      {
+        "period": "2026-04-25",
+        "trade_count": 2,
+        "start_equity_krw": 519067.09329594474,
+        "end_equity_krw": 514258.0353173111,
+        "pnl_krw": -4809.057978633617,
+        "return_pct": -0.9264809965311649,
+        "mdd_pct": -14.464611407155997
+      },
+      {
+        "period": "2026-04-26",
+        "trade_count": 2,
+        "start_equity_krw": 514258.0353173111,
+        "end_equity_krw": 524983.3302645049,
+        "pnl_krw": 10725.29494719376,
+        "return_pct": 2.0855862642138234,
+        "mdd_pct": -13.872703979951417
+      },
+      {
+        "period": "2026-04-27",
+        "trade_count": 1,
+        "start_equity_krw": 524983.3302645049,
+        "end_equity_krw": 521211.1562306029,
+        "pnl_krw": -3772.1740339020034,
+        "return_pct": -0.718532154535545,
+        "mdd_pct": -13.308114360134708
+      },
+      {
+        "period": "2026-04-29",
+        "trade_count": 2,
+        "start_equity_krw": 521211.1562306029,
+        "end_equity_krw": 515502.65730608726,
+        "pnl_krw": -5708.498924515618,
+        "return_pct": -1.0952372865154048,
+        "mdd_pct": -14.257596216045803
+      },
+      {
+        "period": "2026-04-30",
+        "trade_count": 2,
+        "start_equity_krw": 515502.65730608726,
+        "end_equity_krw": 515326.9133136937,
+        "pnl_krw": -175.74399239354534,
+        "return_pct": -0.034091772351274585,
+        "mdd_pct": -14.286827321152337
+      },
+      {
+        "period": "2026-05-03",
+        "trade_count": 5,
+        "start_equity_krw": 515326.9133136937,
+        "end_equity_krw": 515696.7521667894,
+        "pnl_krw": 369.8388530956581,
+        "return_pct": 0.07176781253621645,
+        "mdd_pct": -14.75482506041113
+      },
+      {
+        "period": "2026-05-04",
+        "trade_count": 2,
+        "start_equity_krw": 515696.7521667894,
+        "end_equity_krw": 515021.09176858206,
+        "pnl_krw": -675.6603982073138,
+        "return_pct": -0.1310189361031333,
+        "mdd_pct": -14.337693934612346
+      },
+      {
+        "period": "2026-05-06",
+        "trade_count": 2,
+        "start_equity_krw": 515021.09176858206,
+        "end_equity_krw": 520495.3074659489,
+        "pnl_krw": 5474.215697366861,
+        "return_pct": 1.0629109729406228,
+        "mdd_pct": -14.034902769726337
+      },
+      {
+        "period": "2026-05-07",
+        "trade_count": 1,
+        "start_equity_krw": 520495.3074659489,
+        "end_equity_krw": 527733.855054051,
+        "pnl_krw": 7238.547588102112,
+        "return_pct": 1.3907037170696634,
+        "mdd_pct": -12.223208456440908
+      },
+      {
+        "period": "2026-05-08",
+        "trade_count": 2,
+        "start_equity_krw": 527733.855054051,
+        "end_equity_krw": 539553.0857108288,
+        "pnl_krw": 11819.230656777741,
+        "return_pct": 2.239619562699313,
+        "mdd_pct": -10.492078978914988
+      },
+      {
+        "period": "2026-05-09",
+        "trade_count": 4,
+        "start_equity_krw": 539553.0857108288,
+        "end_equity_krw": 535160.8261670943,
+        "pnl_krw": -4392.259543734486,
+        "return_pct": -0.8140551245199412,
+        "mdd_pct": -10.987896965722044
+      },
+      {
+        "period": "2026-05-10",
+        "trade_count": 10,
+        "start_equity_krw": 535160.8261670943,
+        "end_equity_krw": 534992.8392823704,
+        "pnl_krw": -167.98688472388312,
+        "return_pct": -0.0313899815737706,
+        "mdd_pct": -12.150890654457788
+      },
+      {
+        "period": "2026-05-13",
+        "trade_count": 2,
+        "start_equity_krw": 534992.8392823704,
+        "end_equity_krw": 527661.3505746576,
+        "pnl_krw": -7331.4887077128515,
+        "return_pct": -1.370390063079574,
+        "mdd_pct": -12.235267964302203
+      },
+      {
+        "period": "2026-05-14",
+        "trade_count": 1,
+        "start_equity_krw": 527661.3505746576,
+        "end_equity_krw": 522123.90068880346,
+        "pnl_krw": -5537.44988585409,
+        "return_pct": -1.0494325346784295,
+        "mdd_pct": -13.156299616258163
+      },
+      {
+        "period": "2026-05-17",
+        "trade_count": 4,
+        "start_equity_krw": 522123.90068880346,
+        "end_equity_krw": 520992.69429615664,
+        "pnl_krw": -1131.2063926468254,
+        "return_pct": -0.21665478082012468,
+        "mdd_pct": -13.790625814813314
+      },
+      {
+        "period": "2026-05-20",
+        "trade_count": 4,
+        "start_equity_krw": 520992.69429615664,
+        "end_equity_krw": 519285.22992707003,
+        "pnl_krw": -1707.464369086607,
+        "return_pct": -0.3277328814357605,
+        "mdd_pct": -13.62844937380584
+      },
+      {
+        "period": "2026-05-22",
+        "trade_count": 2,
+        "start_equity_krw": 519285.22992707003,
+        "end_equity_krw": 517202.16006302467,
+        "pnl_krw": -2083.069864045363,
+        "return_pct": -0.4011417510060733,
+        "mdd_pct": -13.974921724358852
+      },
+      {
+        "period": "2026-05-23",
+        "trade_count": 3,
+        "start_equity_krw": 517202.16006302467,
+        "end_equity_krw": 517159.044465084,
+        "pnl_krw": -43.11559794069035,
+        "return_pct": -0.008336314360213315,
+        "mdd_pct": -14.570861903113391
+      },
+      {
+        "period": "2026-05-24",
+        "trade_count": 4,
+        "start_equity_krw": 517159.044465084,
+        "end_equity_krw": 517196.1299475203,
+        "pnl_krw": 37.085482436348684,
+        "return_pct": 0.007171001422734413,
+        "mdd_pct": -13.975924699981013
+      }
+    ],
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW": [
+      {
+        "period": "2026-01-01",
+        "trade_count": 1,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 509811.2101910828,
+        "pnl_krw": 9811.210191082791,
+        "return_pct": 1.962242038216555,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-02",
+        "trade_count": 6,
+        "start_equity_krw": 509811.2101910828,
+        "end_equity_krw": 546207.6036452745,
+        "pnl_krw": 36396.39345419174,
+        "return_pct": 7.139190493781022,
+        "mdd_pct": -0.14437194410731935
+      },
+      {
+        "period": "2026-01-03",
+        "trade_count": 6,
+        "start_equity_krw": 546207.6036452745,
+        "end_equity_krw": 569868.8812696731,
+        "pnl_krw": 23661.277624398586,
+        "return_pct": 4.331920219800711,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-04",
+        "trade_count": 7,
+        "start_equity_krw": 569868.8812696731,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 19762.026794050704,
+        "return_pct": 3.4678199571137602,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-01-05",
+        "trade_count": 1,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 601222.5393225543,
+        "pnl_krw": 11591.631258830428,
+        "return_pct": 1.9659130992464302,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-06",
+        "trade_count": 1,
+        "start_equity_krw": 601222.5393225543,
+        "end_equity_krw": 595164.0753527188,
+        "pnl_krw": -6058.463969835429,
+        "return_pct": -1.0076907590094608,
+        "mdd_pct": -1.0076907590094655
+      },
+      {
+        "period": "2026-01-07",
+        "trade_count": 3,
+        "start_equity_krw": 595164.0753527188,
+        "end_equity_krw": 577158.94368533,
+        "pnl_krw": -18005.131667388836,
+        "return_pct": -3.0252383188145604,
+        "mdd_pct": -4.002444030847322
+      },
+      {
+        "period": "2026-01-09",
+        "trade_count": 1,
+        "start_equity_krw": 577158.94368533,
+        "end_equity_krw": 588536.9276232807,
+        "pnl_krw": 11377.983937950688,
+        "return_pct": 1.9713779128672781,
+        "mdd_pct": -2.1099694155790423
+      },
+      {
+        "period": "2026-01-10",
+        "trade_count": 5,
+        "start_equity_krw": 588536.9276232807,
+        "end_equity_krw": 572644.9695017837,
+        "pnl_krw": -15891.958121496951,
+        "return_pct": -2.7002482555638863,
+        "mdd_pct": -4.753243258805828
+      },
+      {
+        "period": "2026-01-11",
+        "trade_count": 1,
+        "start_equity_krw": 572644.9695017837,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -5885.546223399229,
+        "return_pct": -1.027782751417483,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-01-13",
+        "trade_count": 2,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 557008.6130927952,
+        "pnl_krw": -9750.810185589246,
+        "return_pct": -1.720449592030826,
+        "mdd_pct": -7.354003440985162
+      },
+      {
+        "period": "2026-01-14",
+        "trade_count": 2,
+        "start_equity_krw": 557008.6130927952,
+        "end_equity_krw": 564794.3565250862,
+        "pnl_krw": 7785.7434322909685,
+        "return_pct": 1.3977779246644895,
+        "mdd_pct": -6.7087577478580265
+      },
+      {
+        "period": "2026-01-16",
+        "trade_count": 1,
+        "start_equity_krw": 564794.3565250862,
+        "end_equity_krw": 562723.1478455199,
+        "pnl_krw": -2071.2086795662763,
+        "return_pct": -0.36671908202295933,
+        "mdd_pct": -6.403517659270504
+      },
+      {
+        "period": "2026-01-17",
+        "trade_count": 3,
+        "start_equity_krw": 562723.1478455199,
+        "end_equity_krw": 556685.3683791804,
+        "pnl_krw": -6037.779466339503,
+        "return_pct": -1.0729573662388248,
+        "mdd_pct": -7.407768011085783
+      },
+      {
+        "period": "2026-01-18",
+        "trade_count": 3,
+        "start_equity_krw": 556685.3683791804,
+        "end_equity_krw": 550684.5330621428,
+        "pnl_krw": -6000.83531703765,
+        "return_pct": -1.0779581533657656,
+        "mdd_pct": -8.405873525193632
+      },
+      {
+        "period": "2026-01-21",
+        "trade_count": 1,
+        "start_equity_krw": 550684.5330621428,
+        "end_equity_krw": 549940.3509897813,
+        "pnl_krw": -744.1820723614655,
+        "return_pct": -0.1351376382814573,
+        "mdd_pct": -8.52965166451622
+      },
+      {
+        "period": "2026-01-23",
+        "trade_count": 1,
+        "start_equity_krw": 549940.3509897813,
+        "end_equity_krw": 547928.682024935,
+        "pnl_krw": -2011.6689648462925,
+        "return_pct": -0.3657976653696493,
+        "mdd_pct": -8.864248063232907
+      },
+      {
+        "period": "2026-01-24",
+        "trade_count": 3,
+        "start_equity_krw": 547928.682024935,
+        "end_equity_krw": 545519.8196937528,
+        "pnl_krw": -2408.8623311822303,
+        "return_pct": -0.4396306326363453,
+        "mdd_pct": -9.264908746030411
+      },
+      {
+        "period": "2026-01-27",
+        "trade_count": 2,
+        "start_equity_krw": 545519.8196937528,
+        "end_equity_krw": 541581.4875070807,
+        "pnl_krw": -3938.332186672138,
+        "return_pct": -0.7219411732616865,
+        "mdd_pct": -9.919962728389384
+      },
+      {
+        "period": "2026-01-28",
+        "trade_count": 1,
+        "start_equity_krw": 541581.4875070807,
+        "end_equity_krw": 539644.0444668097,
+        "pnl_krw": -1937.4430402709404,
+        "return_pct": -0.3577380477292613,
+        "mdd_pct": -10.242213295118638
+      },
+      {
+        "period": "2026-01-29",
+        "trade_count": 3,
+        "start_equity_krw": 539644.0444668097,
+        "end_equity_krw": 533898.9624666035,
+        "pnl_krw": -5745.082000206225,
+        "return_pct": -1.0646058377022594,
+        "mdd_pct": -11.197779932171144
+      },
+      {
+        "period": "2026-01-30",
+        "trade_count": 2,
+        "start_equity_krw": 533898.9624666035,
+        "end_equity_krw": 535570.4468586317,
+        "pnl_krw": 1671.4843920281855,
+        "return_pct": 0.3130712942962077,
+        "mdd_pct": -11.527960777537137
+      },
+      {
+        "period": "2026-01-31",
+        "trade_count": 1,
+        "start_equity_krw": 535570.4468586317,
+        "end_equity_krw": 533654.7593161394,
+        "pnl_krw": -1915.687542492291,
+        "return_pct": -0.35769104769105553,
+        "mdd_pct": -11.238397695892925
+      },
+      {
+        "period": "2026-02-01",
+        "trade_count": 4,
+        "start_equity_krw": 533654.7593161394,
+        "end_equity_krw": 533285.482500885,
+        "pnl_krw": -369.27681525435764,
+        "return_pct": -0.06919769922554275,
+        "mdd_pct": -11.299818682483089
+      },
+      {
+        "period": "2026-02-03",
+        "trade_count": 1,
+        "start_equity_krw": 533285.482500885,
+        "end_equity_krw": 531396.4406032419,
+        "pnl_krw": -1889.0418976431247,
+        "return_pct": -0.35422713717694343,
+        "mdd_pct": -11.614018795434886
+      },
+      {
+        "period": "2026-02-04",
+        "trade_count": 1,
+        "start_equity_krw": 531396.4406032419,
+        "end_equity_krw": 529512.893287757,
+        "pnl_krw": -1883.5473154849606,
+        "return_pct": -0.3544523770890762,
+        "mdd_pct": -11.927305006827975
+      },
+      {
+        "period": "2026-02-06",
+        "trade_count": 1,
+        "start_equity_krw": 529512.893287757,
+        "end_equity_krw": 527628.3887597672,
+        "pnl_krw": -1884.504527989775,
+        "return_pct": -0.3558939832963959,
+        "mdd_pct": -12.240750429235657
+      },
+      {
+        "period": "2026-02-07",
+        "trade_count": 5,
+        "start_equity_krw": 527628.3887597672,
+        "end_equity_krw": 524755.7324053453,
+        "pnl_krw": -2872.656354421866,
+        "return_pct": -0.5444468902013222,
+        "mdd_pct": -12.718552934387697
+      },
+      {
+        "period": "2026-02-08",
+        "trade_count": 4,
+        "start_equity_krw": 524755.7324053453,
+        "end_equity_krw": 522957.4199611039,
+        "pnl_krw": -1798.3124442414264,
+        "return_pct": -0.34269514998881423,
+        "mdd_pct": -13.017662220321608
+      },
+      {
+        "period": "2026-02-12",
+        "trade_count": 1,
+        "start_equity_krw": 522957.4199611039,
+        "end_equity_krw": 521081.2096482588,
+        "pnl_krw": -1876.210312845069,
+        "return_pct": -0.3587692307692292,
+        "mdd_pct": -13.329728084478857
+      },
+      {
+        "period": "2026-02-13",
+        "trade_count": 2,
+        "start_equity_krw": 521081.2096482588,
+        "end_equity_krw": 525401.0054088469,
+        "pnl_krw": 4319.79576058808,
+        "return_pct": 0.8290062432886547,
+        "mdd_pct": -13.213931141655028
+      },
+      {
+        "period": "2026-02-14",
+        "trade_count": 4,
+        "start_equity_krw": 525401.0054088469,
+        "end_equity_krw": 528631.5404192746,
+        "pnl_krw": 3230.535010427702,
+        "return_pct": 0.614870351820862,
+        "mdd_pct": -12.48082817307762
+      },
+      {
+        "period": "2026-02-15",
+        "trade_count": 8,
+        "start_equity_krw": 528631.5404192746,
+        "end_equity_krw": 522655.3715678466,
+        "pnl_krw": -5976.168851427967,
+        "return_pct": -1.1304979734444331,
+        "mdd_pct": -13.067901253874409
+      },
+      {
+        "period": "2026-02-17",
+        "trade_count": 3,
+        "start_equity_krw": 522655.3715678466,
+        "end_equity_krw": 517054.1381150968,
+        "pnl_krw": -5601.233452749846,
+        "return_pct": -1.0716877233936106,
+        "mdd_pct": -13.999541883825042
+      },
+      {
+        "period": "2026-02-18",
+        "trade_count": 1,
+        "start_equity_krw": 517054.1381150968,
+        "end_equity_krw": 515195.4508647525,
+        "pnl_krw": -1858.6872503442573,
+        "return_pct": -0.3594763320375005,
+        "mdd_pct": -14.308693176196515
+      },
+      {
+        "period": "2026-02-19",
+        "trade_count": 1,
+        "start_equity_krw": 515195.4508647525,
+        "end_equity_krw": 513329.86721681757,
+        "pnl_krw": -1865.5836479349528,
+        "return_pct": -0.36211182470722303,
+        "mdd_pct": -14.618991530951654
+      },
+      {
+        "period": "2026-02-20",
+        "trade_count": 3,
+        "start_equity_krw": 513329.86721681757,
+        "end_equity_krw": 513165.825454098,
+        "pnl_krw": -164.04176271957112,
+        "return_pct": -0.03195640331800087,
+        "mdd_pct": -14.92660889979896
+      },
+      {
+        "period": "2026-02-21",
+        "trade_count": 4,
+        "start_equity_krw": 513165.825454098,
+        "end_equity_krw": 505896.78381279134,
+        "pnl_krw": -7269.041641306656,
+        "return_pct": -1.4165092998689732,
+        "mdd_pct": -15.855319665356207
+      },
+      {
+        "period": "2026-02-22",
+        "trade_count": 2,
+        "start_equity_krw": 505896.78381279134,
+        "end_equity_krw": 503022.63937857834,
+        "pnl_krw": -2874.144434212998,
+        "return_pct": -0.5681286235013072,
+        "mdd_pct": -16.333369679490996
+      },
+      {
+        "period": "2026-02-24",
+        "trade_count": 1,
+        "start_equity_krw": 503022.63937857834,
+        "end_equity_krw": 501206.2278182007,
+        "pnl_krw": -1816.41156037763,
+        "return_pct": -0.3610993657505279,
+        "mdd_pct": -16.635489350923198
+      },
+      {
+        "period": "2026-02-25",
+        "trade_count": 2,
+        "start_equity_krw": 501206.2278182007,
+        "end_equity_krw": 499392.39018378453,
+        "pnl_krw": -1813.8376344161807,
+        "return_pct": -0.3618944725232165,
+        "mdd_pct": -16.93718090700823
+      },
+      {
+        "period": "2026-02-27",
+        "trade_count": 1,
+        "start_equity_krw": 499392.39018378453,
+        "end_equity_krw": 498219.76628025173,
+        "pnl_krw": -1172.6239035328035,
+        "return_pct": -0.2348101265822744,
+        "mdd_pct": -17.132220817663292
+      },
+      {
+        "period": "2026-03-01",
+        "trade_count": 6,
+        "start_equity_krw": 498219.76628025173,
+        "end_equity_krw": 508091.1910247802,
+        "pnl_krw": 9871.424744528485,
+        "return_pct": 1.9813394434808007,
+        "mdd_pct": -16.65640583053505
+      },
+      {
+        "period": "2026-03-06",
+        "trade_count": 2,
+        "start_equity_krw": 508091.1910247802,
+        "end_equity_krw": 505920.1128350185,
+        "pnl_krw": -2171.078189761727,
+        "return_pct": -0.42730089167317686,
+        "mdd_pct": -15.851439401277382
+      },
+      {
+        "period": "2026-03-07",
+        "trade_count": 1,
+        "start_equity_krw": 505920.1128350185,
+        "end_equity_krw": 504104.40314304316,
+        "pnl_krw": -1815.709691975324,
+        "return_pct": -0.3588925693822742,
+        "mdd_pct": -16.15344233250834
+      },
+      {
+        "period": "2026-03-10",
+        "trade_count": 1,
+        "start_equity_krw": 504104.40314304316,
+        "end_equity_krw": 504452.5920692849,
+        "pnl_krw": 348.18892624170985,
+        "return_pct": 0.06907079646016889,
+        "mdd_pct": -16.095528847322964
+      },
+      {
+        "period": "2026-03-11",
+        "trade_count": 1,
+        "start_equity_krw": 504452.5920692849,
+        "end_equity_krw": 503722.1755734409,
+        "pnl_krw": -730.4164958439651,
+        "return_pct": -0.1447938829787332,
+        "mdd_pct": -16.217017389097695
+      },
+      {
+        "period": "2026-03-12",
+        "trade_count": 2,
+        "start_equity_krw": 503722.1755734409,
+        "end_equity_krw": 504093.2892546481,
+        "pnl_krw": 371.11368120717816,
+        "return_pct": 0.07367427903779422,
+        "mdd_pct": -16.186159817377163
+      },
+      {
+        "period": "2026-03-13",
+        "trade_count": 5,
+        "start_equity_krw": 504093.2892546481,
+        "end_equity_krw": 521817.0699967043,
+        "pnl_krw": 17723.780742056202,
+        "return_pct": 3.51597236461183,
+        "mdd_pct": -15.92609149008602
+      },
+      {
+        "period": "2026-03-14",
+        "trade_count": 1,
+        "start_equity_krw": 521817.0699967043,
+        "end_equity_krw": 532178.1608474173,
+        "pnl_krw": 10361.090850713023,
+        "return_pct": 1.9855791323151628,
+        "mdd_pct": -11.483997015969292
+      },
+      {
+        "period": "2026-03-15",
+        "trade_count": 3,
+        "start_equity_krw": 532178.1608474173,
+        "end_equity_krw": 555653.118159999,
+        "pnl_krw": 23474.95731258171,
+        "return_pct": 4.411108730054081,
+        "mdd_pct": -9.736532291851303
+      },
+      {
+        "period": "2026-03-17",
+        "trade_count": 1,
+        "start_equity_krw": 555653.118159999,
+        "end_equity_krw": 549986.2989203191,
+        "pnl_krw": -5666.819239679957,
+        "return_pct": -1.0198483648296897,
+        "mdd_pct": -8.522009248017742
+      },
+      {
+        "period": "2026-03-18",
+        "trade_count": 2,
+        "start_equity_krw": 549986.2989203191,
+        "end_equity_krw": 538944.0040178639,
+        "pnl_krw": -11042.294902455178,
+        "return_pct": -2.0077399971839993,
+        "mdd_pct": -10.358649456965567
+      },
+      {
+        "period": "2026-03-19",
+        "trade_count": 3,
+        "start_equity_krw": 538944.0040178639,
+        "end_equity_krw": 543417.1976624677,
+        "pnl_krw": 4473.193644603831,
+        "return_pct": 0.8299922832902595,
+        "mdd_pct": -10.20732017179015
+      },
+      {
+        "period": "2026-03-20",
+        "trade_count": 4,
+        "start_equity_krw": 543417.1976624677,
+        "end_equity_krw": 521225.5573068781,
+        "pnl_krw": -22191.640355589625,
+        "return_pct": -4.083720657176093,
+        "mdd_pct": -13.305719061333793
+      },
+      {
+        "period": "2026-03-21",
+        "trade_count": 5,
+        "start_equity_krw": 521225.5573068781,
+        "end_equity_krw": 523166.6202198253,
+        "pnl_krw": 1941.0629129472072,
+        "return_pct": 0.3724036332708902,
+        "mdd_pct": -13.488597271053553
+      },
+      {
+        "period": "2026-03-22",
+        "trade_count": 2,
+        "start_equity_krw": 523166.6202198253,
+        "end_equity_krw": 520081.04562725686,
+        "pnl_krw": -3085.574592568446,
+        "return_pct": -0.5897881235756075,
+        "mdd_pct": -13.496083128674124
+      },
+      {
+        "period": "2026-03-24",
+        "trade_count": 1,
+        "start_equity_krw": 520081.04562725686,
+        "end_equity_krw": 518238.0741335297,
+        "pnl_krw": -1842.9714937271783,
+        "return_pct": -0.35436236510107966,
+        "mdd_pct": -13.802620454404426
+      },
+      {
+        "period": "2026-03-25",
+        "trade_count": 4,
+        "start_equity_krw": 518238.0741335297,
+        "end_equity_krw": 512504.5527490038,
+        "pnl_krw": -5733.5213845258695,
+        "return_pct": -1.1063489293240525,
+        "mdd_pct": -14.75626424011251
+      },
+      {
+        "period": "2026-03-27",
+        "trade_count": 2,
+        "start_equity_krw": 512504.5527490038,
+        "end_equity_krw": 508736.43755654886,
+        "pnl_krw": -3768.1151924549486,
+        "return_pct": -0.7352354573717079,
+        "mdd_pct": -15.383006410607445
+      },
+      {
+        "period": "2026-03-28",
+        "trade_count": 2,
+        "start_equity_krw": 508736.43755654886,
+        "end_equity_krw": 504989.95772699895,
+        "pnl_krw": -3746.479829549906,
+        "return_pct": -0.7364284436837565,
+        "mdd_pct": -16.0061500195898
+      },
+      {
+        "period": "2026-03-29",
+        "trade_count": 3,
+        "start_equity_krw": 504989.95772699895,
+        "end_equity_krw": 500760.76949818316,
+        "pnl_krw": -4229.188228815794,
+        "return_pct": -0.8374796694674336,
+        "mdd_pct": -16.70958143677871
+      },
+      {
+        "period": "2026-03-31",
+        "trade_count": 2,
+        "start_equity_krw": 500760.76949818316,
+        "end_equity_krw": 503337.5017030459,
+        "pnl_krw": 2576.732204862754,
+        "return_pct": 0.5145635125221482,
+        "mdd_pct": -16.280999333425402
+      },
+      {
+        "period": "2026-04-01",
+        "trade_count": 2,
+        "start_equity_krw": 503337.5017030459,
+        "end_equity_krw": 505036.80724129477,
+        "pnl_krw": 1699.3055382488528,
+        "return_pct": 0.3376075759305097,
+        "mdd_pct": -15.998357644681732
+      },
+      {
+        "period": "2026-04-02",
+        "trade_count": 1,
+        "start_equity_krw": 505036.80724129477,
+        "end_equity_krw": 504186.6128401197,
+        "pnl_krw": -850.1944011750747,
+        "return_pct": -0.16834305717620124,
+        "mdd_pct": -16.13976857750089
+      },
+      {
+        "period": "2026-04-03",
+        "trade_count": 2,
+        "start_equity_krw": 504186.6128401197,
+        "end_equity_krw": 500533.40393178636,
+        "pnl_krw": -3653.2089083333267,
+        "return_pct": -0.7245747537314662,
+        "mdd_pct": -16.747398642809106
+      },
+      {
+        "period": "2026-04-04",
+        "trade_count": 1,
+        "start_equity_krw": 500533.40393178636,
+        "end_equity_krw": 501128.2547144831,
+        "pnl_krw": 594.8507826967398,
+        "return_pct": 0.1188433734939709,
+        "mdd_pct": -16.64845844283473
+      },
+      {
+        "period": "2026-04-05",
+        "trade_count": 4,
+        "start_equity_krw": 501128.2547144831,
+        "end_equity_krw": 503581.4671138991,
+        "pnl_krw": 2453.212399416021,
+        "return_pct": 0.48953783314686916,
+        "mdd_pct": -16.35416742454566
+      },
+      {
+        "period": "2026-04-08",
+        "trade_count": 6,
+        "start_equity_krw": 503581.4671138991,
+        "end_equity_krw": 500663.2352235659,
+        "pnl_krw": -2918.2318903332343,
+        "return_pct": -0.5794954899865701,
+        "mdd_pct": -16.725804094486644
+      },
+      {
+        "period": "2026-04-09",
+        "trade_count": 2,
+        "start_equity_krw": 500663.2352235659,
+        "end_equity_krw": 497124.94801656064,
+        "pnl_krw": -3538.2872070052545,
+        "return_pct": -0.7067199982090266,
+        "mdd_pct": -17.314319490298676
+      },
+      {
+        "period": "2026-04-10",
+        "trade_count": 1,
+        "start_equity_krw": 497124.94801656064,
+        "end_equity_krw": 496095.7765920138,
+        "pnl_krw": -1029.171424546861,
+        "return_pct": -0.20702469844916527,
+        "mdd_pct": -17.485499271034524
+      },
+      {
+        "period": "2026-04-11",
+        "trade_count": 2,
+        "start_equity_krw": 496095.7765920138,
+        "end_equity_krw": 494682.0254006119,
+        "pnl_krw": -1413.7511914018542,
+        "return_pct": -0.28497545395644863,
+        "mdd_pct": -17.78077614721165
+      },
+      {
+        "period": "2026-04-12",
+        "trade_count": 2,
+        "start_equity_krw": 494682.0254006119,
+        "end_equity_krw": 491090.16884653096,
+        "pnl_krw": -3591.856554080965,
+        "return_pct": -0.7260940098181567,
+        "mdd_pct": -18.318070809540554
+      },
+      {
+        "period": "2026-04-14",
+        "trade_count": 2,
+        "start_equity_krw": 491090.16884653096,
+        "end_equity_krw": 491739.642111165,
+        "pnl_krw": 649.4732646340271,
+        "return_pct": 0.13225132691201402,
+        "mdd_pct": -18.264075938274573
+      },
+      {
+        "period": "2026-04-15",
+        "trade_count": 2,
+        "start_equity_krw": 491739.642111165,
+        "end_equity_krw": 498488.8839833884,
+        "pnl_krw": 6749.241872223443,
+        "return_pct": 1.37252344416392,
+        "mdd_pct": -17.658251542635135
+      },
+      {
+        "period": "2026-04-16",
+        "trade_count": 2,
+        "start_equity_krw": 498488.8839833884,
+        "end_equity_krw": 497466.3272165676,
+        "pnl_krw": -1022.5567668208387,
+        "return_pct": -0.20513130777354283,
+        "mdd_pct": -17.274466591661817
+      },
+      {
+        "period": "2026-04-18",
+        "trade_count": 2,
+        "start_equity_krw": 497466.3272165676,
+        "end_equity_krw": 494578.02215332724,
+        "pnl_krw": -2888.3050632403465,
+        "return_pct": -0.5806031293416503,
+        "mdd_pct": -17.737943971527077
+      },
+      {
+        "period": "2026-04-19",
+        "trade_count": 1,
+        "start_equity_krw": 494578.02215332724,
+        "end_equity_krw": 497379.58424938464,
+        "pnl_krw": 2801.5620960574015,
+        "return_pct": 0.566455032486024,
+        "mdd_pct": -17.271966415327313
+      },
+      {
+        "period": "2026-04-21",
+        "trade_count": 2,
+        "start_equity_krw": 497379.58424938464,
+        "end_equity_krw": 510823.4181197352,
+        "pnl_krw": 13443.833870350558,
+        "return_pct": 2.7029323872710176,
+        "mdd_pct": -16.695219647357785
+      },
+      {
+        "period": "2026-04-22",
+        "trade_count": 1,
+        "start_equity_krw": 510823.4181197352,
+        "end_equity_krw": 512485.0454315167,
+        "pnl_krw": 1661.6273117815144,
+        "return_pct": 0.3252840909090837,
+        "mdd_pct": -14.75950884859127
+      },
+      {
+        "period": "2026-04-23",
+        "trade_count": 1,
+        "start_equity_krw": 512485.0454315167,
+        "end_equity_krw": 519483.4117420233,
+        "pnl_krw": 6998.366310506593,
+        "return_pct": 1.3655747368421123,
+        "mdd_pct": -13.5954862358675
+      },
+      {
+        "period": "2026-04-24",
+        "trade_count": 4,
+        "start_equity_krw": 519483.4117420233,
+        "end_equity_krw": 519991.829455966,
+        "pnl_krw": 508.4177139427047,
+        "return_pct": 0.09786986503337314,
+        "mdd_pct": -13.55715501878844
+      },
+      {
+        "period": "2026-04-25",
+        "trade_count": 2,
+        "start_equity_krw": 519991.829455966,
+        "end_equity_krw": 515174.2039725418,
+        "pnl_krw": -4817.625483424228,
+        "return_pct": -0.9264809965311538,
+        "mdd_pct": -14.312227124247546
+      },
+      {
+        "period": "2026-04-26",
+        "trade_count": 2,
+        "start_equity_krw": 515174.2039725418,
+        "end_equity_krw": 525918.606407366,
+        "pnl_krw": 10744.40243482421,
+        "return_pct": 2.0855862642138234,
+        "mdd_pct": -13.719265193283455
+      },
+      {
+        "period": "2026-04-27",
+        "trade_count": 1,
+        "start_equity_krw": 525918.606407366,
+        "end_equity_krw": 522139.7121136438,
+        "pnl_krw": -3778.8942937221727,
+        "return_pct": -0.718532154535545,
+        "mdd_pct": -13.15366973733543
+      },
+      {
+        "period": "2026-04-29",
+        "trade_count": 2,
+        "start_equity_krw": 522139.7121136438,
+        "end_equity_krw": 516421.043298871,
+        "pnl_krw": -5718.668814772798,
+        "return_pct": -1.0952372865154048,
+        "mdd_pct": -14.104843128342443
+      },
+      {
+        "period": "2026-04-30",
+        "trade_count": 2,
+        "start_equity_krw": 516421.043298871,
+        "end_equity_krw": 516244.9862124155,
+        "pnl_krw": -176.0570864555193,
+        "return_pct": -0.034091772351274585,
+        "mdd_pct": -14.134126309683895
+      },
+      {
+        "period": "2026-05-03",
+        "trade_count": 5,
+        "start_equity_krw": 516244.9862124155,
+        "end_equity_krw": 516615.4839463481,
+        "pnl_krw": 370.49773393257055,
+        "return_pct": 0.07176781253621645,
+        "mdd_pct": -14.60295780326441
+      },
+      {
+        "period": "2026-05-04",
+        "trade_count": 2,
+        "start_equity_krw": 516615.4839463481,
+        "end_equity_krw": 515938.61983553757,
+        "pnl_krw": -676.8641108105076,
+        "return_pct": -0.1310189361031222,
+        "mdd_pct": -14.185083543792773
+      },
+      {
+        "period": "2026-05-06",
+        "trade_count": 2,
+        "start_equity_krw": 515938.61983553757,
+        "end_equity_krw": 521422.5880394079,
+        "pnl_krw": 5483.968203870347,
+        "return_pct": 1.0629109729406228,
+        "mdd_pct": -13.88175294586868
+      },
+      {
+        "period": "2026-05-07",
+        "trade_count": 1,
+        "start_equity_krw": 521422.5880394079,
+        "end_equity_krw": 528674.0313529128,
+        "pnl_krw": 7251.44331350486,
+        "return_pct": 1.3907037170696634,
+        "mdd_pct": -12.066831035873623
+      },
+      {
+        "period": "2026-05-08",
+        "trade_count": 2,
+        "start_equity_krw": 528674.0313529128,
+        "end_equity_krw": 540514.3183820038,
+        "pnl_krw": 11840.287029091036,
+        "return_pct": 2.2396195626993354,
+        "mdd_pct": -10.332617490707445
+      },
+      {
+        "period": "2026-05-09",
+        "trade_count": 4,
+        "start_equity_krw": 540514.3183820038,
+        "end_equity_krw": 532560.3514198386,
+        "pnl_krw": -7953.966962165199,
+        "return_pct": -1.4715552746086158,
+        "mdd_pct": -11.420428113038286
+      },
+      {
+        "period": "2026-05-10",
+        "trade_count": 10,
+        "start_equity_krw": 532560.3514198386,
+        "end_equity_krw": 532393.1808236588,
+        "pnl_krw": -167.1705961797852,
+        "return_pct": -0.03138998157374839,
+        "mdd_pct": -12.57777053663856
+      },
+      {
+        "period": "2026-05-13",
+        "trade_count": 2,
+        "start_equity_krw": 532393.1808236588,
+        "end_equity_krw": 525097.3175771381,
+        "pnl_krw": -7295.863246520748,
+        "return_pct": -1.370390063079585,
+        "mdd_pct": -12.661737836906875
+      },
+      {
+        "period": "2026-05-14",
+        "trade_count": 1,
+        "start_equity_krw": 525097.3175771381,
+        "end_equity_krw": 519586.77548775985,
+        "pnl_krw": -5510.542089378228,
+        "return_pct": -1.0494325346784295,
+        "mdd_pct": -13.578293975269121
+      },
+      {
+        "period": "2026-05-17",
+        "trade_count": 4,
+        "start_equity_krw": 519586.77548775985,
+        "end_equity_krw": 518461.0658981565,
+        "pnl_krw": -1125.709589603357,
+        "return_pct": -0.21665478082012468,
+        "mdd_pct": -14.209537830759889
+      },
+      {
+        "period": "2026-05-20",
+        "trade_count": 4,
+        "start_equity_krw": 518461.0658981565,
+        "end_equity_krw": 516761.89850776584,
+        "pnl_krw": -1699.1673903906485,
+        "return_pct": -0.3277328814357716,
+        "mdd_pct": -14.048149443957472
+      },
+      {
+        "period": "2026-05-22",
+        "trade_count": 2,
+        "start_equity_krw": 516761.89850776584,
+        "end_equity_krw": 514688.95077955956,
+        "pnl_krw": -2072.947728206287,
+        "return_pct": -0.4011417510060733,
+        "mdd_pct": -14.392938202300106
+      },
+      {
+        "period": "2026-05-23",
+        "trade_count": 3,
+        "start_equity_krw": 514688.95077955956,
+        "end_equity_krw": 514646.04469064524,
+        "pnl_krw": -42.90608891431475,
+        "return_pct": -0.008336314360224417,
+        "mdd_pct": -14.985982564862677
+      },
+      {
+        "period": "2026-05-24",
+        "trade_count": 4,
+        "start_equity_krw": 514646.04469064524,
+        "end_equity_krw": 514682.94996583194,
+        "pnl_krw": 36.90527518669842,
+        "return_pct": 0.007171001422712209,
+        "mdd_pct": -14.393936304223296
+      }
+    ],
+    "BASE_BALANCED": [
+      {
+        "period": "2026-01-01",
+        "trade_count": 1,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 509811.2101910828,
+        "pnl_krw": 9811.210191082791,
+        "return_pct": 1.962242038216555,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-02",
+        "trade_count": 6,
+        "start_equity_krw": 509811.2101910828,
+        "end_equity_krw": 546207.6036452745,
+        "pnl_krw": 36396.39345419174,
+        "return_pct": 7.139190493781022,
+        "mdd_pct": -0.14437194410731935
+      },
+      {
+        "period": "2026-01-03",
+        "trade_count": 6,
+        "start_equity_krw": 546207.6036452745,
+        "end_equity_krw": 569868.8812696731,
+        "pnl_krw": 23661.277624398586,
+        "return_pct": 4.331920219800711,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-04",
+        "trade_count": 7,
+        "start_equity_krw": 569868.8812696731,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 19762.026794050704,
+        "return_pct": 3.4678199571137602,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-01-05",
+        "trade_count": 1,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 601222.5393225543,
+        "pnl_krw": 11591.631258830428,
+        "return_pct": 1.9659130992464302,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-06",
+        "trade_count": 1,
+        "start_equity_krw": 601222.5393225543,
+        "end_equity_krw": 595164.0753527188,
+        "pnl_krw": -6058.463969835429,
+        "return_pct": -1.0076907590094608,
+        "mdd_pct": -1.0076907590094655
+      },
+      {
+        "period": "2026-01-07",
+        "trade_count": 3,
+        "start_equity_krw": 595164.0753527188,
+        "end_equity_krw": 577158.94368533,
+        "pnl_krw": -18005.131667388836,
+        "return_pct": -3.0252383188145604,
+        "mdd_pct": -4.002444030847322
+      },
+      {
+        "period": "2026-01-09",
+        "trade_count": 1,
+        "start_equity_krw": 577158.94368533,
+        "end_equity_krw": 588536.9276232807,
+        "pnl_krw": 11377.983937950688,
+        "return_pct": 1.9713779128672781,
+        "mdd_pct": -2.1099694155790423
+      },
+      {
+        "period": "2026-01-10",
+        "trade_count": 5,
+        "start_equity_krw": 588536.9276232807,
+        "end_equity_krw": 572644.9695017837,
+        "pnl_krw": -15891.958121496951,
+        "return_pct": -2.7002482555638863,
+        "mdd_pct": -4.753243258805828
+      },
+      {
+        "period": "2026-01-11",
+        "trade_count": 1,
+        "start_equity_krw": 572644.9695017837,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -5885.546223399229,
+        "return_pct": -1.027782751417483,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-01-13",
+        "trade_count": 2,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 558724.2826110314,
+        "pnl_krw": -8035.140667353058,
+        "return_pct": -1.4177339338928507,
+        "mdd_pct": -7.068639968057255
+      },
+      {
+        "period": "2026-01-14",
+        "trade_count": 2,
+        "start_equity_krw": 558724.2826110314,
+        "end_equity_krw": 566534.0072931085,
+        "pnl_krw": 7809.724682077067,
+        "return_pct": 1.3977779246644895,
+        "mdd_pct": -6.421406822058752
+      },
+      {
+        "period": "2026-01-16",
+        "trade_count": 1,
+        "start_equity_krw": 566534.0072931085,
+        "end_equity_krw": 564456.4189822153,
+        "pnl_krw": -2077.5883108931594,
+        "return_pct": -0.36671908202295933,
+        "mdd_pct": -6.1152265485199955
+      },
+      {
+        "period": "2026-01-17",
+        "trade_count": 3,
+        "start_equity_krw": 564456.4189822153,
+        "end_equity_krw": 558400.0422555377,
+        "pnl_krw": -6056.376726677641,
+        "return_pct": -1.0729573662388359,
+        "mdd_pct": -7.122570141044296
+      },
+      {
+        "period": "2026-01-18",
+        "trade_count": 3,
+        "start_equity_krw": 558400.0422555377,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -6019.318783891504,
+        "return_pct": -1.0779581533657767,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-01-21",
+        "trade_count": 1,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 551634.2492076246,
+        "pnl_krw": -746.4742640216136,
+        "return_pct": -0.1351376382814573,
+        "mdd_pct": -8.247909363279158
+      },
+      {
+        "period": "2026-01-23",
+        "trade_count": 1,
+        "start_equity_krw": 551634.2492076246,
+        "end_equity_krw": 549616.3840026438,
+        "pnl_krw": -2017.8652049808297,
+        "return_pct": -0.3657976653696382,
+        "mdd_pct": -8.58353636875612
+      },
+      {
+        "period": "2026-01-24",
+        "trade_count": 3,
+        "start_equity_krw": 549616.3840026438,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -2416.2819860639283,
+        "return_pct": -0.4396306326363675,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-01-27",
+        "trade_count": 2,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 543249.6391799921,
+        "pnl_krw": -3950.462836587685,
+        "return_pct": -0.7219411732616976,
+        "mdd_pct": -9.64250279237449
+      },
+      {
+        "period": "2026-01-28",
+        "trade_count": 1,
+        "start_equity_krw": 543249.6391799921,
+        "end_equity_krw": 541306.2285264933,
+        "pnl_krw": -1943.4106534988387,
+        "return_pct": -0.3577380477292724,
+        "mdd_pct": -9.965745938862085
+      },
+      {
+        "period": "2026-01-29",
+        "trade_count": 3,
+        "start_equity_krw": 541306.2285264933,
+        "end_equity_krw": 535543.4508177543,
+        "pnl_krw": -5762.777708739042,
+        "return_pct": -1.0646058377022705,
+        "mdd_pct": -10.924255863528652
+      },
+      {
+        "period": "2026-01-30",
+        "trade_count": 2,
+        "start_equity_krw": 535543.4508177543,
+        "end_equity_krw": 537220.083630748,
+        "pnl_krw": 1676.6328129937174,
+        "return_pct": 0.3130712942962077,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-01-31",
+        "trade_count": 1,
+        "start_equity_krw": 537220.083630748,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": -1921.5881455455674,
+        "return_pct": -0.35769104769105553,
+        "mdd_pct": -10.964998736014413
+      },
+      {
+        "period": "2026-02-01",
+        "trade_count": 4,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -370.41424286481924,
+        "return_pct": -0.06919769922556496,
+        "mdd_pct": -11.026608908394545
+      },
+      {
+        "period": "2026-02-03",
+        "trade_count": 1,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 533033.2208141973,
+        "pnl_krw": -1894.8604281402659,
+        "return_pct": -0.35422713717694343,
+        "mdd_pct": -11.34177680450758
+      },
+      {
+        "period": "2026-02-04",
+        "trade_count": 1,
+        "start_equity_krw": 533033.2208141973,
+        "end_equity_krw": 531143.8718923469,
+        "pnl_krw": -1889.34892185044,
+        "return_pct": -0.3544523770890873,
+        "mdd_pct": -11.65602798410895
+      },
+      {
+        "period": "2026-02-06",
+        "trade_count": 1,
+        "start_equity_krw": 531143.8718923469,
+        "end_equity_krw": 529253.5628096345,
+        "pnl_krw": -1890.309082712396,
+        "return_pct": -0.3558939832963959,
+        "mdd_pct": -11.970438865118561
+      },
+      {
+        "period": "2026-02-07",
+        "trade_count": 5,
+        "start_equity_krw": 529253.5628096345,
+        "end_equity_krw": 526372.0582456378,
+        "pnl_krw": -2881.5045639966847,
+        "return_pct": -0.5444468902013111,
+        "mdd_pct": -12.449713073175284
+      },
+      {
+        "period": "2026-02-08",
+        "trade_count": 4,
+        "start_equity_krw": 526372.0582456378,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -1803.8515145040583,
+        "return_pct": -0.3426951499888031,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-02-12",
+        "trade_count": 1,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 522686.2174109845,
+        "pnl_krw": -1881.9893201492378,
+        "return_pct": -0.3587692307692292,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-02-13",
+        "trade_count": 2,
+        "start_equity_krw": 522686.2174109845,
+        "end_equity_krw": 527019.3187861308,
+        "pnl_krw": 4333.101375146245,
+        "return_pct": 0.8290062432886325,
+        "mdd_pct": -12.946617119128453
+      },
+      {
+        "period": "2026-02-14",
+        "trade_count": 4,
+        "start_equity_krw": 527019.3187861308,
+        "end_equity_krw": 530259.8043257149,
+        "pnl_krw": 3240.485539584188,
+        "return_pct": 0.614870351820862,
+        "mdd_pct": -12.211256084181258
+      },
+      {
+        "period": "2026-02-15",
+        "trade_count": 8,
+        "start_equity_krw": 530259.8043257149,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": -5077.020879615098,
+        "return_pct": -0.957459124413762,
+        "mdd_pct": -12.64752249011398
+      },
+      {
+        "period": "2026-02-17",
+        "trade_count": 3,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 517698.9046580077,
+        "pnl_krw": -7483.878788092115,
+        "return_pct": -1.4250045934455446,
+        "mdd_pct": -13.892299307118344
+      },
+      {
+        "period": "2026-02-18",
+        "trade_count": 1,
+        "start_equity_krw": 517698.9046580077,
+        "end_equity_krw": 515837.8996245448,
+        "pnl_krw": -1861.0050334629486,
+        "return_pct": -0.3594763320375005,
+        "mdd_pct": -14.201836111170948
+      },
+      {
+        "period": "2026-02-19",
+        "trade_count": 1,
+        "start_equity_krw": 515837.8996245448,
+        "end_equity_krw": 513969.989593683,
+        "pnl_krw": -1867.9100308617926,
+        "return_pct": -0.3621118247072119,
+        "mdd_pct": -14.512521407994072
+      },
+      {
+        "period": "2026-02-20",
+        "trade_count": 4,
+        "start_equity_krw": 513969.989593683,
+        "end_equity_krw": 511972.6094512717,
+        "pnl_krw": -1997.3801424112753,
+        "return_pct": -0.38861804830089275,
+        "mdd_pct": -14.844741178839971
+      },
+      {
+        "period": "2026-02-21",
+        "trade_count": 4,
+        "start_equity_krw": 511972.6094512717,
+        "end_equity_krw": 504720.46982561256,
+        "pnl_krw": -7252.139625659154,
+        "return_pct": -1.4165092998689843,
+        "mdd_pct": -16.0509733393692
+      },
+      {
+        "period": "2026-02-22",
+        "trade_count": 2,
+        "start_equity_krw": 504720.46982561256,
+        "end_equity_krw": 501853.008367863,
+        "pnl_krw": -2867.4614577495377,
+        "return_pct": -0.5681286235012961,
+        "mdd_pct": -16.52791178897898
+      },
+      {
+        "period": "2026-02-24",
+        "trade_count": 1,
+        "start_equity_krw": 501853.008367863,
+        "end_equity_krw": 500040.8203376467,
+        "pnl_krw": -1812.188030216319,
+        "return_pct": -0.3610993657505279,
+        "mdd_pct": -16.829328970087705
+      },
+      {
+        "period": "2026-02-25",
+        "trade_count": 2,
+        "start_equity_krw": 500040.8203376467,
+        "end_equity_krw": 498231.200248485,
+        "pnl_krw": -1809.6200891616754,
+        "return_pct": -0.3618944725232165,
+        "mdd_pct": -17.130319031305422
+      },
+      {
+        "period": "2026-02-27",
+        "trade_count": 1,
+        "start_equity_krw": 498231.200248485,
+        "end_equity_krw": 497061.30293650914,
+        "pnl_krw": -1169.8973119758884,
+        "return_pct": -0.2348101265822855,
+        "mdd_pct": -17.324905434086347
+      },
+      {
+        "period": "2026-03-01",
+        "trade_count": 6,
+        "start_equity_krw": 497061.30293650914,
+        "end_equity_krw": 506909.7745898698,
+        "pnl_krw": 9848.47165336064,
+        "return_pct": 1.9813394434808007,
+        "mdd_pct": -16.850196814586
+      },
+      {
+        "period": "2026-03-06",
+        "trade_count": 2,
+        "start_equity_krw": 506909.7745898698,
+        "end_equity_krw": 504743.7446030688,
+        "pnl_krw": -2166.029986800975,
+        "return_pct": -0.42730089167316576,
+        "mdd_pct": -16.04710209770177
+      },
+      {
+        "period": "2026-03-07",
+        "trade_count": 1,
+        "start_equity_krw": 504743.7446030688,
+        "end_equity_krw": 502932.2568092665,
+        "pnl_krw": -1811.4877938022837,
+        "return_pct": -0.3588925693822742,
+        "mdd_pct": -16.34840281005421
+      },
+      {
+        "period": "2026-03-10",
+        "trade_count": 1,
+        "start_equity_krw": 502932.2568092665,
+        "end_equity_krw": 503279.63612469984,
+        "pnl_krw": 347.37931543332525,
+        "return_pct": 0.0690707964601911,
+        "mdd_pct": -16.29062398562345
+      },
+      {
+        "period": "2026-03-11",
+        "trade_count": 1,
+        "start_equity_krw": 503279.63612469984,
+        "end_equity_krw": 502550.9179973137,
+        "pnl_krw": -728.7181273861206,
+        "return_pct": -0.1447938829787221,
+        "mdd_pct": -16.411830041571925
+      },
+      {
+        "period": "2026-03-12",
+        "trade_count": 2,
+        "start_equity_krw": 502550.9179973137,
+        "end_equity_krw": 502921.16876294604,
+        "pnl_krw": 370.25076563231414,
+        "return_pct": 0.07367427903779422,
+        "mdd_pct": -16.381044220047055
+      },
+      {
+        "period": "2026-03-13",
+        "trade_count": 5,
+        "start_equity_krw": 502921.16876294604,
+        "end_equity_krw": 519819.42344368185,
+        "pnl_krw": 16898.254680735816,
+        "return_pct": 3.3600205619304324,
+        "mdd_pct": -16.115353660623917
+      },
+      {
+        "period": "2026-03-14",
+        "trade_count": 1,
+        "start_equity_krw": 519819.42344368185,
+        "end_equity_krw": 530140.8494413006,
+        "pnl_krw": 10321.42599761876,
+        "return_pct": 1.9855791323151628,
+        "mdd_pct": -11.822858464579038
+      },
+      {
+        "period": "2026-03-15",
+        "trade_count": 3,
+        "start_equity_krw": 530140.8494413006,
+        "end_equity_krw": 553525.9387325888,
+        "pnl_krw": 23385.089291288168,
+        "return_pct": 4.411108730054103,
+        "mdd_pct": -10.082083473479326
+      },
+      {
+        "period": "2026-03-17",
+        "trade_count": 1,
+        "start_equity_krw": 553525.9387325888,
+        "end_equity_krw": 547880.8134975162,
+        "pnl_krw": -5645.12523507257,
+        "return_pct": -1.0198483648297008,
+        "mdd_pct": -8.87220992831414
+      },
+      {
+        "period": "2026-03-18",
+        "trade_count": 2,
+        "start_equity_krw": 547880.8134975162,
+        "end_equity_krw": 536880.7912680295,
+        "pnl_krw": -11000.022229486727,
+        "return_pct": -2.0077399971839993,
+        "mdd_pct": -10.70181901813325
+      },
+      {
+        "period": "2026-03-19",
+        "trade_count": 3,
+        "start_equity_krw": 536880.7912680295,
+        "end_equity_krw": 543031.1785423808,
+        "pnl_krw": 6150.38727435132,
+        "return_pct": 1.1455778218149693,
+        "mdd_pct": -10.271104850314561
+      },
+      {
+        "period": "2026-03-20",
+        "trade_count": 4,
+        "start_equity_krw": 543031.1785423808,
+        "end_equity_krw": 520855.3021293387,
+        "pnl_krw": -22175.876413042075,
+        "return_pct": -4.083720657176104,
+        "mdd_pct": -13.367302776734178
+      },
+      {
+        "period": "2026-03-21",
+        "trade_count": 5,
+        "start_equity_krw": 520855.3021293387,
+        "end_equity_krw": 518813.1548091037,
+        "pnl_krw": -2042.1473202350317,
+        "return_pct": -0.39207574769545284,
+        "mdd_pct": -13.706968572121037
+      },
+      {
+        "period": "2026-03-22",
+        "trade_count": 2,
+        "start_equity_krw": 518813.1548091037,
+        "end_equity_krw": 515641.1876840996,
+        "pnl_krw": -3171.967125004099,
+        "return_pct": -0.6113891090851808,
+        "mdd_pct": -14.23455476817054
+      },
+      {
+        "period": "2026-03-24",
+        "trade_count": 1,
+        "start_equity_krw": 515641.1876840996,
+        "end_equity_krw": 513813.94937598694,
+        "pnl_krw": -1827.238308112661,
+        "return_pct": -0.35436236510107966,
+        "mdd_pct": -14.538475228333523
+      },
+      {
+        "period": "2026-03-25",
+        "trade_count": 4,
+        "start_equity_krw": 513813.94937598694,
+        "end_equity_krw": 508129.37424834806,
+        "pnl_krw": -5684.575127638876,
+        "return_pct": -1.1063489293240525,
+        "mdd_pct": -15.483977892628866
+      },
+      {
+        "period": "2026-03-27",
+        "trade_count": 2,
+        "start_equity_krw": 508129.37424834806,
+        "end_equity_krw": 504393.42691955325,
+        "pnl_krw": -3735.947328794806,
+        "return_pct": -0.7352354573716968,
+        "mdd_pct": -16.105369654322363
+      },
+      {
+        "period": "2026-03-28",
+        "trade_count": 2,
+        "start_equity_krw": 504393.42691955325,
+        "end_equity_krw": 500678.93025564647,
+        "pnl_krw": -3714.496663906786,
+        "return_pct": -0.7364284436837454,
+        "mdd_pct": -16.72319357491127
+      },
+      {
+        "period": "2026-03-29",
+        "trade_count": 3,
+        "start_equity_krw": 500678.93025564647,
+        "end_equity_krw": 496485.8460054484,
+        "pnl_krw": -4193.084250198095,
+        "return_pct": -0.8374796694674336,
+        "mdd_pct": -17.420619898103144
+      },
+      {
+        "period": "2026-03-31",
+        "trade_count": 2,
+        "start_equity_krw": 496485.8460054484,
+        "end_equity_krw": 499040.5810138293,
+        "pnl_krw": 2554.7350083808997,
+        "return_pct": 0.5145635125221482,
+        "mdd_pct": -16.995696539231815
+      },
+      {
+        "period": "2026-04-01",
+        "trade_count": 2,
+        "start_equity_krw": 499040.5810138293,
+        "end_equity_krw": 500725.3798222996,
+        "pnl_krw": 1684.7988084703102,
+        "return_pct": 0.3376075759305097,
+        "mdd_pct": -16.71546772239991
+      },
+      {
+        "period": "2026-04-02",
+        "trade_count": 1,
+        "start_equity_krw": 500725.3798222996,
+        "end_equity_krw": 499882.4434098496,
+        "pnl_krw": -842.9364124499843,
+        "return_pct": -0.16834305717620124,
+        "mdd_pct": -16.855671450190922
+      },
+      {
+        "period": "2026-04-03",
+        "trade_count": 2,
+        "start_equity_krw": 499882.4434098496,
+        "end_equity_krw": 496260.4214265658,
+        "pnl_krw": -3622.0219832838047,
+        "return_pct": -0.7245747537314773,
+        "mdd_pct": -17.458114264022388
+      },
+      {
+        "period": "2026-04-04",
+        "trade_count": 1,
+        "start_equity_krw": 496260.4214265658,
+        "end_equity_krw": 496850.19405270455,
+        "pnl_krw": 589.7726261387579,
+        "return_pct": 0.1188433734939709,
+        "mdd_pct": -17.360018702468206
+      },
+      {
+        "period": "2026-04-05",
+        "trade_count": 4,
+        "start_equity_krw": 496850.19405270455,
+        "end_equity_krw": 499282.4637266562,
+        "pnl_krw": 2432.2696739516687,
+        "return_pct": 0.48953783314686916,
+        "mdd_pct": -17.068240004760963
+      },
+      {
+        "period": "2026-04-08",
+        "trade_count": 6,
+        "start_equity_krw": 499282.4637266562,
+        "end_equity_krw": 496389.14436706644,
+        "pnl_krw": -2893.3193595897756,
+        "return_pct": -0.579495489986559,
+        "mdd_pct": -17.436704065288705
+      },
+      {
+        "period": "2026-04-09",
+        "trade_count": 2,
+        "start_equity_krw": 496389.14436706644,
+        "end_equity_krw": 492881.0630148857,
+        "pnl_krw": -3508.081352180743,
+        "return_pct": -0.7067199982090266,
+        "mdd_pct": -18.020195388839813
+      },
+      {
+        "period": "2026-04-10",
+        "trade_count": 1,
+        "start_equity_krw": 492881.0630148857,
+        "end_equity_krw": 491860.6774804661,
+        "pnl_krw": -1020.38553441962,
+        "return_pct": -0.20702469844916527,
+        "mdd_pct": -18.189913832125285
+      },
+      {
+        "period": "2026-04-11",
+        "trade_count": 2,
+        "start_equity_krw": 491860.6774804661,
+        "end_equity_krw": 490458.9952819828,
+        "pnl_krw": -1401.682198483264,
+        "return_pct": -0.28497545395645973,
+        "mdd_pct": -18.48266997159196
+      },
+      {
+        "period": "2026-04-12",
+        "trade_count": 2,
+        "start_equity_krw": 490458.9952819828,
+        "end_equity_krw": 486897.801896626,
+        "pnl_krw": -3561.1933853568044,
+        "return_pct": -0.7260940098181567,
+        "mdd_pct": -19.015377825779304
+      },
+      {
+        "period": "2026-04-14",
+        "trade_count": 2,
+        "start_equity_krw": 486897.801896626,
+        "end_equity_krw": 487541.73070033983,
+        "pnl_krw": 643.9288037138176,
+        "return_pct": 0.13225132691203623,
+        "mdd_pct": -18.961843901052504
+      },
+      {
+        "period": "2026-04-15",
+        "trade_count": 2,
+        "start_equity_krw": 487541.73070033983,
+        "end_equity_krw": 494233.35525428446,
+        "pnl_krw": 6691.6245539446245,
+        "return_pct": 1.3725234441638978,
+        "mdd_pct": -18.361191342144572
+      },
+      {
+        "period": "2026-04-16",
+        "trade_count": 2,
+        "start_equity_krw": 494233.35525428446,
+        "end_equity_krw": 493219.5279091983,
+        "pnl_krw": -1013.8273450861452,
+        "return_pct": -0.20513130777353172,
+        "mdd_pct": -17.98068270873248
+      },
+      {
+        "period": "2026-04-18",
+        "trade_count": 2,
+        "start_equity_krw": 493219.5279091983,
+        "end_equity_krw": 490355.87989563344,
+        "pnl_krw": -2863.6480135648744,
+        "return_pct": -0.5806031293416392,
+        "mdd_pct": -18.44020344810146
+      },
+      {
+        "period": "2026-04-19",
+        "trade_count": 1,
+        "start_equity_krw": 490355.87989563344,
+        "end_equity_krw": 493133.5254543934,
+        "pnl_krw": 2777.6455587599776,
+        "return_pct": 0.566455032486024,
+        "mdd_pct": -17.978203876047864
+      },
+      {
+        "period": "2026-04-21",
+        "trade_count": 2,
+        "start_equity_krw": 493133.5254543934,
+        "end_equity_krw": 503495.25041675864,
+        "pnl_krw": 10361.724962365231,
+        "return_pct": 2.101200674364523,
+        "mdd_pct": -17.40638071323659
+      },
+      {
+        "period": "2026-04-22",
+        "trade_count": 1,
+        "start_equity_krw": 503495.25041675864,
+        "end_equity_krw": 505834.95034259954,
+        "pnl_krw": 2339.6999258408905,
+        "return_pct": 0.4646915584415545,
+        "mdd_pct": -15.865604288128582
+      },
+      {
+        "period": "2026-04-23",
+        "trade_count": 1,
+        "start_equity_krw": 505834.95034259954,
+        "end_equity_krw": 515702.88504545146,
+        "pnl_krw": 9867.934702851926,
+        "return_pct": 1.9508210526315795,
+        "mdd_pct": -14.224292784077033
+      },
+      {
+        "period": "2026-04-24",
+        "trade_count": 4,
+        "start_equity_krw": 515702.88504545146,
+        "end_equity_krw": 516664.3081220846,
+        "pnl_krw": 961.4230766331311,
+        "return_pct": 0.18642964864321598,
+        "mdd_pct": -14.115572033598681
+      },
+      {
+        "period": "2026-04-25",
+        "trade_count": 2,
+        "start_equity_krw": 516664.3081220846,
+        "end_equity_krw": 509832.8408323923,
+        "pnl_krw": -6831.467289692315,
+        "return_pct": -1.3222255112846026,
+        "mdd_pct": -15.200644106446523
+      },
+      {
+        "period": "2026-04-26",
+        "trade_count": 2,
+        "start_equity_krw": 509832.8408323923,
+        "end_equity_krw": 530192.474626032,
+        "pnl_krw": 20359.633793639776,
+        "return_pct": 3.993393944650392,
+        "mdd_pct": -13.52403250906152
+      },
+      {
+        "period": "2026-04-27",
+        "trade_count": 1,
+        "start_equity_krw": 530192.474626032,
+        "end_equity_krw": 524750.1840387238,
+        "pnl_krw": -5442.2905873082345,
+        "return_pct": -1.026474506479358,
+        "mdd_pct": -12.71947578179587
+      },
+      {
+        "period": "2026-04-29",
+        "trade_count": 2,
+        "start_equity_krw": 524750.1840387238,
+        "end_equity_krw": 513833.6220120588,
+        "pnl_krw": -10916.562026665022,
+        "return_pct": -2.080335054415039,
+        "mdd_pct": -14.53520312278438
+      },
+      {
+        "period": "2026-04-30",
+        "trade_count": 2,
+        "start_equity_krw": 513833.6220120588,
+        "end_equity_krw": 513499.9842609495,
+        "pnl_krw": -333.637751109316,
+        "return_pct": -0.06493108602019237,
+        "mdd_pct": -14.590696343561707
+      },
+      {
+        "period": "2026-05-03",
+        "trade_count": 5,
+        "start_equity_krw": 513499.9842609495,
+        "end_equity_krw": 514439.44485874276,
+        "pnl_krw": 939.4605977932806,
+        "return_pct": 0.18295241024113285,
+        "mdd_pct": -15.181731580844374
+      },
+      {
+        "period": "2026-05-04",
+        "trade_count": 2,
+        "start_equity_krw": 514439.44485874276,
+        "end_equity_krw": 513156.03784663277,
+        "pnl_krw": -1283.407012109994,
+        "return_pct": -0.24947678972447873,
+        "mdd_pct": -14.647904181229315
+      },
+      {
+        "period": "2026-05-06",
+        "trade_count": 2,
+        "start_equity_krw": 513156.03784663277,
+        "end_equity_krw": 520437.10889387626,
+        "pnl_krw": 7281.071047243488,
+        "return_pct": 1.418880517862986,
+        "mdd_pct": -14.04451485620459
+      },
+      {
+        "period": "2026-05-07",
+        "trade_count": 1,
+        "start_equity_krw": 520437.10889387626,
+        "end_equity_krw": 527674.8471122732,
+        "pnl_krw": 7237.73821839696,
+        "return_pct": 1.3907037170696412,
+        "mdd_pct": -12.233023115393033
+      },
+      {
+        "period": "2026-05-08",
+        "trade_count": 2,
+        "start_equity_krw": 527674.8471122732,
+        "end_equity_krw": 539492.7562156434,
+        "pnl_krw": 11817.909103370155,
+        "return_pct": 2.239619562699313,
+        "mdd_pct": -10.50208720207838
+      },
+      {
+        "period": "2026-05-09",
+        "trade_count": 4,
+        "start_equity_krw": 539492.7562156434,
+        "end_equity_krw": 532988.293431417,
+        "pnl_krw": -6504.462784226402,
+        "return_pct": -1.205662672813812,
+        "mdd_pct": -11.349249475580587
+      },
+      {
+        "period": "2026-05-10",
+        "trade_count": 10,
+        "start_equity_krw": 532988.293431417,
+        "end_equity_krw": 536763.852046428,
+        "pnl_krw": 3775.5586150110466,
+        "return_pct": 0.7083755237293765,
+        "mdd_pct": -12.830355117216621
+      },
+      {
+        "period": "2026-05-13",
+        "trade_count": 2,
+        "start_equity_krw": 536763.852046428,
+        "end_equity_krw": 525893.2039298353,
+        "pnl_krw": -10870.648116592667,
+        "return_pct": -2.0252198569534863,
+        "mdd_pct": -12.529359840301149
+      },
+      {
+        "period": "2026-05-14",
+        "trade_count": 1,
+        "start_equity_krw": 525893.2039298353,
+        "end_equity_krw": 520374.30955013284,
+        "pnl_krw": -5518.894379702513,
+        "return_pct": -1.0494325346784406,
+        "mdd_pct": -13.447305196428532
+      },
+      {
+        "period": "2026-05-17",
+        "trade_count": 4,
+        "start_equity_krw": 520374.30955013284,
+        "end_equity_krw": 519246.8937303327,
+        "pnl_krw": -1127.4158198001096,
+        "return_pct": -0.21665478082013578,
+        "mdd_pct": -14.079505823841368
+      },
+      {
+        "period": "2026-05-20",
+        "trade_count": 4,
+        "start_equity_krw": 519246.8937303327,
+        "end_equity_krw": 517545.15092374454,
+        "pnl_krw": -1701.7428065881832,
+        "return_pct": -0.3277328814357716,
+        "mdd_pct": -13.917872821783387
+      },
+      {
+        "period": "2026-05-22",
+        "trade_count": 2,
+        "start_equity_krw": 517545.15092374454,
+        "end_equity_krw": 515469.061243082,
+        "pnl_krw": -2076.0896806625533,
+        "return_pct": -0.4011417510060733,
+        "mdd_pct": -14.263184174049362
+      },
+      {
+        "period": "2026-05-23",
+        "trade_count": 3,
+        "start_equity_krw": 515469.061243082,
+        "end_equity_krw": 515426.09012170706,
+        "pnl_krw": -42.97112137492513,
+        "return_pct": -0.008336314360224417,
+        "mdd_pct": -14.857127409828202
+      },
+      {
+        "period": "2026-05-24",
+        "trade_count": 4,
+        "start_equity_krw": 515426.09012170706,
+        "end_equity_krw": 515463.05133396277,
+        "pnl_krw": 36.96121225570096,
+        "return_pct": 0.007171001422712209,
+        "mdd_pct": -14.26418378878869
+      }
+    ],
+    "BASE_ROLLING": [
+      {
+        "period": "2026-01-01",
+        "trade_count": 1,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 509811.2101910828,
+        "pnl_krw": 9811.210191082791,
+        "return_pct": 1.962242038216555,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-02",
+        "trade_count": 6,
+        "start_equity_krw": 509811.2101910828,
+        "end_equity_krw": 546207.6036452745,
+        "pnl_krw": 36396.39345419174,
+        "return_pct": 7.139190493781022,
+        "mdd_pct": -0.14437194410731935
+      },
+      {
+        "period": "2026-01-03",
+        "trade_count": 6,
+        "start_equity_krw": 546207.6036452745,
+        "end_equity_krw": 569868.8812696731,
+        "pnl_krw": 23661.277624398586,
+        "return_pct": 4.331920219800711,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-04",
+        "trade_count": 7,
+        "start_equity_krw": 569868.8812696731,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 19762.026794050704,
+        "return_pct": 3.4678199571137602,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-01-05",
+        "trade_count": 1,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 601222.5393225543,
+        "pnl_krw": 11591.631258830428,
+        "return_pct": 1.9659130992464302,
+        "mdd_pct": 0.0
+      },
+      {
+        "period": "2026-01-06",
+        "trade_count": 1,
+        "start_equity_krw": 601222.5393225543,
+        "end_equity_krw": 595164.0753527188,
+        "pnl_krw": -6058.463969835429,
+        "return_pct": -1.0076907590094608,
+        "mdd_pct": -1.0076907590094655
+      },
+      {
+        "period": "2026-01-07",
+        "trade_count": 3,
+        "start_equity_krw": 595164.0753527188,
+        "end_equity_krw": 577158.94368533,
+        "pnl_krw": -18005.131667388836,
+        "return_pct": -3.0252383188145604,
+        "mdd_pct": -4.002444030847322
+      },
+      {
+        "period": "2026-01-09",
+        "trade_count": 1,
+        "start_equity_krw": 577158.94368533,
+        "end_equity_krw": 588536.9276232807,
+        "pnl_krw": 11377.983937950688,
+        "return_pct": 1.9713779128672781,
+        "mdd_pct": -2.1099694155790423
+      },
+      {
+        "period": "2026-01-10",
+        "trade_count": 5,
+        "start_equity_krw": 588536.9276232807,
+        "end_equity_krw": 572644.9695017837,
+        "pnl_krw": -15891.958121496951,
+        "return_pct": -2.7002482555638863,
+        "mdd_pct": -4.753243258805828
+      },
+      {
+        "period": "2026-01-11",
+        "trade_count": 1,
+        "start_equity_krw": 572644.9695017837,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -5885.546223399229,
+        "return_pct": -1.027782751417483,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-01-13",
+        "trade_count": 2,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 555298.2118651763,
+        "pnl_krw": -11461.211413208162,
+        "return_pct": -2.0222357039802685,
+        "mdd_pct": -7.638490650920132
+      },
+      {
+        "period": "2026-01-14",
+        "trade_count": 2,
+        "start_equity_krw": 555298.2118651763,
+        "end_equity_krw": 563060.0476866844,
+        "pnl_krw": 7761.835821508081,
+        "return_pct": 1.3977779246644895,
+        "mdd_pct": -6.9952263078111105
+      },
+      {
+        "period": "2026-01-16",
+        "trade_count": 1,
+        "start_equity_krw": 563060.0476866844,
+        "end_equity_krw": 560995.1990485698,
+        "pnl_krw": -2064.848638114636,
+        "return_pct": -0.36671908202295933,
+        "mdd_pct": -6.6909235171575325
+      },
+      {
+        "period": "2026-01-17",
+        "trade_count": 3,
+        "start_equity_krw": 560995.1990485698,
+        "end_equity_krw": 554975.959736132,
+        "pnl_krw": -6019.239312437829,
+        "return_pct": -1.0729573662388359,
+        "mdd_pct": -7.6920901266496156
+      },
+      {
+        "period": "2026-01-18",
+        "trade_count": 3,
+        "start_equity_krw": 554975.959736132,
+        "end_equity_krw": 548993.5511289365,
+        "pnl_krw": -5982.408607195481,
+        "return_pct": -1.0779581533657545,
+        "mdd_pct": -8.68713076733091
+      },
+      {
+        "period": "2026-01-21",
+        "trade_count": 1,
+        "start_equity_krw": 548993.5511289365,
+        "end_equity_krw": 548251.6542096233,
+        "pnl_krw": -741.8969193131197,
+        "return_pct": -0.1351376382814573,
+        "mdd_pct": -8.810528822258968
+      },
+      {
+        "period": "2026-01-23",
+        "trade_count": 1,
+        "start_equity_krw": 548251.6542096233,
+        "end_equity_krw": 546246.162458174,
+        "pnl_krw": -2005.491751449299,
+        "return_pct": -0.3657976653696493,
+        "mdd_pct": -9.144097778890076
+      },
+      {
+        "period": "2026-01-24",
+        "trade_count": 3,
+        "start_equity_krw": 546246.162458174,
+        "end_equity_krw": 543844.6969984072,
+        "pnl_krw": -2401.4654597667977,
+        "return_pct": -0.4396306326363786,
+        "mdd_pct": -9.54352815661223
+      },
+      {
+        "period": "2026-01-27",
+        "trade_count": 2,
+        "start_equity_krw": 543844.6969984072,
+        "end_equity_krw": 539918.4582121754,
+        "pnl_krw": -3926.238786231843,
+        "return_pct": -0.7219411732616976,
+        "mdd_pct": -10.196570670729525
+      },
+      {
+        "period": "2026-01-28",
+        "trade_count": 1,
+        "start_equity_krw": 539918.4582121754,
+        "end_equity_krw": 537986.9644604372,
+        "pnl_krw": -1931.4937517382205,
+        "return_pct": -0.3577380477292724,
+        "mdd_pct": -10.51783170560599
+      },
+      {
+        "period": "2026-01-29",
+        "trade_count": 3,
+        "start_equity_krw": 537986.9644604372,
+        "end_equity_krw": 532259.523830714,
+        "pnl_krw": -5727.440629723133,
+        "return_pct": -1.0646058377022816,
+        "mdd_pct": -11.470464092970694
+      },
+      {
+        "period": "2026-01-30",
+        "trade_count": 2,
+        "start_equity_krw": 532259.523830714,
+        "end_equity_krw": 533925.8756109857,
+        "pnl_krw": 1666.3517802716233,
+        "return_pct": 0.3130712942962077,
+        "mdd_pct": -11.7996310550502
+      },
+      {
+        "period": "2026-01-31",
+        "trade_count": 1,
+        "start_equity_krw": 533925.8756109857,
+        "end_equity_krw": 532016.0705526192,
+        "pnl_krw": -1909.8050583665026,
+        "return_pct": -0.35769104769104443,
+        "mdd_pct": -11.5109571320988
+      },
+      {
+        "period": "2026-02-01",
+        "trade_count": 4,
+        "start_equity_krw": 532016.0705526192,
+        "end_equity_krw": 531647.9276722865,
+        "pnl_krw": -368.1428803326562,
+        "return_pct": -0.06919769922556496,
+        "mdd_pct": -11.572189513830109
+      },
+      {
+        "period": "2026-02-03",
+        "trade_count": 1,
+        "start_equity_krw": 531647.9276722865,
+        "end_equity_krw": 529764.6864382324,
+        "pnl_krw": -1883.2412340540905,
+        "return_pct": -0.35422713717694343,
+        "mdd_pct": -11.885424815383523
+      },
+      {
+        "period": "2026-02-04",
+        "trade_count": 1,
+        "start_equity_krw": 529764.6864382324,
+        "end_equity_krw": 527886.9229141736,
+        "pnl_krw": -1877.763524058857,
+        "return_pct": -0.3544523770890873,
+        "mdd_pct": -12.197749021687345
+      },
+      {
+        "period": "2026-02-06",
+        "trade_count": 1,
+        "start_equity_krw": 527886.9229141736,
+        "end_equity_krw": 526008.2051169135,
+        "pnl_krw": -1878.717797260033,
+        "return_pct": -0.3558939832963959,
+        "mdd_pct": -12.510231950117962
+      },
+      {
+        "period": "2026-02-07",
+        "trade_count": 5,
+        "start_equity_krw": 526008.2051169135,
+        "end_equity_krw": 523144.3698019508,
+        "pnl_krw": -2863.835314962722,
+        "return_pct": -0.5444468902013,
+        "mdd_pct": -12.986567271509877
+      },
+      {
+        "period": "2026-02-08",
+        "trade_count": 4,
+        "start_equity_krw": 523144.3698019508,
+        "end_equity_krw": 521351.57941919996,
+        "pnl_krw": -1792.7903827508562,
+        "return_pct": -0.34269514998881423,
+        "mdd_pct": -13.284758085309198
+      },
+      {
+        "period": "2026-02-12",
+        "trade_count": 1,
+        "start_equity_krw": 521351.57941919996,
+        "end_equity_krw": 519481.13036811445,
+        "pnl_krw": -1870.4490510855103,
+        "return_pct": -0.3587692307692292,
+        "mdd_pct": -13.595865691686212
+      },
+      {
+        "period": "2026-02-13",
+        "trade_count": 2,
+        "start_equity_krw": 519481.13036811445,
+        "end_equity_krw": 523787.6613715725,
+        "pnl_krw": 4306.531003458076,
+        "return_pct": 0.8290062432886325,
+        "mdd_pct": -13.480424325470189
+      },
+      {
+        "period": "2026-02-14",
+        "trade_count": 4,
+        "start_equity_krw": 523787.6613715725,
+        "end_equity_krw": 527008.2764078422,
+        "pnl_krw": 3220.61503626965,
+        "return_pct": 0.614870351820862,
+        "mdd_pct": -12.749572489438957
+      },
+      {
+        "period": "2026-02-15",
+        "trade_count": 8,
+        "start_equity_krw": 527008.2764078422,
+        "end_equity_krw": 521050.45852316706,
+        "pnl_krw": -5957.817884675111,
+        "return_pct": -1.1304979734444331,
+        "mdd_pct": -13.334842850323527
+      },
+      {
+        "period": "2026-02-17",
+        "trade_count": 3,
+        "start_equity_krw": 521050.45852316706,
+        "end_equity_krw": 515466.42472648824,
+        "pnl_krw": -5584.033796678821,
+        "return_pct": -1.0716877233935995,
+        "mdd_pct": -14.263622699956377
+      },
+      {
+        "period": "2026-02-18",
+        "trade_count": 1,
+        "start_equity_krw": 515466.42472648824,
+        "end_equity_krw": 513613.4449299966,
+        "pnl_krw": -1852.9797964916215,
+        "return_pct": -0.3594763320375005,
+        "mdd_pct": -14.571824684296406
+      },
+      {
+        "period": "2026-02-19",
+        "trade_count": 1,
+        "start_equity_krw": 513613.4449299966,
+        "end_equity_krw": 511753.58991261903,
+        "pnl_krw": -1859.8550173775875,
+        "return_pct": -0.3621118247072119,
+        "mdd_pct": -14.881170208746179
+      },
+      {
+        "period": "2026-02-20",
+        "trade_count": 4,
+        "start_equity_krw": 511753.58991261903,
+        "end_equity_krw": 509764.82309939095,
+        "pnl_krw": -1988.7668132280814,
+        "return_pct": -0.38861804830087054,
+        "mdd_pct": -15.211957343817492
+      },
+      {
+        "period": "2026-02-21",
+        "trade_count": 4,
+        "start_equity_krw": 509764.82309939095,
+        "end_equity_krw": 502543.9569727275,
+        "pnl_krw": -7220.866126663459,
+        "return_pct": -1.4165092998689621,
+        "mdd_pct": -16.41298785321918
+      },
+      {
+        "period": "2026-02-22",
+        "trade_count": 2,
+        "start_equity_krw": 502543.9569727275,
+        "end_equity_krw": 499688.8609074894,
+        "pnl_krw": -2855.096065238118,
+        "return_pct": -0.5681286235012961,
+        "mdd_pct": -16.887869594754555
+      },
+      {
+        "period": "2026-02-24",
+        "trade_count": 1,
+        "start_equity_krw": 499688.8609074894,
+        "end_equity_krw": 497884.48760002636,
+        "pnl_krw": -1804.3733074630145,
+        "return_pct": -0.361099365750539,
+        "mdd_pct": -17.187986970509648
+      },
+      {
+        "period": "2026-02-25",
+        "trade_count": 2,
+        "start_equity_krw": 497884.48760002636,
+        "end_equity_krw": 496082.6711598513,
+        "pnl_krw": -1801.8164401750546,
+        "return_pct": -0.3618944725232165,
+        "mdd_pct": -17.487679068248585
+      },
+      {
+        "period": "2026-02-27",
+        "trade_count": 1,
+        "start_equity_krw": 496082.6711598513,
+        "end_equity_krw": 494917.8188117481,
+        "pnl_krw": -1164.852348103188,
+        "return_pct": -0.2348101265822744,
+        "mdd_pct": -17.681426353474407
+      },
+      {
+        "period": "2026-03-01",
+        "trade_count": 6,
+        "start_equity_krw": 494917.8188117481,
+        "end_equity_krw": 504723.8207686801,
+        "pnl_krw": 9806.001956931956,
+        "return_pct": 1.9813394434808007,
+        "mdd_pct": -17.208764826322177
+      },
+      {
+        "period": "2026-03-06",
+        "trade_count": 2,
+        "start_equity_krw": 504723.8207686801,
+        "end_equity_krw": 502567.1313820486,
+        "pnl_krw": -2156.6893866314786,
+        "return_pct": -0.42730089167317686,
+        "mdd_pct": -16.40913330555914
+      },
+      {
+        "period": "2026-03-07",
+        "trade_count": 1,
+        "start_equity_krw": 502567.1313820486,
+        "end_equity_krw": 500763.4552913608,
+        "pnl_krw": -1803.6760906878044,
+        "return_pct": -0.3588925693822742,
+        "mdd_pct": -16.70913471480773
+      },
+      {
+        "period": "2026-03-10",
+        "trade_count": 1,
+        "start_equity_krw": 500763.4552913608,
+        "end_equity_krw": 501109.336598312,
+        "pnl_krw": 345.88130695122527,
+        "return_pct": 0.06907079646016889,
+        "mdd_pct": -16.651605050776677
+      },
+      {
+        "period": "2026-03-11",
+        "trade_count": 1,
+        "start_equity_krw": 501109.336598312,
+        "end_equity_krw": 500383.7609318824,
+        "pnl_krw": -725.5756664295914,
+        "return_pct": -0.1447938829787221,
+        "mdd_pct": -16.772288428224094
+      },
+      {
+        "period": "2026-03-12",
+        "trade_count": 2,
+        "start_equity_krw": 500383.7609318824,
+        "end_equity_krw": 500752.41506017116,
+        "pnl_krw": 368.6541282887338,
+        "return_pct": 0.07367427903779422,
+        "mdd_pct": -16.741635364810385
+      },
+      {
+        "period": "2026-03-13",
+        "trade_count": 5,
+        "start_equity_krw": 500752.41506017116,
+        "end_equity_krw": 518358.73158881307,
+        "pnl_krw": 17606.31652864191,
+        "return_pct": 3.51597236461183,
+        "mdd_pct": -16.483290638253415
+      },
+      {
+        "period": "2026-03-14",
+        "trade_count": 1,
+        "start_equity_krw": 518358.73158881307,
+        "end_equity_krw": 528651.1543937742,
+        "pnl_krw": 10292.422804961156,
+        "return_pct": 1.985579132315185,
+        "mdd_pct": -12.070636109310213
+      },
+      {
+        "period": "2026-03-15",
+        "trade_count": 3,
+        "start_equity_krw": 528651.1543937742,
+        "end_equity_krw": 551970.5316167697,
+        "pnl_krw": 23319.377222995507,
+        "return_pct": 4.411108730054081,
+        "mdd_pct": -10.334752693507587
+      },
+      {
+        "period": "2026-03-17",
+        "trade_count": 1,
+        "start_equity_krw": 551970.5316167697,
+        "end_equity_krw": 546341.2691757344,
+        "pnl_krw": -5629.26244103536,
+        "return_pct": -1.0198483648296897,
+        "mdd_pct": -9.128278891316851
+      },
+      {
+        "period": "2026-03-18",
+        "trade_count": 2,
+        "start_equity_krw": 546341.2691757344,
+        "end_equity_krw": 535372.1569933705,
+        "pnl_krw": -10969.112182363868,
+        "return_pct": -2.007739997183988,
+        "mdd_pct": -10.952746782145372
+      },
+      {
+        "period": "2026-03-19",
+        "trade_count": 3,
+        "start_equity_krw": 535372.1569933705,
+        "end_equity_krw": 541505.2616880591,
+        "pnl_krw": 6133.104694688576,
+        "return_pct": 1.1455778218149915,
+        "mdd_pct": -10.523242920537514
+      },
+      {
+        "period": "2026-03-20",
+        "trade_count": 4,
+        "start_equity_krw": 541505.2616880591,
+        "end_equity_krw": 519391.6994568084,
+        "pnl_krw": -22113.56223125069,
+        "return_pct": -4.083720657176082,
+        "mdd_pct": -13.610740535102234
+      },
+      {
+        "period": "2026-03-21",
+        "trade_count": 5,
+        "start_equity_krw": 519391.6994568084,
+        "end_equity_krw": 517355.2905676949,
+        "pnl_krw": -2036.408889113518,
+        "return_pct": -0.39207574769547504,
+        "mdd_pct": -13.949451870077818
+      },
+      {
+        "period": "2026-03-22",
+        "trade_count": 2,
+        "start_equity_krw": 517355.2905676949,
+        "end_equity_krw": 512839.6112045347,
+        "pnl_krw": -4515.679363160161,
+        "return_pct": -0.8728391195545915,
+        "mdd_pct": -14.700534716746926
+      },
+      {
+        "period": "2026-03-24",
+        "trade_count": 1,
+        "start_equity_krw": 512839.6112045347,
+        "end_equity_krw": 511022.3006290951,
+        "pnl_krw": -1817.3105754395947,
+        "return_pct": -0.35436236510107966,
+        "mdd_pct": -15.002803919343242
+      },
+      {
+        "period": "2026-03-25",
+        "trade_count": 4,
+        "start_equity_krw": 511022.3006290951,
+        "end_equity_krw": 505368.610877478,
+        "pnl_krw": -5653.689751617145,
+        "return_pct": -1.1063489293240525,
+        "mdd_pct": -15.943169488137055
+      },
+      {
+        "period": "2026-03-27",
+        "trade_count": 2,
+        "start_equity_krw": 505368.610877478,
+        "end_equity_krw": 501652.9616598799,
+        "pnl_krw": -3715.649217598082,
+        "return_pct": -0.7352354573717079,
+        "mdd_pct": -16.561185110403116
+      },
+      {
+        "period": "2026-03-28",
+        "trade_count": 2,
+        "start_equity_krw": 501652.9616598799,
+        "end_equity_krw": 497958.6465616346,
+        "pnl_krw": -3694.315098245279,
+        "return_pct": -0.7364284436837454,
+        "mdd_pct": -17.175652276322733
+      },
+      {
+        "period": "2026-03-29",
+        "trade_count": 3,
+        "start_equity_krw": 497958.6465616346,
+        "end_equity_krw": 493788.34413432574,
+        "pnl_krw": -4170.302427308867,
+        "return_pct": -0.8374796694674336,
+        "mdd_pct": -17.869289349877544
+      },
+      {
+        "period": "2026-03-31",
+        "trade_count": 2,
+        "start_equity_krw": 493788.34413432574,
+        "end_equity_krw": 496329.1987823282,
+        "pnl_krw": 2540.8546480024816,
+        "return_pct": 0.514563512522126,
+        "mdd_pct": -17.44667468029688
+      },
+      {
+        "period": "2026-04-01",
+        "trade_count": 2,
+        "start_equity_krw": 496329.1987823282,
+        "end_equity_krw": 498004.84375897254,
+        "pnl_krw": 1675.644976644311,
+        "return_pct": 0.3376075759305097,
+        "mdd_pct": -17.167968399835008
+      },
+      {
+        "period": "2026-04-02",
+        "trade_count": 1,
+        "start_equity_krw": 498004.84375897254,
+        "end_equity_krw": 497166.48718010314,
+        "pnl_krw": -838.3565788693959,
+        "return_pct": -0.16834305717620124,
+        "mdd_pct": -17.30741037415188
+      },
+      {
+        "period": "2026-04-03",
+        "trade_count": 2,
+        "start_equity_krw": 497166.48718010314,
+        "end_equity_krw": 493564.14432998246,
+        "pnl_krw": -3602.34285012068,
+        "return_pct": -0.7245747537314773,
+        "mdd_pct": -17.90658000178755
+      },
+      {
+        "period": "2026-04-04",
+        "trade_count": 1,
+        "start_equity_krw": 493564.14432998246,
+        "end_equity_krw": 494150.71260946087,
+        "pnl_krw": 586.5682794784079,
+        "return_pct": 0.1188433734939709,
+        "mdd_pct": -17.8090174120451
+      },
+      {
+        "period": "2026-04-05",
+        "trade_count": 4,
+        "start_equity_krw": 494150.71260946087,
+        "end_equity_krw": 496569.767300449,
+        "pnl_krw": 2419.0546909881523,
+        "return_pct": 0.48953783314686916,
+        "mdd_pct": -17.518824003403708
+      },
+      {
+        "period": "2026-04-08",
+        "trade_count": 6,
+        "start_equity_krw": 496569.767300449,
+        "end_equity_krw": 493692.16789430607,
+        "pnl_krw": -2877.599406142952,
+        "return_pct": -0.5794954899865812,
+        "mdd_pct": -17.885286128728854
+      },
+      {
+        "period": "2026-04-09",
+        "trade_count": 2,
+        "start_equity_krw": 493692.16789430607,
+        "end_equity_krw": 490203.1466142053,
+        "pnl_krw": -3489.0212801007438,
+        "return_pct": -0.7067199982090266,
+        "mdd_pct": -18.46560723312925
+      },
+      {
+        "period": "2026-04-10",
+        "trade_count": 1,
+        "start_equity_krw": 490203.1466142053,
+        "end_equity_krw": 489188.3050281389,
+        "pnl_krw": -1014.84158606641,
+        "return_pct": -0.20702469844917637,
+        "mdd_pct": -18.63440356388723
+      },
+      {
+        "period": "2026-04-11",
+        "trade_count": 2,
+        "start_equity_krw": 489188.3050281389,
+        "end_equity_krw": 487794.2384351831,
+        "pnl_krw": -1394.0665929557872,
+        "return_pct": -0.28497545395644863,
+        "mdd_pct": -18.92556910366138
+      },
+      {
+        "period": "2026-04-12",
+        "trade_count": 2,
+        "start_equity_krw": 487794.2384351831,
+        "end_equity_krw": 484252.39368966717,
+        "pnl_krw": -3541.844745515962,
+        "return_pct": -0.7260940098181567,
+        "mdd_pct": -19.45538265492953
+      },
+      {
+        "period": "2026-04-14",
+        "trade_count": 2,
+        "start_equity_krw": 484252.39368966717,
+        "end_equity_krw": 484892.82390592503,
+        "pnl_krw": 640.4302162578679,
+        "return_pct": 0.13225132691203623,
+        "mdd_pct": -19.40213959018047
+      },
+      {
+        "period": "2026-04-15",
+        "trade_count": 2,
+        "start_equity_krw": 484892.82390592503,
+        "end_equity_krw": 491548.09159310226,
+        "pnl_krw": 6655.267687177227,
+        "return_pct": 1.3725234441638978,
+        "mdd_pct": -18.804750490673417
+      },
+      {
+        "period": "2026-04-16",
+        "trade_count": 2,
+        "start_equity_krw": 491548.09159310226,
+        "end_equity_krw": 490539.7725644815,
+        "pnl_krw": -1008.3190286207828,
+        "return_pct": -0.20513130777353172,
+        "mdd_pct": -18.426309232915365
+      },
+      {
+        "period": "2026-04-18",
+        "trade_count": 2,
+        "start_equity_krw": 490539.7725644815,
+        "end_equity_krw": 487691.68329430674,
+        "pnl_krw": -2848.089270174736,
+        "return_pct": -0.5806031293416392,
+        "mdd_pct": -18.883333308856294
+      },
+      {
+        "period": "2026-04-19",
+        "trade_count": 1,
+        "start_equity_krw": 487691.68329430674,
+        "end_equity_krw": 490454.2373773432,
+        "pnl_krw": 2762.5540830364334,
+        "return_pct": 0.566455032486024,
+        "mdd_pct": -18.423843868199388
+      },
+      {
+        "period": "2026-04-21",
+        "trade_count": 2,
+        "start_equity_krw": 490454.2373773432,
+        "end_equity_krw": 503710.8838041584,
+        "pnl_krw": 13256.646426815249,
+        "return_pct": 2.7029323872710176,
+        "mdd_pct": -17.855127529206047
+      },
+      {
+        "period": "2026-04-22",
+        "trade_count": 1,
+        "start_equity_krw": 503710.8838041584,
+        "end_equity_krw": 506051.5857601477,
+        "pnl_krw": 2340.701955989294,
+        "return_pct": 0.4646915584415545,
+        "mdd_pct": -15.829571803752282
+      },
+      {
+        "period": "2026-04-23",
+        "trade_count": 1,
+        "start_equity_krw": 506051.5857601477,
+        "end_equity_krw": 515923.7466323326,
+        "pnl_krw": 9872.160872184904,
+        "return_pct": 1.9508210526315795,
+        "mdd_pct": -14.187557370409737
+      },
+      {
+        "period": "2026-04-24",
+        "trade_count": 4,
+        "start_equity_krw": 515923.7466323326,
+        "end_equity_krw": 516885.5814604462,
+        "pnl_krw": 961.834828113555,
+        "return_pct": 0.18642964864321598,
+        "mdd_pct": -14.078790057776752
+      },
+      {
+        "period": "2026-04-25",
+        "trade_count": 2,
+        "start_equity_krw": 516885.5814604462,
+        "end_equity_krw": 510051.1884382244,
+        "pnl_krw": -6834.393022221804,
+        "return_pct": -1.3222255112846026,
+        "mdd_pct": -15.164326837623216
+      },
+      {
+        "period": "2026-04-26",
+        "trade_count": 2,
+        "start_equity_krw": 510051.1884382244,
+        "end_equity_krw": 530419.5417119338,
+        "pnl_krw": 20368.35327370942,
+        "return_pct": 3.993393944650392,
+        "mdd_pct": -13.486997192872717
+      },
+      {
+        "period": "2026-04-27",
+        "trade_count": 1,
+        "start_equity_krw": 530419.5417119338,
+        "end_equity_krw": 524974.9203388762,
+        "pnl_krw": -5444.621373057598,
+        "return_pct": -1.0264745064793468,
+        "mdd_pct": -12.682095895738103
+      },
+      {
+        "period": "2026-04-29",
+        "trade_count": 2,
+        "start_equity_krw": 524974.9203388762,
+        "end_equity_krw": 514053.68304417917,
+        "pnl_krw": -10921.237294697028,
+        "return_pct": -2.080335054415028,
+        "mdd_pct": -14.498600863599565
+      },
+      {
+        "period": "2026-04-30",
+        "trade_count": 2,
+        "start_equity_krw": 514053.68304417917,
+        "end_equity_krw": 513719.90240505186,
+        "pnl_krw": -333.7806391273043,
+        "return_pct": -0.06493108602018127,
+        "mdd_pct": -14.554117850621276
+      },
+      {
+        "period": "2026-05-03",
+        "trade_count": 5,
+        "start_equity_krw": 513719.90240505186,
+        "end_equity_krw": 514659.7653483903,
+        "pnl_krw": 939.8629433384631,
+        "return_pct": 0.18295241024113285,
+        "mdd_pct": -15.145406212298226
+      },
+      {
+        "period": "2026-05-04",
+        "trade_count": 2,
+        "start_equity_krw": 514659.7653483903,
+        "end_equity_krw": 513375.80868779565,
+        "pnl_krw": -1283.9566605946748,
+        "return_pct": -0.24947678972447873,
+        "mdd_pct": -14.611350188857287
+      },
+      {
+        "period": "2026-05-06",
+        "trade_count": 2,
+        "start_equity_krw": 513375.80868779565,
+        "end_equity_krw": 523797.50168589776,
+        "pnl_krw": 10421.69299810211,
+        "return_pct": 2.0300319613306916,
+        "mdd_pct": -13.74899627408529
+      },
+      {
+        "period": "2026-05-07",
+        "trade_count": 1,
+        "start_equity_krw": 523797.50168589776,
+        "end_equity_krw": 534203.8892942745,
+        "pnl_krw": 10406.387608376739,
+        "return_pct": 1.9867195958137795,
+        "mdd_pct": -11.14706213506151
+      },
+      {
+        "period": "2026-05-08",
+        "trade_count": 2,
+        "start_equity_krw": 534203.8892942745,
+        "end_equity_krw": 546168.0241036097,
+        "pnl_krw": 11964.134809335228,
+        "return_pct": 2.2396195626993354,
+        "mdd_pct": -9.394708953794403
+      },
+      {
+        "period": "2026-05-09",
+        "trade_count": 4,
+        "start_equity_krw": 546168.0241036097,
+        "end_equity_krw": 539583.0801061478,
+        "pnl_krw": -6584.943997461931,
+        "return_pct": -1.205662672813801,
+        "mdd_pct": -10.252353360847147
+      },
+      {
+        "period": "2026-05-10",
+        "trade_count": 10,
+        "start_equity_krw": 539583.0801061478,
+        "end_equity_krw": 543405.3545758048,
+        "pnl_krw": 3822.274469656986,
+        "return_pct": 0.7083755237293765,
+        "mdd_pct": -11.751785063054685
+      },
+      {
+        "period": "2026-05-13",
+        "trade_count": 2,
+        "start_equity_krw": 543405.3545758048,
+        "end_equity_krw": 532400.2014311871,
+        "pnl_krw": -11005.153144617681,
+        "return_pct": -2.0252198569534863,
+        "mdd_pct": -11.447065502386987
+      },
+      {
+        "period": "2026-05-14",
+        "trade_count": 1,
+        "start_equity_krw": 532400.2014311871,
+        "end_equity_krw": 526813.0205026747,
+        "pnl_krw": -5587.18092851236,
+        "return_pct": -1.0494325346784295,
+        "mdd_pct": -12.376368807417414
+      },
+      {
+        "period": "2026-05-17",
+        "trade_count": 4,
+        "start_equity_krw": 526813.0205026747,
+        "end_equity_krw": 524013.9931029396,
+        "pnl_krw": -2799.027399735118,
+        "return_pct": -0.5313132536216236,
+        "mdd_pct": -13.290687366134899
+      },
+      {
+        "period": "2026-05-20",
+        "trade_count": 4,
+        "start_equity_krw": 524013.9931029396,
+        "end_equity_krw": 522296.6269442168,
+        "pnl_krw": -1717.3661587228416,
+        "return_pct": -0.3277328814357605,
+        "mdd_pct": -13.127570444592717
+      },
+      {
+        "period": "2026-05-22",
+        "trade_count": 2,
+        "start_equity_krw": 522296.6269442168,
+        "end_equity_krw": 520201.4771094471,
+        "pnl_krw": -2095.1498347696615,
+        "return_pct": -0.4011417510060733,
+        "mdd_pct": -13.476052029652791
+      },
+      {
+        "period": "2026-05-23",
+        "trade_count": 3,
+        "start_equity_krw": 520201.4771094471,
+        "end_equity_krw": 520158.1114790088,
+        "pnl_krw": -43.365630438318476,
+        "return_pct": -0.008336314360213315,
+        "mdd_pct": -14.075448136620333
+      },
+      {
+        "period": "2026-05-24",
+        "trade_count": 4,
+        "start_equity_krw": 520158.1114790088,
+        "end_equity_krw": 520195.4120245834,
+        "pnl_krw": 37.300545574573334,
+        "return_pct": 0.007171001422734413,
+        "mdd_pct": -13.477060821650275
+      }
+    ]
+  },
+  "weekly_returns": {
+    "LG_V2_BALANCED_PLUS_DOM_GATE": [
+      {
+        "period": "2026-W01",
+        "trade_count": 20,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 89630.90806372382,
+        "return_pct": 17.926181612744774,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-W02",
+        "trade_count": 12,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -22871.48478533933,
+        "return_pct": -3.878949436427359,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-W03",
+        "trade_count": 11,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -14378.699806738296,
+        "return_pct": -2.537002335764549,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-W04",
+        "trade_count": 5,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -5180.621455066372,
+        "return_pct": -0.9378715141445948,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-W05",
+        "trade_count": 13,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -12272.020774242235,
+        "return_pct": -2.242693436828047,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-W06",
+        "trade_count": 12,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -10359.874511203845,
+        "return_pct": -1.936685486232781,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-W07",
+        "trade_count": 15,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": 614.5767149660969,
+        "return_pct": 0.11715859007084273,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-W08",
+        "trade_count": 14,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 503649.908641678,
+        "pnl_krw": -21532.874804421852,
+        "return_pct": -4.100072485836126,
+        "mdd_pct": -16.229037386193003
+      },
+      {
+        "period": "2026-W09",
+        "trade_count": 10,
+        "start_equity_krw": 503649.908641678,
+        "end_equity_krw": 508724.7807721029,
+        "pnl_krw": 5074.87213042489,
+        "return_pct": 1.0076189915553924,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-W10",
+        "trade_count": 3,
+        "start_equity_krw": 508724.7807721029,
+        "end_equity_krw": 504733.0213656253,
+        "pnl_krw": -3991.759406477562,
+        "return_pct": -0.7846599099063267,
+        "mdd_pct": -16.048885669797315
+      },
+      {
+        "period": "2026-W11",
+        "trade_count": 13,
+        "start_equity_krw": 504733.0213656253,
+        "end_equity_krw": 555507.8555374853,
+        "pnl_krw": 50774.83417186001,
+        "return_pct": 10.059740897174052,
+        "mdd_pct": -16.11254000448625
+      },
+      {
+        "period": "2026-W12",
+        "trade_count": 17,
+        "start_equity_krw": 555507.8555374853,
+        "end_equity_krw": 520630.31411453855,
+        "pnl_krw": -34877.541422946786,
+        "return_pct": -6.27849652804654,
+        "mdd_pct": -13.511213671154668
+      },
+      {
+        "period": "2026-W13",
+        "trade_count": 12,
+        "start_equity_krw": 520630.31411453855,
+        "end_equity_krw": 501289.63343711116,
+        "pnl_krw": -19340.680677427386,
+        "return_pct": -3.7148587304834613,
+        "mdd_pct": -16.62161668091245
+      },
+      {
+        "period": "2026-W14",
+        "trade_count": 12,
+        "start_equity_krw": 501289.63343711116,
+        "end_equity_krw": 504113.3100506688,
+        "pnl_krw": 2823.676613557618,
+        "return_pct": 0.5632824669038028,
+        "mdd_pct": -16.659473826486373
+      },
+      {
+        "period": "2026-W15",
+        "trade_count": 13,
+        "start_equity_krw": 504113.3100506688,
+        "end_equity_krw": 491608.8194615246,
+        "pnl_krw": -12504.490589144174,
+        "return_pct": -2.480492052052219,
+        "mdd_pct": -18.23180481299657
+      },
+      {
+        "period": "2026-W16",
+        "trade_count": 9,
+        "start_equity_krw": 491608.8194615246,
+        "end_equity_krw": 497904.87724774,
+        "pnl_krw": 6296.057786215388,
+        "return_pct": 1.2807048077598804,
+        "mdd_pct": -18.177752916615926
+      },
+      {
+        "period": "2026-W17",
+        "trade_count": 12,
+        "start_equity_krw": 497904.87724774,
+        "end_equity_krw": 523389.4531055239,
+        "pnl_krw": 25484.5758577839,
+        "return_pct": 5.118362366453311,
+        "mdd_pct": -16.607239723704886
+      },
+      {
+        "period": "2026-W18",
+        "trade_count": 10,
+        "start_equity_krw": 523389.4531055239,
+        "end_equity_krw": 514131.0695501144,
+        "pnl_krw": -9258.383555409499,
+        "return_pct": -1.7689281854028627,
+        "mdd_pct": -15.01363392045834
+      },
+      {
+        "period": "2026-W19",
+        "trade_count": 21,
+        "start_equity_krw": 514131.0695501144,
+        "end_equity_krw": 533368.5727245716,
+        "pnl_krw": 19237.503174457175,
+        "return_pct": 3.7417507545869144,
+        "mdd_pct": -14.597769226821075
+      },
+      {
+        "period": "2026-W20",
+        "trade_count": 7,
+        "start_equity_krw": 533368.5727245716,
+        "end_equity_krw": 519410.93291905493,
+        "pnl_krw": -13957.639805516636,
+        "return_pct": -2.6168845558743214,
+        "mdd_pct": -14.052362034770205
+      },
+      {
+        "period": "2026-W21",
+        "trade_count": 13,
+        "start_equity_krw": 519410.93291905493,
+        "end_equity_krw": 515625.8951405952,
+        "pnl_krw": -3785.037778459722,
+        "return_pct": -0.728717387057698,
+        "mdd_pct": -14.830229285036658
+      }
+    ],
+    "LG_M3_PF0.8_DD8": [
+      {
+        "period": "2026-W01",
+        "trade_count": 20,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 89630.90806372382,
+        "return_pct": 17.926181612744774,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-W02",
+        "trade_count": 12,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -22871.48478533933,
+        "return_pct": -3.878949436427359,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-W03",
+        "trade_count": 11,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -14378.699806738296,
+        "return_pct": -2.537002335764549,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-W04",
+        "trade_count": 5,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -5180.621455066372,
+        "return_pct": -0.9378715141445948,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-W05",
+        "trade_count": 13,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -12272.020774242235,
+        "return_pct": -2.242693436828047,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-W06",
+        "trade_count": 12,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -10359.874511203845,
+        "return_pct": -1.936685486232781,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-W07",
+        "trade_count": 15,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": 614.5767149660969,
+        "return_pct": 0.11715859007084273,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-W08",
+        "trade_count": 14,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 503649.908641678,
+        "pnl_krw": -21532.874804421852,
+        "return_pct": -4.100072485836126,
+        "mdd_pct": -16.229037386193003
+      },
+      {
+        "period": "2026-W09",
+        "trade_count": 10,
+        "start_equity_krw": 503649.908641678,
+        "end_equity_krw": 508724.7807721029,
+        "pnl_krw": 5074.87213042489,
+        "return_pct": 1.0076189915553924,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-W10",
+        "trade_count": 3,
+        "start_equity_krw": 508724.7807721029,
+        "end_equity_krw": 504733.0213656253,
+        "pnl_krw": -3991.759406477562,
+        "return_pct": -0.7846599099063267,
+        "mdd_pct": -16.048885669797315
+      },
+      {
+        "period": "2026-W11",
+        "trade_count": 13,
+        "start_equity_krw": 504733.0213656253,
+        "end_equity_krw": 555507.8555374853,
+        "pnl_krw": 50774.83417186001,
+        "return_pct": 10.059740897174052,
+        "mdd_pct": -16.11254000448625
+      },
+      {
+        "period": "2026-W12",
+        "trade_count": 17,
+        "start_equity_krw": 555507.8555374853,
+        "end_equity_krw": 524079.53391386435,
+        "pnl_krw": -31428.321623620985,
+        "return_pct": -5.65758365256821,
+        "mdd_pct": -12.93821815756747
+      },
+      {
+        "period": "2026-W13",
+        "trade_count": 12,
+        "start_equity_krw": 524079.53391386435,
+        "end_equity_krw": 502816.2100466101,
+        "pnl_krw": -21263.32386725425,
+        "return_pct": -4.0572704124616665,
+        "mdd_pct": -16.367704608484317
+      },
+      {
+        "period": "2026-W14",
+        "trade_count": 12,
+        "start_equity_krw": 502816.2100466101,
+        "end_equity_krw": 505648.4855985529,
+        "pnl_krw": 2832.2755519428174,
+        "return_pct": 0.563282466903825,
+        "mdd_pct": -16.40567704036994
+      },
+      {
+        "period": "2026-W15",
+        "trade_count": 13,
+        "start_equity_krw": 505648.4855985529,
+        "end_equity_krw": 493105.91510195844,
+        "pnl_krw": -12542.570496594475,
+        "return_pct": -2.480492052052208,
+        "mdd_pct": -17.982796244202603
+      },
+      {
+        "period": "2026-W16",
+        "trade_count": 9,
+        "start_equity_krw": 493105.91510195844,
+        "end_equity_krw": 499421.1462640177,
+        "pnl_krw": 6315.231162059237,
+        "return_pct": 1.2807048077599026,
+        "mdd_pct": -17.92857974365859
+      },
+      {
+        "period": "2026-W17",
+        "trade_count": 12,
+        "start_equity_krw": 499421.1462640177,
+        "end_equity_krw": 524983.3302645049,
+        "pnl_krw": 25562.184000487207,
+        "return_pct": 5.118362366453311,
+        "mdd_pct": -16.353283869149344
+      },
+      {
+        "period": "2026-W18",
+        "trade_count": 10,
+        "start_equity_krw": 524983.3302645049,
+        "end_equity_krw": 515696.7521667894,
+        "pnl_krw": -9286.578097715508,
+        "return_pct": -1.7689281854028738,
+        "mdd_pct": -14.75482506041113
+      },
+      {
+        "period": "2026-W19",
+        "trade_count": 21,
+        "start_equity_krw": 515696.7521667894,
+        "end_equity_krw": 534992.8392823704,
+        "pnl_krw": 19296.08711558103,
+        "return_pct": 3.7417507545869144,
+        "mdd_pct": -14.337693934612346
+      },
+      {
+        "period": "2026-W20",
+        "trade_count": 7,
+        "start_equity_krw": 534992.8392823704,
+        "end_equity_krw": 520992.69429615664,
+        "pnl_krw": -14000.144986213767,
+        "return_pct": -2.6168845558742992,
+        "mdd_pct": -13.790625814813314
+      },
+      {
+        "period": "2026-W21",
+        "trade_count": 13,
+        "start_equity_krw": 520992.69429615664,
+        "end_equity_krw": 517196.1299475203,
+        "pnl_krw": -3796.5643486363115,
+        "return_pct": -0.7287173870576757,
+        "mdd_pct": -14.570861903113391
+      }
+    ],
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW": [
+      {
+        "period": "2026-W01",
+        "trade_count": 20,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 89630.90806372382,
+        "return_pct": 17.926181612744774,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-W02",
+        "trade_count": 12,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -22871.48478533933,
+        "return_pct": -3.878949436427359,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-W03",
+        "trade_count": 11,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 550684.5330621428,
+        "pnl_krw": -16074.890216241707,
+        "return_pct": -2.8362810667103666,
+        "mdd_pct": -8.405873525193632
+      },
+      {
+        "period": "2026-W04",
+        "trade_count": 5,
+        "start_equity_krw": 550684.5330621428,
+        "end_equity_krw": 545519.8196937528,
+        "pnl_krw": -5164.713368389988,
+        "return_pct": -0.9378715141445948,
+        "mdd_pct": -9.264908746030411
+      },
+      {
+        "period": "2026-W05",
+        "trade_count": 13,
+        "start_equity_krw": 545519.8196937528,
+        "end_equity_krw": 533285.482500885,
+        "pnl_krw": -12234.337192867766,
+        "return_pct": -2.2426934368280027,
+        "mdd_pct": -11.527960777537137
+      },
+      {
+        "period": "2026-W06",
+        "trade_count": 12,
+        "start_equity_krw": 533285.482500885,
+        "end_equity_krw": 522957.4199611039,
+        "pnl_krw": -10328.062539781153,
+        "return_pct": -1.936685486232792,
+        "mdd_pct": -13.017662220321608
+      },
+      {
+        "period": "2026-W07",
+        "trade_count": 15,
+        "start_equity_krw": 522957.4199611039,
+        "end_equity_krw": 522655.3715678466,
+        "pnl_krw": -302.04839325725334,
+        "return_pct": -0.057757741209540914,
+        "mdd_pct": -13.329728084478857
+      },
+      {
+        "period": "2026-W08",
+        "trade_count": 14,
+        "start_equity_krw": 522655.3715678466,
+        "end_equity_krw": 503022.63937857834,
+        "pnl_krw": -19632.73218926828,
+        "return_pct": -3.7563437127556054,
+        "mdd_pct": -16.333369679490996
+      },
+      {
+        "period": "2026-W09",
+        "trade_count": 10,
+        "start_equity_krw": 503022.63937857834,
+        "end_equity_krw": 508091.1910247802,
+        "pnl_krw": 5068.551646201871,
+        "return_pct": 1.0076189915554146,
+        "mdd_pct": -17.132220817663292
+      },
+      {
+        "period": "2026-W10",
+        "trade_count": 3,
+        "start_equity_krw": 508091.1910247802,
+        "end_equity_krw": 504104.40314304316,
+        "pnl_krw": -3986.787881737051,
+        "return_pct": -0.7846599099063378,
+        "mdd_pct": -16.15344233250834
+      },
+      {
+        "period": "2026-W11",
+        "trade_count": 13,
+        "start_equity_krw": 504104.40314304316,
+        "end_equity_krw": 555653.118159999,
+        "pnl_krw": 51548.71501695586,
+        "return_pct": 10.225801380736721,
+        "mdd_pct": -16.217017389097695
+      },
+      {
+        "period": "2026-W12",
+        "trade_count": 17,
+        "start_equity_krw": 555653.118159999,
+        "end_equity_krw": 520081.04562725686,
+        "pnl_krw": -35572.07253274217,
+        "return_pct": -6.401848810015909,
+        "mdd_pct": -13.496083128674124
+      },
+      {
+        "period": "2026-W13",
+        "trade_count": 12,
+        "start_equity_krw": 520081.04562725686,
+        "end_equity_krw": 500760.76949818316,
+        "pnl_krw": -19320.276129073696,
+        "return_pct": -3.714858730483439,
+        "mdd_pct": -16.70958143677871
+      },
+      {
+        "period": "2026-W14",
+        "trade_count": 12,
+        "start_equity_krw": 500760.76949818316,
+        "end_equity_krw": 503581.4671138991,
+        "pnl_krw": 2820.697615715966,
+        "return_pct": 0.563282466903825,
+        "mdd_pct": -16.747398642809106
+      },
+      {
+        "period": "2026-W15",
+        "trade_count": 13,
+        "start_equity_krw": 503581.4671138991,
+        "end_equity_krw": 491090.16884653096,
+        "pnl_krw": -12491.298267368169,
+        "return_pct": -2.480492052052208,
+        "mdd_pct": -18.318070809540554
+      },
+      {
+        "period": "2026-W16",
+        "trade_count": 9,
+        "start_equity_krw": 491090.16884653096,
+        "end_equity_krw": 497379.58424938464,
+        "pnl_krw": 6289.415402853687,
+        "return_pct": 1.2807048077598804,
+        "mdd_pct": -18.264075938274573
+      },
+      {
+        "period": "2026-W17",
+        "trade_count": 12,
+        "start_equity_krw": 497379.58424938464,
+        "end_equity_krw": 525918.606407366,
+        "pnl_krw": 28539.02215798135,
+        "return_pct": 5.737875671163861,
+        "mdd_pct": -16.695219647357785
+      },
+      {
+        "period": "2026-W18",
+        "trade_count": 10,
+        "start_equity_krw": 525918.606407366,
+        "end_equity_krw": 516615.4839463481,
+        "pnl_krw": -9303.12246101792,
+        "return_pct": -1.7689281854028738,
+        "mdd_pct": -14.60295780326441
+      },
+      {
+        "period": "2026-W19",
+        "trade_count": 21,
+        "start_equity_krw": 516615.4839463481,
+        "end_equity_krw": 532393.1808236588,
+        "pnl_krw": 15777.696877310751,
+        "return_pct": 3.054050327099622,
+        "mdd_pct": -14.185083543792773
+      },
+      {
+        "period": "2026-W20",
+        "trade_count": 7,
+        "start_equity_krw": 532393.1808236588,
+        "end_equity_krw": 518461.0658981565,
+        "pnl_krw": -13932.114925502334,
+        "return_pct": -2.6168845558743103,
+        "mdd_pct": -14.209537830759889
+      },
+      {
+        "period": "2026-W21",
+        "trade_count": 13,
+        "start_equity_krw": 518461.0658981565,
+        "end_equity_krw": 514682.94996583194,
+        "pnl_krw": -3778.115932324552,
+        "return_pct": -0.728717387057698,
+        "mdd_pct": -14.985982564862677
+      }
+    ],
+    "BASE_BALANCED": [
+      {
+        "period": "2026-W01",
+        "trade_count": 20,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 89630.90806372382,
+        "return_pct": 17.926181612744774,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-W02",
+        "trade_count": 12,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -22871.48478533933,
+        "return_pct": -3.878949436427359,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-W03",
+        "trade_count": 11,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 552380.7234716462,
+        "pnl_krw": -14378.699806738296,
+        "return_pct": -2.537002335764549,
+        "mdd_pct": -8.123749968845488
+      },
+      {
+        "period": "2026-W04",
+        "trade_count": 5,
+        "start_equity_krw": 552380.7234716462,
+        "end_equity_krw": 547200.1020165798,
+        "pnl_krw": -5180.621455066372,
+        "return_pct": -0.9378715141445948,
+        "mdd_pct": -8.985431146151948
+      },
+      {
+        "period": "2026-W05",
+        "trade_count": 13,
+        "start_equity_krw": 547200.1020165798,
+        "end_equity_krw": 534928.0812423376,
+        "pnl_krw": -12272.020774242235,
+        "return_pct": -2.242693436828047,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-W06",
+        "trade_count": 12,
+        "start_equity_krw": 534928.0812423376,
+        "end_equity_krw": 524568.2067311337,
+        "pnl_krw": -10359.874511203845,
+        "return_pct": -1.936685486232781,
+        "mdd_pct": -12.749743660274795
+      },
+      {
+        "period": "2026-W07",
+        "trade_count": 15,
+        "start_equity_krw": 524568.2067311337,
+        "end_equity_krw": 525182.7834460998,
+        "pnl_krw": 614.5767149660969,
+        "return_pct": 0.11715859007084273,
+        "mdd_pct": -13.062770733789012
+      },
+      {
+        "period": "2026-W08",
+        "trade_count": 15,
+        "start_equity_krw": 525182.7834460998,
+        "end_equity_krw": 501853.008367863,
+        "pnl_krw": -23329.775078236824,
+        "return_pct": -4.442220082911607,
+        "mdd_pct": -16.52791178897898
+      },
+      {
+        "period": "2026-W09",
+        "trade_count": 10,
+        "start_equity_krw": 501853.008367863,
+        "end_equity_krw": 506909.7745898698,
+        "pnl_krw": 5056.766222006758,
+        "return_pct": 1.0076189915554146,
+        "mdd_pct": -17.324905434086347
+      },
+      {
+        "period": "2026-W10",
+        "trade_count": 3,
+        "start_equity_krw": 506909.7745898698,
+        "end_equity_krw": 502932.2568092665,
+        "pnl_krw": -3977.517780603259,
+        "return_pct": -0.7846599099063267,
+        "mdd_pct": -16.34840281005421
+      },
+      {
+        "period": "2026-W11",
+        "trade_count": 13,
+        "start_equity_krw": 502932.2568092665,
+        "end_equity_krw": 553525.9387325888,
+        "pnl_krw": 50593.68192332226,
+        "return_pct": 10.059740897174052,
+        "mdd_pct": -16.411830041571925
+      },
+      {
+        "period": "2026-W12",
+        "trade_count": 17,
+        "start_equity_krw": 553525.9387325888,
+        "end_equity_krw": 515641.1876840996,
+        "pnl_krw": -37884.75104848918,
+        "return_pct": -6.844259391932761,
+        "mdd_pct": -14.23455476817054
+      },
+      {
+        "period": "2026-W13",
+        "trade_count": 12,
+        "start_equity_krw": 515641.1876840996,
+        "end_equity_krw": 496485.8460054484,
+        "pnl_krw": -19155.341678651224,
+        "return_pct": -3.714858730483428,
+        "mdd_pct": -17.420619898103144
+      },
+      {
+        "period": "2026-W14",
+        "trade_count": 12,
+        "start_equity_krw": 496485.8460054484,
+        "end_equity_krw": 499282.4637266562,
+        "pnl_krw": 2796.6177212078474,
+        "return_pct": 0.563282466903825,
+        "mdd_pct": -17.458114264022388
+      },
+      {
+        "period": "2026-W15",
+        "trade_count": 13,
+        "start_equity_krw": 499282.4637266562,
+        "end_equity_krw": 486897.801896626,
+        "pnl_krw": -12384.661830030207,
+        "return_pct": -2.480492052052219,
+        "mdd_pct": -19.015377825779304
+      },
+      {
+        "period": "2026-W16",
+        "trade_count": 9,
+        "start_equity_krw": 486897.801896626,
+        "end_equity_krw": 493133.5254543934,
+        "pnl_krw": 6235.7235577674,
+        "return_pct": 1.2807048077599026,
+        "mdd_pct": -18.961843901052504
+      },
+      {
+        "period": "2026-W17",
+        "trade_count": 12,
+        "start_equity_krw": 493133.5254543934,
+        "end_equity_krw": 530192.474626032,
+        "pnl_krw": 37058.94917163864,
+        "return_pct": 7.514992848537516,
+        "mdd_pct": -17.40638071323659
+      },
+      {
+        "period": "2026-W18",
+        "trade_count": 10,
+        "start_equity_krw": 530192.474626032,
+        "end_equity_krw": 514439.44485874276,
+        "pnl_krw": -15753.029767289292,
+        "return_pct": -2.9711907507552926,
+        "mdd_pct": -15.181731580844374
+      },
+      {
+        "period": "2026-W19",
+        "trade_count": 21,
+        "start_equity_krw": 514439.44485874276,
+        "end_equity_krw": 536763.852046428,
+        "pnl_krw": 22324.407187685254,
+        "return_pct": 4.3395597695303545,
+        "mdd_pct": -14.647904181229315
+      },
+      {
+        "period": "2026-W20",
+        "trade_count": 7,
+        "start_equity_krw": 536763.852046428,
+        "end_equity_krw": 519246.8937303327,
+        "pnl_krw": -17516.95831609529,
+        "return_pct": -3.263438521299711,
+        "mdd_pct": -14.079505823841368
+      },
+      {
+        "period": "2026-W21",
+        "trade_count": 13,
+        "start_equity_krw": 519246.8937303327,
+        "end_equity_krw": 515463.05133396277,
+        "pnl_krw": -3783.8423963699606,
+        "return_pct": -0.728717387057698,
+        "mdd_pct": -14.857127409828202
+      }
+    ],
+    "BASE_ROLLING": [
+      {
+        "period": "2026-W01",
+        "trade_count": 20,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 589630.9080637238,
+        "pnl_krw": 89630.90806372382,
+        "return_pct": 17.926181612744774,
+        "mdd_pct": -0.5285784372046225
+      },
+      {
+        "period": "2026-W02",
+        "trade_count": 12,
+        "start_equity_krw": 589630.9080637238,
+        "end_equity_krw": 566759.4232783845,
+        "pnl_krw": -22871.48478533933,
+        "return_pct": -3.878949436427359,
+        "mdd_pct": -5.732172995876389
+      },
+      {
+        "period": "2026-W03",
+        "trade_count": 11,
+        "start_equity_krw": 566759.4232783845,
+        "end_equity_krw": 548993.5511289365,
+        "pnl_krw": -17765.872149448027,
+        "return_pct": -3.1346408052083996,
+        "mdd_pct": -8.68713076733091
+      },
+      {
+        "period": "2026-W04",
+        "trade_count": 5,
+        "start_equity_krw": 548993.5511289365,
+        "end_equity_krw": 543844.6969984072,
+        "pnl_krw": -5148.8541305292165,
+        "return_pct": -0.9378715141446059,
+        "mdd_pct": -9.54352815661223
+      },
+      {
+        "period": "2026-W05",
+        "trade_count": 13,
+        "start_equity_krw": 543844.6969984072,
+        "end_equity_krw": 531647.9276722865,
+        "pnl_krw": -12196.769326120731,
+        "return_pct": -2.242693436828058,
+        "mdd_pct": -11.7996310550502
+      },
+      {
+        "period": "2026-W06",
+        "trade_count": 12,
+        "start_equity_krw": 531647.9276722865,
+        "end_equity_krw": 521351.57941919996,
+        "pnl_krw": -10296.348253086559,
+        "return_pct": -1.936685486232792,
+        "mdd_pct": -13.284758085309198
+      },
+      {
+        "period": "2026-W07",
+        "trade_count": 15,
+        "start_equity_krw": 521351.57941919996,
+        "end_equity_krw": 521050.45852316706,
+        "pnl_krw": -301.12089603289496,
+        "return_pct": -0.05775774120956312,
+        "mdd_pct": -13.595865691686212
+      },
+      {
+        "period": "2026-W08",
+        "trade_count": 15,
+        "start_equity_krw": 521050.45852316706,
+        "end_equity_krw": 499688.8609074894,
+        "pnl_krw": -21361.59761567769,
+        "return_pct": -4.099717650421741,
+        "mdd_pct": -16.887869594754555
+      },
+      {
+        "period": "2026-W09",
+        "trade_count": 10,
+        "start_equity_krw": 499688.8609074894,
+        "end_equity_krw": 504723.8207686801,
+        "pnl_krw": 5034.959861190699,
+        "return_pct": 1.0076189915553924,
+        "mdd_pct": -17.681426353474407
+      },
+      {
+        "period": "2026-W10",
+        "trade_count": 3,
+        "start_equity_krw": 504723.8207686801,
+        "end_equity_krw": 500763.4552913608,
+        "pnl_krw": -3960.365477319283,
+        "return_pct": -0.7846599099063267,
+        "mdd_pct": -16.70913471480773
+      },
+      {
+        "period": "2026-W11",
+        "trade_count": 13,
+        "start_equity_krw": 500763.4552913608,
+        "end_equity_krw": 551970.5316167697,
+        "pnl_krw": 51207.07632540894,
+        "return_pct": 10.225801380736721,
+        "mdd_pct": -16.772288428224094
+      },
+      {
+        "period": "2026-W12",
+        "trade_count": 17,
+        "start_equity_krw": 551970.5316167697,
+        "end_equity_krw": 512839.6112045347,
+        "pnl_krw": -39130.92041223502,
+        "return_pct": -7.089313318523938,
+        "mdd_pct": -14.700534716746926
+      },
+      {
+        "period": "2026-W13",
+        "trade_count": 12,
+        "start_equity_krw": 512839.6112045347,
+        "end_equity_krw": 493788.34413432574,
+        "pnl_krw": -19051.267070208967,
+        "return_pct": -3.714858730483439,
+        "mdd_pct": -17.869289349877544
+      },
+      {
+        "period": "2026-W14",
+        "trade_count": 12,
+        "start_equity_krw": 493788.34413432574,
+        "end_equity_krw": 496569.767300449,
+        "pnl_krw": 2781.423166123277,
+        "return_pct": 0.5632824669038028,
+        "mdd_pct": -17.90658000178755
+      },
+      {
+        "period": "2026-W15",
+        "trade_count": 13,
+        "start_equity_krw": 496569.767300449,
+        "end_equity_krw": 484252.39368966717,
+        "pnl_krw": -12317.373610781855,
+        "return_pct": -2.480492052052219,
+        "mdd_pct": -19.45538265492953
+      },
+      {
+        "period": "2026-W16",
+        "trade_count": 9,
+        "start_equity_krw": 484252.39368966717,
+        "end_equity_krw": 490454.2373773432,
+        "pnl_krw": 6201.84368767601,
+        "return_pct": 1.2807048077599026,
+        "mdd_pct": -19.40213959018047
+      },
+      {
+        "period": "2026-W17",
+        "trade_count": 12,
+        "start_equity_krw": 490454.2373773432,
+        "end_equity_krw": 530419.5417119338,
+        "pnl_krw": 39965.30433459062,
+        "return_pct": 8.148630654778554,
+        "mdd_pct": -17.855127529206047
+      },
+      {
+        "period": "2026-W18",
+        "trade_count": 10,
+        "start_equity_krw": 530419.5417119338,
+        "end_equity_krw": 514659.7653483903,
+        "pnl_krw": -15759.776363543468,
+        "return_pct": -2.9711907507552704,
+        "mdd_pct": -15.145406212298226
+      },
+      {
+        "period": "2026-W19",
+        "trade_count": 21,
+        "start_equity_krw": 514659.7653483903,
+        "end_equity_krw": 543405.3545758048,
+        "pnl_krw": 28745.589227414457,
+        "return_pct": 5.585357776696531,
+        "mdd_pct": -14.611350188857287
+      },
+      {
+        "period": "2026-W20",
+        "trade_count": 7,
+        "start_equity_krw": 543405.3545758048,
+        "end_equity_krw": 524013.9931029396,
+        "pnl_krw": -19391.36147286516,
+        "return_pct": -3.56848921520152,
+        "mdd_pct": -13.290687366134899
+      },
+      {
+        "period": "2026-W21",
+        "trade_count": 13,
+        "start_equity_krw": 524013.9931029396,
+        "end_equity_krw": 520195.4120245834,
+        "pnl_krw": -3818.5810783562483,
+        "return_pct": -0.7287173870576646,
+        "mdd_pct": -14.075448136620333
+      }
+    ]
+  },
+  "monthly_returns": {
+    "LG_V2_BALANCED_PLUS_DOM_GATE": [
+      {
+        "period": "2026-01",
+        "trade_count": 57,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": 35298.49548520241,
+        "return_pct": 7.059699097040473,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-02",
+        "trade_count": 49,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 498841.0463602941,
+        "pnl_krw": -36457.44912490831,
+        "return_pct": -6.810676553809991,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-03",
+        "trade_count": 53,
+        "start_equity_krw": 498841.0463602941,
+        "end_equity_krw": 503869.0869828345,
+        "pnl_krw": 5028.0406225404,
+        "return_pct": 1.0079444462773424,
+        "mdd_pct": -16.62161668091245
+      },
+      {
+        "period": "2026-04",
+        "trade_count": 49,
+        "start_equity_krw": 503869.0869828345,
+        "end_equity_krw": 513762.3535473388,
+        "pnl_krw": 9893.266564504302,
+        "return_pct": 1.9634597200128168,
+        "mdd_pct": -18.23180481299657
+      },
+      {
+        "period": "2026-05",
+        "trade_count": 46,
+        "start_equity_krw": 513762.3535473388,
+        "end_equity_krw": 515625.8951405952,
+        "pnl_krw": 1863.5415932564065,
+        "return_pct": 0.362724434826589,
+        "mdd_pct": -15.01363392045834
+      }
+    ],
+    "LG_M3_PF0.8_DD8": [
+      {
+        "period": "2026-01",
+        "trade_count": 57,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": 35298.49548520241,
+        "return_pct": 7.059699097040473,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-02",
+        "trade_count": 49,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 498841.0463602941,
+        "pnl_krw": -36457.44912490831,
+        "return_pct": -6.810676553809991,
+        "mdd_pct": -17.02888469178511
+      },
+      {
+        "period": "2026-03",
+        "trade_count": 53,
+        "start_equity_krw": 498841.0463602941,
+        "end_equity_krw": 505403.51879855664,
+        "pnl_krw": 6562.472438262543,
+        "return_pct": 1.3155437961940963,
+        "mdd_pct": -16.55247636333785
+      },
+      {
+        "period": "2026-04",
+        "trade_count": 49,
+        "start_equity_krw": 505403.51879855664,
+        "end_equity_krw": 515326.9133136937,
+        "pnl_krw": 9923.394515137072,
+        "return_pct": 1.9634597200128168,
+        "mdd_pct": -17.982796244202603
+      },
+      {
+        "period": "2026-05",
+        "trade_count": 46,
+        "start_equity_krw": 515326.9133136937,
+        "end_equity_krw": 517196.1299475203,
+        "pnl_krw": 1869.2166338266106,
+        "return_pct": 0.3627244348266334,
+        "mdd_pct": -14.75482506041113
+      }
+    ],
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW": [
+      {
+        "period": "2026-01",
+        "trade_count": 57,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 533654.7593161394,
+        "pnl_krw": 33654.75931613939,
+        "return_pct": 6.730951863227874,
+        "mdd_pct": -11.527960777537137
+      },
+      {
+        "period": "2026-02",
+        "trade_count": 49,
+        "start_equity_krw": 533654.7593161394,
+        "end_equity_krw": 498219.76628025173,
+        "pnl_krw": -35434.99303588766,
+        "return_pct": -6.640059404941201,
+        "mdd_pct": -17.132220817663292
+      },
+      {
+        "period": "2026-03",
+        "trade_count": 53,
+        "start_equity_krw": 498219.76628025173,
+        "end_equity_krw": 503337.5017030459,
+        "pnl_krw": 5117.735422794183,
+        "return_pct": 1.0272044124229662,
+        "mdd_pct": -16.70958143677871
+      },
+      {
+        "period": "2026-04",
+        "trade_count": 49,
+        "start_equity_krw": 503337.5017030459,
+        "end_equity_krw": 516244.9862124155,
+        "pnl_krw": 12907.484509369591,
+        "return_pct": 2.5643796589161383,
+        "mdd_pct": -18.318070809540554
+      },
+      {
+        "period": "2026-05",
+        "trade_count": 46,
+        "start_equity_krw": 516244.9862124155,
+        "end_equity_krw": 514682.94996583194,
+        "pnl_krw": -1562.0362465835642,
+        "return_pct": -0.3025765456908136,
+        "mdd_pct": -14.985982564862677
+      }
+    ],
+    "BASE_BALANCED": [
+      {
+        "period": "2026-01",
+        "trade_count": 57,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 535298.4954852024,
+        "pnl_krw": 35298.49548520241,
+        "return_pct": 7.059699097040473,
+        "mdd_pct": -11.255453715092731
+      },
+      {
+        "period": "2026-02",
+        "trade_count": 50,
+        "start_equity_krw": 535298.4954852024,
+        "end_equity_krw": 497061.30293650914,
+        "pnl_krw": -38237.192548693274,
+        "return_pct": -7.143153375395627,
+        "mdd_pct": -17.324905434086347
+      },
+      {
+        "period": "2026-03",
+        "trade_count": 53,
+        "start_equity_krw": 497061.30293650914,
+        "end_equity_krw": 499040.5810138293,
+        "pnl_krw": 1979.2780773201375,
+        "return_pct": 0.3981959701202076,
+        "mdd_pct": -17.420619898103144
+      },
+      {
+        "period": "2026-04",
+        "trade_count": 49,
+        "start_equity_krw": 499040.5810138293,
+        "end_equity_krw": 513499.9842609495,
+        "pnl_krw": 14459.403247120208,
+        "return_pct": 2.897440368024795,
+        "mdd_pct": -19.015377825779304
+      },
+      {
+        "period": "2026-05",
+        "trade_count": 46,
+        "start_equity_krw": 513499.9842609495,
+        "end_equity_krw": 515463.05133396277,
+        "pnl_krw": 1963.0670730132842,
+        "return_pct": 0.3822915546606298,
+        "mdd_pct": -15.181731580844374
+      }
+    ],
+    "BASE_ROLLING": [
+      {
+        "period": "2026-01",
+        "trade_count": 57,
+        "start_equity_krw": 500000.0,
+        "end_equity_krw": 532016.0705526192,
+        "pnl_krw": 32016.070552619174,
+        "return_pct": 6.403214110523825,
+        "mdd_pct": -11.7996310550502
+      },
+      {
+        "period": "2026-02",
+        "trade_count": 50,
+        "start_equity_krw": 532016.0705526192,
+        "end_equity_krw": 494917.8188117481,
+        "pnl_krw": -37098.251740871056,
+        "return_pct": -6.97314494698179,
+        "mdd_pct": -17.681426353474407
+      },
+      {
+        "period": "2026-03",
+        "trade_count": 53,
+        "start_equity_krw": 494917.8188117481,
+        "end_equity_krw": 496329.1987823282,
+        "pnl_krw": 1411.3799705801066,
+        "return_pct": 0.2851746122151555,
+        "mdd_pct": -17.869289349877544
+      },
+      {
+        "period": "2026-04",
+        "trade_count": 49,
+        "start_equity_krw": 496329.1987823282,
+        "end_equity_krw": 513719.90240505186,
+        "pnl_krw": 17390.70362272364,
+        "return_pct": 3.5038647062049177,
+        "mdd_pct": -19.45538265492953
+      },
+      {
+        "period": "2026-05",
+        "trade_count": 46,
+        "start_equity_krw": 513719.90240505186,
+        "end_equity_krw": 520195.4120245834,
+        "pnl_krw": 6475.509619531513,
+        "return_pct": 1.2605136747117385,
+        "mdd_pct": -15.145406212298226
+      }
+    ]
+  },
+  "active_vs_shadow_monthly": [
+    {
+      "month": "2026-01",
+      "active_route_return_pct": 7.059699097040473,
+      "best_shadow_route": "LG_M3_PF0.8_DD8",
+      "best_shadow_return_pct": 7.059699097040473,
+      "delta_pct": 0.0,
+      "comment": "active strongest"
+    },
+    {
+      "month": "2026-02",
+      "active_route_return_pct": -6.810676553809991,
+      "best_shadow_route": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+      "best_shadow_return_pct": -6.640059404941201,
+      "delta_pct": 0.17061714886878931,
+      "comment": "shadow stronger"
+    },
+    {
+      "month": "2026-03",
+      "active_route_return_pct": 1.0079444462773424,
+      "best_shadow_route": "LG_M3_PF0.8_DD8",
+      "best_shadow_return_pct": 1.3155437961940963,
+      "delta_pct": 0.307599349916754,
+      "comment": "shadow stronger"
+    },
+    {
+      "month": "2026-04",
+      "active_route_return_pct": 1.9634597200128168,
+      "best_shadow_route": "BASE_ROLLING",
+      "best_shadow_return_pct": 3.5038647062049177,
+      "delta_pct": 1.540404986192101,
+      "comment": "shadow stronger"
+    },
+    {
+      "month": "2026-05",
+      "active_route_return_pct": 0.362724434826589,
+      "best_shadow_route": "BASE_ROLLING",
+      "best_shadow_return_pct": 1.2605136747117385,
+      "delta_pct": 0.8977892398851495,
+      "comment": "shadow stronger"
+    }
+  ],
+  "dominance_data_quality": {
+    "schema_version": "v673_dominance_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 38581,
+        "original_rows": 38581,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.188,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "selected_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 9646,
+        "original_rows": 9646,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.189,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "selected_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1608,
+        "original_rows": 1608,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 10.205,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "selected_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 10.188,
+    "close_max": 57.752,
+    "common_coverage_start": "2022-01-01T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "copied_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 9866554,
+        "selected_filename": "btcdom_1h_2022_percent.csv"
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 2472696,
+        "selected_filename": "btcdom_4h_2022_percent.csv"
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 413452,
+        "selected_filename": "btcdom_1d_2022_percent.csv"
+      }
+    },
+    "use_available_history": true
+  },
+  "backfill_done": true,
+  "decision": "PAPER_ROUTE_ACTIVE",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

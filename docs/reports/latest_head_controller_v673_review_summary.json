@@ -1,0 +1,21 @@
+{
+  "schema_version": "head_controller_v673_review_v1",
+  "llm_provider": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "best_agent": "POLICY_BLEND_DOMINANCE_OVERLAY",
+  "best_router": "SCENARIO_AGENT_ROUTER_V1",
+  "rejected_scenarios": [],
+  "forward_candidates": [
+    "POLICY_BLEND_DOMINANCE_OVERLAY",
+    "SCENARIO_AGENT_ROUTER_V1"
+  ],
+  "risk_flags": [
+    "PAPER_ONLY",
+    "LIVE_NOT_ALLOWED"
+  ],
+  "auto_apply_allowed": false,
+  "live_order_allowed": false,
+  "real_order_enabled": false,
+  "final_decision": "SCENARIO_AGENT_ROUTER_CANDIDATE"
+}

@@ -1,0 +1,4 @@
+﻿interval,rows,start_utc,end_utc,first_close_pct,last_close_pct,csv_file
+1d,1095,2023-05-29 00:00:00,2026-05-27 00:00:00,16.1190,55.7270,btcdom_1d_percent.csv
+4h,6570,2023-05-28 12:00:00,2026-05-27 08:00:00,16.1870,55.7250,btcdom_4h_percent.csv
+1h,26280,2023-05-28 12:00:00,2026-05-27 11:00:00,16.1290,55.7160,btcdom_1h_percent.csv

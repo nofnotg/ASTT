@@ -1,54 +1,36 @@
 {
   "schema_version": "v6",
-  "market_count": 22,
+  "market_count": 50,
   "contexts": [
+    {
+      "market": "KRW-0G",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-AAVE",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
     {
       "market": "KRW-AKT",
       "weekly_trend": "UP",
       "daily_trend": "UP",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 64.75,
-      "risk_regime": "RISK_ON"
-    },
-    {
-      "market": "KRW-B3",
-      "weekly_trend": "UNKNOWN",
-      "daily_trend": "DOWN",
-      "h4_structure": "BREAKDOWN",
-      "h1_setup_bias": "NO_LONG",
-      "mtf_score": 11.0,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-BIO",
-      "weekly_trend": "UP",
-      "daily_trend": "DOWN",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "NO_LONG",
-      "mtf_score": 37.25,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-BTC",
-      "weekly_trend": "DOWN",
-      "daily_trend": "DOWN",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_WATCH",
-      "mtf_score": 30.5,
-      "risk_regime": "RISK_OFF"
-    },
-    {
-      "market": "KRW-DOGE",
-      "weekly_trend": "UP",
-      "daily_trend": "UP",
       "h4_structure": "BREAKOUT",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 72.25,
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 68.25,
       "risk_regime": "RISK_ON"
     },
     {
-      "market": "KRW-ETH",
+      "market": "KRW-ALGO",
       "weekly_trend": "CHOP",
       "daily_trend": "DOWN",
       "h4_structure": "RANGE",
@@ -57,13 +39,148 @@
       "risk_regime": "SELECTIVE"
     },
     {
-      "market": "KRW-FF",
+      "market": "KRW-ALT",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "BREAKDOWN",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 14.75,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-APT",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-ARKM",
+      "weekly_trend": "CHOP",
+      "daily_trend": "UP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 45.0,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-ATOM",
+      "weekly_trend": "UP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 43.25,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-B3",
+      "weekly_trend": "CHOP",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 28.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-BCH",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-BIO",
+      "weekly_trend": "CHOP",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 35.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-BLEND",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-CC",
       "weekly_trend": "UP",
       "daily_trend": "UP",
       "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 64.75,
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 60.75,
       "risk_regime": "RISK_ON"
+    },
+    {
+      "market": "KRW-DOGE",
+      "weekly_trend": "CHOP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 34.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-ETC",
+      "weekly_trend": "CHOP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 34.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-ETH",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-FF",
+      "weekly_trend": "UP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 43.25,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-FIL",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-HBAR",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-ID",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
     },
     {
       "market": "KRW-IP",
@@ -79,17 +196,62 @@
       "weekly_trend": "UP",
       "daily_trend": "UP",
       "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 64.75,
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 53.75,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-JUP",
+      "weekly_trend": "CHOP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 34.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-KAITO",
+      "weekly_trend": "UP",
+      "daily_trend": "UP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 60.75,
       "risk_regime": "RISK_ON"
     },
     {
       "market": "KRW-LAYER",
-      "weekly_trend": "UNKNOWN",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 30.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-LPT",
+      "weekly_trend": "DOWN",
       "daily_trend": "UP",
       "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 47.25,
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 40.0,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-LSK",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-MOVE",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 36.5,
       "risk_regime": "SELECTIVE"
     },
     {
@@ -102,52 +264,25 @@
       "risk_regime": "SELECTIVE"
     },
     {
-      "market": "KRW-PENGU",
-      "weekly_trend": "UP",
-      "daily_trend": "DOWN",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "NO_LONG",
-      "mtf_score": 37.25,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-PIEVERSE",
+      "market": "KRW-NXPC",
       "weekly_trend": "UP",
       "daily_trend": "UP",
-      "h4_structure": "BREAKOUT",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 72.25,
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 60.75,
       "risk_regime": "RISK_ON"
     },
     {
-      "market": "KRW-PROS",
-      "weekly_trend": "UNKNOWN",
-      "daily_trend": "DOWN",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "NO_LONG",
-      "mtf_score": 19.75,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-SEI",
-      "weekly_trend": "UP",
+      "market": "KRW-PENGU",
+      "weekly_trend": "CHOP",
       "daily_trend": "CHOP",
       "h4_structure": "RANGE",
       "h1_setup_bias": "NO_LONG",
-      "mtf_score": 43.25,
+      "mtf_score": 34.5,
       "risk_regime": "SELECTIVE"
     },
     {
-      "market": "KRW-SHIB",
-      "weekly_trend": "UP",
-      "daily_trend": "CHOP",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "NO_LONG",
-      "mtf_score": 43.25,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-TRUMP",
+      "market": "KRW-PEPE",
       "weekly_trend": "DOWN",
       "daily_trend": "DOWN",
       "h4_structure": "RANGE",
@@ -156,34 +291,124 @@
       "risk_regime": "RISK_OFF"
     },
     {
+      "market": "KRW-PIEVERSE",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-PLUME",
+      "weekly_trend": "UP",
+      "daily_trend": "UP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 53.75,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-PRL",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-PROS",
+      "weekly_trend": "CHOP",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "LONG_WATCH",
+      "mtf_score": 35.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-SEI",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-SHIB",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-TOKAMAK",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
+    },
+    {
+      "market": "KRW-TRAC",
+      "weekly_trend": "UNKNOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "BREAKDOWN",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 11.0,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-TREE",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-TRUMP",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
       "market": "KRW-TRX",
       "weekly_trend": "UP",
       "daily_trend": "UP",
       "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_SETUP",
-      "mtf_score": 64.75,
-      "risk_regime": "RISK_ON"
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 53.75,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-UNI",
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
     },
     {
       "market": "KRW-UP2",
-      "weekly_trend": "UNKNOWN",
-      "daily_trend": "UNKNOWN",
-      "h4_structure": "UNKNOWN",
-      "h1_setup_bias": "UNKNOWN",
-      "mtf_score": 0.0,
-      "risk_regime": "SELECTIVE"
+      "weekly_trend": "DOWN",
+      "daily_trend": "DOWN",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 23.5,
+      "risk_regime": "RISK_OFF"
     },
     {
       "market": "KRW-USDT",
-      "weekly_trend": "DOWN",
-      "daily_trend": "UP",
-      "h4_structure": "RANGE",
-      "h1_setup_bias": "LONG_WATCH",
-      "mtf_score": 47.0,
-      "risk_regime": "SELECTIVE"
-    },
-    {
-      "market": "KRW-VIRTUAL",
       "weekly_trend": "UP",
       "daily_trend": "CHOP",
       "h4_structure": "RANGE",
@@ -192,12 +417,39 @@
       "risk_regime": "SELECTIVE"
     },
     {
-      "market": "KRW-VVV",
-      "weekly_trend": "UNKNOWN",
-      "daily_trend": "DOWN",
-      "h4_structure": "UNKNOWN",
+      "market": "KRW-VIRTUAL",
+      "weekly_trend": "CHOP",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
       "h1_setup_bias": "NO_LONG",
-      "mtf_score": 8.5,
+      "mtf_score": 34.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-VVV",
+      "weekly_trend": "UP",
+      "daily_trend": "UP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 53.75,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-WAVES",
+      "weekly_trend": "DOWN",
+      "daily_trend": "CHOP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 29.5,
+      "risk_regime": "SELECTIVE"
+    },
+    {
+      "market": "KRW-WLD",
+      "weekly_trend": "CHOP",
+      "daily_trend": "UP",
+      "h4_structure": "RANGE",
+      "h1_setup_bias": "NO_LONG",
+      "mtf_score": 45.0,
       "risk_regime": "SELECTIVE"
     }
   ],

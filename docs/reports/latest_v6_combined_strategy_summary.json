@@ -27,24 +27,24 @@
       "total_return_pct": -0.02459183023799269
     },
     "FVG_OB_OVERLAP": {
-      "trade_count": 8,
-      "win_rate": 0.25,
+      "trade_count": 9,
+      "win_rate": 0.2222222222222222,
       "average_win_pct": 5.297299999999993,
-      "average_loss_pct": -0.10000000000001175,
-      "profit_factor": 17.657666666664543,
-      "expectancy_pct": 1.2493249999999891,
-      "total_pnl_krw": 16657.666666666482,
-      "total_return_pct": 3.331533333333297
+      "average_loss_pct": -0.10000000000001173,
+      "profit_factor": 15.135142857141037,
+      "expectancy_pct": 1.0993999999999893,
+      "total_pnl_krw": 16490.999999999796,
+      "total_return_pct": 3.2981999999999596
     },
     "FVG_LIQUIDITY_SWEEP": {
-      "trade_count": 6,
-      "win_rate": 0.5,
+      "trade_count": 5,
+      "win_rate": 0.6,
       "average_win_pct": 5.297299999999985,
-      "average_loss_pct": -0.10000000000000948,
-      "profit_factor": 70.22296576432333,
-      "expectancy_pct": 2.5986499999999872,
-      "total_pnl_krw": 26109.322822822694,
-      "total_return_pct": 5.221864564564538
+      "average_loss_pct": -0.10000000000000842,
+      "profit_factor": 125.82032097002943,
+      "expectancy_pct": 3.1383799999999873,
+      "total_pnl_krw": 26275.98948948938,
+      "total_return_pct": 5.255197897897876
     },
     "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP": {
       "trade_count": 2,
@@ -79,7 +79,7 @@
   },
   "trades": [
     {
-      "trade_id": "v6_37b0cbd5453f",
+      "trade_id": "v6_216645dd258b",
       "market": "KRW-PIEVERSE",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
@@ -98,7 +98,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_2c3ad0125ace",
+      "trade_id": "v6_86fedf8036ab",
       "market": "KRW-SHIB",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -117,7 +117,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_aa102dd44bd1",
+      "trade_id": "v6_1237646b3a9c",
       "market": "KRW-LAYER",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_LIQUIDITY_SWEEP",
@@ -136,7 +136,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_99cdbfaa59e3",
+      "trade_id": "v6_a4e2283901f3",
       "market": "KRW-TRUMP",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -155,7 +155,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_5469d20b49a3",
+      "trade_id": "v6_06c314ba3080",
       "market": "KRW-FF",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
@@ -174,7 +174,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_1a579f8eba5d",
+      "trade_id": "v6_9dd4b98a35e6",
       "market": "KRW-SEI",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -193,7 +193,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_d6060d2c6ffe",
+      "trade_id": "v6_27a10df51e4f",
       "market": "KRW-DOGE",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "SR_FLIP_RETEST_VOLUME+FVG_OB_OVERLAP",
@@ -212,7 +212,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_36f650659ce7",
+      "trade_id": "v6_a9d581ad4256",
       "market": "KRW-JTO",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
@@ -231,7 +231,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_29d66e4e0ff6",
+      "trade_id": "v6_2f683d108497",
       "market": "KRW-AKT",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "PULLBACK_WICK_VOLUME+FVG_OB_OVERLAP",
@@ -250,7 +250,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_be41239d4bb1",
+      "trade_id": "v6_da17d60d595d",
       "market": "KRW-USDT",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
@@ -269,7 +269,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_17685d720106",
+      "trade_id": "v6_838aa0c3761e",
       "market": "KRW-NEAR",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -288,7 +288,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_a734c459e54a",
+      "trade_id": "v6_3cf07ae3d57d",
       "market": "KRW-TRX",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "NECKLINE_VOLUME_SETUP+FVG_LIQUIDITY_SWEEP",
@@ -307,7 +307,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_7644323a2e5b",
+      "trade_id": "v6_c4d5ed62dca0",
       "market": "KRW-PROS",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_LIQUIDITY_SWEEP",
@@ -326,7 +326,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_3d016b919b58",
+      "trade_id": "v6_51a015b4d128",
       "market": "KRW-PENGU",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -345,7 +345,26 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_c3a1cddb8fd1",
+      "trade_id": "v6_a7a8797137a3",
+      "market": "KRW-BTC",
+      "strategy": "ICT_FVG_OB_SWEEP",
+      "setup_type": "FVG_OB_OVERLAP",
+      "entry_time": "2026-05-24 15:00:00",
+      "entry_price": 114198000.0,
+      "stop_price": 110772060.0,
+      "target_price": 120364692.0,
+      "risk_amount_krw": 5000.0,
+      "position_krw": 166666.6666666667,
+      "risk_reward_ratio": 1.8,
+      "exit_time": "2026-05-25 02:00:00",
+      "exit_price": 114198000.0,
+      "pnl_krw": -166.66666666668607,
+      "return_pct": -0.10000000000001162,
+      "result": "BREAKEVEN",
+      "real_order_enabled": false
+    },
+    {
+      "trade_id": "v6_2c5413b57707",
       "market": "KRW-VIRTUAL",
       "strategy": "COMBINED_VOLUME_ICT",
       "setup_type": "FIB_PULLBACK_VOLUME+FVG_LIQUIDITY_SWEEP",
@@ -364,7 +383,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_7b843c524e65",
+      "trade_id": "v6_91504c93638a",
       "market": "KRW-ETH",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_LIQUIDITY_SWEEP",
@@ -383,7 +402,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_f5197e9b3b3c",
+      "trade_id": "v6_96d0536aadaf",
       "market": "KRW-IP",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -402,7 +421,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_99e6daef5b4c",
+      "trade_id": "v6_bcd8398968c2",
       "market": "KRW-UP2",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -421,7 +440,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_92d33d7663cb",
+      "trade_id": "v6_a14cae3fa370",
       "market": "KRW-BIO",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_OB_OVERLAP",
@@ -440,7 +459,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_b7790bed99e2",
+      "trade_id": "v6_d3eaf96a94fe",
       "market": "KRW-B3",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_LIQUIDITY_SWEEP",
@@ -459,7 +478,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_9ea5330e0254",
+      "trade_id": "v6_c5a9513de5fa",
       "market": "KRW-VVV",
       "strategy": "ICT_FVG_OB_SWEEP",
       "setup_type": "FVG_LIQUIDITY_SWEEP",
@@ -475,25 +494,6 @@
       "pnl_krw": 8828.833333333285,
       "return_pct": 5.297299999999983,
       "result": "WIN",
-      "real_order_enabled": false
-    },
-    {
-      "trade_id": "v6_7753a293c79b",
-      "market": "KRW-BTC",
-      "strategy": "ICT_FVG_OB_SWEEP",
-      "setup_type": "FVG_LIQUIDITY_SWEEP",
-      "entry_time": "2026-05-10 13:00:00",
-      "entry_price": 119160000.0,
-      "stop_price": 115585200.0,
-      "target_price": 125594640.0,
-      "risk_amount_krw": 5000.0,
-      "position_krw": 166666.6666666667,
-      "risk_reward_ratio": 1.8,
-      "exit_time": "2026-05-11 00:00:00",
-      "exit_price": 119160000.0,
-      "pnl_krw": -166.66666666668607,
-      "return_pct": -0.10000000000001162,
-      "result": "BREAKEVEN",
       "real_order_enabled": false
     }
   ],

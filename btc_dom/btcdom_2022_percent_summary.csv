@@ -1,0 +1,4 @@
+﻿interval,rows,start_utc,end_utc,first_close_pct,last_close_pct,csv_file
+1d,1608,2022-01-01 00:00:00,2026-05-27 00:00:00,10.5300,55.6100,btcdom_1d_2022_percent.csv
+4h,9646,2022-01-01 00:00:00,2026-05-27 12:00:00,10.5110,55.6100,btcdom_4h_2022_percent.csv
+1h,38581,2022-01-01 00:00:00,2026-05-27 12:00:00,10.4760,55.6040,btcdom_1h_2022_percent.csv

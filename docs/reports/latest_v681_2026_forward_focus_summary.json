@@ -1,0 +1,598 @@
+{
+  "schema_version": "v681_2026_forward_focus_v1",
+  "start_date": "2026-01-01",
+  "end_date": "2026-05-27",
+  "initial_cash_krw": 500000.0,
+  "trade_count": 255,
+  "dominance_data_quality": "GOOD",
+  "best_scenario": "ROLLING_EDGE_COMPOUNDING_BASELINE",
+  "scenarios": [
+    {
+      "scenario": "ROLLING_EDGE_COMPOUNDING_BASELINE",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 520195.4120245834,
+      "return_pct": 4.039082404916683,
+      "mdd_pct": -19.45538265492953,
+      "profit_factor": 1.0575629303575003,
+      "expectancy_pct": 0.01583953884281015,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.20760745119003227,
+      "average_position_krw": 66330.9675859513,
+      "average_multiplier": 0.6201960784313716,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 6.403214110523835,
+          "end_equity": 532016.0705526192,
+          "mdd_pct": -11.7996310550502,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -6.973144946981794,
+          "end_equity": 494917.8188117481,
+          "mdd_pct": -17.681426353474407,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.2851746122151551,
+          "end_equity": 496329.1987823282,
+          "mdd_pct": -17.869289349877544,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 3.5038647062049164,
+          "end_equity": 513719.90240505186,
+          "mdd_pct": -19.45538265492953,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 1.2605136747117456,
+          "end_equity": 520195.4120245834,
+          "mdd_pct": -15.145406212298226,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "POLICY_BLEND_COMPOUNDING_BASELINE",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 518368.7587445564,
+      "return_pct": 3.673751748911269,
+      "mdd_pct": -19.49674703658555,
+      "profit_factor": 1.052369562374819,
+      "expectancy_pct": 0.014406869603573092,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.18842895904724477,
+      "average_position_krw": 66146.94122747863,
+      "average_multiplier": 0.6180392156862735,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 6.730951863227855,
+          "end_equity": 533654.7593161393,
+          "mdd_pct": -11.527960777537157,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.428429056199326,
+          "end_equity": 494012.5941153086,
+          "mdd_pct": -17.831990352199323,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.41733967080700474,
+          "end_equity": 496074.3046493346,
+          "mdd_pct": -17.911468283405284,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 3.5038647062049906,
+          "end_equity": 513456.07712649443,
+          "mdd_pct": -19.49674703658555,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.9567871210241186,
+          "end_equity": 518368.7587445564,
+          "mdd_pct": -15.18898401946146,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "ROLLING_EDGE_COMPOUNDING_DOMINANCE_OVERLAY",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 516034.38870859606,
+      "return_pct": 3.2068777417192162,
+      "mdd_pct": -18.95843965866969,
+      "profit_factor": 1.0478107327974053,
+      "expectancy_pct": 0.012575991143997102,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.16915304209925905,
+      "average_position_krw": 62209.19434769311,
+      "average_multiplier": 0.5872549019607837,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -6.9731449469817965,
+          "end_equity": 497971.35549600644,
+          "mdd_pct": -17.173538427699203,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.28517461221506607,
+          "end_equity": 499391.4433779843,
+          "mdd_pct": -17.362560498456432,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.9117680549977516,
+          "end_equity": 513932.5638956566,
+          "mdd_pct": -18.95843965866969,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.40896898943461013,
+          "end_equity": 516034.38870859606,
+          "mdd_pct": -14.932202756896743,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "BALANCED_GROWTH_COMPOUNDING_BASELINE",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 515463.05133396277,
+      "return_pct": 3.0926102667925504,
+      "mdd_pct": -19.015377825779304,
+      "profit_factor": 1.0447560654583787,
+      "expectancy_pct": 0.012127883399186625,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.162637329382952,
+      "average_position_krw": 65127.61002218873,
+      "average_multiplier": 0.6074509803921558,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.1431533753956336,
+          "end_equity": 497061.30293650914,
+          "mdd_pct": -17.324905434086347,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.39819597012019975,
+          "end_equity": 499040.5810138293,
+          "mdd_pct": -17.420619898103144,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.8974403680248026,
+          "end_equity": 513499.9842609495,
+          "mdd_pct": -19.015377825779304,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.38229155466063197,
+          "end_equity": 515463.05133396277,
+          "mdd_pct": -15.181731580844374,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "POLICY_BLEND_COMPOUNDING_DOMINANCE_OVERLAY",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 514185.60652794625,
+      "return_pct": 2.837121305589241,
+      "mdd_pct": -19.248785023105643,
+      "profit_factor": 1.0421759349265636,
+      "expectancy_pct": 0.011125965904271758,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.14739222772677074,
+      "average_position_krw": 62119.62814429111,
+      "average_multiplier": 0.5874509803921562,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.42842905619935,
+          "end_equity": 495534.22650918167,
+          "mdd_pct": -17.578900640095778,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.4173396708069731,
+          "end_equity": 497602.28741883097,
+          "mdd_pct": -17.658623375171466,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.9117680549977107,
+          "end_equity": 512091.3118648304,
+          "mdd_pct": -19.248785023105643,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.40896898943457805,
+          "end_equity": 514185.60652794625,
+          "mdd_pct": -15.23697280930304,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "BALANCED_GROWTH_COMPOUNDING_DOMINANCE_OVERLAY",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 512650.5360147697,
+      "return_pct": 2.530107202953946,
+      "mdd_pct": -19.015377825779304,
+      "profit_factor": 1.0378655996829946,
+      "expectancy_pct": 0.009921989031191906,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.13305584701682124,
+      "average_position_krw": 61600.96206543619,
+      "average_multiplier": 0.5815686274509798,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.1431533753956336,
+          "end_equity": 497061.30293650914,
+          "mdd_pct": -17.324905434086347,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.39819597012019975,
+          "end_equity": 499040.5810138293,
+          "mdd_pct": -17.420619898103144,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.308812783609153,
+          "end_equity": 510562.49374367396,
+          "mdd_pct": -19.015377825779304,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.4089689894346273,
+          "end_equity": 512650.5360147697,
+          "mdd_pct": -15.490027780107567,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BEAR_COMPOUNDING_AGENT",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 512650.5360147697,
+      "return_pct": 2.530107202953946,
+      "mdd_pct": -19.015377825779304,
+      "profit_factor": 1.0378655996829946,
+      "expectancy_pct": 0.009921989031191906,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.13305584701682124,
+      "average_position_krw": 61600.96206543619,
+      "average_multiplier": 0.5815686274509798,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.1431533753956336,
+          "end_equity": 497061.30293650914,
+          "mdd_pct": -17.324905434086347,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.39819597012019975,
+          "end_equity": 499040.5810138293,
+          "mdd_pct": -17.420619898103144,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.308812783609153,
+          "end_equity": 510562.49374367396,
+          "mdd_pct": -19.015377825779304,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.4089689894346273,
+          "end_equity": 512650.5360147697,
+          "mdd_pct": -15.490027780107567,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "COMPOUNDING_SCENARIO_ROUTER_V1",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 512650.5360147697,
+      "return_pct": 2.530107202953946,
+      "mdd_pct": -19.015377825779304,
+      "profit_factor": 1.0378655996829946,
+      "expectancy_pct": 0.009921989031191906,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.13305584701682124,
+      "average_position_krw": 61600.96206543619,
+      "average_multiplier": 0.5815686274509798,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 7.0596990970404825,
+          "end_equity": 535298.4954852024,
+          "mdd_pct": -11.255453715092731,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -7.1431533753956336,
+          "end_equity": 497061.30293650914,
+          "mdd_pct": -17.324905434086347,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.39819597012019975,
+          "end_equity": 499040.5810138293,
+          "mdd_pct": -17.420619898103144,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.308812783609153,
+          "end_equity": 510562.49374367396,
+          "mdd_pct": -19.015377825779304,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.4089689894346273,
+          "end_equity": 512650.5360147697,
+          "mdd_pct": -15.490027780107567,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "BEAR_DEFENSE_COMPOUNDING_AGENT",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 510723.98808235436,
+      "return_pct": 2.1447976164708837,
+      "mdd_pct": -18.58424436884888,
+      "profit_factor": 1.0316795679353905,
+      "expectancy_pct": 0.008410971044983296,
+      "trade_count": 255,
+      "skipped_trade_count": 0,
+      "win_rate_pct": 34.509803921568626,
+      "return_mdd_ratio": 0.11540946050332926,
+      "average_position_krw": 63689.395171143115,
+      "average_multiplier": 0.5986274509803912,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 6.246584261999791,
+          "end_equity": 531232.921309999,
+          "mdd_pct": -11.073782340129709,
+          "trades": 57
+        },
+        {
+          "period": "2026-02",
+          "return_pct": -6.9258047290253755,
+          "end_equity": 494440.7665237714,
+          "mdd_pct": -16.961746476185823,
+          "trades": 50
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.49126209271223903,
+          "end_equity": 496869.7665806185,
+          "mdd_pct": -16.980996514568545,
+          "trades": 53
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 2.493157475904772,
+          "end_equity": 509257.5123116338,
+          "mdd_pct": -18.58424436884888,
+          "trades": 49
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.28796350279918503,
+          "end_equity": 510723.98808235436,
+          "mdd_pct": -15.065213281502169,
+          "trades": 46
+        }
+      ]
+    },
+    {
+      "scenario": "CASH_DEFENSE_COMPOUNDING_AGENT",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": 0.0,
+      "trade_count": 0,
+      "skipped_trade_count": 255,
+      "win_rate_pct": 0.0,
+      "return_mdd_ratio": 0.0,
+      "average_position_krw": 0.0,
+      "average_multiplier": 0.0,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-02",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        }
+      ]
+    },
+    {
+      "scenario": "BEAR_BOUNCE_V2_COMPOUNDING_RESEARCH",
+      "initial_cash_krw": 500000.0,
+      "final_equity_krw": 500000.0,
+      "return_pct": 0.0,
+      "mdd_pct": 0.0,
+      "profit_factor": 0.0,
+      "expectancy_pct": 0.0,
+      "trade_count": 0,
+      "skipped_trade_count": 255,
+      "win_rate_pct": 0.0,
+      "return_mdd_ratio": 0.0,
+      "average_position_krw": 0.0,
+      "average_multiplier": 0.0,
+      "lookahead_fail_count": 0,
+      "monthly": [
+        {
+          "period": "2026-01",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-02",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-03",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-04",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        },
+        {
+          "period": "2026-05",
+          "return_pct": 0.0,
+          "end_equity": 500000.0,
+          "mdd_pct": 0.0,
+          "trades": 0
+        }
+      ]
+    }
+  ],
+  "diagnosis": "2026 ?? ??? 1? ?? ? 2? ??? 3~5? ??? ?? ??? ?? ???? ????. Rolling baseline? ?? ??? MDD? ? -19.46%? ????.",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,29 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASTT V6.7.3 Head Controller Review</title><style>
+body{margin:0;background:#f8fafc;color:#111827;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.6}
+header{background:#111827;color:#fff;padding:28px 22px}main{max-width:1180px;margin:auto;padding:22px}
+section{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#eef2ff}
+.notice{background:#fff7ed;border-left:5px solid #f97316;padding:12px 14px;border-radius:6px;margin-top:14px}
+</style></head><body><header><h1>ASTT V6.7.3 Head Controller Review</h1><p>PAPER research only. No live orders. No auto apply.</p></header><main>
+<div class="notice"><strong>Safety:</strong> real_order_enabled=false, live_order_allowed=false, auto_apply_allowed=false.</div><section><h2>Final Decision</h2><p>SCENARIO_AGENT_ROUTER_CANDIDATE</p><pre>{
+  &quot;schema_version&quot;: &quot;head_controller_v673_review_v1&quot;,
+  &quot;llm_provider&quot;: &quot;openai&quot;,
+  &quot;llm_used&quot;: false,
+  &quot;fallback_used&quot;: true,
+  &quot;best_agent&quot;: &quot;POLICY_BLEND_DOMINANCE_OVERLAY&quot;,
+  &quot;best_router&quot;: &quot;SCENARIO_AGENT_ROUTER_V1&quot;,
+  &quot;rejected_scenarios&quot;: [],
+  &quot;forward_candidates&quot;: [
+    &quot;POLICY_BLEND_DOMINANCE_OVERLAY&quot;,
+    &quot;SCENARIO_AGENT_ROUTER_V1&quot;
+  ],
+  &quot;risk_flags&quot;: [
+    &quot;PAPER_ONLY&quot;,
+    &quot;LIVE_NOT_ALLOWED&quot;
+  ],
+  &quot;auto_apply_allowed&quot;: false,
+  &quot;live_order_allowed&quot;: false,
+  &quot;real_order_enabled&quot;: false,
+  &quot;final_decision&quot;: &quot;SCENARIO_AGENT_ROUTER_CANDIDATE&quot;
+}</pre></section></main></body></html>

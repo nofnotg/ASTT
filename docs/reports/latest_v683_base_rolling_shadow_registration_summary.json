@@ -1,0 +1,11 @@
+{
+  "schema_version": "v683_shadow_route_registration_v1",
+  "route": "BASE_ROLLING",
+  "status": "SHADOW",
+  "registered": true,
+  "active_change_applied": false,
+  "decision": "PAPER_ROUTE_SHADOW",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": "v673_yearly_market_state_v1",
+  "yearly_comparison": [
+    {
+      "year": "2022",
+      "control_return_pct": 9.002631172975795,
+      "best_v673_scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "best_v673_return_pct": 9.002631172975795,
+      "delta_pct_point": 0.0,
+      "notes": "dominance coverage period only"
+    },
+    {
+      "year": "2023",
+      "control_return_pct": 28.732805620399525,
+      "best_v673_scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "best_v673_return_pct": 28.732805620399525,
+      "delta_pct_point": 0.0,
+      "notes": "dominance coverage period only"
+    },
+    {
+      "year": "2024",
+      "control_return_pct": 56.54398663629119,
+      "best_v673_scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "best_v673_return_pct": 56.54398663629119,
+      "delta_pct_point": 0.0,
+      "notes": "dominance coverage period only"
+    },
+    {
+      "year": "2025",
+      "control_return_pct": 0.028665442203057445,
+      "best_v673_scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "best_v673_return_pct": 0.028665442203057445,
+      "delta_pct_point": 0.0,
+      "notes": "dominance coverage period only"
+    },
+    {
+      "year": "2026",
+      "control_return_pct": -19.325132826375746,
+      "best_v673_scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "best_v673_return_pct": -15.60671787780632,
+      "delta_pct_point": 3.7184149485694267,
+      "notes": "dominance coverage period only"
+    }
+  ],
+  "market_state_pnl": [
+    {
+      "market_state": "ALT_FRIENDLY",
+      "pnl_krw": 247135.48628226668,
+      "trade_count": 294,
+      "decision": "KEEP"
+    },
+    {
+      "market_state": "BTC_LED_MARKET",
+      "pnl_krw": -101514.328871521,
+      "trade_count": 81,
+      "decision": "DEFENSE_REQUIRED"
+    },
+    {
+      "market_state": "NORMAL",
+      "pnl_krw": 259623.35911659666,
+      "trade_count": 977,
+      "decision": "KEEP"
+    },
+    {
+      "market_state": "RISK_OFF_ALT_WEAK",
+      "pnl_krw": -18914.732791315277,
+      "trade_count": 6,
+      "decision": "DEFENSE_REQUIRED"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

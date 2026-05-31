@@ -21,7 +21,13 @@ def copy_uploaded_btcdom_csvs(
     target_root.mkdir(parents=True, exist_ok=True)
     files: dict[str, dict[str, Any]] = {}
     for timeframe in TIMEFRAMES:
-        filename = f"btcdom_{timeframe}_percent.csv" if (source_root / f"btcdom_{timeframe}_percent.csv").exists() else f"btcdom_{timeframe}.csv"
+        candidates = (
+            f"btcdom_{timeframe}_2022_percent.csv",
+            f"btcdom_{timeframe}_percent.csv",
+            f"btcdom_{timeframe}_2022.csv",
+            f"btcdom_{timeframe}.csv",
+        )
+        filename = next((name for name in candidates if (source_root / name).exists()), candidates[-1])
         source = source_root / filename
         target = target_root / filename
         exists = source.exists()
@@ -36,6 +42,7 @@ def copy_uploaded_btcdom_csvs(
             "exists": exists,
             "copied": copied,
             "size_bytes": source.stat().st_size if exists else 0,
+            "selected_filename": filename,
         }
     return files
 

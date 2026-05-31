@@ -1,0 +1,22 @@
+{
+  "schema_version": "v683_paper_runtime_v1",
+  "run_id": "v683_backfill_20260531100959",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "shadow_routes": [
+    "LG_M3_PF0.8_DD8",
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+    "BASE_BALANCED",
+    "BASE_ROLLING"
+  ],
+  "current_equity_krw": 515625.8951405952,
+  "current_cash_krw": 515625.8951405952,
+  "open_positions": 0,
+  "start_date": "2026-01-01",
+  "last_decision_time": "2026-05-24 23:00:00",
+  "last_equity_snapshot_time": "2026-05-25 12:00:00",
+  "healthcheck": "PAPER_BACKFILL_READY",
+  "decision": "PAPER_RUNNING",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

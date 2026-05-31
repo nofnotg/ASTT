@@ -1,0 +1,74 @@
+{
+  "schema_version": "v682_bounce_case_study_v1",
+  "best_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "worst_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "missed_bounce_cases": [],
+  "false_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "decision": "BEAR_BOUNCE_REJECTED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

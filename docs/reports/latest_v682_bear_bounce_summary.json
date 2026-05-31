@@ -1,0 +1,196 @@
+{
+  "schema_version": "v682_bear_bounce_profit_v1",
+  "initial_cash_krw": 500000.0,
+  "dominance_data_quality": {
+    "schema_version": "v673_dominance_data_quality_v1",
+    "files": {
+      "1h": {
+        "exists": true,
+        "rows": 38581,
+        "original_rows": 38581,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.188,
+        "close_max": 57.752,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1h",
+        "selected_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1h_normalized.csv"
+      },
+      "4h": {
+        "exists": true,
+        "rows": 9646,
+        "original_rows": 9646,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T12:00:00+00:00",
+        "close_min": 10.189,
+        "close_max": 57.368,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "4h",
+        "selected_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_4h_normalized.csv"
+      },
+      "1d": {
+        "exists": true,
+        "rows": 1608,
+        "original_rows": 1608,
+        "duplicate_count": 0,
+        "missing_count": 0,
+        "start": "2022-01-01T00:00:00+00:00",
+        "end": "2026-05-27T00:00:00+00:00",
+        "close_min": 10.205,
+        "close_max": 57.095,
+        "source_type": "BTCDOM_INDEX_PROXY",
+        "is_percentage": false,
+        "quality": "GOOD",
+        "timeframe": "1d",
+        "selected_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "normalized_path": "data\\processed\\btcdom_index_1d_normalized.csv"
+      }
+    },
+    "source_type": "BTCDOM_INDEX_PROXY",
+    "is_percentage": false,
+    "close_min": 10.188,
+    "close_max": 57.752,
+    "common_coverage_start": "2022-01-01T00:00:00+00:00",
+    "common_coverage_end": "2026-05-27T00:00:00+00:00",
+    "data_quality": "GOOD",
+    "fake_data_generated": false,
+    "real_order_enabled": false,
+    "live_order_allowed": false,
+    "auto_apply_allowed": false,
+    "copied_files": {
+      "1h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 9866554,
+        "selected_filename": "btcdom_1h_2022_percent.csv"
+      },
+      "4h": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_4h_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_4h_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 2472696,
+        "selected_filename": "btcdom_4h_2022_percent.csv"
+      },
+      "1d": {
+        "source_path": "C:\\ASTT\\btc_dom\\btcdom_1d_2022_percent.csv",
+        "target_path": "data\\external\\btcdom_1d_2022_percent.csv",
+        "exists": true,
+        "copied": true,
+        "size_bytes": 413452,
+        "selected_filename": "btcdom_1d_2022_percent.csv"
+      }
+    },
+    "use_available_history": true
+  },
+  "scenario": {
+    "scenario": "BEAR_BOUNCE_PROFIT_AGENT",
+    "initial_cash_krw": 500000.0,
+    "final_equity_krw": 498681.2019425334,
+    "return_pct": -0.2637596114933305,
+    "mdd_pct": -0.26375961149332583,
+    "profit_factor": 0.0,
+    "return_mdd_ratio": -1.0000000000000178,
+    "trade_count": 1,
+    "skipped_trade_count": 1357,
+    "win_rate_pct": 0.0,
+    "average_multiplier": 0.25,
+    "lookahead_fail_count": 0
+  },
+  "bounce_metrics": {
+    "bounce_candidates": 1,
+    "bounce_entries": 1,
+    "bounce_win_rate_pct": 0.0,
+    "avg_bounce_pnl_krw": -1318.7980574666135,
+    "net_bounce_pnl_krw": -1318.7980574666135,
+    "best_bounce_krw": -1318.7980574666135,
+    "worst_bounce_krw": -1318.7980574666135,
+    "tp_count": 0,
+    "sl_count": 1,
+    "time_stop_count": 0
+  },
+  "best_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "worst_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "missed_bounce_cases": [],
+  "false_bounce_cases": [
+    {
+      "trade_id": "twf_01068",
+      "date": "2025-12-05",
+      "market": "KRW-IP",
+      "market_state": "NORMAL",
+      "plan": "PLAN_A_ICT_FAT_TAIL",
+      "setup_type": "FVG_LIQUIDITY_SWEEP",
+      "score": 60,
+      "pnl_krw": -1318.7980574666135,
+      "factors": [
+        "LIQUIDITY_SWEEP_RECLAIM_PROXY",
+        "FVG_OB_REACTION",
+        "PLAN_A_STRONG_SETUP",
+        "DOMINANCE_EASING_1H",
+        "DOMINANCE_NOT_ACCELERATING",
+        "BTC_NOT_BREAKING_DOWN",
+        "BTC_RANGE_RECLAIM_PROXY"
+      ],
+      "lookahead_check": "PASS"
+    }
+  ],
+  "decision": "BEAR_BOUNCE_REJECTED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "use_available_history": true
+}

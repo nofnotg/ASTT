@@ -59,7 +59,7 @@
   },
   "trades": [
     {
-      "trade_id": "v6_729536a119b3",
+      "trade_id": "v6_fcba74c53961",
       "market": "KRW-PIEVERSE",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "SR_FLIP_RETEST_VOLUME",
@@ -78,7 +78,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_c367ef4792bb",
+      "trade_id": "v6_b09209488e79",
       "market": "KRW-DOGE",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "SR_FLIP_RETEST_VOLUME",
@@ -97,7 +97,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_3987ee82b659",
+      "trade_id": "v6_1d1563777790",
       "market": "KRW-JTO",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "FIB_PULLBACK_VOLUME",
@@ -116,7 +116,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_a03d9d98b58e",
+      "trade_id": "v6_65ce2b729dc0",
       "market": "KRW-USDT",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "NECKLINE_VOLUME_SETUP",
@@ -135,7 +135,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_d19a8565428c",
+      "trade_id": "v6_1805257885a0",
       "market": "KRW-VIRTUAL",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "FIB_PULLBACK_VOLUME",
@@ -154,7 +154,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_bcb2adadefc0",
+      "trade_id": "v6_863b1bfd5176",
       "market": "KRW-TRX",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "NECKLINE_VOLUME_SETUP",
@@ -173,7 +173,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_2bceecb91724",
+      "trade_id": "v6_e2b75000a460",
       "market": "KRW-AKT",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "PULLBACK_WICK_VOLUME",
@@ -192,7 +192,7 @@
       "real_order_enabled": false
     },
     {
-      "trade_id": "v6_af336249890d",
+      "trade_id": "v6_56612a091065",
       "market": "KRW-FF",
       "strategy": "DADDY_VOLUME_NECKLINE",
       "setup_type": "PULLBACK_WICK_VOLUME",

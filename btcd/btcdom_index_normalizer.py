@@ -22,11 +22,16 @@ def normalize_btcdom_index_files(
     close_max: list[float] = []
     source_types: set[str] = set()
     for timeframe in TIMEFRAMES:
-        source_path = external_root / f"btcdom_{timeframe}_percent.csv"
-        if not source_path.exists():
-            source_path = external_root / f"btcdom_{timeframe}.csv"
+        candidates = (
+            external_root / f"btcdom_{timeframe}_2022_percent.csv",
+            external_root / f"btcdom_{timeframe}_percent.csv",
+            external_root / f"btcdom_{timeframe}_2022.csv",
+            external_root / f"btcdom_{timeframe}.csv",
+        )
+        source_path = next((path for path in candidates if path.exists()), candidates[-1])
         frame, summary = load_uploaded_btcdom_csv(source_path)
         summary["timeframe"] = timeframe
+        summary["selected_path"] = str(source_path)
         if not frame.empty:
             frame = frame.copy()
             frame["timeframe"] = timeframe

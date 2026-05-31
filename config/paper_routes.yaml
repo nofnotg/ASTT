@@ -1,0 +1,14 @@
+active_route: LG_V2_BALANCED_PLUS_DOM_GATE
+route_switch_locked: true
+active_auto_switch_allowed: false
+routes:
+  - route_id: LG_V2_BALANCED_PLUS_DOM_GATE
+    status: ACTIVE
+  - route_id: LG_M3_PF0.8_DD8
+    status: SHADOW
+  - route_id: LOSS_GUARD_2026_ROUTER_V1_SHADOW
+    status: SHADOW
+  - route_id: BASE_BALANCED
+    status: SHADOW
+  - route_id: BASE_ROLLING
+    status: SHADOW

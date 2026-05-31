@@ -1,0 +1,66 @@
+{
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "shadow_routes": [
+    "LG_M3_PF0.8_DD8",
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+    "BASE_BALANCED",
+    "BASE_ROLLING"
+  ],
+  "routes": [
+    {
+      "route_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "status": "ACTIVE",
+      "version": "v683",
+      "enabled": true,
+      "notes": "",
+      "real_order_enabled": false,
+      "live_order_allowed": false,
+      "auto_apply_allowed": false
+    },
+    {
+      "route_id": "LG_M3_PF0.8_DD8",
+      "status": "SHADOW",
+      "version": "v683",
+      "enabled": true,
+      "notes": "",
+      "real_order_enabled": false,
+      "live_order_allowed": false,
+      "auto_apply_allowed": false
+    },
+    {
+      "route_id": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+      "status": "SHADOW",
+      "version": "v683",
+      "enabled": true,
+      "notes": "",
+      "real_order_enabled": false,
+      "live_order_allowed": false,
+      "auto_apply_allowed": false
+    },
+    {
+      "route_id": "BASE_BALANCED",
+      "status": "SHADOW",
+      "version": "v683",
+      "enabled": true,
+      "notes": "",
+      "real_order_enabled": false,
+      "live_order_allowed": false,
+      "auto_apply_allowed": false
+    },
+    {
+      "route_id": "BASE_ROLLING",
+      "status": "SHADOW",
+      "version": "v683",
+      "enabled": true,
+      "notes": "",
+      "real_order_enabled": false,
+      "live_order_allowed": false,
+      "auto_apply_allowed": false
+    }
+  ],
+  "route_switch_locked": true,
+  "active_auto_switch_allowed": false,
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

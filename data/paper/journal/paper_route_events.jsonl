@@ -1,0 +1,4 @@
+{"ts": "2026-05-31T06:35:00.080905", "route": "BALANCED_GROWTH_COMPOUNDING_BASELINE", "event": "BACKFILL"}
+{"run_id": "v683_backfill_20260531100844", "event": "BACKFILL", "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE", "start_date": "2026-01-01", "real_order_enabled": false, "live_order_allowed": false, "auto_apply_allowed": false}
+{"run_id": "v683_backfill_20260531100959", "event": "BACKFILL", "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE", "start_date": "2026-01-01", "real_order_enabled": false, "live_order_allowed": false, "auto_apply_allowed": false}
+{"ts": "2026-05-31T10:10:29.817528", "event": "PAPER_FORWARD_START_REQUESTED", "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE", "port": 8787, "server_process_persistent": false, "real_order_enabled": false, "live_order_allowed": false, "auto_apply_allowed": false}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "v683_paper_health_v1",
+  "server_running": false,
+  "active_route_loaded": true,
+  "shadow_routes_loaded": true,
+  "db_writable": true,
+  "jsonl_writable": true,
+  "last_market_data_time": null,
+  "last_decision_time": "2026-05-24 23:00:00",
+  "last_equity_snapshot_time": "2026-05-25 12:00:00",
+  "current_equity_krw": 515625.8951405952,
+  "open_positions": 0,
+  "duplicate_trade_guard_active": true,
+  "route_switch_lock_active": true,
+  "live_order_guard": "ACTIVE",
+  "healthcheck": "PASS",
+  "decision": "PAPER_RUNNING",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

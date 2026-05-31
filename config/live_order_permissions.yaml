@@ -1,0 +1,6 @@
+real_order_enabled: false
+live_order_allowed: false
+auto_apply_allowed: false
+order_api_allowed: false
+withdraw_api_allowed: false
+route_auto_switch_allowed: false

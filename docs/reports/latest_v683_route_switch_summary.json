@@ -1,0 +1,10 @@
+{
+  "route": "LG_M3_PF0.8_DD8",
+  "switched": false,
+  "reason": "confirm-switch required",
+  "route_switch_locked": true,
+  "decision": "MANUAL_APPROVAL_REQUIRED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

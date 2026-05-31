@@ -1,0 +1,15 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASTT V6.7.3 Agent Matrix</title><style>
+body{margin:0;background:#f8fafc;color:#111827;font-family:Arial,'Malgun Gothic',sans-serif;line-height:1.6}
+header{background:#111827;color:#fff;padding:28px 22px}main{max-width:1180px;margin:auto;padding:22px}
+section{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #e5e7eb;padding:8px;text-align:left}th{background:#eef2ff}
+.notice{background:#fff7ed;border-left:5px solid #f97316;padding:12px 14px;border-radius:6px;margin-top:14px}
+</style></head><body><header><h1>ASTT V6.7.3 Agent Matrix</h1><p>PAPER research only. No live orders. No auto apply.</p></header><main>
+<div class="notice"><strong>Safety:</strong> real_order_enabled=false, live_order_allowed=false, auto_apply_allowed=false.</div><section><h2>Scenario Matrix</h2><table><tr><th>Scenario</th><th>Final Equity</th><th>Return</th><th>MDD</th><th>PF</th><th>Trades</th><th>Return/MDD</th><th>Decision</th></tr><tr><td>ROLLING_ONLY_CONTROL</td><td>589,755 KRW</td><td>+17.95%</td><td>-36.04%</td><td>1.032</td><td>1038</td><td>0.498</td><td>DOMINANCE_FILTER_REJECTED</td></tr><tr><td>ROLLING_ONLY_DOMINANCE_OVERLAY</td><td>613,786 KRW</td><td>+22.76%</td><td>-33.00%</td><td>1.041</td><td>1038</td><td>0.690</td><td>DOMINANCE_FILTER_REJECTED</td></tr><tr><td>BALANCED_ONLY_CONTROL</td><td>751,439 KRW</td><td>+50.29%</td><td>-19.43%</td><td>1.352</td><td>320</td><td>2.588</td><td>DOMINANCE_FILTER_REJECTED</td></tr><tr><td>BALANCED_ONLY_DOMINANCE_OVERLAY</td><td>755,298 KRW</td><td>+51.06%</td><td>-19.13%</td><td>1.366</td><td>320</td><td>2.670</td><td>DOMINANCE_FILTER_REJECTED</td></tr><tr><td>POLICY_BLEND_CONTROL</td><td>886,330 KRW</td><td>+77.27%</td><td>-44.27%</td><td>1.076</td><td>1358</td><td>1.745</td><td>BASELINE</td></tr><tr><td>POLICY_BLEND_DOMINANCE_OVERLAY</td><td>927,182 KRW</td><td>+85.44%</td><td>-41.36%</td><td>1.086</td><td>1358</td><td>2.066</td><td>POLICY_BLEND_BTCDOM_CANDIDATE</td></tr></table></section><section><h2>Lookahead Audit</h2><pre>{
+  &quot;checked_trades&quot;: 14938,
+  &quot;pass&quot;: 14938,
+  &quot;fail&quot;: 0,
+  &quot;excluded_trades&quot;: 0,
+  &quot;major_violations&quot;: []
+}</pre></section></main></body></html>

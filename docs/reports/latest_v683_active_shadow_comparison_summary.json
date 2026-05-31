@@ -1,0 +1,65 @@
+{
+  "schema_version": "v683_active_shadow_comparison_v1",
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "rows": [
+    {
+      "route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "status": "ACTIVE",
+      "equity": 515625.8951405952,
+      "today_pnl": 0.0,
+      "weekly_pnl": 0.0,
+      "monthly_pnl": 0.0,
+      "mdd_pct": -18.23180481299657,
+      "return_delta_vs_active_pct": 0.0,
+      "comment": "active route"
+    },
+    {
+      "route": "LG_M3_PF0.8_DD8",
+      "status": "SHADOW",
+      "equity": 517196.1299475203,
+      "today_pnl": 0.0,
+      "weekly_pnl": 0.0,
+      "monthly_pnl": 0.0,
+      "mdd_pct": -17.982796244202603,
+      "return_delta_vs_active_pct": 0.3140469613850172,
+      "comment": "candidate, review required"
+    },
+    {
+      "route": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+      "status": "SHADOW",
+      "equity": 514682.94996583194,
+      "today_pnl": 0.0,
+      "weekly_pnl": 0.0,
+      "monthly_pnl": 0.0,
+      "mdd_pct": -18.318070809540554,
+      "return_delta_vs_active_pct": -0.18858903495264645,
+      "comment": "shadow only"
+    },
+    {
+      "route": "BASE_BALANCED",
+      "status": "SHADOW",
+      "equity": 515463.05133396277,
+      "today_pnl": 0.0,
+      "weekly_pnl": 0.0,
+      "monthly_pnl": 0.0,
+      "mdd_pct": -19.015377825779304,
+      "return_delta_vs_active_pct": -0.032568761326490225,
+      "comment": "shadow only"
+    },
+    {
+      "route": "BASE_ROLLING",
+      "status": "SHADOW",
+      "equity": 520195.4120245834,
+      "today_pnl": 0.0,
+      "weekly_pnl": 0.0,
+      "monthly_pnl": 0.0,
+      "mdd_pct": -19.45538265492953,
+      "return_delta_vs_active_pct": 0.9139033767976423,
+      "comment": "higher return, weaker drawdown"
+    }
+  ],
+  "decision": "PAPER_ROUTE_SHADOW",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

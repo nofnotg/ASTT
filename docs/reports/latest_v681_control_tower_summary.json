@@ -1,0 +1,70 @@
+{
+  "schema_version": "v681_control_tower_v1",
+  "llm_provider_requested": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "active_route": "BALANCED_GROWTH_COMPOUNDING_BASELINE",
+  "active_change_applied": false,
+  "manual_switch_required": true,
+  "candidate_routes": [],
+  "rebalance_candidates": [
+    {
+      "route": "BALANCED_GROWTH_COMPOUNDING_DOMINANCE_OVERLAY",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "ROLLING_EDGE_COMPOUNDING_BASELINE",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "ROLLING_EDGE_COMPOUNDING_DOMINANCE_OVERLAY",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "POLICY_BLEND_COMPOUNDING_BASELINE",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "POLICY_BLEND_COMPOUNDING_DOMINANCE_OVERLAY",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "RELATIVE_STRENGTH_BEAR_COMPOUNDING_AGENT",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "BEAR_DEFENSE_COMPOUNDING_AGENT",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "CASH_DEFENSE_COMPOUNDING_AGENT",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "route": "COMPOUNDING_SCENARIO_ROUTER_V1",
+      "candidate_type": "keep_shadow_or_reject_candidate",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "risk_flags": [
+    "LIVE_NOT_ALLOWED",
+    "ACTIVE_ROUTE_AUTO_SWITCH_DISABLED"
+  ],
+  "recommendations": [
+    "Keep BALANCED_GROWTH_COMPOUNDING_BASELINE active for paper.",
+    "Run dominance/router routes as shadow until forward evidence is enough.",
+    "Do not promote any route without manual confirm-switch."
+  ],
+  "decision": "CONTROL_TOWER_READY_FOR_PAPER",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

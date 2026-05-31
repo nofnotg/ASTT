@@ -1,0 +1,78 @@
+{
+  "schema_version": "v673_saved_loss_missed_profit_v1",
+  "saved_loss_missed_profit": [
+    {
+      "scenario": "ROLLING_ONLY_CONTROL",
+      "saved_loss_krw": 2264525.971484314,
+      "missed_profit_krw": 2561100.9469440724,
+      "net_effect_krw": -296574.9754597582,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "ROLLING_ONLY_DOMINANCE_OVERLAY",
+      "saved_loss_krw": 2319125.7389112897,
+      "missed_profit_krw": 2591669.645358328,
+      "net_effect_krw": -272543.90644703805,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "BALANCED_ONLY_CONTROL",
+      "saved_loss_krw": 4361928.851159321,
+      "missed_profit_krw": 4496968.160518418,
+      "net_effect_krw": -135039.30935909692,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "BALANCED_ONLY_DOMINANCE_OVERLAY",
+      "saved_loss_krw": 4378185.440755712,
+      "missed_profit_krw": 4509366.420581066,
+      "net_effect_krw": -131180.97982535418,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "saved_loss_krw": 120179.12002666236,
+      "missed_profit_krw": 77430.20796128252,
+      "net_effect_krw": 42748.912065379845,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BEAR_AGENT",
+      "saved_loss_krw": 106950.00373582148,
+      "missed_profit_krw": 71034.50389533857,
+      "net_effect_krw": 35915.49984048291,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "BEAR_DEFENSE_AGENT",
+      "saved_loss_krw": 18348.430746879334,
+      "missed_profit_krw": 8855.598443043813,
+      "net_effect_krw": 9492.832303835521,
+      "decision": "KEEP_CANDIDATE"
+    },
+    {
+      "scenario": "CASH_DEFENSE_AGENT",
+      "saved_loss_krw": 3899997.2596798977,
+      "missed_profit_krw": 4165284.5917384643,
+      "net_effect_krw": -265287.3320585666,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "BEAR_BOUNCE_V2_RESEARCH_AGENT",
+      "saved_loss_krw": 5075746.600686548,
+      "missed_profit_krw": 5462076.384422576,
+      "net_effect_krw": -386329.7837360278,
+      "decision": "REJECT"
+    },
+    {
+      "scenario": "SCENARIO_AGENT_ROUTER_V1",
+      "saved_loss_krw": 114513.87874730659,
+      "missed_profit_krw": 74689.19193302082,
+      "net_effect_krw": 39824.68681428577,
+      "decision": "KEEP_CANDIDATE"
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "v6",
-  "markets_requested": "TOP_KRW_50",
+  "markets_requested": "TOP_KRW_100",
   "markets": [
     "KRW-BTC",
     "KRW-ETH",
@@ -25,7 +25,7 @@
     "KRW-VIRTUAL",
     "KRW-VVV"
   ],
-  "months": 12,
+  "months": 36,
   "timeframes": [
     "1w",
     "1d",
@@ -38,37 +38,37 @@
   "by_timeframe": {
     "1w": {
       "markets": 22,
-      "candles": 314,
+      "candles": 318,
       "status": "OK"
     },
     "1d": {
       "markets": 22,
-      "candles": 2082,
+      "candles": 2100,
       "status": "OK"
     },
     "4h": {
       "markets": 22,
-      "candles": 7854,
+      "candles": 7947,
       "status": "OK"
     },
     "1h": {
       "markets": 22,
-      "candles": 22167,
+      "candles": 22527,
       "status": "OK"
     },
     "15m": {
       "markets": 22,
-      "candles": 82017,
+      "candles": 83445,
       "status": "OK"
     },
     "5m": {
       "markets": 22,
-      "candles": 226671,
+      "candles": 230950,
       "status": "OK"
     },
     "1m": {
       "markets": 22,
-      "candles": 835892,
+      "candles": 857173,
       "status": "OK"
     }
   },
@@ -76,43 +76,43 @@
     {
       "timeframe": "1w",
       "market": "KRW-BTC",
-      "candles": 3,
+      "candles": 7,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "1d",
       "market": "KRW-BTC",
-      "candles": 8,
+      "candles": 26,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "4h",
       "market": "KRW-BTC",
-      "candles": 31,
+      "candles": 124,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "1h",
       "market": "KRW-BTC",
-      "candles": 102,
+      "candles": 462,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "15m",
       "market": "KRW-BTC",
-      "candles": 393,
+      "candles": 1821,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "5m",
       "market": "KRW-BTC",
-      "candles": 1169,
+      "candles": 5448,
       "status": "LOCAL_CACHE"
     },
     {
       "timeframe": "1m",
       "market": "KRW-BTC",
-      "candles": 5801,
+      "candles": 27082,
       "status": "LOCAL_CACHE"
     },
     {

@@ -1,0 +1,36 @@
+{
+  "schema_version": "v673_rejected_scenarios_v1",
+  "rejected_scenarios": [
+    {
+      "scenario": "ROLLING_ONLY_CONTROL",
+      "reject_reason": "DOMINANCE_FILTER_REJECTED"
+    },
+    {
+      "scenario": "ROLLING_ONLY_DOMINANCE_OVERLAY",
+      "reject_reason": "DOMINANCE_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_ONLY_CONTROL",
+      "reject_reason": "DOMINANCE_FILTER_REJECTED"
+    },
+    {
+      "scenario": "BALANCED_ONLY_DOMINANCE_OVERLAY",
+      "reject_reason": "DOMINANCE_FILTER_REJECTED"
+    }
+  ],
+  "kept_candidates": [
+    {
+      "scenario": "POLICY_BLEND_DOMINANCE_OVERLAY",
+      "keep_reason": "POLICY_BLEND_BTCDOM_CANDIDATE",
+      "forward_candidate": true
+    },
+    {
+      "scenario": "SCENARIO_AGENT_ROUTER_V1",
+      "keep_reason": "SCENARIO_AGENT_ROUTER_CANDIDATE",
+      "forward_candidate": true
+    }
+  ],
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

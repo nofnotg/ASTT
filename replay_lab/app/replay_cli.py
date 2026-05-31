@@ -333,6 +333,62 @@ from replay_lab.feedback.v672_btcdom_index_reports_html import (
     V672BTCDOMIndexYearlyHTML,
 )
 from replay_lab.feedback.head_controller_v672_review_html import HeadControllerV672ReviewHTML
+from replay_lab.research.v673_dominance_data_preparation import (
+    build_v673_dominance_data_quality_report,
+    prepare_v673_dominance_data,
+)
+from replay_lab.research.v673_rolling_balanced_dominance_matrix_lab import run_v673_rolling_balanced_dominance_matrix_lab
+from replay_lab.research.v673_bear_agent_lab import run_v673_bear_agent_lab
+from replay_lab.research.v673_scenario_agent_router_lab import run_v673_scenario_agent_router_lab
+from replay_lab.research.v673_agent_comparison import (
+    build_v673_high_watermark_report,
+    build_v673_rejected_scenarios_report,
+    build_v673_saved_loss_report,
+    build_v673_yearly_market_state_report,
+)
+from replay_lab.research.head_controller_v673_review import run_head_controller_v673_review
+from replay_lab.feedback.v673_reports_html import (
+    HeadControllerV673ReviewHTML,
+    V673AgentMatrixHTML,
+    V673BearAgentHTML,
+    V673DominanceDataQualityHTML,
+    V673HighWatermarkHTML,
+    V673RejectedScenariosHTML,
+    V673ScenarioRouterHTML,
+)
+from replay_lab.research.v681_control_tower_lab import (
+    audit_v681_compounding_vs_dominance_ledger_lab,
+    build_v681_integrated_investment_report_html,
+    register_v681_shadow_route_lab,
+    run_v681_bear_compounding_agent_lab,
+    run_v681_compounding_dominance_lab,
+    run_v681_compounding_scenario_router_lab,
+    run_v681_control_tower_review_lab,
+    run_v681_paper_backfill_lab,
+    start_v681_paper_server_lab,
+)
+from replay_lab.research.v682_bear_response_lab import (
+    build_v682_bear_bounce_report_html,
+    build_v682_bear_defense_insight_report_html,
+    build_v682_bear_response_router_report_html,
+    build_v682_bounce_case_study_lab,
+    build_v682_bounce_case_study_report_html,
+    register_v682_bear_shadow_route_lab,
+    run_v682_bear_bounce_profit_lab,
+    run_v682_bear_defense_deep_insight_lab,
+    run_v682_bear_response_router_lab,
+)
+from replay_lab.research.v683_paper_runtime_lab import (
+    build_v683_active_shadow_comparison_lab,
+    build_v683_paper_dashboard_html_lab,
+    build_v683_route_router_report_lab,
+    check_v683_paper_health_lab,
+    register_v683_shadow_route_lab,
+    run_v683_control_tower_review_lab,
+    run_v683_paper_backfill_lab,
+    start_v683_live_forward_paper_lab,
+    switch_v683_active_paper_route_lab,
+)
 from research_external.strategy_candidate_registry import build_external_strategy_registry
 from replay_lab.research.mock_vs_real_data_audit import audit_mock_vs_real_data
 from replay_lab.research.upbit_auth_safety_check import run_upbit_auth_safety_check
@@ -2319,6 +2375,234 @@ def build_head_controller_v672_review_report_html_command(args: argparse.Namespa
     return 0
 
 
+def prepare_v673_dominance_data_command(args: argparse.Namespace) -> int:
+    print(json.dumps(prepare_v673_dominance_data(args.source_dir, str(args.use_available_history).lower() == "true", args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_dominance_data_quality_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v673_dominance_data_quality_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v673_rolling_balanced_dominance_matrix_lab_command(args: argparse.Namespace) -> int:
+    summary = run_v673_rolling_balanced_dominance_matrix_lab(args.initial_cash_krw, str(args.use_available_history).lower() == "true", args.reports_dir, str(REPLAY_STORE_DIR / "historical_archive"))
+    print(json.dumps({"scenarios": len(summary.get("scenarios", [])), "coverage_period_validation_possible": summary.get("coverage_period_validation_possible")}, ensure_ascii=False))
+    return 0
+
+
+def run_v673_bear_agent_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v673_bear_agent_lab(args.initial_cash_krw, str(args.use_available_history).lower() == "true", args.reports_dir, str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v673_scenario_agent_router_lab_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v673_scenario_agent_router_lab(args.initial_cash_krw, str(args.use_available_history).lower() == "true", args.reports_dir, str(REPLAY_STORE_DIR / "historical_archive")), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_high_watermark_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v673_high_watermark_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_rejected_scenarios_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v673_rejected_scenarios_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_saved_loss_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v673_saved_loss_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_yearly_market_state_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v673_yearly_market_state_report(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_head_controller_v673_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_head_controller_v673_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v673_dominance_data_quality_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 dominance data quality report: {V673DominanceDataQualityHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v673_agent_matrix_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 agent matrix report: {V673AgentMatrixHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v673_bear_agent_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 bear agent report: {V673BearAgentHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v673_scenario_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 scenario router report: {V673ScenarioRouterHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v673_high_watermark_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 high watermark report: {V673HighWatermarkHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_v673_rejected_scenarios_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v673 rejected scenarios report: {V673RejectedScenariosHTML(args.reports_dir).build()}")
+    return 0
+
+
+def build_head_controller_v673_review_report_html_command(args: argparse.Namespace) -> int:
+    print(f"head controller v673 report: {HeadControllerV673ReviewHTML(args.reports_dir).build()}")
+    return 0
+
+
+def audit_v681_compounding_vs_dominance_ledger_command(args: argparse.Namespace) -> int:
+    print(json.dumps(audit_v681_compounding_vs_dominance_ledger_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v681_compounding_dominance_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v681_compounding_dominance_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v681_bear_compounding_agent_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v681_bear_compounding_agent_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v681_compounding_scenario_router_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v681_compounding_scenario_router_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v681_control_tower_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v681_control_tower_review_lab(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v681_paper_backfill_from_20260101_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v681_paper_backfill_lab(args.initial_cash_krw, args.start_date, args.active_route, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def start_v681_paper_server_command(args: argparse.Namespace) -> int:
+    print(json.dumps(start_v681_paper_server_lab(args.active_route, args.port, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def register_v681_shadow_route_command(args: argparse.Namespace) -> int:
+    print(json.dumps(register_v681_shadow_route_lab(args.route, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v681_integrated_investment_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v681 integrated investment report: {build_v681_integrated_investment_report_html(args.reports_dir)}")
+    return 0
+
+
+def run_v682_bear_defense_deep_insight_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v682_bear_defense_deep_insight_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v682_bear_bounce_profit_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v682_bear_bounce_profit_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v682_bear_response_router_lab_command(args: argparse.Namespace) -> int:
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(run_v682_bear_response_router_lab(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v682_bounce_case_study_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v682_bounce_case_study_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v682_bear_defense_insight_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v682 bear defense insight report: {build_v682_bear_defense_insight_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v682_bear_bounce_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v682 bear bounce report: {build_v682_bear_bounce_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v682_bear_response_router_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v682 bear response router report: {build_v682_bear_response_router_report_html(args.reports_dir)}")
+    return 0
+
+
+def build_v682_bounce_case_study_report_html_command(args: argparse.Namespace) -> int:
+    print(f"v682 bounce case study report: {build_v682_bounce_case_study_report_html(args.reports_dir)}")
+    return 0
+
+
+def register_v682_bear_shadow_route_command(args: argparse.Namespace) -> int:
+    print(json.dumps(register_v682_bear_shadow_route_lab(args.route, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v683_paper_backfill_from_20260101_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v683_paper_backfill_lab(args.initial_cash_krw, args.start_date, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def start_v683_live_forward_paper_command(args: argparse.Namespace) -> int:
+    print(json.dumps(start_v683_live_forward_paper_lab(args.active_route, args.port, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def check_v683_paper_health_command(args: argparse.Namespace) -> int:
+    print(json.dumps(check_v683_paper_health_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v683_active_shadow_comparison_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v683_active_shadow_comparison_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v683_paper_dashboard_html_command(args: argparse.Namespace) -> int:
+    print(f"v683 paper dashboard: {build_v683_paper_dashboard_html_lab(args.reports_dir)}")
+    return 0
+
+
+def run_v683_control_tower_review_command(args: argparse.Namespace) -> int:
+    print(json.dumps(run_v683_control_tower_review_lab(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v683_route_router_report_command(args: argparse.Namespace) -> int:
+    print(json.dumps(build_v683_route_router_report_lab(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def register_v683_shadow_route_command(args: argparse.Namespace) -> int:
+    print(json.dumps(register_v683_shadow_route_lab(args.route, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def switch_v683_active_paper_route_command(args: argparse.Namespace) -> int:
+    confirm = str(args.confirm_switch).lower() == "true"
+    print(json.dumps(switch_v683_active_paper_route_lab(args.route, confirm, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
 def audit_mock_vs_real_data_command(args: argparse.Namespace) -> int:
     result = audit_mock_vs_real_data(args.sessions_dir)
     print(json.dumps(result, ensure_ascii=False, default=str))
@@ -3961,6 +4245,224 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-head-controller-v672-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_head_controller_v672_review_report_html_command)
+
+    p = sub.add_parser("prepare-v673-dominance-data")
+    p.add_argument("--source-dir", default="C:/ASTT")
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=prepare_v673_dominance_data_command)
+
+    p = sub.add_parser("build-v673-dominance-data-quality-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_dominance_data_quality_report_command)
+
+    p = sub.add_parser("run-v673-rolling-balanced-dominance-matrix-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v673_rolling_balanced_dominance_matrix_lab_command)
+
+    p = sub.add_parser("run-v673-bear-agent-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v673_bear_agent_lab_command)
+
+    p = sub.add_parser("run-v673-scenario-agent-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v673_scenario_agent_router_lab_command)
+
+    p = sub.add_parser("build-v673-high-watermark-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_high_watermark_report_command)
+
+    p = sub.add_parser("build-v673-rejected-scenarios-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_rejected_scenarios_report_command)
+
+    p = sub.add_parser("build-v673-saved-loss-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_saved_loss_report_command)
+
+    p = sub.add_parser("build-v673-yearly-market-state-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_yearly_market_state_report_command)
+
+    p = sub.add_parser("run-head-controller-v673-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_head_controller_v673_review_command)
+
+    p = sub.add_parser("build-v673-dominance-data-quality-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_dominance_data_quality_report_html_command)
+
+    p = sub.add_parser("build-v673-agent-matrix-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_agent_matrix_report_html_command)
+
+    p = sub.add_parser("build-v673-bear-agent-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_bear_agent_report_html_command)
+
+    p = sub.add_parser("build-v673-scenario-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_scenario_router_report_html_command)
+
+    p = sub.add_parser("build-v673-high-watermark-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_high_watermark_report_html_command)
+
+    p = sub.add_parser("build-v673-rejected-scenarios-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v673_rejected_scenarios_report_html_command)
+
+    p = sub.add_parser("build-head-controller-v673-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_head_controller_v673_review_report_html_command)
+
+    p = sub.add_parser("audit-v681-compounding-vs-dominance-ledger")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=audit_v681_compounding_vs_dominance_ledger_command)
+
+    p = sub.add_parser("run-v681-compounding-dominance-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v681_compounding_dominance_lab_command)
+
+    p = sub.add_parser("run-v681-bear-compounding-agent-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v681_bear_compounding_agent_lab_command)
+
+    p = sub.add_parser("run-v681-compounding-scenario-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v681_compounding_scenario_router_lab_command)
+
+    p = sub.add_parser("run-v681-control-tower-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v681_control_tower_review_command)
+
+    p = sub.add_parser("run-v681-paper-backfill-from-20260101")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--active-route", default="BALANCED_GROWTH_COMPOUNDING_BASELINE")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v681_paper_backfill_from_20260101_command)
+
+    p = sub.add_parser("start-v681-paper-server")
+    p.add_argument("--active-route", default="BALANCED_GROWTH_COMPOUNDING_BASELINE")
+    p.add_argument("--port", type=int, default=8787)
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=start_v681_paper_server_command)
+
+    p = sub.add_parser("register-v681-shadow-route")
+    p.add_argument("--route", required=True)
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=register_v681_shadow_route_command)
+
+    p = sub.add_parser("build-v681-integrated-investment-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v681_integrated_investment_report_html_command)
+
+    p = sub.add_parser("run-v682-bear-defense-deep-insight")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v682_bear_defense_deep_insight_command)
+
+    p = sub.add_parser("run-v682-bear-bounce-profit-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v682_bear_bounce_profit_lab_command)
+
+    p = sub.add_parser("run-v682-bear-response-router-lab")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v682_bear_response_router_lab_command)
+
+    p = sub.add_parser("build-v682-bounce-case-study-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v682_bounce_case_study_report_command)
+
+    p = sub.add_parser("build-v682-bear-defense-insight-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v682_bear_defense_insight_report_html_command)
+
+    p = sub.add_parser("build-v682-bear-bounce-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v682_bear_bounce_report_html_command)
+
+    p = sub.add_parser("build-v682-bear-response-router-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v682_bear_response_router_report_html_command)
+
+    p = sub.add_parser("build-v682-bounce-case-study-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v682_bounce_case_study_report_html_command)
+
+    p = sub.add_parser("register-v682-bear-bounce-shadow-route")
+    p.add_argument("--route", default="BEAR_BOUNCE_PROFIT_AGENT")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=register_v682_bear_shadow_route_command)
+
+    p = sub.add_parser("register-v682-bear-response-shadow-route")
+    p.add_argument("--route", default="FULL_BEAR_RESPONSE_ROUTER")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=register_v682_bear_shadow_route_command)
+
+    p = sub.add_parser("run-v683-paper-backfill-from-20260101")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v683_paper_backfill_from_20260101_command)
+
+    p = sub.add_parser("start-v683-live-forward-paper")
+    p.add_argument("--active-route", default="LG_V2_BALANCED_PLUS_DOM_GATE")
+    p.add_argument("--port", type=int, default=8787)
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=start_v683_live_forward_paper_command)
+
+    p = sub.add_parser("check-v683-paper-health")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=check_v683_paper_health_command)
+
+    p = sub.add_parser("build-v683-active-shadow-comparison-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v683_active_shadow_comparison_report_command)
+
+    p = sub.add_parser("build-v683-paper-dashboard-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v683_paper_dashboard_html_command)
+
+    p = sub.add_parser("run-v683-control-tower-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v683_control_tower_review_command)
+
+    p = sub.add_parser("build-v683-route-router-report")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v683_route_router_report_command)
+
+    p = sub.add_parser("register-v683-shadow-route")
+    p.add_argument("--route", required=True)
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=register_v683_shadow_route_command)
+
+    p = sub.add_parser("switch-v683-active-paper-route")
+    p.add_argument("--route", required=True)
+    p.add_argument("--confirm-switch", default="false")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=switch_v683_active_paper_route_command)
 
     p = sub.add_parser("audit-mock-vs-real-data")
     p.add_argument("--sessions-dir", default=str(REPLAY_STORE_DIR / "sessions"))

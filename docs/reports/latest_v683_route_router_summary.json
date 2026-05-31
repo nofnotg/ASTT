@@ -1,0 +1,35 @@
+{
+  "schema_version": "v683_route_router_v1",
+  "market_state_rules": [
+    {
+      "market_state": "BULL_ATTACK/ALT_FRIENDLY/NORMAL",
+      "action": "active route full/normal mode"
+    },
+    {
+      "market_state": "BTC_LED_MARKET",
+      "action": "non-PlanA 0.70 cap"
+    },
+    {
+      "market_state": "EDGE_DECAY",
+      "action": "loss guard, non-PlanA 0.35 cap"
+    },
+    {
+      "market_state": "RISK_OFF_ALT_WEAK",
+      "action": "non-PlanA skip or 0.35, PlanA only if strong"
+    },
+    {
+      "market_state": "BEAR_DEFENSE",
+      "action": "A+ setup only, otherwise observe"
+    },
+    {
+      "market_state": "LOCKDOWN",
+      "action": "observe only"
+    }
+  ],
+  "bear_bounce_current_version": "REJECTED_NOT_USED",
+  "active_auto_switch_allowed": false,
+  "decision": "ROUTER_PAPER_ONLY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

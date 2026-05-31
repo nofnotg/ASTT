@@ -1,0 +1,23 @@
+{
+  "schema_version": "v683_control_tower_v1",
+  "llm_provider_requested": "openai",
+  "llm_used": false,
+  "fallback_used": true,
+  "latest_recommendation": "recommend_manual_review",
+  "active_change_applied": false,
+  "rebalance_candidates": [
+    {
+      "route": "LG_M3_PF0.8_DD8",
+      "candidate_type": "promote_shadow_to_candidate",
+      "status": "REVIEW_REQUIRED"
+    }
+  ],
+  "risk_flags": [
+    "Bear Bounce current version rejected",
+    "Active route auto-switch locked"
+  ],
+  "decision": "CONTROL_TOWER_REVIEW_READY",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false
+}

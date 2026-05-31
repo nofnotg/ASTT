@@ -1,0 +1,11 @@
+mode: PAPER_ONLY
+initial_cash_krw: 500000
+start_date: "2026-01-01"
+market_data_refresh_sec: 10
+decision_loop_sec: 60
+equity_snapshot_sec: 60
+route_comparison_update_sec: 300
+report_update_sec: 300
+real_order_enabled: false
+live_order_allowed: false
+auto_apply_allowed: false

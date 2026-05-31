@@ -1,0 +1,53 @@
+<html><head><meta charset='utf-8'><title>V681 Loss Guard Insight</title><style>body{font-family:Arial,"Malgun Gothic",sans-serif;margin:0;background:#f7f8fb;color:#1d2733}.wrap{max-width:1180px;margin:auto;padding:28px}h1{font-size:28px;margin:0 0 8px}h2{font-size:20px;margin-top:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.card{background:#fff;border:1px solid #d9e0ea;border-radius:8px;padding:14px}.muted{color:#667085}.good{color:#067647}.bad{color:#b42318}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d9e0ea;border-radius:8px;overflow:hidden}th,td{padding:9px 10px;border-bottom:1px solid #edf0f5;text-align:right;font-size:13px}th:first-child,td:first-child{text-align:left}th{background:#eef2f7}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:#e8f1ff;color:#1849a9;font-size:12px}.formula{background:#111827;color:#f9fafb;border-radius:8px;padding:12px;white-space:pre-wrap;font-size:13px}</style></head><body><div class='wrap'>
+<h1>V6.8.1 ???? ????? 2026 ?? ????</h1><p class='muted'>2022??? ????? ?? ????? 2026-01-01 ?? ??? ???, ???? ?? ?? ??? ???? ??? ????. ? ??? ???? ?? ??? ??? shadow paper ?????.</p>
+<div class='grid'>
+<div class='card'><div class='muted'>????</div><b>2022-01-01 ~ 2026-05-27</b></div>
+<div class='card'><div class='muted'>2026 ????</div><b>2026-01-01 ~ 2026-05-27</b></div>
+<div class='card'><div class='muted'>?? ??</div><b>????? ?? DD? ??? ??? + PF20 ??</b></div>
+<div class='card'><div class='muted'>??</div><b>SHADOW_ONLY / ??? ??</b></div>
+</div>
+<h2>??? ??/??</h2><div class="grid">
+<div class='card'><b>? ?? + PF ?? ??? ????? ??</b><p>2022~?? BASE_BALANCED 203.89%/MDD -19.02% -&gt; LG_V2 210.01%/MDD -18.23%</p><div class='formula'>guard_on = month_return &lt;= -3% OR PF20 &lt; 1.0 OR HWM drawdown &lt;= -10%; hard_guard = month_return &lt;= -3% AND PF20 &lt; 1.0; hard_guard??? non-PlanA ??? SKIP, ?? guard??? non-PlanA ?? 0.35 cap.</div></div>
+<div class='card'><b>2026 ??? Rolling? ??? ??, ??? ?? ??</b><p>2026 BASE_ROLLING 4.04%/MDD -19.46% vs Rolling LG_V2 4.41%/MDD -19.17%</p><div class='formula'>2026 ?? route? Rolling Edge? ?? shadow. ?, PF20&lt;0.8 ?? ? ?? -3% ???? non-PlanA? ??/??.</div></div>
+<div class='card'><b>PlanB skip? ??? ???? MDD? ??? ? ??</b><p>2022~?? HWM_DEFENSE_PLANB_SKIP 228.99%? ?? ???? MDD -20.41%? BASE_BALANCED -19.02%?? ??</p><div class='formula'>skip ??? ?? ?? ??. ???/PF/???? risk? ??? ?? ?? ?? ??? ??.</div></div>
+<div class='card'><b>?? ?? DD cap? ????? ???</b><p>2022~?? HARD_DD8_CAP 157.00%/MDD -20.88%? ??? ?? ?? ??</p><div class='formula'>DD ????? ?? ??? ??? ??, ?? PF? ? ??? ?? ???? ?.</div></div>
+</div>
+<h2>2022~?? ?? ?? ??</h2><table><tr><th>????</th><th>????</th><th>???</th><th>MDD</th><th>PF</th><th>Return/MDD</th><th>Skip</th><th>????</th></tr>
+<tr><td>LG_V2_BALANCED_PLUS_DOM_GATE</td><td>1,554,681?</td><td>+210.94%</td><td>-18.23%</td><td>1.277</td><td>11.57</td><td>11</td><td>0.634</td></tr>
+<tr><td>LG_V2_BALANCED_MONTH3_PF1_DD10_PLANB_CASH</td><td>1,550,047?</td><td>+210.01%</td><td>-18.23%</td><td>1.274</td><td>11.52</td><td>11</td><td>0.637</td></tr>
+<tr><td>LOSS_GUARD_GROWTH</td><td>1,547,488?</td><td>+209.50%</td><td>-18.52%</td><td>1.270</td><td>11.31</td><td>0</td><td>0.637</td></tr>
+<tr><td>HWM_DEFENSE_PLANB_SKIP</td><td>1,644,971?</td><td>+228.99%</td><td>-20.41%</td><td>1.281</td><td>11.22</td><td>86</td><td>0.699</td></tr>
+<tr><td>LG_V2_ROLLING_MONTH3_PF08_DD15_PLANB_CASH</td><td>1,548,047?</td><td>+209.61%</td><td>-19.17%</td><td>1.259</td><td>10.94</td><td>13</td><td>0.679</td></tr>
+<tr><td>BASE_BALANCED</td><td>1,519,471?</td><td>+203.89%</td><td>-19.02%</td><td>1.261</td><td>10.72</td><td>0</td><td>0.651</td></tr>
+<tr><td>BASE_ROLLING</td><td>1,514,809?</td><td>+202.96%</td><td>-19.46%</td><td>1.250</td><td>10.43</td><td>0</td><td>0.679</td></tr>
+<tr><td>LG_V2_ROLLING_PLUS_DOM_GATE</td><td>1,472,416?</td><td>+194.48%</td><td>-19.17%</td><td>1.243</td><td>10.15</td><td>13</td><td>0.672</td></tr>
+<tr><td>LOSS_GUARD_2026_ROLLING</td><td>1,484,183?</td><td>+196.84%</td><td>-19.46%</td><td>1.242</td><td>10.12</td><td>0</td><td>0.675</td></tr>
+<tr><td>HARD_DD8_CAP</td><td>1,285,002?</td><td>+157.00%</td><td>-20.88%</td><td>1.268</td><td>7.52</td><td>2</td><td>0.544</td></tr>
+</table>
+<h2>2026 ?? ??</h2><table><tr><th>????</th><th>????</th><th>???</th><th>MDD</th><th>PF</th><th>Return/MDD</th><th>Skip</th><th>????</th></tr>
+<tr><td>LG_V2_ROLLING_MONTH3_PF08_DD15_PLANB_CASH</td><td>522,058?</td><td>+4.41%</td><td>-19.17%</td><td>1.063</td><td>0.230</td><td>1</td><td>0.621</td></tr>
+<tr><td>BASE_ROLLING</td><td>520,195?</td><td>+4.04%</td><td>-19.46%</td><td>1.058</td><td>0.208</td><td>0</td><td>0.620</td></tr>
+<tr><td>LG_V2_BALANCED_PLUS_DOM_GATE</td><td>515,626?</td><td>+3.13%</td><td>-18.23%</td><td>1.049</td><td>0.171</td><td>1</td><td>0.544</td></tr>
+<tr><td>BASE_BALANCED</td><td>515,463?</td><td>+3.09%</td><td>-19.02%</td><td>1.045</td><td>0.163</td><td>0</td><td>0.607</td></tr>
+<tr><td>LG_V2_BALANCED_MONTH3_PF1_DD10_PLANB_CASH</td><td>514,089?</td><td>+2.82%</td><td>-18.23%</td><td>1.043</td><td>0.155</td><td>1</td><td>0.560</td></tr>
+<tr><td>HWM_DEFENSE_PLANB_SKIP</td><td>515,309?</td><td>+3.06%</td><td>-20.41%</td><td>1.046</td><td>0.150</td><td>39</td><td>0.651</td></tr>
+<tr><td>LOSS_GUARD_GROWTH</td><td>512,255?</td><td>+2.45%</td><td>-18.52%</td><td>1.038</td><td>0.132</td><td>0</td><td>0.559</td></tr>
+<tr><td>LOSS_GUARD_2026_ROLLING</td><td>506,914?</td><td>+1.38%</td><td>-19.46%</td><td>1.020</td><td>0.071</td><td>0</td><td>0.605</td></tr>
+<tr><td>HARD_DD8_CAP</td><td>502,672?</td><td>+0.53%</td><td>-19.43%</td><td>1.011</td><td>0.027</td><td>0</td><td>0.433</td></tr>
+<tr><td>LG_V2_ROLLING_PLUS_DOM_GATE</td><td>496,553?</td><td>-0.69%</td><td>-19.17%</td><td>0.990</td><td>-0.036</td><td>1</td><td>0.586</td></tr>
+</table>
+<h2>2026 ?? ??</h2><table><tr><th>?</th><th>?? ????</th><th>?? ???</th><th>?? ????</th><th>?? ???</th><th>??</th></tr>
+<tr><td>2026-01</td><td>HARD_DD8_CAP</td><td>+7.44%</td><td>HWM_DEFENSE_PLANB_SKIP</td><td>+5.67%</td><td>1.78%p</td></tr>
+<tr><td>2026-02</td><td>HARD_DD8_CAP</td><td>-6.62%</td><td>BASE_BALANCED</td><td>-7.14%</td><td>0.52%p</td></tr>
+<tr><td>2026-03</td><td>LG_V2_BALANCED_PLUS_DOM_GATE</td><td>+1.01%</td><td>HWM_DEFENSE_PLANB_SKIP</td><td>-1.64%</td><td>2.65%p</td></tr>
+<tr><td>2026-04</td><td>HWM_DEFENSE_PLANB_SKIP</td><td>+4.65%</td><td>HARD_DD8_CAP</td><td>+0.91%</td><td>3.74%p</td></tr>
+<tr><td>2026-05</td><td>HWM_DEFENSE_PLANB_SKIP</td><td>+1.56%</td><td>LG_V2_ROLLING_PLUS_DOM_GATE</td><td>-1.79%</td><td>3.35%p</td></tr>
+</table>
+<h2>??: 2026 ?? Route Agent</h2><div class='card'><p><span class='pill'>SHADOW_ONLY_NOT_LIVE</span> <b>LOSS_GUARD_2026_ROUTER_V1_SHADOW</b></p><p>ROLLING_EDGE_THROTTLE for 2026 weak market paper; BALANCED_GROWTH remains long-term baseline until forward evidence confirms switch</p><div class='formula'>guard_on = current_month_return_pct &lt;= -3.0 OR recent_20_trade_profit_factor &lt; 1.0 OR drawdown_from_high_watermark_pct &lt;= -10.0
+hard_guard = current_month_return_pct &lt;= -3.0 AND recent_20_trade_profit_factor &lt; 1.0
+If hard_guard and trade is non-PlanA: SKIP or max 0.25~0.35 paper cap
+If guard_on and trade is non-PlanA: cap risk multiplier at 0.35
+If guard_on and trade is PlanA/strong setup: preserve, or cap at 0.70 only when dominance risk is also on
+Dominance is secondary: BTC_LED/RISK_OFF/BEAR only reduces size when guard_on is already true; no standalone dominance promotion
+Release defense only after PF20 &gt; 1.2 AND current_month_return_pct &gt; 0 AND drawdown_from_HWM &gt; -8.0</div></div>
+<p class='muted'>???: real_order_enabled=false, live_order_allowed=false, auto_apply_allowed=false. forward shadow paper?? ?? ???? ??.</p></div></body></html>
