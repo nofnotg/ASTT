@@ -163,6 +163,73 @@ p {
   font-size: 13px;
 }
 
+.status-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+  margin: 12px 0;
+}
+
+.status-board > div {
+  background: #ffffff;
+  padding: 12px;
+  min-height: 72px;
+}
+
+.board-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.board-value {
+  margin-top: 6px;
+  font-weight: 800;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.sparkline {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(28px, 1fr));
+  align-items: end;
+  gap: 8px;
+  min-height: 116px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.bar-cell {
+  display: flex;
+  min-width: 0;
+  height: 92px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.bar {
+  width: 100%;
+  max-width: 34px;
+  border-radius: 4px 4px 0 0;
+}
+
+.ok-bg {
+  background: #12b76a;
+}
+
+.danger-bg {
+  background: #f04438;
+}
+
 .hint {
   color: var(--muted);
   white-space: nowrap;
@@ -266,6 +333,7 @@ tbody tr.worst-row:hover {
   }
   .brand { grid-column: 1 / -1; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .status-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   header,
   .toolbar {
     display: block;
@@ -277,4 +345,6 @@ tbody tr.worst-row:hover {
   main { padding: 16px; }
   .grid { grid-template-columns: 1fr; }
   .side { grid-template-columns: 1fr; }
+  .status-board { grid-template-columns: 1fr; }
+  .sparkline { grid-template-columns: repeat(6, minmax(24px, 1fr)); }
 }

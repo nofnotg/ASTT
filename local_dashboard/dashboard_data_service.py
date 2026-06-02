@@ -9,6 +9,18 @@ from local_dashboard.dashboard_security import security_status
 from paper_runtime.paper_runtime_schema import safety_flags
 
 
+ROUTE_ALIASES = {
+    "LG_V2_BALANCED_PLUS_DOM_GATE": "LGv2-DOM",
+    "LG_M3_PF0.8_DD8": "LG-M3",
+    "LOSS_GUARD_2026_ROUTER_V1_SHADOW": "LG-Router",
+    "BASE_BALANCED": "Balanced",
+    "BASE_ROLLING": "Rolling",
+    "BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW": "Bear-V685",
+    "BEAR_ROUTER_V684_SHADOW": "Bear-V684",
+    "LG_COMBINED_GUARD": "LG-Combo",
+}
+
+
 class DashboardDataService:
     def __init__(self, reports_dir: str = "docs/reports", data_dir: str = "data/paper") -> None:
         self.reports = Path(reports_dir)
@@ -65,9 +77,12 @@ class DashboardDataService:
         backfill = self._read("latest_v683_backfill_20260101_summary.json")
         runtime = self._read("latest_v686_active_shadow_runtime_summary.json")
         active_route = backfill.get("active_route") or runtime.get("active_route")
-        daily = self._period_rows(backfill.get("daily_equity", {}).get(active_route, []), active_route, "daily")
-        weekly = self._period_rows(backfill.get("weekly_returns", {}).get(active_route, []), active_route, "weekly")
-        monthly = self._period_rows(backfill.get("monthly_returns", {}).get(active_route, []), active_route, "monthly")
+        routes = self._merge_routes(backfill.get("routes", []), runtime.get("routes", []))
+        policy = self._scenario_policy(routes, active_route, backfill)
+        primary_route = policy.get("primary_route") or active_route
+        daily = self._period_rows(backfill.get("daily_equity", {}).get(primary_route, []), primary_route, "daily")
+        weekly = self._period_rows(backfill.get("weekly_returns", {}).get(primary_route, []), primary_route, "weekly")
+        monthly = self._period_rows(backfill.get("monthly_returns", {}).get(primary_route, []), primary_route, "monthly")
         monthly_by_route: list[dict[str, Any]] = []
         for route_id, rows in backfill.get("monthly_returns", {}).items():
             monthly_by_route.extend(self._period_rows(rows, route_id, "monthly"))
@@ -77,13 +92,17 @@ class DashboardDataService:
             "source_mode": backfill.get("source_mode", "historical_backfill"),
             "start_date": backfill.get("start_date", "2026-01-01"),
             "initial_cash_krw": backfill.get("initial_cash_krw", 0.0),
-            "active_route": active_route,
-            "routes": backfill.get("routes", runtime.get("routes", [])),
-            "route_agent_recommendation": self._route_agent_recommendation(backfill.get("routes", runtime.get("routes", [])), active_route),
-            "monthly": monthly,
-            "weekly": weekly,
-            "daily": daily,
-            "monthly_by_route": self._rank_monthly_routes(monthly_by_route),
+            "active_route": primary_route,
+            "previous_runtime_active_route": active_route if primary_route != active_route else None,
+            "route_aliases": ROUTE_ALIASES,
+            "scenario_policy": policy,
+            "routes": policy["maintained_routes"],
+            "research_routes": policy["research_routes"],
+            "route_agent_recommendation": policy["route_agent_recommendation"],
+            "monthly": list(reversed(monthly)),
+            "weekly": list(reversed(weekly)),
+            "daily": list(reversed(daily)),
+            "monthly_by_route": list(reversed(self._rank_monthly_routes(monthly_by_route))),
             "latest_record_date": latest_record_date,
             "record_staleness": self._record_staleness(latest_record_date),
             "latest_market_data": self._latest_market_data(),
@@ -198,6 +217,7 @@ class DashboardDataService:
                 {
                     **row,
                     "route_id": route_id,
+                    "route_label": self._alias(route_id),
                     "kind": kind,
                     "month": month,
                     "week": week,
@@ -242,6 +262,74 @@ class DashboardDataService:
                 ranked.append({**row, "comparison_rank": marker})
         return ranked
 
+    def _merge_routes(self, backfill_routes: list[dict[str, Any]], runtime_routes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        merged: dict[str, dict[str, Any]] = {}
+        for row in [*backfill_routes, *runtime_routes]:
+            scenario = row.get("scenario")
+            if not scenario:
+                continue
+            merged[scenario] = {**merged.get(scenario, {}), **row, "scenario_label": self._alias(scenario)}
+        return list(merged.values())
+
+    def _scenario_policy(self, routes: list[dict[str, Any]], active_route: str | None, backfill: dict[str, Any]) -> dict[str, Any]:
+        ranked = sorted(routes, key=self._route_score, reverse=True)
+        maintained = ranked[:5]
+        research = ranked[5:]
+        active = next((row for row in ranked if row.get("scenario") == active_route), {})
+        if active_route and active and not any(row.get("scenario") == active_route for row in maintained):
+            if len(maintained) >= 5:
+                research = [maintained[-1], *research]
+                maintained = [*maintained[:4], active]
+            else:
+                maintained = [*maintained, active]
+        recommendation = self._route_agent_recommendation(maintained, active_route, backfill)
+        recommended_route = recommendation.get("recommended_route")
+        recommended_validated = next(
+            (
+                row
+                for row in maintained
+                if row.get("scenario") == recommended_route and self._has_period_records(backfill, row.get("scenario"))
+            ),
+            {},
+        )
+        best_validated = next((row for row in maintained if self._has_period_records(backfill, row.get("scenario"))), maintained[0] if maintained else {})
+        primary = recommended_validated.get("scenario") or best_validated.get("scenario") or active_route
+        if active_route and primary != active_route and active:
+            active = {**active, "route_status": "SHADOW_PREVIOUS_PRIMARY"}
+            maintained = [row if row.get("scenario") != active_route else active for row in maintained]
+        return {
+            "investment_start_date": "2026-01-01",
+            "primary_route": primary,
+            "primary_route_label": self._alias(primary),
+            "previous_primary_route": active_route if primary != active_route else None,
+            "previous_primary_route_label": self._alias(active_route) if primary != active_route else None,
+            "max_maintained_routes": 5,
+            "maintained_routes": maintained,
+            "shadow_routes": [row for row in maintained if row.get("scenario") != primary],
+            "research_routes": research,
+            "daily_llm_feedback": {
+                "status": "READY_NOT_SCHEDULED",
+                "planned_report": "market-regime scenario feedback",
+                "auto_apply_allowed": False,
+            },
+            "route_agent_recommendation": recommendation,
+        }
+
+    def _route_score(self, row: dict[str, Any]) -> tuple[float, float, float]:
+        return (
+            float(row.get("return_pct", -999.0) or -999.0),
+            float(row.get("mdd_pct", -999.0) or -999.0),
+            float(row.get("profit_factor", 0.0) or 0.0),
+        )
+
+    def _has_period_records(self, backfill: dict[str, Any], route_id: str | None) -> bool:
+        return bool(route_id and backfill.get("monthly_returns", {}).get(route_id))
+
+    def _alias(self, route_id: str | None) -> str:
+        if not route_id:
+            return "-"
+        return ROUTE_ALIASES.get(route_id, str(route_id).replace("_", "-")[:18])
+
     def _record_staleness(self, latest_record_date: str | None) -> dict[str, Any]:
         if not latest_record_date:
             return {"status": "NO_RECORD", "days_behind": None, "message": "투자 기록 없음"}
@@ -259,13 +347,20 @@ class DashboardDataService:
             message = f"{latest_record_date} 이후 기록 갱신 필요"
         return {"status": status, "days_behind": days, "message": message}
 
-    def _route_agent_recommendation(self, routes: list[dict[str, Any]], active_route: str | None) -> dict[str, Any]:
+    def _route_agent_recommendation(
+        self,
+        routes: list[dict[str, Any]],
+        active_route: str | None,
+        backfill: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
         active = next((row for row in routes if row.get("scenario") == active_route), {})
         if not active:
             return {"recommended_route": active_route, "reason": "active route 기준 정보 없음", "auto_apply_allowed": False}
         eligible = []
         for row in routes:
             if row.get("scenario") == active_route:
+                continue
+            if backfill is not None and not self._has_period_records(backfill, row.get("scenario")):
                 continue
             better_return = float(row.get("return_pct", -999.0)) > float(active.get("return_pct", -999.0))
             better_mdd = float(row.get("mdd_pct", -999.0)) >= float(active.get("mdd_pct", -999.0))
@@ -288,6 +383,7 @@ class DashboardDataService:
             base = {
                 "trade_id": row.get("trade_id"),
                 "route_id": row.get("route_id"),
+                "route_label": self._alias(row.get("route_id")),
                 "route_status": row.get("route_status"),
                 "market": row.get("market"),
                 "source_mode": row.get("source_mode"),
@@ -329,6 +425,7 @@ class DashboardDataService:
                     "time": row.get("decision_time"),
                     "market": row.get("market"),
                     "route_id": row.get("route_id"),
+                    "route_label": self._alias(row.get("route_id")),
                     "route_status": row.get("route_status"),
                     "market_state": row.get("market_state"),
                     "selected_agent": row.get("selected_agent"),

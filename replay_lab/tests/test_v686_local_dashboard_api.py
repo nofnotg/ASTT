@@ -20,9 +20,18 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
           "mode":"PAPER_ONLY",
           "start_date":"2026-01-01",
           "active_route":"LG_V2_BALANCED_PLUS_DOM_GATE",
-          "daily_equity":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01-02","pnl_krw":1000,"return_pct":1.0}]},
-          "weekly_returns":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-W01","pnl_krw":1000,"return_pct":1.0}]},
-          "monthly_returns":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01","pnl_krw":1000,"return_pct":1.0}]},
+          "daily_equity":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01-02","pnl_krw":1000,"return_pct":1.0}],
+            "SHADOW":[{"period":"2026-01-03","pnl_krw":2000,"return_pct":2.0}]
+          },
+          "weekly_returns":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-W01","pnl_krw":1000,"return_pct":1.0}],
+            "SHADOW":[{"period":"2026-W01","pnl_krw":2000,"return_pct":2.0}]
+          },
+          "monthly_returns":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01","pnl_krw":1000,"return_pct":1.0}],
+            "SHADOW":[{"period":"2026-01","pnl_krw":2000,"return_pct":2.0}]
+          },
           "routes":[
             {"scenario":"LG_V2_BALANCED_PLUS_DOM_GATE","route_status":"ACTIVE","return_pct":1.0,"mdd_pct":-5.0},
             {"scenario":"SHADOW","route_status":"SHADOW","return_pct":2.0,"mdd_pct":-4.0}
@@ -34,12 +43,19 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
     service = DashboardDataService(str(reports), str(tmp_path / "data"))
     records = service.investment_records()
     assert records["start_date"] == "2026-01-01"
+    assert records["scenario_policy"]["investment_start_date"] == "2026-01-01"
+    assert records["scenario_policy"]["primary_route"] == "SHADOW"
+    assert records["scenario_policy"]["max_maintained_routes"] == 5
+    assert len(records["routes"]) <= 5
     assert records["monthly"][0]["month"] == "2026-01"
+    assert records["active_route"] == "SHADOW"
+    assert records["previous_runtime_active_route"] == "LG_V2_BALANCED_PLUS_DOM_GATE"
+    assert records["monthly"][0]["route_label"] == "SHADOW"
     assert records["weekly"][0]["month"] == "2026-01"
     assert records["daily"][0]["week"] == "2026-W01"
     assert records["monthly_by_route"][0]["result"] == "수익"
     assert records["monthly_by_route"][0]["comparison_rank"] == "best"
-    assert records["latest_record_date"] == "2026-01-02"
+    assert records["latest_record_date"] == "2026-01-03"
     assert records["record_staleness"]["status"] in {"FRESH", "STALE"}
     assert records["route_agent_recommendation"]["recommended_route"] == "SHADOW"
     assert records["route_agent_recommendation"]["auto_apply_allowed"] is False
