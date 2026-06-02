@@ -52,7 +52,11 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
     assert records["previous_runtime_active_route"] == "LG_V2_BALANCED_PLUS_DOM_GATE"
     assert records["monthly"][0]["route_label"] == "SHADOW"
     assert records["weekly"][0]["month"] == "2026-01"
+    assert [row["period"] for row in records["daily"]] == ["2026-01-03", "2026-01-02", "2026-01-01"]
     assert records["daily"][0]["week"] == "2026-W01"
+    assert records["daily"][1]["result"] == "거래없음"
+    assert records["daily"][1]["trade_count"] == 0
+    assert "체결 없음" in records["daily"][1]["trade_comment"]
     assert records["monthly_by_route"][0]["result"] == "수익"
     assert records["monthly_by_route"][0]["comparison_rank"] == "best"
     assert records["latest_record_date"] == "2026-01-03"

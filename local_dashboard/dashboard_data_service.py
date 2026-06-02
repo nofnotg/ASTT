@@ -18,6 +18,12 @@ ROUTE_ALIASES = {
     "BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW": "Bear-V685",
     "BEAR_ROUTER_V684_SHADOW": "Bear-V684",
     "LG_COMBINED_GUARD": "LG-Combo",
+    "SRR_STRICT_WF": "SRR-S",
+    "SRR_BALANCED_WF": "SRR-B",
+    "SRR_AGGRESSIVE_WF": "SRR-A",
+    "SRR_STRICT_ORACLE": "SRR-S-O",
+    "SRR_BALANCED_ORACLE": "SRR-B-O",
+    "SRR_AGGRESSIVE_ORACLE": "SRR-A-O",
 }
 
 
@@ -75,18 +81,28 @@ class DashboardDataService:
 
     def investment_records(self) -> dict[str, Any]:
         backfill = self._read("latest_v683_backfill_20260101_summary.json")
+        surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")
         runtime = self._read("latest_v686_active_shadow_runtime_summary.json")
         active_route = backfill.get("active_route") or runtime.get("active_route")
-        routes = self._merge_routes(backfill.get("routes", []), runtime.get("routes", []))
+        routes = self._merge_routes(backfill.get("routes", []), runtime.get("routes", []), surge_rr.get("routes", []))
         policy = self._scenario_policy(routes, active_route, backfill)
         primary_route = policy.get("primary_route") or active_route
         daily = self._period_rows(backfill.get("daily_equity", {}).get(primary_route, []), primary_route, "daily")
+        latest_record_date = max((str(row.get("period", "")) for row in daily), default=None)
+        daily = self._fill_daily_calendar(
+            daily,
+            route_id=primary_route,
+            start_date=str(backfill.get("start_date", "2026-01-01")),
+            end_date=latest_record_date,
+            initial_cash_krw=float(backfill.get("initial_cash_krw", 0.0) or 0.0),
+        )
         weekly = self._period_rows(backfill.get("weekly_returns", {}).get(primary_route, []), primary_route, "weekly")
         monthly = self._period_rows(backfill.get("monthly_returns", {}).get(primary_route, []), primary_route, "monthly")
         monthly_by_route: list[dict[str, Any]] = []
         for route_id, rows in backfill.get("monthly_returns", {}).items():
             monthly_by_route.extend(self._period_rows(rows, route_id, "monthly"))
-        latest_record_date = max((str(row.get("period", "")) for row in daily), default=None)
+        for route_id, rows in surge_rr.get("monthly_returns", {}).items():
+            monthly_by_route.extend(self._period_rows(rows, route_id, "monthly"))
         return {
             "mode": backfill.get("mode", "PAPER_ONLY"),
             "source_mode": backfill.get("source_mode", "historical_backfill"),
@@ -113,7 +129,9 @@ class DashboardDataService:
     def investment_logs(self, limit: int = 2000) -> dict[str, Any]:
         trades = self._read_jsonl(self.data / "journal" / "paper_trades.jsonl", limit)
         decisions = self._read_jsonl(self.data / "journal" / "paper_decisions.jsonl", limit)
+        records = self.investment_records()
         return {
+            "daily_trade_calendar": records.get("daily", []),
             "trade_logs": self._trade_logs(trades),
             "scenario_logs": self._scenario_logs(decisions),
             **safety_flags(),
@@ -137,7 +155,12 @@ class DashboardDataService:
         return self._read("latest_v686_control_tower_dashboard_summary.json")
 
     def pattern_validation(self) -> dict[str, Any]:
-        return self._read("latest_v687_investment_pattern_validation_summary.json")
+        payload = self._read("latest_v687_investment_pattern_validation_summary.json")
+        surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")
+        for key in ("routes", "oracle_reference_routes"):
+            surge_rr[key] = [{**row, "scenario_label": self._alias(row.get("scenario"))} for row in surge_rr.get(key, [])]
+        payload["surge_rr_scenario"] = surge_rr
+        return payload
 
     def _read(self, name: str) -> dict[str, Any]:
         path = self.reports / name
@@ -222,9 +245,62 @@ class DashboardDataService:
                     "month": month,
                     "week": week,
                     "result": "수익" if pnl > 0 else "손실" if pnl < 0 else "보합",
+                    "trade_comment": self._trade_comment(int(row.get("trade_count", 0) or 0)),
                 }
             )
         return normalized
+
+    def _fill_daily_calendar(
+        self,
+        rows: list[dict[str, Any]],
+        route_id: str | None,
+        start_date: str,
+        end_date: str | None,
+        initial_cash_krw: float,
+    ) -> list[dict[str, Any]]:
+        if not end_date:
+            return rows
+        by_day = {str(row.get("period", ""))[:10]: row for row in rows if row.get("period")}
+        try:
+            cursor = date.fromisoformat(start_date[:10])
+            end = date.fromisoformat(end_date[:10])
+        except ValueError:
+            return rows
+        filled: list[dict[str, Any]] = []
+        last_equity = initial_cash_krw
+        while cursor <= end:
+            period = cursor.isoformat()
+            row = by_day.get(period)
+            if row:
+                last_equity = float(row.get("end_equity_krw", row.get("start_equity_krw", last_equity)) or last_equity)
+                filled.append(row)
+            else:
+                month, week = self._period_keys(period, "daily")
+                filled.append(
+                    {
+                        "period": period,
+                        "trade_count": 0,
+                        "start_equity_krw": last_equity,
+                        "end_equity_krw": last_equity,
+                        "pnl_krw": 0.0,
+                        "return_pct": 0.0,
+                        "mdd_pct": None,
+                        "route_id": route_id,
+                        "route_label": self._alias(route_id),
+                        "kind": "daily",
+                        "month": month,
+                        "week": week,
+                        "result": "거래없음",
+                        "trade_comment": "주 시나리오 기준 체결 없음. 후보 미충족 또는 가드/필터 대기.",
+                    }
+                )
+            cursor += timedelta(days=1)
+        return filled
+
+    def _trade_comment(self, trade_count: int) -> str:
+        if trade_count > 0:
+            return f"{trade_count}건 체결 기록 있음"
+        return "체결 없음. 후보 미충족 또는 가드/필터 대기."
 
     def _period_keys(self, period: str, kind: str) -> tuple[str, str]:
         if kind == "monthly":
@@ -262,9 +338,9 @@ class DashboardDataService:
                 ranked.append({**row, "comparison_rank": marker})
         return ranked
 
-    def _merge_routes(self, backfill_routes: list[dict[str, Any]], runtime_routes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    def _merge_routes(self, *route_groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
         merged: dict[str, dict[str, Any]] = {}
-        for row in [*backfill_routes, *runtime_routes]:
+        for row in [row for group in route_groups for row in group]:
             scenario = row.get("scenario")
             if not scenario:
                 continue

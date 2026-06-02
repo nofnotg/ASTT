@@ -22,7 +22,9 @@ const labels = {
   action: "행동",
   time: "일시",
   result: "결과",
+  trade_comment: "코멘트",
   trade_count: "거래수",
+  skipped_trade_count: "스킵",
   start_equity_krw: "시작금",
   end_equity_krw: "종료금",
   final_equity_krw: "최종금",
@@ -61,6 +63,11 @@ const labels = {
   investment_start_date: "투자 시작",
   primary_route_label: "주 시나리오",
   previous_primary_route_label: "이전 주 시나리오",
+  candidate: "후보",
+  beats_active_return: "수익 우위",
+  beats_or_matches_active_mdd: "낙폭 우위",
+  trade_count_ok: "표본 충분",
+  lookahead_clean: "룩어헤드 없음",
 };
 
 const money = (value) => Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 }) + " KRW";
@@ -129,7 +136,10 @@ function content(view, data, account, records) {
   if (view === "overview") return recordsView(data, true, account);
   if (view === "records") return recordsView(data, false, account);
   if (view === "trades") {
-    return section("매수/매도 기록", "최근 로그가 위에 오도록 정렬했습니다.", table(data.trade_logs || [], ["time", "market", "action", "route_label", "route_status", "size_krw", "realized_pnl_krw", "pnl_pct", "reason", "source_mode"], 800));
+    return [
+      section("일별 매매 캘린더", "없는 날짜는 주 시나리오 기준 체결이 없던 날입니다.", table(data.daily_trade_calendar || [], ["period", "route_label", "trade_count", "result", "trade_comment", "start_equity_krw", "end_equity_krw", "pnl_krw"], 500)),
+      section("매수/매도 기록", "실제 체결 로그입니다. 최근 로그가 위에 오도록 정렬했습니다.", table(data.trade_logs || [], ["time", "market", "action", "route_label", "route_status", "size_krw", "realized_pnl_krw", "pnl_pct", "reason", "source_mode"], 800)),
+    ].join("");
   }
   if (view === "decisions") {
     return section("시나리오 적용 히스토리", "일자와 코인별로 어떤 시나리오 판단이 적용됐는지 확인합니다.", table(data.scenario_logs || [], ["time", "market", "route_label", "market_state", "selected_agent", "action", "size_krw", "guard_on", "hard_guard", "dominance_risk", "pf20", "month_return_pct", "hwm_drawdown_pct", "reason"], 800));
@@ -172,6 +182,7 @@ function routesView(data) {
 
 function validationView(data) {
   const feb = data.february_feedback || {};
+  const srr = data.surge_rr_scenario || {};
   return [
     section("검증 요약", "", table([{
       기간: `${data.data_range?.start || "-"} ~ ${data.data_range?.end || "-"}`,
@@ -179,6 +190,9 @@ function validationView(data) {
       판정: data.decision || "-",
       급등정의: data.surge_definition || "-",
     }], ["기간", "거래수", "급등정의", "판정"], 5)),
+    section("SRR 2026 시나리오 검증", "급등+손익비 조건을 2026-01-01부터 복리 shadow로 검증했습니다. WF는 이전 기간 학습만 사용, ORACLE은 참고용입니다.", table(srr.routes || [], ["scenario_label", "source_mode", "final_equity_krw", "return_pct", "mdd_pct", "profit_factor", "avg_win_loss_ratio", "win_rate_pct", "trade_count", "skipped_trade_count", "decision"], 20)),
+    section("SRR Oracle 참고값", "전체 기간을 보고 만든 조건이라 승격 근거로 쓰지 않습니다.", table(srr.oracle_reference_routes || [], ["scenario", "source_mode", "final_equity_krw", "return_pct", "mdd_pct", "profit_factor", "avg_win_loss_ratio", "win_rate_pct", "trade_count", "skipped_trade_count"], 20)),
+    section("SRR 승격 체크", "", table([srr.promotion_check || {}], ["candidate", "beats_active_return", "beats_or_matches_active_mdd", "trade_count_ok", "lookahead_clean", "auto_apply_allowed"], 5)),
     section("급등 조건 후보", "pnl_pct 0.50% 이상 거래가 많이 나온 조건입니다.", table(data.surge_patterns || [], ["pattern", "trade_count", "surge_count", "surge_rate_pct", "profit_factor", "avg_win_loss_ratio", "win_rate_pct", "expectancy_krw", "interpretation"], 30)),
     section("손익비 패턴", "손익비 = 평균 이익 / 평균 손실, PF = 총이익 / 총손실입니다.", table(data.risk_reward_patterns || [], ["pattern", "trade_count", "profit_factor", "avg_win_loss_ratio", "win_rate_pct", "expectancy_krw", "max_drawdown_pct"], 30)),
     section("2월 실패 피드백", "", table(feb.route_monthly_rank || [], ["route_id", "period", "return_pct", "mdd_pct", "trade_count"], 20)),
@@ -197,7 +211,7 @@ function recordsView(data, compact, account) {
     statusBoard(data, account || {}),
     section("월단위 투자기록", "월을 클릭하면 같은 월에 속한 주/일 기록이 아래에 표시됩니다. 최신 월이 위입니다.", table(months, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result"], compact ? 24 : 200, "month-table")),
     section(`${month || "선택 월"} 주단위 기록`, "선택한 월 안에서 주별 손익과 낙폭을 봅니다.", table(weeks, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result"], compact ? 12 : 200)),
-    section(`${month || "선택 월"} 일단위 기록`, "선택한 월 안에서 일별 계좌 변화와 거래수를 봅니다.", table(days, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result"], compact ? 40 : 400)),
+    section(`${month || "선택 월"} 일단위 기록`, "거래가 없는 날짜도 거래없음으로 표시합니다.", table(days, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result", "trade_comment"], compact ? 40 : 400)),
   ].join("");
 }
 
