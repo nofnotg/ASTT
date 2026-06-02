@@ -1,6 +1,6 @@
 {
   "schema_version": "v683_backfill_20260101_v1",
-  "run_id": "v683_backfill_20260531100959",
+  "run_id": "v683_backfill_20260602115153",
   "source_mode": "historical_backfill",
   "mode": "PAPER_ONLY",
   "initial_cash_krw": 500000.0,
@@ -16,22 +16,22 @@
     {
       "scenario": "LG_V2_BALANCED_PLUS_DOM_GATE",
       "initial_cash_krw": 500000.0,
-      "final_equity_krw": 515625.8951405952,
-      "return_pct": 3.1251790281190406,
+      "final_equity_krw": 516100.02258498885,
+      "return_pct": 3.2200045169977765,
       "mdd_pct": -18.23180481299657,
-      "profit_factor": 1.0493990738478098,
-      "return_mdd_ratio": 0.17141358522504868,
+      "profit_factor": 1.0508326921749844,
+      "return_mdd_ratio": 0.17661468790530221,
       "trade_count": 254,
       "skipped_trade_count": 1,
-      "win_rate_pct": 34.645669291338585,
+      "win_rate_pct": 34.25196850393701,
       "average_multiplier": 0.5444881889763769,
       "lookahead_fail_count": 0,
       "route_status": "ACTIVE",
       "source_mode": "historical_backfill",
       "decision": "PAPER_ROUTE_ACTIVE",
       "high_watermark_krw": 601222.5393225543,
-      "profit_giveback_krw": 85596.64418195904,
-      "profit_giveback_ratio_pct": 84.56283032892313,
+      "profit_giveback_krw": 85122.5167375654,
+      "profit_giveback_ratio_pct": 84.094429271642,
       "saved_loss_krw": 0.0,
       "missed_profit_krw": 0.0,
       "net_effect_krw": 0.0
@@ -39,22 +39,22 @@
     {
       "scenario": "LG_M3_PF0.8_DD8",
       "initial_cash_krw": 500000.0,
-      "final_equity_krw": 517196.1299475203,
-      "return_pct": 3.439225989504058,
+      "final_equity_krw": 517671.70125154755,
+      "return_pct": 3.53434025030952,
       "mdd_pct": -17.982796244202603,
-      "profit_factor": 1.0545570362369532,
-      "return_mdd_ratio": 0.19125090129477584,
+      "profit_factor": 1.0559934785928407,
+      "return_mdd_ratio": 0.19654008210480284,
       "trade_count": 254,
       "skipped_trade_count": 1,
-      "win_rate_pct": 34.645669291338585,
+      "win_rate_pct": 34.25196850393701,
       "average_multiplier": 0.5433070866141722,
       "lookahead_fail_count": 0,
       "route_status": "SHADOW",
       "source_mode": "historical_backfill",
       "decision": "PAPER_ROUTE_SHADOW",
       "high_watermark_krw": 601222.5393225543,
-      "profit_giveback_krw": 84026.40937503392,
-      "profit_giveback_ratio_pct": 83.01156040679498,
+      "profit_giveback_krw": 83550.8380710067,
+      "profit_giveback_ratio_pct": 82.54173292843883,
       "saved_loss_krw": 3605.9991936499855,
       "missed_profit_krw": 0.0,
       "net_effect_krw": 3605.9991936499855
@@ -62,68 +62,68 @@
     {
       "scenario": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
       "initial_cash_krw": 500000.0,
-      "final_equity_krw": 514682.94996583194,
-      "return_pct": 2.936589993166394,
+      "final_equity_krw": 515156.2103548854,
+      "return_pct": 3.0312420709770693,
       "mdd_pct": -18.318070809540554,
-      "profit_factor": 1.0457162562591538,
-      "return_mdd_ratio": 0.16031109518568612,
+      "profit_factor": 1.0471302900279558,
+      "return_mdd_ratio": 0.16547823744617884,
       "trade_count": 254,
       "skipped_trade_count": 1,
-      "win_rate_pct": 34.645669291338585,
+      "win_rate_pct": 34.25196850393701,
       "average_multiplier": 0.5527559055118099,
       "lookahead_fail_count": 0,
       "route_status": "SHADOW",
       "source_mode": "historical_backfill",
       "decision": "PAPER_ROUTE_SHADOW",
       "high_watermark_krw": 601222.5393225543,
-      "profit_giveback_krw": 86539.58935672231,
-      "profit_giveback_ratio_pct": 85.49438685879687,
-      "saved_loss_krw": 2227.0810409611045,
-      "missed_profit_krw": 157.5626232206325,
-      "net_effect_krw": 2069.518417740472
+      "profit_giveback_krw": 86066.32896766887,
+      "profit_giveback_ratio_pct": 85.02684238478861,
+      "saved_loss_krw": 2227.8237895839316,
+      "missed_profit_krw": 159.17242718363389,
+      "net_effect_krw": 2068.651362400298
     },
     {
       "scenario": "BASE_BALANCED",
       "initial_cash_krw": 500000.0,
-      "final_equity_krw": 515463.05133396277,
-      "return_pct": 3.0926102667925504,
+      "final_equity_krw": 515937.02904049674,
+      "return_pct": 3.187405808099353,
       "mdd_pct": -19.015377825779304,
-      "profit_factor": 1.0447560654583787,
-      "return_mdd_ratio": 0.162637329382952,
+      "profit_factor": 1.0460737950396095,
+      "return_mdd_ratio": 0.16762253357796345,
       "trade_count": 255,
       "skipped_trade_count": 0,
-      "win_rate_pct": 34.509803921568626,
+      "win_rate_pct": 34.11764705882353,
       "average_multiplier": 0.6074509803921558,
       "lookahead_fail_count": 0,
       "route_status": "SHADOW",
       "source_mode": "historical_backfill",
       "decision": "PAPER_ROUTE_SHADOW",
       "high_watermark_krw": 601222.5393225543,
-      "profit_giveback_krw": 85759.48798859149,
-      "profit_giveback_ratio_pct": 84.72370735070335,
-      "saved_loss_krw": 1759.799706428363,
-      "missed_profit_krw": 564.8093570143129,
-      "net_effect_krw": 1194.99034941405
+      "profit_giveback_krw": 85285.51028205751,
+      "profit_giveback_ratio_pct": 84.25545422278724,
+      "saved_loss_krw": 1759.927976890262,
+      "missed_profit_krw": 565.0873653357759,
+      "net_effect_krw": 1194.8406115544863
     },
     {
       "scenario": "BASE_ROLLING",
       "initial_cash_krw": 500000.0,
-      "final_equity_krw": 520195.4120245834,
-      "return_pct": 4.039082404916683,
+      "final_equity_krw": 520673.7412233549,
+      "return_pct": 4.134748244670972,
       "mdd_pct": -19.45538265492953,
-      "profit_factor": 1.0575629303575003,
-      "return_mdd_ratio": 0.20760745119003227,
+      "profit_factor": 1.0588575700517395,
+      "return_mdd_ratio": 0.21252464256329212,
       "trade_count": 255,
       "skipped_trade_count": 0,
-      "win_rate_pct": 34.509803921568626,
+      "win_rate_pct": 34.11764705882353,
       "average_multiplier": 0.6201960784313716,
       "lookahead_fail_count": 0,
       "route_status": "SHADOW",
       "source_mode": "historical_backfill",
       "decision": "PAPER_ROUTE_SHADOW",
       "high_watermark_krw": 601222.5393225543,
-      "profit_giveback_krw": 81027.12729797087,
-      "profit_giveback_ratio_pct": 80.04850287322968,
+      "profit_giveback_krw": 80548.79809919937,
+      "profit_giveback_ratio_pct": 79.57595080925974,
       "saved_loss_krw": 4420.745602972976,
       "missed_profit_krw": 998.8106686898267,
       "net_effect_krw": 3421.934934283149
@@ -1035,10 +1035,10 @@
         "period": "2026-05-24",
         "trade_count": 4,
         "start_equity_krw": 515588.92225164524,
-        "end_equity_krw": 515625.8951405952,
-        "pnl_krw": 36.972888949967455,
-        "return_pct": 0.007171001422712209,
-        "mdd_pct": -14.237098342721424
+        "end_equity_krw": 516100.02258498885,
+        "pnl_krw": 511.10033334360924,
+        "return_pct": 0.09912942487428911,
+        "mdd_pct": -14.158237785542735
       }
     ],
     "LG_M3_PF0.8_DD8": [
@@ -1946,10 +1946,10 @@
         "period": "2026-05-24",
         "trade_count": 4,
         "start_equity_krw": 517159.044465084,
-        "end_equity_krw": 517196.1299475203,
-        "pnl_krw": 37.085482436348684,
-        "return_pct": 0.007171001422734413,
-        "mdd_pct": -13.975924699981013
+        "end_equity_krw": 517671.70125154755,
+        "pnl_krw": 512.6567864635726,
+        "return_pct": 0.09912942487428911,
+        "mdd_pct": -13.896823988859458
       }
     ],
     "LOSS_GUARD_2026_ROUTER_V1_SHADOW": [
@@ -2857,10 +2857,10 @@
         "period": "2026-05-24",
         "trade_count": 4,
         "start_equity_krw": 514646.04469064524,
-        "end_equity_krw": 514682.94996583194,
-        "pnl_krw": 36.90527518669842,
-        "return_pct": 0.007171001422712209,
-        "mdd_pct": -14.393936304223296
+        "end_equity_krw": 515156.2103548854,
+        "pnl_krw": 510.1656642401358,
+        "return_pct": 0.09912942487428911,
+        "mdd_pct": -14.315219962419693
       }
     ],
     "BASE_BALANCED": [
@@ -3768,10 +3768,10 @@
         "period": "2026-05-24",
         "trade_count": 4,
         "start_equity_krw": 515426.09012170706,
-        "end_equity_krw": 515463.05133396277,
-        "pnl_krw": 36.96121225570096,
-        "return_pct": 0.007171001422712209,
-        "mdd_pct": -14.26418378878869
+        "end_equity_krw": 515937.02904049674,
+        "pnl_krw": 510.93891878967406,
+        "return_pct": 0.09912942487428911,
+        "mdd_pct": -14.185348137173225
       }
     ],
     "BASE_ROLLING": [
@@ -4679,10 +4679,10 @@
         "period": "2026-05-24",
         "trade_count": 4,
         "start_equity_krw": 520158.1114790088,
-        "end_equity_krw": 520195.4120245834,
-        "pnl_krw": 37.300545574573334,
-        "return_pct": 0.007171001422734413,
-        "mdd_pct": -13.477060821650275
+        "end_equity_krw": 520673.7412233549,
+        "pnl_krw": 515.629744346079,
+        "return_pct": 0.09912942487428911,
+        "mdd_pct": -13.397501396065453
       }
     ]
   },
@@ -4872,9 +4872,9 @@
         "period": "2026-W21",
         "trade_count": 13,
         "start_equity_krw": 519410.93291905493,
-        "end_equity_krw": 515625.8951405952,
-        "pnl_krw": -3785.037778459722,
-        "return_pct": -0.728717387057698,
+        "end_equity_krw": 516100.02258498885,
+        "pnl_krw": -3310.9103340660804,
+        "return_pct": -0.637435626443017,
         "mdd_pct": -14.830229285036658
       }
     ],
@@ -5063,9 +5063,9 @@
         "period": "2026-W21",
         "trade_count": 13,
         "start_equity_krw": 520992.69429615664,
-        "end_equity_krw": 517196.1299475203,
-        "pnl_krw": -3796.5643486363115,
-        "return_pct": -0.7287173870576757,
+        "end_equity_krw": 517671.70125154755,
+        "pnl_krw": -3320.9930446090875,
+        "return_pct": -0.6374356264430281,
         "mdd_pct": -14.570861903113391
       }
     ],
@@ -5254,9 +5254,9 @@
         "period": "2026-W21",
         "trade_count": 13,
         "start_equity_krw": 518461.0658981565,
-        "end_equity_krw": 514682.94996583194,
-        "pnl_krw": -3778.115932324552,
-        "return_pct": -0.728717387057698,
+        "end_equity_krw": 515156.2103548854,
+        "pnl_krw": -3304.8555432711146,
+        "return_pct": -0.6374356264430281,
         "mdd_pct": -14.985982564862677
       }
     ],
@@ -5445,9 +5445,9 @@
         "period": "2026-W21",
         "trade_count": 13,
         "start_equity_krw": 519246.8937303327,
-        "end_equity_krw": 515463.05133396277,
-        "pnl_krw": -3783.8423963699606,
-        "return_pct": -0.728717387057698,
+        "end_equity_krw": 515937.02904049674,
+        "pnl_krw": -3309.8646898359875,
+        "return_pct": -0.6374356264430392,
         "mdd_pct": -14.857127409828202
       }
     ],
@@ -5636,9 +5636,9 @@
         "period": "2026-W21",
         "trade_count": 13,
         "start_equity_krw": 524013.9931029396,
-        "end_equity_krw": 520195.4120245834,
-        "pnl_krw": -3818.5810783562483,
-        "return_pct": -0.7287173870576646,
+        "end_equity_krw": 520673.7412233549,
+        "pnl_krw": -3340.2518795847427,
+        "return_pct": -0.6374356264430059,
         "mdd_pct": -14.075448136620333
       }
     ]
@@ -5685,9 +5685,9 @@
         "period": "2026-05",
         "trade_count": 46,
         "start_equity_krw": 513762.3535473388,
-        "end_equity_krw": 515625.8951405952,
-        "pnl_krw": 1863.5415932564065,
-        "return_pct": 0.362724434826589,
+        "end_equity_krw": 516100.02258498885,
+        "pnl_krw": 2337.6690376500483,
+        "return_pct": 0.455009796165351,
         "mdd_pct": -15.01363392045834
       }
     ],
@@ -5732,9 +5732,9 @@
         "period": "2026-05",
         "trade_count": 46,
         "start_equity_krw": 515326.9133136937,
-        "end_equity_krw": 517196.1299475203,
-        "pnl_krw": 1869.2166338266106,
-        "return_pct": 0.3627244348266334,
+        "end_equity_krw": 517671.70125154755,
+        "pnl_krw": 2344.7879378538346,
+        "return_pct": 0.455009796165351,
         "mdd_pct": -14.75482506041113
       }
     ],
@@ -5779,9 +5779,9 @@
         "period": "2026-05",
         "trade_count": 46,
         "start_equity_krw": 516244.9862124155,
-        "end_equity_krw": 514682.94996583194,
-        "pnl_krw": -1562.0362465835642,
-        "return_pct": -0.3025765456908136,
+        "end_equity_krw": 515156.2103548854,
+        "pnl_krw": -1088.7758575301268,
+        "return_pct": -0.21090294077590332,
         "mdd_pct": -14.985982564862677
       }
     ],
@@ -5826,9 +5826,9 @@
         "period": "2026-05",
         "trade_count": 46,
         "start_equity_krw": 513499.9842609495,
-        "end_equity_krw": 515463.05133396277,
-        "pnl_krw": 1963.0670730132842,
-        "return_pct": 0.3822915546606298,
+        "end_equity_krw": 515937.02904049674,
+        "pnl_krw": 2437.0447795472573,
+        "return_pct": 0.47459490832404416,
         "mdd_pct": -15.181731580844374
       }
     ],
@@ -5873,9 +5873,9 @@
         "period": "2026-05",
         "trade_count": 46,
         "start_equity_krw": 513719.90240505186,
-        "end_equity_krw": 520195.4120245834,
-        "pnl_krw": 6475.509619531513,
-        "return_pct": 1.2605136747117385,
+        "end_equity_krw": 520673.7412233549,
+        "pnl_krw": 6953.838818303018,
+        "return_pct": 1.3536245696823546,
         "mdd_pct": -15.145406212298226
       }
     ]
@@ -5915,10 +5915,10 @@
     },
     {
       "month": "2026-05",
-      "active_route_return_pct": 0.362724434826589,
+      "active_route_return_pct": 0.455009796165351,
       "best_shadow_route": "BASE_ROLLING",
-      "best_shadow_return_pct": 1.2605136747117385,
-      "delta_pct": 0.8977892398851495,
+      "best_shadow_return_pct": 1.3536245696823546,
+      "delta_pct": 0.8986147735170036,
       "comment": "shadow stronger"
     }
   ],

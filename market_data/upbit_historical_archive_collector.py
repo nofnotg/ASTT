@@ -35,12 +35,10 @@ def collect_upbit_historical_archive(
     for market in selected_markets:
         for timeframe in requested:
             try:
-                existing = store.load(timeframe, market)
-                if not existing.empty:
-                    frame = existing
-                else:
-                    path = loader.load_candles(market, _loader_timeframe(timeframe), start, end)
-                    frame = _read_loader_frame(path, timeframe, market)
+                path = loader.load_candles(market, _loader_timeframe(timeframe), start, end)
+                frame = _read_loader_frame(path, timeframe, market)
+                if frame.empty:
+                    frame = store.load(timeframe, market)
                 if not frame.empty:
                     store.save(timeframe, market, frame)
                     if timeframe == "1d":

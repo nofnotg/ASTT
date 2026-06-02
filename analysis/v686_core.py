@@ -186,6 +186,7 @@ def build_v686_shadow_route_registration_payload(reports_dir: str | Path = "docs
 def build_v686_active_shadow_runtime_payload(initial_cash_krw: float = 500000.0, start_date: str = "2026-01-01", reports_dir: str | Path = "docs/reports") -> dict[str, Any]:
     assert_live_orders_disabled()
     backfill = run_v683_paper_backfill_from_20260101(initial_cash_krw, start_date, reports_dir)
+    write_payload(Path(reports_dir) / "latest_v683_backfill_20260101_summary.json", backfill)
     rows = list(backfill.get("routes", []))
     v685 = _read_json(Path(reports_dir) / "latest_v685_bear_router_window_aware_summary.json")
     v685_row = next((row for row in v685.get("rows", []) if row.get("router") == "BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW"), {})

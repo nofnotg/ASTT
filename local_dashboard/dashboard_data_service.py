@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -71,6 +71,7 @@ class DashboardDataService:
         monthly_by_route: list[dict[str, Any]] = []
         for route_id, rows in backfill.get("monthly_returns", {}).items():
             monthly_by_route.extend(self._period_rows(rows, route_id, "monthly"))
+        latest_record_date = max((str(row.get("period", "")) for row in daily), default=None)
         return {
             "mode": backfill.get("mode", "PAPER_ONLY"),
             "source_mode": backfill.get("source_mode", "historical_backfill"),
@@ -78,10 +79,15 @@ class DashboardDataService:
             "initial_cash_krw": backfill.get("initial_cash_krw", 0.0),
             "active_route": active_route,
             "routes": backfill.get("routes", runtime.get("routes", [])),
+            "route_agent_recommendation": self._route_agent_recommendation(backfill.get("routes", runtime.get("routes", [])), active_route),
             "monthly": monthly,
             "weekly": weekly,
             "daily": daily,
-            "monthly_by_route": sorted(monthly_by_route, key=lambda row: (row.get("period", ""), row.get("route_id", ""))),
+            "monthly_by_route": self._rank_monthly_routes(monthly_by_route),
+            "latest_record_date": latest_record_date,
+            "record_staleness": self._record_staleness(latest_record_date),
+            "latest_market_data": self._latest_market_data(),
+            "latest_forward_ws": self._latest_forward_ws(),
             **safety_flags(),
         }
 
@@ -111,6 +117,9 @@ class DashboardDataService:
     def control_tower(self) -> dict[str, Any]:
         return self._read("latest_v686_control_tower_dashboard_summary.json")
 
+    def pattern_validation(self) -> dict[str, Any]:
+        return self._read("latest_v687_investment_pattern_validation_summary.json")
+
     def _read(self, name: str) -> dict[str, Any]:
         path = self.reports / name
         return json.loads(path.read_text(encoding="utf-8-sig")) if path.exists() else {}
@@ -124,6 +133,60 @@ class DashboardDataService:
             if line.strip():
                 rows.append(json.loads(line))
         return rows
+
+    def _latest_market_data(self) -> dict[str, Any]:
+        summary = self._read("latest_historical_archive_summary.json")
+        latest = summary.get("latest_time")
+        today = date.today()
+        bounded = []
+        for row in summary.get("rows", []):
+            if row.get("timeframe") == "1w" or not row.get("latest_time"):
+                continue
+            try:
+                parsed = datetime.fromisoformat(str(row["latest_time"])).date()
+            except ValueError:
+                continue
+            if parsed <= today:
+                bounded.append(str(row["latest_time"]))
+        if bounded:
+            latest = max(bounded)
+        return {
+            "latest_time": latest,
+            "market_count": summary.get("market_count"),
+            "missing_market_count": summary.get("missing_market_count"),
+        }
+
+    def _latest_forward_ws(self) -> dict[str, Any]:
+        root = Path("replay_store") / "sessions" / "forward_ws_v554"
+        marker = root / "live_forward_process.json"
+        files = sorted(root.glob("*/session_summary.json"), key=lambda path: path.stat().st_mtime, reverse=True)
+        running = {}
+        if marker.exists():
+            try:
+                running = json.loads(marker.read_text(encoding="utf-8-sig"))
+                started = datetime.fromisoformat(str(running.get("started_at")))
+                duration = int(running.get("duration_minutes", 0) or 0)
+                if datetime.utcnow() <= started + timedelta(minutes=duration):
+                    running["status"] = "RUNNING"
+            except (ValueError, TypeError, json.JSONDecodeError):
+                running = {}
+        if not files:
+            return running or {"status": "NO_FORWARD_WS_SESSION"}
+        row = json.loads(files[0].read_text(encoding="utf-8-sig"))
+        latest = {
+            "session_id": row.get("session_id"),
+            "status": row.get("status"),
+            "duration_minutes": row.get("duration_minutes"),
+            "trade_event_count": row.get("trade_event_count"),
+            "orderbook_event_count": row.get("orderbook_event_count"),
+            "candidate_count": row.get("candidate_count"),
+            "enter_count": row.get("enter_count"),
+            "wait_count": row.get("wait_count"),
+            "real_order_enabled": row.get("real_order_enabled", False),
+        }
+        if running.get("status") == "RUNNING":
+            return {**latest, **running, "last_completed_session_id": latest.get("session_id"), "last_completed_candidate_count": latest.get("candidate_count")}
+        return latest
 
     def _period_rows(self, rows: list[dict[str, Any]], route_id: str | None, kind: str) -> list[dict[str, Any]]:
         normalized = []
@@ -160,6 +223,64 @@ class DashboardDataService:
             except ValueError:
                 return period[:7], period
         return period[:7], period
+
+    def _rank_monthly_routes(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        groups: dict[str, list[dict[str, Any]]] = {}
+        for row in rows:
+            groups.setdefault(str(row.get("period", "")), []).append(row)
+        ranked = []
+        for period in sorted(groups):
+            items = groups[period]
+            best = max(items, key=lambda row: float(row.get("return_pct", -999.0)), default={})
+            worst = min(items, key=lambda row: float(row.get("return_pct", 999.0)), default={})
+            for row in sorted(items, key=lambda item: str(item.get("route_id", ""))):
+                marker = ""
+                if row is best:
+                    marker = "best"
+                elif row is worst:
+                    marker = "worst"
+                ranked.append({**row, "comparison_rank": marker})
+        return ranked
+
+    def _record_staleness(self, latest_record_date: str | None) -> dict[str, Any]:
+        if not latest_record_date:
+            return {"status": "NO_RECORD", "days_behind": None, "message": "투자 기록 없음"}
+        try:
+            latest = datetime.fromisoformat(latest_record_date[:10]).date()
+            today = date.today()
+            days = (today - latest).days
+        except ValueError:
+            return {"status": "UNKNOWN", "days_behind": None, "message": "날짜 해석 실패"}
+        if days <= 1:
+            status = "FRESH"
+            message = "최신 paper 기록 연결"
+        else:
+            status = "STALE"
+            message = f"{latest_record_date} 이후 기록 갱신 필요"
+        return {"status": status, "days_behind": days, "message": message}
+
+    def _route_agent_recommendation(self, routes: list[dict[str, Any]], active_route: str | None) -> dict[str, Any]:
+        active = next((row for row in routes if row.get("scenario") == active_route), {})
+        if not active:
+            return {"recommended_route": active_route, "reason": "active route 기준 정보 없음", "auto_apply_allowed": False}
+        eligible = []
+        for row in routes:
+            if row.get("scenario") == active_route:
+                continue
+            better_return = float(row.get("return_pct", -999.0)) > float(active.get("return_pct", -999.0))
+            better_mdd = float(row.get("mdd_pct", -999.0)) >= float(active.get("mdd_pct", -999.0))
+            if better_return and better_mdd:
+                eligible.append(row)
+        best = max(eligible, key=lambda row: (float(row.get("return_pct", -999.0)), float(row.get("mdd_pct", -999.0))), default={})
+        if best:
+            return {
+                "recommended_route": best.get("scenario"),
+                "reason": "active보다 수익률이 높고 MDD도 개선된 paper candidate",
+                "return_delta_pct": float(best.get("return_pct", 0.0)) - float(active.get("return_pct", 0.0)),
+                "mdd_delta_pct": float(best.get("mdd_pct", 0.0)) - float(active.get("mdd_pct", 0.0)),
+                "auto_apply_allowed": False,
+            }
+        return {"recommended_route": active_route, "reason": "수익률과 MDD를 동시에 개선한 shadow 없음", "auto_apply_allowed": False}
 
     def _trade_logs(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         logs: list[dict[str, Any]] = []

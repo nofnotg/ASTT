@@ -220,6 +220,22 @@ tbody tr.selected {
   outline: 1px solid #b2ccff;
 }
 
+tbody tr.best-row {
+  background: #edfdf3;
+}
+
+tbody tr.worst-row {
+  background: #fff1f0;
+}
+
+tbody tr.best-row:hover {
+  background: #dff8ea;
+}
+
+tbody tr.worst-row:hover {
+  background: #ffe4e0;
+}
+
 .month-table tbody tr {
   cursor: pointer;
 }

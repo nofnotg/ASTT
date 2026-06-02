@@ -23,7 +23,10 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
           "daily_equity":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01-02","pnl_krw":1000,"return_pct":1.0}]},
           "weekly_returns":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-W01","pnl_krw":1000,"return_pct":1.0}]},
           "monthly_returns":{"LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-01","pnl_krw":1000,"return_pct":1.0}]},
-          "routes":[{"scenario":"LG_V2_BALANCED_PLUS_DOM_GATE","route_status":"ACTIVE"}]
+          "routes":[
+            {"scenario":"LG_V2_BALANCED_PLUS_DOM_GATE","route_status":"ACTIVE","return_pct":1.0,"mdd_pct":-5.0},
+            {"scenario":"SHADOW","route_status":"SHADOW","return_pct":2.0,"mdd_pct":-4.0}
+          ]
         }
         """,
         encoding="utf-8",
@@ -35,6 +38,11 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
     assert records["weekly"][0]["month"] == "2026-01"
     assert records["daily"][0]["week"] == "2026-W01"
     assert records["monthly_by_route"][0]["result"] == "수익"
+    assert records["monthly_by_route"][0]["comparison_rank"] == "best"
+    assert records["latest_record_date"] == "2026-01-02"
+    assert records["record_staleness"]["status"] in {"FRESH", "STALE"}
+    assert records["route_agent_recommendation"]["recommended_route"] == "SHADOW"
+    assert records["route_agent_recommendation"]["auto_apply_allowed"] is False
 
 
 def test_v686_dashboard_api_returns_investment_logs(tmp_path) -> None:
