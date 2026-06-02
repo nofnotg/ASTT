@@ -28,9 +28,15 @@ ROUTE_ALIASES = {
 
 
 class DashboardDataService:
-    def __init__(self, reports_dir: str = "docs/reports", data_dir: str = "data/paper") -> None:
+    def __init__(
+        self,
+        reports_dir: str = "docs/reports",
+        data_dir: str = "data/paper",
+        forward_dir: str = "replay_store/sessions/forward_ws_v554",
+    ) -> None:
         self.reports = Path(reports_dir)
         self.data = Path(data_dir)
+        self.forward_dir = Path(forward_dir)
 
     def health(self) -> dict[str, Any]:
         local = self._read("latest_v686_local_dashboard_summary.json")
@@ -130,7 +136,10 @@ class DashboardDataService:
         trades = self._read_jsonl(self.data / "journal" / "paper_trades.jsonl", limit)
         decisions = self._read_jsonl(self.data / "journal" / "paper_decisions.jsonl", limit)
         records = self.investment_records()
+        forward_logs = self._forward_candidate_logs()
         return {
+            "forward_daily_calendar": self._forward_daily_calendar(forward_logs),
+            "forward_candidate_logs": forward_logs,
             "daily_trade_calendar": records.get("daily", []),
             "trade_logs": self._trade_logs(trades),
             "scenario_logs": self._scenario_logs(decisions),
@@ -199,9 +208,9 @@ class DashboardDataService:
         }
 
     def _latest_forward_ws(self) -> dict[str, Any]:
-        root = Path("replay_store") / "sessions" / "forward_ws_v554"
+        root = self.forward_dir
         marker = root / "live_forward_process.json"
-        files = sorted(root.glob("*/session_summary.json"), key=lambda path: path.stat().st_mtime, reverse=True)
+        row, _ = self._latest_forward_session()
         running = {}
         if marker.exists():
             try:
@@ -212,23 +221,135 @@ class DashboardDataService:
                     running["status"] = "RUNNING"
             except (ValueError, TypeError, json.JSONDecodeError):
                 running = {}
-        if not files:
+        if not row:
             return running or {"status": "NO_FORWARD_WS_SESSION"}
-        row = json.loads(files[0].read_text(encoding="utf-8-sig"))
+        timestamp = self._forward_timestamp(row)
         latest = {
             "session_id": row.get("session_id"),
             "status": row.get("status"),
+            "started_at": row.get("source_session", {}).get("started_at"),
+            "ended_at": timestamp,
             "duration_minutes": row.get("duration_minutes"),
             "trade_event_count": row.get("trade_event_count"),
             "orderbook_event_count": row.get("orderbook_event_count"),
             "candidate_count": row.get("candidate_count"),
             "enter_count": row.get("enter_count"),
             "wait_count": row.get("wait_count"),
+            "block_reason_counts": row.get("block_reason_counts", {}),
             "real_order_enabled": row.get("real_order_enabled", False),
+            "live_order_allowed": False,
+            "auto_apply_allowed": False,
+            "source_mode": "forward_paper_ws",
         }
         if running.get("status") == "RUNNING":
             return {**latest, **running, "last_completed_session_id": latest.get("session_id"), "last_completed_candidate_count": latest.get("candidate_count")}
         return latest
+
+    def _latest_forward_session(self) -> tuple[dict[str, Any], Path | None]:
+        files = sorted(self.forward_dir.glob("*/session_summary.json"), key=lambda path: path.stat().st_mtime, reverse=True)
+        if not files:
+            return {}, None
+        try:
+            return json.loads(files[0].read_text(encoding="utf-8-sig")), files[0]
+        except json.JSONDecodeError:
+            return {}, files[0]
+
+    def _forward_timestamp(self, session: dict[str, Any]) -> str | None:
+        source = session.get("source_session", {}) if isinstance(session.get("source_session"), dict) else {}
+        return (
+            session.get("ended_at")
+            or source.get("ended_at")
+            or session.get("started_at")
+            or source.get("started_at")
+        )
+
+    def _forward_candidate_events(self, session: dict[str, Any], summary_path: Path | None) -> list[dict[str, Any]]:
+        embedded = session.get("candidate_events")
+        if isinstance(embedded, list):
+            return [row for row in embedded if isinstance(row, dict)]
+        if not summary_path:
+            return []
+        path = summary_path.parent / "candidate_events.json"
+        if not path.exists():
+            return []
+        try:
+            rows = json.loads(path.read_text(encoding="utf-8-sig"))
+        except json.JSONDecodeError:
+            return []
+        return [row for row in rows if isinstance(row, dict)] if isinstance(rows, list) else []
+
+    def _forward_candidate_logs(self) -> list[dict[str, Any]]:
+        session, summary_path = self._latest_forward_session()
+        if not session:
+            return []
+        timestamp = self._forward_timestamp(session) or ""
+        period = timestamp[:10] if timestamp else ""
+        events = self._forward_candidate_events(session, summary_path)
+        logs = []
+        for index, event in enumerate(events, start=1):
+            decision = str(event.get("entry_decision") or "WAIT")
+            reason = str(event.get("primary_block_reason") or "-")
+            result = "거래없음" if decision == "WAIT" else "진입" if decision == "ENTER" else decision
+            action = "관찰대기" if decision == "WAIT" else decision
+            comment = (
+                f"실시간 후보는 있었지만 {reason}로 진입 조건 약함. paper 거래 없음."
+                if decision == "WAIT"
+                else "Forward paper 조건 충족 후보."
+            )
+            logs.append(
+                {
+                    "period": period,
+                    "time": timestamp,
+                    "session_id": session.get("session_id"),
+                    "source_mode": "forward_paper_ws",
+                    "candidate_index": index,
+                    "market": event.get("market"),
+                    "strategy_id": event.get("strategy_id"),
+                    "action": action,
+                    "entry_decision": decision,
+                    "result": result,
+                    "primary_block_reason": reason,
+                    "trade_event_count": event.get("trade_event_count"),
+                    "orderbook_event_count": event.get("orderbook_event_count"),
+                    "orderbook_available": event.get("orderbook_available"),
+                    "trade_comment": comment,
+                    "real_order_enabled": bool(session.get("real_order_enabled", False)),
+                    "live_order_allowed": False,
+                    "auto_apply_allowed": False,
+                }
+            )
+        return sorted(logs, key=lambda item: (str(item.get("time", "")), int(item.get("candidate_index", 0))), reverse=True)
+
+    def _forward_daily_calendar(self, logs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        session, _ = self._latest_forward_session()
+        if not session:
+            return []
+        timestamp = self._forward_timestamp(session) or ""
+        period = timestamp[:10] if timestamp else ""
+        candidate_count = int(session.get("candidate_count", len(logs)) or 0)
+        enter_count = int(session.get("enter_count", 0) or 0)
+        wait_count = int(session.get("wait_count", 0) or 0)
+        block_counts = session.get("block_reason_counts", {}) if isinstance(session.get("block_reason_counts"), dict) else {}
+        top_reason = max(block_counts, key=block_counts.get) if block_counts else "-"
+        result = "거래없음" if enter_count == 0 else "진입있음"
+        return [
+            {
+                "period": period,
+                "time": timestamp,
+                "route_label": "Forward",
+                "source_mode": "forward_paper_ws",
+                "candidate_count": candidate_count,
+                "enter_count": enter_count,
+                "wait_count": wait_count,
+                "trade_count": enter_count,
+                "result": result,
+                "primary_block_reason": top_reason,
+                "trade_comment": f"Forward 후보 {candidate_count}건, 진입 {enter_count}건, 대기 {wait_count}건. 주 사유: {top_reason}.",
+                "real_order_enabled": bool(session.get("real_order_enabled", False)),
+                "live_order_allowed": False,
+                "auto_apply_allowed": False,
+            }
+        ]
 
     def _period_rows(self, rows: list[dict[str, Any]], route_id: str | None, kind: str) -> list[dict[str, Any]]:
         normalized = []

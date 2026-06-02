@@ -68,6 +68,17 @@ const labels = {
   beats_or_matches_active_mdd: "낙폭 우위",
   trade_count_ok: "표본 충분",
   lookahead_clean: "룩어헤드 없음",
+  session_id: "세션",
+  candidate_index: "순번",
+  candidate_count: "후보수",
+  enter_count: "진입수",
+  wait_count: "대기수",
+  strategy_id: "전략",
+  entry_decision: "진입판단",
+  primary_block_reason: "대기/차단 사유",
+  trade_event_count: "체결틱",
+  orderbook_event_count: "호가틱",
+  orderbook_available: "호가확인",
 };
 
 const money = (value) => Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 }) + " KRW";
@@ -137,6 +148,8 @@ function content(view, data, account, records) {
   if (view === "records") return recordsView(data, false, account);
   if (view === "trades") {
     return [
+      section("오늘 Forward 일지", "06-02 같은 실시간 paper 후보 로그입니다. 진입 조건이 약하면 거래없음으로 남깁니다.", table(data.forward_daily_calendar || [], ["period", "time", "route_label", "candidate_count", "enter_count", "wait_count", "result", "primary_block_reason", "trade_comment", "source_mode"], 30)),
+      section("오늘 Forward 후보/투자로그", "실시간 후보별 코인, 전략, 진입 판단, 대기 사유입니다. 실제 주문은 차단된 paper 기록입니다.", table(data.forward_candidate_logs || [], ["time", "market", "strategy_id", "action", "result", "primary_block_reason", "trade_event_count", "orderbook_event_count", "trade_comment"], 500)),
       section("일별 매매 캘린더", "없는 날짜는 주 시나리오 기준 체결이 없던 날입니다.", table(data.daily_trade_calendar || [], ["period", "route_label", "trade_count", "result", "trade_comment", "start_equity_krw", "end_equity_krw", "pnl_krw"], 500)),
       section("매수/매도 기록", "실제 체결 로그입니다. 최근 로그가 위에 오도록 정렬했습니다.", table(data.trade_logs || [], ["time", "market", "action", "route_label", "route_status", "size_krw", "realized_pnl_krw", "pnl_pct", "reason", "source_mode"], 800)),
     ].join("");
