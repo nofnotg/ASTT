@@ -40,7 +40,7 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
         """,
         encoding="utf-8",
     )
-    service = DashboardDataService(str(reports), str(tmp_path / "data"))
+    service = DashboardDataService(str(reports), str(tmp_path / "data"), str(tmp_path / "forward"))
     records = service.investment_records()
     assert records["start_date"] == "2026-01-01"
     assert records["scenario_policy"]["investment_start_date"] == "2026-01-01"
@@ -63,6 +63,64 @@ def test_v686_dashboard_api_returns_investment_records(tmp_path) -> None:
     assert records["record_staleness"]["status"] in {"FRESH", "STALE"}
     assert records["route_agent_recommendation"]["recommended_route"] == "SHADOW"
     assert records["route_agent_recommendation"]["auto_apply_allowed"] is False
+
+
+def test_v686_dashboard_api_extends_investment_records_with_forward_calendar(tmp_path) -> None:
+    reports = tmp_path / "reports"
+    reports.mkdir()
+    (reports / "latest_v683_backfill_20260101_summary.json").write_text(
+        """
+        {
+          "mode":"PAPER_ONLY",
+          "start_date":"2026-01-01",
+          "active_route":"LG_V2_BALANCED_PLUS_DOM_GATE",
+          "initial_cash_krw":500000,
+          "daily_equity":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-05-24","start_equity_krw":517672,"end_equity_krw":517672,"pnl_krw":0,"return_pct":0.0,"trade_count":0}]
+          },
+          "weekly_returns":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-W21","start_equity_krw":517672,"end_equity_krw":517672,"pnl_krw":0,"return_pct":0.0,"trade_count":0}]
+          },
+          "monthly_returns":{
+            "LG_V2_BALANCED_PLUS_DOM_GATE":[{"period":"2026-05","start_equity_krw":517672,"end_equity_krw":517672,"pnl_krw":0,"return_pct":0.0,"trade_count":0}]
+          },
+          "routes":[
+            {"scenario":"LG_V2_BALANCED_PLUS_DOM_GATE","route_status":"ACTIVE","return_pct":1.0,"mdd_pct":-5.0}
+          ]
+        }
+        """,
+        encoding="utf-8",
+    )
+    forward = tmp_path / "forward" / "upbit_ws_20260602_114858"
+    forward.mkdir(parents=True)
+    (forward / "session_summary.json").write_text(
+        """
+        {
+          "session_id":"upbit_ws_20260602_114858",
+          "candidate_count":15,
+          "enter_count":0,
+          "wait_count":15,
+          "block_reason_counts":{"MICRO_STATE_WEAK":15},
+          "real_order_enabled":false,
+          "status":"COMPLETED",
+          "source_session":{"ended_at":"2026-06-02T11:49:58.521402"}
+        }
+        """,
+        encoding="utf-8",
+    )
+    (forward / "candidate_events.json").write_text(
+        '[{"market":"KRW-BTC","strategy_id":"VWAP_PULLBACK","entry_decision":"WAIT","primary_block_reason":"MICRO_STATE_WEAK"}]',
+        encoding="utf-8",
+    )
+    records = DashboardDataService(str(reports), str(tmp_path / "data"), str(tmp_path / "forward")).investment_records()
+    assert records["historical_latest_record_date"] == "2026-05-24"
+    assert records["latest_record_date"] >= "2026-06-02"
+    assert records["monthly"][0]["period"] >= "2026-06"
+    assert records["monthly"][0]["route_label"] == "Forward"
+    assert records["weekly"][0]["period"] >= "2026-W23"
+    daily_0602 = next(row for row in records["daily"] if row["period"] == "2026-06-02")
+    assert daily_0602["candidate_count"] == 15
+    assert daily_0602["primary_block_reason"] == "MICRO_STATE_WEAK"
 
 
 def test_v686_dashboard_api_returns_investment_logs(tmp_path) -> None:

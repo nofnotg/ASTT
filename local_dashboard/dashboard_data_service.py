@@ -104,6 +104,12 @@ class DashboardDataService:
         )
         weekly = self._period_rows(backfill.get("weekly_returns", {}).get(primary_route, []), primary_route, "weekly")
         monthly = self._period_rows(backfill.get("monthly_returns", {}).get(primary_route, []), primary_route, "monthly")
+        forward_logs = self._forward_candidate_logs()
+        forward_daily = self._forward_daily_calendar(forward_logs)
+        daily = self._combined_daily_trade_calendar(daily, forward_daily)
+        weekly = self._extend_period_rows_from_daily(weekly, daily, latest_record_date, "weekly")
+        monthly = self._extend_period_rows_from_daily(monthly, daily, latest_record_date, "monthly")
+        latest_display_record_date = max((str(row.get("period", ""))[:10] for row in daily if row.get("period")), default=latest_record_date)
         monthly_by_route: list[dict[str, Any]] = []
         for route_id, rows in backfill.get("monthly_returns", {}).items():
             monthly_by_route.extend(self._period_rows(rows, route_id, "monthly"))
@@ -123,10 +129,11 @@ class DashboardDataService:
             "route_agent_recommendation": policy["route_agent_recommendation"],
             "monthly": list(reversed(monthly)),
             "weekly": list(reversed(weekly)),
-            "daily": list(reversed(daily)),
+            "daily": daily,
             "monthly_by_route": list(reversed(self._rank_monthly_routes(monthly_by_route))),
-            "latest_record_date": latest_record_date,
-            "record_staleness": self._record_staleness(latest_record_date),
+            "latest_record_date": latest_display_record_date,
+            "historical_latest_record_date": latest_record_date,
+            "record_staleness": self._record_staleness(latest_display_record_date),
             "latest_market_data": self._latest_market_data(),
             "latest_forward_ws": self._latest_forward_ws(),
             **safety_flags(),
@@ -359,6 +366,8 @@ class DashboardDataService:
         forward_by_day = {str(row.get("period", ""))[:10]: row for row in forward_daily if row.get("period")}
         if not by_day and not forward_by_day:
             return []
+        if not forward_by_day:
+            return sorted(by_day.values(), key=lambda item: str(item.get("period", "")), reverse=True)
 
         valid_existing_dates = []
         for period in by_day:
@@ -436,6 +445,77 @@ class DashboardDataService:
             row = by_day[period]
             latest_equity = float(row.get("end_equity_krw", row.get("start_equity_krw", latest_equity)) or latest_equity)
         return latest_equity
+
+    def _extend_period_rows_from_daily(
+        self,
+        period_rows: list[dict[str, Any]],
+        daily_rows: list[dict[str, Any]],
+        historical_latest_date: str | None,
+        kind: str,
+    ) -> list[dict[str, Any]]:
+        if kind not in {"weekly", "monthly"} or not historical_latest_date:
+            return period_rows
+        try:
+            cutoff = date.fromisoformat(historical_latest_date[:10])
+        except ValueError:
+            return period_rows
+
+        existing_periods = {str(row.get("period", "")) for row in period_rows}
+        groups: dict[str, list[dict[str, Any]]] = {}
+        for row in daily_rows:
+            period = str(row.get("period", ""))[:10]
+            try:
+                parsed = date.fromisoformat(period)
+            except ValueError:
+                continue
+            if parsed <= cutoff:
+                continue
+            group_period = parsed.strftime("%Y-%m") if kind == "monthly" else f"{parsed.isocalendar().year}-W{parsed.isocalendar().week:02d}"
+            if group_period in existing_periods:
+                continue
+            groups.setdefault(group_period, []).append(row)
+
+        additions = [self._aggregate_forward_period(period, rows, kind) for period, rows in sorted(groups.items())]
+        return [*period_rows, *additions]
+
+    def _aggregate_forward_period(self, period: str, rows: list[dict[str, Any]], kind: str) -> dict[str, Any]:
+        ordered = sorted(rows, key=lambda row: str(row.get("period", "")))
+        start_equity = float(ordered[0].get("start_equity_krw", 0.0) or 0.0) if ordered else 0.0
+        end_equity = float(ordered[-1].get("end_equity_krw", start_equity) or start_equity) if ordered else start_equity
+        pnl = sum(float(row.get("pnl_krw", 0.0) or 0.0) for row in ordered)
+        trade_count = sum(int(row.get("trade_count", 0) or 0) for row in ordered)
+        candidate_count = sum(int(row.get("candidate_count", 0) or 0) for row in ordered)
+        wait_count = sum(int(row.get("wait_count", 0) or 0) for row in ordered)
+        reasons = [str(row.get("primary_block_reason")) for row in ordered if row.get("primary_block_reason")]
+        primary_reason = reasons[0] if reasons else None
+        month, week = self._period_keys(period, kind)
+        if candidate_count:
+            comment = f"Forward 후보 {candidate_count}건, 진입 {trade_count}건, 대기 {wait_count}건. 주 사유: {primary_reason or '-'}."
+        else:
+            comment = "백필 체결 기록 없음. Forward 후보 로그 없음. paper 관찰 대기."
+        return {
+            "period": period,
+            "route_id": "FORWARD_PAPER",
+            "route_label": "Forward",
+            "kind": kind,
+            "month": month,
+            "week": week,
+            "start_equity_krw": start_equity,
+            "end_equity_krw": end_equity,
+            "pnl_krw": pnl,
+            "return_pct": ((end_equity / start_equity) - 1.0) * 100.0 if start_equity else 0.0,
+            "mdd_pct": None,
+            "trade_count": trade_count,
+            "candidate_count": candidate_count or None,
+            "wait_count": wait_count or None,
+            "result": "수익" if pnl > 0 else "손실" if pnl < 0 else "거래없음",
+            "primary_block_reason": primary_reason,
+            "trade_comment": comment,
+            "source_mode": "forward_paper_calendar",
+            "real_order_enabled": False,
+            "live_order_allowed": False,
+            "auto_apply_allowed": False,
+        }
 
     def _period_rows(self, rows: list[dict[str, Any]], route_id: str | None, kind: str) -> list[dict[str, Any]]:
         normalized = []

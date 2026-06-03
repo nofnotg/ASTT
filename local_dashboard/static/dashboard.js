@@ -222,8 +222,8 @@ function recordsView(data, compact, account) {
   const days = (data.daily || []).filter((row) => row.month === month);
   return [
     statusBoard(data, account || {}),
-    section("월단위 투자기록", "월을 클릭하면 같은 월에 속한 주/일 기록이 아래에 표시됩니다. 최신 월이 위입니다.", table(months, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result"], compact ? 24 : 200, "month-table")),
-    section(`${month || "선택 월"} 주단위 기록`, "선택한 월 안에서 주별 손익과 낙폭을 봅니다.", table(weeks, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result"], compact ? 12 : 200)),
+    section("월단위 투자기록", "월을 클릭하면 같은 월에 속한 주/일 기록이 아래에 표시됩니다. 최신 월이 위입니다.", table(months, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "candidate_count", "wait_count", "result", "trade_comment"], compact ? 24 : 200, "month-table")),
+    section(`${month || "선택 월"} 주단위 기록`, "선택한 월 안에서 주별 손익과 낙폭을 봅니다.", table(weeks, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "candidate_count", "wait_count", "result", "trade_comment"], compact ? 12 : 200)),
     section(`${month || "선택 월"} 일단위 기록`, "거래가 없는 날짜도 거래없음으로 표시합니다.", table(days, ["period", "route_label", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "result", "trade_comment"], compact ? 40 : 400)),
   ].join("");
 }
