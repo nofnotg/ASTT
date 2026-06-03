@@ -8,6 +8,7 @@ const endpoints = {
   improvement: "/api/v690-dashboard",
   vwap: "/api/v691-dashboard",
   causal: "/api/v692-dashboard",
+  defense: "/api/v693-dashboard",
   research: "/api/v688-dashboard",
 };
 
@@ -113,6 +114,29 @@ const labels = {
   saved_loss: "방어손실",
   missed_profit: "놓친수익",
   month: "월",
+  loss_event_count: "손실 이벤트",
+  loss_type: "손실 유형",
+  pnl_impact_krw: "손익 영향",
+  preventable_loss_krw: "방어 가능 손실",
+  main_signal_before_loss: "손실 전 신호",
+  suggested_defense: "권장 방어",
+  train_saved_loss_estimate: "Train 방어손실",
+  train_missed_profit_estimate: "Train 놓친수익",
+  defense_shadow_candidates: "Defense Shadow",
+  defense_research_only: "Defense 연구",
+  MDD_pct: "MDD",
+  PF: "PF",
+  win_rate: "승률",
+  loss_day_count: "손실일수",
+  loss_month_count: "손실월수",
+  max_loss_day: "최대 일손실",
+  max_loss_month: "최대 월손실",
+  HWM_giveback: "HWM 반납",
+  defense_efficiency: "방어효율",
+  cooldown_days: "쿨다운일",
+  skipped_trades: "스킵거래",
+  full_MDD: "전체 MDD",
+  "2022_2025_return_impact": "Train 수익영향",
 };
 
 const money = (value) => `${Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 })} KRW`;
@@ -170,6 +194,7 @@ function title(view) {
     improvement: "개선 루프",
     vwap: "VWAP/낙폭 검증",
     causal: "Causal 개선 검증",
+    defense: "Drawdown Defense",
     research: "연구 보관",
   }[view] || "투자 현황";
 }
@@ -182,6 +207,7 @@ function content(view, data, account, records) {
   if (view === "improvement") return improvementView(data);
   if (view === "vwap") return vwapView(data);
   if (view === "causal") return causalView(data);
+  if (view === "defense") return defenseView(data);
   if (view === "research") return researchView(data);
   return overviewView(records, account);
 }
@@ -321,6 +347,32 @@ function causalView(data) {
     section(`${state.selectedCausalScenario || "-"} / ${state.selectedCausalMonth || "-"} 일별 투자내역`, "거래하지 않은 날은 거래없음과 이유를 표시합니다.", table(selectedDaily, ["period", "scenario", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "saved_loss", "missed_profit", "net_effect", "result", "trade_comment"], 220)),
     section("VWAP Proxy vs Real", "VWAP/VPF proxy 결과는 real replay와 분리하며, proxy만으로 운용 승격하지 않습니다.", table(data.vwap_proxy_vs_real?.rows || [], ["vwap_scenario", "proxy_return_pct", "real_replay_return_pct", "proxy_mdd_pct", "real_replay_mdd_pct", "return_difference", "mdd_difference", "decision"], 30)),
     section("LLM Review", "LLM은 자동 적용이 아니라 요약/검토 보조로만 취급합니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "hindsight_repair_research_only", "active_change_applied", "manual_review_required", "live_order_allowed"], 5)),
+  ].join("");
+}
+
+function defenseView(data) {
+  const decision = data.decision || {};
+  const review = data.llm_review || {};
+  const loop = data.loop || {};
+  return [
+    notice("V6.9.3 Drawdown Defense", `결정: ${decision.decision || loop.decision || "-"} / active 자동변경 없음 / 실주문 없음`),
+    section("최종 방어 후보", "saved_loss > missed_profit, defense_efficiency > 1.0인 후보만 shadow 후보로 봅니다.", table([{
+      defense_shadow_candidates: (decision.defense_shadow_candidates || []).join(", "),
+      defense_research_only: (decision.defense_research_only || []).join(", "),
+      hindsight_repair_research_only: (decision.hindsight_repair_research_only || []).join(", "),
+      baseline_still_best: decision.baseline_still_best,
+      active_change_applied: false,
+      live_order_allowed: false,
+      manual_review_required: true,
+    }], ["defense_shadow_candidates", "defense_research_only", "hindsight_repair_research_only", "baseline_still_best", "active_change_applied", "live_order_allowed", "manual_review_required"], 5)),
+    section("2026 손실 월 부검", "계좌를 깎은 달과 주된 손실 유형, 방어 가능 손실을 먼저 봅니다.", table(data.autopsy?.monthly || [], ["month", "loss_days", "loss_pnl_krw", "max_drawdown_after", "main_failure_type", "preventable_loss_krw"], 20)),
+    section("2026 손실 이벤트", "손실일 단위로 DD before/after, 실패유형, 방어가능 여부를 확인합니다.", table(data.autopsy?.loss_events || [], ["date", "month", "scenario", "pnl_krw", "drawdown_before", "drawdown_after", "failure_type", "preventable", "guard_state", "entry_reason"], 120)),
+    section("손실 유형 분류", "각 손실 유형별 손익 영향과 권장 방어 시나리오입니다.", table(data.loss_types?.rows || [], ["loss_type", "count", "pnl_impact_krw", "preventable_loss_krw", "main_signal_before_loss", "suggested_defense"], 30)),
+    section("Train 기반 방어 인사이트", "2022~2025 train 근거에서만 뽑은 방어 규칙입니다.", table(data.train_insight?.rows || [], ["insight_id", "source_period", "trigger_condition", "suggested_defense", "train_evidence_count", "train_saved_loss_estimate", "train_missed_profit_estimate", "hindsight_risk"], 30)),
+    section("방어 시나리오 후보", "A/B/C/D/E 및 Integrated mild/balanced/hard 후보입니다.", table(data.candidates?.rows || [], ["scenario", "type", "trigger", "expected_benefit", "risk", "train_based", "eligible_for_operation", "decision"], 30)),
+    section("2026 방어 Forward 검증", "수익률보다 MDD, saved_loss, missed_profit, defense_efficiency를 우선합니다.", table(data.forward?.rows || [], ["scenario", "return_pct", "MDD_pct", "PF", "trade_count", "loss_day_count", "loss_month_count", "saved_loss", "missed_profit", "net_effect", "defense_efficiency", "decision"], 40)),
+    section("전체기간 Safety", "2026에서 좋아 보여도 전체기간 수익 훼손/과최적화를 확인합니다.", table(data.full_period_safety?.rows || [], ["scenario", "2026_MDD", "full_MDD", "2022_2025_return_impact", "defense_efficiency", "overfit_risk", "decision"], 40)),
+    section("LLM Review", "LLM은 요약만 하며 active 변경과 주문은 금지됩니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "active_change_applied", "manual_review_required", "live_order_allowed"], 5)),
   ].join("");
 }
 

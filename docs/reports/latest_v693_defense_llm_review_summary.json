@@ -1,0 +1,31 @@
+{
+  "schema_version": "v693_defense_llm_review_v1",
+  "llm_provider": "fallback",
+  "llm_used": false,
+  "fallback_used": true,
+  "key_findings": [
+    "2026 weakness is mostly drawdown/giveback defense failure, not only low return.",
+    "Integrated Balanced, HWM brake, Profit Lock, and Consecutive Loss Cooldown are shadow candidates.",
+    "Hard defense cuts MDD more, but missed_profit risk is high, so it remains research only."
+  ],
+  "recommended_experiments": [
+    "DEF_HWM_DRAWDOWN_BRAKE_V1",
+    "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1",
+    "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1",
+    "DEF_INTEGRATED_MILD_V1",
+    "DEF_INTEGRATED_BALANCED_V1",
+    "DEF_DAILY_WEEKLY_LOSS_STOP_V1",
+    "DEF_INTEGRATED_HARD_V1"
+  ],
+  "active_change_applied": false,
+  "manual_review_required": true,
+  "live_order_allowed": false,
+  "decision": "DEFENSE_SHADOW_CANDIDATE_READY",
+  "order_api_called": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.648363"
+}

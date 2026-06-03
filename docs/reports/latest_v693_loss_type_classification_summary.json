@@ -1,0 +1,64 @@
+{
+  "schema_version": "v693_loss_type_classification_v1",
+  "rows": [
+    {
+      "loss_type": "BTC_DOMINANCE_UNFAVORABLE_LOSS",
+      "count": 24,
+      "pnl_impact_krw": -7352.9,
+      "preventable_loss_krw": 7352.9,
+      "main_signal_before_loss": "BTCD or alt RS regime unfavorable",
+      "suggested_defense": "DEF_INTEGRATED_MILD_V1"
+    },
+    {
+      "loss_type": "CONSECUTIVE_LOSS",
+      "count": 24,
+      "pnl_impact_krw": -6452.66,
+      "preventable_loss_krw": 6452.66,
+      "main_signal_before_loss": "recent loss streak",
+      "suggested_defense": "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1"
+    },
+    {
+      "loss_type": "FOLLOW_THROUGH_FAIL",
+      "count": 52,
+      "pnl_impact_krw": -15399.23,
+      "preventable_loss_krw": 0,
+      "main_signal_before_loss": "follow-through failed after entry",
+      "suggested_defense": "DEF_INTEGRATED_BALANCED_V1"
+    },
+    {
+      "loss_type": "LATE_DEFENSE_TRIGGER",
+      "count": 20,
+      "pnl_impact_krw": -870.05,
+      "preventable_loss_krw": 0,
+      "main_signal_before_loss": "guard activated after equity damage",
+      "suggested_defense": "DEF_HWM_DRAWDOWN_BRAKE_V1"
+    },
+    {
+      "loss_type": "PROFIT_GIVEBACK_LOSS",
+      "count": 24,
+      "pnl_impact_krw": -6812.78,
+      "preventable_loss_krw": 6812.78,
+      "main_signal_before_loss": "profit day followed by PF/HWM weakness",
+      "suggested_defense": "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1"
+    },
+    {
+      "loss_type": "SIDEWAYS_CHOP_LOSS",
+      "count": 24,
+      "pnl_impact_krw": -6272.63,
+      "preventable_loss_krw": 6272.63,
+      "main_signal_before_loss": "weak breadth and no follow-through",
+      "suggested_defense": "DEF_INTEGRATED_BALANCED_V1"
+    }
+  ],
+  "decision": "DRAWDOWN_AUTOPSY_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.605367"
+}

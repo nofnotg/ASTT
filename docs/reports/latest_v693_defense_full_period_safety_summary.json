@@ -1,0 +1,106 @@
+{
+  "schema_version": "v693_defense_full_period_safety_v1",
+  "rows": [
+    {
+      "scenario": "LG_M3_PF0.8_DD8",
+      "2026_MDD": -17.9828,
+      "full_MDD": -16.5442,
+      "2022_2025_return_impact": 0.0,
+      "defense_efficiency": 0.0,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "BASELINE_REFERENCE"
+    },
+    {
+      "scenario": "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1",
+      "2026_MDD": -16.8828,
+      "full_MDD": -15.5322,
+      "2022_2025_return_impact": 0.0,
+      "defense_efficiency": 0.0,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "BASELINE_REFERENCE"
+    },
+    {
+      "scenario": "DEF_HWM_DRAWDOWN_BRAKE_V1",
+      "2026_MDD": -14.8828,
+      "full_MDD": -13.6922,
+      "2022_2025_return_impact": -0.25,
+      "defense_efficiency": 3.0,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "FULL_PERIOD_SAFE_SHADOW"
+    },
+    {
+      "scenario": "DEF_DAILY_WEEKLY_LOSS_STOP_V1",
+      "2026_MDD": -15.3828,
+      "full_MDD": -14.1522,
+      "2022_2025_return_impact": -0.65,
+      "defense_efficiency": 2.2581,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "DEFENSE_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1",
+      "2026_MDD": -15.7828,
+      "full_MDD": -14.5202,
+      "2022_2025_return_impact": -0.25,
+      "defense_efficiency": 2.8378,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "FULL_PERIOD_SAFE_SHADOW"
+    },
+    {
+      "scenario": "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1",
+      "2026_MDD": -15.9828,
+      "full_MDD": -14.7042,
+      "2022_2025_return_impact": -0.25,
+      "defense_efficiency": 2.9348,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "FULL_PERIOD_SAFE_SHADOW"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_MILD_V1",
+      "2026_MDD": -15.1828,
+      "full_MDD": -13.9682,
+      "2022_2025_return_impact": -0.25,
+      "defense_efficiency": 2.7273,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "FULL_PERIOD_SAFE_SHADOW"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_BALANCED_V1",
+      "2026_MDD": -14.1828,
+      "full_MDD": -13.0482,
+      "2022_2025_return_impact": -0.25,
+      "defense_efficiency": 3.0769,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "FULL_PERIOD_SAFE_SHADOW"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_HARD_V1",
+      "2026_MDD": -12.7828,
+      "full_MDD": -11.7602,
+      "2022_2025_return_impact": -0.65,
+      "defense_efficiency": 2.0,
+      "overfit_risk": "LOW_TRAIN_ONLY",
+      "decision": "DEFENSE_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "HINDSIGHT_2026_CUSTOM_REPAIR_RESEARCH_ONLY",
+      "2026_MDD": -12.1828,
+      "full_MDD": -11.2082,
+      "2022_2025_return_impact": 0.0,
+      "defense_efficiency": 4.2857,
+      "overfit_risk": "HIGH_2026_USED",
+      "decision": "HINDSIGHT_REPAIR_RESEARCH_ONLY"
+    }
+  ],
+  "decision": "DEFENSE_FULL_PERIOD_SAFETY_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.631362"
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "v693_defense_scenario_candidates_v1",
+  "rows": [
+    {
+      "scenario": "DEF_HWM_DRAWDOWN_BRAKE_V1",
+      "type": "HWM",
+      "trigger": "HWM DD <= -3/-5/-8 percent size cap/stop",
+      "expected_benefit": "MDD and HWM giveback reduction",
+      "risk": "missed rebound profit",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 4,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_DAILY_WEEKLY_LOSS_STOP_V1",
+      "type": "LOSS_STOP",
+      "trigger": "daily/weekly/monthly loss stop",
+      "expected_benefit": "loss day/week containment",
+      "risk": "may skip rebound",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 5,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1",
+      "type": "COOLDOWN",
+      "trigger": "recent loss streak, same coin/setup cooldown",
+      "expected_benefit": "repeat loss reduction",
+      "risk": "cooldown over-block",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 8,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1",
+      "type": "PROFIT_LOCK",
+      "trigger": "profit giveback cap and defensive mode",
+      "expected_benefit": "profit preservation",
+      "risk": "trend continuation opportunity loss",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 7,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_MILD_V1",
+      "type": "INTEGRATED",
+      "trigger": "mild HWM/profit/cooldown blend",
+      "expected_benefit": "balanced defense with lower opportunity loss",
+      "risk": "weaker MDD reduction",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 4,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_BALANCED_V1",
+      "type": "INTEGRATED",
+      "trigger": "balanced HWM/loss stop/cooldown/profit lock",
+      "expected_benefit": "saved_loss and missed_profit balance",
+      "risk": "medium complexity",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 4,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "DEF_INTEGRATED_HARD_V1",
+      "type": "INTEGRATED",
+      "trigger": "hard defense and defensive-only mode",
+      "expected_benefit": "MDD minimization",
+      "risk": "return sacrifice",
+      "train_based": true,
+      "eligible_for_operation": true,
+      "train_evidence_count": 4,
+      "decision": "READY_FOR_DEFENSE_FORWARD_TEST"
+    },
+    {
+      "scenario": "HINDSIGHT_2026_CUSTOM_REPAIR_RESEARCH_ONLY",
+      "type": "HINDSIGHT_REPAIR",
+      "trigger": "2026 loss event sequence used directly",
+      "expected_benefit": "may look strong on 2026",
+      "risk": "2026 hindsight",
+      "train_based": false,
+      "eligible_for_operation": false,
+      "decision": "HINDSIGHT_REPAIR_RESEARCH_ONLY"
+    }
+  ],
+  "decision": "DEFENSE_SCENARIO_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.617364"
+}

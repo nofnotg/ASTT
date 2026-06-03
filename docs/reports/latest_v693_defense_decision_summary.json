@@ -1,0 +1,32 @@
+{
+  "schema_version": "v693_defense_decision_v1",
+  "defense_shadow_candidates": [
+    "DEF_HWM_DRAWDOWN_BRAKE_V1",
+    "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1",
+    "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1",
+    "DEF_INTEGRATED_MILD_V1",
+    "DEF_INTEGRATED_BALANCED_V1"
+  ],
+  "defense_research_only": [
+    "DEF_DAILY_WEEKLY_LOSS_STOP_V1",
+    "DEF_INTEGRATED_HARD_V1"
+  ],
+  "hindsight_repair_research_only": [
+    "HINDSIGHT_2026_CUSTOM_REPAIR_RESEARCH_ONLY"
+  ],
+  "rejected": [],
+  "baseline_still_best": false,
+  "full_period_safety_ready": true,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "decision": "DEFENSE_SHADOW_CANDIDATE_READY",
+  "reason": "Defense candidates are train-derived and remain shadow only. Hindsight repair is isolated.",
+  "order_api_called": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.636373"
+}

@@ -3253,6 +3253,69 @@ def run_v692_historical_to_2026_causal_improvement_lab_command(args: argparse.Na
     return 0
 
 
+def run_v693_2026_drawdown_autopsy_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_2026_drawdown_autopsy
+
+    print(json.dumps(run_v693_2026_drawdown_autopsy(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_loss_type_classification_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_loss_type_classification
+
+    print(json.dumps(run_v693_loss_type_classification(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_train_defense_insight_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_train_defense_insight
+
+    print(json.dumps(run_v693_train_defense_insight(args.reports_dir, args.train_start, args.train_end), ensure_ascii=False, default=str))
+    return 0
+
+
+def generate_v693_defense_scenario_candidates_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import generate_v693_defense_scenario_candidates
+
+    print(json.dumps(generate_v693_defense_scenario_candidates(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_2026_defense_forward_test_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_2026_defense_forward_test
+
+    print(json.dumps(run_v693_2026_defense_forward_test(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_defense_full_period_safety_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_defense_full_period_safety
+
+    print(json.dumps(run_v693_defense_full_period_safety(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_defense_decision_engine_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_defense_decision_engine
+
+    print(json.dumps(run_v693_defense_decision_engine(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_defense_llm_review_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_defense_llm_review
+
+    print(json.dumps(run_v693_defense_llm_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v693_drawdown_defense_autopsy_lab_command(args: argparse.Namespace) -> int:
+    from drawdown_defense.v693_lab import run_v693_drawdown_defense_autopsy_lab
+
+    print(json.dumps(run_v693_drawdown_defense_autopsy_lab(args.reports_dir, args.initial_cash_krw, args.train_start, args.train_end, args.forward_start), ensure_ascii=False, default=str))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -5555,6 +5618,56 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--forward-start", default="2026-01-01")
     p.add_argument("--use-available-history", default="true")
     p.set_defaults(func=run_v692_historical_to_2026_causal_improvement_lab_command)
+
+    p = sub.add_parser("run-v693-2026-drawdown-autopsy")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v693_2026_drawdown_autopsy_command)
+
+    p = sub.add_parser("run-v693-loss-type-classification")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v693_loss_type_classification_command)
+
+    p = sub.add_parser("run-v693-train-defense-insight")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--train-start", default="2022-01-01")
+    p.add_argument("--train-end", default="2025-12-31")
+    p.set_defaults(func=run_v693_train_defense_insight_command)
+
+    p = sub.add_parser("generate-v693-defense-scenario-candidates")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=generate_v693_defense_scenario_candidates_command)
+
+    p = sub.add_parser("run-v693-2026-defense-forward-test")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v693_2026_defense_forward_test_command)
+
+    p = sub.add_parser("run-v693-defense-full-period-safety")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v693_defense_full_period_safety_command)
+
+    p = sub.add_parser("run-v693-defense-decision-engine")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v693_defense_decision_engine_command)
+
+    p = sub.add_parser("run-v693-defense-llm-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default=None)
+    p.set_defaults(func=run_v693_defense_llm_review_command)
+
+    p = sub.add_parser("run-v693-drawdown-defense-autopsy-lab")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--train-start", default="2022-01-01")
+    p.add_argument("--train-end", default="2025-12-31")
+    p.add_argument("--forward-start", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v693_drawdown_defense_autopsy_lab_command)
 
     args = parser.parse_args(argv)
     return args.func(args)

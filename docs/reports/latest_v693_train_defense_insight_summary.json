@@ -1,0 +1,95 @@
+{
+  "schema_version": "v693_train_defense_insight_v1",
+  "train_period": {
+    "start": "2022-01-01",
+    "end": "2025-12-31"
+  },
+  "rows": [
+    {
+      "insight_id": "TRAIN_HWM_DD_BRAKE",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenarios": [
+        "LG_M3_PF0.8_DD8"
+      ],
+      "related_variables": [
+        "HWM",
+        "drawdown",
+        "PF20"
+      ],
+      "trigger_condition": "HWM drawdown expands beyond -3/-5/-8 percent",
+      "suggested_defense": "DEF_HWM_DRAWDOWN_BRAKE_V1",
+      "train_evidence_count": 4,
+      "train_saved_loss_estimate": 11.0,
+      "train_missed_profit_estimate": 4.0,
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight_id": "TRAIN_DAILY_WEEKLY_STOP",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenarios": [
+        "LG_M3_PF0.8_DD8",
+        "BASE_ROLLING"
+      ],
+      "related_variables": [
+        "daily_pnl",
+        "weekly_pnl",
+        "monthly_pnl"
+      ],
+      "trigger_condition": "daily <= -1.5%, weekly <= -3%, monthly <= -5%",
+      "suggested_defense": "DEF_DAILY_WEEKLY_LOSS_STOP_V1",
+      "train_evidence_count": 5,
+      "train_saved_loss_estimate": 14.0,
+      "train_missed_profit_estimate": 6.0,
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight_id": "TRAIN_CONSECUTIVE_LOSS_COOLDOWN",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenarios": [
+        "LG_M3_PF0.8_DD8"
+      ],
+      "related_variables": [
+        "loss_streak",
+        "coin",
+        "setup",
+        "market_state"
+      ],
+      "trigger_condition": "3 losses in recent 5 trades or repeated same coin/setup loss",
+      "suggested_defense": "DEF_CONSECUTIVE_LOSS_COOLDOWN_V1",
+      "train_evidence_count": 8,
+      "train_saved_loss_estimate": 10.0,
+      "train_missed_profit_estimate": 3.5,
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight_id": "TRAIN_PROFIT_LOCK_GIVEBACK",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenarios": [
+        "LG_M3_PF0.8_DD8"
+      ],
+      "related_variables": [
+        "profit_day",
+        "PF20",
+        "HWM_giveback"
+      ],
+      "trigger_condition": "profit day followed by PF20 weakness or 50% monthly profit giveback",
+      "suggested_defense": "DEF_PROFIT_LOCK_GIVEBACK_GUARD_V1",
+      "train_evidence_count": 7,
+      "train_saved_loss_estimate": 13.0,
+      "train_missed_profit_estimate": 4.5,
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    }
+  ],
+  "missing_inputs": [],
+  "decision": "DEFENSE_SCENARIO_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T12:59:18.611365"
+}

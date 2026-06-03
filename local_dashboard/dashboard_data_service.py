@@ -261,6 +261,25 @@ class DashboardDataService:
             **safety_flags(),
         }
 
+    def v693_dashboard(self) -> dict[str, Any]:
+        return {
+            "loop": self._read("latest_v693_drawdown_defense_autopsy_lab_summary.json"),
+            "autopsy": self._read("latest_v693_2026_drawdown_autopsy_summary.json"),
+            "loss_types": self._read("latest_v693_loss_type_classification_summary.json"),
+            "train_insight": self._read("latest_v693_train_defense_insight_summary.json"),
+            "candidates": self._read("latest_v693_defense_scenario_candidates_summary.json"),
+            "forward": self._read("latest_v693_2026_defense_forward_test_summary.json"),
+            "full_period_safety": self._read("latest_v693_defense_full_period_safety_summary.json"),
+            "decision": self._read("latest_v693_defense_decision_summary.json"),
+            "llm_review": self._read("latest_v693_defense_llm_review_summary.json"),
+            "active_change_applied": False,
+            "active_route_change_applied": False,
+            "llm_active_change_applied": False,
+            "manual_review_required": True,
+            "order_api_called": False,
+            **safety_flags(),
+        }
+
     def pattern_validation(self) -> dict[str, Any]:
         payload = self._read("latest_v687_investment_pattern_validation_summary.json")
         surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")
