@@ -62,6 +62,14 @@ def test_v692_lab_keeps_hindsight_repair_research_only(tmp_path: Path) -> None:
     assert "HINDSIGHT_2026_VWAP_PRESSURE_INTEGRATED_REPAIR" in result["hindsight_repair_research_only"]
     assert result["live_order_allowed"] is False
     assert result["active_change_applied"] is False
+    forward = json.loads((reports / "latest_v692_2026_causal_forward_test_summary.json").read_text(encoding="utf-8"))
+    assert forward["scenario_monthly"]
+    assert forward["scenario_daily"]
+    rs_month = next(row for row in forward["scenario_monthly"] if row["scenario"] == "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1" and row["period"] == "2026-02")
+    assert rs_month["kind"] == "causal_monthly"
+    rs_days = [row for row in forward["scenario_daily"] if row["scenario"] == rs_month["scenario"] and row["month"] == rs_month["period"]]
+    assert rs_days
+    assert any(row["result"] == "거래없음" for row in rs_days)
     assert (reports / "latest_v692_causal_decision_summary.json").exists()
     assert (reports / "latest_v692_historical_to_2026_causal_improvement_lab_report.html").exists()
 

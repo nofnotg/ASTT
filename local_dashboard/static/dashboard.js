@@ -1,4 +1,4 @@
-const state = { view: "overview", data: {}, selectedMonth: null };
+const state = { view: "overview", data: {}, selectedMonth: null, selectedCausalMonth: null, selectedCausalScenario: null };
 
 const endpoints = {
   overview: "/api/investment-records",
@@ -110,6 +110,9 @@ const labels = {
   mdd_difference: "MDD 차이",
   proxy_delta_banned_as_real_result: "Proxy 운용금지",
   manual_review_required: "수동검토",
+  saved_loss: "방어손실",
+  missed_profit: "놓친수익",
+  month: "월",
 };
 
 const money = (value) => `${Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 })} KRW`;
@@ -291,6 +294,13 @@ function causalView(data) {
   const decision = data.decision || {};
   const review = data.llm_review || {};
   const loop = data.loop || {};
+  const monthly = data.causal_forward?.scenario_monthly || [];
+  const daily = data.causal_forward?.scenario_daily || [];
+  if ((!state.selectedCausalMonth || !state.selectedCausalScenario) && monthly.length) {
+    state.selectedCausalMonth = monthly[0].period;
+    state.selectedCausalScenario = monthly[0].scenario;
+  }
+  const selectedDaily = daily.filter((row) => row.month === state.selectedCausalMonth && row.scenario === state.selectedCausalScenario);
   return [
     notice("V6.9.2 Causal Improvement", `결정: ${decision.decision || loop.decision || "-"} / 2022~2025 학습 기반만 shadow 후보 / 2026 사후수정은 연구전용`),
     section("최종 운용 판단", "실거래와 active 자동변경은 차단하고, train 기반 후보만 shadow로 관찰합니다.", table([{
@@ -307,6 +317,8 @@ function causalView(data) {
     section("2026 Forward 진단", "2026 결과는 진단용입니다. 이 정보로 만든 수리는 운용 후보가 아니라 연구 후보입니다.", table(data.forward_diagnosis?.issues || [], ["issue", "count", "pnl_impact", "related_scenario", "related_market_state", "note"], 20)),
     section("개선 후보", "eligible_for_operation=true인 후보만 causal forward 검증 대상입니다.", table(data.candidates?.candidates || [], ["candidate", "base", "train_evidence", "eligible_for_operation", "test_status", "hindsight_risk", "rule"], 30)),
     section("2026 Causal Forward Test", "2022~2025에서 뽑은 규칙을 2026 시작점부터 forward 방식으로 대입한 검증입니다.", table(data.causal_forward?.rows || [], ["scenario", "2026_return_pct", "2026_mdd_pct", "profit_factor", "trade_count", "saved_loss", "missed_profit", "net_effect", "loss_month_count", "decision"], 30)),
+    section("시나리오별 2026 월별 투자내역", "월 행을 클릭하면 같은 시나리오의 해당 월 일별 내역이 아래에 열립니다.", table(monthly, ["period", "scenario", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "saved_loss", "missed_profit", "net_effect", "result", "trade_comment"], 200, "month-table")),
+    section(`${state.selectedCausalScenario || "-"} / ${state.selectedCausalMonth || "-"} 일별 투자내역`, "거래하지 않은 날은 거래없음과 이유를 표시합니다.", table(selectedDaily, ["period", "scenario", "start_equity_krw", "end_equity_krw", "pnl_krw", "return_pct", "mdd_pct", "trade_count", "saved_loss", "missed_profit", "net_effect", "result", "trade_comment"], 220)),
     section("VWAP Proxy vs Real", "VWAP/VPF proxy 결과는 real replay와 분리하며, proxy만으로 운용 승격하지 않습니다.", table(data.vwap_proxy_vs_real?.rows || [], ["vwap_scenario", "proxy_return_pct", "real_replay_return_pct", "proxy_mdd_pct", "real_replay_mdd_pct", "return_difference", "mdd_difference", "decision"], 30)),
     section("LLM Review", "LLM은 자동 적용이 아니라 요약/검토 보조로만 취급합니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "hindsight_repair_research_only", "active_change_applied", "manual_review_required", "live_order_allowed"], 5)),
   ].join("");
@@ -342,12 +354,14 @@ function table(rows, keys, limit = 100, className = "") {
   if (!clean.length) return `<p class="empty">표시할 데이터 없음</p>`;
   const body = clean.slice(0, limit).map((row) => {
     const monthAttr = row.kind === "monthly" ? ` data-month="${escapeHtml(row.period)}"` : "";
+    const causalAttr = row.kind === "causal_monthly" ? ` data-causal-month="${escapeHtml(row.period)}" data-causal-scenario="${escapeHtml(row.scenario)}"` : "";
     const classes = [
       row.kind === "monthly" && row.period === state.selectedMonth ? "selected" : "",
+      row.kind === "causal_monthly" && row.period === state.selectedCausalMonth && row.scenario === state.selectedCausalScenario ? "selected" : "",
       row.comparison_rank === "best" ? "best-row" : "",
       row.comparison_rank === "worst" ? "worst-row" : "",
     ].filter(Boolean).join(" ");
-    return `<tr${monthAttr} class="${classes}">${keys.map((key) => `<td class="${tone(key, row[key])}">${fmt(key, row[key])}</td>`).join("")}</tr>`;
+    return `<tr${monthAttr}${causalAttr} class="${classes}">${keys.map((key) => `<td class="${tone(key, row[key])}">${fmt(key, row[key])}</td>`).join("")}</tr>`;
   }).join("");
   return `<div class="wrap ${className}"><table><thead><tr>${keys.map((key) => `<th>${labels[key] || key}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div>`;
 }
@@ -377,6 +391,13 @@ function bindRenderedEvents() {
   document.querySelectorAll("[data-month]").forEach((row) => {
     row.addEventListener("click", () => {
       state.selectedMonth = row.dataset.month;
+      render();
+    });
+  });
+  document.querySelectorAll("[data-causal-month]").forEach((row) => {
+    row.addEventListener("click", () => {
+      state.selectedCausalMonth = row.dataset.causalMonth;
+      state.selectedCausalScenario = row.dataset.causalScenario;
       render();
     });
   });

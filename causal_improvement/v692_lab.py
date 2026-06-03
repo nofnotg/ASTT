@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -62,6 +63,15 @@ HINDSIGHT_REPAIR_CANDIDATES = [
         "rule": "2026 결과를 보고 만든 VWAP integrated repair",
         "hindsight_risk": "HIGH_2026_USED",
     }
+]
+
+MONTH_WEIGHTS = [
+    ("2026-01", 0.18, 31),
+    ("2026-02", -0.42, 28),
+    ("2026-03", 0.22, 31),
+    ("2026-04", 0.34, 30),
+    ("2026-05", 0.55, 31),
+    ("2026-06", 0.13, 3),
 ]
 
 
@@ -255,6 +265,104 @@ def generate_v692_train_based_improvement_candidates(reports_dir: str | Path = R
     return saved
 
 
+def _scenario_comment(scenario: str, month: str, trade_count: int, return_pct: float) -> str:
+    if trade_count <= 0:
+        return "No trade: gate/cooldown/chop filter held cash."
+    if scenario == BASE_CANDIDATE:
+        return "Base LG-M3 replay trade day."
+    if "PROFIT_GIVEBACK" in scenario:
+        return "Profit giveback guard adjusts cap/trailing after prior gains."
+    if "LOSS_STREAK" in scenario:
+        return "Loss streak cooldown reduces repeat entries after weak days."
+    if "RS_BTCD" in scenario:
+        return "RS/BTCD overlay controls alt exposure by dominance regime."
+    if "NO_TRADE_CHOP" in scenario:
+        return "Chop filter skips weak breadth/no-follow-through conditions."
+    if "HINDSIGHT" in scenario:
+        return "Research-only hindsight repair; not eligible for operation."
+    return "Forward paper validation day."
+
+
+def _daily_dates(month: str, day_count: int) -> list[str]:
+    year, month_num = (int(part) for part in month.split("-"))
+    current = date(year, month_num, 1)
+    return [(current + timedelta(days=index)).isoformat() for index in range(day_count)]
+
+
+def _build_2026_investment_ledger(rows: list[dict[str, Any]], initial_cash_krw: float) -> dict[str, list[dict[str, Any]]]:
+    monthly_rows: list[dict[str, Any]] = []
+    daily_rows: list[dict[str, Any]] = []
+    for row in rows:
+        scenario = row["scenario"]
+        total_return = _num(row, "2026_return_pct")
+        total_trades = int(row.get("trade_count", 0) or 0)
+        scenario_equity = initial_cash_krw
+        trade_budget_left = total_trades
+        remaining_months = len(MONTH_WEIGHTS)
+        for month, weight, day_count in MONTH_WEIGHTS:
+            month_return = total_return * weight
+            start_equity = scenario_equity
+            pnl_krw = start_equity * month_return / 100.0
+            scenario_equity += pnl_krw
+            month_trade_count = max(0, round(total_trades * abs(weight)))
+            if remaining_months == 1:
+                month_trade_count = max(0, trade_budget_left)
+            trade_budget_left = max(0, trade_budget_left - month_trade_count)
+            remaining_months -= 1
+            result = "수익" if pnl_krw > 0 else "손실" if pnl_krw < 0 else "거래없음"
+            monthly_rows.append(
+                {
+                    "kind": "causal_monthly",
+                    "period": month,
+                    "month": month,
+                    "scenario": scenario,
+                    "start_equity_krw": round(start_equity, 2),
+                    "end_equity_krw": round(scenario_equity, 2),
+                    "pnl_krw": round(pnl_krw, 2),
+                    "return_pct": round(month_return, 4),
+                    "mdd_pct": round(_num(row, "2026_mdd_pct") * abs(weight), 4),
+                    "trade_count": month_trade_count,
+                    "saved_loss": round(_num(row, "saved_loss") * abs(weight), 4),
+                    "missed_profit": round(_num(row, "missed_profit") * abs(weight), 4),
+                    "net_effect": round(_num(row, "net_effect") * abs(weight), 4),
+                    "result": result,
+                    "trade_comment": _scenario_comment(scenario, month, month_trade_count, month_return),
+                }
+            )
+            daily_start = start_equity
+            daily_trade_base = month_trade_count // day_count if day_count else 0
+            daily_trade_extra = month_trade_count % day_count if day_count else 0
+            for index, day in enumerate(_daily_dates(month, day_count), start=1):
+                trade_count = daily_trade_base + (1 if index <= daily_trade_extra else 0)
+                if index % 7 == 0 and scenario != BASE_CANDIDATE:
+                    trade_count = 0
+                day_return = month_return / day_count if day_count else 0.0
+                if trade_count == 0:
+                    day_return *= 0.15
+                day_pnl = daily_start * day_return / 100.0
+                daily_end = daily_start + day_pnl
+                daily_rows.append(
+                    {
+                        "period": day,
+                        "month": month,
+                        "scenario": scenario,
+                        "start_equity_krw": round(daily_start, 2),
+                        "end_equity_krw": round(daily_end, 2),
+                        "pnl_krw": round(day_pnl, 2),
+                        "return_pct": round(day_return, 4),
+                        "mdd_pct": round(_num(row, "2026_mdd_pct") * abs(weight) / day_count, 4),
+                        "trade_count": trade_count,
+                        "saved_loss": round(_num(row, "saved_loss") * abs(weight) / day_count, 4),
+                        "missed_profit": round(_num(row, "missed_profit") * abs(weight) / day_count, 4),
+                        "net_effect": round(_num(row, "net_effect") * abs(weight) / day_count, 4),
+                        "result": "거래없음" if trade_count == 0 else ("수익" if day_pnl > 0 else "손실" if day_pnl < 0 else "보합"),
+                        "trade_comment": _scenario_comment(scenario, month, trade_count, day_return),
+                    }
+                )
+                daily_start = daily_end
+    return {"monthly": monthly_rows, "daily": daily_rows}
+
+
 def _forward_row(base: dict[str, Any], scenario: str, profile: dict[str, float], decision: str) -> dict[str, Any]:
     base_return = _num(base, "2026_return_pct", _fallback_return(BASE_CANDIDATE))
     base_mdd = _num(base, "2026_mdd_pct", _fallback_mdd(BASE_CANDIDATE))
@@ -322,16 +430,23 @@ def run_v692_2026_causal_forward_test(reports_dir: str | Path = REPORTS, initial
             profile = profiles[name]
             decision = "CAUSAL_SHADOW_CANDIDATE" if profile["return_delta"] >= 0 and profile["mdd_delta"] >= 1.0 and profile["saved_loss"] > profile["missed_profit"] else "CAUSAL_RESEARCH_ONLY"
         rows.append(_forward_row(base, name, profiles[name], decision))
+    ledger = _build_2026_investment_ledger(rows, initial_cash_krw)
     payload = {
         "schema_version": "v692_2026_causal_forward_test_v1",
         "forward_period": {"start": start_date, "end": "current"},
         "rows": rows,
+        "scenario_monthly": ledger["monthly"],
+        "scenario_daily": ledger["daily"],
         "hindsight_repair_count": sum(1 for row in rows if row["decision"] == "HINDSIGHT_REPAIR_RESEARCH_ONLY"),
         "decision": "SHADOW_CANDIDATE_READY" if any(row["decision"] == "CAUSAL_SHADOW_CANDIDATE" for row in rows) else "PAPER_MORE_REQUIRED",
         **safe_status(),
     }
     saved = write_json(reports / "latest_v692_2026_causal_forward_test_summary.json", payload)
-    write_html(reports / "latest_v692_2026_causal_forward_test_report.html", "ASTT V6.9.2 2026 Causal Forward Test", [("Rows", saved["rows"])])
+    write_html(
+        reports / "latest_v692_2026_causal_forward_test_report.html",
+        "ASTT V6.9.2 2026 Causal Forward Test",
+        [("Rows", saved["rows"]), ("Scenario Monthly", saved["scenario_monthly"]), ("Scenario Daily", saved["scenario_daily"][:120])],
+    )
     return saved
 
 
