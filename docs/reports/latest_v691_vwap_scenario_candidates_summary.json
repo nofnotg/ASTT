@@ -1,0 +1,57 @@
+{
+  "schema_version": "v691_vwap_scenario_candidates_v1",
+  "base_scenario": "LG_M3_PF0.8_DD8",
+  "candidates": [
+    {
+      "scenario": "LG_M3_VWAP_GREY_FILTER_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "feature": "VPF_GREY",
+      "rule": "VPF_GREY 또는 VWAP 주변 반복 교차 구간에서는 non-PlanA 진입을 차단하고 PlanA도 축소합니다.",
+      "risk": "횡보 후 급등 초입을 일부 놓칠 수 있습니다.",
+      "test_status": "READY_FOR_2026_VWAP_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_VWAP_RETEST_HOLD_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "feature": "VWAP_RETEST_HOLD",
+      "rule": "VWAP 회복 후 재눌림 지지 확인이 있을 때만 정상 사이즈를 허용합니다.",
+      "risk": "빠른 돌파형 진입을 늦게 잡을 수 있습니다.",
+      "test_status": "READY_FOR_2026_VWAP_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_VWAP_PRESSURE_CONFIRM_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "feature": "VPF_GREEN_WHITE",
+      "rule": "VPF_GREEN은 long 확인, VPF_WHITE/GREY는 long 축소 또는 skip으로 처리합니다.",
+      "risk": "VPF는 추정 압력이므로 실제 orderflow처럼 과신하면 안 됩니다.",
+      "test_status": "READY_FOR_2026_VWAP_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_VWAP_MEAN_REVERSION_EXIT_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "feature": "VWAP_BAND_EXTENSION",
+      "rule": "VWAP upper 2/3 band 확장 후 압력 약화 시 부분익절과 trailing을 강화합니다.",
+      "risk": "강한 추세장에서 이익을 너무 빨리 줄일 수 있습니다.",
+      "test_status": "READY_FOR_2026_VWAP_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "feature": "VWAP_VPF_INTEGRATED",
+      "rule": "Grey filter, retest hold, pressure confirm, mean reversion exit을 순차 결합합니다.",
+      "risk": "복합 규칙이라 표본 부족과 과최적화 점검이 필요합니다.",
+      "test_status": "READY_FOR_2026_VWAP_BACKTEST"
+    }
+  ],
+  "decision": "VWAP_SCENARIO_CANDIDATES_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.509217"
+}

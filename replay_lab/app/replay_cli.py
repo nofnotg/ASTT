@@ -3108,6 +3108,69 @@ def build_v690_report_html_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_v691_vwap_features_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import build_v691_vwap_features
+
+    print(json.dumps(build_v691_vwap_features(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_vwap_indicator_effectiveness_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_vwap_indicator_effectiveness
+
+    print(json.dumps(run_v691_vwap_indicator_effectiveness(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def generate_v691_vwap_scenario_candidates_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import generate_v691_vwap_scenario_candidates
+
+    print(json.dumps(generate_v691_vwap_scenario_candidates(args.reports_dir, args.base_scenario), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_2026_vwap_scenario_backtest_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_2026_vwap_scenario_backtest
+
+    print(json.dumps(run_v691_2026_vwap_scenario_backtest(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_drawdown_reduction_analysis_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_drawdown_reduction_analysis
+
+    print(json.dumps(run_v691_drawdown_reduction_analysis(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_full_period_vwap_safety_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_full_period_vwap_safety
+
+    print(json.dumps(run_v691_full_period_vwap_safety(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_vwap_decision_engine_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_vwap_decision_engine
+
+    print(json.dumps(run_v691_vwap_decision_engine(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_vwap_llm_review_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_vwap_llm_review
+
+    print(json.dumps(run_v691_vwap_llm_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v691_vwap_pressure_feature_lab_command(args: argparse.Namespace) -> int:
+    from analysis.v691_vwap_pressure_lab import run_v691_vwap_pressure_feature_lab
+
+    print(json.dumps(run_v691_vwap_pressure_feature_lab(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -5300,6 +5363,55 @@ def main(argv: list[str] | None = None) -> int:
         p = sub.add_parser(command_name)
         p.add_argument("--reports-dir", default="docs/reports")
         p.set_defaults(func=build_v690_report_html_command, report=report_name)
+
+    p = sub.add_parser("build-v691-vwap-features")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=build_v691_vwap_features_command)
+
+    p = sub.add_parser("run-v691-vwap-indicator-effectiveness")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v691_vwap_indicator_effectiveness_command)
+
+    p = sub.add_parser("generate-v691-vwap-scenario-candidates")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--base-scenario", default="LG_M3_PF0.8_DD8")
+    p.set_defaults(func=generate_v691_vwap_scenario_candidates_command)
+
+    p = sub.add_parser("run-v691-2026-vwap-scenario-backtest")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v691_2026_vwap_scenario_backtest_command)
+
+    p = sub.add_parser("run-v691-drawdown-reduction-analysis")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v691_drawdown_reduction_analysis_command)
+
+    p = sub.add_parser("run-v691-full-period-vwap-safety")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v691_full_period_vwap_safety_command)
+
+    p = sub.add_parser("run-v691-vwap-decision-engine")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v691_vwap_decision_engine_command)
+
+    p = sub.add_parser("run-v691-vwap-llm-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default=None)
+    p.set_defaults(func=run_v691_vwap_llm_review_command)
+
+    p = sub.add_parser("run-v691-vwap-pressure-feature-lab")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v691_vwap_pressure_feature_lab_command)
 
     args = parser.parse_args(argv)
     return args.func(args)

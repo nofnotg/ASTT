@@ -1,0 +1,78 @@
+{
+  "schema_version": "v691_drawdown_reduction_analysis_v1",
+  "definition": "낙폭은 HWM 대비 equity 하락률입니다. MDD가 -17.98%에서 -15.28%가 되면 낙폭 2.70%p 개선입니다.",
+  "rows": [
+    {
+      "scenario": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+      "mdd_pct": -15.282796244202604,
+      "mdd_delta_vs_lgm3_pct": 2.7,
+      "drawdown_reduction_ratio": 0.15014350178551575,
+      "saved_loss": 23.0,
+      "missed_profit": 7.0,
+      "net_effect": 16.0,
+      "return_delta_vs_lgm3_pct": 0.9,
+      "drawdown_tradeoff_score": 4.299999999999999,
+      "decision": "DRAWDOWN_DEFENSE_PROMISING"
+    },
+    {
+      "scenario": "LG_M3_VWAP_GREY_FILTER_V1",
+      "mdd_pct": -15.582796244202603,
+      "mdd_delta_vs_lgm3_pct": 2.4,
+      "drawdown_reduction_ratio": 0.13346089047601403,
+      "saved_loss": 14.0,
+      "missed_profit": 4.0,
+      "net_effect": 10.0,
+      "return_delta_vs_lgm3_pct": -0.15,
+      "drawdown_tradeoff_score": 3.2500000000000004,
+      "decision": "DRAWDOWN_DEFENSE_PROMISING"
+    },
+    {
+      "scenario": "LG_M3_VWAP_MEAN_REVERSION_EXIT_V1",
+      "mdd_pct": -16.182796244202603,
+      "mdd_delta_vs_lgm3_pct": 1.8,
+      "drawdown_reduction_ratio": 0.10009566785701056,
+      "saved_loss": 9.0,
+      "missed_profit": 4.5,
+      "net_effect": 4.5,
+      "return_delta_vs_lgm3_pct": 0.2,
+      "drawdown_tradeoff_score": 2.250000000000001,
+      "decision": "DRAWDOWN_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "LG_M3_VWAP_PRESSURE_CONFIRM_V1",
+      "mdd_pct": -16.882796244202602,
+      "mdd_delta_vs_lgm3_pct": 1.1,
+      "drawdown_reduction_ratio": 0.061169574801506504,
+      "saved_loss": 8.0,
+      "missed_profit": 3.0,
+      "net_effect": 5.0,
+      "return_delta_vs_lgm3_pct": 0.65,
+      "drawdown_tradeoff_score": 1.6000000000000014,
+      "decision": "DRAWDOWN_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "LG_M3_VWAP_RETEST_HOLD_V1",
+      "mdd_pct": -17.382796244202602,
+      "mdd_delta_vs_lgm3_pct": 0.6,
+      "drawdown_reduction_ratio": 0.033365222619003584,
+      "saved_loss": 5.0,
+      "missed_profit": 3.0,
+      "net_effect": 2.0,
+      "return_delta_vs_lgm3_pct": 0.45,
+      "drawdown_tradeoff_score": 0.8000000000000014,
+      "decision": "DRAWDOWN_RESEARCH_ONLY"
+    }
+  ],
+  "best_drawdown_defense": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+  "decision": "DRAWDOWN_REDUCTION_ANALYSIS_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.527216"
+}

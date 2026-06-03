@@ -1,0 +1,28 @@
+{
+  "schema_version": "v691_vwap_pressure_feature_lab_v1",
+  "feature_count": 5,
+  "effectiveness_row_count": 5,
+  "candidate_count": 5,
+  "backtest_row_count": 7,
+  "drawdown_row_count": 5,
+  "full_period_row_count": 7,
+  "vwap_shadow_candidates": [
+    "LG_M3_VWAP_PRESSURE_INTEGRATED_V1"
+  ],
+  "drawdown_shadow_candidates": [
+    "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+    "LG_M3_VWAP_GREY_FILTER_V1"
+  ],
+  "llm_fallback_used": true,
+  "decision": "VWAP_SHADOW_CANDIDATE",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.559221"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "v691_vwap_feature_v1",
+  "method": "OHLCV 기반 VWAP 계산 계약과 기존 2026 paper/backfill 산출물을 연결한 feature lab",
+  "initial_cash_krw": 500000.0,
+  "rows": [
+    {
+      "feature": "DAILY_ANCHORED_VWAP",
+      "vwap_type": "KST_09_DAILY",
+      "event_count": 15,
+      "lookahead_safe": true,
+      "decision": "VWAP_FEATURE_READY"
+    },
+    {
+      "feature": "ROLLING_VWAP_24H",
+      "vwap_type": "ROLLING_24H",
+      "event_count": 15,
+      "lookahead_safe": true,
+      "decision": "VWAP_FEATURE_READY"
+    },
+    {
+      "feature": "ROLLING_VWAP_4H",
+      "vwap_type": "ROLLING_4H",
+      "event_count": 7,
+      "lookahead_safe": true,
+      "decision": "VWAP_FEATURE_READY"
+    },
+    {
+      "feature": "VPF_GREY",
+      "vwap_type": "PRESSURE_ESTIMATE",
+      "event_count": 35,
+      "lookahead_safe": true,
+      "decision": "VPF_PRESSURE_FEATURE_READY"
+    },
+    {
+      "feature": "VPF_GREEN_WHITE",
+      "vwap_type": "PRESSURE_ESTIMATE",
+      "event_count": 4,
+      "lookahead_safe": true,
+      "decision": "VPF_PRESSURE_FEATURE_READY"
+    }
+  ],
+  "caution": "VPF는 실제 bid/ask orderflow가 아니라 OHLCV 기반 estimated pressure입니다.",
+  "decision": "VWAP_FEATURE_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.498221"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "v691_vwap_indicator_effectiveness_v1",
+  "feature_decision": "VWAP_FEATURE_READY",
+  "rows": [
+    {
+      "feature": "VPF_GREY_NO_TRADE",
+      "event_count": 35,
+      "return_after_1h": -0.08,
+      "return_after_4h": -0.22,
+      "return_after_1d": -0.35,
+      "saved_loss": 14.0,
+      "missed_profit": 4.0,
+      "net_effect": 10.0,
+      "drawdown_reduction_score": 0.78,
+      "decision": "USE_FOR_DRAWDOWN_FILTER_RESEARCH"
+    },
+    {
+      "feature": "VWAP_RETEST_HOLD",
+      "event_count": 5,
+      "return_after_1h": 0.06,
+      "return_after_4h": 0.18,
+      "return_after_1d": 0.3,
+      "saved_loss": 5.0,
+      "missed_profit": 3.0,
+      "net_effect": 2.0,
+      "drawdown_reduction_score": 0.35,
+      "decision": "USE_FOR_ENTRY_QUALITY_RESEARCH"
+    },
+    {
+      "feature": "VPF_GREEN_CONFIRM",
+      "event_count": 7,
+      "return_after_1h": 0.09,
+      "return_after_4h": 0.26,
+      "return_after_1d": 0.44,
+      "saved_loss": 7.0,
+      "missed_profit": 2.5,
+      "net_effect": 4.5,
+      "drawdown_reduction_score": 0.46,
+      "decision": "USE_FOR_PRESSURE_CONFIRM_RESEARCH"
+    },
+    {
+      "feature": "VPF_WHITE_BLOCK",
+      "event_count": 35,
+      "return_after_1h": -0.1,
+      "return_after_4h": -0.24,
+      "return_after_1d": -0.41,
+      "saved_loss": 10.0,
+      "missed_profit": 2.0,
+      "net_effect": 8.0,
+      "drawdown_reduction_score": 0.66,
+      "decision": "USE_FOR_DRAWDOWN_FILTER_RESEARCH"
+    },
+    {
+      "feature": "VWAP_MEAN_REVERSION_EXIT",
+      "event_count": 35,
+      "return_after_1h": -0.02,
+      "return_after_4h": -0.08,
+      "return_after_1d": -0.16,
+      "saved_loss": 8.0,
+      "missed_profit": 3.5,
+      "net_effect": 4.5,
+      "drawdown_reduction_score": 0.58,
+      "decision": "USE_FOR_GIVEBACK_REDUCTION_RESEARCH"
+    }
+  ],
+  "drawdown_analysis": {
+    "definition": "MDD는 누적 equity의 이전 최고점(HWM) 대비 최저 하락률입니다. 값이 -18%에서 -14%로 올라오면 낙폭이 4%p 줄어든 것입니다.",
+    "primary_metric": "drawdown_reduction_score = saved_loss / (saved_loss + missed_profit)",
+    "minimum_shadow_condition": "saved_loss가 missed_profit보다 크고, MDD 개선이 수익률 희생보다 커야 합니다."
+  },
+  "decision": "VWAP_INDICATOR_EFFECTIVENESS_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.505225"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "v691_vwap_llm_review_v1",
+  "llm_provider": "fallback",
+  "llm_used": false,
+  "fallback_used": true,
+  "key_findings": [
+    "VWAP/VPF의 1차 가치는 급등 포착보다 Grey/White 구간의 손실 차단과 HWM giveback 감소에 있습니다.",
+    "Integrated 후보가 수익률과 MDD를 동시에 개선하는 연구 후보로 남았습니다.",
+    "낙폭 축소가 수익 기회 상실을 과도하게 만들지 않는지 forward paper 관찰이 필요합니다."
+  ],
+  "drawdown_best": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+  "recommended_experiments": [
+    "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+    "LG_M3_VWAP_GREY_FILTER_V1",
+    "LG_M3_VWAP_RETEST_HOLD_V1",
+    "LG_M3_VWAP_PRESSURE_CONFIRM_V1",
+    "LG_M3_VWAP_MEAN_REVERSION_EXIT_V1"
+  ],
+  "active_change_applied": false,
+  "manual_review_required": true,
+  "live_order_allowed": false,
+  "decision": "VWAP_SHADOW_CANDIDATE",
+  "order_api_called": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:53:07.550216"
+}
