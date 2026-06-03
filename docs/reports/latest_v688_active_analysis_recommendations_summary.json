@@ -1,0 +1,111 @@
+{
+  "schema_version": "v688_active_analysis_v1",
+  "pipeline_health": {
+    "forward_collector_stale": false,
+    "candidate_log_stale": false,
+    "decision_loop_stale": false,
+    "ledger_update_stale": true,
+    "latest_forward_date": "2026-06-02",
+    "candidate_count": 15,
+    "status": "FORWARD_CANDIDATE_LOG_OK_LEDGER_SEPARATE"
+  },
+  "candidate_to_ledger": {
+    "candidate_count": 15,
+    "forward_enter_count": 0,
+    "paper_trade_count": 1525,
+    "ledger_gap": true,
+    "interpretation": "forward 후보는 있으나 ledger 체결은 없습니다."
+  },
+  "route_state": {
+    "display_primary_route": "BASE_ROLLING",
+    "actual_paper_primary_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+    "forward_runner_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+    "mismatch_warning": true
+  },
+  "no_trade_reason": {
+    "top_reasons": [
+      {
+        "value": "MICRO_STATE_WEAK",
+        "count": 15
+      }
+    ],
+    "enter_count": 0,
+    "candidate_count": 15
+  },
+  "active_shadow_delta": {
+    "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+    "active_return_pct": 3.2200045169977765,
+    "best_shadow": "BASE_ROLLING",
+    "best_shadow_return_pct": 4.134748244670972,
+    "shadow_outperforming": true
+  },
+  "recommendations": [
+    {
+      "recommendation_id": "route_state_fix",
+      "trigger_type": "Route Display Mismatch Trigger",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "expected_benefit": "dashboard route state fix",
+      "risk_of_overfit": "MEDIUM",
+      "data_sufficiency": "PARTIAL",
+      "required_followup": "manual review",
+      "allowed_action": "DASHBOARD_WARNING",
+      "manual_approval_required": true,
+      "active_change_applied": false,
+      "live_order_allowed": false
+    },
+    {
+      "recommendation_id": "forward_pipeline_health_fix",
+      "trigger_type": "Pipeline Stale Trigger",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "expected_benefit": "separate candidate log from ledger and monitor stale state",
+      "risk_of_overfit": "MEDIUM",
+      "data_sufficiency": "PARTIAL",
+      "required_followup": "manual review",
+      "allowed_action": "DASHBOARD_WARNING",
+      "manual_approval_required": true,
+      "active_change_applied": false,
+      "live_order_allowed": false
+    },
+    {
+      "recommendation_id": "skip_reason_audit",
+      "trigger_type": "Candidate Starvation Trigger",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "expected_benefit": "audit repeated wait reasons such as MICRO_STATE_WEAK",
+      "risk_of_overfit": "MEDIUM",
+      "data_sufficiency": "PARTIAL",
+      "required_followup": "manual review",
+      "allowed_action": "SHADOW_EXPERIMENT",
+      "manual_approval_required": true,
+      "active_change_applied": false,
+      "live_order_allowed": false
+    },
+    {
+      "recommendation_id": "shadow_promotion_review",
+      "trigger_type": "Shadow Outperformance Trigger",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "expected_benefit": "manual review of outperforming shadow",
+      "risk_of_overfit": "MEDIUM",
+      "data_sufficiency": "PARTIAL",
+      "required_followup": "manual review",
+      "allowed_action": "MANUAL_REVIEW",
+      "manual_approval_required": true,
+      "active_change_applied": false,
+      "live_order_allowed": false
+    }
+  ],
+  "recommendation_count": 4,
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T07:28:17.665371"
+}

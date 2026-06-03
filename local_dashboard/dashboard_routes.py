@@ -20,4 +20,5 @@ def route_map(service: DashboardDataService) -> dict[str, Callable[[], dict]]:
         "/api/atr-research": service.atr_research,
         "/api/pattern-validation": service.pattern_validation,
         "/api/control-tower": service.control_tower,
+        "/api/v688-dashboard": service.v688_dashboard,
     }

@@ -1,0 +1,130 @@
+{
+  "schema_version": "v688_variable_convergence_v1",
+  "winning_common_variables": [
+    {
+      "Variable": "pf20",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "month_return_pct",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "hwm_drawdown_pct",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "dominance_risk",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "guard_on",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "hard_guard",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    }
+  ],
+  "losing_common_variables": [
+    {
+      "Variable": "pf20",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "month_return_pct",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "hwm_drawdown_pct",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "dominance_risk",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "guard_on",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    },
+    {
+      "Variable": "hard_guard",
+      "Win Correlation": null,
+      "Loss Correlation": null,
+      "False Skip": null,
+      "False Entry": null,
+      "sample_count": 1275,
+      "Recommendation": "계속 추적"
+    }
+  ],
+  "false_entry_variables": [],
+  "false_skip_variables": [],
+  "route_specific_variables": [],
+  "market_state_specific_variables": [],
+  "caution": "correlation과 causation을 구분해야 하며 표본 부족은 과장하지 않습니다.",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T07:27:26.709372"
+}

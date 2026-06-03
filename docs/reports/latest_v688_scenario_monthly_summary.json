@@ -1,0 +1,225 @@
+{
+  "schema_version": "v688_scenario_telemetry_v1",
+  "initial_cash_krw": 500000.0,
+  "use_available_history": true,
+  "data_sources": [
+    "historical_backfill",
+    "forward_candidate_log",
+    "paper_trade",
+    "equity_snapshot"
+  ],
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "rows": [
+    {
+      "month": "2026-01",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 23
+      },
+      "monthly_pnl": 35298.49548520241,
+      "monthly_return_pct": 7.410442276988885,
+      "MDD": -11.255453715092731,
+      "PF": 1.4067191177164595,
+      "win_rate": 34.78260869565217,
+      "trade_count": 57,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": 0.6583868109245592,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": 35298.49548520241,
+      "profit_giveback_ratio": null,
+      "best_window_type": "UNKNOWN",
+      "worst_window_type": "UNKNOWN",
+      "promotion_score": 7.410442276988885,
+      "demotion_score": 0.0,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    },
+    {
+      "month": "2026-02",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 19
+      },
+      "monthly_pnl": -36457.44912490831,
+      "monthly_return_pct": -7.014256038786181,
+      "MDD": -17.02888469178511,
+      "PF": 0.17200564865001916,
+      "win_rate": 10.526315789473683,
+      "trade_count": 49,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": -0.41190343147780684,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": -36457.44912490831,
+      "profit_giveback_ratio": null,
+      "best_window_type": "UNKNOWN",
+      "worst_window_type": "UNKNOWN",
+      "promotion_score": 0.0,
+      "demotion_score": 7.014256038786181,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    },
+    {
+      "month": "2026-03",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 21
+      },
+      "monthly_pnl": 5028.0406225404,
+      "monthly_return_pct": 1.3268249725609258,
+      "MDD": -16.62161668091245,
+      "PF": 1.0769355999399055,
+      "win_rate": 42.857142857142854,
+      "trade_count": 53,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": 0.07982526597936737,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": 5028.0406225404,
+      "profit_giveback_ratio": null,
+      "best_window_type": "UNKNOWN",
+      "worst_window_type": "UNKNOWN",
+      "promotion_score": 1.3268249725609258,
+      "demotion_score": 0.0,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    },
+    {
+      "month": "2026-04",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 24
+      },
+      "monthly_pnl": 9893.266564504302,
+      "monthly_return_pct": 2.035430109120673,
+      "MDD": -18.23180481299657,
+      "PF": 1.279872438143188,
+      "win_rate": 45.83333333333333,
+      "trade_count": 49,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": 0.11164172335092756,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": 9893.266564504302,
+      "profit_giveback_ratio": null,
+      "best_window_type": "UNKNOWN",
+      "worst_window_type": "UNKNOWN",
+      "promotion_score": 2.035430109120673,
+      "demotion_score": 0.0,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    },
+    {
+      "month": "2026-05",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 14
+      },
+      "monthly_pnl": 2337.6690376500483,
+      "monthly_return_pct": 0.5139791225430406,
+      "MDD": -15.01363392045834,
+      "PF": 1.1016392831620567,
+      "win_rate": 35.714285714285715,
+      "trade_count": 46,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": 0.03423415844998502,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": 2337.6690376500483,
+      "profit_giveback_ratio": null,
+      "best_window_type": "UNKNOWN",
+      "worst_window_type": "UNKNOWN",
+      "promotion_score": 0.5139791225430406,
+      "demotion_score": 0.0,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    },
+    {
+      "month": "2026-06",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "FORWARD_MICRO": 1
+      },
+      "monthly_pnl": 0.0,
+      "monthly_return_pct": 0.0,
+      "MDD": 0.0,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 0,
+      "candidate_count": 15,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "FORWARD_MICRO",
+      "worst_market_state": "FORWARD_MICRO",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [
+        "candidate_to_ledger_gap",
+        "candidate_starvation"
+      ],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ],
+      "return_mdd_ratio": null,
+      "saved_loss": 0.0,
+      "missed_profit": 0.0,
+      "net_effect": 0.0,
+      "profit_giveback_ratio": null,
+      "best_window_type": "FORWARD_MICRO",
+      "worst_window_type": "FORWARD_MICRO",
+      "promotion_score": 0.0,
+      "demotion_score": 0.0,
+      "recommendation": "MANUAL_REVIEW_REQUIRED"
+    }
+  ],
+  "row_count": 6,
+  "generated_at": "2026-06-03T07:26:56.385370"
+}

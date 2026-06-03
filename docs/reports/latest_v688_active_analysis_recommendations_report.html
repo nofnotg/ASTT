@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>V6.8.8 Active Analysis Recommendations</title><style>body{font-family:Arial,'Malgun Gothic',sans-serif;margin:28px;background:#f7f8fa;color:#17202a}section{background:white;border:1px solid #dde2e8;border-radius:8px;padding:18px;margin:14px 0}table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid #e5e9ef;padding:8px;text-align:left}th{background:#f0f3f7}.safe{color:#087f5b;font-weight:700}.warn{color:#b08900;font-weight:700}pre{white-space:pre-wrap;background:#f6f8fa;padding:12px;border-radius:6px}</style></head><body><h1>V6.8.8 Active Analysis Recommendations</h1><p class="safe">LIVE_NOT_ALLOWED / PAPER_ONLY / manual review required</p><section><h2>Recommendations</h2><table><thead><tr><th>recommendation_id</th><th>trigger_type</th><th>severity</th><th>confidence</th><th>expected_benefit</th><th>risk_of_overfit</th><th>data_sufficiency</th><th>required_followup</th><th>allowed_action</th><th>manual_approval_required</th><th>active_change_applied</th><th>live_order_allowed</th></tr></thead><tbody><tr><td>route_state_fix</td><td>Route Display Mismatch Trigger</td><td>HIGH</td><td>0.9</td><td>dashboard route state fix</td><td>MEDIUM</td><td>PARTIAL</td><td>manual review</td><td>DASHBOARD_WARNING</td><td>True</td><td>False</td><td>False</td></tr><tr><td>forward_pipeline_health_fix</td><td>Pipeline Stale Trigger</td><td>HIGH</td><td>0.85</td><td>separate candidate log from ledger and monitor stale state</td><td>MEDIUM</td><td>PARTIAL</td><td>manual review</td><td>DASHBOARD_WARNING</td><td>True</td><td>False</td><td>False</td></tr><tr><td>skip_reason_audit</td><td>Candidate Starvation Trigger</td><td>MEDIUM</td><td>0.75</td><td>audit repeated wait reasons such as MICRO_STATE_WEAK</td><td>MEDIUM</td><td>PARTIAL</td><td>manual review</td><td>SHADOW_EXPERIMENT</td><td>True</td><td>False</td><td>False</td></tr><tr><td>shadow_promotion_review</td><td>Shadow Outperformance Trigger</td><td>MEDIUM</td><td>0.6</td><td>manual review of outperforming shadow</td><td>MEDIUM</td><td>PARTIAL</td><td>manual review</td><td>MANUAL_REVIEW</td><td>True</td><td>False</td><td>False</td></tr></tbody></table></section><section><h2>Route State</h2><pre>{
+  &quot;display_primary_route&quot;: &quot;BASE_ROLLING&quot;,
+  &quot;actual_paper_primary_route&quot;: &quot;LG_V2_BALANCED_PLUS_DOM_GATE&quot;,
+  &quot;forward_runner_route&quot;: &quot;LG_V2_BALANCED_PLUS_DOM_GATE&quot;,
+  &quot;mismatch_warning&quot;: true
+}</pre></section><section><h2>Pipeline Health</h2><pre>{
+  &quot;forward_collector_stale&quot;: false,
+  &quot;candidate_log_stale&quot;: false,
+  &quot;decision_loop_stale&quot;: false,
+  &quot;ledger_update_stale&quot;: true,
+  &quot;latest_forward_date&quot;: &quot;2026-06-02&quot;,
+  &quot;candidate_count&quot;: 15,
+  &quot;status&quot;: &quot;FORWARD_CANDIDATE_LOG_OK_LEDGER_SEPARATE&quot;
+}</pre></section></body></html>

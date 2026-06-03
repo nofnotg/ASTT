@@ -1,0 +1,533 @@
+{
+  "schema_version": "v688_scenario_telemetry_v1",
+  "initial_cash_krw": 500000.0,
+  "use_available_history": true,
+  "data_sources": [
+    "historical_backfill",
+    "forward_candidate_log",
+    "paper_trade",
+    "equity_snapshot"
+  ],
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "rows": [
+    {
+      "week": "2026-W01",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 4
+      },
+      "weekly_pnl": 89630.90806372382,
+      "weekly_return_pct": 16.90117270891205,
+      "MDD": -0.5285784372046225,
+      "PF": 89630.90806372382,
+      "win_rate": 100.0,
+      "trade_count": 20,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W02",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": -22871.48478533933,
+      "weekly_return_pct": -3.823669072691682,
+      "MDD": -5.732172995876389,
+      "PF": 0.5010703322071248,
+      "win_rate": 33.33333333333333,
+      "trade_count": 12,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W03",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 5
+      },
+      "weekly_pnl": -14378.699806738296,
+      "weekly_return_pct": -2.537590610855933,
+      "MDD": -8.123749968845488,
+      "PF": 0.35197292561325194,
+      "win_rate": 20.0,
+      "trade_count": 11,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W04",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 3
+      },
+      "weekly_pnl": -5180.621455066372,
+      "weekly_return_pct": -0.940565936287463,
+      "MDD": -8.985431146151948,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 5,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W05",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": -12272.020774242235,
+      "weekly_return_pct": -2.2581025113136532,
+      "MDD": -11.255453715092731,
+      "PF": 0.12020033349512387,
+      "win_rate": 16.666666666666664,
+      "trade_count": 13,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W06",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 5
+      },
+      "weekly_pnl": -10359.874511203845,
+      "weekly_return_pct": -1.9517155377525408,
+      "MDD": -12.749743660274795,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 12,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W07",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 4
+      },
+      "weekly_pnl": 614.5767149660969,
+      "weekly_return_pct": 0.12764823992650332,
+      "MDD": -13.062770733789012,
+      "PF": 1.0883138114938975,
+      "win_rate": 50.0,
+      "trade_count": 15,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W08",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": -21532.874804421852,
+      "weekly_return_pct": -4.163187076878538,
+      "MDD": -16.229037386193003,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 14,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W09",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 4
+      },
+      "weekly_pnl": 5074.87213042489,
+      "weekly_return_pct": 1.0235354786247375,
+      "MDD": -17.02888469178511,
+      "PF": 2.0553165870586025,
+      "win_rate": 25.0,
+      "trade_count": 10,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W10",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 2
+      },
+      "weekly_pnl": -3991.759406477562,
+      "weekly_return_pct": -0.78619346105544,
+      "MDD": -16.048885669797315,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 3,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W11",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": 50774.83417186001,
+      "weekly_return_pct": 9.754659616818916,
+      "MDD": -16.11254000448625,
+      "PF": 70.42832903690288,
+      "win_rate": 83.33333333333334,
+      "trade_count": 13,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W12",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": -34877.541422946786,
+      "weekly_return_pct": -6.367689274257404,
+      "MDD": -13.511213671154668,
+      "PF": 0.15530542233069483,
+      "win_rate": 33.33333333333333,
+      "trade_count": 17,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W13",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 5
+      },
+      "weekly_pnl": -19340.680677427386,
+      "weekly_return_pct": -3.7698548649480523,
+      "MDD": -16.62161668091245,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 12,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W14",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": 2823.676613557618,
+      "weekly_return_pct": 0.5676344841857972,
+      "MDD": -16.659473826486373,
+      "PF": 1.6263479910316396,
+      "win_rate": 66.66666666666666,
+      "trade_count": 12,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W15",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 5
+      },
+      "weekly_pnl": -12504.490589144174,
+      "weekly_return_pct": -2.5043096504193674,
+      "MDD": -18.23180481299657,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 13,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W16",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 5
+      },
+      "weekly_pnl": 6296.057786215388,
+      "weekly_return_pct": 1.285495366446776,
+      "MDD": -18.177752916615926,
+      "PF": 2.608191666222913,
+      "win_rate": 60.0,
+      "trade_count": 9,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W17",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": 25484.5758577839,
+      "weekly_return_pct": 5.049034634831806,
+      "MDD": -16.607239723704886,
+      "PF": 6.315424375014569,
+      "win_rate": 83.33333333333334,
+      "trade_count": 12,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W18",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 4
+      },
+      "weekly_pnl": -9258.383555409499,
+      "weekly_return_pct": -1.7760934008659746,
+      "MDD": -15.01363392045834,
+      "PF": 0.0382998015702561,
+      "win_rate": 25.0,
+      "trade_count": 10,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W19",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 6
+      },
+      "weekly_pnl": 19237.503174457175,
+      "weekly_return_pct": 3.7167702105127325,
+      "MDD": -14.597769226821075,
+      "PF": 4.685338138048802,
+      "win_rate": 50.0,
+      "trade_count": 21,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W20",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 3
+      },
+      "weekly_pnl": -13957.639805516636,
+      "weekly_return_pct": -2.6364773785781614,
+      "MDD": -14.052362034770205,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 7,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W21",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "UNKNOWN": 4
+      },
+      "weekly_pnl": -3310.9103340660804,
+      "weekly_return_pct": -0.6380815219277691,
+      "MDD": -14.830229285036658,
+      "PF": 0.13372551199340316,
+      "win_rate": 25.0,
+      "trade_count": 13,
+      "candidate_count": 0,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "UNKNOWN",
+      "worst_market_state": "UNKNOWN",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    },
+    {
+      "week": "2026-W23",
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "market_state_distribution": {
+        "FORWARD_MICRO": 1
+      },
+      "weekly_pnl": 0.0,
+      "weekly_return_pct": 0.0,
+      "MDD": 0.0,
+      "PF": 0.0,
+      "win_rate": 0.0,
+      "trade_count": 0,
+      "candidate_count": 15,
+      "enter_rate": 0.0,
+      "skip_rate": 100.0,
+      "best_market_state": "FORWARD_MICRO",
+      "worst_market_state": "FORWARD_MICRO",
+      "active_vs_shadow_delta": null,
+      "failure_signatures": [
+        "candidate_to_ledger_gap",
+        "candidate_starvation"
+      ],
+      "recommendation_flags": [
+        "PAPER_MORE_REQUIRED"
+      ]
+    }
+  ],
+  "row_count": 22,
+  "generated_at": "2026-06-03T07:26:56.382374"
+}

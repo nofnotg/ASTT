@@ -9,6 +9,10 @@ const endpoints = {
   validation: "/api/pattern-validation",
   risk: "/api/atr-research",
   control: "/api/control-tower",
+  v688Telemetry: "/api/v688-dashboard",
+  v688Disagreement: "/api/v688-dashboard",
+  v688Active: "/api/v688-dashboard",
+  v688LLM: "/api/v688-dashboard",
 };
 
 const labels = {
@@ -79,6 +83,36 @@ const labels = {
   trade_event_count: "체결틱",
   orderbook_event_count: "호가틱",
   orderbook_available: "호가확인",
+  scenario_id: "시나리오",
+  display_name: "이름",
+  scenario_family: "계열",
+  preferred_market_states: "유리한 시장",
+  weak_market_states: "약한 시장",
+  candidates_seen: "후보",
+  skip_count: "스킵",
+  realized_pnl_krw: "실현손익",
+  daily_return_pct: "일수익률",
+  recommendation_id: "추천ID",
+  trigger_type: "트리거",
+  severity: "강도",
+  confidence: "확신도",
+  expected_benefit: "기대효과",
+  allowed_action: "허용동작",
+  manual_approval_required: "수동검토",
+  disagreement_type: "판단차이",
+  active_decision: "Active 판단",
+  best_decision_ex_post: "사후 최선",
+  lesson: "교훈",
+  profit_day_pnl: "수익일 손익",
+  giveback_ratio_1d: "1일 반납률",
+  giveback_ratio_3d: "3일 반납률",
+  giveback_ratio_5d: "5일 반납률",
+  Recommendation: "추천",
+  Variable: "변수",
+  sample_count: "표본수",
+  llm_used: "LLM 사용",
+  fallback_used: "Fallback",
+  summary: "요약",
 };
 
 const money = (value) => Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 }) + " KRW";
@@ -140,6 +174,10 @@ function title(view) {
     validation: "급등/손익비/2월 검증",
     risk: "하락장 방어 / ATR",
     control: "관제 요약",
+    v688Telemetry: "V6.8.8 시나리오 계측",
+    v688Disagreement: "V6.8.8 판단차이",
+    v688Active: "V6.8.8 능동분석",
+    v688LLM: "V6.8.8 LLM 복기",
   }[view] || "투자 현황판";
 }
 
@@ -170,7 +208,46 @@ function content(view, data, account, records) {
     const risks = (data.risk_flags || []).map((item) => ({ risk_flag: item }));
     return [section("권고", "", table(recs, ["recommendation"], 30)), section("위험 플래그", "", table(risks, ["risk_flag"], 30))].join("");
   }
+  if (view === "v688Telemetry") return v688TelemetryView(data);
+  if (view === "v688Disagreement") return v688DisagreementView(data);
+  if (view === "v688Active") return v688ActiveView(data);
+  if (view === "v688LLM") return v688LLMView(data);
   return recordsView(records, true, account);
+}
+
+function v688TelemetryView(data) {
+  return [
+    section("Route State", "표시 route와 실제 paper/forward route를 분리합니다.", table([data.scenario_genome?.route_state || {}], ["display_primary_route", "actual_paper_primary_route", "forward_runner_route", "mismatch_warning"], 5)),
+    section("Scenario Genome", "시나리오별 투자 카드입니다.", table(data.scenario_genome?.cards || [], ["scenario_id", "display_name", "scenario_family", "status", "preferred_market_states", "weak_market_states", "entry_style", "risk_style"], 80)),
+    section("Daily Telemetry", "일별 후보/진입/손익/데이터 품질입니다.", table(data.scenario_daily?.rows || [], ["date", "scenario_id", "route_status", "market_state", "candidates_seen", "enter_count", "wait_count", "skip_count", "realized_pnl_krw", "daily_return_pct", "data_quality_flags"], 200)),
+    section("Weekly Telemetry", "주별 집계입니다.", table(data.scenario_weekly?.rows || [], ["week", "scenario_id", "weekly_pnl", "weekly_return_pct", "MDD", "PF", "win_rate", "trade_count", "candidate_count", "enter_rate", "failure_signatures"], 80)),
+    section("Monthly Telemetry", "월별 집계입니다.", table(data.scenario_monthly?.rows || [], ["month", "scenario_id", "monthly_pnl", "monthly_return_pct", "MDD", "PF", "trade_count", "candidate_count", "recommendation"], 80)),
+  ].join("");
+}
+
+function v688DisagreementView(data) {
+  return [
+    section("Scenario Disagreement Matrix", "active와 shadow의 판단 차이를 기록합니다. 사후 결과가 부족하면 UNKNOWN으로 둡니다.", table(data.disagreement?.rows || [], ["event_id", "timestamp", "market", "active_decision", "best_decision_ex_post", "active_missed_profit", "active_saved_loss", "disagreement_type", "lesson"], 120)),
+    section("Missed Opportunity", "후보가 있었지만 진입하지 않은 경우입니다.", table(data.missed_opportunity?.rows || [], ["event_id", "timestamp", "market", "strategy_id", "entry_decision", "primary_block_reason"], 120)),
+    section("Profit Giveback", "수익 후 1/3/5일 반납률입니다.", table(data.profit_giveback?.rows || [], ["scenario_id", "profit_date", "profit_day_pnl", "next_1d_pnl", "next_3d_pnl", "next_5d_pnl", "giveback_ratio_1d", "giveback_ratio_3d", "giveback_ratio_5d", "recommendation"], 120)),
+    section("Variable Convergence", "공통 변수 후보입니다. 표본 부족은 과장하지 않습니다.", table(data.variable_convergence?.winning_common_variables || [], ["Variable", "sample_count", "Win Correlation", "Loss Correlation", "False Skip", "False Entry", "Recommendation"], 80)),
+  ].join("");
+}
+
+function v688ActiveView(data) {
+  return [
+    section("Active Analysis Recommendations", "자동 적용 없이 수동 검토 대상으로만 남깁니다.", table(data.active_analysis?.recommendations || [], ["recommendation_id", "trigger_type", "severity", "confidence", "expected_benefit", "risk_of_overfit", "data_sufficiency", "allowed_action", "manual_approval_required"], 80)),
+    section("Pipeline Health", "화면 날짜와 ledger 갱신은 별도 상태입니다.", table([data.active_analysis?.pipeline_health || {}], ["status", "latest_forward_date", "candidate_count", "forward_collector_stale", "candidate_log_stale", "decision_loop_stale", "ledger_update_stale"], 5)),
+    section("Candidate To Ledger", "", table([data.active_analysis?.candidate_to_ledger || {}], ["candidate_count", "forward_enter_count", "paper_trade_count", "ledger_gap", "interpretation"], 5)),
+  ].join("");
+}
+
+function v688LLMView(data) {
+  return [
+    section("Daily Review", "원시 로그 전체가 아니라 엔진 요약 input pack 기반입니다.", table([data.llm_daily || {}], ["review_type", "period", "llm_used", "fallback_used", "summary", "active_change_applied", "live_order_allowed"], 5)),
+    section("Weekly Council", "", table([data.llm_weekly || {}], ["review_type", "period", "llm_used", "fallback_used", "summary", "active_change_applied", "live_order_allowed"], 5)),
+    section("Monthly Deck Review", "", table([data.llm_monthly || {}], ["review_type", "period", "llm_used", "fallback_used", "summary", "active_change_applied", "live_order_allowed"], 5)),
+  ].join("");
 }
 
 function routesView(data) {

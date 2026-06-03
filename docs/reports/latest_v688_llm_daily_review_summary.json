@@ -1,0 +1,45 @@
+{
+  "schema_version": "v688_llm_review_v1",
+  "review_id": "v688_daily_2026-06-03_fallback",
+  "review_type": "daily",
+  "period": "2026-06-03",
+  "model": "openai:fallback_rule_based",
+  "input_pack_id": "v688_daily_2026-06-03",
+  "summary": "Rule-based review generated from engine summaries. Raw logs were not sent to any LLM.",
+  "key_findings": [
+    "후보는 있었지만 진입은 없었습니다. skip reason audit이 필요합니다.",
+    "forward 후보 로그와 paper ledger 갱신 상태가 분리되어 있습니다."
+  ],
+  "risk_flags": [
+    "LIVE_NOT_ALLOWED",
+    "MANUAL_REVIEW_REQUIRED"
+  ],
+  "scenario_feedback": [],
+  "recommended_experiments": [
+    "route_state_fix",
+    "forward_pipeline_health_fix",
+    "skip_reason_audit",
+    "shadow_promotion_review"
+  ],
+  "promotion_candidates": [],
+  "demotion_candidates": [],
+  "manual_review_required": true,
+  "active_change_applied": false,
+  "live_order_allowed": false,
+  "llm_used": false,
+  "fallback_used": true,
+  "api_key_present": false,
+  "api_key_value_stored": false,
+  "token_budget": {
+    "review_type": "daily",
+    "max_input_tokens": 2500,
+    "raw_log_allowed": false
+  },
+  "order_api_called": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T07:27:41.295379"
+}

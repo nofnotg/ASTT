@@ -171,6 +171,33 @@ class DashboardDataService:
     def control_tower(self) -> dict[str, Any]:
         return self._read("latest_v686_control_tower_dashboard_summary.json")
 
+    def v688_dashboard(self) -> dict[str, Any]:
+        dashboard = self._read("latest_v688_control_tower_dashboard_summary.json")
+        active_analysis = self._read("latest_v688_active_analysis_recommendations_summary.json")
+        return {
+            "dashboard": dashboard,
+            "scenario_genome": self._read("latest_v688_scenario_genome_summary.json"),
+            "scenario_daily": self._read("latest_v688_scenario_daily_summary.json"),
+            "scenario_weekly": self._read("latest_v688_scenario_weekly_summary.json"),
+            "scenario_monthly": self._read("latest_v688_scenario_monthly_summary.json"),
+            "disagreement": self._read("latest_v688_scenario_disagreement_summary.json"),
+            "missed_opportunity": self._read("latest_v688_missed_opportunity_summary.json"),
+            "profit_giveback": self._read("latest_v688_profit_giveback_summary.json"),
+            "variable_convergence": self._read("latest_v688_variable_convergence_summary.json"),
+            "active_analysis": active_analysis,
+            "llm_daily": self._read("latest_v688_llm_daily_review_summary.json"),
+            "llm_weekly": self._read("latest_v688_llm_weekly_council_summary.json"),
+            "llm_monthly": self._read("latest_v688_llm_monthly_deck_review_summary.json"),
+            "tabs": dashboard.get("tabs", {}),
+            "route_state": active_analysis.get("route_state", dashboard.get("scenario_genome", {}).get("route_state", {})),
+            "active_change_applied": False,
+            "active_route_change_applied": False,
+            "llm_active_change_applied": False,
+            "manual_review_required": True,
+            "order_api_called": False,
+            **safety_flags(),
+        }
+
     def pattern_validation(self) -> dict[str, Any]:
         payload = self._read("latest_v687_investment_pattern_validation_summary.json")
         surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")

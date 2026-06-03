@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import json
@@ -2907,6 +2907,119 @@ def build_upbit_real_api_report_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_v688_scenario_genome_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_genome import build_scenario_genome
+
+    print(json.dumps(build_scenario_genome(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_scenario_telemetry_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_daily_stats import build_scenario_telemetry
+
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_scenario_telemetry(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_scenario_disagreement_matrix_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_disagreement_matrix import build_scenario_disagreement_matrix
+
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_scenario_disagreement_matrix(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_missed_opportunity_analysis_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_counterfactual import build_missed_opportunity_analysis
+
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_missed_opportunity_analysis(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_profit_giveback_analysis_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_profit_giveback import build_profit_giveback_analysis
+
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_profit_giveback_analysis(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_variable_convergence_analysis_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_variable_convergence import build_variable_convergence_analysis
+
+    use_history = str(args.use_available_history).lower() == "true"
+    print(json.dumps(build_variable_convergence_analysis(args.initial_cash_krw, use_history, args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_active_analysis_engine_command(args: argparse.Namespace) -> int:
+    from active_analysis.active_analysis_engine import run_active_analysis_engine
+
+    print(json.dumps(run_active_analysis_engine(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_llm_daily_review_command(args: argparse.Namespace) -> int:
+    from llm_council.llm_fallback_writer import build_llm_review
+    from llm_council.llm_review_report_builder import build_llm_review_report
+
+    payload = build_llm_review("daily", args.reports_dir, args.llm_provider)
+    build_llm_review_report(args.reports_dir)
+    print(json.dumps(payload, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_llm_weekly_council_command(args: argparse.Namespace) -> int:
+    from llm_council.llm_fallback_writer import build_llm_review
+    from llm_council.llm_review_report_builder import build_llm_review_report
+
+    payload = build_llm_review("weekly", args.reports_dir, args.llm_provider)
+    build_llm_review_report(args.reports_dir)
+    print(json.dumps(payload, ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v688_llm_monthly_deck_review_command(args: argparse.Namespace) -> int:
+    from llm_council.llm_fallback_writer import build_llm_review
+    from llm_council.llm_review_report_builder import build_llm_review_report
+
+    payload = build_llm_review("monthly", args.reports_dir, args.llm_provider)
+    build_llm_review_report(args.reports_dir)
+    print(json.dumps(payload, ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v688_control_tower_dashboard_data_command(args: argparse.Namespace) -> int:
+    from active_analysis.v688_dashboard_builder import build_v688_control_tower_dashboard_data
+
+    print(json.dumps(build_v688_control_tower_dashboard_data(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v688_scenario_telemetry_report_html_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.scenario_telemetry_report_builder import build_scenario_telemetry_report
+
+    print(f"v688 scenario telemetry report: {build_scenario_telemetry_report(args.reports_dir)}")
+    return 0
+
+
+def build_v688_active_analysis_report_html_command(args: argparse.Namespace) -> int:
+    from active_analysis.active_analysis_engine import run_active_analysis_engine
+
+    payload = run_active_analysis_engine(args.reports_dir)
+    print(f"v688 active analysis report: {Path(args.reports_dir) / 'latest_v688_active_analysis_recommendations_report.html'}")
+    return 0
+
+
+def build_v688_llm_review_report_html_command(args: argparse.Namespace) -> int:
+    from llm_council.llm_review_report_builder import build_llm_review_report
+
+    print(f"v688 llm review report: {build_llm_review_report(args.reports_dir)}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -4967,6 +5080,75 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("build-upbit-real-api-report")
     p.set_defaults(func=build_upbit_real_api_report_command)
+
+    p = sub.add_parser("build-v688-scenario-genome")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v688_scenario_genome_command)
+
+    p = sub.add_parser("run-v688-scenario-telemetry")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_scenario_telemetry_command)
+
+    p = sub.add_parser("run-v688-scenario-disagreement-matrix")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_scenario_disagreement_matrix_command)
+
+    p = sub.add_parser("run-v688-missed-opportunity-analysis")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_missed_opportunity_analysis_command)
+
+    p = sub.add_parser("run-v688-profit-giveback-analysis")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_profit_giveback_analysis_command)
+
+    p = sub.add_parser("run-v688-variable-convergence-analysis")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_variable_convergence_analysis_command)
+
+    p = sub.add_parser("run-v688-active-analysis-engine")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v688_active_analysis_engine_command)
+
+    p = sub.add_parser("run-v688-llm-daily-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v688_llm_daily_review_command)
+
+    p = sub.add_parser("run-v688-llm-weekly-council")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v688_llm_weekly_council_command)
+
+    p = sub.add_parser("run-v688-llm-monthly-deck-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default="openai")
+    p.set_defaults(func=run_v688_llm_monthly_deck_review_command)
+
+    p = sub.add_parser("build-v688-control-tower-dashboard-data")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v688_control_tower_dashboard_data_command)
+
+    p = sub.add_parser("build-v688-scenario-telemetry-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v688_scenario_telemetry_report_html_command)
+
+    p = sub.add_parser("build-v688-active-analysis-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v688_active_analysis_report_html_command)
+
+    p = sub.add_parser("build-v688-llm-review-report-html")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v688_llm_review_report_html_command)
 
     args = parser.parse_args(argv)
     return args.func(args)
