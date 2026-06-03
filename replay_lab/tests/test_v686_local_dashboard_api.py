@@ -120,6 +120,11 @@ def test_v686_dashboard_api_returns_investment_logs(tmp_path) -> None:
     logs = service.investment_logs()
     assert logs["forward_daily_calendar"][0]["period"] == "2026-06-02"
     assert logs["forward_daily_calendar"][0]["result"] == "거래없음"
+    daily_0602 = next(row for row in logs["daily_trade_calendar"] if row["period"] == "2026-06-02")
+    assert daily_0602["route_label"] == "Forward"
+    assert daily_0602["candidate_count"] == 1
+    assert daily_0602["result"] == "거래없음"
+    assert daily_0602["primary_block_reason"] == "MICRO_STATE_WEAK"
     assert logs["forward_candidate_logs"][0]["time"] == "2026-06-02T11:49:58.521402"
     assert logs["forward_candidate_logs"][0]["result"] == "거래없음"
     assert logs["forward_candidate_logs"][0]["primary_block_reason"] == "MICRO_STATE_WEAK"

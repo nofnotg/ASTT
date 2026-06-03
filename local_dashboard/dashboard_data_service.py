@@ -137,10 +137,11 @@ class DashboardDataService:
         decisions = self._read_jsonl(self.data / "journal" / "paper_decisions.jsonl", limit)
         records = self.investment_records()
         forward_logs = self._forward_candidate_logs()
+        forward_daily = self._forward_daily_calendar(forward_logs)
         return {
-            "forward_daily_calendar": self._forward_daily_calendar(forward_logs),
+            "forward_daily_calendar": forward_daily,
             "forward_candidate_logs": forward_logs,
-            "daily_trade_calendar": records.get("daily", []),
+            "daily_trade_calendar": self._combined_daily_trade_calendar(records.get("daily", []), forward_daily),
             "trade_logs": self._trade_logs(trades),
             "scenario_logs": self._scenario_logs(decisions),
             **safety_flags(),
@@ -247,12 +248,14 @@ class DashboardDataService:
 
     def _latest_forward_session(self) -> tuple[dict[str, Any], Path | None]:
         files = sorted(self.forward_dir.glob("*/session_summary.json"), key=lambda path: path.stat().st_mtime, reverse=True)
-        if not files:
-            return {}, None
-        try:
-            return json.loads(files[0].read_text(encoding="utf-8-sig")), files[0]
-        except json.JSONDecodeError:
-            return {}, files[0]
+        for path in files:
+            try:
+                row = json.loads(path.read_text(encoding="utf-8-sig"))
+            except json.JSONDecodeError:
+                continue
+            if isinstance(row, dict) and row.get("session_id"):
+                return row, path
+        return {}, None
 
     def _forward_timestamp(self, session: dict[str, Any]) -> str | None:
         source = session.get("source_session", {}) if isinstance(session.get("source_session"), dict) else {}
@@ -350,6 +353,89 @@ class DashboardDataService:
                 "auto_apply_allowed": False,
             }
         ]
+
+    def _combined_daily_trade_calendar(self, daily_rows: list[dict[str, Any]], forward_daily: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        by_day = {str(row.get("period", ""))[:10]: dict(row) for row in daily_rows if row.get("period")}
+        forward_by_day = {str(row.get("period", ""))[:10]: row for row in forward_daily if row.get("period")}
+        if not by_day and not forward_by_day:
+            return []
+
+        valid_existing_dates = []
+        for period in by_day:
+            try:
+                valid_existing_dates.append(date.fromisoformat(period))
+            except ValueError:
+                continue
+        valid_forward_dates = []
+        for period in forward_by_day:
+            try:
+                valid_forward_dates.append(date.fromisoformat(period))
+            except ValueError:
+                continue
+
+        if valid_existing_dates:
+            start = max(valid_existing_dates) + timedelta(days=1)
+        elif valid_forward_dates:
+            start = min(valid_forward_dates)
+        else:
+            return sorted(by_day.values(), key=lambda item: str(item.get("period", "")), reverse=True)
+
+        end = max([date.today(), *valid_forward_dates] if valid_forward_dates else [date.today()])
+        last_equity = self._latest_known_equity(by_day)
+        cursor = start
+        while cursor <= end:
+            period = cursor.isoformat()
+            if period not in by_day:
+                month, week = self._period_keys(period, "daily")
+                by_day[period] = {
+                    "period": period,
+                    "time": None,
+                    "trade_count": 0,
+                    "start_equity_krw": last_equity,
+                    "end_equity_krw": last_equity,
+                    "pnl_krw": 0.0,
+                    "return_pct": 0.0,
+                    "mdd_pct": None,
+                    "route_id": "FORWARD_PAPER",
+                    "route_label": "Forward",
+                    "kind": "daily",
+                    "month": month,
+                    "week": week,
+                    "source_mode": "forward_paper_calendar",
+                    "result": "거래없음",
+                    "trade_comment": "백필 체결 기록 없음. Forward 후보 로그 없음. paper 관찰 대기.",
+                    "real_order_enabled": False,
+                    "live_order_allowed": False,
+                    "auto_apply_allowed": False,
+                }
+            cursor += timedelta(days=1)
+
+        for period, forward in forward_by_day.items():
+            month, week = self._period_keys(period, "daily")
+            base = by_day.get(period, {})
+            equity = float(base.get("end_equity_krw", base.get("start_equity_krw", last_equity)) or last_equity)
+            by_day[period] = {
+                **base,
+                **forward,
+                "route_id": "FORWARD_PAPER",
+                "route_label": "Forward",
+                "kind": "daily",
+                "month": month,
+                "week": week,
+                "start_equity_krw": base.get("start_equity_krw", equity),
+                "end_equity_krw": base.get("end_equity_krw", equity),
+                "pnl_krw": base.get("pnl_krw", 0.0),
+                "return_pct": base.get("return_pct", 0.0),
+                "mdd_pct": base.get("mdd_pct"),
+            }
+        return sorted(by_day.values(), key=lambda item: str(item.get("period", "")), reverse=True)
+
+    def _latest_known_equity(self, by_day: dict[str, dict[str, Any]]) -> float:
+        latest_equity = 0.0
+        for period in sorted(by_day):
+            row = by_day[period]
+            latest_equity = float(row.get("end_equity_krw", row.get("start_equity_krw", latest_equity)) or latest_equity)
+        return latest_equity
 
     def _period_rows(self, rows: list[dict[str, Any]], route_id: str | None, kind: str) -> list[dict[str, Any]]:
         normalized = []

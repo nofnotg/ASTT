@@ -150,7 +150,7 @@ function content(view, data, account, records) {
     return [
       section("오늘 Forward 일지", "06-02 같은 실시간 paper 후보 로그입니다. 진입 조건이 약하면 거래없음으로 남깁니다.", table(data.forward_daily_calendar || [], ["period", "time", "route_label", "candidate_count", "enter_count", "wait_count", "result", "primary_block_reason", "trade_comment", "source_mode"], 30)),
       section("오늘 Forward 후보/투자로그", "실시간 후보별 코인, 전략, 진입 판단, 대기 사유입니다. 실제 주문은 차단된 paper 기록입니다.", table(data.forward_candidate_logs || [], ["time", "market", "strategy_id", "action", "result", "primary_block_reason", "trade_event_count", "orderbook_event_count", "trade_comment"], 500)),
-      section("일별 매매 캘린더", "없는 날짜는 주 시나리오 기준 체결이 없던 날입니다.", table(data.daily_trade_calendar || [], ["period", "route_label", "trade_count", "result", "trade_comment", "start_equity_krw", "end_equity_krw", "pnl_krw"], 500)),
+      section("일별 매매 캘린더", "없는 날짜는 거래없음으로 남기고, forward 후보가 있던 날은 후보수와 대기 사유를 함께 표시합니다.", table(data.daily_trade_calendar || [], ["period", "route_label", "trade_count", "candidate_count", "wait_count", "result", "primary_block_reason", "trade_comment", "start_equity_krw", "end_equity_krw", "pnl_krw", "source_mode"], 500)),
       section("매수/매도 기록", "실제 체결 로그입니다. 최근 로그가 위에 오도록 정렬했습니다.", table(data.trade_logs || [], ["time", "market", "action", "route_label", "route_status", "size_krw", "realized_pnl_krw", "pnl_pct", "reason", "source_mode"], 800)),
     ].join("");
   }
