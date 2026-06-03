@@ -111,7 +111,8 @@ p {
 }
 
 .metric,
-.panel {
+.panel,
+.notice {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -136,6 +137,18 @@ p {
 
 .panel {
   padding: 16px;
+}
+
+.notice {
+  border-color: #b2ccff;
+  background: #f5f8ff;
+  padding: 14px;
+  margin: 12px 0;
+}
+
+.notice strong {
+  display: block;
+  font-size: 16px;
 }
 
 .panel-head,

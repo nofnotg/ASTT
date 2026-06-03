@@ -1,0 +1,74 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>ASTT V6.8.9 Scenario Decision</title><style>body{font-family:Arial,'Malgun Gothic',sans-serif;margin:28px;background:#f7f8fa;color:#17202a}section{background:white;border:1px solid #dde2e8;border-radius:8px;padding:18px;margin:14px 0}table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid #e5e9ef;padding:8px;text-align:left}th{background:#f0f3f7}.safe{color:#087f5b;font-weight:700}.warn{color:#b08900;font-weight:700}pre{white-space:pre-wrap;background:#f6f8fa;padding:12px;border-radius:6px}</style></head><body><h1>ASTT V6.8.9 Scenario Decision</h1><p class="safe">LIVE_NOT_ALLOWED / PAPER_ONLY / manual review required</p><section><h2>Conclusion</h2><pre>{
+  &quot;answer_to_user_question&quot;: &quot;V6.8.8 단계에서는 새 개선 시나리오 확정까지는 미완료였습니다. V6.8.9에서 2022+ 장기 검증과 2026 운용 검증을 분리해 결론을 냈습니다.&quot;,
+  &quot;long_term_conclusion&quot;: &quot;2022~현재 장기 복리 검증에서는 RELATIVE_STRENGTH_BTCD가 가장 강한 후보입니다. 도미넌스는 전체 기간에서 단독 만능 필터가 아니라 상대강도/하락 대응 보조축으로 쓰는 것이 타당합니다.&quot;,
+  &quot;current_operation_conclusion&quot;: &quot;2026 운용 구간에서는 active인 LG_V2_BALANCED_PLUS_DOM_GATE보다 LG_M3_PF0.8_DD8가 수익률, MDD, PF를 함께 개선했습니다.&quot;,
+  &quot;new_or_upgraded_scenario&quot;: &quot;LG_M3_PF0.8_DD8을 운용 후보 1순위로 올리고, 기존 active LG_V2_BALANCED_PLUS_DOM_GATE은 shadow로 내려 계속 추적하는 것이 보수적 결론입니다.&quot;,
+  &quot;not_promoted&quot;: &quot;SRR 급등/손익비 시나리오는 2026 walk-forward에서 거래가 0건이라 연구용으로만 보관합니다.&quot;,
+  &quot;manual_gate&quot;: &quot;자동 교체는 금지입니다. 대시보드에는 운용 후보로 표시하되 active_change_applied=false를 유지합니다.&quot;
+}</pre></section><section><h2>Operating Summary</h2><pre>{
+  &quot;investment_start_date&quot;: &quot;2026-01-01&quot;,
+  &quot;recommended_primary_route&quot;: &quot;LG_M3_PF0.8_DD8&quot;,
+  &quot;recommended_primary_label&quot;: &quot;LG-M3&quot;,
+  &quot;current_active_route&quot;: &quot;LG_V2_BALANCED_PLUS_DOM_GATE&quot;,
+  &quot;long_term_best&quot;: {
+    &quot;source&quot;: &quot;v66_btcd_2022_plus&quot;,
+    &quot;period&quot;: &quot;2022-current&quot;,
+    &quot;scenario&quot;: &quot;RELATIVE_STRENGTH_BTCD&quot;,
+    &quot;final_equity_krw&quot;: 1528388.1314221425,
+    &quot;return_pct&quot;: 205.67762628442853,
+    &quot;mdd_pct&quot;: -19.015377825779282,
+    &quot;profit_factor&quot;: 1.2655184159030912,
+    &quot;trade_count&quot;: 1348,
+    &quot;score&quot;: 199.3304732525733,
+    &quot;eligible_for_operation&quot;: true,
+    &quot;exclusion_reason&quot;: &quot;&quot;,
+    &quot;decision&quot;: &quot;BEAR_ROUTER_CANDIDATE&quot;
+  },
+  &quot;current_best&quot;: {
+    &quot;source&quot;: &quot;v683_2026_backfill&quot;,
+    &quot;period&quot;: &quot;2026&quot;,
+    &quot;scenario&quot;: &quot;LG_M3_PF0.8_DD8&quot;,
+    &quot;final_equity_krw&quot;: 517671.70125154755,
+    &quot;return_pct&quot;: 3.53434025030952,
+    &quot;mdd_pct&quot;: -17.982796244202603,
+    &quot;profit_factor&quot;: 1.0559934785928407,
+    &quot;trade_count&quot;: 254,
+    &quot;score&quot;: -3.0313635818406794,
+    &quot;eligible_for_operation&quot;: true,
+    &quot;exclusion_reason&quot;: &quot;&quot;,
+    &quot;decision&quot;: &quot;PAPER_ROUTE_SHADOW&quot;
+  },
+  &quot;active_baseline&quot;: {
+    &quot;source&quot;: &quot;v683_2026_backfill&quot;,
+    &quot;period&quot;: &quot;2026&quot;,
+    &quot;scenario&quot;: &quot;LG_V2_BALANCED_PLUS_DOM_GATE&quot;,
+    &quot;final_equity_krw&quot;: 516100.02258498885,
+    &quot;return_pct&quot;: 3.2200045169977765,
+    &quot;mdd_pct&quot;: -18.23180481299657,
+    &quot;profit_factor&quot;: 1.0508326921749844,
+    &quot;trade_count&quot;: 254,
+    &quot;score&quot;: -3.5157476021002285,
+    &quot;eligible_for_operation&quot;: true,
+    &quot;exclusion_reason&quot;: &quot;&quot;,
+    &quot;decision&quot;: &quot;PAPER_ROUTE_ACTIVE&quot;
+  },
+  &quot;today&quot;: {
+    &quot;period&quot;: &quot;2026-05-24&quot;,
+    &quot;pnl_krw&quot;: 512.6567864635726,
+    &quot;return_pct&quot;: 0.09912942487428911,
+    &quot;trade_count&quot;: 4,
+    &quot;end_equity_krw&quot;: 517671.70125154755
+  },
+  &quot;this_week&quot;: {
+    &quot;period&quot;: &quot;2026-W21&quot;,
+    &quot;pnl_krw&quot;: -3320.9930446090875,
+    &quot;return_pct&quot;: -0.6374356264430281,
+    &quot;trade_count&quot;: 13
+  },
+  &quot;this_month&quot;: {
+    &quot;period&quot;: &quot;2026-05&quot;,
+    &quot;pnl_krw&quot;: 2344.7879378538346,
+    &quot;return_pct&quot;: 0.455009796165351,
+    &quot;trade_count&quot;: 46
+  }
+}</pre></section><section><h2>2022+ Long Term Rows</h2><table><thead><tr><th>source</th><th>period</th><th>scenario</th><th>final_equity_krw</th><th>return_pct</th><th>mdd_pct</th><th>profit_factor</th><th>trade_count</th><th>score</th><th>eligible_for_operation</th><th>exclusion_reason</th><th>decision</th></tr></thead><tbody><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>ROLLING_EDGE_BTCD_OVERLAY</td><td>1530763.6137905756</td><td>206.15272275811512</td><td>-19.45538265492957</td><td>1.2560986888868144</td><td>1358</td><td>199.50388792070464</td><td>True</td><td></td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>RELATIVE_STRENGTH_BTCD</td><td>1528388.1314221425</td><td>205.67762628442853</td><td>-19.015377825779282</td><td>1.2655184159030912</td><td>1348</td><td>199.3304732525733</td><td>True</td><td></td><td>BEAR_ROUTER_CANDIDATE</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>BEAR_DEFENSE_BTCD</td><td>1525898.506915072</td><td>205.1797013830144</td><td>-19.015377825779282</td><td>1.264524176165299</td><td>1358</td><td>198.828571392208</td><td>True</td><td></td><td>BEAR_ROUTER_CANDIDATE</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>HYBRID_BEAR_ROUTER_BTCD</td><td>1525898.506915072</td><td>205.1797013830144</td><td>-19.015377825779282</td><td>1.264524176165299</td><td>1358</td><td>198.828571392208</td><td>True</td><td></td><td>BEAR_ROUTER_CANDIDATE</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>CONTROL_EXISTING</td><td>1519471.1463945187</td><td>203.89422927890374</td><td>-19.015377825779282</td><td>1.2612045445309292</td><td>1358</td><td>197.52982076155988</td><td>True</td><td></td><td>BASELINE</td></tr><tr><td>v681_compounding</td><td>2022-current</td><td>BALANCED_GROWTH_COMPOUNDING_BASELINE</td><td>1519471.1463945187</td><td>203.89422927890374</td><td>-19.015377825779282</td><td>1.2612045445309292</td><td>1358</td><td>197.52982076155988</td><td>True</td><td></td><td>STRONGEST_COMPOUNDING_BASELINE</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>BALANCED_GROWTH_BTCD_OVERLAY</td><td>1518390.712153043</td><td>203.67814243060857</td><td>-19.015377825779282</td><td>1.2622049522431251</td><td>1358</td><td>197.3177355441135</td><td>True</td><td></td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>v681_compounding</td><td>2022-current</td><td>COMPOUNDING_SCENARIO_ROUTER_V1</td><td>1511180.4728627356</td><td>202.23609457254713</td><td>-19.015377825779282</td><td>1.2613315550614492</td><td>1358</td><td>195.87219409732535</td><td>True</td><td></td><td>PAPER_MORE_REQUIRED</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>POLICY_BLEND_BTCD_ROUTER</td><td>1494429.196337076</td><td>198.88583926741518</td><td>-19.496747036585727</td><td>1.2531273651034365</td><td>1358</td><td>192.2003005058775</td><td>True</td><td></td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>BEAR_BOUNCE_BTCD</td><td>500000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0.0</td><td>False</td><td>LOW_SAMPLE</td><td>BTCD_FILTER_REJECTED</td></tr><tr><td>v66_btcd_2022_plus</td><td>2022-current</td><td>SHORT_HEDGE_BTCD_RESEARCH</td><td>500000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0.0</td><td>False</td><td>LOW_SAMPLE</td><td>SHORT_RESEARCH_ONLY</td></tr></tbody></table></section><section><h2>2026 Current Rows</h2><table><thead><tr><th>source</th><th>period</th><th>scenario</th><th>final_equity_krw</th><th>return_pct</th><th>mdd_pct</th><th>profit_factor</th><th>trade_count</th><th>score</th><th>eligible_for_operation</th><th>exclusion_reason</th><th>decision</th></tr></thead><tbody><tr><td>v683_2026_backfill</td><td>2026</td><td>LG_M3_PF0.8_DD8</td><td>517671.70125154755</td><td>3.53434025030952</td><td>-17.982796244202603</td><td>1.0559934785928407</td><td>254</td><td>-3.0313635818406794</td><td>True</td><td></td><td>PAPER_ROUTE_SHADOW</td></tr><tr><td>v683_2026_backfill</td><td>2026</td><td>BASE_ROLLING</td><td>520673.7412233549</td><td>4.134748244670972</td><td>-19.45538265492953</td><td>1.0588575700517395</td><td>255</td><td>-3.303051068079788</td><td>True</td><td></td><td>PAPER_ROUTE_SHADOW</td></tr><tr><td>v683_2026_backfill</td><td>2026</td><td>LG_V2_BALANCED_PLUS_DOM_GATE</td><td>516100.02258498885</td><td>3.2200045169977765</td><td>-18.23180481299657</td><td>1.0508326921749844</td><td>254</td><td>-3.5157476021002285</td><td>True</td><td></td><td>PAPER_ROUTE_ACTIVE</td></tr><tr><td>v683_2026_backfill</td><td>2026</td><td>LOSS_GUARD_2026_ROUTER_V1_SHADOW</td><td>515156.2103548854</td><td>3.0312420709770693</td><td>-18.318070809540554</td><td>1.0471302900279558</td><td>254</td><td>-3.77107925463544</td><td>True</td><td></td><td>PAPER_ROUTE_SHADOW</td></tr><tr><td>v683_2026_backfill</td><td>2026</td><td>BASE_BALANCED</td><td>515937.02904049674</td><td>3.187405808099353</td><td>-19.015377825779304</td><td>1.0460737950396095</td><td>255</td><td>-4.037525707209792</td><td>True</td><td></td><td>PAPER_ROUTE_SHADOW</td></tr><tr><td>v688_surge_rr</td><td>2026</td><td>SRR_AGGRESSIVE_WF</td><td>500386.14858149656</td><td>0.07722971629930964</td><td>-0.001528365795777642</td><td>51.52966956065711</td><td>3</td><td>206.1949909394503</td><td>False</td><td>RESEARCH_ONLY_LOW_SAMPLE</td><td>SURGE_RR_SHADOW</td></tr><tr><td>v688_surge_rr</td><td>2026</td><td>SRR_STRICT_WF</td><td>500000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0.0</td><td>False</td><td>RESEARCH_ONLY_LOW_SAMPLE</td><td>SURGE_RR_SHADOW</td></tr><tr><td>v688_surge_rr</td><td>2026</td><td>SRR_BALANCED_WF</td><td>500000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0</td><td>0.0</td><td>False</td><td>RESEARCH_ONLY_LOW_SAMPLE</td><td>SURGE_RR_SHADOW</td></tr></tbody></table></section></body></html>

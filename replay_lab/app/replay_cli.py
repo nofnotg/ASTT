@@ -3020,6 +3020,13 @@ def build_v688_llm_review_report_html_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def build_v689_scenario_decision_command(args: argparse.Namespace) -> int:
+    from scenario_telemetry.v689_scenario_decision import build_v689_scenario_decision
+
+    print(json.dumps(build_v689_scenario_decision(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -5149,6 +5156,10 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v688-llm-review-report-html")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v688_llm_review_report_html_command)
+
+    p = sub.add_parser("build-v689-scenario-decision")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=build_v689_scenario_decision_command)
 
     args = parser.parse_args(argv)
     return args.func(args)

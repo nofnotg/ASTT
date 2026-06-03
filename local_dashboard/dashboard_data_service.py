@@ -89,6 +89,7 @@ class DashboardDataService:
         backfill = self._read("latest_v683_backfill_20260101_summary.json")
         surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")
         runtime = self._read("latest_v686_active_shadow_runtime_summary.json")
+        scenario_decision = self._read("latest_v689_scenario_decision_summary.json")
         active_route = backfill.get("active_route") or runtime.get("active_route")
         routes = self._merge_routes(backfill.get("routes", []), runtime.get("routes", []), surge_rr.get("routes", []))
         policy = self._scenario_policy(routes, active_route, backfill)
@@ -127,6 +128,9 @@ class DashboardDataService:
             "routes": policy["maintained_routes"],
             "research_routes": policy["research_routes"],
             "route_agent_recommendation": policy["route_agent_recommendation"],
+            "scenario_decision": scenario_decision,
+            "operating_summary": scenario_decision.get("operating_summary", {}),
+            "plain_conclusion": scenario_decision.get("conclusion", {}),
             "monthly": list(reversed(monthly)),
             "weekly": list(reversed(weekly)),
             "daily": daily,
