@@ -1,0 +1,31 @@
+{
+  "schema_version": "v692_causal_llm_review_v1",
+  "llm_provider": "fallback",
+  "llm_used": false,
+  "fallback_used": true,
+  "key_findings": [
+    "2026에서 좋아 보이는 개선도 train 기반이 아니면 hindsight repair로 분리했습니다.",
+    "Train 기반 후보 중 RS/BTCD overlay, profit giveback guard, loss streak cooldown이 shadow 관찰 후보입니다.",
+    "VWAP/VPF는 proxy 결과와 real replay를 분리했으며, 아직 운용 승격 근거가 아닙니다."
+  ],
+  "recommended_experiments": [
+    "TRAIN_LG_M3_PROFIT_GIVEBACK_GUARD_V1",
+    "TRAIN_LG_M3_LOSS_STREAK_COOLDOWN_V1",
+    "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1",
+    "TRAIN_LG_M3_NO_TRADE_CHOP_FILTER_V1"
+  ],
+  "hindsight_repair_research_only": [
+    "HINDSIGHT_2026_VWAP_PRESSURE_INTEGRATED_REPAIR"
+  ],
+  "active_change_applied": false,
+  "manual_review_required": true,
+  "live_order_allowed": false,
+  "decision": "SHADOW_CANDIDATE_READY",
+  "order_api_called": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.854626"
+}

@@ -23,4 +23,5 @@ def route_map(service: DashboardDataService) -> dict[str, Callable[[], dict]]:
         "/api/v688-dashboard": service.v688_dashboard,
         "/api/v690-dashboard": service.v690_dashboard,
         "/api/v691-dashboard": service.v691_dashboard,
+        "/api/v692-dashboard": service.v692_dashboard,
     }

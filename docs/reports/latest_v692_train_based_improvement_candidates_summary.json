@@ -1,0 +1,68 @@
+{
+  "schema_version": "v692_train_based_improvement_candidates_v1",
+  "base_scenario": "LG_M3_PF0.8_DD8",
+  "candidates": [
+    {
+      "candidate": "TRAIN_LG_M3_PROFIT_GIVEBACK_GUARD_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "derived_from": "2022~2025 profit giveback after win",
+      "rule": "profit 이후 PF20 약화, BTC trend 불리, dominance risk 또는 HWM drawdown 확대 중 2개 이상이면 0.70 cap",
+      "hindsight_risk": "LOW_TRAIN_ONLY",
+      "train_evidence": "FOUND",
+      "eligible_for_operation": true,
+      "test_status": "READY_FOR_2026_CAUSAL_FORWARD_TEST"
+    },
+    {
+      "candidate": "TRAIN_LG_M3_LOSS_STREAK_COOLDOWN_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "derived_from": "2022~2025 repeated loss streak",
+      "rule": "최근 5거래 3손실 또는 동일 market_state 3연속 손실이면 24h cooldown 및 0.35 cap",
+      "hindsight_risk": "LOW_TRAIN_ONLY",
+      "train_evidence": "FOUND",
+      "eligible_for_operation": true,
+      "test_status": "READY_FOR_2026_CAUSAL_FORWARD_TEST"
+    },
+    {
+      "candidate": "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "derived_from": "2022~2025 RS/BTCD regime split",
+      "rule": "BTCD 상승+alt 약세는 non-PlanA 축소, BTCD 안정+alt RS 회복은 기존 LG-M3 허용",
+      "hindsight_risk": "LOW_TRAIN_ONLY",
+      "train_evidence": "FOUND",
+      "eligible_for_operation": true,
+      "test_status": "READY_FOR_2026_CAUSAL_FORWARD_TEST"
+    },
+    {
+      "candidate": "TRAIN_LG_M3_NO_TRADE_CHOP_FILTER_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "derived_from": "2022~2025 sideways/chop loss cluster",
+      "rule": "breadth 약함, volume expansion 없음, BTC 횡보, follow-through 낮음이면 non-PlanA skip",
+      "hindsight_risk": "LOW_TRAIN_ONLY",
+      "train_evidence": "FOUND",
+      "eligible_for_operation": true,
+      "test_status": "READY_FOR_2026_CAUSAL_FORWARD_TEST"
+    },
+    {
+      "candidate": "HINDSIGHT_2026_VWAP_PRESSURE_INTEGRATED_REPAIR",
+      "base": "LG_M3_PF0.8_DD8",
+      "derived_from": "2026 weakness and V6.9.1 proxy result",
+      "rule": "2026 결과를 보고 만든 VWAP integrated repair",
+      "hindsight_risk": "HIGH_2026_USED",
+      "train_evidence": "2026_USED",
+      "eligible_for_operation": false,
+      "test_status": "HINDSIGHT_REPAIR_RESEARCH_ONLY"
+    }
+  ],
+  "hindsight_repair_count": 1,
+  "decision": "CAUSAL_IMPROVEMENT_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.798634"
+}

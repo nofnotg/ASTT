@@ -1,0 +1,29 @@
+{
+  "schema_version": "v692_causal_decision_v1",
+  "causal_shadow_candidates": [
+    "TRAIN_LG_M3_PROFIT_GIVEBACK_GUARD_V1",
+    "TRAIN_LG_M3_LOSS_STREAK_COOLDOWN_V1",
+    "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1"
+  ],
+  "research_only": [
+    "TRAIN_LG_M3_NO_TRADE_CHOP_FILTER_V1"
+  ],
+  "hindsight_repair_research_only": [
+    "HINDSIGHT_2026_VWAP_PRESSURE_INTEGRATED_REPAIR"
+  ],
+  "rejected": [],
+  "baseline_still_best": false,
+  "active_route": "LG_V2_BALANCED_PLUS_DOM_GATE",
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "decision": "SHADOW_CANDIDATE_READY",
+  "reason": "2022~2025 train insight에서 생성된 후보만 causal shadow 후보가 될 수 있습니다. 2026을 보고 만든 repair는 research-only입니다.",
+  "order_api_called": false,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.840630"
+}

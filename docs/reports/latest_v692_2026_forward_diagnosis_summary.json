@@ -1,0 +1,61 @@
+{
+  "schema_version": "v692_2026_forward_diagnosis_v1",
+  "forward_period": {
+    "start": "2026-01-01",
+    "end": "current"
+  },
+  "issues": [
+    {
+      "issue": "2026_RETURN_WEAK",
+      "count": 1,
+      "pnl_impact": 0.3143357333117436,
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_market_state": "EDGE_DECAY",
+      "note": "LG-M3 개선폭이 작아 운용 후보로는 부족"
+    },
+    {
+      "issue": "PROFIT_GIVEBACK",
+      "count": 35,
+      "pnl_impact": -27062.21924283715,
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_market_state": "RISK_OFF_ALT_WEAK",
+      "note": "수익 후 반납 방어 필요"
+    },
+    {
+      "issue": "CANDIDATE_STARVATION_OR_FALSE_BLOCK",
+      "count": 15,
+      "pnl_impact": 0.0,
+      "related_scenario": "FORWARD_PAPER",
+      "related_market_state": "FORWARD_MICRO",
+      "note": "후보는 있으나 진입 부족 또는 과잉 차단 가능"
+    },
+    {
+      "issue": "MDD_STILL_DEEP",
+      "count": 1,
+      "pnl_impact": -17.982796244202603,
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_market_state": "BEAR_DEFENSE",
+      "note": "MDD 절대값이 여전히 커서 낙폭 방어 우선"
+    },
+    {
+      "issue": "VWAP_PROXY_NOT_REAL_REPLAY",
+      "count": 1,
+      "pnl_impact": 0.0,
+      "related_scenario": "VWAP_PROXY",
+      "related_market_state": "DATA_QUALITY",
+      "note": "V6.9.1 proxy 결과는 운용 승격 근거가 아님"
+    }
+  ],
+  "hindsight_guard": "diagnosis only; not used to create train-based candidates",
+  "decision": "FORWARD_2026_TEST_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.520635"
+}

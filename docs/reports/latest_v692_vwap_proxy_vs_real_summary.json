@@ -1,0 +1,66 @@
+{
+  "schema_version": "v692_vwap_proxy_vs_real_v1",
+  "rows": [
+    {
+      "vwap_scenario": "LG_M3_VWAP_GREY_FILTER_V1",
+      "proxy_return_pct": 3.38434025030952,
+      "real_replay_return_pct": 3.23434025030952,
+      "proxy_mdd_pct": -15.582796244202603,
+      "real_replay_mdd_pct": -15.782796244202602,
+      "return_difference": -0.1499999999999999,
+      "mdd_difference": -0.1999999999999993,
+      "decision": "VWAP_REAL_REPLAY_RESEARCH_ONLY"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_RETEST_HOLD_V1",
+      "proxy_return_pct": 3.98434025030952,
+      "real_replay_return_pct": null,
+      "proxy_mdd_pct": -17.382796244202602,
+      "real_replay_mdd_pct": null,
+      "return_difference": null,
+      "mdd_difference": null,
+      "decision": "VWAP_PROXY_NOT_OPERATIONAL_EVIDENCE"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_PRESSURE_CONFIRM_V1",
+      "proxy_return_pct": 4.18434025030952,
+      "real_replay_return_pct": 4.03434025030952,
+      "proxy_mdd_pct": -16.882796244202602,
+      "real_replay_mdd_pct": -17.0827962442026,
+      "return_difference": -0.15000000000000036,
+      "mdd_difference": -0.1999999999999993,
+      "decision": "VWAP_REAL_REPLAY_RESEARCH_ONLY"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_MEAN_REVERSION_EXIT_V1",
+      "proxy_return_pct": 3.73434025030952,
+      "real_replay_return_pct": null,
+      "proxy_mdd_pct": -16.182796244202603,
+      "real_replay_mdd_pct": null,
+      "return_difference": null,
+      "mdd_difference": null,
+      "decision": "VWAP_PROXY_NOT_OPERATIONAL_EVIDENCE"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+      "proxy_return_pct": 4.43434025030952,
+      "real_replay_return_pct": null,
+      "proxy_mdd_pct": -15.282796244202604,
+      "real_replay_mdd_pct": null,
+      "return_difference": null,
+      "mdd_difference": null,
+      "decision": "VWAP_PROXY_NOT_OPERATIONAL_EVIDENCE"
+    }
+  ],
+  "decision": "VWAP_PROXY_VS_REAL_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.832629"
+}

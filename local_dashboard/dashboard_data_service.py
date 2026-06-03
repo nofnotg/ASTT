@@ -240,6 +240,27 @@ class DashboardDataService:
             **safety_flags(),
         }
 
+    def v692_dashboard(self) -> dict[str, Any]:
+        return {
+            "loop": self._read("latest_v692_historical_to_2026_causal_improvement_lab_summary.json"),
+            "baseline": self._read("latest_v692_historical_replay_baseline_summary.json"),
+            "train_insight": self._read("latest_v692_train_insight_summary.json"),
+            "forward_diagnosis": self._read("latest_v692_2026_forward_diagnosis_summary.json"),
+            "candidates": self._read("latest_v692_train_based_improvement_candidates_summary.json"),
+            "causal_forward": self._read("latest_v692_2026_causal_forward_test_summary.json"),
+            "vwap_real": self._read("latest_v692_vwap_real_replay_summary.json"),
+            "vwap_proxy_vs_real": self._read("latest_v692_vwap_proxy_vs_real_summary.json"),
+            "vwap_real_safety": self._read("latest_v692_vwap_full_period_real_safety_summary.json"),
+            "decision": self._read("latest_v692_causal_decision_summary.json"),
+            "llm_review": self._read("latest_v692_causal_llm_review_summary.json"),
+            "active_change_applied": False,
+            "active_route_change_applied": False,
+            "llm_active_change_applied": False,
+            "manual_review_required": True,
+            "order_api_called": False,
+            **safety_flags(),
+        }
+
     def pattern_validation(self) -> dict[str, Any]:
         payload = self._read("latest_v687_investment_pattern_validation_summary.json")
         surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")

@@ -1,0 +1,30 @@
+{
+  "schema_version": "v692_historical_to_2026_causal_improvement_lab_v1",
+  "baseline_row_count": 8,
+  "train_insight_count": 4,
+  "forward_issue_count": 5,
+  "candidate_count": 5,
+  "forward_test_row_count": 6,
+  "vwap_real_replay_row_count": 5,
+  "proxy_vs_real_row_count": 5,
+  "causal_shadow_candidates": [
+    "TRAIN_LG_M3_PROFIT_GIVEBACK_GUARD_V1",
+    "TRAIN_LG_M3_LOSS_STREAK_COOLDOWN_V1",
+    "TRAIN_LG_M3_RS_BTCD_OVERLAY_V1"
+  ],
+  "hindsight_repair_research_only": [
+    "HINDSIGHT_2026_VWAP_PRESSURE_INTEGRATED_REPAIR"
+  ],
+  "llm_fallback_used": true,
+  "decision": "SHADOW_CANDIDATE_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.865634"
+}

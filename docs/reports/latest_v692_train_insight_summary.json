@@ -1,0 +1,57 @@
+{
+  "schema_version": "v692_train_insight_v1",
+  "train_period": {
+    "start": "2022-01-01",
+    "end": "2025-12-31"
+  },
+  "insights": [
+    {
+      "insight": "TRAIN_PROFIT_GIVEBACK_AFTER_WIN",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_variable": "PF20/HWM/dominance_risk",
+      "suggested_fix": "profit 후 1~3일 cap 및 trailing 강화",
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight": "TRAIN_LOSS_STREAK_CLUSTER",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_variable": "recent_loss_count/market_state",
+      "suggested_fix": "동일 상태 연속 손실 시 cooldown",
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight": "TRAIN_RS_BTCD_REGIME_SPLIT",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenario": "RELATIVE_STRENGTH_BTCD",
+      "related_variable": "btcd_slope/alt_relative_strength",
+      "suggested_fix": "hard block 대신 RS/BTCD overlay",
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    },
+    {
+      "insight": "TRAIN_SIDEWAYS_CHOP_NO_TRADE",
+      "source_period": "2022-01-01~2025-12-31",
+      "related_scenario": "LG_M3_PF0.8_DD8",
+      "related_variable": "breadth/volume/follow_through",
+      "suggested_fix": "chop 구간 non-PlanA skip",
+      "hindsight_risk": "LOW_TRAIN_ONLY"
+    }
+  ],
+  "lgm3_train_reference": {
+    "train_return_pct": 3.53434025030952,
+    "train_mdd_pct": -14.386236995362083
+  },
+  "hindsight_guard": "2026 data not used for generating these insights",
+  "decision": "TRAIN_INSIGHT_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.793633"
+}

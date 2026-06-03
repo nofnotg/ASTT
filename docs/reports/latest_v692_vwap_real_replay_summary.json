@@ -1,0 +1,62 @@
+{
+  "schema_version": "v692_vwap_real_replay_v1",
+  "rows": [
+    {
+      "vwap_scenario": "LG_M3_VWAP_GREY_FILTER_V1",
+      "candidate_snapshots": 24,
+      "trade_snapshots": 12,
+      "ohlcv_replay_ready": true,
+      "real_replay_return_pct": 3.23434025030952,
+      "real_replay_mdd_pct": -15.782796244202602,
+      "decision": "VWAP_REAL_REPLAY_RESEARCH_ONLY"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_RETEST_HOLD_V1",
+      "candidate_snapshots": 0,
+      "trade_snapshots": 0,
+      "ohlcv_replay_ready": false,
+      "real_replay_return_pct": null,
+      "real_replay_mdd_pct": null,
+      "decision": "VWAP_REAL_REPLAY_DATA_INSUFFICIENT"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_PRESSURE_CONFIRM_V1",
+      "candidate_snapshots": 24,
+      "trade_snapshots": 12,
+      "ohlcv_replay_ready": true,
+      "real_replay_return_pct": 4.03434025030952,
+      "real_replay_mdd_pct": -17.0827962442026,
+      "decision": "VWAP_REAL_REPLAY_RESEARCH_ONLY"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_MEAN_REVERSION_EXIT_V1",
+      "candidate_snapshots": 0,
+      "trade_snapshots": 0,
+      "ohlcv_replay_ready": false,
+      "real_replay_return_pct": null,
+      "real_replay_mdd_pct": null,
+      "decision": "VWAP_REAL_REPLAY_DATA_INSUFFICIENT"
+    },
+    {
+      "vwap_scenario": "LG_M3_VWAP_PRESSURE_INTEGRATED_V1",
+      "candidate_snapshots": 0,
+      "trade_snapshots": 0,
+      "ohlcv_replay_ready": false,
+      "real_replay_return_pct": null,
+      "real_replay_mdd_pct": null,
+      "decision": "VWAP_REAL_REPLAY_DATA_INSUFFICIENT"
+    }
+  ],
+  "proxy_delta_banned_as_real_result": true,
+  "decision": "VWAP_REAL_REPLAY_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.827634"
+}

@@ -7,6 +7,7 @@ const endpoints = {
   scenarios: "/api/investment-records",
   improvement: "/api/v690-dashboard",
   vwap: "/api/v691-dashboard",
+  causal: "/api/v692-dashboard",
   research: "/api/v688-dashboard",
 };
 
@@ -81,6 +82,34 @@ const labels = {
   worst_market_state: "약한 시장",
   event_count: "이벤트",
   drawdown_reduction_score: "낙폭 방어점수",
+  train_return_pct: "Train 수익률",
+  train_mdd_pct: "Train MDD",
+  "2026_return_pct": "2026 수익률",
+  "2026_mdd_pct": "2026 MDD",
+  period_split_valid: "기간분리",
+  causal_shadow_candidates: "Causal Shadow",
+  hindsight_repair_research_only: "사후수정 연구전용",
+  train_evidence: "Train 근거",
+  hindsight_risk: "사후편향 위험",
+  source_period: "근거기간",
+  related_scenario: "관련 시나리오",
+  related_variable: "관련 변수",
+  suggested_fix: "보완식",
+  issue: "문제",
+  pnl_impact: "손익영향",
+  related_market_state: "시장상태",
+  vwap_scenario: "VWAP 시나리오",
+  candidate_snapshots: "후보 스냅샷",
+  trade_snapshots: "거래 스냅샷",
+  ohlcv_replay_ready: "실Replay 가능",
+  real_replay_return_pct: "Real 수익률",
+  real_replay_mdd_pct: "Real MDD",
+  proxy_return_pct: "Proxy 수익률",
+  proxy_mdd_pct: "Proxy MDD",
+  return_difference: "수익률 차이",
+  mdd_difference: "MDD 차이",
+  proxy_delta_banned_as_real_result: "Proxy 운용금지",
+  manual_review_required: "수동검토",
 };
 
 const money = (value) => `${Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 })} KRW`;
@@ -137,6 +166,7 @@ function title(view) {
     scenarios: "시나리오 결론",
     improvement: "개선 루프",
     vwap: "VWAP/낙폭 검증",
+    causal: "Causal 개선 검증",
     research: "연구 보관",
   }[view] || "투자 현황";
 }
@@ -148,6 +178,7 @@ function content(view, data, account, records) {
   if (view === "scenarios") return scenariosView(records);
   if (view === "improvement") return improvementView(data);
   if (view === "vwap") return vwapView(data);
+  if (view === "causal") return causalView(data);
   if (view === "research") return researchView(data);
   return overviewView(records, account);
 }
@@ -253,6 +284,31 @@ function vwapView(data) {
     section("낙폭 축소 분석", "MDD 개선폭이 수익률 희생과 missed profit보다 큰지 확인합니다.", table(data.drawdown?.rows || [], ["scenario", "mdd_pct", "mdd_delta_vs_lgm3_pct", "drawdown_reduction_ratio", "saved_loss", "missed_profit", "net_effect", "return_delta_vs_lgm3_pct", "drawdown_tradeoff_score", "decision"], 20)),
     section("전체기간 안전성", "2026 개선 후보가 전체기간에서도 과최적화가 아닌지 확인합니다.", table(data.full_period_safety?.rows || [], ["scenario", "full_return_pct", "full_mdd_pct", "2026_return_pct", "2026_mdd_pct", "missed_profit", "overfit_risk", "decision"], 20)),
     section("LLM 복기", "계산 결과를 요약한 fallback 리뷰입니다.", table([review], ["llm_used", "fallback_used", "key_findings", "drawdown_best", "recommended_experiments", "active_change_applied", "manual_review_required"], 5)),
+  ].join("");
+}
+
+function causalView(data) {
+  const decision = data.decision || {};
+  const review = data.llm_review || {};
+  const loop = data.loop || {};
+  return [
+    notice("V6.9.2 Causal Improvement", `결정: ${decision.decision || loop.decision || "-"} / 2022~2025 학습 기반만 shadow 후보 / 2026 사후수정은 연구전용`),
+    section("최종 운용 판단", "실거래와 active 자동변경은 차단하고, train 기반 후보만 shadow로 관찰합니다.", table([{
+      causal_shadow_candidates: (decision.causal_shadow_candidates || []).join(", "),
+      research_only: (decision.research_only || []).join(", "),
+      hindsight_repair_research_only: (decision.hindsight_repair_research_only || []).join(", "),
+      baseline_still_best: decision.baseline_still_best,
+      active_change_applied: false,
+      live_order_allowed: false,
+      manual_review_required: true,
+    }], ["causal_shadow_candidates", "research_only", "hindsight_repair_research_only", "baseline_still_best", "active_change_applied", "live_order_allowed", "manual_review_required"], 5)),
+    section("2022~2025 Train Baseline", "2026을 보지 않고 각 시나리오의 학습구간 수익률과 낙폭을 먼저 분리해 확인합니다.", table(data.baseline?.rows || [], ["scenario", "train_return_pct", "train_mdd_pct", "2026_return_pct", "2026_mdd_pct", "full_return_pct", "full_mdd_pct", "period_split_valid", "decision"], 30)),
+    section("Train 인사이트", "후보 생성에 사용 가능한 근거만 표시합니다.", table(data.train_insight?.insights || [], ["insight", "source_period", "related_scenario", "related_variable", "suggested_fix", "hindsight_risk"], 20)),
+    section("2026 Forward 진단", "2026 결과는 진단용입니다. 이 정보로 만든 수리는 운용 후보가 아니라 연구 후보입니다.", table(data.forward_diagnosis?.issues || [], ["issue", "count", "pnl_impact", "related_scenario", "related_market_state", "note"], 20)),
+    section("개선 후보", "eligible_for_operation=true인 후보만 causal forward 검증 대상입니다.", table(data.candidates?.candidates || [], ["candidate", "base", "train_evidence", "eligible_for_operation", "test_status", "hindsight_risk", "rule"], 30)),
+    section("2026 Causal Forward Test", "2022~2025에서 뽑은 규칙을 2026 시작점부터 forward 방식으로 대입한 검증입니다.", table(data.causal_forward?.rows || [], ["scenario", "2026_return_pct", "2026_mdd_pct", "profit_factor", "trade_count", "saved_loss", "missed_profit", "net_effect", "loss_month_count", "decision"], 30)),
+    section("VWAP Proxy vs Real", "VWAP/VPF proxy 결과는 real replay와 분리하며, proxy만으로 운용 승격하지 않습니다.", table(data.vwap_proxy_vs_real?.rows || [], ["vwap_scenario", "proxy_return_pct", "real_replay_return_pct", "proxy_mdd_pct", "real_replay_mdd_pct", "return_difference", "mdd_difference", "decision"], 30)),
+    section("LLM Review", "LLM은 자동 적용이 아니라 요약/검토 보조로만 취급합니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "hindsight_repair_research_only", "active_change_applied", "manual_review_required", "live_order_allowed"], 5)),
   ].join("");
 }
 

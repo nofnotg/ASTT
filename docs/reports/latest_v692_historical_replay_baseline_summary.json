@@ -1,0 +1,111 @@
+{
+  "schema_version": "v692_historical_replay_baseline_v1",
+  "split": {
+    "train_start": "2022-01-01",
+    "train_end": "2025-12-31",
+    "forward_start": "2026-01-01",
+    "full_start": "2022-01-01"
+  },
+  "initial_cash_krw": 500000.0,
+  "rows": [
+    {
+      "scenario": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "train_return_pct": 3.2200045169977765,
+      "train_mdd_pct": -14.585443850397258,
+      "2026_return_pct": 3.2200045169977765,
+      "2026_mdd_pct": -18.23180481299657,
+      "full_return_pct": 6.440009033995553,
+      "full_mdd_pct": -18.23180481299657,
+      "period_split_valid": true,
+      "decision": "BASELINE_REFERENCE"
+    },
+    {
+      "scenario": "LG_M3_PF0.8_DD8",
+      "train_return_pct": 3.53434025030952,
+      "train_mdd_pct": -14.386236995362083,
+      "2026_return_pct": 3.53434025030952,
+      "2026_mdd_pct": -17.982796244202603,
+      "full_return_pct": 7.06868050061904,
+      "full_mdd_pct": -17.982796244202603,
+      "period_split_valid": true,
+      "decision": "BASELINE_REFERENCE"
+    },
+    {
+      "scenario": "BASE_BALANCED",
+      "train_return_pct": 3.187405808099353,
+      "train_mdd_pct": -15.212302260623444,
+      "2026_return_pct": 3.187405808099353,
+      "2026_mdd_pct": -19.015377825779304,
+      "full_return_pct": 6.374811616198706,
+      "full_mdd_pct": -19.015377825779304,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    },
+    {
+      "scenario": "BASE_ROLLING",
+      "train_return_pct": 4.134748244670972,
+      "train_mdd_pct": -15.564306123943624,
+      "2026_return_pct": 4.134748244670972,
+      "2026_mdd_pct": -19.45538265492953,
+      "full_return_pct": 8.269496489341943,
+      "full_mdd_pct": -19.45538265492953,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    },
+    {
+      "scenario": "LG_COMBINED_GUARD",
+      "train_return_pct": 3.1000000000000005,
+      "train_mdd_pct": -12.4,
+      "2026_return_pct": 0.6200000000000001,
+      "2026_mdd_pct": -15.5,
+      "full_return_pct": 3.7200000000000006,
+      "full_mdd_pct": -15.5,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    },
+    {
+      "scenario": "BEAR_ROUTER_V685_WINDOW_AWARE_SHADOW",
+      "train_return_pct": 2.4000000000000004,
+      "train_mdd_pct": -9.440000000000001,
+      "2026_return_pct": 0.48,
+      "2026_mdd_pct": -11.8,
+      "full_return_pct": 2.8800000000000003,
+      "full_mdd_pct": -11.8,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    },
+    {
+      "scenario": "RELATIVE_STRENGTH_BTCD",
+      "train_return_pct": 205.67762628442853,
+      "train_mdd_pct": -15.212302260623426,
+      "2026_return_pct": 205.67762628442853,
+      "2026_mdd_pct": -19.015377825779282,
+      "full_return_pct": 411.35525256885705,
+      "full_mdd_pct": -19.015377825779282,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    },
+    {
+      "scenario": "LOSS_GUARD_2026_ROUTER_V1_SHADOW",
+      "train_return_pct": 3.0312420709770693,
+      "train_mdd_pct": -14.654456647632443,
+      "2026_return_pct": 3.0312420709770693,
+      "2026_mdd_pct": -18.318070809540554,
+      "full_return_pct": 6.062484141954139,
+      "full_mdd_pct": -18.318070809540554,
+      "period_split_valid": true,
+      "decision": "HISTORICAL_REPLAY_READY"
+    }
+  ],
+  "decision": "HISTORICAL_REPLAY_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T11:42:13.788633"
+}

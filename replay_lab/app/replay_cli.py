@@ -3171,6 +3171,88 @@ def run_v691_vwap_pressure_feature_lab_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_v692_historical_replay_baseline_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_historical_replay_baseline
+
+    print(json.dumps(run_v692_historical_replay_baseline(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_train_insight_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_train_insight
+
+    print(json.dumps(run_v692_train_insight(args.reports_dir, args.initial_cash_krw, args.train_start, args.train_end), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_2026_forward_diagnosis_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_2026_forward_diagnosis
+
+    print(json.dumps(run_v692_2026_forward_diagnosis(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
+def generate_v692_train_based_improvement_candidates_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import generate_v692_train_based_improvement_candidates
+
+    print(json.dumps(generate_v692_train_based_improvement_candidates(args.reports_dir, args.base_scenario), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_2026_causal_forward_test_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_2026_causal_forward_test
+
+    print(json.dumps(run_v692_2026_causal_forward_test(args.reports_dir, args.initial_cash_krw, args.start_date), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_vwap_real_replay_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_vwap_real_replay
+
+    print(json.dumps(run_v692_vwap_real_replay(args.reports_dir, args.initial_cash_krw), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_vwap_proxy_vs_real_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_vwap_proxy_vs_real
+
+    print(json.dumps(run_v692_vwap_proxy_vs_real(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_causal_decision_engine_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_causal_decision_engine
+
+    print(json.dumps(run_v692_causal_decision_engine(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_causal_llm_review_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_causal_llm_review
+
+    print(json.dumps(run_v692_causal_llm_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v692_historical_to_2026_causal_improvement_lab_command(args: argparse.Namespace) -> int:
+    from causal_improvement.v692_lab import run_v692_historical_to_2026_causal_improvement_lab
+
+    print(
+        json.dumps(
+            run_v692_historical_to_2026_causal_improvement_lab(
+                args.reports_dir,
+                args.initial_cash_krw,
+                args.train_start,
+                args.train_end,
+                args.forward_start,
+            ),
+            ensure_ascii=False,
+            default=str,
+        )
+    )
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -5412,6 +5494,67 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--start-date", default="2026-01-01")
     p.add_argument("--use-available-history", default="true")
     p.set_defaults(func=run_v691_vwap_pressure_feature_lab_command)
+
+    p = sub.add_parser("run-v692-historical-replay-baseline")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_historical_replay_baseline_command)
+
+    p = sub.add_parser("run-v692-train-insight")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--train-start", default="2022-01-01")
+    p.add_argument("--train-end", default="2025-12-31")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_train_insight_command)
+
+    p = sub.add_parser("run-v692-2026-forward-diagnosis")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_2026_forward_diagnosis_command)
+
+    p = sub.add_parser("generate-v692-train-based-improvement-candidates")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--base-scenario", default="LG_M3_PF0.8_DD8")
+    p.set_defaults(func=generate_v692_train_based_improvement_candidates_command)
+
+    p = sub.add_parser("run-v692-2026-causal-forward-test")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_2026_causal_forward_test_command)
+
+    p = sub.add_parser("run-v692-vwap-real-replay")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_vwap_real_replay_command)
+
+    p = sub.add_parser("run-v692-vwap-proxy-vs-real")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v692_vwap_proxy_vs_real_command)
+
+    p = sub.add_parser("run-v692-causal-decision-engine")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v692_causal_decision_engine_command)
+
+    p = sub.add_parser("run-v692-causal-llm-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default=None)
+    p.set_defaults(func=run_v692_causal_llm_review_command)
+
+    p = sub.add_parser("run-v692-historical-to-2026-causal-improvement-lab")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--train-start", default="2022-01-01")
+    p.add_argument("--train-end", default="2025-12-31")
+    p.add_argument("--forward-start", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v692_historical_to_2026_causal_improvement_lab_command)
 
     args = parser.parse_args(argv)
     return args.func(args)
