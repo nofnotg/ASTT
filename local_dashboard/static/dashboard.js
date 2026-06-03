@@ -5,6 +5,7 @@ const endpoints = {
   records: "/api/investment-records",
   logs: "/api/investment-logs",
   scenarios: "/api/investment-records",
+  improvement: "/api/v690-dashboard",
   research: "/api/v688-dashboard",
 };
 
@@ -43,6 +44,16 @@ const labels = {
   exclusion_reason: "제외 사유",
   active_change_applied: "자동변경",
   live_order_allowed: "실거래",
+  shadow_candidates: "Shadow 후보",
+  research_only: "연구 후보",
+  baseline_still_best: "기존 유지",
+  fix_target: "보완 대상",
+  key_rule: "핵심 규칙",
+  risk: "위험",
+  test_status: "검증 상태",
+  full_return_pct: "전체 수익률",
+  full_mdd_pct: "전체 MDD",
+  overfit_risk: "과최적화",
 };
 
 const money = (value) => Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 }) + " KRW";
@@ -97,6 +108,7 @@ function title(view) {
     records: "월/주/일 기록",
     logs: "매매/판단 로그",
     scenarios: "시나리오 결론",
+    improvement: "개선 루프",
     research: "연구 보관함",
   }[view] || "운용 현황";
 }
@@ -106,6 +118,7 @@ function content(view, data, account, records) {
   if (view === "records") return recordsView(records);
   if (view === "logs") return logsView(data);
   if (view === "scenarios") return scenariosView(records);
+  if (view === "improvement") return improvementView(data);
   if (view === "research") return researchView(data);
   return overviewView(records, account);
 }
@@ -178,6 +191,29 @@ function researchView(data) {
     section("판단차이", "사후 결과가 부족하면 UNKNOWN으로 유지합니다.", table(data.disagreement?.rows || [], ["timestamp", "market", "active_decision", "best_decision_ex_post", "disagreement_type", "lesson"], 80)),
     section("수익 반납", "수익 후 1/3/5일 반납률입니다.", table(data.profit_giveback?.rows || [], ["scenario_id", "profit_date", "profit_day_pnl", "giveback_ratio_1d", "giveback_ratio_3d", "giveback_ratio_5d", "recommendation"], 80)),
     section("LLM 복기", "원시 로그 전체가 아니라 요약 input pack 기반입니다.", table([data.llm_daily || {}, data.llm_weekly || {}, data.llm_monthly || {}], ["review_type", "period", "llm_used", "fallback_used", "summary", "active_change_applied", "live_order_allowed"], 5)),
+  ].join("");
+}
+
+function improvementView(data) {
+  const decision = data.decision || {};
+  const loop = data.loop || {};
+  const review = data.llm_review || {};
+  return [
+    notice("V6.9.0 개선 루프 결론", `최종 판정: ${decision.decision || loop.decision || "-"} / active 자동변경: 아니오 / 실거래: 아니오`),
+    section("최종 후보 판정", "통과한 개선안은 shadow 후보로만 둡니다. active 변경은 수동 승인 전까지 금지입니다.", table([
+      {
+        shadow_candidates: (decision.shadow_candidates || []).join(", "),
+        research_only: (decision.research_only || []).join(", "),
+        baseline_still_best: decision.baseline_still_best,
+        active_change_applied: false,
+        live_order_allowed: false,
+      },
+    ], ["shadow_candidates", "research_only", "baseline_still_best", "active_change_applied", "live_order_allowed"], 5)),
+    section("개선 후보 A/B/C/D", "실패 패턴에서 자동 생성된 개선 가설입니다.", table(data.candidates?.candidates || [], ["scenario", "base", "fix_target", "key_rule", "risk", "evidence_count", "test_status"], 20)),
+    section("2026 개선 검증", "LG-M3 기준으로 개선 규칙을 shadow 검증한 결과입니다.", table(data.backtest_2026?.rows || [], ["scenario", "final_equity_krw", "return_pct", "mdd_pct", "profit_factor", "trade_count", "profit_giveback_3d", "net_effect", "decision"], 20)),
+    section("전체기간 안전성", "2026에서 좋아 보여도 전체기간에서 버티는지 확인합니다.", table(data.full_period_safety?.rows || [], ["scenario", "full_return_pct", "full_mdd_pct", "2026_return_pct", "2026_mdd_pct", "overfit_risk", "decision"], 20)),
+    section("실패 패턴", "개선 후보를 만든 근거입니다.", table(data.failure_signature?.failure_signatures || [], ["failure_type", "count", "pnl_impact_krw", "scenario_id", "suggested_fix_type"], 20)),
+    section("LLM 복기", "LLM은 계산을 하지 않고, 엔진 산출물을 요약합니다. 실패 시 fallback을 사용합니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "active_change_applied", "manual_review_required"], 5)),
   ].join("");
 }
 

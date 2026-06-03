@@ -1,0 +1,54 @@
+{
+  "schema_version": "v690_improved_scenario_candidates_v1",
+  "base_scenario": "LG_M3_PF0.8_DD8",
+  "candidates": [
+    {
+      "scenario": "LG_M3_PROFIT_GIVEBACK_GUARD_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "fix_target": "PROFIT_GIVEBACK_1D_3D",
+      "key_rule": "수익일 이후 1~3일 동안 PF20 약화, 도미넌스 위험, HWM 낙폭 확대 중 2개 이상이면 0.70/0.35 cap",
+      "risk": "수익 추세가 이어질 때 과소진입 가능",
+      "evidence_count": 21,
+      "test_status": "READY_FOR_2026_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_LOSS_STREAK_COOLDOWN_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "fix_target": "LOSS_STREAK_AFTER_WIN",
+      "key_rule": "최근 5거래 3손실 또는 동일 상태 연속 손실이면 동일 setup 24h cooldown 및 0.35 cap",
+      "risk": "짧은 반등 구간의 재진입 기회 일부 상실",
+      "evidence_count": 1,
+      "test_status": "READY_FOR_2026_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_RS_BTCD_OVERLAY_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "fix_target": "DOMINANCE_RISK_IGNORED",
+      "key_rule": "BTCD 상승+알트 상대약세면 non-PlanA 0.35 cap, BTCD 안정+알트 회복이면 기존 LG-M3 유지",
+      "risk": "도미넌스 데이터 품질이 낮은 날에는 보수 판정 증가",
+      "evidence_count": 0,
+      "test_status": "READY_FOR_2026_BACKTEST"
+    },
+    {
+      "scenario": "LG_M3_CANDIDATE_STARVATION_RELAX_V1",
+      "base": "LG_M3_PF0.8_DD8",
+      "fix_target": "CANDIDATE_STARVATION",
+      "key_rule": "후보 10건 이상, 진입 0건 반복, 사후 missed opportunity가 양수일 때 고품질 후보만 0.25~0.35 진입 완화",
+      "risk": "완화 조건이 느슨하면 false entry 증가",
+      "evidence_count": 15,
+      "test_status": "READY_FOR_2026_BACKTEST"
+    }
+  ],
+  "generation_rule": "엔진이 failure signature와 variable convergence를 근거로 A/B/C/D를 생성합니다. LLM은 생성 근거를 설명만 합니다.",
+  "decision": "IMPROVED_SCENARIO_CANDIDATES_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:16:06.789212"
+}

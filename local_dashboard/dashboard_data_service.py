@@ -202,6 +202,25 @@ class DashboardDataService:
             **safety_flags(),
         }
 
+    def v690_dashboard(self) -> dict[str, Any]:
+        return {
+            "loop": self._read("latest_v690_scenario_improvement_loop_summary.json"),
+            "decomposition": self._read("latest_v690_2026_scenario_decomposition_summary.json"),
+            "failure_signature": self._read("latest_v690_failure_signature_summary.json"),
+            "giveback_missed": self._read("latest_v690_giveback_missed_opportunity_summary.json"),
+            "candidates": self._read("latest_v690_improved_scenario_candidates_summary.json"),
+            "backtest_2026": self._read("latest_v690_2026_improvement_backtest_summary.json"),
+            "full_period_safety": self._read("latest_v690_full_period_safety_summary.json"),
+            "decision": self._read("latest_v690_improvement_decision_summary.json"),
+            "llm_review": self._read("latest_v690_improvement_llm_review_summary.json"),
+            "active_change_applied": False,
+            "active_route_change_applied": False,
+            "llm_active_change_applied": False,
+            "manual_review_required": True,
+            "order_api_called": False,
+            **safety_flags(),
+        }
+
     def pattern_validation(self) -> dict[str, Any]:
         payload = self._read("latest_v687_investment_pattern_validation_summary.json")
         surge_rr = self._read("latest_v688_surge_rr_scenario_summary.json")

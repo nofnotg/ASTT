@@ -1,0 +1,130 @@
+{
+  "schema_version": "v690_failure_signature_v1",
+  "failure_signatures": [
+    {
+      "scenario_id": "LG_M3_PF0.8_DD8",
+      "failure_type": "PROFIT_GIVEBACK_1D_3D",
+      "count": 21,
+      "pnl_impact_krw": 187817.25409919844,
+      "pnl_impact_pct": 0.0,
+      "affected_periods": [
+        "2026-01-04",
+        "2026-01-05",
+        "2026-01-09",
+        "2026-01-14",
+        "2026-01-30",
+        "2026-02-13",
+        "2026-02-14",
+        "2026-03-10"
+      ],
+      "related_market_states": [
+        "UNKNOWN",
+        "RISK_OFF_ALT_WEAK"
+      ],
+      "related_variables": [
+        "pf20",
+        "dominance_risk",
+        "hwm_drawdown_pct"
+      ],
+      "suggested_fix_type": "PROFIT_LOCK_OR_SIZE_CAP"
+    },
+    {
+      "scenario_id": "LG_M3_PF0.8_DD8",
+      "failure_type": "LOSS_STREAK_AFTER_WIN",
+      "count": 1,
+      "pnl_impact_krw": 17.982796244202603,
+      "pnl_impact_pct": 17.982796244202603,
+      "affected_periods": [],
+      "related_market_states": [
+        "EDGE_DECAY",
+        "RISK_OFF_ALT_WEAK"
+      ],
+      "related_variables": [
+        "recent_loss_count",
+        "setup_type",
+        "market_state"
+      ],
+      "suggested_fix_type": "COOLDOWN"
+    },
+    {
+      "scenario_id": "LG_V2_BALANCED_PLUS_DOM_GATE",
+      "failure_type": "LATE_DEFENSE_TRIGGER",
+      "count": 1,
+      "pnl_impact_krw": 0.0,
+      "pnl_impact_pct": 0.0,
+      "affected_periods": [],
+      "related_market_states": [
+        "BTC_LED_MARKET",
+        "DOMINANCE_RISK"
+      ],
+      "related_variables": [
+        "btcd_change",
+        "alt_relative_strength"
+      ],
+      "suggested_fix_type": "RS_BTCD_OVERLAY"
+    },
+    {
+      "scenario_id": "FORWARD_PAPER",
+      "failure_type": "CANDIDATE_STARVATION",
+      "count": 15,
+      "pnl_impact_krw": 0.0,
+      "pnl_impact_pct": 0.0,
+      "affected_periods": [
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02",
+        "2026-06-02"
+      ],
+      "related_market_states": [
+        "FORWARD_MICRO"
+      ],
+      "related_variables": [
+        "primary_block_reason",
+        "entry_decision"
+      ],
+      "suggested_fix_type": "RELAX_ONLY_WITH_EX_POST_EDGE"
+    }
+  ],
+  "giveback_summary": {
+    "profit_day_count": 35,
+    "giveback_1d_count": 17,
+    "giveback_3d_count": 18,
+    "giveback_5d_count": 20,
+    "avg_giveback_ratio_1d": 0.7863496692804265,
+    "avg_giveback_ratio_3d": 1.1884446461270057,
+    "avg_giveback_ratio_5d": 1.9761910441276151,
+    "severe_giveback_count": 21,
+    "scenario_with_highest_giveback": "LG_V2_BALANCED_PLUS_DOM_GATE"
+  },
+  "missed_opportunity_summary": {
+    "candidates_seen": 15,
+    "enter_count": 0,
+    "wait_count": 15,
+    "skip_count": 15,
+    "all_skip_but_win_count": 0,
+    "active_wait_shadow_win_count": 0,
+    "false_block_rate": null,
+    "valid_block_rate": null,
+    "top_false_block_reasons": [
+      {
+        "value": "MICRO_STATE_WEAK",
+        "count": 15
+      }
+    ]
+  },
+  "decision": "SCENARIO_DECOMPOSITION_READY",
+  "order_api_called": false,
+  "active_change_applied": false,
+  "active_route_change_applied": false,
+  "llm_active_change_applied": false,
+  "manual_review_required": true,
+  "default_readiness": "LIVE_NOT_ALLOWED",
+  "real_order_enabled": false,
+  "live_order_allowed": false,
+  "auto_apply_allowed": false,
+  "generated_at": "2026-06-03T09:16:06.778207"
+}

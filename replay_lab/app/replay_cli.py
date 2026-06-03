@@ -3027,6 +3027,87 @@ def build_v689_scenario_decision_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_v690_scenario_decomposition_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_scenario_decomposition
+
+    print(json.dumps(run_v690_scenario_decomposition(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_failure_signature_analysis_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_failure_signature_analysis
+
+    print(json.dumps(run_v690_failure_signature_analysis(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def generate_v690_improved_scenario_candidates_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import generate_v690_improved_scenario_candidates
+
+    print(json.dumps(generate_v690_improved_scenario_candidates(args.reports_dir, args.base_scenario), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_2026_improvement_backtest_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_2026_improvement_backtest
+
+    print(json.dumps(run_v690_2026_improvement_backtest(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_full_period_safety_test_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_full_period_safety_test
+
+    print(json.dumps(run_v690_full_period_safety_test(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_improvement_decision_engine_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_improvement_decision_engine
+
+    print(json.dumps(run_v690_improvement_decision_engine(args.reports_dir), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_improvement_llm_review_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_improvement_llm_review
+
+    print(json.dumps(run_v690_improvement_llm_review(args.reports_dir, args.llm_provider), ensure_ascii=False, default=str))
+    return 0
+
+
+def run_v690_scenario_improvement_loop_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import run_v690_scenario_improvement_loop
+
+    print(json.dumps(run_v690_scenario_improvement_loop(args.reports_dir, args.base_scenario), ensure_ascii=False, default=str))
+    return 0
+
+
+def build_v690_report_html_command(args: argparse.Namespace) -> int:
+    from scenario_improvement.v690_loop import (
+        generate_v690_improved_scenario_candidates,
+        run_v690_2026_improvement_backtest,
+        run_v690_failure_signature_analysis,
+        run_v690_full_period_safety_test,
+        run_v690_improvement_decision_engine,
+        run_v690_improvement_llm_review,
+        run_v690_scenario_decomposition,
+    )
+
+    builders = {
+        "scenario-decomposition": run_v690_scenario_decomposition,
+        "failure-signature": run_v690_failure_signature_analysis,
+        "improved-candidates": generate_v690_improved_scenario_candidates,
+        "2026-improvement-backtest": run_v690_2026_improvement_backtest,
+        "full-period-safety": run_v690_full_period_safety_test,
+        "improvement-decision": run_v690_improvement_decision_engine,
+        "improvement-llm-review": run_v690_improvement_llm_review,
+    }
+    builders[args.report](args.reports_dir)
+    print(f"v690 {args.report} report built")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_replay_store()
     parser = argparse.ArgumentParser(description="ASTT Replay Lab sidecar CLI")
@@ -5160,6 +5241,65 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("build-v689-scenario-decision")
     p.add_argument("--reports-dir", default="docs/reports")
     p.set_defaults(func=build_v689_scenario_decision_command)
+
+    p = sub.add_parser("run-v690-scenario-decomposition")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v690_scenario_decomposition_command)
+
+    p = sub.add_parser("run-v690-failure-signature-analysis")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v690_failure_signature_analysis_command)
+
+    p = sub.add_parser("generate-v690-improved-scenario-candidates")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--base-scenario", default="LG_M3_PF0.8_DD8")
+    p.set_defaults(func=generate_v690_improved_scenario_candidates_command)
+
+    p = sub.add_parser("run-v690-2026-improvement-backtest")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.set_defaults(func=run_v690_2026_improvement_backtest_command)
+
+    p = sub.add_parser("run-v690-full-period-safety-test")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--use-available-history", default="true")
+    p.set_defaults(func=run_v690_full_period_safety_test_command)
+
+    p = sub.add_parser("run-v690-improvement-decision-engine")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.set_defaults(func=run_v690_improvement_decision_engine_command)
+
+    p = sub.add_parser("run-v690-improvement-llm-review")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--llm-provider", default=None)
+    p.set_defaults(func=run_v690_improvement_llm_review_command)
+
+    p = sub.add_parser("run-v690-scenario-improvement-loop")
+    p.add_argument("--reports-dir", default="docs/reports")
+    p.add_argument("--initial-cash-krw", type=float, default=500000.0)
+    p.add_argument("--start-date", default="2026-01-01")
+    p.add_argument("--use-available-history", default="true")
+    p.add_argument("--base-scenario", default="LG_M3_PF0.8_DD8")
+    p.set_defaults(func=run_v690_scenario_improvement_loop_command)
+
+    for command_name, report_name in [
+        ("build-v690-scenario-decomposition-report-html", "scenario-decomposition"),
+        ("build-v690-failure-signature-report-html", "failure-signature"),
+        ("build-v690-improved-candidates-report-html", "improved-candidates"),
+        ("build-v690-2026-improvement-backtest-report-html", "2026-improvement-backtest"),
+        ("build-v690-full-period-safety-report-html", "full-period-safety"),
+        ("build-v690-improvement-decision-report-html", "improvement-decision"),
+        ("build-v690-improvement-llm-review-report-html", "improvement-llm-review"),
+    ]:
+        p = sub.add_parser(command_name)
+        p.add_argument("--reports-dir", default="docs/reports")
+        p.set_defaults(func=build_v690_report_html_command, report=report_name)
 
     args = parser.parse_args(argv)
     return args.func(args)
