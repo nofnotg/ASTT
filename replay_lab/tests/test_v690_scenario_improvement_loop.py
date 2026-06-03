@@ -62,6 +62,8 @@ def test_v690_loop_creates_shadow_candidate_without_live_actions(tmp_path: Path)
 
     assert payload["decision"] == "SHADOW_CANDIDATE_READY"
     assert "LG_M3_RS_BTCD_OVERLAY_V1" in payload["shadow_candidates"]
+    assert "LG_M3_BIG_WIN_PYRAMID_V1" in payload["bold_research"]
+    assert payload["candidate_count"] == 8
     assert payload["real_order_enabled"] is False
     assert payload["live_order_allowed"] is False
     assert payload["auto_apply_allowed"] is False
@@ -78,6 +80,7 @@ def test_v690_decision_never_auto_applies_active_route(tmp_path: Path) -> None:
     decision = run_v690_improvement_decision_engine(reports)
 
     assert decision["active_route"] == "LG_V2_BALANCED_PLUS_DOM_GATE"
+    assert "LG_M3_BOLD_RISK_ON_ROTATION_V1" in decision["bold_research"]
     assert decision["active_route_change_applied"] is False
     assert decision["llm_active_change_applied"] is False
     assert decision["manual_review_required"] is True

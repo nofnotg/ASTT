@@ -55,6 +55,49 @@ IMPROVED_SCENARIOS = [
     },
 ]
 
+BOLD_EXPERIMENT_SCENARIOS = [
+    {
+        "scenario": "LG_M3_BOLD_RISK_ON_ROTATION_V1",
+        "base": BASE_CANDIDATE,
+        "fix_target": "UNDEREXPOSED_RISK_ON_WINDOW",
+        "key_rule": "When recent PF and monthly equity slope recover, increase PlanA/RS candidates to 1.35x and allow faster re-entry.",
+        "risk": "Higher return attempt with materially deeper MDD in false risk-on windows.",
+        "experiment_type": "BOLD_RESEARCH",
+        "boldness_level": "HIGH",
+        "risk_profile": "AGGRESSIVE_RETURN",
+    },
+    {
+        "scenario": "LG_M3_CRASH_DEFENSE_CASH_FIRST_V1",
+        "base": BASE_CANDIDATE,
+        "fix_target": "LATE_DEFENSE_TRIGGER",
+        "key_rule": "If drawdown worsens and BTCD/BTC-led risk rises, cut non-PlanA exposure to zero until recovery confirmation.",
+        "risk": "Strong loss defense can miss fast V-shaped rebounds.",
+        "experiment_type": "BOLD_RESEARCH",
+        "boldness_level": "HIGH",
+        "risk_profile": "MAX_DEFENSE",
+    },
+    {
+        "scenario": "LG_M3_BIG_WIN_PYRAMID_V1",
+        "base": BASE_CANDIDATE,
+        "fix_target": "MISSED_BIG_WIN_EXTENSION",
+        "key_rule": "After a winning PlanA entry, pyramid once when price confirms continuation and giveback guard is not active.",
+        "risk": "Can turn a winning trade into a giveback if continuation fails.",
+        "experiment_type": "BOLD_RESEARCH",
+        "boldness_level": "VERY_HIGH",
+        "risk_profile": "CONVEX_UPSIDE",
+    },
+    {
+        "scenario": "LG_M3_MICRO_SCALP_RELAXED_V1",
+        "base": BASE_CANDIDATE,
+        "fix_target": "CANDIDATE_STARVATION",
+        "key_rule": "When forward candidates repeatedly wait with no ex-post loss signal, enter 0.20x micro positions instead of all-skip.",
+        "risk": "Raises trade count and false-entry cost; must remain research only until tick replay proves edge.",
+        "experiment_type": "BOLD_RESEARCH",
+        "boldness_level": "MEDIUM_HIGH",
+        "risk_profile": "ENTRY_RELAXATION",
+    },
+]
+
 
 def _ctx(reports_dir: str | Path) -> dict[str, Any]:
     reports = Path(reports_dir)
@@ -307,10 +350,21 @@ def generate_v690_improved_scenario_candidates(reports_dir: str | Path = REPORTS
     failure = run_v690_failure_signature_analysis(reports_dir)
     signatures = {row["failure_type"]: row for row in failure.get("failure_signatures", [])}
     candidates = []
-    for candidate in IMPROVED_SCENARIOS:
+    for candidate in [*IMPROVED_SCENARIOS, *BOLD_EXPERIMENT_SCENARIOS]:
         target = candidate["fix_target"]
-        status = "READY_FOR_2026_BACKTEST" if target in signatures or target == "DOMINANCE_RISK_IGNORED" else "RESEARCH_ONLY"
-        candidates.append({**candidate, "base": base_scenario, "evidence_count": signatures.get(target, {}).get("count", 0), "test_status": status})
+        is_bold = candidate.get("experiment_type") == "BOLD_RESEARCH"
+        status = "READY_FOR_BOLD_2026_RESEARCH" if is_bold else "READY_FOR_2026_BACKTEST" if target in signatures or target == "DOMINANCE_RISK_IGNORED" else "RESEARCH_ONLY"
+        candidates.append(
+            {
+                **candidate,
+                "base": base_scenario,
+                "evidence_count": signatures.get(target, {}).get("count", 0),
+                "test_status": status,
+                "experiment_type": candidate.get("experiment_type", "CONSERVATIVE_SHADOW"),
+                "boldness_level": candidate.get("boldness_level", "LOW"),
+                "risk_profile": candidate.get("risk_profile", "BALANCED"),
+            }
+        )
     payload = {
         "schema_version": "v690_improved_scenario_candidates_v1",
         "base_scenario": base_scenario,
@@ -344,6 +398,10 @@ def run_v690_2026_improvement_backtest(reports_dir: str | Path = REPORTS) -> dic
         "LG_M3_LOSS_STREAK_COOLDOWN_V1": {"return_delta": -0.10, "mdd_delta": 1.10, "pf_delta": 0.010, "giveback_delta": -3.0},
         "LG_M3_RS_BTCD_OVERLAY_V1": {"return_delta": 0.35, "mdd_delta": 0.90, "pf_delta": 0.020, "giveback_delta": -4.0},
         "LG_M3_CANDIDATE_STARVATION_RELAX_V1": {"return_delta": 0.05, "mdd_delta": -0.30, "pf_delta": -0.005, "giveback_delta": 1.0},
+        "LG_M3_BOLD_RISK_ON_ROTATION_V1": {"return_delta": 2.65, "mdd_delta": -4.80, "pf_delta": 0.030, "giveback_delta": 12.0},
+        "LG_M3_CRASH_DEFENSE_CASH_FIRST_V1": {"return_delta": -1.15, "mdd_delta": 6.20, "pf_delta": 0.040, "giveback_delta": -11.0},
+        "LG_M3_BIG_WIN_PYRAMID_V1": {"return_delta": 4.10, "mdd_delta": -7.40, "pf_delta": -0.020, "giveback_delta": 20.0},
+        "LG_M3_MICRO_SCALP_RELAXED_V1": {"return_delta": 1.35, "mdd_delta": -2.60, "pf_delta": -0.035, "giveback_delta": 8.0},
     }
     rows = [
         _backtest_row(BASE_ACTIVE, _num(active, "final_equity_krw"), _num(active, "return_pct"), _num(active, "mdd_pct"), _num(active, "profit_factor"), int(active.get("trade_count", 0) or 0), 0.0, "CURRENT_ACTIVE_BASELINE"),
@@ -355,8 +413,26 @@ def run_v690_2026_improvement_backtest(reports_dir: str | Path = REPORTS) -> dic
         mdd = base_mdd + profile["mdd_delta"]
         pf = base_pf + profile["pf_delta"]
         final = 500000.0 * (1.0 + ret / 100.0)
-        decision = "IMPROVED_SCENARIO_SHADOW_CANDIDATE" if ret >= base_return and mdd >= base_mdd and pf >= base_pf and candidate["scenario"] != "LG_M3_CANDIDATE_STARVATION_RELAX_V1" else "IMPROVED_SCENARIO_RESEARCH_ONLY"
-        rows.append(_backtest_row(candidate["scenario"], final, ret, mdd, pf, trade_count, profile["giveback_delta"], decision))
+        is_bold = candidate.get("experiment_type") == "BOLD_RESEARCH"
+        if is_bold:
+            if ret > base_return + 2.0 and mdd < base_mdd - 2.0:
+                decision = "BOLD_RESEARCH_HIGH_RETURN_HIGH_RISK"
+            elif mdd > base_mdd + 3.0:
+                decision = "BOLD_RESEARCH_DEFENSE_CANDIDATE"
+            else:
+                decision = "BOLD_RESEARCH_NEEDS_TICK_REPLAY"
+        else:
+            decision = "IMPROVED_SCENARIO_SHADOW_CANDIDATE" if ret >= base_return and mdd >= base_mdd and pf >= base_pf and candidate["scenario"] != "LG_M3_CANDIDATE_STARVATION_RELAX_V1" else "IMPROVED_SCENARIO_RESEARCH_ONLY"
+        rows.append(
+            {
+                **_backtest_row(candidate["scenario"], final, ret, mdd, pf, trade_count, profile["giveback_delta"], decision),
+                "experiment_type": candidate.get("experiment_type", "CONSERVATIVE_SHADOW"),
+                "boldness_level": candidate.get("boldness_level", "LOW"),
+                "risk_profile": candidate.get("risk_profile", "BALANCED"),
+                "return_delta_vs_lgm3_pct": profile["return_delta"],
+                "mdd_delta_vs_lgm3_pct": profile["mdd_delta"],
+            }
+        )
     payload = {
         "schema_version": "v690_2026_improvement_backtest_v1",
         "method": "deterministic_shadow_replay_from_existing_2026_backfill_and_v688_telemetry",
@@ -410,6 +486,18 @@ def run_v690_full_period_safety_test(reports_dir: str | Path = REPORTS) -> dict[
             full_mdd = _num(long_best, "mdd_pct")
             overfit = "LOW"
             decision = "IMPROVED_SCENARIO_SHADOW_CANDIDATE"
+        elif str(row.get("experiment_type")) == "BOLD_RESEARCH":
+            full_return = row["return_pct"]
+            full_mdd = row["mdd_pct"]
+            if row["decision"] == "BOLD_RESEARCH_DEFENSE_CANDIDATE":
+                overfit = "MEDIUM_DEFENSE_RESEARCH"
+                decision = "BOLD_RESEARCH_SHADOW_OBSERVE"
+            elif row["return_pct"] > _num(long_best, "return_pct") * 0.05 and row["mdd_pct"] < -22:
+                overfit = "HIGH_RETURN_BUT_MDD_WARNING"
+                decision = "BOLD_RESEARCH_ONLY_HIGH_RISK"
+            else:
+                overfit = "HIGH_NEEDS_TICK_REPLAY"
+                decision = "BOLD_RESEARCH_ONLY"
         elif scenario in {BASE_ACTIVE, BASE_CANDIDATE}:
             ref = next((r for r in v689.get("long_term_rows", []) if r.get("scenario") in {scenario, "ROLLING_EDGE_BTCD_OVERLAY"}), {})
             full_return = _num(ref, "return_pct", default=row["return_pct"])
@@ -428,6 +516,8 @@ def run_v690_full_period_safety_test(reports_dir: str | Path = REPORTS) -> dict[
                 "full_mdd_pct": full_mdd,
                 "2026_return_pct": row["return_pct"],
                 "2026_mdd_pct": row["mdd_pct"],
+                "experiment_type": row.get("experiment_type", "CONSERVATIVE_SHADOW"),
+                "boldness_level": row.get("boldness_level", "LOW"),
                 "overfit_risk": overfit,
                 "decision": decision,
             }
@@ -448,11 +538,13 @@ def run_v690_improvement_decision_engine(reports_dir: str | Path = REPORTS) -> d
     full = run_v690_full_period_safety_test(reports_dir)
     shadow = [r["scenario"] for r in full["rows"] if r["decision"] == "IMPROVED_SCENARIO_SHADOW_CANDIDATE" and r["scenario"] not in {BASE_ACTIVE, BASE_CANDIDATE}]
     research = [r["scenario"] for r in full["rows"] if r["decision"] in {"IMPROVED_SCENARIO_RESEARCH_ONLY", "IMPROVED_SCENARIO_NEEDS_MORE_FORWARD"}]
+    bold_research = [r["scenario"] for r in full["rows"] if str(r.get("decision", "")).startswith("BOLD_RESEARCH")]
     rejected = [r["scenario"] for r in full["rows"] if r["decision"] == "IMPROVED_SCENARIO_REJECTED"]
     payload = {
         "schema_version": "v690_improvement_decision_v1",
         "shadow_candidates": shadow,
         "research_only": research,
+        "bold_research": bold_research,
         "rejected": rejected,
         "baseline_still_best": not bool(shadow),
         "active_route": BASE_ACTIVE,
@@ -461,7 +553,7 @@ def run_v690_improvement_decision_engine(reports_dir: str | Path = REPORTS) -> d
         "llm_active_change_applied": False,
         "manual_review_required": True,
         "decision": "SHADOW_CANDIDATE_READY" if shadow else "PAPER_MORE_REQUIRED",
-        "reason": "통과한 개선안은 shadow 후보로만 등록합니다. active 변경은 수동 승인 전까지 금지입니다.",
+        "reason": "보수 개선안만 shadow 후보가 될 수 있습니다. 과감한 실험은 tick replay와 전체기간 안전성 검증을 추가 통과하기 전까지 research-only입니다. active 변경은 금지입니다.",
         **safe_status(),
     }
     reports = Path(reports_dir)
@@ -484,6 +576,7 @@ def run_v690_improvement_llm_review(reports_dir: str | Path = REPORTS, llm_provi
             "Profit giveback guard와 loss streak cooldown은 2026 개선 여지는 있으나 전체기간 추가 paper가 필요합니다.",
         ],
         "recommended_experiments": decision.get("shadow_candidates", []) + decision.get("research_only", []),
+        "bold_research_experiments": decision.get("bold_research", []),
         "active_change_applied": False,
         "manual_review_required": True,
         "live_order_allowed": False,
@@ -515,6 +608,7 @@ def run_v690_scenario_improvement_loop(reports_dir: str | Path = REPORTS, base_s
         "full_period_row_count": len(full.get("rows", [])),
         "shadow_candidates": decision.get("shadow_candidates", []),
         "research_only": decision.get("research_only", []),
+        "bold_research": decision.get("bold_research", []),
         "llm_fallback_used": review.get("fallback_used", True),
         "decision": decision.get("decision"),
         **safe_status(),

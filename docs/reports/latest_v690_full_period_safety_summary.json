@@ -7,6 +7,8 @@
       "full_mdd_pct": -19.45538265492957,
       "2026_return_pct": 3.2200045169977765,
       "2026_mdd_pct": -18.23180481299657,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "BASELINE_REFERENCE",
       "decision": "CURRENT_ACTIVE_BASELINE"
     },
@@ -16,6 +18,8 @@
       "full_mdd_pct": -19.45538265492957,
       "2026_return_pct": 3.53434025030952,
       "2026_mdd_pct": -17.982796244202603,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "BASELINE_REFERENCE",
       "decision": "BASE_CANDIDATE"
     },
@@ -25,6 +29,8 @@
       "full_mdd_pct": -17.232796244202603,
       "2026_return_pct": 3.73434025030952,
       "2026_mdd_pct": -17.232796244202603,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "MEDIUM_NEEDS_FULL_REPLAY",
       "decision": "IMPROVED_SCENARIO_NEEDS_MORE_FORWARD"
     },
@@ -34,6 +40,8 @@
       "full_mdd_pct": -16.882796244202602,
       "2026_return_pct": 3.43434025030952,
       "2026_mdd_pct": -16.882796244202602,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "MEDIUM_NEEDS_FULL_REPLAY",
       "decision": "IMPROVED_SCENARIO_NEEDS_MORE_FORWARD"
     },
@@ -43,6 +51,8 @@
       "full_mdd_pct": -19.015377825779282,
       "2026_return_pct": 3.88434025030952,
       "2026_mdd_pct": -17.082796244202605,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "LOW",
       "decision": "IMPROVED_SCENARIO_SHADOW_CANDIDATE"
     },
@@ -52,8 +62,54 @@
       "full_mdd_pct": -18.282796244202604,
       "2026_return_pct": 3.58434025030952,
       "2026_mdd_pct": -18.282796244202604,
+      "experiment_type": "CONSERVATIVE_SHADOW",
+      "boldness_level": "LOW",
       "overfit_risk": "MEDIUM_NEEDS_FULL_REPLAY",
       "decision": "IMPROVED_SCENARIO_NEEDS_MORE_FORWARD"
+    },
+    {
+      "scenario": "LG_M3_BOLD_RISK_ON_ROTATION_V1",
+      "full_return_pct": 6.1843402503095195,
+      "full_mdd_pct": -22.782796244202604,
+      "2026_return_pct": 6.1843402503095195,
+      "2026_mdd_pct": -22.782796244202604,
+      "experiment_type": "BOLD_RESEARCH",
+      "boldness_level": "HIGH",
+      "overfit_risk": "HIGH_NEEDS_TICK_REPLAY",
+      "decision": "BOLD_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "LG_M3_CRASH_DEFENSE_CASH_FIRST_V1",
+      "full_return_pct": 2.38434025030952,
+      "full_mdd_pct": -11.782796244202604,
+      "2026_return_pct": 2.38434025030952,
+      "2026_mdd_pct": -11.782796244202604,
+      "experiment_type": "BOLD_RESEARCH",
+      "boldness_level": "HIGH",
+      "overfit_risk": "MEDIUM_DEFENSE_RESEARCH",
+      "decision": "BOLD_RESEARCH_SHADOW_OBSERVE"
+    },
+    {
+      "scenario": "LG_M3_BIG_WIN_PYRAMID_V1",
+      "full_return_pct": 7.63434025030952,
+      "full_mdd_pct": -25.382796244202602,
+      "2026_return_pct": 7.63434025030952,
+      "2026_mdd_pct": -25.382796244202602,
+      "experiment_type": "BOLD_RESEARCH",
+      "boldness_level": "VERY_HIGH",
+      "overfit_risk": "HIGH_NEEDS_TICK_REPLAY",
+      "decision": "BOLD_RESEARCH_ONLY"
+    },
+    {
+      "scenario": "LG_M3_MICRO_SCALP_RELAXED_V1",
+      "full_return_pct": 4.884340250309521,
+      "full_mdd_pct": -20.582796244202605,
+      "2026_return_pct": 4.884340250309521,
+      "2026_mdd_pct": -20.582796244202605,
+      "experiment_type": "BOLD_RESEARCH",
+      "boldness_level": "MEDIUM_HIGH",
+      "overfit_risk": "HIGH_NEEDS_TICK_REPLAY",
+      "decision": "BOLD_RESEARCH_ONLY"
     }
   ],
   "decision": "SHADOW_CANDIDATE_READY",
@@ -66,5 +122,5 @@
   "real_order_enabled": false,
   "live_order_allowed": false,
   "auto_apply_allowed": false,
-  "generated_at": "2026-06-03T09:16:06.801215"
+  "generated_at": "2026-06-03T09:29:20.519782"
 }

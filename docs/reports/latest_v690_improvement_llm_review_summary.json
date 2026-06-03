@@ -14,6 +14,12 @@
     "LG_M3_LOSS_STREAK_COOLDOWN_V1",
     "LG_M3_CANDIDATE_STARVATION_RELAX_V1"
   ],
+  "bold_research_experiments": [
+    "LG_M3_BOLD_RISK_ON_ROTATION_V1",
+    "LG_M3_CRASH_DEFENSE_CASH_FIRST_V1",
+    "LG_M3_BIG_WIN_PYRAMID_V1",
+    "LG_M3_MICRO_SCALP_RELAXED_V1"
+  ],
   "active_change_applied": false,
   "manual_review_required": true,
   "live_order_allowed": false,
@@ -24,5 +30,5 @@
   "default_readiness": "LIVE_NOT_ALLOWED",
   "real_order_enabled": false,
   "auto_apply_allowed": false,
-  "generated_at": "2026-06-03T09:16:06.827209"
+  "generated_at": "2026-06-03T09:29:20.537784"
 }

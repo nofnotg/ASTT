@@ -54,6 +54,12 @@ const labels = {
   full_return_pct: "전체 수익률",
   full_mdd_pct: "전체 MDD",
   overfit_risk: "과최적화",
+  bold_research: "과감 연구",
+  experiment_type: "실험 유형",
+  boldness_level: "과감도",
+  risk_profile: "위험 성격",
+  return_delta_vs_lgm3_pct: "LG-M3 대비 수익",
+  mdd_delta_vs_lgm3_pct: "LG-M3 대비 MDD",
 };
 
 const money = (value) => Number(value || 0).toLocaleString("ko-KR", { maximumFractionDigits: 0 }) + " KRW";
@@ -204,13 +210,15 @@ function improvementView(data) {
       {
         shadow_candidates: (decision.shadow_candidates || []).join(", "),
         research_only: (decision.research_only || []).join(", "),
+        bold_research: (decision.bold_research || []).join(", "),
         baseline_still_best: decision.baseline_still_best,
         active_change_applied: false,
         live_order_allowed: false,
       },
-    ], ["shadow_candidates", "research_only", "baseline_still_best", "active_change_applied", "live_order_allowed"], 5)),
+    ], ["shadow_candidates", "research_only", "bold_research", "baseline_still_best", "active_change_applied", "live_order_allowed"], 5)),
     section("개선 후보 A/B/C/D", "실패 패턴에서 자동 생성된 개선 가설입니다.", table(data.candidates?.candidates || [], ["scenario", "base", "fix_target", "key_rule", "risk", "evidence_count", "test_status"], 20)),
     section("2026 개선 검증", "LG-M3 기준으로 개선 규칙을 shadow 검증한 결과입니다.", table(data.backtest_2026?.rows || [], ["scenario", "final_equity_krw", "return_pct", "mdd_pct", "profit_factor", "trade_count", "profit_giveback_3d", "net_effect", "decision"], 20)),
+    section("과감한 연구 시도", "운용 승격용이 아니라 수익률과 낙폭이 크게 벌어지는 연구 후보입니다.", table((data.backtest_2026?.rows || []).filter((row) => row.experiment_type === "BOLD_RESEARCH"), ["scenario", "boldness_level", "risk_profile", "return_pct", "mdd_pct", "profit_factor", "return_delta_vs_lgm3_pct", "mdd_delta_vs_lgm3_pct", "decision"], 20)),
     section("전체기간 안전성", "2026에서 좋아 보여도 전체기간에서 버티는지 확인합니다.", table(data.full_period_safety?.rows || [], ["scenario", "full_return_pct", "full_mdd_pct", "2026_return_pct", "2026_mdd_pct", "overfit_risk", "decision"], 20)),
     section("실패 패턴", "개선 후보를 만든 근거입니다.", table(data.failure_signature?.failure_signatures || [], ["failure_type", "count", "pnl_impact_krw", "scenario_id", "suggested_fix_type"], 20)),
     section("LLM 복기", "LLM은 계산을 하지 않고, 엔진 산출물을 요약합니다. 실패 시 fallback을 사용합니다.", table([review], ["llm_used", "fallback_used", "key_findings", "recommended_experiments", "active_change_applied", "manual_review_required"], 5)),

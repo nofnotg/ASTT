@@ -3,9 +3,9 @@
   "base_scenario": "LG_M3_PF0.8_DD8",
   "decomposition_ready": true,
   "failure_signature_count": 4,
-  "candidate_count": 4,
-  "backtest_row_count": 6,
-  "full_period_row_count": 6,
+  "candidate_count": 8,
+  "backtest_row_count": 10,
+  "full_period_row_count": 10,
   "shadow_candidates": [
     "LG_M3_RS_BTCD_OVERLAY_V1"
   ],
@@ -13,6 +13,12 @@
     "LG_M3_PROFIT_GIVEBACK_GUARD_V1",
     "LG_M3_LOSS_STREAK_COOLDOWN_V1",
     "LG_M3_CANDIDATE_STARVATION_RELAX_V1"
+  ],
+  "bold_research": [
+    "LG_M3_BOLD_RISK_ON_ROTATION_V1",
+    "LG_M3_CRASH_DEFENSE_CASH_FIRST_V1",
+    "LG_M3_BIG_WIN_PYRAMID_V1",
+    "LG_M3_MICRO_SCALP_RELAXED_V1"
   ],
   "llm_fallback_used": true,
   "decision": "SHADOW_CANDIDATE_READY",
@@ -25,5 +31,5 @@
   "real_order_enabled": false,
   "live_order_allowed": false,
   "auto_apply_allowed": false,
-  "generated_at": "2026-06-03T09:16:06.854217"
+  "generated_at": "2026-06-03T09:29:20.549783"
 }
